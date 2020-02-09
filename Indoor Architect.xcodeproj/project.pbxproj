@@ -9,17 +9,21 @@
 /* Begin PBXBuildFile section */
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
-		816DC52A23F0606B00E1471D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52923F0606B00E1471D /* ViewController.swift */; };
 		816DC53223F0606E00E1471D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816DC53023F0606E00E1471D /* LaunchScreen.storyboard */; };
+		816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootSplitViewController.swift */; };
+		81F67DAE23F06A4B006B9187 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAD23F06A4B006B9187 /* MasterViewController.swift */; };
+		81F67DB023F06A64006B9187 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAF23F06A64006B9187 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		816DC52223F0606B00E1471D /* Indoor Architect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Architect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816DC52523F0606B00E1471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		816DC52923F0606B00E1471D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		816DC53123F0606E00E1471D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		816DC53323F0606E00E1471D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816DC53D23F0679900E1471D /* RootSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSplitViewController.swift; sourceTree = "<group>"; };
+		81F67DAD23F06A4B006B9187 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		81F67DAF23F06A64006B9187 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,7 @@
 		816DC52423F0606B00E1471D /* Indoor Architect */ = {
 			isa = PBXGroup;
 			children = (
-				816DC52923F0606B00E1471D /* ViewController.swift */,
+				816DC53C23F0677900E1471D /* Controllers */,
 				816DC53A23F065A800E1471D /* Supporting Files */,
 			);
 			path = "Indoor Architect";
@@ -67,6 +71,16 @@
 				816DC53323F0606E00E1471D /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		816DC53C23F0677900E1471D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				816DC53D23F0679900E1471D /* RootSplitViewController.swift */,
+				81F67DAD23F06A4B006B9187 /* MasterViewController.swift */,
+				81F67DAF23F06A64006B9187 /* DetailViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,9 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				816DC52A23F0606B00E1471D /* ViewController.swift in Sources */,
+				81F67DAE23F06A4B006B9187 /* MasterViewController.swift in Sources */,
 				816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */,
+				81F67DB023F06A64006B9187 /* DetailViewController.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
+				816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
