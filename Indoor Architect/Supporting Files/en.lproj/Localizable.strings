@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Indoor Architect
+
+  Created by Dennis Prudlo on 2/9/20.
+  Copyright © 2020 Dennis Prudlo. All rights reserved.
+*/
+
+"projectExplorer.searchBarPlaceholder" = "Quick Search";
+"projectExplorer.sectionTitleProjects" = "Projects";
+"projectExplorer.sectionTitleResources" = "Resources";

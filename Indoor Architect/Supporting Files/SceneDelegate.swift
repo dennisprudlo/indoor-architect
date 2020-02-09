@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let rootSplitViewController				= RootSplitViewController()
 		rootSplitViewController.viewControllers = [
 			UINavigationController(rootViewController: MasterViewController()),
-			UINavigationController(rootViewController: DetailViewController())
+			DetailViewController()
 		]
 		
 		window									= UIWindow(windowScene: windowScene)
