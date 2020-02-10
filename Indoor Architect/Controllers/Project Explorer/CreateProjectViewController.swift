@@ -24,15 +24,32 @@ class CreateProjectViewController: UITableViewController {
 		
 		navigationItem.leftBarButtonItem	= UIBarButtonItem(title: Localizable.ProjectExplorer.CreateProject.buttonCancel, style: .plain, target: self, action: #selector(didTapCancel))
 		
+		tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+		
 		tableViewSections.append([projectTitleCell, projectDescriptionCell])
 		tableViewSections.append([projectClientCell])
 		tableViewSections.append([projectCreateCell])
+		
+		projectTitleCell.textField.addTarget(self, action: #selector(didUpdateProjectTitle), for: .editingChanged)
+	}
+	
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		tableView.removeObserver(self, forKeyPath: "contentSize")
 	}
 	
 	@objc func didTapCancel(_ sender: UIBarButtonItem) -> Void {
 		dismiss(animated: true, completion: nil)
 	}
 
+	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+		self.preferredContentSize = tableView.contentSize
+	}
+	
+	@objc func didUpdateProjectTitle(_ sender: UITextField) -> Void {
+		projectCreateCell.cellButton.isEnabled = sender.text?.count ?? 0 > 0
+	}
+	
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
