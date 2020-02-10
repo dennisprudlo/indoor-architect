@@ -44,6 +44,7 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 		iconView.widthAnchor.constraint(equalTo:			iconView.heightAnchor).isActive = true
 		
 		titleLabel.text = title
+		titleLabel.adjustsFontForContentSizeCategory = true
 		titleLabel.topAnchor.constraint(equalTo:			selectionView.topAnchor,		constant: viewInset.top).isActive = true
 		titleLabel.trailingAnchor.constraint(equalTo:		selectionView.trailingAnchor,	constant: -viewInset.right).isActive = true
 		titleLabel.bottomAnchor.constraint(equalTo:			selectionView.bottomAnchor,		constant: -viewInset.bottom).isActive = true

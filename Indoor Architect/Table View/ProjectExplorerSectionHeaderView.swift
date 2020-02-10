@@ -27,6 +27,7 @@ class ProjectExplorerSectionHeaderView: UIView {
 		titleLabel.text = title
 		titleLabel.font = UIFont.preferredFont(forTextStyle: .title2).bold()
 		titleLabel.numberOfLines = 0
+		titleLabel.adjustsFontForContentSizeCategory = true
 		
 		titleLabel.topAnchor.constraint(equalTo:		topAnchor,		constant: sectionInsets.top).isActive = true
 		titleLabel.trailingAnchor.constraint(equalTo:	trailingAnchor,	constant: -sectionInsets.right).isActive = true
