@@ -26,6 +26,9 @@
 		81F67DD723F14E9F006B9187 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD623F14E9F006B9187 /* CreateProjectViewController.swift */; };
 		81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */; };
 		81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */; };
+		81F67DDE23F19458006B9187 /* IMDFProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDD23F19458006B9187 /* IMDFProject.swift */; };
+		81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDF23F195D9006B9187 /* ProjectManager.swift */; };
+		81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DE123F1991F006B9187 /* DateUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		81F67DD623F14E9F006B9187 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
 		81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputTableViewCell.swift; sourceTree = "<group>"; };
 		81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		81F67DDD23F19458006B9187 /* IMDFProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFProject.swift; sourceTree = "<group>"; };
+		81F67DDF23F195D9006B9187 /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
+		81F67DE123F1991F006B9187 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		816DC52423F0606B00E1471D /* Indoor Architect */ = {
 			isa = PBXGroup;
 			children = (
+				81F67DDC23F19449006B9187 /* Models */,
 				81F67DD023F14105006B9187 /* Utilities */,
 				81F67DCA23F12EDE006B9187 /* Table View */,
 				81F67DB123F06F60006B9187 /* Config */,
@@ -142,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				81F67DD123F1411B006B9187 /* FontUtils.swift */,
+				81F67DDF23F195D9006B9187 /* ProjectManager.swift */,
+				81F67DE123F1991F006B9187 /* DateUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -152,6 +161,14 @@
 				81F67DD623F14E9F006B9187 /* CreateProjectViewController.swift */,
 			);
 			path = "Project Explorer";
+			sourceTree = "<group>";
+		};
+		81F67DDC23F19449006B9187 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81F67DDD23F19458006B9187 /* IMDFProject.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +267,7 @@
 				81F67DB323F06F6E006B9187 /* Application.swift in Sources */,
 				81F67DAE23F06A4B006B9187 /* MasterViewController.swift in Sources */,
 				81F67DBF23F0A36A006B9187 /* Icon.swift in Sources */,
+				81F67DDE23F19458006B9187 /* IMDFProject.swift in Sources */,
 				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
 				81F67DB723F09971006B9187 /* Color.swift in Sources */,
 				81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */,
@@ -259,8 +277,10 @@
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
 				81F67DD723F14E9F006B9187 /* CreateProjectViewController.swift in Sources */,
+				81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
 				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,
+				81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */,
 				816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
