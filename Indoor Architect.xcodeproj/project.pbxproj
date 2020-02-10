@@ -24,6 +24,8 @@
 		81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */; };
 		81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD123F1411B006B9187 /* FontUtils.swift */; };
 		81F67DD723F14E9F006B9187 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD623F14E9F006B9187 /* CreateProjectViewController.swift */; };
+		81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */; };
+		81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerSectionHeaderView.swift; sourceTree = "<group>"; };
 		81F67DD123F1411B006B9187 /* FontUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
 		81F67DD623F14E9F006B9187 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
+		81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputTableViewCell.swift; sourceTree = "<group>"; };
+		81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 			children = (
 				81F67DCB23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift */,
 				81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */,
+				81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */,
+				81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */,
 			);
 			path = "Table View";
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 				81F67DB323F06F6E006B9187 /* Application.swift in Sources */,
 				81F67DAE23F06A4B006B9187 /* MasterViewController.swift in Sources */,
 				81F67DBF23F0A36A006B9187 /* Icon.swift in Sources */,
+				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
 				81F67DB723F09971006B9187 /* Color.swift in Sources */,
 				81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */,
 				816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */,
@@ -252,6 +259,7 @@
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
 				81F67DD723F14E9F006B9187 /* CreateProjectViewController.swift in Sources */,
+				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
 				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,
 				816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */,
 			);
