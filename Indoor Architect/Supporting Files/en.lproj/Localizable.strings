@@ -6,6 +6,10 @@
   Copyright © 2020 Dennis Prudlo. All rights reserved.
 */
 
-"projectExplorer.searchBarPlaceholder" = "Quick Search";
-"projectExplorer.sectionTitleProjects" = "Projects";
-"projectExplorer.sectionTitleResources" = "Resources";
+"projectExplorer.searchBarPlaceholder"	= "Quick Search";
+"projectExplorer.sectionTitleProjects"	= "Projects";
+"projectExplorer.sectionTitleResources"	= "Resources";
+
+"projectExplorer.createProject.title"			= "New Project";
+"projectExplorer.createProject.buttonCreate"	= "Create";
+"projectExplorer.createProject.buttonCancel"	= "Cancel";

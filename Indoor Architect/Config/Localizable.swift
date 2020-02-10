@@ -16,5 +16,11 @@ struct Localizable {
 		static let sectionTitleProjects		= NSLocalizedString("projectExplorer.sectionTitleProjects", comment: "")
 		static let sectionTitleResources	= NSLocalizedString("projectExplorer.sectionTitleResources", comment: "")
 		
+		struct CreateProject {
+			static let title		= NSLocalizedString("projectExplorer.createProject.title", comment: "")
+			static let buttonCreate	= NSLocalizedString("projectExplorer.createProject.buttonCreate", comment: "")
+			static let buttonCancel	= NSLocalizedString("projectExplorer.createProject.buttonCancel", comment: "")
+		}
+		
 	}
 }

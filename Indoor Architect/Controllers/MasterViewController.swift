@@ -36,7 +36,7 @@ class MasterViewController: UITableViewController {
 	
 		//
 		// Configure navigation bar buttons
-		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
 		
 		//
 		// Configure content table view
@@ -50,6 +50,14 @@ class MasterViewController: UITableViewController {
 			(title: Localizable.ProjectExplorer.sectionTitleProjects, cells: []),
 			(title: Localizable.ProjectExplorer.sectionTitleResources, cells: [])
 		]
+	}
+	
+	@objc func didTapAdd(_ sender: UIBarButtonItem) -> Void {
+		let createProjectViewController = UINavigationController(rootViewController: CreateProjectViewController(style: .insetGrouped))
+		createProjectViewController.modalPresentationStyle = .popover
+		createProjectViewController.popoverPresentationController?.barButtonItem = sender
+		
+		present(createProjectViewController, animated: true, completion: nil)
 	}
 
     override func numberOfSections(in tableView: UITableView) -> Int {
