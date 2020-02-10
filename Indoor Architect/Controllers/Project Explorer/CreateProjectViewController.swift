@@ -31,6 +31,9 @@ class CreateProjectViewController: UITableViewController {
 		tableViewSections.append([projectCreateCell])
 		
 		projectTitleCell.textField.addTarget(self, action: #selector(didUpdateProjectTitle), for: .editingChanged)
+		projectCreateCell.cellButton.addTarget(self, action: #selector(didTapCreate), for: .touchUpInside)
+		
+		didUpdateProjectTitle(projectTitleCell.textField)
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {
@@ -40,6 +43,23 @@ class CreateProjectViewController: UITableViewController {
 	
 	@objc func didTapCancel(_ sender: UIBarButtonItem) -> Void {
 		dismiss(animated: true, completion: nil)
+	}
+	
+	@objc func didTapCreate(_ sender: UIButton) -> Void {
+		guard let title = projectTitleCell.textField.text else {
+			return
+		}
+	
+		let unusedUuid = IMDFProject.unusedUuid()
+		let project = IMDFProject(uuid: unusedUuid, title: title)
+		project.description = projectDescriptionCell.textField.text
+		project.client = projectClientCell.textField.text
+		
+		do {
+			try project.save()
+		} catch {
+			print(error)
+		}
 	}
 
 	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -63,5 +83,4 @@ class CreateProjectViewController: UITableViewController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		return tableViewSections[indexPath.section][indexPath.row]
 	}
-
 }

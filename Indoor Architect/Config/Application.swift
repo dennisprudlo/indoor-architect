@@ -20,5 +20,5 @@ struct Application {
 	static let build		= Int(Bundle.main.infoDictionary?["CFBundleVersion"] as! String) ?? 0
 	
 	/// The currently used version of the indoor mapping data format
-	static let imdfVersion	= "1.0"
+	static let imdfVersion	= "1.0.0.rc.1"
 }
