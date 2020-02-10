@@ -41,6 +41,8 @@ class MasterViewController: UITableViewController {
 		//
 		// Configure content table view
 		tableView.separatorStyle = .none
+		tableView.rowHeight = UITableView.automaticDimension
+		tableView.estimatedRowHeight = 64
 		
 		tableViewSections = [
 			(title: Localizable.ProjectExplorer.sectionTitleProjects, cells: []),

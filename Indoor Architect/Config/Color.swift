@@ -11,5 +11,6 @@ import UIKit
 enum Color {
 	
 	static let primary = UIColor(named: "Primary")!
+	static let tableViewCellSelection = UIColor(named: "TableViewCellSelection")!
 	
 }
