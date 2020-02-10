@@ -11,15 +11,15 @@ import UIKit
 class ProjectExplorerTableViewCell: UITableViewCell {
 
 	private let cellInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-	private let viewInset = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 15)
+	private let viewInset = UIEdgeInsets(top: 12, left: 8, bottom: 12, right: 12)
 	private let iconSize: CGFloat = 24
 	
 	let selectionView	= UIView()
 	let iconView		= UIImageView()
 	let titleLabel		= UILabel()
 	
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
+	init(title: String, icon: UIImage?) {
+		super.init(style: .default, reuseIdentifier: nil)
 		selectionStyle = .none
 		
 		selectionView.translatesAutoresizingMaskIntoConstraints	= false
@@ -36,12 +36,14 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 		selectionView.bottomAnchor.constraint(equalTo:		bottomAnchor,	constant: -cellInset.bottom).isActive = true
 		selectionView.leadingAnchor.constraint(equalTo:		leadingAnchor,	constant: cellInset.left).isActive = true
 		
+		iconView.image = icon
 		iconView.tintColor = Color.primary
 		iconView.topAnchor.constraint(equalTo:				selectionView.topAnchor,		constant: viewInset.top).isActive = true
 		iconView.leadingAnchor.constraint(equalTo:			selectionView.leadingAnchor,	constant: viewInset.left).isActive = true
 		iconView.bottomAnchor.constraint(equalTo:			selectionView.bottomAnchor,		constant: -viewInset.bottom).isActive = true
 		iconView.widthAnchor.constraint(equalTo:			iconView.heightAnchor).isActive = true
 		
+		titleLabel.text = title
 		titleLabel.topAnchor.constraint(equalTo:			selectionView.topAnchor,		constant: viewInset.top).isActive = true
 		titleLabel.trailingAnchor.constraint(equalTo:		selectionView.trailingAnchor,	constant: -viewInset.right).isActive = true
 		titleLabel.bottomAnchor.constraint(equalTo:			selectionView.bottomAnchor,		constant: -viewInset.bottom).isActive = true

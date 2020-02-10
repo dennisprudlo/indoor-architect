@@ -40,9 +40,11 @@ class MasterViewController: UITableViewController {
 		
 		//
 		// Configure content table view
-		tableView.separatorStyle = .none
-		tableView.rowHeight = UITableView.automaticDimension
-		tableView.estimatedRowHeight = 64
+		tableView.separatorStyle				= .none
+		tableView.rowHeight						= UITableView.automaticDimension
+		tableView.estimatedRowHeight			= 64
+		tableView.sectionHeaderHeight			= UITableView.automaticDimension
+		tableView.estimatedSectionHeaderHeight	= 36;
 		
 		tableViewSections = [
 			(title: Localizable.ProjectExplorer.sectionTitleProjects, cells: []),
@@ -64,5 +66,9 @@ class MasterViewController: UITableViewController {
 	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return tableViewSections[section].title
+	}
+	
+	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		return ProjectExplorerSectionHeaderView(title: tableViewSections[section].title, firstSection: section == 0)
 	}
 }

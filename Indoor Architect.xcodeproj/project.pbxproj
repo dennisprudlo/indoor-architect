@@ -21,6 +21,8 @@
 		81F67DC423F0A581006B9187 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81F67DC623F0A581006B9187 /* Localizable.strings */; };
 		81F67DC923F0AA5E006B9187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F67DC823F0AA5E006B9187 /* LaunchScreen.storyboard */; };
 		81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DCB23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift */; };
+		81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */; };
+		81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD123F1411B006B9187 /* FontUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		81F67DC523F0A581006B9187 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81F67DC823F0AA5E006B9187 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81F67DCB23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerTableViewCell.swift; sourceTree = "<group>"; };
+		81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerSectionHeaderView.swift; sourceTree = "<group>"; };
+		81F67DD123F1411B006B9187 /* FontUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,8 @@
 		816DC52423F0606B00E1471D /* Indoor Architect */ = {
 			isa = PBXGroup;
 			children = (
-				81F67DCA23F12EDE006B9187 /* Table View Cells */,
+				81F67DD023F14105006B9187 /* Utilities */,
+				81F67DCA23F12EDE006B9187 /* Table View */,
 				81F67DB123F06F60006B9187 /* Config */,
 				816DC53C23F0677900E1471D /* Controllers */,
 				816DC53A23F065A800E1471D /* Supporting Files */,
@@ -115,12 +120,21 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		81F67DCA23F12EDE006B9187 /* Table View Cells */ = {
+		81F67DCA23F12EDE006B9187 /* Table View */ = {
 			isa = PBXGroup;
 			children = (
 				81F67DCB23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift */,
+				81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */,
 			);
-			path = "Table View Cells";
+			path = "Table View";
+			sourceTree = "<group>";
+		};
+		81F67DD023F14105006B9187 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				81F67DD123F1411B006B9187 /* FontUtils.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +238,9 @@
 				816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */,
 				81F67DB023F06A64006B9187 /* DetailViewController.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
+				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
+				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,
 				816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
