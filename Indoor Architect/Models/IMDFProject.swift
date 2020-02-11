@@ -9,6 +9,8 @@
 import Foundation
 
 class IMDFProject {
+	
+	static var projects: [IMDFProject] = IMDFProject.all()
 		
 	let manifest: IMDFProjectManifest
 	

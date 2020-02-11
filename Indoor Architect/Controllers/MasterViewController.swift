@@ -16,8 +16,10 @@ class MasterViewController: UITableViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		Application.masterViewController = self
 		
 		configure()
+		reloadProjects()
     }
 	
 	private func configure() -> Void {
@@ -50,11 +52,6 @@ class MasterViewController: UITableViewController {
 			(title: Localizable.ProjectExplorer.sectionTitleProjects, cells: []),
 			(title: Localizable.ProjectExplorer.sectionTitleResources, cells: [])
 		]
-		
-		IMDFProject.all().forEach { (project) in
-			let cell = ProjectExplorerTableViewCell(title: project.manifest.title, icon: Icon.apple)
-			tableViewSections[0].cells.append(cell)
-		}
 	}
 	
 	@objc func didTapAdd(_ sender: UIBarButtonItem) -> Void {
@@ -63,6 +60,18 @@ class MasterViewController: UITableViewController {
 		createProjectViewController.popoverPresentationController?.barButtonItem = sender
 		
 		present(createProjectViewController, animated: true, completion: nil)
+	}
+	
+	func reloadProjects() -> Void {
+		tableViewSections[0].cells = []
+		IMDFProject.projects.forEach { (project) in
+			let projectCell = ProjectExplorerTableViewCell(title: project.manifest.title, icon: Icon.apple)
+			tableViewSections[0].cells.append(projectCell)
+		}
+		
+		tableView.beginUpdates()
+		tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+		tableView.endUpdates()
 	}
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -77,8 +86,26 @@ class MasterViewController: UITableViewController {
 		return tableViewSections[indexPath.section].cells[indexPath.row]
 	}
 	
-	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return tableViewSections[section].title
+	override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		let canvasAction = UIContextualAction(style: .normal, title: "Canvas", handler: { (action, view, completion) in
+			completion(false)
+		})
+		canvasAction.backgroundColor = .systemBlue
+		
+		return UISwipeActionsConfiguration(actions: [canvasAction])
+	}
+	
+	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completion) in
+			completion(false)
+		})
+		deleteAction.backgroundColor = Color.primary
+		
+		let exportAction = UIContextualAction(style: .normal, title: "Export IMDF", handler: { (action, view, completion) in
+			completion(false)
+		})
+		
+		return UISwipeActionsConfiguration(actions: [deleteAction, exportAction])
 	}
 	
 	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

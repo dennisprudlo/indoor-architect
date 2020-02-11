@@ -12,7 +12,7 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 
 	private let cellInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 	private let viewInset = UIEdgeInsets(top: 12, left: 8, bottom: 12, right: 12)
-	private let iconSize: CGFloat = 24
+	private let iconSize: CGFloat = 20
 	
 	let selectionView	= UIView()
 	let iconView		= UIImageView()
@@ -38,9 +38,9 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 		
 		iconView.image = icon
 		iconView.tintColor = Color.primary
-		iconView.topAnchor.constraint(equalTo:				selectionView.topAnchor,		constant: viewInset.top).isActive = true
-		iconView.leadingAnchor.constraint(equalTo:			selectionView.leadingAnchor,	constant: viewInset.left).isActive = true
-		iconView.bottomAnchor.constraint(equalTo:			selectionView.bottomAnchor,		constant: -viewInset.bottom).isActive = true
+		iconView.leadingAnchor.constraint(equalTo:			selectionView.leadingAnchor, constant: viewInset.left).isActive = true
+		iconView.centerYAnchor.constraint(equalTo: 			selectionView.centerYAnchor).isActive = true
+		iconView.heightAnchor.constraint(equalToConstant:	iconSize).isActive = true
 		iconView.widthAnchor.constraint(equalTo:			iconView.heightAnchor).isActive = true
 		
 		titleLabel.text = title
@@ -56,13 +56,10 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 	}
 	
 	func setSelectedState(_ selected: Bool) -> Void {
-		backgroundColor = .white
-		contentView.backgroundColor = .white
-		
 		if selected {
 			selectionView.backgroundColor = Color.tableViewCellSelection
 		} else {
-			selectionView.backgroundColor = .white
+			selectionView.backgroundColor = backgroundColor
 		}
 	}
 	

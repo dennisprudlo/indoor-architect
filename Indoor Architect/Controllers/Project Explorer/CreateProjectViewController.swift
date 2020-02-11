@@ -58,6 +58,10 @@ class CreateProjectViewController: UITableViewController {
 		
 		do {
 			try project.save()
+			
+			IMDFProject.projects.insert(project, at: 0)
+			Application.masterViewController.reloadProjects()
+			dismiss(animated: true, completion: nil)
 		} catch {
 			print(error)
 		}

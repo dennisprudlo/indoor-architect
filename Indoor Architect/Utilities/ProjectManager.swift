@@ -161,8 +161,8 @@ class ProjectManager {
 		let manifestData = try JSONSerialization.data(withJSONObject: [
 			"version":		Application.imdfVersion,
 			"created":		DateUtils.iso8601(for: Date()),
-			"generated_by":	nil,
-			"language":		nil,
+			"generated_by":	Application.versionIdentifier,
+			"language":		Application.localeLanguageTag,
 			"extensions":	nil
 		], options: .prettyPrinted)
 		
