@@ -216,7 +216,22 @@ class ProjectManager {
 	/// Returns an `IMDFProject` identified by the given uuid or nil if the project could not be initialized
 	/// - Parameter uuid: The `UUID` of the project
 	func get(withUuid uuid: UUID) -> IMDFProject? {
-		return nil
+		if !exists(withUuid: uuid) {
+			return nil
+		}
+		
+		//
+		// Load the project manifest data
+		let manifestUrl = url(forPathComponent: .manifest, inProjectWithUuid: uuid)
+		guard let contents = FileManager.default.contents(atPath: manifestUrl.path) else {
+			return nil
+		}
+		
+		guard let manifest = try? JSONDecoder().decode(IMDFProjectManifest.self, from: contents) else {
+			return nil
+		}
+		
+		return IMDFProject(existingWith: manifest)
 	}
 	
 	/// Returns an array of `IMDFProjects` that could be initialized

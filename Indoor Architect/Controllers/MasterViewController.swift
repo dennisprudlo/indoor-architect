@@ -50,6 +50,11 @@ class MasterViewController: UITableViewController {
 			(title: Localizable.ProjectExplorer.sectionTitleProjects, cells: []),
 			(title: Localizable.ProjectExplorer.sectionTitleResources, cells: [])
 		]
+		
+		IMDFProject.all().forEach { (project) in
+			let cell = ProjectExplorerTableViewCell(title: project.manifest.title, icon: Icon.apple)
+			tableViewSections[0].cells.append(cell)
+		}
 	}
 	
 	@objc func didTapAdd(_ sender: UIBarButtonItem) -> Void {

@@ -46,16 +46,15 @@ class CreateProjectViewController: UITableViewController {
 	}
 	
 	@objc func didTapCreate(_ sender: UIButton) -> Void {
-		guard let _ = projectTitleCell.textField.text else {
+		guard let title = projectTitleCell.textField.text else {
 			return
 		}
 	
-		let unusedUuid		= ProjectManager.shared.getUnusedUuid()
+		let unusedUuid					= ProjectManager.shared.getUnusedUuid()
 		
-		let project			= IMDFProject(uuid: unusedUuid)
-		project.title		= projectTitleCell.textField.text
-		project.description	= projectDescriptionCell.textField.text
-		project.client		= projectClientCell.textField.text
+		let project						= IMDFProject(withUuid: unusedUuid, title: title)
+		project.manifest.description	= projectDescriptionCell.textField.text
+		project.manifest.client			= projectClientCell.textField.text
 		
 		do {
 			try project.save()

@@ -9,21 +9,15 @@
 import Foundation
 
 class IMDFProject {
-	
-	private let uuid: UUID
-	
-	var title: String?
-	var description: String?
-	var client: String?
-	private var createdAt: Date = Date()
-	private var updatedAt: Date = Date()
-	
-	init(uuid: UUID) {
-		self.uuid	= uuid
 		
-		let createdAtDate = Date()
-		self.createdAt = Date(timeIntervalSince1970: createdAtDate.timeIntervalSince1970)
-		self.updatedAt = Date(timeIntervalSince1970: createdAtDate.timeIntervalSince1970)
+	let manifest: IMDFProjectManifest
+	
+	init(withUuid uuid: UUID, title: String) {
+		self.manifest = IMDFProjectManifest(newWithUuid: uuid, title: title)
+	}
+	
+	init(existingWith manifest: IMDFProjectManifest) {
+		self.manifest = manifest
 	}
 	
 	/// Gets a project by its `UUID`
@@ -38,33 +32,23 @@ class IMDFProject {
 	}
 	
 	func save() throws -> Void {
-		if !ProjectManager.shared.exists(withUuid: uuid) {
-			try ProjectManager.shared.create(structurForProjectWithUuid: uuid)
+		if !ProjectManager.shared.exists(withUuid: manifest.uuid) {
+			try ProjectManager.shared.create(structurForProjectWithUuid: manifest.uuid)
 		}
 		
-		let manifest: [String: String?] = [
-			"uuid":				uuid.uuidString,
-			"title":			title,
-			"description":		description,
-			"client":			client,
-			"created_at":		DateUtils.iso8601(for: createdAt, withTime: true),
-			"updated_at":		DateUtils.iso8601(for: updatedAt, withTime: true),
-			"imdfproj_version":	"1"
-		]
-		
-		let data = try JSONSerialization.data(withJSONObject: manifest, options: .prettyPrinted)
-		FileManager.default.createFile(atPath: ProjectManager.shared.url(forPathComponent: .manifest, inProjectWithUuid: uuid).path, contents: data, attributes: nil)
+		let data = try manifest.data()
+		FileManager.default.createFile(atPath: ProjectManager.shared.url(forPathComponent: .manifest, inProjectWithUuid: manifest.uuid).path, contents: data, attributes: nil)
 	}
 	
 	/// Deletes the project permanentely
 	func delete() throws -> Void {
-		try ProjectManager.shared.delete(withUuid: uuid)
+		try ProjectManager.shared.delete(withUuid: manifest.uuid)
 	}
 	
 	/// Updates the `updated_at` date in the projects manifest
 	///
 	/// This function is called everytime a change in the project has been made.
 	func setUpdated() -> Void {
-		self.updatedAt = Date()
+		manifest.updatedAt = Date()
 	}
 }
