@@ -14,10 +14,10 @@ class ProjectManager {
 	static let shared = ProjectManager()
 	
 	/// The url to the applications project directory
-	private let projectsDirectory: URL
+	let projectsDirectory: URL
 	
 	/// The extension for a regular Indoor Mapper project
-	private let projectExtension: String = "imdfproj"
+	let projectExtension: String = "imdfproj"
 	
 	enum ArchiveFeature: CaseIterable {
 		/// The feature collection for the address component
@@ -110,6 +110,10 @@ class ProjectManager {
 		try FileManager.default.removeItem(at: projectUrl)
 	}
 	
+	/// Returns the file `URL` for a given component of the project
+	/// - Parameters:
+	///   - component: The component to get the `URL` for
+	///   - uuid: The `UUID` of the project
 	func url(forPathComponent component: ProjectComponent, inProjectWithUuid uuid: UUID) -> URL {
 		let directory = projectsDirectory.appendingPathComponent([uuid.uuidString, projectExtension].joined(separator: "."), isDirectory: true)
 		
@@ -175,5 +179,56 @@ class ProjectManager {
 		}
 		
 		print(url(forPathComponent: .rootDirectory, inProjectWithUuid: uuid).path)
+	}
+	
+	/// Returns an array of `UUID` instances that are used for available projects
+	func getAvailableProjectUuids() -> [UUID] {
+		guard let contents = try? FileManager.default.contentsOfDirectory(atPath: projectsDirectory.path) else {
+			return []
+		}
+		
+		var uuids: [UUID] = []
+		contents.forEach { (folder) in
+			let folderExtension = ".\(projectExtension)"
+			if !folder.hasSuffix(folderExtension) {
+				return
+			}
+			
+			let uuidString = String(folder.dropLast(folderExtension.count))
+			if let uuid = UUID(uuidString: uuidString) {
+				uuids.append(uuid)
+			}
+		}
+		
+		return uuids
+	}
+	
+	/// Returns a `UUID` which is not used for an existing project
+	func getUnusedUuid() -> UUID {
+		var unusedUuid: UUID
+		repeat {
+			unusedUuid = UUID()
+		} while exists(withUuid: unusedUuid)
+		
+		return unusedUuid
+	}
+	
+	/// Returns an `IMDFProject` identified by the given uuid or nil if the project could not be initialized
+	/// - Parameter uuid: The `UUID` of the project
+	func get(withUuid uuid: UUID) -> IMDFProject? {
+		return nil
+	}
+	
+	/// Returns an array of `IMDFProjects` that could be initialized
+	func getAll() -> [IMDFProject] {
+		var projects: [IMDFProject] = []
+		
+		getAvailableProjectUuids().forEach { (uuid) in
+			if let project = get(withUuid: uuid) {
+				projects.append(project)
+			}
+		}
+		
+		return projects
 	}
 }
