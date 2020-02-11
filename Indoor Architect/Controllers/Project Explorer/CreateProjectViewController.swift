@@ -61,6 +61,9 @@ class CreateProjectViewController: UITableViewController {
 			
 			IMDFProject.projects.insert(project, at: 0)
 			Application.masterViewController.reloadProjects()
+			Application.masterViewController.tableView.beginUpdates()
+			Application.masterViewController.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+			Application.masterViewController.tableView.endUpdates()
 			dismiss(animated: true, completion: nil)
 		} catch {
 			print(error)

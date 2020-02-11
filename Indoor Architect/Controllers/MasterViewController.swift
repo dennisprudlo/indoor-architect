@@ -66,12 +66,9 @@ class MasterViewController: UITableViewController {
 		tableViewSections[0].cells = []
 		IMDFProject.projects.forEach { (project) in
 			let projectCell = ProjectExplorerTableViewCell(title: project.manifest.title, icon: Icon.apple)
+			projectCell.project = project
 			tableViewSections[0].cells.append(projectCell)
 		}
-		
-		tableView.beginUpdates()
-		tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
-		tableView.endUpdates()
 	}
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,19 +88,46 @@ class MasterViewController: UITableViewController {
 			completion(false)
 		})
 		canvasAction.backgroundColor = .systemBlue
+		canvasAction.image = Icon.map
 		
 		return UISwipeActionsConfiguration(actions: [canvasAction])
 	}
 	
 	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 		let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completion) in
-			completion(false)
+			guard let cell = tableView.cellForRow(at: indexPath) as? ProjectExplorerTableViewCell else {
+				completion(false)
+				return
+			}
+			
+			guard let cellProject = cell.project else {
+				completion(false)
+				return
+			}
+			
+			guard let _ = try? cellProject.delete() else {
+				completion(false)
+				return
+			}
+			
+			tableView.beginUpdates()
+			IMDFProject.projects.removeAll { (project) -> Bool in
+				return project.manifest.uuid == cellProject.manifest.uuid
+			}
+			self.reloadProjects()
+			
+			tableView.deleteRows(at: [indexPath], with: .left)
+			tableView.endUpdates()
+			
+			completion(true)
 		})
 		deleteAction.backgroundColor = Color.primary
+		deleteAction.image = Icon.trash
 		
 		let exportAction = UIContextualAction(style: .normal, title: "Export IMDF", handler: { (action, view, completion) in
 			completion(false)
 		})
+		exportAction.image = Icon.download
 		
 		return UISwipeActionsConfiguration(actions: [deleteAction, exportAction])
 	}

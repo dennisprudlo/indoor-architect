@@ -10,6 +10,9 @@ import UIKit
 
 enum Icon {
 	
-	static let apple = UIImage(named: "Apple")!
+	static let apple	= UIImage(named: "Apple")!
+	static let download	= UIImage(named: "Download")!
+	static let trash	= UIImage(named: "Trash")!
+	static let map		= UIImage(named: "Map")!
 	
 }
