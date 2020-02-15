@@ -10,6 +10,11 @@
 "projectExplorer.sectionTitleProjects"	= "Projects";
 "projectExplorer.sectionTitleResources"	= "Resources";
 
-"projectExplorer.createProject.title"			= "New Project";
-"projectExplorer.createProject.buttonCreate"	= "Create";
-"projectExplorer.createProject.buttonCancel"	= "Cancel";
+"projectExplorer.infoNoProject"	= "You have not created any projects. To create a new project tap the plus symbol at the top.";
+
+"projectExplorer.createProject.title"				= "New Project";
+"projectExplorer.createProject.buttonCreate"		= "Create Project";
+"projectExplorer.createProject.buttonCancel"		= "Cancel";
+"projectExplorer.createProject.projectTitle"		= "Project Title";
+"projectExplorer.createProject.projectDescription"	= "Description";
+"projectExplorer.createProject.projectClient"		= "Client";

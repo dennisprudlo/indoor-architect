@@ -12,10 +12,10 @@ class CreateProjectViewController: UITableViewController {
 
 	var tableViewSections: [[UITableViewCell]] = []
 	
-	let projectTitleCell		= TextInputTableViewCell(placeholder: "Project Title")
-	let projectDescriptionCell	= TextInputTableViewCell(placeholder: "Description")
-	let projectClientCell		= TextInputTableViewCell(placeholder: "Client")
-	let projectCreateCell		= ButtonTableViewCell(title: "Create Project")
+	let projectTitleCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.CreateProject.projectTitle)
+	let projectDescriptionCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.CreateProject.projectDescription)
+	let projectClientCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.CreateProject.projectClient)
+	let projectCreateCell		= ButtonTableViewCell(title: Localizable.ProjectExplorer.CreateProject.buttonCreate)
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,10 +69,7 @@ class CreateProjectViewController: UITableViewController {
 			try project.save()
 			
 			IMDFProject.projects.insert(project, at: 0)
-			Application.masterViewController.reloadProjects()
-			Application.masterViewController.tableView.beginUpdates()
-			Application.masterViewController.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
-			Application.masterViewController.tableView.endUpdates()
+			ProjectExplorerHandler.shared.insert(at: IndexPath(row: 0, section: ProjectExplorerHandler.SectionCategory.projects.rawValue), with: .fade)
 			dismiss(animated: true, completion: nil)
 		} catch {
 			print(error)
