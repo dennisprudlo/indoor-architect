@@ -152,7 +152,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		}
 
 		if indexPath.section == SectionCategory.projects.rawValue {
-			let canvasAction = UIContextualAction(style: .normal, title: "Canvas", handler: { (action, view, completion) in
+			let canvasAction = UIContextualAction(style: .normal, title: nil, handler: { (action, view, completion) in
 				completion(false)
 			})
 			canvasAction.backgroundColor = .systemBlue
@@ -170,7 +170,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		}
 		
 		if indexPath.section == SectionCategory.projects.rawValue {
-			let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completion) in
+			let deleteAction = UIContextualAction(style: .destructive, title: nil, handler: { (action, view, completion) in
 				if indexPath.row >= IMDFProject.projects.count {
 					completion(false)
 					return
@@ -193,7 +193,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			deleteAction.backgroundColor = Color.primary
 			deleteAction.image = Icon.trash
 			
-			let exportAction = UIContextualAction(style: .normal, title: "Export IMDF", handler: { (action, view, completion) in
+			let exportAction = UIContextualAction(style: .normal, title: nil, handler: { (action, view, completion) in
 				completion(false)
 			})
 			exportAction.image = Icon.download

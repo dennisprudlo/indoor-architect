@@ -12,7 +12,7 @@ class CreateProjectViewController: UITableViewController {
 
 	var tableViewSections: [[UITableViewCell]] = []
 	
-	let projectTitleCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.CreateProject.projectTitle)
+	let projectTitleCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.CreateProject.projectTitle, maxLength: 50)
 	let projectDescriptionCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.CreateProject.projectDescription)
 	let projectClientCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.CreateProject.projectClient)
 	let projectCreateCell		= ButtonTableViewCell(title: Localizable.ProjectExplorer.CreateProject.buttonCreate)
