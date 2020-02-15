@@ -133,6 +133,6 @@ class MasterViewController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		return ProjectExplorerSectionHeaderView(title: tableViewSections[section].title, firstSection: section == 0)
+		return ProjectExplorerSectionHeaderView(title: tableViewSections[section].title)
 	}
 }

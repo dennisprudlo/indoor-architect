@@ -10,18 +10,13 @@ import UIKit
 
 class ProjectExplorerSectionHeaderView: UIView {
 
-	private var sectionInsets = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
-	private let topOffset: CGFloat = 25
+	private var sectionInsets = UIEdgeInsets(top: 15, left: 15, bottom: 5, right: 15)
 	
 	let titleLabel = UILabel()
 	
-	init(title: String, firstSection: Bool = true) {
+	init(title: String) {
 		super.init(frame: CGRect.zero)
 		addSubview(titleLabel)
-		
-		if !firstSection {
-			sectionInsets.top = topOffset
-		}
 		
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false
 		titleLabel.text = title

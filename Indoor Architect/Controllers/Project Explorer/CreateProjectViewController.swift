@@ -75,7 +75,13 @@ class CreateProjectViewController: UITableViewController {
 	}
 	
 	@objc func didUpdateProjectTitle(_ sender: UITextField) -> Void {
-		projectCreateCell.cellButton.isEnabled = sender.text?.count ?? 0 > 0
+		if sender.text?.count ?? 0 > 0 {
+			projectCreateCell.cellButton.isEnabled = true
+			projectCreateCell.cellButton.alpha = 1
+		} else {
+			projectCreateCell.cellButton.isEnabled = false
+			projectCreateCell.cellButton.alpha = 0.5
+		}
 	}
 	
     // MARK: - Table view data source
