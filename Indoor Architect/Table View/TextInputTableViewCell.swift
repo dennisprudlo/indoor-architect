@@ -23,6 +23,7 @@ class TextInputTableViewCell: UITableViewCell {
 		contentView.addSubview(textField)
 		textField.translatesAutoresizingMaskIntoConstraints = false
 		textField.placeholder = placeholder
+		textField.adjustsFontForContentSizeCategory = true
 		
 		textField.topAnchor.constraint(equalTo:			topAnchor,		constant: viewInset.top).isActive = true
 		textField.trailingAnchor.constraint(equalTo:	trailingAnchor,	constant: -viewInset.right).isActive = true

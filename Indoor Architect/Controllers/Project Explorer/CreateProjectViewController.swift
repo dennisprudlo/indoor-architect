@@ -20,12 +20,21 @@ class CreateProjectViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		configure()
+	}
+	
+	private func configure() -> Void {
 		title = Localizable.ProjectExplorer.CreateProject.title
 		
 		navigationItem.leftBarButtonItem	= UIBarButtonItem(title: Localizable.ProjectExplorer.CreateProject.buttonCancel, style: .plain, target: self, action: #selector(didTapCancel))
 		
+		//
+		// Configure the table view itself
+		tableView.rowHeight = 44
 		tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
 		
+		//
+		// Prepare the table view sections
 		tableViewSections.append([projectTitleCell, projectDescriptionCell])
 		tableViewSections.append([projectClientCell])
 		tableViewSections.append([projectCreateCell])
