@@ -13,5 +13,7 @@ class RootSplitViewController: UISplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		preferredDisplayMode = .allVisible
+		
+		Application.rootViewController = self
     }
 }

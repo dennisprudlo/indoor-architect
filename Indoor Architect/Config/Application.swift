@@ -28,6 +28,9 @@ struct Application {
 	/// A reference to the master view controller which is set after its initialization
 	static var masterViewController: MasterViewController!
 	
+	/// A reference to the root view controller which is set after its initialization
+	static var rootViewController: RootSplitViewController!
+	
 	/// Gets a RFC 5646 compliant language tag for the current locale
 	///
 	/// If for some reason the language tag couldn't be obtained the property falls back to `en-US`

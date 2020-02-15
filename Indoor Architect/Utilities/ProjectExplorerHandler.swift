@@ -153,6 +153,10 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 
 		if indexPath.section == SectionCategory.projects.rawValue {
 			let canvasAction = UIContextualAction(style: .normal, title: nil, handler: { (action, view, completion) in
+				
+				let mapCanvasViewController = MapCanvasViewController()
+				mapCanvasViewController.modalPresentationStyle = .fullScreen
+				Application.rootViewController.present(mapCanvasViewController, animated: true, completion: nil)
 				completion(false)
 			})
 			canvasAction.backgroundColor = .systemBlue
