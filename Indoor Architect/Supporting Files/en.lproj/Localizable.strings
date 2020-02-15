@@ -8,9 +8,11 @@
 
 "projectExplorer.searchBarPlaceholder"	= "Quick Search";
 "projectExplorer.sectionTitleProjects"	= "Projects";
+"projectExplorer.sectionEmptyProjects"	= "You have not created any projects. To create a new project tap the plus symbol at the top.";
+"projectExplorer.sectionTitleGuides"	= "Guides";
+"projectExplorer.sectionEmptyGuides"	= "There are no guides available.";
 "projectExplorer.sectionTitleResources"	= "Resources";
-
-"projectExplorer.infoNoProject"	= "You have not created any projects. To create a new project tap the plus symbol at the top.";
+"projectExplorer.sectionEmptyResources"	= "There are no resources available.";
 
 "projectExplorer.createProject.title"				= "New Project";
 "projectExplorer.createProject.buttonCreate"		= "Create Project";

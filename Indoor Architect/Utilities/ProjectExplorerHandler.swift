@@ -36,7 +36,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		
 		let projects: Section = (
 			title:		Localizable.ProjectExplorer.sectionTitleProjects,
-			emptyTitle: Localizable.ProjectExplorer.infoNoProject,
+			emptyTitle: Localizable.ProjectExplorer.sectionEmptyProjects,
 			cells:		[],
 			reload:	{
 				var cells: [UITableViewCell] = []
@@ -50,8 +50,8 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		)
 		
 		let guides: Section = (
-			title:		"Guides",
-			emptyTitle: "not set",
+			title:		Localizable.ProjectExplorer.sectionTitleGuides,
+			emptyTitle: Localizable.ProjectExplorer.sectionEmptyGuides,
 			cells:		[],
 			reload:	{
 				return []
@@ -60,7 +60,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		
 		let resources: Section = (
 			title:		Localizable.ProjectExplorer.sectionTitleResources,
-			emptyTitle: "not set",
+			emptyTitle: Localizable.ProjectExplorer.sectionEmptyResources,
 			cells:		[],
 			reload:	{
 				return []

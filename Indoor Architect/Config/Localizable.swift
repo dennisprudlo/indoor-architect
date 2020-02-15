@@ -14,9 +14,11 @@ struct Localizable {
 	
 		static let searchBarPlaceholder		= NSLocalizedString("projectExplorer.searchBarPlaceholder", comment: "")
 		static let sectionTitleProjects		= NSLocalizedString("projectExplorer.sectionTitleProjects", comment: "")
+		static let sectionEmptyProjects		= NSLocalizedString("projectExplorer.sectionEmptyProjects", comment: "")
+		static let sectionTitleGuides		= NSLocalizedString("projectExplorer.sectionTitleGuides", comment: "")
+		static let sectionEmptyGuides		= NSLocalizedString("projectExplorer.sectionEmptyGuides", comment: "")
 		static let sectionTitleResources	= NSLocalizedString("projectExplorer.sectionTitleResources", comment: "")
-		
-		static let infoNoProject			= NSLocalizedString("projectExplorer.infoNoProject", comment: "")
+		static let sectionEmptyResources	= NSLocalizedString("projectExplorer.sectionEmptyResources", comment: "")
 		
 		struct CreateProject {
 			static let title				= NSLocalizedString("projectExplorer.createProject.title", comment: "")
