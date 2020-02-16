@@ -128,6 +128,12 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		tableView.endUpdates()
 	}
 	
+	/// Reloads the table view data
+	func reloadData() -> Void {
+		reloadSections(justFor: SectionCategory.projects.rawValue)
+		tableView.reloadData()
+	}
+	
 	/// Reloads the data for the sections or a single section in particular
 	/// - Parameter section: The id of the section if just one section should reload its data
 	private func reloadSections(justFor section: Int? = nil) -> Void {
@@ -227,7 +233,10 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == SectionCategory.projects.rawValue {
-			Application.rootViewController.showDetailViewController(UIViewController(), sender: nil)
+			let projectDetailsController = ProjectDetailsController()
+			projectDetailsController.project = IMDFProject.projects[indexPath.row]
+			let navigationController = UINavigationController(rootViewController: projectDetailsController)
+			Application.rootViewController.showDetailViewController(navigationController, sender: nil)
 		}
 		
 		if indexPath.section == SectionCategory.resources.rawValue {

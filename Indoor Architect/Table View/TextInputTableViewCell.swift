@@ -26,6 +26,7 @@ class TextInputTableViewCell: UITableViewCell, UITextFieldDelegate {
 		contentView.addSubview(textField)
 		textField.translatesAutoresizingMaskIntoConstraints = false
 		textField.placeholder = placeholder
+		textField.font = UIFont.preferredFont(forTextStyle: .body)
 		textField.adjustsFontForContentSizeCategory = true
 		textField.delegate = self
 		

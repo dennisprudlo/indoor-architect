@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		810D0D0123F3284100DC5D74 /* IMDFProjectManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */; };
 		8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */; };
+		8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC8023F9982800696FCA /* ScrollViewController.swift */; };
+		8120AC8323F999FF00696FCA /* ProjectDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC8223F999FF00696FCA /* ProjectDetailsController.swift */; };
+		8120AC8623F9A1F900696FCA /* FormInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC8523F9A1F900696FCA /* FormInputView.swift */; };
 		813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */; };
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
@@ -38,6 +41,9 @@
 /* Begin PBXFileReference section */
 		810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFProjectManifest.swift; sourceTree = "<group>"; };
 		8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEProjectTableViewCell.swift; sourceTree = "<group>"; };
+		8120AC8023F9982800696FCA /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		8120AC8223F999FF00696FCA /* ProjectDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsController.swift; sourceTree = "<group>"; };
+		8120AC8523F9A1F900696FCA /* FormInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputView.swift; sourceTree = "<group>"; };
 		813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCanvasViewController.swift; sourceTree = "<group>"; };
 		816DC52223F0606B00E1471D /* Indoor Architect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Architect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816DC52523F0606B00E1471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8120AC8423F9A1B700696FCA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8120AC8523F9A1F900696FCA /* FormInputView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		813B3E4C23F899AE00D02404 /* Map Canvas */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +118,7 @@
 		816DC52423F0606B00E1471D /* Indoor Architect */ = {
 			isa = PBXGroup;
 			children = (
+				8120AC8423F9A1B700696FCA /* Views */,
 				81F67DDC23F19449006B9187 /* Models */,
 				81F67DD023F14105006B9187 /* Utilities */,
 				81F67DCA23F12EDE006B9187 /* Table View */,
@@ -178,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				81F67DD623F14E9F006B9187 /* CreateProjectViewController.swift */,
+				8120AC8023F9982800696FCA /* ScrollViewController.swift */,
+				8120AC8223F999FF00696FCA /* ProjectDetailsController.swift */,
 			);
 			path = "Project Explorer";
 			sourceTree = "<group>";
@@ -295,13 +312,16 @@
 				81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */,
 				816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */,
 				81F67DB023F06A64006B9187 /* DetailViewController.swift in Sources */,
+				8120AC8323F999FF00696FCA /* ProjectDetailsController.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
 				81F67DD723F14E9F006B9187 /* CreateProjectViewController.swift in Sources */,
+				8120AC8623F9A1F900696FCA /* FormInputView.swift in Sources */,
 				81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
 				813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */,
+				8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */,
 				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,
 				81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */,
 				81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */,

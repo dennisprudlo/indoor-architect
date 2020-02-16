@@ -31,7 +31,7 @@ class IMDFProject {
 	/// Gets all projects available for use
 	static func all() -> [IMDFProject] {
 		return ProjectManager.shared.getAll().sorted { (firstProject, secondProject) -> Bool in
-			return firstProject.manifest.createdAt > secondProject.manifest.createdAt
+			return firstProject.manifest.updatedAt > secondProject.manifest.updatedAt
 		}
 	}
 	
