@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 /// The `ProjectExplorerHandler` is responsible for inserting and removing cells that are visible in the project explorer.
 /// It manages the sections and the cell behavior
@@ -244,7 +245,10 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 				return
 			}
 			
-			UIApplication.shared.open(url, options: [:], completionHandler: nil)
+			let safariViewController = SFSafariViewController(url: url)
+			safariViewController.preferredControlTintColor	= Color.primary
+			safariViewController.dismissButtonStyle			= .close
+			Application.rootViewController.show(safariViewController, sender: nil)
 		}
 	}
 }
