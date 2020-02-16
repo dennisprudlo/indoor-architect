@@ -31,6 +31,10 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		case resources
 	}
 	
+	let resources = [
+		(title: "IMDF Documentation", url: URL(string: "https://register.apple.com/resources/imdf/Reference/"), icon: Icon.link)
+	]
+	
 	override init() {
 		super.init()
 		
@@ -41,7 +45,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			reload:	{
 				var cells: [UITableViewCell] = []
 				IMDFProject.projects.forEach { (project) in
-					let projectCell = ProjectExplorerTableViewCell(title: project.manifest.title, icon: Icon.apple)
+					let projectCell = PEProjectTableViewCell(title: project.manifest.title, icon: Icon.apple)
 					projectCell.project = project
 					cells.append(projectCell)
 				}
@@ -63,7 +67,12 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			emptyTitle: Localizable.ProjectExplorer.sectionEmptyResources,
 			cells:		[],
 			reload:	{
-				return []
+				var cells: [UITableViewCell] = []
+				for resource in self.resources {
+					let cell = ProjectExplorerTableViewCell(title: resource.title, icon: resource.icon)
+					cells.append(cell)
+				}
+				return cells
 			}
 		)
 		
@@ -214,5 +223,17 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 	
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		return ProjectExplorerSectionHeaderView(title: sections[section].title)
+	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if indexPath.section != SectionCategory.resources.rawValue {
+			return
+		}
+		
+		guard let url = self.resources[indexPath.row].url else {
+			return
+		}
+		
+		UIApplication.shared.open(url, options: [:], completionHandler: nil)
 	}
 }

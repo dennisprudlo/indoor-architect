@@ -18,8 +18,6 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 	let iconView		= UIImageView()
 	let titleLabel		= UILabel()
 	
-	var project: IMDFProject?
-	
 	init(title: String, icon: UIImage?) {
 		super.init(style: .default, reuseIdentifier: nil)
 		selectionStyle = .none
