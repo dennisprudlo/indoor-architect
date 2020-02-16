@@ -226,14 +226,16 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if indexPath.section != SectionCategory.resources.rawValue {
-			return
+		if indexPath.section == SectionCategory.projects.rawValue {
+			Application.rootViewController.showDetailViewController(UIViewController(), sender: nil)
 		}
 		
-		guard let url = self.resources[indexPath.row].url else {
-			return
+		if indexPath.section == SectionCategory.resources.rawValue {
+			guard let url = self.resources[indexPath.row].url else {
+				return
+			}
+			
+			UIApplication.shared.open(url, options: [:], completionHandler: nil)
 		}
-		
-		UIApplication.shared.open(url, options: [:], completionHandler: nil)
 	}
 }

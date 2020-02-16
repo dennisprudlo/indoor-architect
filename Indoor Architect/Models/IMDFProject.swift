@@ -30,7 +30,9 @@ class IMDFProject {
 	
 	/// Gets all projects available for use
 	static func all() -> [IMDFProject] {
-		return ProjectManager.shared.getAll()
+		return ProjectManager.shared.getAll().sorted { (firstProject, secondProject) -> Bool in
+			return firstProject.manifest.createdAt > secondProject.manifest.createdAt
+		}
 	}
 	
 	func save() throws -> Void {
