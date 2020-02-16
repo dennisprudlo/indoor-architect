@@ -67,10 +67,14 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			}
 		)
 		
+		//
+		// Add the different section categories to the sections array
 		sections.append(projects)
 		sections.append(guides)
 		sections.append(resources)
 		
+		//
+		// Reload all sections so its data can be set
 		reloadSections()
 	}
 	

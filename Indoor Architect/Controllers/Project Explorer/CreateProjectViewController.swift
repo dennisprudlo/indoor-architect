@@ -50,24 +50,36 @@ class CreateProjectViewController: UITableViewController {
 		tableView.removeObserver(self, forKeyPath: "contentSize")
 	}
 	
+	/// Dismiss the create project modal when tapping cancel
+	/// - Parameter sender: The bar button item that was tapped
 	@objc func didTapCancel(_ sender: UIBarButtonItem) -> Void {
 		dismiss(animated: true, completion: nil)
 	}
 	
+	/// Creates a new project when tapping the create button
+	/// - Parameter sender: The button that was tapped
 	@objc func didTapCreate(_ sender: UIButton) -> Void {
 		guard let title = projectTitleCell.textField.text else {
 			return
 		}
 	
+		//
+		// First, get an unused UUID which we can use as the project identifier
 		let unusedUuid					= ProjectManager.shared.getUnusedUuid()
 		
+		//
+		// Create the project instance with the given description and client
 		let project						= IMDFProject(withUuid: unusedUuid, title: title)
 		project.manifest.description	= projectDescriptionCell.textField.text
 		project.manifest.client			= projectClientCell.textField.text
 		
 		do {
+			//
+			// Try to create the folder structure and files for the created project
 			try project.save()
 			
+			//
+			// Add the project to the global projects array and animate the insertion in the table view
 			IMDFProject.projects.insert(project, at: 0)
 			ProjectExplorerHandler.shared.insert(at: IndexPath(row: 0, section: ProjectExplorerHandler.SectionCategory.projects.rawValue), with: .fade)
 			dismiss(animated: true, completion: nil)
@@ -80,14 +92,10 @@ class CreateProjectViewController: UITableViewController {
 		self.preferredContentSize = tableView.contentSize
 	}
 	
+	/// Enable or disable the create button when the project title changes
+	/// - Parameter sender: The text field where the content was changed
 	@objc func didUpdateProjectTitle(_ sender: UITextField) -> Void {
-		if sender.text?.count ?? 0 > 0 {
-			projectCreateCell.cellButton.isEnabled = true
-			projectCreateCell.cellButton.alpha = 1
-		} else {
-			projectCreateCell.cellButton.isEnabled = false
-			projectCreateCell.cellButton.alpha = 0.5
-		}
+		projectCreateCell.setEnabled(sender.text?.count ?? 0 > 0)
 	}
 	
     // MARK: - Table view data source

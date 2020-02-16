@@ -21,6 +21,7 @@ class ButtonTableViewCell: UITableViewCell {
 		cellButton.setTitleColor(.white, for: .normal)
 		cellButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline).bold()
 		cellButton.backgroundColor = Color.primary
+		cellButton.setTitleColor(.systemGray3, for: .disabled)
 		
 		cellButton.topAnchor.constraint(equalTo:		topAnchor).isActive = true
 		cellButton.trailingAnchor.constraint(equalTo:	trailingAnchor).isActive = true
@@ -32,4 +33,12 @@ class ButtonTableViewCell: UITableViewCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	func setEnabled(_ enabled: Bool) -> Void {
+		cellButton.isEnabled = enabled
+		if enabled {
+			cellButton.backgroundColor = Color.primary
+		} else {
+			cellButton.backgroundColor = .systemGray5
+		}
+	}
 }

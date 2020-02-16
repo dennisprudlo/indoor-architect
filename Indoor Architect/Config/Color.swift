@@ -11,6 +11,7 @@ import UIKit
 enum Color {
 	
 	static let primary: UIColor = .systemRed
+	static let primaryDisabled: UIColor = .systemGroupedBackground
 	static let tableViewCellSelection: UIColor = .systemGray6
 	
 }
