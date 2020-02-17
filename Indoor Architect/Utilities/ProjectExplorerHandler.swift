@@ -233,7 +233,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if indexPath.section == SectionCategory.projects.rawValue {
+		if indexPath.section == SectionCategory.projects.rawValue && sections[indexPath.section].cells.count > 0 {
 			let projectDetailsController = ProjectDetailsController()
 			projectDetailsController.project = IMDFProject.projects[indexPath.row]
 			let navigationController = UINavigationController(rootViewController: projectDetailsController)
