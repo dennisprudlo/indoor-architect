@@ -16,9 +16,12 @@ class ProjectDetailsController: ScrollViewController {
 		}
 	}
 	
-	let projectTitleInput		= FormInputView(title: nil, description: Localizable.ProjectExplorer.CreateProject.projectTitle)
-	let projectDescriptionInput	= FormInputView(title: nil, description: Localizable.ProjectExplorer.CreateProject.projectDescription)
-	let projectClientInput		= FormInputView(title: nil, description: Localizable.ProjectExplorer.CreateProject.projectClient)
+	let projectTitleInput		= FormInputView(title: nil, label: Localizable.ProjectExplorer.CreateProject.projectTitle)
+	let projectDescriptionInput	= FormInputView(title: nil, label: Localizable.ProjectExplorer.CreateProject.projectDescription)
+	let projectClientInput		= FormInputView(title: nil, label: Localizable.ProjectExplorer.CreateProject.projectClient)
+	
+	let editMapButton			= ImageTextButton.make(title: "Edit Indoor Map", color: .systemBlue, image: Icon.map)
+	let exportMapButton			= ImageTextButton.make(title: "Export IMDF", color: .systemGray4, image: Icon.download)
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,24 +31,55 @@ class ProjectDetailsController: ScrollViewController {
 	
 	private func configure() -> Void {
 		view.backgroundColor = .systemBackground
+
+		projectTitleInput.parentController = self
+		projectDescriptionInput.parentController = self
+		projectClientInput.parentController = self
 		
-		var previousInput: FormInputView? = nil
-		for input in [projectTitleInput, projectDescriptionInput, projectClientInput] {
-			scrollContentView.addSubview(input)
-			
-			if let previous = previousInput {
-				input.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 16).isActive = true
-			} else {
-				input.topAnchor.constraint(equalTo: scrollContentView.topAnchor).isActive = true
-			}
-			
-			input.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 16).isActive = true
-			input.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -16).isActive = true
-			
-			previousInput = input
-		}
+		editMapButton.addTarget(self, action: #selector(didTapEditMap), for: .touchUpInside)
+		exportMapButton.addTarget(self, action: #selector(didTapExportMap), for: .touchUpInside)
 		
-		previousInput!.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
+		let scrollContentInset: CGFloat = 16
+		scrollContentView.addSubview(projectTitleInput)
+		scrollContentView.addSubview(projectClientInput)
+		scrollContentView.addSubview(projectDescriptionInput)
+		
+//		scrollContentView.addSubview(editMapButton)
+//		scrollContentView.addSubview(exportMapButton)
+		
+		NSLayoutConstraint.activate([
+			projectTitleInput.topAnchor.constraint(equalTo: scrollContentView.topAnchor),
+			projectTitleInput.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: scrollContentInset),
+			projectTitleInput.trailingAnchor.constraint(equalTo: projectClientInput.leadingAnchor, constant: -scrollContentInset)
+		])
+		
+		NSLayoutConstraint.activate([
+			projectClientInput.topAnchor.constraint(equalTo: scrollContentView.topAnchor),
+			projectClientInput.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -scrollContentInset),
+			projectClientInput.widthAnchor.constraint(equalTo: projectTitleInput.widthAnchor)
+		])
+		
+		NSLayoutConstraint.activate([
+			projectDescriptionInput.topAnchor.constraint(equalTo: projectTitleInput.bottomAnchor, constant: scrollContentInset),
+			projectDescriptionInput.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: scrollContentInset),
+			projectDescriptionInput.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -scrollContentInset)
+		])
+		
+		projectDescriptionInput.bottomAnchor.constraint(lessThanOrEqualTo: scrollContentView.bottomAnchor).isActive = true
+		
+//		editMapButton.topAnchor.constraint(equalTo: projectTitleInput.textFieldWrapper.topAnchor).isActive = true
+//		editMapButton.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -scrollContentInset).isActive = true
+//		editMapButton.bottomAnchor.constraint(equalTo: projectTitleInput.bottomAnchor).isActive = true
+//		editMapButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
+//
+//		projectDescriptionInput.topAnchor.constraint(equalTo: projectTitleInput.bottomAnchor, constant: scrollContentInset).isActive = true
+//		projectDescriptionInput.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: scrollContentInset).isActive = true
+//		projectDescriptionInput.trailingAnchor.constraint(equalTo: exportMapButton.leadingAnchor, constant: -scrollContentInset).isActive = true
+//
+//		exportMapButton.topAnchor.constraint(equalTo: projectDescriptionInput.textFieldWrapper.topAnchor).isActive = true
+//		exportMapButton.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -scrollContentInset).isActive = true
+//		exportMapButton.bottomAnchor.constraint(equalTo: projectDescriptionInput.bottomAnchor).isActive = true
+//		exportMapButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
 		
 		projectTitleInput.textField.addTarget(self, action: #selector(didChangeTitle), for: .editingChanged)
 		projectDescriptionInput.textField.addTarget(self, action: #selector(didChangeDescription), for: .editingChanged)
@@ -55,6 +89,14 @@ class ProjectDetailsController: ScrollViewController {
 	/// Enables the save button in the navigation bar so the changes can be stored
 	private func projectDetailsDidChange() -> Void {
 		navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveProject)), animated: true)
+	}
+	
+	@objc func didTapEditMap() -> Void {
+		print("tap edit")
+	}
+	
+	@objc func didTapExportMap() -> Void {
+		print("tap export")
 	}
 	
 	@objc func didChangeTitle(_ sender: UITextField) -> Void {

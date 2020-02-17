@@ -12,17 +12,20 @@ class FormInputView: UIView {
 
 	private let textFieldInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
 	
-	private let textFieldWrapper = UIView()
+	let textFieldWrapper = UIView()
 	let infoLabel = UILabel()
 	let textField = UITextField()
 	
-	init(title: String?, description: String?) {
+	var fieldDescription: String?
+	var parentController: UIViewController?
+	
+	init(title: String?, label: String?, description: String? = nil) {
 		super.init(frame: CGRect.zero)
 		translatesAutoresizingMaskIntoConstraints = false
 		tintColor = Color.primary
 		
 		infoLabel.translatesAutoresizingMaskIntoConstraints = false
-		infoLabel.text = description
+		infoLabel.text = label
 		infoLabel.textColor = .secondaryLabel
 		infoLabel.font = UIFont.preferredFont(forTextStyle: .callout)
 		infoLabel.adjustsFontForContentSizeCategory = true
@@ -49,6 +52,36 @@ class FormInputView: UIView {
 		textField.trailingAnchor.constraint(equalTo:	textFieldWrapper.trailingAnchor,	constant: -textFieldInsets.right).isActive = true
 		textField.bottomAnchor.constraint(equalTo:		textFieldWrapper.bottomAnchor,		constant: -textFieldInsets.bottom).isActive = true
 		textField.leadingAnchor.constraint(equalTo:		textFieldWrapper.leadingAnchor,		constant: textFieldInsets.left).isActive = true
+		
+		//
+		// When a label is set and a description string an info bubble can be shown
+		// with a more detailed description of the input
+		if let _ = label, let _ = description {
+			self.fieldDescription = description
+			
+			let infoButton = UIButton(type: .infoDark)
+			infoButton.translatesAutoresizingMaskIntoConstraints = false
+			infoButton.adjustsImageSizeForAccessibilityContentSizeCategory = true
+			addSubview(infoButton)
+			infoButton.topAnchor.constraint(equalTo: infoLabel.topAnchor).isActive = true
+			infoButton.leadingAnchor.constraint(equalTo: infoLabel.trailingAnchor, constant: 5).isActive = true
+			infoButton.bottomAnchor.constraint(equalTo: infoLabel.bottomAnchor).isActive = true
+			infoButton.addTarget(self, action: #selector(didTapHelp), for: .touchUpInside)
+		}
+	}
+	
+	@objc func didTapHelp(_ sender: UIButton) -> Void {
+		guard let fieldDescription = self.fieldDescription else {
+			return
+		}
+		
+		let popoverInfoViewController = PopoverInfoViewController()
+		popoverInfoViewController.titleLabel.text = fieldDescription
+		popoverInfoViewController.modalPresentationStyle = .popover
+		popoverInfoViewController.popoverPresentationController?.sourceView = sender
+		popoverInfoViewController.popoverPresentationController?.sourceRect = sender.bounds
+	
+		parentController?.present(popoverInfoViewController, animated: true, completion: nil)
 	}
 	
 	required init?(coder: NSCoder) {

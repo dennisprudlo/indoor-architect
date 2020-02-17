@@ -220,6 +220,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			let exportAction = UIContextualAction(style: .normal, title: nil, handler: { (action, view, completion) in
 				completion(false)
 			})
+			exportAction.backgroundColor = .systemGray4
 			exportAction.image = Icon.download
 			
 			return UISwipeActionsConfiguration(actions: [deleteAction, exportAction])
