@@ -16,6 +16,8 @@ class ProjectExplorerSectionHeaderView: UIView {
 	
 	init(title: String) {
 		super.init(frame: CGRect.zero)
+		
+		backgroundColor = .white
 		addSubview(titleLabel)
 		
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -24,10 +26,12 @@ class ProjectExplorerSectionHeaderView: UIView {
 		titleLabel.numberOfLines = 0
 		titleLabel.adjustsFontForContentSizeCategory = true
 		
-		titleLabel.topAnchor.constraint(equalTo:		topAnchor,		constant: sectionInsets.top).isActive = true
-		titleLabel.trailingAnchor.constraint(equalTo:	trailingAnchor,	constant: -sectionInsets.right).isActive = true
-		titleLabel.bottomAnchor.constraint(equalTo:		bottomAnchor,	constant: -sectionInsets.bottom).isActive = true
-		titleLabel.leadingAnchor.constraint(equalTo:	leadingAnchor,	constant: sectionInsets.left).isActive = true
+		NSLayoutConstraint.activate([
+			titleLabel.topAnchor.constraint(equalTo:		topAnchor,		constant: sectionInsets.top),
+			titleLabel.trailingAnchor.constraint(equalTo:	trailingAnchor,	constant: -sectionInsets.right),
+			titleLabel.bottomAnchor.constraint(equalTo:		bottomAnchor,	constant: -sectionInsets.bottom),
+			titleLabel.leadingAnchor.constraint(equalTo:	leadingAnchor,	constant: sectionInsets.left)
+		])
 	}
 	
 	required init?(coder: NSCoder) {
