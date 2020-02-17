@@ -16,12 +16,14 @@ class ProjectDetailsController: ScrollViewController {
 		}
 	}
 	
-	let projectTitleInput		= FormInputView(title: nil, label: Localizable.ProjectExplorer.CreateProject.projectTitle)
-	let projectDescriptionInput	= FormInputView(title: nil, label: Localizable.ProjectExplorer.CreateProject.projectDescription)
-	let projectClientInput		= FormInputView(title: nil, label: Localizable.ProjectExplorer.CreateProject.projectClient)
+	let saveBarButtonItem		= UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveProject))
 	
-	let editMapButton			= ImageTextButton.make(title: "Edit Indoor Map", color: .systemBlue, image: Icon.map)
-	let exportMapButton			= ImageTextButton.make(title: "Export IMDF", color: .systemGray4, image: Icon.download)
+	let projectTitleInput		= FormInputView(title: nil, label: Localizable.ProjectExplorer.Project.projectTitle)
+	let projectDescriptionInput	= FormInputView(title: nil, label: Localizable.ProjectExplorer.Project.projectDescription)
+	let projectClientInput		= FormInputView(title: nil, label: Localizable.ProjectExplorer.Project.projectClient)
+	
+	let editMapButton			= ImageTextButton.make(title: Localizable.ProjectExplorer.Project.editIndoorMap,		color: .systemIndigo,		image: Icon.map)
+	let exportMapButton			= ImageTextButton.make(title: Localizable.ProjectExplorer.Project.exportImdfArchive,	color: .systemGray2,	image: Icon.download)
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,7 @@ class ProjectDetailsController: ScrollViewController {
 		configure()
     }
 	
+	/// Conigures the views and sets up autolayout
 	private func configure() -> Void {
 		view.backgroundColor = .systemBackground
 
@@ -39,6 +42,29 @@ class ProjectDetailsController: ScrollViewController {
 		lastSectionView.bottomAnchor.constraint(lessThanOrEqualTo: scrollContentView.bottomAnchor).isActive = true
 	}
 	
+	/// Creates and prepares a view that can be filled with content as a new section in the project details controller
+	/// - Parameters:
+	///   - previousSibling: The previous sibling view to append to
+	///   - insets: The default inset values
+	private func createSectionView(previousSibling: UIView, withInsets insets: UIEdgeInsets) -> UIView {
+		let sectionView = UIView()
+		sectionView.translatesAutoresizingMaskIntoConstraints = false
+		scrollContentView.addSubview(sectionView)
+		
+		let anchorToPinAtTop = previousSibling == scrollContentView ? scrollContentView.topAnchor : previousSibling.bottomAnchor
+		NSLayoutConstraint.activate([
+			sectionView.topAnchor.constraint(equalTo: 		anchorToPinAtTop,					constant: insets.top * 2),
+			sectionView.trailingAnchor.constraint(equalTo:	scrollContentView.trailingAnchor,	constant: -insets.right),
+			sectionView.leadingAnchor.constraint(equalTo:	scrollContentView.leadingAnchor,	constant: insets.left)
+		])
+		
+		return sectionView
+	}
+	
+	/// Configures the main form section in the controller
+	/// - Parameters:
+	///   - insets: The default inset values
+	///   - previousSibling: The previous sibling view to append to
 	private func configureMainForm(insets: UIEdgeInsets, previousSibling: UIView) -> UIView {
 		let mainFormView = createSectionView(previousSibling: previousSibling, withInsets: insets)
 		
@@ -76,21 +102,10 @@ class ProjectDetailsController: ScrollViewController {
 		return mainFormView
 	}
 	
-	private func createSectionView(previousSibling: UIView, withInsets insets: UIEdgeInsets) -> UIView {
-		let sectionView = UIView()
-		sectionView.translatesAutoresizingMaskIntoConstraints = false
-		scrollContentView.addSubview(sectionView)
-		
-		let anchorToPinAtTop = previousSibling == scrollContentView ? scrollContentView.topAnchor : previousSibling.bottomAnchor
-		NSLayoutConstraint.activate([
-			sectionView.topAnchor.constraint(equalTo: 		anchorToPinAtTop,					constant: insets.top * 2),
-			sectionView.trailingAnchor.constraint(equalTo:	scrollContentView.trailingAnchor,	constant: -insets.right),
-			sectionView.leadingAnchor.constraint(equalTo:	scrollContentView.leadingAnchor,	constant: insets.left)
-		])
-		
-		return sectionView
-	}
-	
+	/// Configures the map actions section in the controller
+	/// - Parameters:
+	///   - insets: The default inset values
+	///   - previousSibling: The previous sibling view to append to
 	private func configureMapActions(insets: UIEdgeInsets, previousSibling: UIView) -> UIView {
 		let mapActionsView = createSectionView(previousSibling: previousSibling, withInsets: insets)
 		
@@ -121,35 +136,49 @@ class ProjectDetailsController: ScrollViewController {
 	
 	/// Enables the save button in the navigation bar so the changes can be stored
 	private func projectDetailsDidChange() -> Void {
-		navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveProject)), animated: true)
+		if navigationItem.rightBarButtonItem == saveBarButtonItem {
+			return
+		}
+		
+		navigationItem.setRightBarButton(saveBarButtonItem, animated: true)
 	}
 	
+	/// Opens the map canvas to edit the indoor map
 	@objc func didTapEditMap() -> Void {
 		let mapCanvasViewController = MapCanvasViewController()
 		mapCanvasViewController.modalPresentationStyle = .fullScreen
 		Application.rootViewController.present(mapCanvasViewController, animated: true, completion: nil)
 	}
 	
+	/// Opens the export assistent to export the map as an IMDF archive
 	@objc func didTapExportMap() -> Void {
 		print("tap export")
 	}
 	
+	/// Updates the project data after the project title was changed
+	/// - Parameter sender: The text field that was edited
 	@objc func didChangeTitle(_ sender: UITextField) -> Void {
 		guard let title = sender.text, title.count > 0 else {
 			return
 		}
+		
+		self.title = title
 		
 		project.manifest.title = title
 		project.setUpdated()
 		projectDetailsDidChange()
 	}
 	
+	/// Updates the project data after the description was changed
+	/// - Parameter sender: The text field that was edited
 	@objc func didChangeDescription(_ sender: UITextField) -> Void {
 		project.manifest.description = sender.text
 		project.setUpdated()
 		projectDetailsDidChange()
 	}
 	
+	/// Updates the project data after the client title was changed
+	/// - Parameter sender: The text field that was edited
 	@objc func didChangeClient(_ sender: UITextField) -> Void {
 		project.manifest.client = sender.text
 		project.setUpdated()
@@ -160,8 +189,8 @@ class ProjectDetailsController: ScrollViewController {
 	/// - Parameter sender: The button which was tapped
 	@objc func saveProject(_ sender: UIBarButtonItem) -> Void {
 		do {
-			try project.save()
 			navigationItem.setRightBarButton(nil, animated: true)
+			try project.save()
 			ProjectExplorerHandler.shared.reloadData()
 		} catch {
 			print(error)

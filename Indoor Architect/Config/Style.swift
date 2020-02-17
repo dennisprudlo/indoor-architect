@@ -10,6 +10,7 @@ import UIKit
 
 enum Style {
 	
+	/// The default corner radius value for buttons and views
 	static let cornerRadius: CGFloat = 7.5
 	
 }

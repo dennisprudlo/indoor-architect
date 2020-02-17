@@ -14,9 +14,11 @@
 "projectExplorer.sectionTitleResources"	= "Resources";
 "projectExplorer.sectionEmptyResources"	= "There are no resources available.";
 
-"projectExplorer.createProject.title"				= "New Project";
-"projectExplorer.createProject.buttonCreate"		= "Create Project";
-"projectExplorer.createProject.buttonCancel"		= "Cancel";
-"projectExplorer.createProject.projectTitle"		= "Project Title";
-"projectExplorer.createProject.projectDescription"	= "Description";
-"projectExplorer.createProject.projectClient"		= "Client";
+"projectExplorer.project.title"					= "New Project";
+"projectExplorer.project.buttonCreate"			= "Create Project";
+"projectExplorer.project.buttonCancel"			= "Cancel";
+"projectExplorer.project.projectTitle"			= "Project Title";
+"projectExplorer.project.projectDescription"	= "Description";
+"projectExplorer.project.projectClient"			= "Client";
+"projectExplorer.project.editIndoorMap"			= "Edit Indoor Map";
+"projectExplorer.project.exportImdfArchive"		= "Export IMDF Archive";

@@ -12,10 +12,10 @@ class CreateProjectViewController: UITableViewController {
 
 	var tableViewSections: [[UITableViewCell]] = []
 	
-	let projectTitleCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.CreateProject.projectTitle, maxLength: 50)
-	let projectDescriptionCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.CreateProject.projectDescription)
-	let projectClientCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.CreateProject.projectClient)
-	let projectCreateCell		= ButtonTableViewCell(title: Localizable.ProjectExplorer.CreateProject.buttonCreate)
+	let projectTitleCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.projectTitle, maxLength: 50)
+	let projectDescriptionCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.projectDescription)
+	let projectClientCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.projectClient)
+	let projectCreateCell		= ButtonTableViewCell(title: Localizable.ProjectExplorer.Project.buttonCreate)
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +24,9 @@ class CreateProjectViewController: UITableViewController {
 	}
 	
 	private func configure() -> Void {
-		title = Localizable.ProjectExplorer.CreateProject.title
+		title = Localizable.ProjectExplorer.Project.title
 		
-		navigationItem.leftBarButtonItem	= UIBarButtonItem(title: Localizable.ProjectExplorer.CreateProject.buttonCancel, style: .plain, target: self, action: #selector(didTapCancel))
+		navigationItem.leftBarButtonItem	= UIBarButtonItem(title: Localizable.ProjectExplorer.Project.buttonCancel, style: .plain, target: self, action: #selector(didTapCancel))
 		
 		//
 		// Configure the table view itself

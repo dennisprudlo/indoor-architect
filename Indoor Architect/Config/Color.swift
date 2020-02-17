@@ -10,8 +10,10 @@ import UIKit
 
 enum Color {
 	
+	/// The primary tint color for the application
 	static let primary: UIColor = .systemRed
-	static let primaryDisabled: UIColor = .systemGroupedBackground
+	
+	/// The color for a selected table view cell in the project explorer
 	static let tableViewCellSelection: UIColor = .systemGray6
 	
 }

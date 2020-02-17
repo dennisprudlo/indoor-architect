@@ -24,35 +24,41 @@ class FormInputView: UIView {
 		translatesAutoresizingMaskIntoConstraints = false
 		tintColor = Color.primary
 		
+		addSubview(infoLabel)
 		infoLabel.translatesAutoresizingMaskIntoConstraints = false
 		infoLabel.text = label
 		infoLabel.textColor = .secondaryLabel
 		infoLabel.font = UIFont.preferredFont(forTextStyle: .callout)
 		infoLabel.adjustsFontForContentSizeCategory = true
 		infoLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
-		addSubview(infoLabel)
-		infoLabel.topAnchor.constraint(equalTo:					topAnchor).isActive = true
-		infoLabel.trailingAnchor.constraint(lessThanOrEqualTo:	trailingAnchor).isActive = true
-		infoLabel.leadingAnchor.constraint(equalTo:				leadingAnchor).isActive = true
+		NSLayoutConstraint.activate([
+			infoLabel.topAnchor.constraint(equalTo:					topAnchor),
+			infoLabel.trailingAnchor.constraint(lessThanOrEqualTo:	trailingAnchor),
+			infoLabel.leadingAnchor.constraint(equalTo:				leadingAnchor)
+		])
 		
+		addSubview(textFieldWrapper)
 		textFieldWrapper.translatesAutoresizingMaskIntoConstraints = false
 		textFieldWrapper.backgroundColor = Color.tableViewCellSelection
 		textFieldWrapper.layer.cornerRadius = Style.cornerRadius
-		addSubview(textFieldWrapper)
-		textFieldWrapper.topAnchor.constraint(equalTo:		infoLabel.bottomAnchor, constant: 5).isActive = true
-		textFieldWrapper.trailingAnchor.constraint(equalTo:	trailingAnchor).isActive = true
-		textFieldWrapper.bottomAnchor.constraint(equalTo:	bottomAnchor).isActive = true
-		textFieldWrapper.leadingAnchor.constraint(equalTo:	leadingAnchor).isActive = true
+		NSLayoutConstraint.activate([
+			textFieldWrapper.topAnchor.constraint(equalTo:		infoLabel.bottomAnchor, constant: 5),
+			textFieldWrapper.trailingAnchor.constraint(equalTo:	trailingAnchor),
+			textFieldWrapper.bottomAnchor.constraint(equalTo:	bottomAnchor),
+			textFieldWrapper.leadingAnchor.constraint(equalTo:	leadingAnchor)
+		])
 		
+		textFieldWrapper.addSubview(textField)
 		textField.translatesAutoresizingMaskIntoConstraints = false
 		textField.text = title
 		textField.font = UIFont.preferredFont(forTextStyle: .body)
 		textField.adjustsFontForContentSizeCategory = true
-		textFieldWrapper.addSubview(textField)
-		textField.topAnchor.constraint(equalTo:			textFieldWrapper.topAnchor,			constant: textFieldInsets.top).isActive = true
-		textField.trailingAnchor.constraint(equalTo:	textFieldWrapper.trailingAnchor,	constant: -textFieldInsets.right).isActive = true
-		textField.bottomAnchor.constraint(equalTo:		textFieldWrapper.bottomAnchor,		constant: -textFieldInsets.bottom).isActive = true
-		textField.leadingAnchor.constraint(equalTo:		textFieldWrapper.leadingAnchor,		constant: textFieldInsets.left).isActive = true
+		NSLayoutConstraint.activate([
+			textField.topAnchor.constraint(equalTo:			textFieldWrapper.topAnchor,			constant: textFieldInsets.top),
+			textField.trailingAnchor.constraint(equalTo:	textFieldWrapper.trailingAnchor,	constant: -textFieldInsets.right),
+			textField.bottomAnchor.constraint(equalTo:		textFieldWrapper.bottomAnchor,		constant: -textFieldInsets.bottom),
+			textField.leadingAnchor.constraint(equalTo:		textFieldWrapper.leadingAnchor,		constant: textFieldInsets.left)
+		])
 		
 		//
 		// When a label is set and a description string an info bubble can be shown
@@ -76,6 +82,8 @@ class FormInputView: UIView {
 		}
 	}
 	
+	/// Present a popover view with a description of the current input field
+	/// - Parameter sender: The info button that was tapped
 	@objc func didTapHelp(_ sender: UIButton) -> Void {
 		guard let fieldDescription = self.fieldDescription else {
 			return

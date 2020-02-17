@@ -20,13 +20,15 @@ struct Localizable {
 		static let sectionTitleResources	= NSLocalizedString("projectExplorer.sectionTitleResources", comment: "")
 		static let sectionEmptyResources	= NSLocalizedString("projectExplorer.sectionEmptyResources", comment: "")
 		
-		struct CreateProject {
-			static let title				= NSLocalizedString("projectExplorer.createProject.title", comment: "")
-			static let buttonCreate			= NSLocalizedString("projectExplorer.createProject.buttonCreate", comment: "")
-			static let buttonCancel			= NSLocalizedString("projectExplorer.createProject.buttonCancel", comment: "")
-			static let projectTitle			= NSLocalizedString("projectExplorer.createProject.projectTitle", comment: "")
-			static let projectDescription	= NSLocalizedString("projectExplorer.createProject.projectDescription", comment: "")
-			static let projectClient		= NSLocalizedString("projectExplorer.createProject.projectClient", comment: "")
+		struct Project {
+			static let title				= NSLocalizedString("projectExplorer.project.title", comment: "")
+			static let buttonCreate			= NSLocalizedString("projectExplorer.project.buttonCreate", comment: "")
+			static let buttonCancel			= NSLocalizedString("projectExplorer.project.buttonCancel", comment: "")
+			static let projectTitle			= NSLocalizedString("projectExplorer.project.projectTitle", comment: "")
+			static let projectDescription	= NSLocalizedString("projectExplorer.project.projectDescription", comment: "")
+			static let projectClient		= NSLocalizedString("projectExplorer.project.projectClient", comment: "")
+			static let editIndoorMap		= NSLocalizedString("projectExplorer.project.editIndoorMap", comment: "")
+			static let exportImdfArchive	= NSLocalizedString("projectExplorer.project.exportImdfArchive", comment: "")
 		}
 		
 	}

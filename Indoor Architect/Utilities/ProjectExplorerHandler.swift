@@ -179,7 +179,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 				Application.rootViewController.present(mapCanvasViewController, animated: true, completion: nil)
 				completion(false)
 			})
-			canvasAction.backgroundColor = .systemBlue
+			canvasAction.backgroundColor = .systemIndigo
 			canvasAction.image = Icon.map
 			
 			return UISwipeActionsConfiguration(actions: [canvasAction])
@@ -220,7 +220,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			let exportAction = UIContextualAction(style: .normal, title: nil, handler: { (action, view, completion) in
 				completion(false)
 			})
-			exportAction.backgroundColor = .systemGray4
+			exportAction.backgroundColor = .systemGray2
 			exportAction.image = Icon.download
 			
 			return UISwipeActionsConfiguration(actions: [deleteAction, exportAction])
