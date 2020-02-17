@@ -20,6 +20,8 @@ class MapCanvasViewController: UIViewController {
 	
 	var project: IMDFProject!
 	
+	let pointerTool = MCToolStackItem(type: .drawingTool(type: .pointer))
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -40,25 +42,30 @@ class MapCanvasViewController: UIViewController {
 		topToolPalette.addToolStack(closeToolStack)
 		
 		let testStack = MCToolStack(forAxis: topToolPalette.axis)
-		testStack.addItem(MCToolStackItem(type: .custom))
+		testStack.addItem(MCToolStackItem(type: .custom, isDefault: true))
 		testStack.addItem(MCToolStackItem(type: .custom))
 		
 		topToolPalette.addToolStack(testStack)
+		topToolPalette.reset()
 	}
 	
 	func configureLeadingToolPalette() -> Void {
 		let toolStack = MCToolStack(forAxis: leadingToolPalette.axis)
-		toolStack.addItem(MCToolStackItem(type: .drawingTool(type: .pointer)))
+		toolStack.addItem(MCToolStackItem(type: .drawingTool(type: .pointer), isDefault: true))
 		toolStack.addItem(MCToolStackItem(type: .drawingTool(type: .polyline)))
 		toolStack.addItem(MCToolStackItem(type: .drawingTool(type: .polygon)))
 		toolStack.addItem(MCToolStackItem(type: .drawingTool(type: .measure)))
 		
 		leadingToolPalette.addToolStack(toolStack)
+		leadingToolPalette.reset()
 	}
 	
 	func present(forProject project: IMDFProject) -> Void {
 		self.project = project
 		self.modalPresentationStyle = .fullScreen
+		topToolPalette.reset()
+		leadingToolPalette.reset()
+		canvas.switchDrawingTool(.pointer)
 		Application.rootViewController.present(self, animated: true, completion: nil)
 	}
 }

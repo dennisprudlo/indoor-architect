@@ -10,6 +10,8 @@ import UIKit
 
 class MCToolPalette: UIStackView {
 
+	private var toolStacks: [MCToolStack] = []
+	
 	init(axis: NSLayoutConstraint.Axis) {
 		super.init(frame: .zero)
 		autolayout()
@@ -21,11 +23,22 @@ class MCToolPalette: UIStackView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	func reset() -> Void {
+		toolStacks.forEach { (toolStack) in
+			toolStack.deselectAll()
+			toolStack.selectDefault()
+		}
+	}
+	
 	func addToolStack(_ toolStack: MCToolStack) -> Void {
 		addArrangedSubview(toolStack)
+		toolStacks.append(toolStack)
 	}
 	
 	func removeToolStack(_ toolStack: MCToolStack) -> Void {
 		removeArrangedSubview(toolStack)
+		toolStacks.removeAll { (arrayToolStack) -> Bool in
+			return arrayToolStack == toolStack
+		}
 	}
 }

@@ -34,7 +34,6 @@ class MCMapCanvas: MKMapView {
 	
 	func switchDrawingTool(_ drawingTool: MCMapCanvas.DrawingTool) -> Void {
 		selectedDrawingTool = drawingTool
-		print(selectedDrawingTool)
 	}
 	
 	func addToolPalette(_ toolPalette: MCToolPalette) -> Void {

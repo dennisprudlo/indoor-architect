@@ -18,4 +18,6 @@ enum Icon {
 	static let help		= UIImage(named: "Help")!
 	
 	static let toolClose	= UIImage(named: "Close")!
+	
+	static let drawingToolPencil = UIImage(named: "Pencil")!
 }

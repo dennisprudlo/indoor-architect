@@ -21,6 +21,7 @@
 		8141C7E223FAEFA0008AC7DD /* MCToolPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7E123FAEFA0008AC7DD /* MCToolPalette.swift */; };
 		8141C7E423FAF8AB008AC7DD /* MCToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7E323FAF8AB008AC7DD /* MCToolStack.swift */; };
 		8141C7E623FAF91E008AC7DD /* MCToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7E523FAF91E008AC7DD /* MCToolStackItem.swift */; };
+		8141C7E823FB12D0008AC7DD /* Canvas Tools.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8141C7E723FB12D0008AC7DD /* Canvas Tools.xcassets */; };
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
 		816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootSplitViewController.swift */; };
@@ -61,6 +62,7 @@
 		8141C7E123FAEFA0008AC7DD /* MCToolPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCToolPalette.swift; sourceTree = "<group>"; };
 		8141C7E323FAF8AB008AC7DD /* MCToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCToolStack.swift; sourceTree = "<group>"; };
 		8141C7E523FAF91E008AC7DD /* MCToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCToolStackItem.swift; sourceTree = "<group>"; };
+		8141C7E723FB12D0008AC7DD /* Canvas Tools.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Canvas Tools.xcassets"; sourceTree = "<group>"; };
 		816DC52223F0606B00E1471D /* Indoor Architect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Architect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816DC52523F0606B00E1471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				816DC53C23F0677900E1471D /* Controllers */,
 				816DC53A23F065A800E1471D /* Supporting Files */,
 				81F67DBC23F0A2FF006B9187 /* Icons.xcassets */,
+				8141C7E723FB12D0008AC7DD /* Canvas Tools.xcassets */,
 			);
 			path = "Indoor Architect";
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				81F67DC423F0A581006B9187 /* Localizable.strings in Resources */,
 				81F67DC923F0AA5E006B9187 /* LaunchScreen.storyboard in Resources */,
+				8141C7E823FB12D0008AC7DD /* Canvas Tools.xcassets in Resources */,
 				81F67DBD23F0A2FF006B9187 /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

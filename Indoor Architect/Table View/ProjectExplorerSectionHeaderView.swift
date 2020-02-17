@@ -17,7 +17,7 @@ class ProjectExplorerSectionHeaderView: UIView {
 	init(title: String) {
 		super.init(frame: CGRect.zero)
 		
-		backgroundColor = .white
+		backgroundColor = .systemBackground
 		addSubview(titleLabel)
 		
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false

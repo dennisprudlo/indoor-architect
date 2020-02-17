@@ -10,13 +10,23 @@ import UIKit
 
 class MCToolStackItem: UIView {
 	
+	private let selectedBackgroundColor = UIColor.white.withAlphaComponent(0.2)
+	
 	private let toolIconSize: CGFloat = 32
+	private var imageIconSize: CGFloat {
+		get {
+			return sqrt((toolIconSize * toolIconSize) / 2)
+		}
+	}
+	
 	private var toolType: MCToolStackItem.ToolType = .custom
 	var stack: MCToolStack?
 	
 	private let imageView = UIImageView()
 	
 	var actionLeavesContext: Bool = false
+	var isSelected: Bool = false
+	var isDefault: Bool = false
 	
 	enum ToolType {
 		case custom
@@ -24,11 +34,12 @@ class MCToolStackItem: UIView {
 		case drawingTool(type: MCMapCanvas.DrawingTool)
 	}
 	
-	init(type: MCToolStackItem.ToolType) {
+	init(type: MCToolStackItem.ToolType, isDefault: Bool = false) {
 		super.init(frame: .zero)
 		autolayout()
 		
-		toolType = type
+		self.toolType = type
+		self.isDefault = isDefault
 		
 		NSLayoutConstraint.activate([
 			widthAnchor.constraint(equalToConstant: toolIconSize),
@@ -36,9 +47,12 @@ class MCToolStackItem: UIView {
 		])
 		
 		addSubview(imageView)
-		imageView.tintColor = UIColor.systemGray6.withAlphaComponent(0.7)
+		imageView.contentMode					= .scaleAspectFit
+		imageView.tintColor						= UIColor.white.withAlphaComponent(0.6)
+		imageView.preferredSymbolConfiguration	= UIImage.SymbolConfiguration(weight: .semibold)
 		imageView.autolayout()
-		imageView.edgesToSuperview()
+		imageView.centerBoth()
+		imageView.fixedSquaredBounds(imageIconSize)
 		
 		addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapItem)))
 		
@@ -58,25 +72,56 @@ class MCToolStackItem: UIView {
 				actionLeavesContext = true
 			case .drawingTool(let type):
 				imageView.image = Icon.help
+				if type == .pointer {
+					imageView.image = Icon.drawingToolPencil
+				}
 		}
 	}
 	
 	func setSelected(_ selected: Bool) -> Void {
+		isSelected = selected
 		if selected {
-			backgroundColor = UIColor.systemGray6.withAlphaComponent(0.3)
+			backgroundColor = selectedBackgroundColor
 		} else {
 			backgroundColor = .clear
 		}
 	}
 	
 	@objc func didTapItem(_ sender: UIView) -> Void {
-		stack?.deselectAll()
-		
-		if !actionLeavesContext {
-			setSelected(true)
+		guard stack?.isAnimating == false else {
+			return
 		}
 		
-		executeHandler()
+		let originRect = stack?.currentSelectedToolRect()
+		stack?.deselectAll()
+		
+		if let originRect = originRect?.offsetBy(dx: 5, dy: 5) {
+			
+			let animationView = UIView(frame: originRect)
+			stack?.addSubview(animationView)
+			animationView.layer.cornerRadius	= originRect.height / 2
+			animationView.backgroundColor		= selectedBackgroundColor
+			
+			stack?.isAnimating = true
+			UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+				animationView.frame = self.frame.offsetBy(dx: 5, dy: 5)
+			}) { (success) in
+				self.stack?.isAnimating = false
+				animationView.removeFromSuperview()
+				if !self.actionLeavesContext {
+					self.setSelected(true)
+				}
+				
+				self.executeHandler()
+			}
+			
+		} else {
+			if !actionLeavesContext {
+				setSelected(true)
+			}
+			
+			executeHandler()
+		}
 	}
 	
 	private func executeHandler() -> Void {

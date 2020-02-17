@@ -92,4 +92,16 @@ extension UIView {
 			centerXAnchor.constraint(equalTo: referenceView.centerXAnchor)
 		])
 	}
+	
+	func centerBoth(in view: UIView? = nil) -> Void {
+		centerVertically(in: view)
+		centerHorizontally(in: view)
+	}
+	
+	func fixedSquaredBounds(_ edgeLength: CGFloat) -> Void {
+		NSLayoutConstraint.activate([
+			widthAnchor.constraint(equalToConstant: edgeLength),
+			heightAnchor.constraint(equalTo: widthAnchor)
+		])
+	}
 }

@@ -14,6 +14,8 @@ class MCToolStack: UIView {
 	private var toolStackItems: [MCToolStackItem] = []
 	private let stackView = UIStackView()
 	
+	var isAnimating: Bool = false
+	
 	init(forAxis axis: NSLayoutConstraint.Axis) {
 		super.init(frame: .zero)
 		autolayout()
@@ -54,6 +56,24 @@ class MCToolStack: UIView {
 		toolStackItems.forEach { (toolStackItem) in
 			toolStackItem.setSelected(false)
 		}
+	}
+	
+	func selectDefault() -> Void {
+		toolStackItems.forEach { (toolStackItem) in
+			if toolStackItem.isDefault {
+				toolStackItem.setSelected(true)
+			}
+		}
+	}
+	
+	func currentSelectedToolRect() -> CGRect? {
+		var rectangle: CGRect?
+		toolStackItems.forEach { (toolStackItem) in
+			if toolStackItem.isSelected {
+				rectangle = toolStackItem.frame
+			}
+		}
+		return rectangle
 	}
 	
 	override func layoutSubviews() {
