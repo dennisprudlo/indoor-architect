@@ -66,25 +66,21 @@ class FormInputView: UIView {
 		if let _ = label, let _ = description {
 			self.fieldDescription = description
 			
-			let infoButton = UIButton(type: .system)
+			let infoButton = UIImageView(image: Icon.help)
 			addSubview(infoButton)
-			infoButton.setImage(Icon.help, for: .normal)
-			infoButton.imageView?.contentMode = .scaleAspectFit
+			infoButton.isUserInteractionEnabled = true
+			infoButton.preferredSymbolConfiguration = UIImage.SymbolConfiguration(font: infoLabel.font, scale: .medium)
 			infoButton.translatesAutoresizingMaskIntoConstraints = false
 			infoButton.adjustsImageSizeForAccessibilityContentSizeCategory = true
-			NSLayoutConstraint.activate([
-				infoButton.topAnchor.constraint(equalTo: infoLabel.topAnchor),
-				infoButton.leadingAnchor.constraint(equalTo: infoLabel.trailingAnchor),
-				infoButton.bottomAnchor.constraint(equalTo: infoLabel.bottomAnchor)
-			])
+			infoButton.leadingAnchor.constraint(equalTo: infoLabel.trailingAnchor, constant: 3).isActive = true
 			
-			infoButton.addTarget(self, action: #selector(didTapHelp), for: .touchUpInside)
+			infoButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHelp(_:))))
 		}
 	}
 	
 	/// Present a popover view with a description of the current input field
 	/// - Parameter sender: The info button that was tapped
-	@objc func didTapHelp(_ sender: UIButton) -> Void {
+	@objc func didTapHelp(_ sender: UITapGestureRecognizer) -> Void {
 		guard let fieldDescription = self.fieldDescription else {
 			return
 		}
@@ -92,8 +88,8 @@ class FormInputView: UIView {
 		let popoverInfoViewController = PopoverInfoViewController()
 		popoverInfoViewController.titleLabel.text = fieldDescription
 		popoverInfoViewController.modalPresentationStyle = .popover
-		popoverInfoViewController.popoverPresentationController?.sourceView = sender
-		popoverInfoViewController.popoverPresentationController?.sourceRect = sender.bounds
+		popoverInfoViewController.popoverPresentationController?.sourceView = infoLabel
+		popoverInfoViewController.popoverPresentationController?.sourceRect = infoLabel.bounds
 	
 		parentController?.present(popoverInfoViewController, animated: true, completion: nil)
 	}

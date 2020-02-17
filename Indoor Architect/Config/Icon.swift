@@ -10,14 +10,15 @@ import UIKit
 
 enum Icon {
 	
-	static let apple	= UIImage(named: "Apple")!
-	static let download	= UIImage(named: "Download")!
-	static let trash	= UIImage(named: "Trash")!
-	static let map		= UIImage(named: "Map")!
-	static let link		= UIImage(named: "Link")!
-	static let help		= UIImage(named: "Help")!
+	static let apple	= UIImage(systemName: "folder.fill")!
+	static let download	= UIImage(systemName: "arrow.down.doc.fill")!
+	static let trash	= UIImage(systemName: "trash.fill")!
+	static let map		= UIImage(systemName: "map.fill")!
+	static let link		= UIImage(systemName: "link")!
+	static let help		= UIImage(systemName: "questionmark.circle")!
 	
-	static let toolClose	= UIImage(named: "Close")!
+	static let toolClose	= UIImage(systemName: "xmark")!
 	
-	static let drawingToolPencil = UIImage(named: "Pencil")!
+	static let drawingToolPencil = UIImage(systemName: "pencil")!
+	static let drawingToolPolygon = UIImage(systemName: "skew")!
 }

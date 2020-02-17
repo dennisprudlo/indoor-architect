@@ -36,16 +36,17 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 		selectionView.bottomAnchor.constraint(equalTo:		bottomAnchor,	constant: -cellInset.bottom).isActive = true
 		selectionView.leadingAnchor.constraint(equalTo:		leadingAnchor,	constant: cellInset.left).isActive = true
 		
+		let preferredFont = UIFont.preferredFont(forTextStyle: .body)
+		
 		iconView.image = icon
+		iconView.preferredSymbolConfiguration = UIImage.SymbolConfiguration(font: preferredFont, scale: .medium)
 		iconView.tintColor = Color.primary
 		iconView.leadingAnchor.constraint(equalTo:			selectionView.leadingAnchor, constant: viewInset.left).isActive = true
 		iconView.centerYAnchor.constraint(equalTo: 			selectionView.centerYAnchor).isActive = true
-		iconView.heightAnchor.constraint(equalToConstant:	iconSize).isActive = true
-		iconView.widthAnchor.constraint(equalTo:			iconView.heightAnchor).isActive = true
 		
 		titleLabel.text = title
 		titleLabel.numberOfLines = 0
-		titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
+		titleLabel.font = preferredFont
 		titleLabel.adjustsFontForContentSizeCategory = true
 		titleLabel.topAnchor.constraint(equalTo:			selectionView.topAnchor,		constant: viewInset.top).isActive = true
 		titleLabel.trailingAnchor.constraint(equalTo:		selectionView.trailingAnchor,	constant: -viewInset.right).isActive = true

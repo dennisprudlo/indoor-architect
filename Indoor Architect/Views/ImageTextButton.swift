@@ -10,10 +10,11 @@ import UIKit
 
 class ImageTextButton: UIButton {
 
-	static func make(title: String, color: UIColor, image: UIImage?, customTintColor: UIColor = .white, spacing: CGFloat = 10) -> UIButton {
+	static func make(title: String, color: UIColor, image: UIImage?, customTintColor: UIColor = .white, spacing: CGFloat = 20) -> UIButton {
 		let button = UIButton(type: .system)
 		
 		button.translatesAutoresizingMaskIntoConstraints = false
+		button.titleLabel?.font		= UIFont.preferredFont(forTextStyle: .headline).bold()
 		button.tintColor			= customTintColor
 		button.backgroundColor		= color
 		button.layer.cornerRadius	= Style.cornerRadius

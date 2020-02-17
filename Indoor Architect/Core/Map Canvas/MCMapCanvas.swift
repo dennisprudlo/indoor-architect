@@ -42,7 +42,7 @@ class MCMapCanvas: MKMapView {
 		addSubview(toolPalette)
 		
 		if toolPalette.axis == .horizontal {
-			toolPalette.topEdgeToSafeSuperview(withInset: toolPaletteInset)
+			toolPalette.topEdgeToSafeSuperview()
 			toolPalette.leadingEdgeToSafeSuperview(withInset: toolPaletteInset)
 		} else {
 			toolPalette.leadingEdgeToSafeSuperview(withInset: toolPaletteInset)

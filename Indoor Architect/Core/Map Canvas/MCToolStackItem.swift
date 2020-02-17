@@ -74,6 +74,8 @@ class MCToolStackItem: UIView {
 				imageView.image = Icon.help
 				if type == .pointer {
 					imageView.image = Icon.drawingToolPencil
+				} else if type == .polygon {
+					imageView.image = Icon.drawingToolPolygon
 				}
 		}
 	}
