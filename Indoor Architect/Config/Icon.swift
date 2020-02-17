@@ -19,6 +19,17 @@ enum Icon {
 	
 	static let toolClose	= UIImage(systemName: "xmark")!
 	
-	static let drawingToolPencil = UIImage(systemName: "pencil")!
+	static let drawingToolPointer = UIImage(systemName: "hand.draw")!
+	static let drawingToolPolyline = UIImage(systemName: "italic")!
 	static let drawingToolPolygon = UIImage(systemName: "skew")!
+	static let drawingToolMeasure = UIImage(systemName: "perspective")!
+	
+	static func imageFor(drawingTool: MCMapCanvas.DrawingTool) -> UIImage {
+		switch drawingTool {
+			case .pointer:	return Icon.drawingToolPointer
+			case .polyline:	return Icon.drawingToolPolyline
+			case .polygon:	return Icon.drawingToolPolygon
+			case .measure:	return Icon.drawingToolMeasure
+		}
+	}
 }

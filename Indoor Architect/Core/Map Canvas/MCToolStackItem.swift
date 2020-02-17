@@ -71,12 +71,7 @@ class MCToolStackItem: UIView {
 				imageView.image = Icon.toolClose
 				actionLeavesContext = true
 			case .drawingTool(let type):
-				imageView.image = Icon.help
-				if type == .pointer {
-					imageView.image = Icon.drawingToolPencil
-				} else if type == .polygon {
-					imageView.image = Icon.drawingToolPolygon
-				}
+				imageView.image = Icon.imageFor(drawingTool: type)
 		}
 	}
 	
