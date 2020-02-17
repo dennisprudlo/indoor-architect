@@ -20,7 +20,7 @@ class ProjectDetailsController: ScrollViewController {
 	
 	let projectTitleInput		= FormInputView(title: nil, label: Localizable.ProjectExplorer.Project.projectTitle)
 	let projectDescriptionInput	= FormInputView(title: nil, label: Localizable.ProjectExplorer.Project.projectDescription)
-	let projectClientInput		= FormInputView(title: nil, label: Localizable.ProjectExplorer.Project.projectClient)
+	let projectClientInput		= FormInputView(title: nil, label: Localizable.ProjectExplorer.Project.projectClient, description: Localizable.ProjectExplorer.Project.projectClientHelp)
 	
 	let editMapButton			= ImageTextButton.make(title: Localizable.ProjectExplorer.Project.editIndoorMap,		color: .systemIndigo,		image: Icon.map)
 	let exportMapButton			= ImageTextButton.make(title: Localizable.ProjectExplorer.Project.exportImdfArchive,	color: .systemGray2,	image: Icon.download)

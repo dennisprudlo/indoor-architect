@@ -27,6 +27,7 @@ struct Localizable {
 			static let projectTitle			= NSLocalizedString("projectExplorer.project.projectTitle", comment: "")
 			static let projectDescription	= NSLocalizedString("projectExplorer.project.projectDescription", comment: "")
 			static let projectClient		= NSLocalizedString("projectExplorer.project.projectClient", comment: "")
+			static let projectClientHelp	= NSLocalizedString("projectExplorer.project.projectClientHelp", comment: "")
 			static let editIndoorMap		= NSLocalizedString("projectExplorer.project.editIndoorMap", comment: "")
 			static let exportImdfArchive	= NSLocalizedString("projectExplorer.project.exportImdfArchive", comment: "")
 		}

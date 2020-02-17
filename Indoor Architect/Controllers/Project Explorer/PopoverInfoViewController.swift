@@ -15,11 +15,15 @@ class PopoverInfoViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		view.backgroundColor = .systemBackground
 
 		view.addSubview(titleLabel)
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false
 		titleLabel.textAlignment = .center
 		titleLabel.numberOfLines = 0
+		titleLabel.font = UIFont.preferredFont(forTextStyle: .callout)
+		titleLabel.textColor = .secondaryLabel
 		NSLayoutConstraint.activate([
 			titleLabel.topAnchor.constraint(equalTo:		view.topAnchor,			constant: labelInsets.top),
 			titleLabel.trailingAnchor.constraint(lessThanOrEqualTo:	view.trailingAnchor,	constant: -labelInsets.right),

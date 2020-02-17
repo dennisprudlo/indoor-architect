@@ -20,5 +20,6 @@
 "projectExplorer.project.projectTitle"			= "Project Title";
 "projectExplorer.project.projectDescription"	= "Description";
 "projectExplorer.project.projectClient"			= "Client";
+"projectExplorer.project.projectClientHelp"		= "The client is the person or organization that ordered the Indoor Map.";
 "projectExplorer.project.editIndoorMap"			= "Edit Indoor Map";
 "projectExplorer.project.exportImdfArchive"		= "Export IMDF Archive";
