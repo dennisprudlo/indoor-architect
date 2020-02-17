@@ -30,7 +30,7 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 		selectionView.addSubview(iconView)
 		selectionView.addSubview(titleLabel)
 		
-		selectionView.layer.cornerRadius = 7.5
+		selectionView.layer.cornerRadius = Style.cornerRadius
 		selectionView.topAnchor.constraint(equalTo:			topAnchor,		constant: cellInset.top).isActive = true
 		selectionView.trailingAnchor.constraint(equalTo:	trailingAnchor,	constant: -cellInset.right).isActive = true
 		selectionView.bottomAnchor.constraint(equalTo:		bottomAnchor,	constant: -cellInset.bottom).isActive = true

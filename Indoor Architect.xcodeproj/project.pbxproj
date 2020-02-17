@@ -15,6 +15,7 @@
 		813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */; };
 		8141C7D623FAACA0008AC7DD /* ImageTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D523FAACA0008AC7DD /* ImageTextButton.swift */; };
 		8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */; };
+		8141C7DA23FAD075008AC7DD /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D923FAD075008AC7DD /* Style.swift */; };
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
 		816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootSplitViewController.swift */; };
@@ -49,6 +50,7 @@
 		813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCanvasViewController.swift; sourceTree = "<group>"; };
 		8141C7D523FAACA0008AC7DD /* ImageTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextButton.swift; sourceTree = "<group>"; };
 		8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverInfoViewController.swift; sourceTree = "<group>"; };
+		8141C7D923FAD075008AC7DD /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		816DC52223F0606B00E1471D /* Indoor Architect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Architect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816DC52523F0606B00E1471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				81F67DB623F09971006B9187 /* Color.swift */,
 				81F67DBE23F0A36A006B9187 /* Icon.swift */,
 				81F67DC023F0A4EC006B9187 /* Localizable.swift */,
+				8141C7D923FAD075008AC7DD /* Style.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				8120AC8623F9A1F900696FCA /* FormInputView.swift in Sources */,
 				81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
+				8141C7DA23FAD075008AC7DD /* Style.swift in Sources */,
 				813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */,
 				8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */,
 				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,

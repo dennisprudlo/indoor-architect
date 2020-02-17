@@ -29,6 +29,7 @@ class FormInputView: UIView {
 		infoLabel.textColor = .secondaryLabel
 		infoLabel.font = UIFont.preferredFont(forTextStyle: .callout)
 		infoLabel.adjustsFontForContentSizeCategory = true
+		infoLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
 		addSubview(infoLabel)
 		infoLabel.topAnchor.constraint(equalTo:					topAnchor).isActive = true
 		infoLabel.trailingAnchor.constraint(lessThanOrEqualTo:	trailingAnchor).isActive = true
@@ -36,7 +37,7 @@ class FormInputView: UIView {
 		
 		textFieldWrapper.translatesAutoresizingMaskIntoConstraints = false
 		textFieldWrapper.backgroundColor = Color.tableViewCellSelection
-		textFieldWrapper.layer.cornerRadius = 7.5
+		textFieldWrapper.layer.cornerRadius = Style.cornerRadius
 		addSubview(textFieldWrapper)
 		textFieldWrapper.topAnchor.constraint(equalTo:		infoLabel.bottomAnchor, constant: 5).isActive = true
 		textFieldWrapper.trailingAnchor.constraint(equalTo:	trailingAnchor).isActive = true
@@ -59,13 +60,18 @@ class FormInputView: UIView {
 		if let _ = label, let _ = description {
 			self.fieldDescription = description
 			
-			let infoButton = UIButton(type: .infoDark)
+			let infoButton = UIButton(type: .system)
+			addSubview(infoButton)
+			infoButton.setImage(Icon.help, for: .normal)
+			infoButton.imageView?.contentMode = .scaleAspectFit
 			infoButton.translatesAutoresizingMaskIntoConstraints = false
 			infoButton.adjustsImageSizeForAccessibilityContentSizeCategory = true
-			addSubview(infoButton)
-			infoButton.topAnchor.constraint(equalTo: infoLabel.topAnchor).isActive = true
-			infoButton.leadingAnchor.constraint(equalTo: infoLabel.trailingAnchor, constant: 5).isActive = true
-			infoButton.bottomAnchor.constraint(equalTo: infoLabel.bottomAnchor).isActive = true
+			NSLayoutConstraint.activate([
+				infoButton.topAnchor.constraint(equalTo: infoLabel.topAnchor),
+				infoButton.leadingAnchor.constraint(equalTo: infoLabel.trailingAnchor),
+				infoButton.bottomAnchor.constraint(equalTo: infoLabel.bottomAnchor)
+			])
+			
 			infoButton.addTarget(self, action: #selector(didTapHelp), for: .touchUpInside)
 		}
 	}

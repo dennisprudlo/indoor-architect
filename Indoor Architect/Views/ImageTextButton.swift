@@ -10,16 +10,19 @@ import UIKit
 
 class ImageTextButton: UIButton {
 
-	static func make(title: String, color: UIColor, image: UIImage?, customTintColor: UIColor = .white) -> UIButton {
+	static func make(title: String, color: UIColor, image: UIImage?, customTintColor: UIColor = .white, spacing: CGFloat = 10) -> UIButton {
 		let button = UIButton(type: .system)
 		
 		button.translatesAutoresizingMaskIntoConstraints = false
+		button.tintColor			= customTintColor
+		button.backgroundColor		= color
+		button.layer.cornerRadius	= Style.cornerRadius
+		button.imageEdgeInsets		= UIEdgeInsets(top: 0, left: 0, bottom: 0, right: spacing / 2)
+		button.titleEdgeInsets		= UIEdgeInsets(top: 0, left: spacing / 2, bottom: 0, right: 0)
+		
 		button.setTitle(title, for: .normal)
 		button.setTitleColor(customTintColor, for: .normal)
 		button.setImage(image, for: .normal)
-		button.tintColor = customTintColor
-		button.backgroundColor = color
-		button.layer.cornerRadius = 7.5
 		
 		return button
 	}

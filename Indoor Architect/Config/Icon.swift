@@ -15,5 +15,6 @@ enum Icon {
 	static let trash	= UIImage(named: "Trash")!
 	static let map		= UIImage(named: "Map")!
 	static let link		= UIImage(named: "Link")!
+	static let help		= UIImage(named: "Help")!
 	
 }
