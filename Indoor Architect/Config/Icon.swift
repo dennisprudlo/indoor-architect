@@ -17,4 +17,5 @@ enum Icon {
 	static let link		= UIImage(named: "Link")!
 	static let help		= UIImage(named: "Help")!
 	
+	static let toolClose	= UIImage(named: "Close")!
 }

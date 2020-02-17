@@ -174,10 +174,9 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		if indexPath.section == SectionCategory.projects.rawValue {
 			let canvasAction = UIContextualAction(style: .normal, title: nil, handler: { (action, view, completion) in
 				
-				let mapCanvasViewController = MapCanvasViewController()
-				mapCanvasViewController.modalPresentationStyle = .fullScreen
-				Application.rootViewController.present(mapCanvasViewController, animated: true, completion: nil)
-				completion(false)
+				let imdfProject = IMDFProject.projects[indexPath.row]
+				MapCanvasViewController.shared.present(forProject: imdfProject)
+				completion(true)
 			})
 			canvasAction.backgroundColor = .systemIndigo
 			canvasAction.image = Icon.map

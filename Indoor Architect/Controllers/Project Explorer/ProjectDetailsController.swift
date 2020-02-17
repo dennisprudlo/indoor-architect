@@ -145,9 +145,7 @@ class ProjectDetailsController: ScrollViewController {
 	
 	/// Opens the map canvas to edit the indoor map
 	@objc func didTapEditMap() -> Void {
-		let mapCanvasViewController = MapCanvasViewController()
-		mapCanvasViewController.modalPresentationStyle = .fullScreen
-		Application.rootViewController.present(mapCanvasViewController, animated: true, completion: nil)
+		MapCanvasViewController.shared.present(forProject: project)
 	}
 	
 	/// Opens the export assistent to export the map as an IMDF archive

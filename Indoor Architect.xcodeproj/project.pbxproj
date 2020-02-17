@@ -17,6 +17,10 @@
 		8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */; };
 		8141C7DA23FAD075008AC7DD /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D923FAD075008AC7DD /* Style.swift */; };
 		8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7DB23FAE980008AC7DD /* Constraints.swift */; };
+		8141C7E023FAEE15008AC7DD /* MCMapCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */; };
+		8141C7E223FAEFA0008AC7DD /* MCToolPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7E123FAEFA0008AC7DD /* MCToolPalette.swift */; };
+		8141C7E423FAF8AB008AC7DD /* MCToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7E323FAF8AB008AC7DD /* MCToolStack.swift */; };
+		8141C7E623FAF91E008AC7DD /* MCToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7E523FAF91E008AC7DD /* MCToolStackItem.swift */; };
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
 		816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootSplitViewController.swift */; };
@@ -53,6 +57,10 @@
 		8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverInfoViewController.swift; sourceTree = "<group>"; };
 		8141C7D923FAD075008AC7DD /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		8141C7DB23FAE980008AC7DD /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCMapCanvas.swift; sourceTree = "<group>"; };
+		8141C7E123FAEFA0008AC7DD /* MCToolPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCToolPalette.swift; sourceTree = "<group>"; };
+		8141C7E323FAF8AB008AC7DD /* MCToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCToolStack.swift; sourceTree = "<group>"; };
+		8141C7E523FAF91E008AC7DD /* MCToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCToolStackItem.swift; sourceTree = "<group>"; };
 		816DC52223F0606B00E1471D /* Indoor Architect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Architect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816DC52523F0606B00E1471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +116,25 @@
 			path = "Map Canvas";
 			sourceTree = "<group>";
 		};
+		8141C7DD23FAEDF8008AC7DD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8141C7DE23FAEE05008AC7DD /* Map Canvas */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8141C7DE23FAEE05008AC7DD /* Map Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */,
+				8141C7E123FAEFA0008AC7DD /* MCToolPalette.swift */,
+				8141C7E323FAF8AB008AC7DD /* MCToolStack.swift */,
+				8141C7E523FAF91E008AC7DD /* MCToolStackItem.swift */,
+			);
+			path = "Map Canvas";
+			sourceTree = "<group>";
+		};
 		816DC51923F0606B00E1471D = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +154,7 @@
 		816DC52423F0606B00E1471D /* Indoor Architect */ = {
 			isa = PBXGroup;
 			children = (
+				8141C7DD23FAEDF8008AC7DD /* Core */,
 				8120AC8423F9A1B700696FCA /* Views */,
 				81F67DDC23F19449006B9187 /* Models */,
 				81F67DD023F14105006B9187 /* Utilities */,
@@ -313,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81F67DB323F06F6E006B9187 /* Application.swift in Sources */,
+				8141C7E023FAEE15008AC7DD /* MCMapCanvas.swift in Sources */,
 				81F67DAE23F06A4B006B9187 /* MasterViewController.swift in Sources */,
 				8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */,
 				81F67DBF23F0A36A006B9187 /* Icon.swift in Sources */,
@@ -327,6 +356,7 @@
 				8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */,
 				8141C7D623FAACA0008AC7DD /* ImageTextButton.swift in Sources */,
 				8120AC8323F999FF00696FCA /* ProjectDetailsController.swift in Sources */,
+				8141C7E223FAEFA0008AC7DD /* MCToolPalette.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
@@ -337,11 +367,13 @@
 				8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */,
 				8141C7DA23FAD075008AC7DD /* Style.swift in Sources */,
 				813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */,
+				8141C7E623FAF91E008AC7DD /* MCToolStackItem.swift in Sources */,
 				8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */,
 				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,
 				81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */,
 				81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */,
 				816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */,
+				8141C7E423FAF8AB008AC7DD /* MCToolStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
