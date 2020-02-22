@@ -9,8 +9,6 @@
 import UIKit
 
 class MCToolPalette: UIStackView {
-
-	private var toolStacks: [MCToolStack] = []
 	
 	init(axis: NSLayoutConstraint.Axis) {
 		super.init(frame: .zero)
@@ -23,22 +21,24 @@ class MCToolPalette: UIStackView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	/// Resets all tool stacks to its default values
+	///
+	/// When a canvas is closed and then reopened the user may have selected a different
+	/// project, so the tools are resetted to its default values
 	func reset() -> Void {
-		toolStacks.forEach { (toolStack) in
-			toolStack.deselectAll()
-			toolStack.selectDefault()
+		arrangedSubviews.forEach { (subview) in
+			if let toolStack = subview as? MCToolStack {
+				toolStack.deselectAll()
+				toolStack.selectDefault()
+			}
 		}
 	}
 	
 	func addToolStack(_ toolStack: MCToolStack) -> Void {
 		addArrangedSubview(toolStack)
-		toolStacks.append(toolStack)
 	}
 	
 	func removeToolStack(_ toolStack: MCToolStack) -> Void {
 		removeArrangedSubview(toolStack)
-		toolStacks.removeAll { (arrayToolStack) -> Bool in
-			return arrayToolStack == toolStack
-		}
 	}
 }

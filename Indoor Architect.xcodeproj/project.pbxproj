@@ -26,6 +26,8 @@
 		816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootSplitViewController.swift */; };
 		81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */; };
 		81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */; };
+		81E2FA462401486C00CA82AA /* MCSlidingToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA452401486C00CA82AA /* MCSlidingToolStack.swift */; };
+		81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA472401937100CA82AA /* MCCloseToolStack.swift */; };
 		81F67DAE23F06A4B006B9187 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAD23F06A4B006B9187 /* MasterViewController.swift */; };
 		81F67DB023F06A64006B9187 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAF23F06A64006B9187 /* DetailViewController.swift */; };
 		81F67DB323F06F6E006B9187 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DB223F06F6E006B9187 /* Application.swift */; };
@@ -67,6 +69,8 @@
 		816DC53D23F0679900E1471D /* RootSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSplitViewController.swift; sourceTree = "<group>"; };
 		81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerPlaceholderCell.swift; sourceTree = "<group>"; };
 		81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerHandler.swift; sourceTree = "<group>"; };
+		81E2FA452401486C00CA82AA /* MCSlidingToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSlidingToolStack.swift; sourceTree = "<group>"; };
+		81E2FA472401937100CA82AA /* MCCloseToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCloseToolStack.swift; sourceTree = "<group>"; };
 		81F67DAD23F06A4B006B9187 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		81F67DAF23F06A64006B9187 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		81F67DB223F06F6E006B9187 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
@@ -125,9 +129,9 @@
 		8141C7DE23FAEE05008AC7DD /* Map Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				81E2FA49240194DF00CA82AA /* Tool Stack */,
 				8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */,
 				8141C7E123FAEFA0008AC7DD /* MCToolPalette.swift */,
-				8141C7E323FAF8AB008AC7DD /* MCToolStack.swift */,
 				8141C7E523FAF91E008AC7DD /* MCToolStackItem.swift */,
 			);
 			path = "Map Canvas";
@@ -186,6 +190,16 @@
 				81F67DAF23F06A64006B9187 /* DetailViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		81E2FA49240194DF00CA82AA /* Tool Stack */ = {
+			isa = PBXGroup;
+			children = (
+				8141C7E323FAF8AB008AC7DD /* MCToolStack.swift */,
+				81E2FA452401486C00CA82AA /* MCSlidingToolStack.swift */,
+				81E2FA472401937100CA82AA /* MCCloseToolStack.swift */,
+			);
+			path = "Tool Stack";
 			sourceTree = "<group>";
 		};
 		81F67DB123F06F60006B9187 /* Config */ = {
@@ -355,6 +369,7 @@
 				8141C7E223FAEFA0008AC7DD /* MCToolPalette.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
+				81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
 				81F67DD723F14E9F006B9187 /* CreateProjectViewController.swift in Sources */,
 				8120AC8623F9A1F900696FCA /* FormInputView.swift in Sources */,
@@ -370,6 +385,7 @@
 				81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */,
 				816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */,
 				8141C7E423FAF8AB008AC7DD /* MCToolStack.swift in Sources */,
+				81E2FA462401486C00CA82AA /* MCSlidingToolStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

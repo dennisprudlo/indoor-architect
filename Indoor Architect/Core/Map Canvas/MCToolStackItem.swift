@@ -19,17 +19,23 @@ class MCToolStackItem: UIView {
 		}
 	}
 	
+	static let tintColor = UIColor.white.withAlphaComponent(0.6)
+	static let prominentTintColor = UIColor.white.withAlphaComponent(0.8)
+	
 	private var toolType: MCToolStackItem.ToolType = .custom
 	var stack: MCToolStack?
 	
 	private let imageView = UIImageView()
+	let titleLabel = UILabel()
 	
 	var actionLeavesContext: Bool = false
+	
 	var isSelected: Bool = false
 	var isDefault: Bool = false
 	
 	enum ToolType {
 		case custom
+		case label
 		case close
 		case drawingTool(type: MCMapCanvas.DrawingTool)
 	}
@@ -41,18 +47,20 @@ class MCToolStackItem: UIView {
 		self.toolType = type
 		self.isDefault = isDefault
 		
-		NSLayoutConstraint.activate([
-			widthAnchor.constraint(equalToConstant: toolIconSize),
-			heightAnchor.constraint(equalTo: widthAnchor)
-		])
-		
 		addSubview(imageView)
 		imageView.contentMode					= .scaleAspectFit
-		imageView.tintColor						= UIColor.white.withAlphaComponent(0.6)
+		imageView.tintColor						= MCToolStackItem.tintColor
 		imageView.preferredSymbolConfiguration	= UIImage.SymbolConfiguration(weight: .semibold)
 		imageView.autolayout()
 		imageView.centerBoth()
 		imageView.fixedSquaredBounds(imageIconSize)
+		
+		addSubview(titleLabel)
+		titleLabel.textColor = MCToolStackItem.tintColor
+		titleLabel.autolayout()
+		titleLabel.centerVertically()
+		titleLabel.horizontalEdgesToSuperview(withInsets: UIEdgeInsets(top: 0, left: toolIconSize / 2, bottom: 0, right: toolIconSize / 2), safeArea: false)
+		titleLabel.adjustsFontSizeToFitWidth = true
 		
 		addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapItem)))
 		
@@ -67,11 +75,25 @@ class MCToolStackItem: UIView {
 		switch toolType {
 			case .custom:
 				imageView.image = nil
+			case .label:
+				imageView.image = nil
 			case .close:
 				imageView.image = Icon.toolClose
 				actionLeavesContext = true
 			case .drawingTool(let type):
 				imageView.image = Icon.imageFor(drawingTool: type)
+		}
+		
+		switch toolType {
+			case .label:
+				NSLayoutConstraint.activate([
+					heightAnchor.constraint(equalToConstant: toolIconSize)
+				])
+			default:
+				NSLayoutConstraint.activate([
+					widthAnchor.constraint(equalToConstant: toolIconSize),
+					heightAnchor.constraint(equalTo: widthAnchor)
+				])
 		}
 	}
 	
@@ -85,7 +107,7 @@ class MCToolStackItem: UIView {
 	}
 	
 	@objc func didTapItem(_ sender: UIView) -> Void {
-		guard stack?.isAnimating == false else {
+		guard stack?.isPerformingAnimation == false else {
 			return
 		}
 		
@@ -99,11 +121,11 @@ class MCToolStackItem: UIView {
 			animationView.layer.cornerRadius	= originRect.height / 2
 			animationView.backgroundColor		= selectedBackgroundColor
 			
-			stack?.isAnimating = true
+			stack?.isPerformingAnimation = true
 			UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
 				animationView.frame = self.frame.offsetBy(dx: 5, dy: 5)
 			}) { (success) in
-				self.stack?.isAnimating = false
+				self.stack?.isPerformingAnimation = false
 				animationView.removeFromSuperview()
 				if !self.actionLeavesContext {
 					self.setSelected(true)
@@ -129,11 +151,13 @@ class MCToolStackItem: UIView {
 				MapCanvasViewController.shared.dismiss(animated: true, completion: nil)
 			case .drawingTool(let type):
 				MapCanvasViewController.shared.canvas.switchDrawingTool(type)
+			case .label:
+				print("label tap")
 		}
 	}
 	
 	override func layoutSubviews() {
 		super.layoutSubviews()
-		layer.cornerRadius = frame.size.width / 2
+		layer.cornerRadius = min(frame.size.height, frame.size.width) / 2
 	}
 }
