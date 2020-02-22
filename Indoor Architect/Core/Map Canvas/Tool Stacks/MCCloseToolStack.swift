@@ -12,8 +12,8 @@ class MCCloseToolStack: MCToolStack {
 	
 	private static let animationSpeed: TimeInterval = 0.1
 	
-	let closeItem = MCToolStackItem(type: .close)
-	let infoLabel = MCToolStackItem(type: .label)
+	let closeItem = MCCloseToolStackItem()
+	let infoLabel = MCLabelToolStackItem()
 	
 	override init(forAxis axis: NSLayoutConstraint.Axis) {
 		super.init(forAxis: axis)
@@ -30,7 +30,7 @@ class MCCloseToolStack: MCToolStack {
 	}
 	
 	func showInfoLabel(withText text: String) -> Void {
-		infoLabel.titleLabel.text = text
+		infoLabel.setTitle(text)
 		layoutIfNeeded()
 		
 		UIView.animate(withDuration: MCCloseToolStack.animationSpeed) {

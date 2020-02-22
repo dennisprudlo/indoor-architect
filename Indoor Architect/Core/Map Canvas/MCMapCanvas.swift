@@ -65,12 +65,7 @@ class MCMapCanvas: MKMapView {
 		generalToolsPalette.topEdgeToSafeSuperview()
 		generalToolsPalette.leadingEdgeToSafeSuperview(withInset: MCMapCanvas.toolPaletteInset)
 		
-		let closeToolStack = MCCloseToolStack(forAxis: generalToolsPalette.axis)
-		generalToolsPalette.addToolStack(closeToolStack)
-		
-		DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-			closeToolStack.showInfoLabel(withText: "test")
-		}
+		generalToolsPalette.addToolStack(MCCloseToolStack(forAxis: generalToolsPalette.axis))
 		
 		generalToolsPalette.reset()
 	}
@@ -84,10 +79,10 @@ class MCMapCanvas: MKMapView {
 		drawingToolsPalette.centerVertically()
 		
 		let drawingToolStack = MCToolStack(forAxis: drawingToolsPalette.axis)
-		drawingToolStack.addItem(MCToolStackItem(type: .drawingTool(type: .pointer), isDefault: true))
-		drawingToolStack.addItem(MCToolStackItem(type: .drawingTool(type: .polyline)))
-		drawingToolStack.addItem(MCToolStackItem(type: .drawingTool(type: .polygon)))
-		drawingToolStack.addItem(MCToolStackItem(type: .drawingTool(type: .measure)))
+		drawingToolStack.addItem(MCDrawingToolStackItem(for: .pointer, isDefault: true))
+		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polyline))
+		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polygon))
+		drawingToolStack.addItem(MCDrawingToolStackItem(for: .measure))
 		drawingToolsPalette.addToolStack(drawingToolStack)
 		
 		drawingToolsPalette.reset()

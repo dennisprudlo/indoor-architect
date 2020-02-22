@@ -34,7 +34,7 @@ class MCSlidingInfoToolStack: MCToolStack {
 	}
 	
 	/// The tool stack label item which is used to display the text
-	let infoItem = MCToolStackItem(type: .label, isDefault: true)
+	let infoItem = MCLabelToolStackItem(isDefault: true)
 	
 	/// Defines whether the sliding animation is currently playing
 	private var isInAnimation: Bool = false
@@ -52,7 +52,7 @@ class MCSlidingInfoToolStack: MCToolStack {
 		
 		//
 		// Disable user interaction so a tap on the label doesnt show the selected background indicator
-//		infoItem.isUserInteractionEnabled = false
+		infoItem.isUserInteractionEnabled = false
 	}
 	
 	required init(coder: NSCoder) {
@@ -78,11 +78,11 @@ class MCSlidingInfoToolStack: MCToolStack {
 				NSAttributedString.Key.foregroundColor:	MCToolStackItem.prominentTintColor
 			], range: NSRange(location: 0, length: label.count))
 			
-			infoItem.titleLabel.text			= attributedString.string
-			infoItem.titleLabel.attributedText	= attributedString
+			infoItem.setTitle(attributedString.string)
+			infoItem.setAttributedTitle(attributedString)
 		} else {
-			infoItem.titleLabel.attributedText	= nil
-			infoItem.titleLabel.text			= text
+			infoItem.setAttributedTitle(nil)
+			infoItem.setTitle(text)
 		}
 
 		//
