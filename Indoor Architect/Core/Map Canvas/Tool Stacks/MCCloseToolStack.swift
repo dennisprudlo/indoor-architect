@@ -29,6 +29,11 @@ class MCCloseToolStack: MCToolStack {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	override func reset() {
+		super.reset()
+		self.infoLabel.isHidden = true
+	}
+	
 	func showInfoLabel(withText text: String) -> Void {
 		infoLabel.setTitle(text)
 		layoutIfNeeded()

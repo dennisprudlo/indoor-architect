@@ -59,6 +59,10 @@ class MCSlidingInfoToolStack: MCToolStack {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	override func reset() {
+		infoItem.setTitle(nil)
+	}
+	
 	func slideOut(immediately: Bool = false, completion: ((Bool) -> Void)? = nil) -> Void {
 		animate(show: false, completion: completion, duration: immediately ? 0 : MCSlidingInfoToolStack.animationSpeed)
 	}
@@ -66,20 +70,8 @@ class MCSlidingInfoToolStack: MCToolStack {
 	func slideIn(withText text: String, withLabel label: String? = nil) -> Void {
 		
 		if let label = label {
-			let attributedString = NSMutableAttributedString(string: "\(label): \(text)", attributes: [
-				NSAttributedString.Key.font:			infoItem.titleLabel.font!,
-				NSAttributedString.Key.foregroundColor:	MCToolStackItem.tintColor
-			])
-			
-			//
-			// Add bold attribute for the label
-			attributedString.addAttributes([
-				NSAttributedString.Key.font: infoItem.titleLabel.font.bold(),
-				NSAttributedString.Key.foregroundColor:	MCToolStackItem.prominentTintColor
-			], range: NSRange(location: 0, length: label.count))
-			
-			infoItem.setTitle(attributedString.string)
-			infoItem.setAttributedTitle(attributedString)
+			infoItem.setTitle(text)
+			infoItem.setLabelTitle(label: label, title: text)
 		} else {
 			infoItem.setAttributedTitle(nil)
 			infoItem.setTitle(text)

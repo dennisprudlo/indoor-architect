@@ -28,6 +28,7 @@
 		81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */; };
 		81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */; };
 		81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */; };
+		81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */; };
 		81E2FA462401486C00CA82AA /* MCSlidingToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA452401486C00CA82AA /* MCSlidingToolStack.swift */; };
 		81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA472401937100CA82AA /* MCCloseToolStack.swift */; };
 		81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA4B2401999D00CA82AA /* MCCloseToolStackItem.swift */; };
@@ -74,6 +75,7 @@
 		81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerHandler.swift; sourceTree = "<group>"; };
 		81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLabelToolStackItem.swift; sourceTree = "<group>"; };
 		81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDrawingToolStackItem.swift; sourceTree = "<group>"; };
+		81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCoordinateToolStack.swift; sourceTree = "<group>"; };
 		81E2FA452401486C00CA82AA /* MCSlidingToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSlidingToolStack.swift; sourceTree = "<group>"; };
 		81E2FA472401937100CA82AA /* MCCloseToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCloseToolStack.swift; sourceTree = "<group>"; };
 		81E2FA4B2401999D00CA82AA /* MCCloseToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCloseToolStackItem.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				8141C7E323FAF8AB008AC7DD /* MCToolStack.swift */,
 				81E2FA452401486C00CA82AA /* MCSlidingToolStack.swift */,
 				81E2FA472401937100CA82AA /* MCCloseToolStack.swift */,
+				81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */,
 			);
 			path = "Tool Stacks";
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				8141C7D623FAACA0008AC7DD /* ImageTextButton.swift in Sources */,
 				8120AC8323F999FF00696FCA /* ProjectDetailsController.swift in Sources */,
 				8141C7E223FAEFA0008AC7DD /* MCToolPalette.swift in Sources */,
+				81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
 				81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */,
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,

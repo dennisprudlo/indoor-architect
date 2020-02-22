@@ -31,6 +31,22 @@ class MCLabelToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 		titleLabel.attributedText = attributedTitle
 	}
 	
+	func setLabelTitle(label: String, title: String) -> Void {
+		let attributedString = NSMutableAttributedString(string: "\(label): \(title)", attributes: [
+			NSAttributedString.Key.font:			titleLabel.font!,
+			NSAttributedString.Key.foregroundColor:	MCToolStackItem.tintColor
+		])
+		
+		//
+		// Add bold attribute for the label
+		attributedString.addAttributes([
+			NSAttributedString.Key.font:			titleLabel.font.bold(),
+			NSAttributedString.Key.foregroundColor:	MCToolStackItem.prominentTintColor
+		], range: NSRange(location: 0, length: label.count))
+		
+		titleLabel.attributedText = attributedString
+	}
+	
 	func toolStackItem(_ toolStackItem: MCToolStackItem, registeredTapFrom tapGestureRecognizer: UITapGestureRecognizer) {
 		
 	}

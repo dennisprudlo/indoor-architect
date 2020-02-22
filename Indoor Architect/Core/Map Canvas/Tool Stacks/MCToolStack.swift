@@ -86,6 +86,11 @@ class MCToolStack: UIView {
 		}
 	}
 	
+	func reset() -> Void {
+		deselectAll()
+		selectDefault()
+	}
+	
 	/// Gets the rectangle of the currently selected item
 	func currentSelectedToolRect() -> CGRect? {
 		var rectangle: CGRect?

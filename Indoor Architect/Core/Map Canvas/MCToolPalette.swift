@@ -28,8 +28,7 @@ class MCToolPalette: UIStackView {
 	func reset() -> Void {
 		arrangedSubviews.forEach { (subview) in
 			if let toolStack = subview as? MCToolStack {
-				toolStack.deselectAll()
-				toolStack.selectDefault()
+				toolStack.reset()
 			}
 		}
 	}

@@ -28,6 +28,10 @@ class MCCloseToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 	}
 	
 	func toolStackItem(_ toolStackItem: MCToolStackItem, registeredTapFrom tapGestureRecognizer: UITapGestureRecognizer) {
-		MapCanvasViewController.shared.dismiss(animated: true, completion: nil)
+		MapCanvasViewController.shared.canvas.closeToolStack.showInfoLabel(withText: "Saving...")
+		
+		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+			MapCanvasViewController.shared.dismiss(animated: true, completion: nil)
+		}
 	}
 }

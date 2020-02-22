@@ -21,4 +21,9 @@ extension UIFont {
 	func bold() -> UIFont {
 		return withTraits(traits: .traitBold)
 	}
+	
+	/// Returns a `UIFont` with applied monospace trait
+	func monospaced() -> UIFont {
+		return withTraits(traits: .traitMonoSpace)
+	}
 }

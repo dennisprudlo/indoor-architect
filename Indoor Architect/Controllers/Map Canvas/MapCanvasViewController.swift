@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapCanvasViewController: UIViewController {
+class MapCanvasViewController: UIViewController, MCMapCanvasDelegate {
 
 	static let shared		= MapCanvasViewController()
 	
@@ -19,6 +19,8 @@ class MapCanvasViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		canvas.drawingDelegate = self
 		
 		view.addSubview(canvas)
 		canvas.edgesToSuperview()
@@ -33,5 +35,9 @@ class MapCanvasViewController: UIViewController {
 		canvas.selectedDrawingTool = .pointer
 		
 		Application.rootViewController.present(self, animated: true, completion: nil)
+	}
+	
+	func mapCanvas(_ canvas: MCMapCanvas, didTapOn location: CLLocationCoordinate2D, with drawingTool: MCMapCanvas.DrawingTool) {
+		canvas.coordinateToolStack.setCoordinate(location)
 	}
 }

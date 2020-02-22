@@ -9,7 +9,11 @@
 import UIKit
 import MapKit
 
-class MCMapCanvas: MKMapView {
+protocol MCMapCanvasDelegate {
+	func mapCanvas(_ canvas: MCMapCanvas, didTapOn location: CLLocationCoordinate2D, with drawingTool: MCMapCanvas.DrawingTool) -> Void
+}
+
+class MCMapCanvas: MKMapView, MKMapViewDelegate {
 	
 	/// The spacing between the palette and their superview as well as between the children tool stacks
 	private static let toolPaletteInset: CGFloat = 10
@@ -23,8 +27,17 @@ class MCMapCanvas: MKMapView {
 	/// The info tool stack which appears each time its told to display a text. It is located at the top edge of the canvas
 	let infoToolStack		= MCSlidingInfoToolStack(forAxis: .horizontal)
 	
+	/// A reference to the close tool stack
+	let closeToolStack = MCCloseToolStack(forAxis: .horizontal)
+	
+	/// A reference to the coordinate tool stack
+	let coordinateToolStack	= MCCoordinateToolStack()
+	
 	/// The currently selected drawing tool
 	var selectedDrawingTool: MCMapCanvas.DrawingTool = .pointer
+	
+	/// The delegate for the map canvas events
+	var drawingDelegate: MCMapCanvasDelegate?
 	
 	/// The different drawing tools available in the map canvas
 	enum DrawingTool {
@@ -44,6 +57,7 @@ class MCMapCanvas: MKMapView {
 	
 	init() {
 		super.init(frame: .zero)
+		delegate = self
 		autolayout()
 		
 		//
@@ -51,6 +65,8 @@ class MCMapCanvas: MKMapView {
 		configureGeneralToolsPalette()
 		configureDrawingToolsPalette()
 		configureInfoToolStack()
+		
+		addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMap)))
 	}
 	
 	required init?(coder: NSCoder) {
@@ -65,7 +81,8 @@ class MCMapCanvas: MKMapView {
 		generalToolsPalette.topEdgeToSafeSuperview()
 		generalToolsPalette.leadingEdgeToSafeSuperview(withInset: MCMapCanvas.toolPaletteInset)
 		
-		generalToolsPalette.addToolStack(MCCloseToolStack(forAxis: generalToolsPalette.axis))
+		generalToolsPalette.addToolStack(closeToolStack)
+		generalToolsPalette.addToolStack(coordinateToolStack)
 		
 		generalToolsPalette.reset()
 	}
@@ -102,5 +119,12 @@ class MCMapCanvas: MKMapView {
 	func switchDrawingTool(_ drawingTool: MCMapCanvas.DrawingTool) -> Void {
 		selectedDrawingTool = drawingTool
 		infoToolStack.display(text: "\(drawingTool)".capitalized, withLabel: "Drawing Tool")
+	}
+
+	@objc func didTapMap(_ gestureRecognizer: UITapGestureRecognizer) -> Void {
+		let point = gestureRecognizer.location(in: self)
+		let coordinate = self.convert(point, toCoordinateFrom: self)
+		
+		drawingDelegate?.mapCanvas(self, didTapOn: coordinate, with: selectedDrawingTool)
 	}
 }
