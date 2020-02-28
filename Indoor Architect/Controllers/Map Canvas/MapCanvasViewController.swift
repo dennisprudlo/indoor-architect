@@ -30,14 +30,14 @@ class MapCanvasViewController: UIViewController, MCMapCanvasDelegate {
 		self.project = project
 		self.modalPresentationStyle = .fullScreen
 		
-		canvas.generalToolsPalette.reset()
-		canvas.drawingToolsPalette.reset()
+		canvas.toolPalette.reset()
+		canvas.toolPalette.reset()
 		canvas.selectedDrawingTool = .pointer
 		
 		Application.rootViewController.present(self, animated: true, completion: nil)
 	}
 	
 	func mapCanvas(_ canvas: MCMapCanvas, didTapOn location: CLLocationCoordinate2D, with drawingTool: MCMapCanvas.DrawingTool) {
-		canvas.coordinateToolStack.setCoordinate(location)
+		canvas.toolPalette.coordinateToolStack.setCoordinate(location)
 	}
 }

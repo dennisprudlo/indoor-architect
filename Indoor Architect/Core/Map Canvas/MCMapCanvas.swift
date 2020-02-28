@@ -19,19 +19,13 @@ class MCMapCanvas: MKMapView, MKMapViewDelegate {
 	private static let toolPaletteInset: CGFloat = 10
 	
 	/// The general tools palette which is at the top left corner of the canvas
-	let generalToolsPalette	= MCToolPalette(axis: .horizontal)
+	let toolPalette	= MCGeneralToolsPalette()
 	
 	/// The drawing tools palette which is at the leading edge of the canvas and holds all drawing tools
-	let drawingToolsPalette	= MCToolPalette(axis: .vertical)
+	let drawingToolPalette	= MCDrawingToolsPalette()
 	
 	/// The info tool stack which appears each time its told to display a text. It is located at the top edge of the canvas
 	let infoToolStack		= MCSlidingInfoToolStack(forAxis: .horizontal)
-	
-	/// A reference to the close tool stack
-	let closeToolStack = MCCloseToolStack(forAxis: .horizontal)
-	
-	/// A reference to the coordinate tool stack
-	let coordinateToolStack	= MCCoordinateToolStack()
 	
 	/// The currently selected drawing tool
 	var selectedDrawingTool: MCMapCanvas.DrawingTool = .pointer
@@ -75,34 +69,22 @@ class MCMapCanvas: MKMapView, MKMapViewDelegate {
 	
 	/// Configure the general tools palette in the canvas
 	func configureGeneralToolsPalette() -> Void {
-		generalToolsPalette.spacing = MCMapCanvas.toolPaletteInset
+		toolPalette.spacing = MCMapCanvas.toolPaletteInset
 		
-		addSubview(generalToolsPalette)
-		generalToolsPalette.topEdgeToSafeSuperview()
-		generalToolsPalette.leadingEdgeToSafeSuperview(withInset: MCMapCanvas.toolPaletteInset)
-		
-		generalToolsPalette.addToolStack(closeToolStack)
-		generalToolsPalette.addToolStack(coordinateToolStack)
-		
-		generalToolsPalette.reset()
+		addSubview(toolPalette)
+		toolPalette.topEdgeToSafeSuperview()
+		toolPalette.leadingEdgeToSafeSuperview(withInset: MCMapCanvas.toolPaletteInset)
+		toolPalette.reset()
 	}
 	
 	/// Configure the drawing tools palette in the canvas
 	func configureDrawingToolsPalette() -> Void {
-		drawingToolsPalette.spacing = MCMapCanvas.toolPaletteInset
+		drawingToolPalette.spacing = MCMapCanvas.toolPaletteInset
 		
-		addSubview(drawingToolsPalette)
-		drawingToolsPalette.leadingEdgeToSafeSuperview(withInset: MCMapCanvas.toolPaletteInset)
-		drawingToolsPalette.centerVertically()
-		
-		let drawingToolStack = MCToolStack(forAxis: drawingToolsPalette.axis)
-		drawingToolStack.addItem(MCDrawingToolStackItem(for: .pointer, isDefault: true))
-		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polyline))
-		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polygon))
-		drawingToolStack.addItem(MCDrawingToolStackItem(for: .measure))
-		drawingToolsPalette.addToolStack(drawingToolStack)
-		
-		drawingToolsPalette.reset()
+		addSubview(drawingToolPalette)
+		drawingToolPalette.leadingEdgeToSafeSuperview(withInset: MCMapCanvas.toolPaletteInset)
+		drawingToolPalette.centerVertically()
+		drawingToolPalette.reset()
 	}
 	
 	/// Configure the info tool stack in the canvas

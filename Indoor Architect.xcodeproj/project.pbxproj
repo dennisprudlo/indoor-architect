@@ -49,6 +49,8 @@
 		81F67DDE23F19458006B9187 /* IMDFProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDD23F19458006B9187 /* IMDFProject.swift */; };
 		81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDF23F195D9006B9187 /* ProjectManager.swift */; };
 		81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DE123F1991F006B9187 /* DateUtils.swift */; };
+		81FC47DF2409A30D0078551E /* MCGeneralToolsPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47DE2409A30D0078551E /* MCGeneralToolsPalette.swift */; };
+		81FC47E12409A3DF0078551E /* MCDrawingToolsPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47E02409A3DF0078551E /* MCDrawingToolsPalette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		81F67DDD23F19458006B9187 /* IMDFProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFProject.swift; sourceTree = "<group>"; };
 		81F67DDF23F195D9006B9187 /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
 		81F67DE123F1991F006B9187 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		81FC47DE2409A30D0078551E /* MCGeneralToolsPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCGeneralToolsPalette.swift; sourceTree = "<group>"; };
+		81FC47E02409A3DF0078551E /* MCDrawingToolsPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDrawingToolsPalette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		8141C7DE23FAEE05008AC7DD /* Map Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				81FC47DD2409A2CF0078551E /* Tool Palettes */,
 				81E2FA4A2401997700CA82AA /* Tool Stack Items */,
 				81E2FA49240194DF00CA82AA /* Tool Stacks */,
 				8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */,
@@ -279,6 +284,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		81FC47DD2409A2CF0078551E /* Tool Palettes */ = {
+			isa = PBXGroup;
+			children = (
+				81FC47DE2409A30D0078551E /* MCGeneralToolsPalette.swift */,
+				81FC47E02409A3DF0078551E /* MCDrawingToolsPalette.swift */,
+			);
+			path = "Tool Palettes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,6 +398,7 @@
 				816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */,
 				81F67DB023F06A64006B9187 /* DetailViewController.swift in Sources */,
 				8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */,
+				81FC47DF2409A30D0078551E /* MCGeneralToolsPalette.swift in Sources */,
 				81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */,
 				8141C7D623FAACA0008AC7DD /* ImageTextButton.swift in Sources */,
 				8120AC8323F999FF00696FCA /* ProjectDetailsController.swift in Sources */,
@@ -407,6 +422,7 @@
 				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,
 				81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */,
 				81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */,
+				81FC47E12409A3DF0078551E /* MCDrawingToolsPalette.swift in Sources */,
 				816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */,
 				8141C7E423FAF8AB008AC7DD /* MCToolStack.swift in Sources */,
 				81E2FA462401486C00CA82AA /* MCSlidingToolStack.swift in Sources */,
