@@ -75,6 +75,7 @@ class ProjectManager {
 	enum ProjectComponent {
 		case rootDirectory
 		case manifest
+		case unassignedEntities
 		case overlayDirectory
 		case overlay(uuid: UUID)
 		case archiveDirectory
@@ -122,6 +123,8 @@ class ProjectManager {
 				return directory
 			case .manifest:
 				return directory.appendingPathComponent("manifest").appendingPathExtension("json")
+			case .unassignedEntities:
+				return directory.appendingPathComponent("unassigned").appendingPathExtension("geojson")
 			case .overlayDirectory:
 				return directory.appendingPathComponent("overlays", isDirectory: true)
 			case .overlay(let uuid):
@@ -155,6 +158,12 @@ class ProjectManager {
 		//
 		// Create the manifest file for the IMDF Project
 		FileManager.default.createFile(atPath: url(forPathComponent: .manifest, inProjectWithUuid: uuid).path, contents: nil, attributes: nil)
+		
+		//
+		// Create the geojson file for the unassigned created entities.
+		// If the user draws for instance a polygon but doesnt assign a type such as
+		// unit or building the entity is still being saved in the unassigned feature collection
+		FileManager.default.createFile(atPath: url(forPathComponent: .unassignedEntities, inProjectWithUuid: uuid).path, contents: GJFeatureCollection().data(), attributes: nil)
 	
 		//
 		// Create the archives manifest data representation
