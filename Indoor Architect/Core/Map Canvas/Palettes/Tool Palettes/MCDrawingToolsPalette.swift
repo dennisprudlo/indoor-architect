@@ -16,6 +16,7 @@ class MCDrawingToolsPalette: MCToolPalette {
 		super.init(axis: .vertical)
 		
 		drawingToolStack.addItem(MCDrawingToolStackItem(for: .pointer, isDefault: true))
+		drawingToolStack.addItem(MCDrawingToolStackItem(for: .anchor))
 		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polyline))
 		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polygon))
 		drawingToolStack.addItem(MCDrawingToolStackItem(for: .measure))

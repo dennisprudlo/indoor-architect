@@ -51,11 +51,6 @@
 		81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DE123F1991F006B9187 /* DateUtils.swift */; };
 		81FC47DF2409A30D0078551E /* MCGeneralToolsPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47DE2409A30D0078551E /* MCGeneralToolsPalette.swift */; };
 		81FC47E12409A3DF0078551E /* MCDrawingToolsPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47E02409A3DF0078551E /* MCDrawingToolsPalette.swift */; };
-		81FC47E52409AC190078551E /* GJFeatureCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47E42409AC190078551E /* GJFeatureCollection.swift */; };
-		81FC47E92409AD9A0078551E /* GJFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47E82409AD9A0078551E /* GJFeature.swift */; };
-		81FC47EB2409AE670078551E /* GJPointFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47EA2409AE670078551E /* GJPointFeature.swift */; };
-		81FC47ED2409AE7D0078551E /* GJLineStringFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47EC2409AE7D0078551E /* GJLineStringFeature.swift */; };
-		81FC47EF2409AE8E0078551E /* GJPolygonFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47EE2409AE8E0078551E /* GJPolygonFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,11 +100,6 @@
 		81F67DE123F1991F006B9187 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		81FC47DE2409A30D0078551E /* MCGeneralToolsPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCGeneralToolsPalette.swift; sourceTree = "<group>"; };
 		81FC47E02409A3DF0078551E /* MCDrawingToolsPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDrawingToolsPalette.swift; sourceTree = "<group>"; };
-		81FC47E42409AC190078551E /* GJFeatureCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GJFeatureCollection.swift; sourceTree = "<group>"; };
-		81FC47E82409AD9A0078551E /* GJFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GJFeature.swift; sourceTree = "<group>"; };
-		81FC47EA2409AE670078551E /* GJPointFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GJPointFeature.swift; sourceTree = "<group>"; };
-		81FC47EC2409AE7D0078551E /* GJLineStringFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GJLineStringFeature.swift; sourceTree = "<group>"; };
-		81FC47EE2409AE8E0078551E /* GJPolygonFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GJPolygonFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +141,6 @@
 		8141C7DE23FAEE05008AC7DD /* Map Canvas */ = {
 			isa = PBXGroup;
 			children = (
-				81FC47E32409ABA40078551E /* GeoJSON */,
 				81FC47E22409AB900078551E /* Palettes */,
 			);
 			path = "Map Canvas";
@@ -312,18 +301,6 @@
 			path = Palettes;
 			sourceTree = "<group>";
 		};
-		81FC47E32409ABA40078551E /* GeoJSON */ = {
-			isa = PBXGroup;
-			children = (
-				81FC47E42409AC190078551E /* GJFeatureCollection.swift */,
-				81FC47E82409AD9A0078551E /* GJFeature.swift */,
-				81FC47EA2409AE670078551E /* GJPointFeature.swift */,
-				81FC47EC2409AE7D0078551E /* GJLineStringFeature.swift */,
-				81FC47EE2409AE8E0078551E /* GJPolygonFeature.swift */,
-			);
-			path = GeoJSON;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -415,7 +392,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81FC47EB2409AE670078551E /* GJPointFeature.swift in Sources */,
 				81F67DB323F06F6E006B9187 /* Application.swift in Sources */,
 				8141C7E023FAEE15008AC7DD /* MCMapCanvas.swift in Sources */,
 				81F67DAE23F06A4B006B9187 /* MasterViewController.swift in Sources */,
@@ -433,11 +409,8 @@
 				81FC47DF2409A30D0078551E /* MCGeneralToolsPalette.swift in Sources */,
 				81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */,
 				8141C7D623FAACA0008AC7DD /* ImageTextButton.swift in Sources */,
-				81FC47E52409AC190078551E /* GJFeatureCollection.swift in Sources */,
 				8120AC8323F999FF00696FCA /* ProjectDetailsController.swift in Sources */,
 				8141C7E223FAEFA0008AC7DD /* MCToolPalette.swift in Sources */,
-				81FC47EF2409AE8E0078551E /* GJPolygonFeature.swift in Sources */,
-				81FC47E92409AD9A0078551E /* GJFeature.swift in Sources */,
 				81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
 				81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */,
@@ -453,7 +426,6 @@
 				813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */,
 				8141C7E623FAF91E008AC7DD /* MCToolStackItem.swift in Sources */,
 				81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */,
-				81FC47ED2409AE7D0078551E /* GJLineStringFeature.swift in Sources */,
 				8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */,
 				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,
 				81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */,

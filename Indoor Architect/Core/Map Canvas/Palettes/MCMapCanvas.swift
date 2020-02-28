@@ -39,6 +39,9 @@ class MCMapCanvas: MKMapView, MKMapViewDelegate {
 		/// The pointer tool is used to select entities.
 		case pointer
 		
+		/// The anchor tool is used to create points/markers
+		case anchor
+		
 		/// The polyline tool is used to draw a polyline.
 		case polyline
 		

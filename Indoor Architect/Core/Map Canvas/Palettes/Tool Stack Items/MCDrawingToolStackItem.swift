@@ -20,6 +20,7 @@ class MCDrawingToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 		
 		switch drawingTool {
 			case .pointer:	imageView.image = Icon.drawingToolPointer
+			case .anchor:	imageView.image = Icon.drawingToolAnchor
 			case .polyline:	imageView.image = Icon.drawingToolPolyline
 			case .polygon:	imageView.image = Icon.drawingToolPolygon
 			case .measure:	imageView.image = Icon.drawingToolMeasure

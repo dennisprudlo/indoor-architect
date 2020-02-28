@@ -29,9 +29,12 @@ class MCCloseToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 	
 	func toolStackItem(_ toolStackItem: MCToolStackItem, registeredTapFrom tapGestureRecognizer: UITapGestureRecognizer) {
 		MapCanvasViewController.shared.canvas.toolPalette.closeToolStack.showInfoLabel(withText: "Saving...")
-		
-		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+		do {
+			try MapCanvasViewController.shared.project.save()
+			MapCanvasViewController.shared.canvas.toolPalette.closeToolStack.hideInfoLabel()
 			MapCanvasViewController.shared.dismiss(animated: true, completion: nil)
+		} catch {
+			print("an error occured while trying to save the project")
 		}
 	}
 }
