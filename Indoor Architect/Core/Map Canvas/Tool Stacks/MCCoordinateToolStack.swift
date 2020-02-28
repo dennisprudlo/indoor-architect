@@ -11,8 +11,6 @@ import CoreLocation
 
 class MCCoordinateToolStack: MCToolStack {
 	
-	private static let roundingPrecision: Double = 10000
-	
 	let latitudeItem = MCLabelToolStackItem()
 	let longitudeItem = MCLabelToolStackItem()
 	
@@ -42,16 +40,18 @@ class MCCoordinateToolStack: MCToolStack {
 		var longitudeString	= "--"
 		
 		if let coordinate = coordinate {
-			let roundedLatitude		= round(MCCoordinateToolStack.roundingPrecision * coordinate.latitude) / MCCoordinateToolStack.roundingPrecision
-			let roundedLongitude	= round(MCCoordinateToolStack.roundingPrecision * coordinate.longitude) / MCCoordinateToolStack.roundingPrecision
+			let numberFormatter = NumberFormatter()
+			numberFormatter.minimumIntegerDigits = 1
+			numberFormatter.minimumFractionDigits = 4
+			numberFormatter.maximumFractionDigits = 4
 			
-			latitudeString	= roundedLatitude.description
-			longitudeString	= roundedLongitude.description
+			latitudeString	= numberFormatter.string(from: NSNumber(floatLiteral: coordinate.latitude)) ?? "--"
+			longitudeString	= numberFormatter.string(from: NSNumber(floatLiteral: coordinate.longitude)) ?? "--"
 		}
 		
 		let defaultFont = latitudeItem.titleLabel.font
 		
-		let latitudeLabel = "Latitude"
+		let latitudeLabel = "Lat"
 		let attributedLatitudeString = NSMutableAttributedString(string: "\(latitudeLabel): \(latitudeString)", attributes: [
 			NSAttributedString.Key.font:			UIFont.monospacedDigitSystemFont(ofSize: defaultFont!.pointSize, weight: .regular),
 			NSAttributedString.Key.foregroundColor:	MCToolStackItem.tintColor
@@ -62,7 +62,7 @@ class MCCoordinateToolStack: MCToolStack {
 			NSAttributedString.Key.foregroundColor:	MCToolStackItem.prominentTintColor
 		], range: NSRange(location: 0, length: latitudeLabel.count))
 		
-		let longitudeLabel = "Longitude"
+		let longitudeLabel = "Lng"
 		let attributedLongitudeString = NSMutableAttributedString(string: "\(longitudeLabel): \(longitudeString)", attributes: [
 			NSAttributedString.Key.font:			UIFont.monospacedDigitSystemFont(ofSize: defaultFont!.pointSize, weight: .regular),
 			NSAttributedString.Key.foregroundColor:	MCToolStackItem.tintColor
