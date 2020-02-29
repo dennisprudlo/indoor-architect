@@ -10,14 +10,14 @@ import Foundation
 
 class Manifest {
 	
-	let properties: Properties
+	var properties: Properties
 	
 	struct Properties: Codable {
 		let version: String
 		let created: String
-		let language: String
+		var language: String
 		let generatedBy: String
-		let extensions: [String]?
+		var extensions: [String]?
 	}
 
 	init(properties: Properties) {
@@ -39,6 +39,58 @@ class Manifest {
 		let properties = try decoder.decode(Properties.self, from: contents)
 		
 		return Manifest(properties: properties)
+	}
+	
+	/// Validates given extension parameters and returns an extension string if all are valid
+	/// - Parameters:
+	///   - provider: The extensions provider
+	///   - name: The extensions name
+	///   - version: The extensions version
+	static func validateExtension(provider: String, name: String, version: String) -> String? {
+		if isValidExtensionPart(provider) && isValidExtensionPart(name) && isValidExtensionPart(version) {
+			return "imdf:extension:\(provider):\(name)#\(version)"
+		}
+		
+		return nil
+	}
+	
+	private static func isValidExtensionPart(_ string: String) -> Bool {
+		if string.count == 0 {
+			return false
+		}
+		
+		guard let firstCharacter = string.first, let lastCharacter = string.last else {
+			return false
+		}
+		
+		if !isCharacterAlphanumeric(firstCharacter) || !isCharacterAlphanumeric(lastCharacter) {
+			return false
+		}
+		
+		let start		= string.index(string.startIndex, offsetBy: 1)
+		let end			= string.index(string.endIndex, offsetBy: -1)
+		let range		= start..<end
+		let midString	= String(string[range])
+		
+		var valid = true
+		midString.forEach { (character) in
+			if !isCharacterAlphanumeric(character) && character != "." && character != "-" && character != "_" {
+				valid = false
+			}
+		}
+		
+		return valid
+	}
+	
+	private static func isCharacterAlphanumeric(_ character: Character) -> Bool {
+		var valid = true
+		character.unicodeScalars.forEach { (scalar) in
+			if !CharacterSet.alphanumerics.contains(scalar) {
+				valid = false
+			}
+		}
+		
+		return valid
 	}
 	
 	func data() throws -> Data {
