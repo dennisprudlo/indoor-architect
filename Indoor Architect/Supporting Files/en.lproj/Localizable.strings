@@ -6,20 +6,22 @@
   Copyright © 2020 Dennis Prudlo. All rights reserved.
 */
 
-"projectExplorer.searchBarPlaceholder"	= "Quick Search";
-"projectExplorer.sectionTitleProjects"	= "Projects";
-"projectExplorer.sectionEmptyProjects"	= "You have not created any projects. To create a new project tap the plus symbol at the top.";
-"projectExplorer.sectionTitleGuides"	= "Guides";
-"projectExplorer.sectionEmptyGuides"	= "There are no guides available.";
-"projectExplorer.sectionTitleResources"	= "Resources";
-"projectExplorer.sectionEmptyResources"	= "There are no resources available.";
+"projectExplorer.searchBarPlaceholder"		= "Quick Search";
+"projectExplorer.sectionTitleProjects"		= "Projects";
+"projectExplorer.sectionEmptyProjects"		= "You have not created any projects. To create a new project tap the plus symbol at the top.";
+"projectExplorer.sectionTitleGuides"		= "Guides";
+"projectExplorer.sectionEmptyGuides"		= "There are no guides available.";
+"projectExplorer.sectionTitleResources"		= "Resources";
+"projectExplorer.sectionEmptyResources"		= "There are no resources available.";
+"projectExplorer.createNewProject"			= "New Project";
+"projectExplorer.buttonCreate"				= "Create Project";
 
-"projectExplorer.project.title"					= "New Project";
-"projectExplorer.project.buttonCreate"			= "Create Project";
-"projectExplorer.project.buttonCancel"			= "Cancel";
-"projectExplorer.project.projectTitle"			= "Project Title";
-"projectExplorer.project.projectDescription"	= "Description";
-"projectExplorer.project.projectClient"			= "Client";
-"projectExplorer.project.projectClientHelp"		= "The client is the person or organization that ordered the Indoor Map.";
-"projectExplorer.project.editIndoorMap"			= "Edit Indoor Map";
-"projectExplorer.project.exportImdfArchive"		= "Export IMDF Archive";
+"projectExplorer.project.buttonCancel"				= "Cancel";
+"projectExplorer.project.buttonDelete"				= "Delete Project";
+"projectExplorer.project.buttonDeleteDescription"	= "If you delete this project it cannot be restored. The project and its content such as overlay will be deleted from this device permanentely.";
+"projectExplorer.project.projectTitle"				= "Project Title";
+"projectExplorer.project.projectDescription"		= "Description";
+"projectExplorer.project.projectClient"				= "Client";
+"projectExplorer.project.projectClientHelp"			= "The client is the person or organization that ordered the Indoor Map.";
+"projectExplorer.project.editIndoorMap"				= "Edit Indoor Map";
+"projectExplorer.project.exportImdfArchive"			= "Export IMDF Archive";

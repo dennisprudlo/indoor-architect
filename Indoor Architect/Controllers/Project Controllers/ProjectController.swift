@@ -15,6 +15,7 @@ class ProjectController: UITableViewController {
 	var sections: [ProjectSection] = []
 	
 	let generalSection = ProjectGeneralSection()
+	let deleteSection = ProjectDeleteSection()
 	
 	var project: IMDFProject! {
 		didSet {
@@ -28,6 +29,7 @@ class ProjectController: UITableViewController {
 		title = project.manifest.title
 		
 		sections.append(generalSection)
+		sections.append(deleteSection)
 		
 		for projectSection in sections {
 			projectSection.delegate = self

@@ -24,6 +24,7 @@
 		81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFC240AB9FE008873E9 /* ProjectSection.swift */; };
 		81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFE240ABB24008873E9 /* WelcomeController.swift */; };
 		81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */; };
+		81A58E03240AD1E1008873E9 /* ProjectDeleteSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E02240AD1E1008873E9 /* ProjectDeleteSection.swift */; };
 		81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */; };
 		81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */; };
 		81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */; };
@@ -73,6 +74,7 @@
 		81A58DFC240AB9FE008873E9 /* ProjectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSection.swift; sourceTree = "<group>"; };
 		81A58DFE240ABB24008873E9 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGeneralSection.swift; sourceTree = "<group>"; };
+		81A58E02240AD1E1008873E9 /* ProjectDeleteSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDeleteSection.swift; sourceTree = "<group>"; };
 		81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerPlaceholderCell.swift; sourceTree = "<group>"; };
 		81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerHandler.swift; sourceTree = "<group>"; };
 		81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLabelToolStackItem.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				81A58DFC240AB9FE008873E9 /* ProjectSection.swift */,
 				81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */,
+				81A58E02240AD1E1008873E9 /* ProjectDeleteSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */,
 				8141C7E223FAEFA0008AC7DD /* MCToolPalette.swift in Sources */,
 				81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */,
+				81A58E03240AD1E1008873E9 /* ProjectDeleteSection.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
 				81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */,
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,

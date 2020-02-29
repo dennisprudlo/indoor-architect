@@ -148,6 +148,16 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		}
 	}
 	
+	func indexPath(for project: IMDFProject) -> IndexPath? {
+		for (index, arrayProject) in IMDFProject.projects.enumerated() {
+			if (arrayProject.manifest.uuid == project.manifest.uuid) {
+				return IndexPath(row: index, section: SectionCategory.projects.rawValue)
+			}
+		}
+		
+		return nil
+	}
+	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return sections.count
 	}
