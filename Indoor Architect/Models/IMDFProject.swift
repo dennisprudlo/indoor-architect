@@ -13,13 +13,11 @@ class IMDFProject {
 	static var projects: [IMDFProject] = IMDFProject.all()
 		
 	let manifest: IMDFProjectManifest
+	let imdfArchive: IMDFArchive
 	
-	init(withUuid uuid: UUID, title: String) {
-		self.manifest = IMDFProjectManifest(newWithUuid: uuid, title: title)
-	}
-	
-	init(existingWith manifest: IMDFProjectManifest) {
-		self.manifest = manifest
+	init(existingWith manifest: IMDFProjectManifest) throws {
+		self.manifest		= manifest
+		self.imdfArchive	= try IMDFArchive(fromUuid: manifest.uuid)
 	}
 	
 	/// Gets a project by its `UUID`
@@ -36,12 +34,9 @@ class IMDFProject {
 	}
 	
 	func save() throws -> Void {
-		if !ProjectManager.shared.exists(withUuid: manifest.uuid) {
-			try ProjectManager.shared.create(structurForProjectWithUuid: manifest.uuid)
-		}
-		
 		let data = try manifest.data()
-		FileManager.default.createFile(atPath: ProjectManager.shared.url(forPathComponent: .manifest, inProjectWithUuid: manifest.uuid).path, contents: data, attributes: nil)
+		let projectManifestUrl = ProjectManager.shared.url(forPathComponent: .manifest, inProjectWithUuid: manifest.uuid)
+		FileManager.default.createFile(atPath: projectManifestUrl.path, contents: data, attributes: nil)
 	}
 	
 	/// Deletes the project permanentely

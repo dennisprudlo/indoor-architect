@@ -30,6 +30,8 @@
 		81A58E09240AE249008873E9 /* ButtonSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */; };
 		81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */; };
 		81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */; };
+		81D580AC240AF0350049B17F /* IMDFArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580AB240AF0350049B17F /* IMDFArchive.swift */; };
+		81D580AE240AF0BB0049B17F /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580AD240AF0BB0049B17F /* Manifest.swift */; };
 		81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */; };
 		81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */; };
 		81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */; };
@@ -83,6 +85,8 @@
 		81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetTableViewCell.swift; sourceTree = "<group>"; };
 		81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerPlaceholderCell.swift; sourceTree = "<group>"; };
 		81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerHandler.swift; sourceTree = "<group>"; };
+		81D580AB240AF0350049B17F /* IMDFArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFArchive.swift; sourceTree = "<group>"; };
+		81D580AD240AF0BB0049B17F /* Manifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
 		81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLabelToolStackItem.swift; sourceTree = "<group>"; };
 		81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDrawingToolStackItem.swift; sourceTree = "<group>"; };
 		81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCoordinateToolStack.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 		81D580A8240AEEB20049B17F /* IMDF Archive */ = {
 			isa = PBXGroup;
 			children = (
+				81D580AB240AF0350049B17F /* IMDFArchive.swift */,
+				81D580AD240AF0BB0049B17F /* Manifest.swift */,
 			);
 			path = "IMDF Archive";
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 			files = (
 				81F67DB323F06F6E006B9187 /* Application.swift in Sources */,
 				8141C7E023FAEE15008AC7DD /* MCMapCanvas.swift in Sources */,
+				81D580AC240AF0350049B17F /* IMDFArchive.swift in Sources */,
 				81F67DAE23F06A4B006B9187 /* MasterController.swift in Sources */,
 				8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */,
 				81F67DBF23F0A36A006B9187 /* Icon.swift in Sources */,
@@ -451,6 +458,7 @@
 				81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */,
 				81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
+				81D580AE240AF0BB0049B17F /* Manifest.swift in Sources */,
 				81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */,
 				8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */,
 				8141C7DA23FAD075008AC7DD /* Style.swift in Sources */,

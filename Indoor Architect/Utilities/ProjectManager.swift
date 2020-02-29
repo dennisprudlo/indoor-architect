@@ -150,24 +150,27 @@ class ProjectManager {
 	/// This function only creates the necessary folders and files that are needed to sucessfully initialize an
 	/// instance of the type `IMDFProject`. Right after the structure was created the `IMDFProject` should
 	/// write its data into the files using the `save`-Method of the `IMDFProject`
-	func create(structurForProjectWithUuid uuid: UUID) throws -> Void {
+	func create(projectWith uuid: UUID, title: String) throws -> IMDFProject {
 		try FileManager.default.createDirectory(at: url(forPathComponent: .rootDirectory, inProjectWithUuid: uuid), withIntermediateDirectories: true, attributes: nil)
 		try FileManager.default.createDirectory(at: url(forPathComponent: .overlayDirectory, inProjectWithUuid: uuid), withIntermediateDirectories: true, attributes: nil)
 		try FileManager.default.createDirectory(at: url(forPathComponent: .archiveDirectory, inProjectWithUuid: uuid), withIntermediateDirectories: true, attributes: nil)
 		
 		//
 		// Create the manifest file for the IMDF Project
-		FileManager.default.createFile(atPath: url(forPathComponent: .manifest, inProjectWithUuid: uuid).path, contents: nil, attributes: nil)
+		let projectManifestUrl = url(forPathComponent: .manifest, inProjectWithUuid: uuid)
+		FileManager.default.createFile(atPath: projectManifestUrl.path, contents: nil, attributes: nil)
 	
+		let cleanManifest = Manifest(
+			version: Application.imdfVersion,
+			created: DateUtils.iso8601(for: Date()),
+			language: Application.localeLanguageTag,
+			generatedBy: Application.versionIdentifier,
+			extensions: nil
+		)
+		
 		//
 		// Create the archives manifest data representation
-		let manifestData = try JSONSerialization.data(withJSONObject: [
-			"version":		Application.imdfVersion,
-			"created":		DateUtils.iso8601(for: Date()),
-			"generated_by":	Application.versionIdentifier,
-			"language":		Application.localeLanguageTag,
-			"extensions":	nil
-		], options: .prettyPrinted)
+		let manifestData = try cleanManifest.data()
 		
 		//
 		// Create all file in the IMDF archive with a blueprint content
@@ -181,7 +184,8 @@ class ProjectManager {
 			FileManager.default.createFile(atPath: url(forPathComponent: .archive(feature: feature), inProjectWithUuid: uuid).path, contents: data, attributes: nil)
 		}
 		
-		print(url(forPathComponent: .rootDirectory, inProjectWithUuid: uuid).path)
+		let projectManifest = IMDFProjectManifest(newWithUuid: uuid, title: title)
+		return try IMDFProject(existingWith: projectManifest)
 	}
 	
 	/// Returns an array of `UUID` instances that are used for available projects
@@ -234,7 +238,7 @@ class ProjectManager {
 			return nil
 		}
 		
-		return IMDFProject(existingWith: manifest)
+		return try? IMDFProject(existingWith: manifest)
 	}
 	
 	/// Returns an array of `IMDFProjects` that could be initialized

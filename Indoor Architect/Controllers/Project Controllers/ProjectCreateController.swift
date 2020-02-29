@@ -68,13 +68,13 @@ class ProjectCreateController: UITableViewController {
 		// First, get an unused UUID which we can use as the project identifier
 		let unusedUuid					= ProjectManager.shared.getUnusedUuid()
 		
-		//
-		// Create the project instance with the given description and client
-		let project						= IMDFProject(withUuid: unusedUuid, title: title)
-		project.manifest.description	= projectDescriptionCell.textField.text
-		project.manifest.client			= projectClientCell.textField.text
-		
 		do {
+			//
+			// Try to create the project
+			let project						= try ProjectManager.shared.create(projectWith: unusedUuid, title: title)
+			project.manifest.description	= projectDescriptionCell.textField.text
+			project.manifest.client			= projectClientCell.textField.text
+			
 			//
 			// Try to create the folder structure and files for the created project
 			try project.save()
