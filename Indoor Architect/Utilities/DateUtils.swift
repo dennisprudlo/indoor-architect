@@ -16,7 +16,7 @@ class DateUtils {
 	///   - withTime: Whether the time should be included
 	static func iso8601(for date: Date, withTime: Bool = true) -> String {
 		let formatter = DateFormatter()
-		formatter.dateFormat = withTime ? "yyyy-MM-dd'T'HH:mm:ss" : "YYYY-MM-DD"
+		formatter.dateFormat = withTime ? "yyyy-MM-dd'T'HH:mm:ssZ" : "YYYY-MM-DD"
 		return formatter.string(from: date)
 	}
 	
@@ -26,7 +26,7 @@ class DateUtils {
 	///   - withTime: Whether the date string includes a time component
 	static func instance(iso8601 string: String, withTime: Bool = true) -> Date? {
 		let formatter = DateFormatter()
-		formatter.dateFormat = withTime ? "yyyy-MM-dd'T'HH:mm:ss" : "YYYY-MM-DD"
+		formatter.dateFormat = withTime ? "yyyy-MM-dd'T'HH:mm:ssZ" : "YYYY-MM-DD"
 		return formatter.date(from: string)
 	}
 }
