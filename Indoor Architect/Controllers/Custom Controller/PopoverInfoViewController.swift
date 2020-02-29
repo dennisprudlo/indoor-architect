@@ -24,13 +24,7 @@ class PopoverInfoViewController: UIViewController {
 		titleLabel.numberOfLines = 0
 		titleLabel.font = UIFont.preferredFont(forTextStyle: .callout)
 		titleLabel.textColor = .secondaryLabel
-		NSLayoutConstraint.activate([
-			titleLabel.topAnchor.constraint(equalTo:		view.topAnchor,			constant: labelInsets.top),
-			titleLabel.trailingAnchor.constraint(lessThanOrEqualTo:	view.trailingAnchor,	constant: -labelInsets.right),
-			titleLabel.bottomAnchor.constraint(equalTo:		view.bottomAnchor,		constant: -labelInsets.bottom),
-			titleLabel.leadingAnchor.constraint(equalTo: 	view.leadingAnchor,		constant: labelInsets.left),
-			titleLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 250)
-		])
+		titleLabel.edgesToSafeSuperview(withInsets: labelInsets)
     }
 
 	override func viewDidLayoutSubviews() {
