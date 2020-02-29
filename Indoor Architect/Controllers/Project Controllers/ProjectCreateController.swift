@@ -21,6 +21,7 @@ class ProjectCreateController: UITableViewController {
         super.viewDidLoad()
 		
 		configure()
+		projectTitleCell.textField.becomeFirstResponder()
 	}
 	
 	private func configure() -> Void {
