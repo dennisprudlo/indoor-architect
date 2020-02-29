@@ -13,6 +13,7 @@ class ProjectExplorerPlaceholderCell: UITableViewCell {
 	init(title: String) {
 		super.init(style: .default, reuseIdentifier: nil)
 		selectionStyle = .none
+		isUserInteractionEnabled = false
 
 		textLabel?.text				= title
 		textLabel?.numberOfLines	= 0

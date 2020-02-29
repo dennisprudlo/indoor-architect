@@ -11,7 +11,7 @@ import SafariServices
 
 /// The `ProjectExplorerHandler` is responsible for inserting and removing cells that are visible in the project explorer.
 /// It manages the sections and the cell behavior
-class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSource {
+class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate {
 	
 	static let shared: ProjectExplorerHandler = ProjectExplorerHandler()
 	
@@ -33,7 +33,8 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 	}
 	
 	let resources = [
-		(title: "IMDF Documentation", url: URL(string: "https://register.apple.com/resources/imdf/Reference/"), icon: Icon.link)
+		(title: "IMDF Documentation", url: URL(string: "https://register.apple.com/resources/imdf/Reference/"), icon: Icon.link),
+		(title: "Human Interface Guidelines", url: URL(string: "https://developer.apple.com/design/human-interface-guidelines/maps/overview/indoor-maps/"), icon: Icon.link)
 	]
 	
 	override init() {
@@ -265,7 +266,13 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			let safariViewController = SFSafariViewController(url: url)
 			safariViewController.preferredControlTintColor	= Color.primary
 			safariViewController.dismissButtonStyle			= .close
+			safariViewController.delegate					= self
 			Application.rootController.show(safariViewController, sender: nil)
 		}
+	}
+	
+	func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+		Application.rootController.showDetailViewController(WelcomeController(), sender: nil)
+		Application.masterController.deselectSelectedRow()
 	}
 }

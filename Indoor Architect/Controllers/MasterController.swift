@@ -57,4 +57,12 @@ class MasterController: UITableViewController {
 		
 		present(createProjectViewController, animated: true, completion: nil)
 	}
+	
+	func deselectSelectedRow() -> Void {
+		guard let indexPath = tableView.indexPathForSelectedRow else {
+			return
+		}
+		
+		tableView.deselectRow(at: indexPath, animated: true)
+	}
 }
