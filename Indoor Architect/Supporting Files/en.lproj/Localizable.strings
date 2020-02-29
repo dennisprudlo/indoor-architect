@@ -6,6 +6,8 @@
   Copyright © 2020 Dennis Prudlo. All rights reserved.
 */
 
+"general.missingInformation" = "Missing Information 😢";
+
 "projectExplorer.searchBarPlaceholder"		= "Quick Search";
 "projectExplorer.sectionTitleProjects"		= "Projects";
 "projectExplorer.sectionEmptyProjects"		= "You have not created any projects. To create a new project tap the plus symbol at the top.";
@@ -23,5 +25,7 @@
 "projectExplorer.project.projectDescription"		= "Description";
 "projectExplorer.project.projectClient"				= "Client";
 "projectExplorer.project.projectClientHelp"			= "The client is the person or organization that ordered the Indoor Map.";
+"projectExplorer.project.created"					= "Created";
+"projectExplorer.project.updated"					= "Last edited";
 "projectExplorer.project.editIndoorMap"				= "Edit Indoor Map";
 "projectExplorer.project.exportImdfArchive"			= "Export IMDF Archive";

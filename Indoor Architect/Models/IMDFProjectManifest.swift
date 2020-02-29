@@ -29,6 +29,8 @@ class IMDFProjectManifest: Codable {
 	}
 	
 	func data() throws -> Data {
-		return try JSONEncoder().encode(self)
+		let encoder = JSONEncoder()
+		encoder.outputFormatting = .prettyPrinted
+		return try encoder.encode(self)
 	}
 }

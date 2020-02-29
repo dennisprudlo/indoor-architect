@@ -16,4 +16,8 @@ enum Color {
 	/// The color for a selected table view cell in the project explorer
 	static let tableViewCellSelection: UIColor = .systemGray6
 	
+	static let indoorMapEdit: UIColor = .systemIndigo
+	
+	static let indoorMapExport: UIColor = .systemGray2
+	
 }

@@ -14,8 +14,10 @@ class ProjectController: UITableViewController {
 	
 	var sections: [ProjectSection] = []
 	
-	let generalSection = ProjectGeneralSection()
-	let deleteSection = ProjectDeleteSection()
+	let generalSection	= ProjectGeneralSection()
+	let metaInfoSection	= ProjectMetaInfoSection()
+	let actionSection	= ProjectActionSection()
+	let deleteSection	= ProjectDeleteSection()
 	
 	var project: IMDFProject! {
 		didSet {
@@ -27,8 +29,11 @@ class ProjectController: UITableViewController {
         super.viewDidLoad()
 		
 		title = project.manifest.title
+		tableView.rowHeight = UITableView.automaticDimension
 		
 		sections.append(generalSection)
+		sections.append(metaInfoSection)
+		sections.append(actionSection)
 		sections.append(deleteSection)
 		
 		for projectSection in sections {

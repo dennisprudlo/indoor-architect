@@ -10,6 +10,10 @@ import Foundation
 
 struct Localizable {
 	
+	struct General {
+		static let missingInformation = NSLocalizedString("general.missingInformation", comment: "")
+	}
+	
 	struct ProjectExplorer {
 	
 		static let searchBarPlaceholder		= NSLocalizedString("projectExplorer.searchBarPlaceholder", comment: "")
@@ -30,6 +34,8 @@ struct Localizable {
 			static let projectDescription		= NSLocalizedString("projectExplorer.project.projectDescription", comment: "")
 			static let projectClient			= NSLocalizedString("projectExplorer.project.projectClient", comment: "")
 			static let projectClientHelp		= NSLocalizedString("projectExplorer.project.projectClientHelp", comment: "")
+			static let created					= NSLocalizedString("projectExplorer.project.created", comment: "")
+			static let updated					= NSLocalizedString("projectExplorer.project.updated", comment: "")
 			static let editIndoorMap			= NSLocalizedString("projectExplorer.project.editIndoorMap", comment: "")
 			static let exportImdfArchive		= NSLocalizedString("projectExplorer.project.exportImdfArchive", comment: "")
 		}

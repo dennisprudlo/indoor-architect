@@ -188,7 +188,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 				MapCanvasViewController.shared.present(forProject: imdfProject)
 				completion(true)
 			})
-			canvasAction.backgroundColor = .systemIndigo
+			canvasAction.backgroundColor = Color.indoorMapEdit
 			canvasAction.image = Icon.map
 			
 			return UISwipeActionsConfiguration(actions: [canvasAction])
@@ -221,6 +221,12 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 				}
 				self.delete(at: indexPath, with: .left)
 				
+				if let displayedProject = Application.rootController.getCurrentlyDisplayedProject() {
+					if project.manifest.uuid == displayedProject.manifest.uuid {
+						Application.rootController.showDetailViewController(WelcomeController(), sender: nil)
+					}
+				}
+				
 				completion(true)
 			})
 			deleteAction.backgroundColor = Color.primary
@@ -229,7 +235,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			let exportAction = UIContextualAction(style: .normal, title: nil, handler: { (action, view, completion) in
 				completion(false)
 			})
-			exportAction.backgroundColor = .systemGray2
+			exportAction.backgroundColor = Color.indoorMapExport
 			exportAction.image = Icon.download
 			
 			return UISwipeActionsConfiguration(actions: [deleteAction, exportAction])

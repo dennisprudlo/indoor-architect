@@ -25,6 +25,9 @@
 		81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFE240ABB24008873E9 /* WelcomeController.swift */; };
 		81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */; };
 		81A58E03240AD1E1008873E9 /* ProjectDeleteSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E02240AD1E1008873E9 /* ProjectDeleteSection.swift */; };
+		81A58E05240ADBC5008873E9 /* ProjectMetaInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E04240ADBC5008873E9 /* ProjectMetaInfoSection.swift */; };
+		81A58E07240AE0A0008873E9 /* ProjectActionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E06240AE0A0008873E9 /* ProjectActionSection.swift */; };
+		81A58E09240AE249008873E9 /* ButtonSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */; };
 		81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */; };
 		81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */; };
 		81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */; };
@@ -75,6 +78,9 @@
 		81A58DFE240ABB24008873E9 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGeneralSection.swift; sourceTree = "<group>"; };
 		81A58E02240AD1E1008873E9 /* ProjectDeleteSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDeleteSection.swift; sourceTree = "<group>"; };
+		81A58E04240ADBC5008873E9 /* ProjectMetaInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetaInfoSection.swift; sourceTree = "<group>"; };
+		81A58E06240AE0A0008873E9 /* ProjectActionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectActionSection.swift; sourceTree = "<group>"; };
+		81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetTableViewCell.swift; sourceTree = "<group>"; };
 		81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerPlaceholderCell.swift; sourceTree = "<group>"; };
 		81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerHandler.swift; sourceTree = "<group>"; };
 		81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLabelToolStackItem.swift; sourceTree = "<group>"; };
@@ -199,6 +205,8 @@
 			children = (
 				81A58DFC240AB9FE008873E9 /* ProjectSection.swift */,
 				81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */,
+				81A58E04240ADBC5008873E9 /* ProjectMetaInfoSection.swift */,
+				81A58E06240AE0A0008873E9 /* ProjectActionSection.swift */,
 				81A58E02240AD1E1008873E9 /* ProjectDeleteSection.swift */,
 			);
 			path = Sections;
@@ -256,6 +264,7 @@
 				81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */,
 				81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */,
 				81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */,
+				81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */,
 			);
 			path = "Table View";
 			sourceTree = "<group>";
@@ -409,11 +418,13 @@
 				8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */,
 				81F67DBF23F0A36A006B9187 /* Icon.swift in Sources */,
 				81F67DDE23F19458006B9187 /* IMDFProject.swift in Sources */,
+				81A58E05240ADBC5008873E9 /* ProjectMetaInfoSection.swift in Sources */,
 				810D0D0123F3284100DC5D74 /* IMDFProjectManifest.swift in Sources */,
 				81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */,
 				81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */,
 				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
 				81F67DB723F09971006B9187 /* Color.swift in Sources */,
+				81A58E09240AE249008873E9 /* ButtonSetTableViewCell.swift in Sources */,
 				81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */,
 				816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */,
 				81F67DB023F06A64006B9187 /* ProjectController.swift in Sources */,
@@ -442,6 +453,7 @@
 				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,
 				81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */,
 				81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */,
+				81A58E07240AE0A0008873E9 /* ProjectActionSection.swift in Sources */,
 				81FC47E12409A3DF0078551E /* MCDrawingToolsPalette.swift in Sources */,
 				816DC53E23F0679900E1471D /* RootController.swift in Sources */,
 				8141C7E423FAF8AB008AC7DD /* MCToolStack.swift in Sources */,
