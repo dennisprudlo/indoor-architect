@@ -10,8 +10,6 @@ import UIKit
 
 class TextInputTableViewCell: UITableViewCell, UITextFieldDelegate {
 
-	private let viewInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
-	
 	let textField = UITextField()
 	let lengthLabel = UILabel()
 	let maxLength: Int?
@@ -20,24 +18,58 @@ class TextInputTableViewCell: UITableViewCell, UITextFieldDelegate {
 		self.maxLength = length
 		super.init(style: .default, reuseIdentifier: nil)
 		
-		selectionStyle = .none
-		tintColor = Color.primary
+		selectionStyle	= .none
+		tintColor		= Color.primary
 		
 		contentView.addSubview(textField)
-		textField.translatesAutoresizingMaskIntoConstraints = false
-		textField.placeholder = placeholder
-		textField.font = UIFont.preferredFont(forTextStyle: .body)
-		textField.adjustsFontForContentSizeCategory = true
-		textField.delegate = self
+		textField.autolayout()
+		textField.placeholder						= placeholder
+		textField.font								= UIFont.preferredFont(forTextStyle: .body)
+		textField.adjustsFontForContentSizeCategory	= true
+		textField.delegate							= self
+		textField.addTarget(self, action: #selector(didChangeText), for: .editingChanged)
 		
-		textField.topAnchor.constraint(equalTo:			topAnchor,		constant: viewInset.top).isActive = true
-		textField.trailingAnchor.constraint(equalTo:	trailingAnchor,	constant: -viewInset.right).isActive = true
-		textField.bottomAnchor.constraint(equalTo:		bottomAnchor,	constant: -viewInset.bottom).isActive = true
-		textField.leadingAnchor.constraint(equalTo:		leadingAnchor,	constant: viewInset.left).isActive = true
+		contentView.addSubview(lengthLabel)
+		lengthLabel.autolayout()
+		lengthLabel.font								= UIFont.preferredFont(forTextStyle: .body)
+		lengthLabel.textColor							= .placeholderText
+		lengthLabel.adjustsFontForContentSizeCategory	= true
+		
+		textField.centerVertically()
+		lengthLabel.centerVertically()
+		
+		let edgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+		if let _ = length {
+			updateLengthLabelText()
+			NSLayoutConstraint.activate([
+				textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: edgeInsets.left),
+				lengthLabel.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: edgeInsets.left),
+				lengthLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -edgeInsets.right)
+			])
+		} else {
+			textField.horizontalEdgesToSuperview(withInsets: edgeInsets, safeArea: false)
+		}
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	private func updateLengthLabelText() -> Void {
+		guard let maxLength = self.maxLength, let count = textField.text?.count else {
+			return
+		}
+		
+		lengthLabel.text = "\(count)/\(maxLength)"
+	}
+	
+	func setText(_ text: String?) {
+		textField.text = text
+		updateLengthLabelText()
+	}
+	
+	@objc func didChangeText(_ sender: UITextField) -> Void {
+		updateLengthLabelText()
 	}
 	
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

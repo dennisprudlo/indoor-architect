@@ -10,10 +10,7 @@
 		810D0D0123F3284100DC5D74 /* IMDFProjectManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */; };
 		8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */; };
 		8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC8023F9982800696FCA /* ScrollViewController.swift */; };
-		8120AC8323F999FF00696FCA /* ProjectDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC8223F999FF00696FCA /* ProjectDetailsController.swift */; };
-		8120AC8623F9A1F900696FCA /* FormInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC8523F9A1F900696FCA /* FormInputView.swift */; };
 		813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */; };
-		8141C7D623FAACA0008AC7DD /* ImageTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D523FAACA0008AC7DD /* ImageTextButton.swift */; };
 		8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */; };
 		8141C7DA23FAD075008AC7DD /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D923FAD075008AC7DD /* Style.swift */; };
 		8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7DB23FAE980008AC7DD /* Constraints.swift */; };
@@ -23,7 +20,10 @@
 		8141C7E623FAF91E008AC7DD /* MCToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7E523FAF91E008AC7DD /* MCToolStackItem.swift */; };
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
-		816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootSplitViewController.swift */; };
+		816DC53E23F0679900E1471D /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootController.swift */; };
+		81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFC240AB9FE008873E9 /* ProjectSection.swift */; };
+		81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFE240ABB24008873E9 /* WelcomeController.swift */; };
+		81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */; };
 		81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */; };
 		81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */; };
 		81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */; };
@@ -32,8 +32,8 @@
 		81E2FA462401486C00CA82AA /* MCSlidingToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA452401486C00CA82AA /* MCSlidingToolStack.swift */; };
 		81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA472401937100CA82AA /* MCCloseToolStack.swift */; };
 		81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA4B2401999D00CA82AA /* MCCloseToolStackItem.swift */; };
-		81F67DAE23F06A4B006B9187 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAD23F06A4B006B9187 /* MasterViewController.swift */; };
-		81F67DB023F06A64006B9187 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAF23F06A64006B9187 /* DetailViewController.swift */; };
+		81F67DAE23F06A4B006B9187 /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAD23F06A4B006B9187 /* MasterController.swift */; };
+		81F67DB023F06A64006B9187 /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAF23F06A64006B9187 /* ProjectController.swift */; };
 		81F67DB323F06F6E006B9187 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DB223F06F6E006B9187 /* Application.swift */; };
 		81F67DB723F09971006B9187 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DB623F09971006B9187 /* Color.swift */; };
 		81F67DBF23F0A36A006B9187 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DBE23F0A36A006B9187 /* Icon.swift */; };
@@ -43,7 +43,7 @@
 		81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DCB23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift */; };
 		81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */; };
 		81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD123F1411B006B9187 /* FontUtils.swift */; };
-		81F67DD723F14E9F006B9187 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD623F14E9F006B9187 /* CreateProjectViewController.swift */; };
+		81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD623F14E9F006B9187 /* ProjectCreateController.swift */; };
 		81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */; };
 		81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */; };
 		81F67DDE23F19458006B9187 /* IMDFProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDD23F19458006B9187 /* IMDFProject.swift */; };
@@ -57,10 +57,7 @@
 		810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFProjectManifest.swift; sourceTree = "<group>"; };
 		8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEProjectTableViewCell.swift; sourceTree = "<group>"; };
 		8120AC8023F9982800696FCA /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
-		8120AC8223F999FF00696FCA /* ProjectDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsController.swift; sourceTree = "<group>"; };
-		8120AC8523F9A1F900696FCA /* FormInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputView.swift; sourceTree = "<group>"; };
 		813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCanvasViewController.swift; sourceTree = "<group>"; };
-		8141C7D523FAACA0008AC7DD /* ImageTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextButton.swift; sourceTree = "<group>"; };
 		8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverInfoViewController.swift; sourceTree = "<group>"; };
 		8141C7D923FAD075008AC7DD /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		8141C7DB23FAE980008AC7DD /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
@@ -72,7 +69,10 @@
 		816DC52523F0606B00E1471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		816DC53323F0606E00E1471D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		816DC53D23F0679900E1471D /* RootSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSplitViewController.swift; sourceTree = "<group>"; };
+		816DC53D23F0679900E1471D /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		81A58DFC240AB9FE008873E9 /* ProjectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSection.swift; sourceTree = "<group>"; };
+		81A58DFE240ABB24008873E9 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGeneralSection.swift; sourceTree = "<group>"; };
 		81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerPlaceholderCell.swift; sourceTree = "<group>"; };
 		81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerHandler.swift; sourceTree = "<group>"; };
 		81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLabelToolStackItem.swift; sourceTree = "<group>"; };
@@ -81,8 +81,8 @@
 		81E2FA452401486C00CA82AA /* MCSlidingToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSlidingToolStack.swift; sourceTree = "<group>"; };
 		81E2FA472401937100CA82AA /* MCCloseToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCloseToolStack.swift; sourceTree = "<group>"; };
 		81E2FA4B2401999D00CA82AA /* MCCloseToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCloseToolStackItem.swift; sourceTree = "<group>"; };
-		81F67DAD23F06A4B006B9187 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		81F67DAF23F06A64006B9187 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		81F67DAD23F06A4B006B9187 /* MasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
+		81F67DAF23F06A64006B9187 /* ProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
 		81F67DB223F06F6E006B9187 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		81F67DB623F09971006B9187 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		81F67DBE23F0A36A006B9187 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		81F67DCB23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerTableViewCell.swift; sourceTree = "<group>"; };
 		81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerSectionHeaderView.swift; sourceTree = "<group>"; };
 		81F67DD123F1411B006B9187 /* FontUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
-		81F67DD623F14E9F006B9187 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
+		81F67DD623F14E9F006B9187 /* ProjectCreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCreateController.swift; sourceTree = "<group>"; };
 		81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputTableViewCell.swift; sourceTree = "<group>"; };
 		81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		81F67DDD23F19458006B9187 /* IMDFProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFProject.swift; sourceTree = "<group>"; };
@@ -113,21 +113,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8120AC8423F9A1B700696FCA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8120AC8523F9A1F900696FCA /* FormInputView.swift */,
-				8141C7D523FAACA0008AC7DD /* ImageTextButton.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		813B3E4C23F899AE00D02404 /* Map Canvas */ = {
+		813B3E4C23F899AE00D02404 /* Map Controller */ = {
 			isa = PBXGroup;
 			children = (
 				813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */,
 			);
-			path = "Map Canvas";
+			path = "Map Controller";
 			sourceTree = "<group>";
 		};
 		8141C7DD23FAEDF8008AC7DD /* Core */ = {
@@ -166,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				8141C7DD23FAEDF8008AC7DD /* Core */,
-				8120AC8423F9A1B700696FCA /* Views */,
 				81F67DDC23F19449006B9187 /* Models */,
 				81F67DD023F14105006B9187 /* Utilities */,
 				81F67DCA23F12EDE006B9187 /* Table View */,
@@ -192,13 +182,32 @@
 		816DC53C23F0677900E1471D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				813B3E4C23F899AE00D02404 /* Map Canvas */,
-				81F67DD523F14E7B006B9187 /* Project Explorer */,
-				816DC53D23F0679900E1471D /* RootSplitViewController.swift */,
-				81F67DAD23F06A4B006B9187 /* MasterViewController.swift */,
-				81F67DAF23F06A64006B9187 /* DetailViewController.swift */,
+				81D99FBF240AB77600E0D4D2 /* Custom Controller */,
+				813B3E4C23F899AE00D02404 /* Map Controller */,
+				81F67DD523F14E7B006B9187 /* Project Controllers */,
+				816DC53D23F0679900E1471D /* RootController.swift */,
+				81F67DAD23F06A4B006B9187 /* MasterController.swift */,
+				81A58DFE240ABB24008873E9 /* WelcomeController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		81A58DFB240AB9E3008873E9 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				81A58DFC240AB9FE008873E9 /* ProjectSection.swift */,
+				81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		81D99FBF240AB77600E0D4D2 /* Custom Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8120AC8023F9982800696FCA /* ScrollViewController.swift */,
+				8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */,
+			);
+			path = "Custom Controller";
 			sourceTree = "<group>";
 		};
 		81E2FA49240194DF00CA82AA /* Tool Stacks */ = {
@@ -260,15 +269,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		81F67DD523F14E7B006B9187 /* Project Explorer */ = {
+		81F67DD523F14E7B006B9187 /* Project Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				81F67DD623F14E9F006B9187 /* CreateProjectViewController.swift */,
-				8120AC8023F9982800696FCA /* ScrollViewController.swift */,
-				8120AC8223F999FF00696FCA /* ProjectDetailsController.swift */,
-				8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */,
+				81A58DFB240AB9E3008873E9 /* Sections */,
+				81F67DAF23F06A64006B9187 /* ProjectController.swift */,
+				81F67DD623F14E9F006B9187 /* ProjectCreateController.swift */,
 			);
-			path = "Project Explorer";
+			path = "Project Controllers";
 			sourceTree = "<group>";
 		};
 		81F67DDC23F19449006B9187 /* Models */ = {
@@ -394,22 +402,22 @@
 			files = (
 				81F67DB323F06F6E006B9187 /* Application.swift in Sources */,
 				8141C7E023FAEE15008AC7DD /* MCMapCanvas.swift in Sources */,
-				81F67DAE23F06A4B006B9187 /* MasterViewController.swift in Sources */,
+				81F67DAE23F06A4B006B9187 /* MasterController.swift in Sources */,
 				8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */,
 				81F67DBF23F0A36A006B9187 /* Icon.swift in Sources */,
 				81F67DDE23F19458006B9187 /* IMDFProject.swift in Sources */,
 				810D0D0123F3284100DC5D74 /* IMDFProjectManifest.swift in Sources */,
+				81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */,
 				81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */,
 				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
 				81F67DB723F09971006B9187 /* Color.swift in Sources */,
 				81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */,
 				816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */,
-				81F67DB023F06A64006B9187 /* DetailViewController.swift in Sources */,
+				81F67DB023F06A64006B9187 /* ProjectController.swift in Sources */,
 				8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */,
 				81FC47DF2409A30D0078551E /* MCGeneralToolsPalette.swift in Sources */,
 				81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */,
-				8141C7D623FAACA0008AC7DD /* ImageTextButton.swift in Sources */,
-				8120AC8323F999FF00696FCA /* ProjectDetailsController.swift in Sources */,
+				81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */,
 				8141C7E223FAEFA0008AC7DD /* MCToolPalette.swift in Sources */,
 				81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
@@ -417,10 +425,10 @@
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
-				81F67DD723F14E9F006B9187 /* CreateProjectViewController.swift in Sources */,
-				8120AC8623F9A1F900696FCA /* FormInputView.swift in Sources */,
+				81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */,
 				81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
+				81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */,
 				8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */,
 				8141C7DA23FAD075008AC7DD /* Style.swift in Sources */,
 				813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */,
@@ -431,7 +439,7 @@
 				81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */,
 				81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */,
 				81FC47E12409A3DF0078551E /* MCDrawingToolsPalette.swift in Sources */,
-				816DC53E23F0679900E1471D /* RootSplitViewController.swift in Sources */,
+				816DC53E23F0679900E1471D /* RootController.swift in Sources */,
 				8141C7E423FAF8AB008AC7DD /* MCToolStack.swift in Sources */,
 				81E2FA462401486C00CA82AA /* MCSlidingToolStack.swift in Sources */,
 			);

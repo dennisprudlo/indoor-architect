@@ -234,10 +234,11 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == SectionCategory.projects.rawValue && sections[indexPath.section].cells.count > 0 {
-			let projectDetailsController = ProjectDetailsController()
-			projectDetailsController.project = IMDFProject.projects[indexPath.row]
-			let navigationController = UINavigationController(rootViewController: projectDetailsController)
-			Application.rootViewController.showDetailViewController(navigationController, sender: nil)
+			let projectController = ProjectController(style: .insetGrouped)
+			projectController.project = IMDFProject.projects[indexPath.row]
+			
+			let navigationController = UINavigationController(rootViewController: projectController)
+			Application.rootController.showDetailViewController(navigationController, sender: nil)
 		}
 		
 		if indexPath.section == SectionCategory.resources.rawValue {
@@ -248,7 +249,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			let safariViewController = SFSafariViewController(url: url)
 			safariViewController.preferredControlTintColor	= Color.primary
 			safariViewController.dismissButtonStyle			= .close
-			Application.rootViewController.show(safariViewController, sender: nil)
+			Application.rootController.show(safariViewController, sender: nil)
 		}
 	}
 }

@@ -1,5 +1,5 @@
 //
-//  CreateProjectViewController.swift
+//  ProjectCreateController.swift
 //  Indoor Architect
 //
 //  Created by Dennis Prudlo on 2/10/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateProjectViewController: UITableViewController {
+class ProjectCreateController: UITableViewController {
 
 	var tableViewSections: [[UITableViewCell]] = []
 	

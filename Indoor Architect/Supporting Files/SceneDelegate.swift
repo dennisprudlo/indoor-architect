@@ -13,16 +13,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	var window: UIWindow?
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-		guard let windowScene					= (scene as? UIWindowScene) else { return }
+		guard let windowScene = (scene as? UIWindowScene) else { return }
 	
-		let rootSplitViewController				= RootSplitViewController()
-		rootSplitViewController.viewControllers = [
-			UINavigationController(rootViewController: MasterViewController()),
-			DetailViewController()
+		let rootController				= RootController()
+		rootController.viewControllers	= [
+			UINavigationController(rootViewController: MasterController()),
+			WelcomeController()
 		]
 		
-		window									= UIWindow(windowScene: windowScene)
-		window?.rootViewController				= rootSplitViewController
+		window						= UIWindow(windowScene: windowScene)
+		window?.rootViewController	= rootController
 		window?.makeKeyAndVisible()
 	}
 

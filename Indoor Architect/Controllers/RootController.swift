@@ -1,5 +1,5 @@
 //
-//  RootSplitViewController.swift
+//  RootController.swift
 //  Indoor Architect
 //
 //  Created by Dennis Prudlo on 2/9/20.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class RootSplitViewController: UISplitViewController {
+class RootController: UISplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		preferredDisplayMode = .allVisible
 		
-		Application.rootViewController = self
+		Application.rootController = self
     }
 }

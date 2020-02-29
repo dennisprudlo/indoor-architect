@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  MasterController.swift
 //  Indoor Architect
 //
 //  Created by Dennis Prudlo on 2/9/20.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MasterController: UITableViewController {
 
 	let projectSearchController = UISearchController(searchResultsController: nil)
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		Application.masterViewController = self
+		Application.masterController = self
 		
 		configure()
     }
@@ -51,7 +51,7 @@ class MasterViewController: UITableViewController {
 	}
 	
 	@objc func didTapAdd(_ sender: UIBarButtonItem) -> Void {
-		let createProjectViewController = UINavigationController(rootViewController: CreateProjectViewController(style: .insetGrouped))
+		let createProjectViewController = UINavigationController(rootViewController: ProjectCreateController(style: .insetGrouped))
 		createProjectViewController.modalPresentationStyle = .popover
 		createProjectViewController.popoverPresentationController?.barButtonItem = sender
 		

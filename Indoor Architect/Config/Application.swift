@@ -26,10 +26,10 @@ struct Application {
 	static let imdfVersion	= "1.0.0.rc.1"
 	
 	/// A reference to the master view controller which is set after its initialization
-	static var masterViewController: MasterViewController!
+	static var masterController: MasterController!
 	
 	/// A reference to the root view controller which is set after its initialization
-	static var rootViewController: RootSplitViewController!
+	static var rootController: RootController!
 	
 	/// Gets a RFC 5646 compliant language tag for the current locale
 	///
