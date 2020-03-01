@@ -53,7 +53,6 @@ class Manifest {
 	}
 	
 	func encode() throws -> Data {
-		print(generatedBy)
 		return try JSONSerialization.data(withJSONObject: [
 			"version":		version,
 			"created":		DateUtils.iso8601(for: created),
