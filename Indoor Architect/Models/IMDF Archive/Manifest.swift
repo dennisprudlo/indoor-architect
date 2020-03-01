@@ -13,7 +13,7 @@ class Manifest {
 	var version: String			= Application.imdfVersion
 	var created: Date			= Date()
 	var language: String		= Application.localeLanguageTag
-	var generatedBy: String?	= Application.versionIdentifier
+	let generatedBy: String		= Application.versionIdentifier
 	var extensions: [Extension]	= []
 	
 	static func decode(fromProjectWith uuid: UUID) throws -> Manifest {
@@ -41,8 +41,6 @@ class Manifest {
 			manifest.language = language
 		}
 		
-		manifest.generatedBy = object["generated_by"] as? String
-		
 		if let extensions = object["extensions"] as? [String] {
 			extensions.forEach { (extensionIdentifier) in
 				if let extensionToAdd = Extension.make(fromIdentifier: extensionIdentifier) {
@@ -55,6 +53,7 @@ class Manifest {
 	}
 	
 	func encode() throws -> Data {
+		print(generatedBy)
 		return try JSONSerialization.data(withJSONObject: [
 			"version":		version,
 			"created":		DateUtils.iso8601(for: created),

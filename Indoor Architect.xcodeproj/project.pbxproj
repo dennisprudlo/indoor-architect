@@ -36,6 +36,7 @@
 		81D580B2240B04AC0049B17F /* ProjectExtensionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B1240B04AC0049B17F /* ProjectExtensionsController.swift */; };
 		81D580B4240B0BDD0049B17F /* ProjectExtensionCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B3240B0BDD0049B17F /* ProjectExtensionCreateController.swift */; };
 		81D580B6240BEDA60049B17F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B5240BEDA60049B17F /* Extension.swift */; };
+		81D580B8240C005E0049B17F /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B7240C005E0049B17F /* Feature.swift */; };
 		81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */; };
 		81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */; };
 		81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */; };
@@ -95,6 +96,7 @@
 		81D580B1240B04AC0049B17F /* ProjectExtensionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExtensionsController.swift; sourceTree = "<group>"; };
 		81D580B3240B0BDD0049B17F /* ProjectExtensionCreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExtensionCreateController.swift; sourceTree = "<group>"; };
 		81D580B5240BEDA60049B17F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		81D580B7240C005E0049B17F /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLabelToolStackItem.swift; sourceTree = "<group>"; };
 		81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDrawingToolStackItem.swift; sourceTree = "<group>"; };
 		81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCoordinateToolStack.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				81D580AB240AF0350049B17F /* IMDFArchive.swift */,
 				81D580AD240AF0BB0049B17F /* Manifest.swift */,
 				81D580B5240BEDA60049B17F /* Extension.swift */,
+				81D580B7240C005E0049B17F /* Feature.swift */,
 			);
 			path = "IMDF Archive";
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */,
 				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
 				81F67DB723F09971006B9187 /* Color.swift in Sources */,
+				81D580B8240C005E0049B17F /* Feature.swift in Sources */,
 				81A58E09240AE249008873E9 /* ButtonSetTableViewCell.swift in Sources */,
 				81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */,
 				816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */,
