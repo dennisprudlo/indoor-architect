@@ -38,7 +38,7 @@ class IMDFProject {
 		let projectManifestUrl = ProjectManager.shared.url(forPathComponent: .manifest, inProjectWithUuid: manifest.uuid)
 		FileManager.default.createFile(atPath: projectManifestUrl.path, contents: data, attributes: nil)
 		
-		let archiveManifestData = try self.imdfArchive.manifest.data()
+		let archiveManifestData = try self.imdfArchive.manifest.encode()
 		let archiveManifestUrl = ProjectManager.shared.url(forPathComponent: .archive(feature: .manifest), inProjectWithUuid: manifest.uuid)
 		FileManager.default.createFile(atPath: archiveManifestUrl.path, contents: archiveManifestData, attributes: nil)
 	}
@@ -48,15 +48,14 @@ class IMDFProject {
 		try ProjectManager.shared.delete(withUuid: manifest.uuid)
 	}
 	
-	func addExtension(provider: String, name: String, version: String) -> Void {
-		guard let validExtension = Manifest.validateExtension(provider: provider, name: name, version: version) else {
-			return
-		}
-		
-		if self.imdfArchive.manifest.properties.extensions == nil {
-			self.imdfArchive.manifest.properties.extensions = [validExtension]
-		} else {
-			self.imdfArchive.manifest.properties.extensions?.append(validExtension)
+	func addExtension(provider: String, name: String, version: String) throws -> Void {
+		let extensionToAdd = try Extension.make(provider: provider, name: name, version: version)
+		self.imdfArchive.manifest.extensions.append(extensionToAdd)
+	}
+	
+	func removeExtension(_ extensionToRemove: Extension) -> Void {
+		self.imdfArchive.manifest.extensions.removeAll { (extensionInProject) -> Bool in
+			return extensionToRemove.identifier == extensionInProject.identifier
 		}
 	}
 	

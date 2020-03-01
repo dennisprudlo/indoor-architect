@@ -8,16 +8,7 @@
 
 import UIKit
 
-protocol ProjectSectionDelegate {
-	func numberOfRows() -> Int
-	func titleForHeader() -> String?
-	func titleForFooter() -> String?
-	func cellForRow(at index: Int) -> UITableViewCell
-	func accessoryButtonTappedForRow(at index: Int) -> Void
-	func initialize() -> Void
-}
-
-class ProjectSection: ProjectSectionDelegate {
+class ProjectSection {
 
 	var cells: [UITableViewCell] = []
 	var delegate: ProjectController?
@@ -42,7 +33,15 @@ class ProjectSection: ProjectSectionDelegate {
 		
 	}
 	
+	func didSelectRow(at index: Int) {
+		
+	}
+	
 	func initialize() {
+		
+	}
+	
+	func reloadOnAppear() {
 		
 	}
 }

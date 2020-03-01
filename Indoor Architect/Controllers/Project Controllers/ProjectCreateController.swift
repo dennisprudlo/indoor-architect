@@ -27,7 +27,7 @@ class ProjectCreateController: UITableViewController {
 	private func configure() -> Void {
 		title = Localizable.ProjectExplorer.createNewProject
 		
-		navigationItem.leftBarButtonItem	= UIBarButtonItem(title: Localizable.ProjectExplorer.Project.buttonCancel, style: .plain, target: self, action: #selector(didTapCancel))
+		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didTapCancel))
 		
 		//
 		// Configure the table view itself

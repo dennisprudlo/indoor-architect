@@ -29,7 +29,6 @@ struct Localizable {
 		struct Project {
 			static let buttonDelete				= NSLocalizedString("projectExplorer.project.buttonDelete", comment: "")
 			static let buttonDeleteDescription	= NSLocalizedString("projectExplorer.project.buttonDeleteDescription", comment: "")
-			static let buttonCancel				= NSLocalizedString("projectExplorer.project.buttonCancel", comment: "")
 			static let projectTitle				= NSLocalizedString("projectExplorer.project.projectTitle", comment: "")
 			static let projectDescription		= NSLocalizedString("projectExplorer.project.projectDescription", comment: "")
 			static let projectClient			= NSLocalizedString("projectExplorer.project.projectClient", comment: "")
@@ -38,6 +37,12 @@ struct Localizable {
 			static let updated					= NSLocalizedString("projectExplorer.project.updated", comment: "")
 			static let editIndoorMap			= NSLocalizedString("projectExplorer.project.editIndoorMap", comment: "")
 			static let exportImdfArchive		= NSLocalizedString("projectExplorer.project.exportImdfArchive", comment: "")
+			static let archiveSectionTitle		= NSLocalizedString("projectExplorer.project.archiveSectionTitle", comment: "")
+			static let extensions				= NSLocalizedString("projectExplorer.project.extensions", comment: "")
+			static let addExtensionTitle		= NSLocalizedString("projectExplorer.project.addExtensionTitle", comment: "")
+			static let extensionProvider		= NSLocalizedString("projectExplorer.project.extensionProvider", comment: "")
+			static let extensionName			= NSLocalizedString("projectExplorer.project.extensionName", comment: "")
+			static let extensionVersion			= NSLocalizedString("projectExplorer.project.extensionVersion", comment: "")
 		}
 		
 	}

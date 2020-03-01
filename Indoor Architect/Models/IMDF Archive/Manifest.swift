@@ -6,96 +6,63 @@
 //  Copyright © 2020 Dennis Prudlo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Manifest {
 	
-	var properties: Properties
-	
-	struct Properties: Codable {
-		let version: String
-		let created: String
-		var language: String
-		let generatedBy: String
-		var extensions: [String]?
-	}
-
-	init(properties: Properties) {
-		self.properties = properties
-	}
-	
-	init(version: String, created: String, language: String, generatedBy: String, extensions: [String]?) {
-		self.properties = Properties(version: version, created: created, language: language, generatedBy: generatedBy, extensions: extensions)
-	}
+	var version: String			= Application.imdfVersion
+	var created: Date			= Date()
+	var language: String		= Application.localeLanguageTag
+	var generatedBy: String?	= Application.versionIdentifier
+	var extensions: [Extension]	= []
 	
 	static func decode(fromProjectWith uuid: UUID) throws -> Manifest {
 		let manifestUrl = ProjectManager.shared.url(forPathComponent: .archive(feature: .manifest), inProjectWithUuid: uuid)
+		
 		guard let contents = FileManager.default.contents(atPath: manifestUrl.path) else {
+			throw IMDFDecodingError.corruptedFile
+		}
+		
+		guard let object = try JSONSerialization.jsonObject(with: contents, options: .fragmentsAllowed) as? [String: Any] else {
 			throw IMDFDecodingError.malformedManifest
 		}
 		
-		let decoder = JSONDecoder()
-		decoder.keyDecodingStrategy = .convertFromSnakeCase
-		let properties = try decoder.decode(Properties.self, from: contents)
+		let manifest = Manifest()
 		
-		return Manifest(properties: properties)
-	}
-	
-	/// Validates given extension parameters and returns an extension string if all are valid
-	/// - Parameters:
-	///   - provider: The extensions provider
-	///   - name: The extensions name
-	///   - version: The extensions version
-	static func validateExtension(provider: String, name: String, version: String) -> String? {
-		if isValidExtensionPart(provider) && isValidExtensionPart(name) && isValidExtensionPart(version) {
-			return "imdf:extension:\(provider):\(name)#\(version)"
+		if let version = object["version"] as? String {
+			manifest.version = version
 		}
 		
-		return nil
-	}
-	
-	private static func isValidExtensionPart(_ string: String) -> Bool {
-		if string.count == 0 {
-			return false
+		if let date = object["date"] as? String, let instance = DateUtils.instance(iso8601: date) {
+			manifest.created = instance
 		}
 		
-		guard let firstCharacter = string.first, let lastCharacter = string.last else {
-			return false
+		if let language	= object["language"] as? String {
+			manifest.language = language
 		}
 		
-		if !isCharacterAlphanumeric(firstCharacter) || !isCharacterAlphanumeric(lastCharacter) {
-			return false
-		}
+		manifest.generatedBy = object["generated_by"] as? String
 		
-		let start		= string.index(string.startIndex, offsetBy: 1)
-		let end			= string.index(string.endIndex, offsetBy: -1)
-		let range		= start..<end
-		let midString	= String(string[range])
-		
-		var valid = true
-		midString.forEach { (character) in
-			if !isCharacterAlphanumeric(character) && character != "." && character != "-" && character != "_" {
-				valid = false
+		if let extensions = object["extensions"] as? [String] {
+			extensions.forEach { (extensionIdentifier) in
+				if let extensionToAdd = Extension.make(fromIdentifier: extensionIdentifier) {
+					manifest.extensions.append(extensionToAdd)
+				}
 			}
 		}
 		
-		return valid
+		return manifest
 	}
 	
-	private static func isCharacterAlphanumeric(_ character: Character) -> Bool {
-		var valid = true
-		character.unicodeScalars.forEach { (scalar) in
-			if !CharacterSet.alphanumerics.contains(scalar) {
-				valid = false
-			}
-		}
-		
-		return valid
-	}
-	
-	func data() throws -> Data {
-		let encoder = JSONEncoder()
-		encoder.outputFormatting = .prettyPrinted
-		return try encoder.encode(self.properties)
+	func encode() throws -> Data {
+		return try JSONSerialization.data(withJSONObject: [
+			"version":		version,
+			"created":		DateUtils.iso8601(for: created),
+			"language":		language,
+			"generated_by":	generatedBy,
+			"extensions":	extensions.map({ (imdfExtension) -> String in
+				return imdfExtension.identifier
+			})
+		], options: .prettyPrinted)
 	}
 }

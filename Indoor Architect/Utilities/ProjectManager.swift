@@ -160,17 +160,9 @@ class ProjectManager {
 		let projectManifestUrl = url(forPathComponent: .manifest, inProjectWithUuid: uuid)
 		FileManager.default.createFile(atPath: projectManifestUrl.path, contents: nil, attributes: nil)
 	
-		let cleanManifest = Manifest(
-			version: Application.imdfVersion,
-			created: DateUtils.iso8601(for: Date()),
-			language: Application.localeLanguageTag,
-			generatedBy: Application.versionIdentifier,
-			extensions: nil
-		)
-		
 		//
 		// Create the archives manifest data representation
-		let manifestData = try cleanManifest.data()
+		let manifestData = try Manifest().encode()
 		
 		//
 		// Create all file in the IMDF archive with a blueprint content

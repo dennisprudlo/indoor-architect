@@ -9,6 +9,7 @@
 import Foundation
 
 enum IMDFDecodingError: Error {
+	case corruptedFile
 	case malformedManifest
 }
 

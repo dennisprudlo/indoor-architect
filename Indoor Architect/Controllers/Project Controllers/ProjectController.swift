@@ -17,6 +17,7 @@ class ProjectController: UITableViewController {
 	let generalSection	= ProjectGeneralSection()
 	let metaInfoSection	= ProjectMetaInfoSection()
 	let actionSection	= ProjectActionSection()
+	let archiveSection	= ProjectArchiveSection()
 	let deleteSection	= ProjectDeleteSection()
 	
 	var project: IMDFProject! {
@@ -34,6 +35,7 @@ class ProjectController: UITableViewController {
 		sections.append(generalSection)
 		sections.append(metaInfoSection)
 		sections.append(actionSection)
+		sections.append(archiveSection)
 		sections.append(deleteSection)
 		
 		for projectSection in sections {
@@ -41,6 +43,14 @@ class ProjectController: UITableViewController {
 			projectSection.initialize()
 		}
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		for projectSection in sections {
+			projectSection.reloadOnAppear()
+		}
+	}
 	
 	/// Reloads the data from the passed project instance
 	private func reloadProjectDetails() -> Void {
@@ -93,5 +103,9 @@ class ProjectController: UITableViewController {
 	
 	override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
 		return sections[indexPath.section].accessoryButtonTappedForRow(at: indexPath.row)
+	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		return sections[indexPath.section].didSelectRow(at: indexPath.row)
 	}
 }

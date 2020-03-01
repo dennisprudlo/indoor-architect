@@ -58,10 +58,6 @@ class ProjectGeneralSection: ProjectSection {
 		delegate?.projectDetailsDidChange()
 	}
 	
-	override func titleForHeader() -> String? {
-		return "General"
-	}
-	
 	override func accessoryButtonTappedForRow(at index: Int) {
 		if cells[index] == projectClientCell {
 			let popoverInfoViewController = PopoverInfoViewController()

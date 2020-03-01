@@ -18,7 +18,6 @@
 "projectExplorer.createNewProject"			= "New Project";
 "projectExplorer.buttonCreate"				= "Create Project";
 
-"projectExplorer.project.buttonCancel"				= "Cancel";
 "projectExplorer.project.buttonDelete"				= "Delete Project";
 "projectExplorer.project.buttonDeleteDescription"	= "If you delete this project it cannot be restored. The project and its content such as overlay will be deleted from this device permanentely.";
 "projectExplorer.project.projectTitle"				= "Project Title";
@@ -29,3 +28,9 @@
 "projectExplorer.project.updated"					= "Last edited";
 "projectExplorer.project.editIndoorMap"				= "Edit Indoor Map";
 "projectExplorer.project.exportImdfArchive"			= "Export IMDF Archive";
+"projectExplorer.project.archiveSectionTitle"		= "IMDF Archive";
+"projectExplorer.project.extensions"				= "Extensions";
+"projectExplorer.project.addExtensionTitle"			= "Add Extension";
+"projectExplorer.project.extensionProvider"			= "Provider";
+"projectExplorer.project.extensionName"				= "Name";
+"projectExplorer.project.extensionVersion"			= "Version";
