@@ -17,21 +17,25 @@ enum IMDFDecodingError: Error {
 
 class IMDFArchive {
 	
+	/// The IMDF archives manifest
 	let manifest: Manifest
 	
+	/// The IMDF address features
 	var addresses: [Address]
 	
+	/// Initializes the IMDFArchive
+	/// - Parameter uuid: The UUID of the project
 	init(fromUuid uuid: UUID) throws {
 		self.manifest = try Manifest.decode(fromProjectWith: uuid)
 		
-		do {
-			self.addresses = try IMDFArchive.decode(Address.self, file: .address, forProjectWithUuid: uuid)
-		} catch {
-			print(error)
-			self.addresses = []
-		}
+		self.addresses = try IMDFArchive.decode(Address.self, file: .address, forProjectWithUuid: uuid)
 	}
 	
+	/// Decodes the features from the corresponding GeoJSON file in a project with the given UUID
+	/// - Parameters:
+	///   - type: The Feature type
+	///   - file: The file case where the GeoJSON is located
+	///   - uuid: The UUID of the project
 	static func decode<T: CodableFeature>(_ type: T.Type, file: ProjectManager.ArchiveFeature, forProjectWithUuid uuid: UUID) throws -> [T] {
 		
 		let fileUrl		= ProjectManager.shared.url(forPathComponent: .archive(feature: file), inProjectWithUuid: uuid)
@@ -45,6 +49,12 @@ class IMDFArchive {
 		return try features.map { try type.init(feature: $0, type: file) }
 	}
 	
+	/// Encodes the features of a given type and writes it into the corresponding GeoJSON file
+	/// - Parameters:
+	///   - features: The array of features to encode
+	///   - propertiesType: The type of the features properties
+	///   - file: The file case to write the data into
+	///   - uuid: The UUID of the project
 	func enocde<T: Feature<Properties>, Properties: Codable>(_ features: [T], of propertiesType: Properties.Type, in file: ProjectManager.ArchiveFeature, forProjectWithUuid uuid: UUID) throws -> Void {
 		
 		let encoder = JSONEncoder()
@@ -67,6 +77,7 @@ class IMDFArchive {
 		FileManager.default.createFile(atPath: fileUrl.path, contents: data, attributes: nil)
 	}
 	
+	/// Generates a UUID that is globally unique throughout all features in the IMDF data
 	func getUnusedGlobalUuid() -> UUID {
 		var usedUuids: [String] = []
 		
