@@ -14,7 +14,7 @@ class Address: Feature<Address.Properties> {
 		let address: String
 		let unit: String?
 		let locality: String
-		let provice: String
+		let province: String
 		let country: String
 		let postalCode: String?
 		let postalCodeExt: String?

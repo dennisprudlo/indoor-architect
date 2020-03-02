@@ -12,15 +12,19 @@ class ProjectArchiveSection: ProjectSection {
 	
 	var archive: IMDFArchive?
 	
-	let customExtensionsCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+	let customExtensionsCell	= UITableViewCell(style: .value1, reuseIdentifier: nil)
+	let addressesCell			= UITableViewCell(style: .value1, reuseIdentifier: nil)
 	
 	override init() {
 		super.init()
-		customExtensionsCell.accessoryType = .disclosureIndicator
+		customExtensionsCell.accessoryType	= .disclosureIndicator
+		addressesCell.accessoryType			= .disclosureIndicator
 		
 		cells.append(customExtensionsCell)
+		cells.append(addressesCell)
 		
 		customExtensionsCell.textLabel?.text = Localizable.ProjectExplorer.Project.extensions
+		addressesCell.textLabel?.text = Localizable.ProjectExplorer.Project.addresses
 	}
 	
 	func resetExtensionCount() -> Void {
@@ -36,6 +40,15 @@ class ProjectArchiveSection: ProjectSection {
 		}
 	}
 	
+	func resetAddressesCount() -> Void {
+		guard let addressesCount = archive?.addresses.count else {
+			addressesCell.detailTextLabel?.text = "None"
+			return
+		}
+		
+		addressesCell.detailTextLabel?.text = "\(addressesCount)"
+	}
+	
 	override func titleForHeader() -> String? {
 		return Localizable.ProjectExplorer.Project.archiveSectionTitle
 	}
@@ -46,14 +59,21 @@ class ProjectArchiveSection: ProjectSection {
 			projectExtensionsController.project = delegate?.project
 			delegate?.navigationController?.pushViewController(projectExtensionsController, animated: true)
 		}
+		
+		if cells[index] == addressesCell {
+			let projectAddressesController = ProjectAddressController(style: .insetGrouped)
+			projectAddressesController.project = delegate?.project
+			delegate?.navigationController?.pushViewController(projectAddressesController, animated: true)
+		}
 	}
 	
 	override func initialize() {
 		archive = delegate?.project.imdfArchive
-		resetExtensionCount()
+		reloadOnAppear()
 	}
 	
 	override func reloadOnAppear() {
 		resetExtensionCount()
+		resetAddressesCount()
 	}
 }

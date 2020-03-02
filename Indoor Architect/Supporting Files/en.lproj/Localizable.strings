@@ -34,3 +34,20 @@
 "projectExplorer.project.extensionProvider"			= "Provider";
 "projectExplorer.project.extensionName"				= "Name";
 "projectExplorer.project.extensionVersion"			= "Version";
+
+"projectExplorer.project.addresses"						= "Addresses";
+"projectExplorer.project.address.addAddress"			= "Add Address";
+"projectExplorer.project.address.add"					= "Add";
+"projectExplorer.project.address.addressDescription"	= "The address is the significant name of the place. It can be a simple street name or the name of a venue.";
+"projectExplorer.project.address.placeholderAddress"	= "Address";
+"projectExplorer.project.address.placeholderCountry"	= "Country";
+"projectExplorer.project.address.placeholderProvince"	= "Province";
+"projectExplorer.project.address.placeholderLocality"	= "Locality";
+"projectExplorer.project.address.postalCode"			= "Postal Code";
+"projectExplorer.project.address.postalCodeDescription"	= "The postal code fields are optional and must not be set.";
+"projectExplorer.project.address.placeholderCode"		= "Code";
+"projectExplorer.project.address.placeholderExtension"	= "Extension";
+"projectExplorer.project.address.placeholderVanity"		= "Vanity";
+"projectExplorer.project.address.unit"					= "Unit";
+"projectExplorer.project.address.unitDescription"		= "The unit is an optional field and must not be set if the address is an unqualified building address.";
+"projectExplorer.project.address.placeholderUnit"		= "2A";

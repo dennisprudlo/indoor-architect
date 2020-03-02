@@ -16,13 +16,13 @@ protocol DecodableFeature {
 class Feature<Properties: Codable>: NSObject, DecodableFeature {
 	
 	/// The globally unique feature id identifier
-	let id: UUID
+	var id: UUID
 	
 	/// The features feature type
-	let properties: Properties
+	var properties: Properties
 	
 	/// The geometry object of the feature
-	let geometry: [MKShape & MKGeoJSONObject]
+	var geometry: [MKShape & MKGeoJSONObject]
 	
 	required init(feature: MKGeoJSONFeature) throws {
 		guard let uuidString = feature.identifier, let uuid = UUID(uuidString: uuidString) else {
@@ -41,6 +41,13 @@ class Feature<Properties: Codable>: NSObject, DecodableFeature {
 		
 		self.geometry = feature.geometry
 		
+		super.init()
+	}
+	
+	init(withIdentifier identifier: UUID, properties: Properties, geometry: [MKShape & MKGeoJSONObject]) {
+		self.id			= identifier
+		self.properties	= properties
+		self.geometry	= geometry
 		super.init()
 	}
 }

@@ -10,8 +10,6 @@ import UIKit
 
 class ProjectExtensionCreateController: UITableViewController {
 	
-	var tableViewSections: [[UITableViewCell]] = []
-	
 	let providerCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.extensionProvider)
 	let nameCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.extensionName)
 	let versionCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.extensionVersion)

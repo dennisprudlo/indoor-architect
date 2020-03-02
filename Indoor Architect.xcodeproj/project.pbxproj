@@ -38,6 +38,10 @@
 		81D580B6240BEDA60049B17F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B5240BEDA60049B17F /* Extension.swift */; };
 		81D580B8240C005E0049B17F /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B7240C005E0049B17F /* Feature.swift */; };
 		81D580BA240C04150049B17F /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B9240C04150049B17F /* Address.swift */; };
+		81D580BC240C0ADD0049B17F /* ProjectAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580BB240C0ADD0049B17F /* ProjectAddressController.swift */; };
+		81D580BF240C133D0049B17F /* ProjectAddressEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580BE240C133D0049B17F /* ProjectAddressEditController.swift */; };
+		81D580C1240C20400049B17F /* ProjectAddressLocaleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580C0240C20400049B17F /* ProjectAddressLocaleController.swift */; };
+		81D580C3240D13310049B17F /* ComposePopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580C2240D13310049B17F /* ComposePopoverController.swift */; };
 		81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */; };
 		81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */; };
 		81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */; };
@@ -99,6 +103,10 @@
 		81D580B5240BEDA60049B17F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		81D580B7240C005E0049B17F /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		81D580B9240C04150049B17F /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		81D580BB240C0ADD0049B17F /* ProjectAddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAddressController.swift; sourceTree = "<group>"; };
+		81D580BE240C133D0049B17F /* ProjectAddressEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAddressEditController.swift; sourceTree = "<group>"; };
+		81D580C0240C20400049B17F /* ProjectAddressLocaleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAddressLocaleController.swift; sourceTree = "<group>"; };
+		81D580C2240D13310049B17F /* ComposePopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposePopoverController.swift; sourceTree = "<group>"; };
 		81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLabelToolStackItem.swift; sourceTree = "<group>"; };
 		81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDrawingToolStackItem.swift; sourceTree = "<group>"; };
 		81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCoordinateToolStack.swift; sourceTree = "<group>"; };
@@ -241,11 +249,22 @@
 			path = "IMDF Archive";
 			sourceTree = "<group>";
 		};
+		81D580BD240C13170049B17F /* Addresses Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81D580BB240C0ADD0049B17F /* ProjectAddressController.swift */,
+				81D580BE240C133D0049B17F /* ProjectAddressEditController.swift */,
+				81D580C0240C20400049B17F /* ProjectAddressLocaleController.swift */,
+			);
+			path = "Addresses Controller";
+			sourceTree = "<group>";
+		};
 		81D99FBF240AB77600E0D4D2 /* Custom Controller */ = {
 			isa = PBXGroup;
 			children = (
 				8120AC8023F9982800696FCA /* ScrollViewController.swift */,
 				8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */,
+				81D580C2240D13310049B17F /* ComposePopoverController.swift */,
 			);
 			path = "Custom Controller";
 			sourceTree = "<group>";
@@ -318,6 +337,7 @@
 				81F67DAF23F06A64006B9187 /* ProjectController.swift */,
 				81D580B1240B04AC0049B17F /* ProjectExtensionsController.swift */,
 				81D580B3240B0BDD0049B17F /* ProjectExtensionCreateController.swift */,
+				81D580BD240C13170049B17F /* Addresses Controller */,
 			);
 			path = "Project Controllers";
 			sourceTree = "<group>";
@@ -458,6 +478,7 @@
 				81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */,
 				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
 				81F67DB723F09971006B9187 /* Color.swift in Sources */,
+				81D580C1240C20400049B17F /* ProjectAddressLocaleController.swift in Sources */,
 				81D580B8240C005E0049B17F /* Feature.swift in Sources */,
 				81A58E09240AE249008873E9 /* ButtonSetTableViewCell.swift in Sources */,
 				81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */,
@@ -470,6 +491,7 @@
 				81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */,
 				8141C7E223FAEFA0008AC7DD /* MCToolPalette.swift in Sources */,
 				81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */,
+				81D580BC240C0ADD0049B17F /* ProjectAddressController.swift in Sources */,
 				81A58E03240AD1E1008873E9 /* ProjectDeleteSection.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
 				81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */,
@@ -483,10 +505,12 @@
 				81D580AE240AF0BB0049B17F /* Manifest.swift in Sources */,
 				81D580B6240BEDA60049B17F /* Extension.swift in Sources */,
 				81D580B4240B0BDD0049B17F /* ProjectExtensionCreateController.swift in Sources */,
+				81D580C3240D13310049B17F /* ComposePopoverController.swift in Sources */,
 				81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */,
 				8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */,
 				8141C7DA23FAD075008AC7DD /* Style.swift in Sources */,
 				813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */,
+				81D580BF240C133D0049B17F /* ProjectAddressEditController.swift in Sources */,
 				8141C7E623FAF91E008AC7DD /* MCToolStackItem.swift in Sources */,
 				81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */,
 				8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */,

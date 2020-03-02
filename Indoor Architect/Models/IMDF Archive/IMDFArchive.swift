@@ -19,7 +19,7 @@ class IMDFArchive {
 	
 	let manifest: Manifest
 	
-	let addresses: [Address]
+	var addresses: [Address]
 	
 	init(fromUuid uuid: UUID) throws {
 		self.manifest = try Manifest.decode(fromProjectWith: uuid)
@@ -38,5 +38,18 @@ class IMDFArchive {
 		}
 		
 		return try features.map { try type.init(feature: $0) }
+	}
+	
+	func getUnusedGlobalUuid() -> UUID {
+		var usedUuids: [String] = []
+		
+		addresses.forEach { usedUuids.append($0.id.uuidString) }
+		
+		var unusedUuid: UUID
+		repeat {
+			unusedUuid = UUID()
+		} while usedUuids.contains(unusedUuid.uuidString)
+		
+		return unusedUuid
 	}
 }

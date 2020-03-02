@@ -38,7 +38,7 @@ class TextInputTableViewCell: UITableViewCell, UITextFieldDelegate {
 		textField.centerVertically()
 		lengthLabel.centerVertically()
 		
-		let edgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+		let edgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 20)
 		if let _ = length {
 			updateLengthLabelText()
 			NSLayoutConstraint.activate([
