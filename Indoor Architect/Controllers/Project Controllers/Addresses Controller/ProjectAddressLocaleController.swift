@@ -17,7 +17,7 @@ class ProjectAddressLocaleController: UITableViewController {
 	
 	var displayController: ProjectAddressEditController!
 	
-	let dataType: DataType = .country
+	var dataType: DataType = .country
 	
 	var dataset: [(displayTitle: String, code: String)] = []
 	
@@ -40,7 +40,9 @@ class ProjectAddressLocaleController: UITableViewController {
 				return first.displayTitle < second.displayTitle
 			}
 		} else {
-			
+			dataset.append((displayTitle: "Berlin", code: "BE"))
+			dataset.append((displayTitle: "Bremen", code: "BR"))
+			dataset.append((displayTitle: "Hamburg", code: "HH"))
 		}
 	}
 	
@@ -66,7 +68,7 @@ class ProjectAddressLocaleController: UITableViewController {
 		if dataType == .country {
 			displayController.countryData = data
 		} else {
-			
+			displayController.provinceData = data
 		}
 		
 		navigationController?.popViewController(animated: true)

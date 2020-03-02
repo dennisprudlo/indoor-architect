@@ -108,6 +108,14 @@ class ProjectAddressEditController: ComposePopoverController {
 			countryCell.textLabel?.textColor = .placeholderText
 		}
 		
+		if let provinceData = self.provinceData {
+			provinceCell.textLabel?.text = provinceData.displayTitle
+			provinceCell.textLabel?.textColor = .label
+		} else {
+			provinceCell.textLabel?.text = Localizable.ProjectExplorer.Project.Address.placeholderProvince
+			provinceCell.textLabel?.textColor = .placeholderText
+		}
+		
 		checkAddAddressButtonState()
 	}
 	
@@ -119,29 +127,32 @@ class ProjectAddressEditController: ComposePopoverController {
 		guard
 			let address = addressCell.textField.text,
 			let country = countryData?.code,
-			let province = nil ?? "DE-BE",
+			let province = provinceData?.code,
 			let locality = localityCell.textField.text
 		else {
 			return
 		}
 		
+		var unit: String? = nil
+		if let unitValue = unitCell.textField.text, unitValue.count > 0 {
+			unit = unitValue
+		}
+		
 		let uuid = displayController.project.imdfArchive.getUnusedGlobalUuid()
 		let properties = Address.Properties(
-			address: address,
-			unit: unitCell.textField.text,
-			locality: locality,
-			province: province,
-			country: country,
-			postalCode: postalCodeCell.textField.text,
-			postalCodeExt: postalCodeExtension.textField.text,
-			postalCodeVanity: postalCodeVanity.textField.text
+			address:			address,
+			unit:				unit,
+			locality:			locality,
+			province:			province,
+			country:			country,
+			postalCode:			postalCodeCell.textField.text,
+			postalCodeExt:		postalCodeExtension.textField.text,
+			postalCodeVanity:	postalCodeVanity.textField.text
 		)
 		
 		let addressToAdd = Address(withIdentifier: uuid, properties: properties, geometry: [])
 		displayController.project.imdfArchive.addresses.append(addressToAdd)
 		displayController.tableView.reloadData()
-		
-		
 		
 		dismiss(animated: true, completion: nil)
 	}
@@ -166,6 +177,12 @@ class ProjectAddressEditController: ComposePopoverController {
 		if cell == countryCell {
 			let localePickerController = ProjectAddressLocaleController(style: .insetGrouped)
 			localePickerController.displayController = self
+			localePickerController.dataType = .country
+			navigationController?.pushViewController(localePickerController, animated: true)
+		} else if cell == provinceCell {
+			let localePickerController = ProjectAddressLocaleController(style: .insetGrouped)
+			localePickerController.displayController = self
+			localePickerController.dataType = .province
 			navigationController?.pushViewController(localePickerController, animated: true)
 		}
 	}
