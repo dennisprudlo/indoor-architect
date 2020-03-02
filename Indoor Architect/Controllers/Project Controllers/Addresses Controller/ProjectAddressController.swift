@@ -50,7 +50,6 @@ class ProjectAddressController: UITableViewController {
 		cell.accessoryType = .disclosureIndicator
 		
 		let address		= project.imdfArchive.addresses[indexPath.row].properties
-		print(address)
 		cell.textLabel?.text		= address.unit == nil ? address.address : "\(address.address), \(address.unit!)"
 		cell.detailTextLabel?.text	= "\(address.locality), \(address.province), \(address.country)"
 		return cell

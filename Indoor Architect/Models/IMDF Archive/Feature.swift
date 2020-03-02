@@ -9,11 +9,11 @@
 import Foundation
 import MapKit
 
-protocol DecodableFeature {
-	init(feature: MKGeoJSONFeature) throws
+protocol CodableFeature: Encodable {
+	init(feature: MKGeoJSONFeature, type: ProjectManager.ArchiveFeature) throws
 }
 
-class Feature<Properties: Codable>: NSObject, DecodableFeature {
+class Feature<Properties: Codable>: NSObject, CodableFeature {
 	
 	/// The globally unique feature id identifier
 	var id: UUID
@@ -24,7 +24,17 @@ class Feature<Properties: Codable>: NSObject, DecodableFeature {
 	/// The geometry object of the feature
 	var geometry: [MKShape & MKGeoJSONObject]
 	
-	required init(feature: MKGeoJSONFeature) throws {
+	var type: ProjectManager.ArchiveFeature
+	
+	enum CodingKeys: String, CodingKey {
+		case id				= "id"
+		case featureType	= "feature_type"
+		case type			= "type"
+		case properties		= "properties"
+		case geometry		= "geometry"
+	}
+	
+	required init(feature: MKGeoJSONFeature, type: ProjectManager.ArchiveFeature) throws {
 		guard let uuidString = feature.identifier, let uuid = UUID(uuidString: uuidString) else {
 			throw IMDFDecodingError.malformedFeatureData
 		}
@@ -40,14 +50,28 @@ class Feature<Properties: Codable>: NSObject, DecodableFeature {
 		}
 		
 		self.geometry = feature.geometry
+		self.type = type
 		
 		super.init()
 	}
 	
-	init(withIdentifier identifier: UUID, properties: Properties, geometry: [MKShape & MKGeoJSONObject]) {
+	func encode(to encoder: Encoder) throws {
+		var container = encoder.container(keyedBy: CodingKeys.self)
+		try container.encode(id, forKey: .id)
+		try container.encode("\(type)", forKey: .featureType)
+		
+		let transformedGeometry: String? = nil
+		try container.encode(transformedGeometry, forKey: .geometry)
+		
+		try container.encode("Feature", forKey: .type)
+		try container.encode(properties, forKey: .properties)
+	}
+	
+	init(withIdentifier identifier: UUID, properties: Properties, geometry: [MKShape & MKGeoJSONObject], type: ProjectManager.ArchiveFeature) {
 		self.id			= identifier
 		self.properties	= properties
 		self.geometry	= geometry
+		self.type		= type
 		super.init()
 	}
 }

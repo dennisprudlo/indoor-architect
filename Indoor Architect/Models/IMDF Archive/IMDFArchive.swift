@@ -24,10 +24,15 @@ class IMDFArchive {
 	init(fromUuid uuid: UUID) throws {
 		self.manifest = try Manifest.decode(fromProjectWith: uuid)
 		
-		self.addresses = try IMDFArchive.decodeFeature(Address.self, file: .address, forProjectWithUuid: uuid)
+		do {
+			self.addresses = try IMDFArchive.decode(Address.self, file: .address, forProjectWithUuid: uuid)
+		} catch {
+			print(error)
+			self.addresses = []
+		}
 	}
 	
-	static func decodeFeature<T: DecodableFeature>(_ type: T.Type, file: ProjectManager.ArchiveFeature, forProjectWithUuid uuid: UUID) throws -> [T] {
+	static func decode<T: CodableFeature>(_ type: T.Type, file: ProjectManager.ArchiveFeature, forProjectWithUuid uuid: UUID) throws -> [T] {
 		
 		let fileUrl		= ProjectManager.shared.url(forPathComponent: .archive(feature: file), inProjectWithUuid: uuid)
 		let fileData	= try Data(contentsOf: fileUrl)
@@ -37,7 +42,29 @@ class IMDFArchive {
 			throw IMDFDecodingError.malformedFeatureData
 		}
 		
-		return try features.map { try type.init(feature: $0) }
+		return try features.map { try type.init(feature: $0, type: file) }
+	}
+	
+	func enocde<T: Feature<Properties>, Properties: Codable>(_ features: [T], of propertiesType: Properties.Type, in file: ProjectManager.ArchiveFeature, forProjectWithUuid uuid: UUID) throws -> Void {
+		
+		let encoder = JSONEncoder()
+		encoder.keyEncodingStrategy	= .convertToSnakeCase
+		encoder.outputFormatting	= .prettyPrinted
+		
+		let encodedFeatures = try features.map { (feature) -> [String: Any] in
+			let encodedFeature = try encoder.encode(feature)
+			let serialized = try JSONSerialization.jsonObject(with: encodedFeature, options: .mutableContainers) as? [String: Any]
+			return serialized ?? [:]
+		}
+		
+		let data = try JSONSerialization.data(withJSONObject: [
+			"name":		"\(file)",
+			"type":		"FeatureCollection",
+			"features":	encodedFeatures
+		], options: .prettyPrinted)
+		
+		let fileUrl = ProjectManager.shared.url(forPathComponent: .archive(feature: file), inProjectWithUuid: uuid)
+		FileManager.default.createFile(atPath: fileUrl.path, contents: data, attributes: nil)
 	}
 	
 	func getUnusedGlobalUuid() -> UUID {

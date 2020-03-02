@@ -15,15 +15,15 @@ class ProjectAddressEditController: ComposePopoverController {
 	var shouldRenderToCreate: Bool = false
 	var addressToEdit: Address?
 	
-	let featureIdCell		= UITableViewCell(style: .default, reuseIdentifier: nil)
-	let addressCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderAddress)
-	let countryCell			= UITableViewCell(style: .value1, reuseIdentifier: nil)
-	let provinceCell		= UITableViewCell(style: .value1, reuseIdentifier: nil)
-	let localityCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderLocality)
-	let postalCodeCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderCode)
-	let postalCodeExtension	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderExtension)
-	let postalCodeVanity	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderVanity)
-	let unitCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderUnit)
+	let featureIdCell			= UITableViewCell(style: .default, reuseIdentifier: nil)
+	let addressCell				= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderAddress)
+	let countryCell				= UITableViewCell(style: .value1, reuseIdentifier: nil)
+	let provinceCell			= UITableViewCell(style: .value1, reuseIdentifier: nil)
+	let localityCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderLocality)
+	let postalCodeCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderCode)
+	let postalCodeExtensionCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderExtension)
+	let postalCodeVanityCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderVanity)
+	let unitCell				= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderUnit)
 	
 	var countryData: (displayTitle: String, code: String)?
 	var provinceData: (displayTitle: String, code: String)?
@@ -83,7 +83,7 @@ class ProjectAddressEditController: ComposePopoverController {
 		tableViewSections.append((
 			title:			Localizable.ProjectExplorer.Project.Address.postalCode,
 			description:	Localizable.ProjectExplorer.Project.Address.postalCodeDescription,
-			cells:			[postalCodeCell, postalCodeExtension, postalCodeVanity]
+			cells:			[postalCodeCell, postalCodeExtensionCell, postalCodeVanityCell]
 		))
 		tableViewSections.append((
 			title:			Localizable.ProjectExplorer.Project.Address.unit,
@@ -133,27 +133,34 @@ class ProjectAddressEditController: ComposePopoverController {
 			return
 		}
 		
-		var unit: String? = nil
-		if let unitValue = unitCell.textField.text, unitValue.count > 0 {
-			unit = unitValue
-		}
+		let unitValue = unitCell.textField.text
+		let postalCodeValue = postalCodeCell.textField.text
+		let postalCodeExtValue = postalCodeExtensionCell.textField.text
+		let postalCodeVanityValue = postalCodeVanityCell.textField.text
 		
 		let uuid = displayController.project.imdfArchive.getUnusedGlobalUuid()
 		let properties = Address.Properties(
 			address:			address,
-			unit:				unit,
+			unit:				unitValue?.count ?? 0 == 0 ? nil : unitValue,
 			locality:			locality,
 			province:			province,
 			country:			country,
-			postalCode:			postalCodeCell.textField.text,
-			postalCodeExt:		postalCodeExtension.textField.text,
-			postalCodeVanity:	postalCodeVanity.textField.text
+			postalCode:			postalCodeValue?.count ?? 0 == 0 ? nil : postalCodeValue,
+			postalCodeExt:		postalCodeExtValue?.count ?? 0 == 0 ? nil : postalCodeExtValue,
+			postalCodeVanity:	postalCodeVanityValue?.count ?? 0 == 0 ? nil : postalCodeVanityValue
 		)
 		
-		let addressToAdd = Address(withIdentifier: uuid, properties: properties, geometry: [])
+		let addressToAdd = Address(withIdentifier: uuid, properties: properties, geometry: [], type: .address)
 		displayController.project.imdfArchive.addresses.append(addressToAdd)
 		displayController.tableView.reloadData()
 		
+		do {
+			let archive = displayController.project.imdfArchive
+			try archive.enocde(archive.addresses, of: Address.Properties.self, in: .address, forProjectWithUuid: displayController.project.manifest.uuid)
+		} catch {
+			print(error)
+		}
+			
 		dismiss(animated: true, completion: nil)
 	}
 	
