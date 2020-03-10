@@ -42,6 +42,12 @@ class ProjectController: UITableViewController {
 			projectSection.delegate = self
 			projectSection.initialize()
 		}
+		
+		//
+		// If the project has unsaved changes the save-button will be shown
+		if project.hasChangesToStoredVersion {
+			projectDetailsDidChange()
+		}
     }
 	
 	override func viewWillAppear(_ animated: Bool) {

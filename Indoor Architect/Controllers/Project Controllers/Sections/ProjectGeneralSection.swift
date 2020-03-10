@@ -38,7 +38,7 @@ class ProjectGeneralSection: ProjectSection {
 		delegate?.title = title
 		
 		delegate?.project.manifest.title = title
-		delegate?.project.setUpdated()
+		delegate?.project.hasChangesToStoredVersion = true
 		delegate?.projectDetailsDidChange()
 	}
 	
@@ -46,7 +46,7 @@ class ProjectGeneralSection: ProjectSection {
 	/// - Parameter sender: The text field that was edited
 	@objc func didChangeDescription(_ sender: UITextField) -> Void {
 		delegate?.project.manifest.description = sender.text
-		delegate?.project.setUpdated()
+		delegate?.project.hasChangesToStoredVersion = true
 		delegate?.projectDetailsDidChange()
 	}
 	
@@ -54,7 +54,7 @@ class ProjectGeneralSection: ProjectSection {
 	/// - Parameter sender: The text field that was edited
 	@objc func didChangeClient(_ sender: UITextField) -> Void {
 		delegate?.project.manifest.client = sender.text
-		delegate?.project.setUpdated()
+		delegate?.project.hasChangesToStoredVersion = true
 		delegate?.projectDetailsDidChange()
 	}
 	

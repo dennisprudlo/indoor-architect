@@ -11,6 +11,14 @@ import Foundation
 class IMDFProject {
 	
 	static var projects: [IMDFProject] = IMDFProject.all()
+	
+	var hasChangesToStoredVersion: Bool = false {
+		didSet {
+			if self.hasChangesToStoredVersion {
+				manifest.updatedAt = Date()
+			}
+		}
+	}
 		
 	let manifest: IMDFProjectManifest
 	let imdfArchive: IMDFArchive
@@ -57,12 +65,5 @@ class IMDFProject {
 		self.imdfArchive.manifest.extensions.removeAll { (extensionInProject) -> Bool in
 			return extensionToRemove.identifier == extensionInProject.identifier
 		}
-	}
-	
-	/// Updates the `updated_at` date in the projects manifest
-	///
-	/// This function is called everytime a change in the project has been made.
-	func setUpdated() -> Void {
-		manifest.updatedAt = Date()
 	}
 }
