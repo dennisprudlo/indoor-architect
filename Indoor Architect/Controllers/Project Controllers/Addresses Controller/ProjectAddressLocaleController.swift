@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectAddressLocaleController: DetailTableViewController {
+class ProjectAddressLocaleController: UITableViewController {
 	
 	enum DataType {
 		case country
@@ -26,6 +26,12 @@ class ProjectAddressLocaleController: DetailTableViewController {
 		super.viewDidLoad()
 		
 		title = dataType == .country ? Localizable.ProjectExplorer.Project.Address.placeholderCountry : Localizable.ProjectExplorer.Project.Address.placeholderProvince
+		
+		if !displayController.shouldRenderToCreate {
+			tableView.cellLayoutMarginsFollowReadableWidth	= true
+			tableView.backgroundColor						= Color.lightStyleTableViewBackground
+			tableView.separatorColor						= Color.lightStyleCellSeparatorColor
+		}
 		
 		dataset = []
 		if dataType == .country {
@@ -48,6 +54,9 @@ class ProjectAddressLocaleController: DetailTableViewController {
 		
 		cell.textLabel?.text = dataset[indexPath.row].title
 		cell.detailTextLabel?.text = dataset[indexPath.row].code
+		if !displayController.shouldRenderToCreate {
+			cell.backgroundColor = Color.lightStyleCellBackground
+		}
 		
 		return cell
 	}

@@ -18,11 +18,13 @@ class ProjectMetaInfoSection: ProjectSection {
 		cells.append(createdAtCell)
 		cells.append(updatedAtCell)
 		
-		createdAtCell.selectionStyle = .none
-		createdAtCell.textLabel?.text = Localizable.ProjectExplorer.Project.created
+		createdAtCell.selectionStyle	= .none
+		createdAtCell.textLabel?.text	= Localizable.ProjectExplorer.Project.created
+		createdAtCell.backgroundColor	= Color.lightStyleCellBackground
 		
-		updatedAtCell.selectionStyle = .none
-		updatedAtCell.textLabel?.text = Localizable.ProjectExplorer.Project.updated
+		updatedAtCell.selectionStyle	= .none
+		updatedAtCell.textLabel?.text	= Localizable.ProjectExplorer.Project.updated
+		updatedAtCell.backgroundColor	= Color.lightStyleCellBackground
 	}
 	
 	private func prettyDate(_ date: Date?) -> String {

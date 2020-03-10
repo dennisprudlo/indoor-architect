@@ -13,11 +13,13 @@ enum Color {
 	/// The primary tint color for the application
 	static let primary: UIColor = .systemRed
 	
-	/// The color for a selected table view cell in the project explorer
-	static let tableViewCellSelection: UIColor = .systemGray6
-	
 	static let indoorMapEdit: UIColor = .systemIndigo
 	
 	static let indoorMapExport: UIColor = .systemGray2
 	
+	static let lightStyleTableViewBackground: UIColor = .systemBackground
+	
+	static let lightStyleCellSeparatorColor: UIColor = .clear
+	
+	static let lightStyleCellBackground = UIColor(named: "light-style-cell-background-color")
 }

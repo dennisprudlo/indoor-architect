@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ComposePopoverController: DetailTableViewController {
+class ComposePopoverController: UITableViewController {
 	
 	typealias TableViewSection = (title: String?, description: String?, cells: [UITableViewCell])
 	

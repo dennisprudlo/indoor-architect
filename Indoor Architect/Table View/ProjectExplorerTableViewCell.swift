@@ -60,7 +60,7 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 	
 	func setSelectedState(_ selected: Bool) -> Void {
 		if selected {
-			selectionView.backgroundColor = Color.tableViewCellSelection
+			selectionView.backgroundColor = Color.lightStyleCellBackground
 		} else {
 			selectionView.backgroundColor = backgroundColor
 		}

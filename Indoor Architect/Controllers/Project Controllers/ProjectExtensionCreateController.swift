@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectExtensionCreateController: DetailTableViewController {
+class ProjectExtensionCreateController: UITableViewController {
 	
 	let providerCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.extensionProvider)
 	let nameCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.extensionName)
@@ -31,7 +31,7 @@ class ProjectExtensionCreateController: DetailTableViewController {
 		
 		//
 		// Configure the table view itself
-		tableView.rowHeight = 44
+		tableView.rowHeight = UITableView.automaticDimension
 		tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
 		
 		//

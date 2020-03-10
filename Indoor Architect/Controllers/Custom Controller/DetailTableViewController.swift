@@ -13,6 +13,8 @@ class DetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		tableView.cellLayoutMarginsFollowReadableWidth = true
+		tableView.cellLayoutMarginsFollowReadableWidth	= true
+		tableView.backgroundColor						= Color.lightStyleTableViewBackground
+		tableView.separatorColor						= Color.lightStyleCellSeparatorColor
     }
 }

@@ -35,6 +35,8 @@ class ProjectAddressEditController: ComposePopoverController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		tableView.rowHeight = UITableView.automaticDimension
+		
 		//
 		// Set the confirm button title
 		confirmButtonTitle = shouldRenderToCreate ? Localizable.ProjectExplorer.Project.Address.add : Localizable.ProjectExplorer.Project.Address.delete
@@ -42,11 +44,6 @@ class ProjectAddressEditController: ComposePopoverController {
 		//
 		// Set the controller title
 		title = shouldRenderToCreate ? Localizable.ProjectExplorer.Project.Address.addAddress : Localizable.ProjectExplorer.Project.Address.editAddress
-		
-		
-		//
-		// Configure the table view itself
-		tableView.rowHeight = 44
 		
 		//
 		// Configure table view cells
@@ -71,6 +68,10 @@ class ProjectAddressEditController: ComposePopoverController {
 		//
 		// Configure the table view sections
 		if !shouldRenderToCreate {
+			tableView.cellLayoutMarginsFollowReadableWidth	= true
+			tableView.backgroundColor						= Color.lightStyleTableViewBackground
+			tableView.separatorColor						= Color.lightStyleCellSeparatorColor
+			
 			navigationItem.leftBarButtonItem = navigationItem.backBarButtonItem
 			
 			tableViewSections.append((title: "Feature ID", description: nil, cells: [featureIdCell]))
@@ -217,6 +218,16 @@ class ProjectAddressEditController: ComposePopoverController {
 		}
 
 		isConfirmButtonEnabled = true
+	}
+	
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableViewSections[indexPath.section].cells[indexPath.row]
+		
+		if !shouldRenderToCreate {
+			cell.backgroundColor = Color.lightStyleCellBackground
+		}
+		
+		return cell
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

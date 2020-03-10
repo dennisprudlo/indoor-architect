@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectCreateController: DetailTableViewController {
+class ProjectCreateController: UITableViewController {
 
 	var tableViewSections: [[UITableViewCell]] = []
 	
@@ -31,7 +31,7 @@ class ProjectCreateController: DetailTableViewController {
 		
 		//
 		// Configure the table view itself
-		tableView.rowHeight = 44
+		tableView.rowHeight = UITableView.automaticDimension
 		tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
 		
 		//

@@ -18,7 +18,7 @@ class TextInputTableViewCell: UITableViewCell, UITextFieldDelegate {
 		self.maxLength = length
 		super.init(style: .default, reuseIdentifier: nil)
 		
-		selectionStyle	= .none
+		selectionStyle	= .none		
 		tintColor		= Color.primary
 		
 		contentView.addSubview(textField)

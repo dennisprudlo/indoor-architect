@@ -51,6 +51,7 @@ class ProjectAddressController: DetailTableViewController {
 		let address		= project.imdfArchive.addresses[indexPath.row].properties
 		cell.textLabel?.text		= address.unit == nil ? address.address : "\(address.address), \(address.unit!)"
 		cell.detailTextLabel?.text	= "\(address.locality), \(address.province), \(address.country)"
+		cell.backgroundColor = Color.lightStyleCellBackground
 		return cell
 	}
 

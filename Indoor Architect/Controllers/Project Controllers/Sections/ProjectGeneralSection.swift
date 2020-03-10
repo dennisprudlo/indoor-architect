@@ -17,7 +17,9 @@ class ProjectGeneralSection: ProjectSection {
 	override init() {
 		super.init()
 		
-		projectClientCell.accessoryType = .detailButton
+		projectTitleCell.backgroundColor		= Color.lightStyleCellBackground
+		projectDescriptionCell.backgroundColor	= Color.lightStyleCellBackground
+		projectClientCell.backgroundColor		= Color.lightStyleCellBackground
 		
 		cells.append(projectTitleCell)
 		cells.append(projectDescriptionCell)
@@ -58,16 +60,8 @@ class ProjectGeneralSection: ProjectSection {
 		delegate?.projectDetailsDidChange()
 	}
 	
-	override func accessoryButtonTappedForRow(at index: Int) {
-		if cells[index] == projectClientCell {
-			let popoverInfoViewController = PopoverInfoViewController()
-			popoverInfoViewController.titleLabel.text = Localizable.ProjectExplorer.Project.projectClientHelp
-			popoverInfoViewController.modalPresentationStyle = .popover
-			popoverInfoViewController.popoverPresentationController?.sourceView = projectClientCell.contentView
-			popoverInfoViewController.popoverPresentationController?.sourceRect = projectClientCell.contentView.bounds
-			
-			delegate?.present(popoverInfoViewController, animated: true, completion: nil)
-		}
+	override func titleForFooter() -> String? {
+		return Localizable.ProjectExplorer.Project.projectClientHelp
 	}
 	
 	override func initialize() {

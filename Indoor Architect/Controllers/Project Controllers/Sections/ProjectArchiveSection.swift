@@ -17,8 +17,12 @@ class ProjectArchiveSection: ProjectSection {
 	
 	override init() {
 		super.init()
-		customExtensionsCell.accessoryType	= .disclosureIndicator
-		addressesCell.accessoryType			= .disclosureIndicator
+		
+		customExtensionsCell.backgroundColor	= Color.lightStyleCellBackground
+		customExtensionsCell.accessoryType		= .disclosureIndicator
+		
+		addressesCell.backgroundColor			= Color.lightStyleCellBackground
+		addressesCell.accessoryType				= .disclosureIndicator
 		
 		cells.append(customExtensionsCell)
 		cells.append(addressesCell)
