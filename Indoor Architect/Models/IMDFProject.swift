@@ -12,6 +12,8 @@ class IMDFProject {
 	
 	static var projects: [IMDFProject] = IMDFProject.all()
 	
+	/// Determines whether the project has unsaved changed to the stored version
+	/// If the value is being set to true the manifests updated at value changes automatically
 	var hasChangesToStoredVersion: Bool = false {
 		didSet {
 			if self.hasChangesToStoredVersion {
@@ -19,10 +21,15 @@ class IMDFProject {
 			}
 		}
 	}
-		
+	
+	/// The projects manifest
 	let manifest: IMDFProjectManifest
+	
+	/// The projects IMDF archive
 	let imdfArchive: IMDFArchive
 	
+	/// Initializes an existing project with a given manifest file
+	/// - Parameter manifest: The projects manifest
 	init(existingWith manifest: IMDFProjectManifest) throws {
 		self.manifest		= manifest
 		self.imdfArchive	= try IMDFArchive(fromUuid: manifest.uuid)
@@ -41,6 +48,7 @@ class IMDFProject {
 		}
 	}
 	
+	/// Saves the project
 	func save() throws -> Void {
 		let data = try manifest.data()
 		let projectManifestUrl = ProjectManager.shared.url(forPathComponent: .manifest, inProjectWithUuid: manifest.uuid)
@@ -56,11 +64,20 @@ class IMDFProject {
 		try ProjectManager.shared.delete(withUuid: manifest.uuid)
 	}
 	
+	/// Adds an extension to the IMDF archive
+	///
+	/// If the validation of the extension parts fails the function throws
+	/// - Parameters:
+	///   - provider: The extension provider name
+	///   - name: The extension name
+	///   - version: The extension version
 	func addExtension(provider: String, name: String, version: String) throws -> Void {
 		let extensionToAdd = try Extension.make(provider: provider, name: name, version: version)
 		self.imdfArchive.manifest.extensions.append(extensionToAdd)
 	}
 	
+	/// Removes an extension from the project
+	/// - Parameter extensionToRemove: The extension to remove
 	func removeExtension(_ extensionToRemove: Extension) -> Void {
 		self.imdfArchive.manifest.extensions.removeAll { (extensionInProject) -> Bool in
 			return extensionToRemove.identifier == extensionInProject.identifier

@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 
+/// Defines the error cases for decoding IMDF data
 enum IMDFDecodingError: Error {
 	case corruptedFile
 	case malformedManifest
