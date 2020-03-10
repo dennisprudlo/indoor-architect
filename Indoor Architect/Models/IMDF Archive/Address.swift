@@ -39,6 +39,22 @@ class Address: Feature<Address.Properties> {
 		let postalCodeVanity: String?
 	}
 	
+	func getCountryData() -> Address.LocalityCodeCombination? {
+		let countryIdentifier	= NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: properties.country])
+		if let countryName		= NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: NSLocale.Key.identifier, value: countryIdentifier) {
+			return Address.LocalityCodeCombination(code: properties.country, title: countryName)
+		}
+		
+		return nil
+	}
+	
+	func getSubdivisionData() -> Address.LocalityCodeCombination? {
+		let combinations = Address.getSubdivisions(forCountry: properties.country)
+		return combinations.first { (combination) -> Bool in
+			return combination.code == properties.province
+		}
+	}
+	
 	static func getLocalizedCountryCodes() -> [Address.LocalityCodeCombination] {
 		var combinations: [Address.LocalityCodeCombination] = []
 		

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectAddressController: UITableViewController {
+class ProjectAddressController: DetailTableViewController {
 		
 	var project: IMDFProject! {
 		didSet {
@@ -54,5 +54,12 @@ class ProjectAddressController: UITableViewController {
 		cell.detailTextLabel?.text	= "\(address.locality), \(address.province), \(address.country)"
 		return cell
 	}
-	
+
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let editController = ProjectAddressEditController(style: .insetGrouped)
+		editController.displayController = self
+		editController.addressToEdit = project.imdfArchive.addresses[indexPath.row]
+		
+		navigationController?.pushViewController(editController, animated: true)
+	}
 }

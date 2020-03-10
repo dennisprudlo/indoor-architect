@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectExtensionsController: UITableViewController {
+class ProjectExtensionsController: DetailTableViewController {
 	
 	var project: IMDFProject? {
 		didSet {

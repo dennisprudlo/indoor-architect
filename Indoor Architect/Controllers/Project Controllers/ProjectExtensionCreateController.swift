@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectExtensionCreateController: UITableViewController {
+class ProjectExtensionCreateController: DetailTableViewController {
 	
 	let providerCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.extensionProvider)
 	let nameCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.extensionName)

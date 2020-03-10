@@ -25,7 +25,11 @@ class ProjectAddressEditController: ComposePopoverController {
 	let postalCodeVanityCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderVanity)
 	let unitCell				= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderUnit)
 	
-	var countryData: Address.LocalityCodeCombination?
+	var countryData: Address.LocalityCodeCombination? {
+		didSet {
+			provinceData = nil
+		}
+	}
 	var provinceData: Address.LocalityCodeCombination?
 	
 	override func viewDidLoad() {
@@ -33,11 +37,11 @@ class ProjectAddressEditController: ComposePopoverController {
 		
 		//
 		// Set the confirm button title
-		confirmButtonTitle = Localizable.ProjectExplorer.Project.Address.add
+		confirmButtonTitle = shouldRenderToCreate ? Localizable.ProjectExplorer.Project.Address.add : Localizable.ProjectExplorer.Project.Address.delete
 		
 		//
 		// Set the controller title
-		title = Localizable.ProjectExplorer.Project.Address.addAddress
+		title = shouldRenderToCreate ? Localizable.ProjectExplorer.Project.Address.addAddress : Localizable.ProjectExplorer.Project.Address.editAddress
 		
 		
 		//
@@ -67,9 +71,23 @@ class ProjectAddressEditController: ComposePopoverController {
 		//
 		// Configure the table view sections
 		if !shouldRenderToCreate {
-			featureIdCell.textLabel?.text = addressToEdit?.id.uuidString
+			navigationItem.leftBarButtonItem = navigationItem.backBarButtonItem
+			
 			tableViewSections.append((title: "Feature ID", description: nil, cells: [featureIdCell]))
+			
+			featureIdCell.selectionStyle			= .none
+			featureIdCell.textLabel?.isEnabled		= false
+			
+			featureIdCell.textLabel?.text			= addressToEdit?.id.uuidString
+			addressCell.textField.text				= addressToEdit?.properties.address
+			countryData								= addressToEdit?.getCountryData()
+			provinceData							= addressToEdit?.getSubdivisionData()
+			localityCell.textField.text				= addressToEdit?.properties.locality
+			postalCodeCell.textField.text			= addressToEdit?.properties.postalCode
+			postalCodeExtensionCell.textField.text	= addressToEdit?.properties.postalCodeExt
+			postalCodeVanityCell.textField.text		= addressToEdit?.properties.postalCodeVanity
 		}
+		
 		tableViewSections.append((
 			title: nil,
 			description: Localizable.ProjectExplorer.Project.Address.addressDescription,
@@ -124,35 +142,48 @@ class ProjectAddressEditController: ComposePopoverController {
 	}
 	
 	override func didTapCreate(_ sender: UIButton) -> Void {
-		guard
-			let address = addressCell.textField.text,
-			let country = countryData?.code,
-			let province = provinceData?.code,
-			let locality = localityCell.textField.text
-		else {
-			return
+		
+		//
+		// The controller shows the delete button instead
+		if !shouldRenderToCreate {
+			if let visibleAddress = addressToEdit {
+				displayController.project.imdfArchive.addresses.removeAll { (address) -> Bool in
+					return address.id.uuidString == visibleAddress.id.uuidString
+				}
+				displayController.tableView.reloadData()
+			}
+		} else {
+		
+			guard
+				let address = addressCell.textField.text,
+				let country = countryData?.code,
+				let province = provinceData?.code,
+				let locality = localityCell.textField.text
+			else {
+				return
+			}
+			
+			let unitValue = unitCell.textField.text
+			let postalCodeValue = postalCodeCell.textField.text
+			let postalCodeExtValue = postalCodeExtensionCell.textField.text
+			let postalCodeVanityValue = postalCodeVanityCell.textField.text
+			
+			let uuid = displayController.project.imdfArchive.getUnusedGlobalUuid()
+			let properties = Address.Properties(
+				address:			address,
+				unit:				unitValue?.count ?? 0 == 0 ? nil : unitValue,
+				locality:			locality,
+				province:			province,
+				country:			country,
+				postalCode:			postalCodeValue?.count ?? 0 == 0 ? nil : postalCodeValue,
+				postalCodeExt:		postalCodeExtValue?.count ?? 0 == 0 ? nil : postalCodeExtValue,
+				postalCodeVanity:	postalCodeVanityValue?.count ?? 0 == 0 ? nil : postalCodeVanityValue
+			)
+			
+			let addressToAdd = Address(withIdentifier: uuid, properties: properties, geometry: [], type: .address)
+			displayController.project.imdfArchive.addresses.append(addressToAdd)
+			displayController.tableView.reloadData()
 		}
-		
-		let unitValue = unitCell.textField.text
-		let postalCodeValue = postalCodeCell.textField.text
-		let postalCodeExtValue = postalCodeExtensionCell.textField.text
-		let postalCodeVanityValue = postalCodeVanityCell.textField.text
-		
-		let uuid = displayController.project.imdfArchive.getUnusedGlobalUuid()
-		let properties = Address.Properties(
-			address:			address,
-			unit:				unitValue?.count ?? 0 == 0 ? nil : unitValue,
-			locality:			locality,
-			province:			province,
-			country:			country,
-			postalCode:			postalCodeValue?.count ?? 0 == 0 ? nil : postalCodeValue,
-			postalCodeExt:		postalCodeExtValue?.count ?? 0 == 0 ? nil : postalCodeExtValue,
-			postalCodeVanity:	postalCodeVanityValue?.count ?? 0 == 0 ? nil : postalCodeVanityValue
-		)
-		
-		let addressToAdd = Address(withIdentifier: uuid, properties: properties, geometry: [], type: .address)
-		displayController.project.imdfArchive.addresses.append(addressToAdd)
-		displayController.tableView.reloadData()
 		
 		do {
 			let archive = displayController.project.imdfArchive
@@ -160,11 +191,21 @@ class ProjectAddressEditController: ComposePopoverController {
 		} catch {
 			print(error)
 		}
+		
 			
-		dismiss(animated: true, completion: nil)
+		if !shouldRenderToCreate {
+			navigationController?.popViewController(animated: true)
+		} else {
+			dismiss(animated: true, completion: nil)
+		}
 	}
 	
 	private func checkAddAddressButtonState() -> Void {
+		if !shouldRenderToCreate {
+			isConfirmButtonEnabled = true
+			return
+		}
+		
 		guard let address = addressCell.textField.text, let locality = localityCell.textField.text, let _ = countryData, let _ = provinceData else {
 			isConfirmButtonEnabled = false
 			return

@@ -47,7 +47,9 @@ struct Localizable {
 			static let addresses				= NSLocalizedString("projectExplorer.project.addresses", comment: "")
 			struct Address {
 				static let addAddress				= NSLocalizedString("projectExplorer.project.address.addAddress", comment: "")
+				static let editAddress				= NSLocalizedString("projectExplorer.project.address.editAddress", comment: "")
 				static let add						= NSLocalizedString("projectExplorer.project.address.add", comment: "")
+				static let delete					= NSLocalizedString("projectExplorer.project.address.delete", comment: "")
 				static let addressDescription		= NSLocalizedString("projectExplorer.project.address.addressDescription", comment: "")
 				static let placeholderAddress		= NSLocalizedString("projectExplorer.project.address.placeholderAddress", comment: "")
 				static let placeholderCountry		= NSLocalizedString("projectExplorer.project.address.placeholderCountry", comment: "")

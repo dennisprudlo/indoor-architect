@@ -22,6 +22,7 @@
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
 		816DC53E23F0679900E1471D /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootController.swift */; };
 		8174854A2418177F00EE3E12 /* ISO-3166-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 817485492418177F00EE3E12 /* ISO-3166-2.plist */; };
+		8174854C24182A4400EE3E12 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174854B24182A4400EE3E12 /* DetailTableViewController.swift */; };
 		81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFC240AB9FE008873E9 /* ProjectSection.swift */; };
 		81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFE240ABB24008873E9 /* WelcomeController.swift */; };
 		81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */; };
@@ -88,6 +89,7 @@
 		816DC53323F0606E00E1471D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		816DC53D23F0679900E1471D /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 		817485492418177F00EE3E12 /* ISO-3166-2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ISO-3166-2.plist"; sourceTree = "<group>"; };
+		8174854B24182A4400EE3E12 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		81A58DFC240AB9FE008873E9 /* ProjectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSection.swift; sourceTree = "<group>"; };
 		81A58DFE240ABB24008873E9 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGeneralSection.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				8120AC8023F9982800696FCA /* ScrollViewController.swift */,
 				8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */,
 				81D580C2240D13310049B17F /* ComposePopoverController.swift */,
+				8174854B24182A4400EE3E12 /* DetailTableViewController.swift */,
 			);
 			path = "Custom Controller";
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */,
 				81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */,
 				8141C7E223FAEFA0008AC7DD /* MCToolPalette.swift in Sources */,
+				8174854C24182A4400EE3E12 /* DetailTableViewController.swift in Sources */,
 				81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */,
 				81D580BC240C0ADD0049B17F /* ProjectAddressController.swift in Sources */,
 				81A58E03240AD1E1008873E9 /* ProjectDeleteSection.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ComposePopoverController: UITableViewController {
+class ComposePopoverController: DetailTableViewController {
 	
 	typealias TableViewSection = (title: String?, description: String?, cells: [UITableViewCell])
 	
@@ -30,6 +30,8 @@ class ComposePopoverController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		tableView.cellLayoutMarginsFollowReadableWidth = true
 		
 		//
 		// Add the cancel bar button item

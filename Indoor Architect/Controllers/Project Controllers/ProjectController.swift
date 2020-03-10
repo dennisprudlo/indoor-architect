@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectController: UITableViewController {
+class ProjectController: DetailTableViewController {
 
 	let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveProject))
 	

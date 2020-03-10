@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectAddressLocaleController: UITableViewController {
+class ProjectAddressLocaleController: DetailTableViewController {
 	
 	enum DataType {
 		case country
