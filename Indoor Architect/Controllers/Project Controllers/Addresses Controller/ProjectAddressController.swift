@@ -46,7 +46,6 @@ class ProjectAddressController: DetailTableViewController {
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-		cell.selectionStyle = .none
 		cell.accessoryType = .disclosureIndicator
 		
 		let address		= project.imdfArchive.addresses[indexPath.row].properties

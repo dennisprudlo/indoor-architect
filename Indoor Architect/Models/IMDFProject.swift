@@ -57,6 +57,8 @@ class IMDFProject {
 		let archiveManifestData = try self.imdfArchive.manifest.encode()
 		let archiveManifestUrl = ProjectManager.shared.url(forPathComponent: .archive(feature: .manifest), inProjectWithUuid: manifest.uuid)
 		FileManager.default.createFile(atPath: archiveManifestUrl.path, contents: archiveManifestData, attributes: nil)
+		
+		hasChangesToStoredVersion = false
 	}
 	
 	/// Deletes the project permanentely
