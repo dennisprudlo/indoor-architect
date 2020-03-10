@@ -25,8 +25,8 @@ class ProjectAddressEditController: ComposePopoverController {
 	let postalCodeVanityCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderVanity)
 	let unitCell				= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderUnit)
 	
-	var countryData: (displayTitle: String, code: String)?
-	var provinceData: (displayTitle: String, code: String)?
+	var countryData: Address.LocalityCodeCombination?
+	var provinceData: Address.LocalityCodeCombination?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -101,7 +101,7 @@ class ProjectAddressEditController: ComposePopoverController {
 		super.viewWillAppear(animated)
 		
 		if let countryData = self.countryData {
-			countryCell.textLabel?.text = countryData.displayTitle
+			countryCell.textLabel?.text = countryData.title
 			countryCell.textLabel?.textColor = .label
 		} else {
 			countryCell.textLabel?.text = Localizable.ProjectExplorer.Project.Address.placeholderCountry
@@ -109,7 +109,7 @@ class ProjectAddressEditController: ComposePopoverController {
 		}
 		
 		if let provinceData = self.provinceData {
-			provinceCell.textLabel?.text = provinceData.displayTitle
+			provinceCell.textLabel?.text = provinceData.title
 			provinceCell.textLabel?.textColor = .label
 		} else {
 			provinceCell.textLabel?.text = Localizable.ProjectExplorer.Project.Address.placeholderProvince
@@ -165,7 +165,7 @@ class ProjectAddressEditController: ComposePopoverController {
 	}
 	
 	private func checkAddAddressButtonState() -> Void {
-		guard let address = addressCell.textField.text, let locality = localityCell.textField.text, let _ = countryData else {
+		guard let address = addressCell.textField.text, let locality = localityCell.textField.text, let _ = countryData, let _ = provinceData else {
 			isConfirmButtonEnabled = false
 			return
 		}
@@ -182,14 +182,20 @@ class ProjectAddressEditController: ComposePopoverController {
 		let cell = tableView.cellForRow(at: indexPath)
 		
 		if cell == countryCell {
-			let localePickerController = ProjectAddressLocaleController(style: .insetGrouped)
-			localePickerController.displayController = self
-			localePickerController.dataType = .country
+			let localePickerController					= ProjectAddressLocaleController(style: .insetGrouped)
+			localePickerController.displayController	= self
+			localePickerController.dataType				= .country
 			navigationController?.pushViewController(localePickerController, animated: true)
 		} else if cell == provinceCell {
-			let localePickerController = ProjectAddressLocaleController(style: .insetGrouped)
-			localePickerController.displayController = self
-			localePickerController.dataType = .province
+			
+			guard let code = countryData?.code else {
+				return tableView.deselectRow(at: indexPath, animated: true)
+			}
+			
+			let localePickerController					= ProjectAddressLocaleController(style: .insetGrouped)
+			localePickerController.displayController	= self
+			localePickerController.dataType				= .province
+			localePickerController.preselectedCountry	= code
 			navigationController?.pushViewController(localePickerController, animated: true)
 		}
 	}

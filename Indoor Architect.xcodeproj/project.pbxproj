@@ -21,6 +21,7 @@
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
 		816DC53E23F0679900E1471D /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootController.swift */; };
+		8174854A2418177F00EE3E12 /* ISO-3166-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 817485492418177F00EE3E12 /* ISO-3166-2.plist */; };
 		81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFC240AB9FE008873E9 /* ProjectSection.swift */; };
 		81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFE240ABB24008873E9 /* WelcomeController.swift */; };
 		81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */; };
@@ -86,6 +87,7 @@
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		816DC53323F0606E00E1471D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		816DC53D23F0679900E1471D /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		817485492418177F00EE3E12 /* ISO-3166-2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ISO-3166-2.plist"; sourceTree = "<group>"; };
 		81A58DFC240AB9FE008873E9 /* ProjectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSection.swift; sourceTree = "<group>"; };
 		81A58DFE240ABB24008873E9 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGeneralSection.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				81F67DB123F06F60006B9187 /* Config */,
 				816DC53C23F0677900E1471D /* Controllers */,
 				816DC53A23F065A800E1471D /* Supporting Files */,
+				81748547241816CC00EE3E12 /* Resources */,
 			);
 			path = "Indoor Architect";
 			sourceTree = "<group>";
@@ -222,6 +225,22 @@
 				81A58DFE240ABB24008873E9 /* WelcomeController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		81748547241816CC00EE3E12 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				81748548241816DC00EE3E12 /* Data */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		81748548241816DC00EE3E12 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				817485492418177F00EE3E12 /* ISO-3166-2.plist */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		81A58DFB240AB9E3008873E9 /* Sections */ = {
@@ -432,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81F67DC423F0A581006B9187 /* Localizable.strings in Resources */,
+				8174854A2418177F00EE3E12 /* ISO-3166-2.plist in Resources */,
 				81F67DC923F0AA5E006B9187 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

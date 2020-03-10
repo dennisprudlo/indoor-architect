@@ -18,8 +18,9 @@ class ProjectAddressLocaleController: UITableViewController {
 	var displayController: ProjectAddressEditController!
 	
 	var dataType: DataType = .country
+	var preselectedCountry: String?
 	
-	var dataset: [(displayTitle: String, code: String)] = []
+	var dataset: [Address.LocalityCodeCombination] = []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -27,22 +28,10 @@ class ProjectAddressLocaleController: UITableViewController {
 		title = dataType == .country ? Localizable.ProjectExplorer.Project.Address.placeholderCountry : Localizable.ProjectExplorer.Project.Address.placeholderProvince
 		
 		dataset = []
-		
 		if dataType == .country {
-			Locale.isoRegionCodes.forEach { (isoCountryCode) in
-				let countryIdentifier	= NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: isoCountryCode])
-				let countryName			= NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: NSLocale.Key.identifier, value: countryIdentifier)
-				
-				dataset.append((displayTitle: countryName ?? "", code: isoCountryCode))
-			}
-			
-			dataset.sort { (first, second) -> Bool in
-				return first.displayTitle < second.displayTitle
-			}
+			dataset = Address.getLocalizedCountryCodes()
 		} else {
-			dataset.append((displayTitle: "Berlin", code: "BE"))
-			dataset.append((displayTitle: "Bremen", code: "BR"))
-			dataset.append((displayTitle: "Hamburg", code: "HH"))
+			dataset = Address.getSubdivisions(forCountry: preselectedCountry ?? "")
 		}
 	}
 	
@@ -57,14 +46,15 @@ class ProjectAddressLocaleController: UITableViewController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
 		
-		cell.textLabel?.text = dataset[indexPath.row].displayTitle
+		cell.textLabel?.text = dataset[indexPath.row].title
 		cell.detailTextLabel?.text = dataset[indexPath.row].code
 		
 		return cell
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let data = (displayTitle: dataset[indexPath.row].displayTitle, code: dataset[indexPath.row].code)
+		let data = (code: dataset[indexPath.row].code, title: dataset[indexPath.row].title)
+		
 		if dataType == .country {
 			displayController.countryData = data
 		} else {

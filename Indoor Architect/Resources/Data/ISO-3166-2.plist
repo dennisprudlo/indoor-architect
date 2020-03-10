@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DE</key>
+	<dict>
+		<key>DE-BW</key>
+		<string>Baden-Württemberg</string>
+		<key>DE-BY</key>
+		<string>Bayern</string>
+		<key>DE-BE</key>
+		<string>Berlin</string>
+		<key>DE-BB</key>
+		<string>Brandenburg</string>
+		<key>DE-HB</key>
+		<string>Bremen</string>
+		<key>DE-HH</key>
+		<string>Hamburg</string>
+		<key>DE-HE</key>
+		<string>Hessen</string>
+		<key>DE-MV</key>
+		<string>Mecklenburg-Vorpommern</string>
+		<key>DE-NI</key>
+		<string>Niedersachsen</string>
+		<key>DE-NW</key>
+		<string>Nordrhein-Westfalen</string>
+		<key>DE-RP</key>
+		<string>Rheinland-Pfalz</string>
+		<key>DE-SL</key>
+		<string>Saarland</string>
+		<key>DE-SN</key>
+		<string>Sachsen</string>
+		<key>DE-ST</key>
+		<string>Sachsen-Anhalt</string>
+		<key>DE-SH</key>
+		<string>Schleswig-Holstein</string>
+		<key>DE-TH</key>
+		<string>Thüringen</string>
+	</dict>
+</dict>
+</plist>
