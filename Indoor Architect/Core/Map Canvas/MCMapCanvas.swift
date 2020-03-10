@@ -57,6 +57,9 @@ class MCMapCanvas: MKMapView, MKMapViewDelegate {
 		delegate = self
 		autolayout()
 		
+		showsUserLocation = false
+		showsTraffic = false
+		
 		//
 		// Configure the different palettes and overlay
 		configureGeneralToolsPalette()

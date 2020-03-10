@@ -168,6 +168,7 @@
 		8141C7DE23FAEE05008AC7DD /* Map Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */,
 				81FC47E22409AB900078551E /* Palettes */,
 			);
 			path = "Map Canvas";
@@ -389,7 +390,6 @@
 				81FC47DD2409A2CF0078551E /* Tool Palettes */,
 				81E2FA4A2401997700CA82AA /* Tool Stack Items */,
 				81E2FA49240194DF00CA82AA /* Tool Stacks */,
-				8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */,
 				8141C7E123FAEFA0008AC7DD /* MCToolPalette.swift */,
 			);
 			path = Palettes;
