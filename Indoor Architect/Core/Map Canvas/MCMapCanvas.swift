@@ -15,6 +15,8 @@ protocol MCMapCanvasDelegate {
 
 class MCMapCanvas: MKMapView, MKMapViewDelegate {
 	
+	var project: IMDFProject!
+	
 	/// The spacing between the palette and their superview as well as between the children tool stacks
 	private static let toolPaletteInset: CGFloat = 10
 	
@@ -116,14 +118,13 @@ class MCMapCanvas: MKMapView, MKMapViewDelegate {
 		drawingDelegate?.mapCanvas(self, didTapOn: coordinate, with: selectedDrawingTool)
 	}
 	
-	func addAnchorAnnotations(_ anchors: [Anchor]) {
-		anchors.forEach({
-			if let geometry = $0.geometry.first {
-				let annotation = geometry as MKAnnotation
-				self.addAnnotation(annotation)
-				anchorAnnotationPairs[$0] = annotation
-			}
-		})
+	func remakeMap() -> Void {
+		removeOverlays(overlays)
+		removeAnnotations(annotations)
+		
+		//
+		// Render anchors
+		project.imdfArchive.anchors.forEach { self.addAnnotation(IMDFAnchorAnnotation(coordinate: $0.getCoordinates(), anchor: $0)) }
 	}
 	
 	override func renderer(for overlay: MKOverlay) -> MKOverlayRenderer? {		
@@ -145,11 +146,16 @@ class MCMapCanvas: MKMapView, MKMapViewDelegate {
 		return renderer
 	}
 	
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		let annotationView = PointAnnotationView(annotation: annotation, reuseIdentifier: nil)
+		return annotationView
+	}
+	
 	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
 		
-		if newState == .ending, let coordinates = view.annotation?.coordinate {
-			
-			print("stopped dragging point geometry with id: \(view.reuseIdentifier ?? "none")")
+		if newState == .ending, let annotation = view.annotation as? IMDFAnchorAnnotation {
+			annotation.anchor.setCoordinates(annotation.coordinate)
+			try? project.imdfArchive.save(.anchor)
 		}
 	}
 }

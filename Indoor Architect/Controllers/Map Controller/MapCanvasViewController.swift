@@ -24,17 +24,18 @@ class MapCanvasViewController: UIViewController, MCMapCanvasDelegate {
 		
 		view.addSubview(canvas)
 		canvas.edgesToSuperview()
-		
-		canvas.addAnchorAnnotations(project.imdfArchive.anchors)
 	}
 	
 	func present(forProject project: IMDFProject) -> Void {
 		self.project = project
 		self.modalPresentationStyle = .fullScreen
 		
+		canvas.project = project
 		canvas.toolPalette.reset()
 		canvas.toolPalette.reset()
 		canvas.selectedDrawingTool = .pointer
+	
+		canvas.remakeMap()
 		
 		Application.rootController.present(self, animated: true, completion: nil)
 	}

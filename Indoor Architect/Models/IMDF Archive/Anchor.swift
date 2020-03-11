@@ -15,4 +15,15 @@ class Anchor: Feature<Anchor.Properties> {
 		var addressId: UUID?
 		var unitId: UUID?
 	}
+	
+	func getCoordinates() -> CLLocationCoordinate2D {
+		return geometry.first!.coordinate
+	}
+	
+	func setCoordinates(_ coordinates: CLLocationCoordinate2D) -> Void {
+		let point = MKPointAnnotation()
+		point.coordinate = coordinates
+		
+		self.geometry = [point]
+	}
 }

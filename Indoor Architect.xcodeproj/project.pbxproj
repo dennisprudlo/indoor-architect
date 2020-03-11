@@ -32,6 +32,8 @@
 		81A58E07240AE0A0008873E9 /* ProjectActionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E06240AE0A0008873E9 /* ProjectActionSection.swift */; };
 		81A58E09240AE249008873E9 /* ButtonSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */; };
 		81AE8E4D24191C70007C8093 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE8E4C24191C70007C8093 /* Anchor.swift */; };
+		81AE8E5124193C90007C8093 /* IMDFAnchorAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE8E5024193C90007C8093 /* IMDFAnchorAnnotation.swift */; };
+		81AE8E552419413C007C8093 /* PointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE8E542419413C007C8093 /* PointAnnotationView.swift */; };
 		81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */; };
 		81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */; };
 		81D580AC240AF0350049B17F /* IMDFArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580AB240AF0350049B17F /* IMDFArchive.swift */; };
@@ -101,6 +103,8 @@
 		81A58E06240AE0A0008873E9 /* ProjectActionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectActionSection.swift; sourceTree = "<group>"; };
 		81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetTableViewCell.swift; sourceTree = "<group>"; };
 		81AE8E4C24191C70007C8093 /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
+		81AE8E5024193C90007C8093 /* IMDFAnchorAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFAnchorAnnotation.swift; sourceTree = "<group>"; };
+		81AE8E542419413C007C8093 /* PointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotationView.swift; sourceTree = "<group>"; };
 		81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerPlaceholderCell.swift; sourceTree = "<group>"; };
 		81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerHandler.swift; sourceTree = "<group>"; };
 		81D580AB240AF0350049B17F /* IMDFArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFArchive.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 		8141C7DE23FAEE05008AC7DD /* Map Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				81AE8E4E24193C6E007C8093 /* Renderer */,
 				8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */,
 				81FC47E22409AB900078551E /* Palettes */,
 			);
@@ -197,6 +202,7 @@
 		816DC52423F0606B00E1471D /* Indoor Architect */ = {
 			isa = PBXGroup;
 			children = (
+				81AE8E5224194121007C8093 /* Views */,
 				8141C7DD23FAEDF8008AC7DD /* Core */,
 				81F67DDC23F19449006B9187 /* Models */,
 				81F67DD023F14105006B9187 /* Utilities */,
@@ -271,6 +277,38 @@
 				81D580B3240B0BDD0049B17F /* ProjectExtensionEditController.swift */,
 			);
 			path = "Extension Controllers";
+			sourceTree = "<group>";
+		};
+		81AE8E4E24193C6E007C8093 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				81AE8E4F24193C77007C8093 /* Annotations */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		81AE8E4F24193C77007C8093 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				81AE8E5024193C90007C8093 /* IMDFAnchorAnnotation.swift */,
+			);
+			path = Annotations;
+			sourceTree = "<group>";
+		};
+		81AE8E5224194121007C8093 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				81AE8E5324194127007C8093 /* Map Canvas */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		81AE8E5324194127007C8093 /* Map Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				81AE8E542419413C007C8093 /* PointAnnotationView.swift */,
+			);
+			path = "Map Canvas";
 			sourceTree = "<group>";
 		};
 		81D580A8240AEEB20049B17F /* IMDF Archive */ = {
@@ -512,6 +550,7 @@
 				81F67DDE23F19458006B9187 /* IMDFProject.swift in Sources */,
 				81A58E05240ADBC5008873E9 /* ProjectMetaInfoSection.swift in Sources */,
 				810D0D0123F3284100DC5D74 /* IMDFProjectManifest.swift in Sources */,
+				81AE8E5124193C90007C8093 /* IMDFAnchorAnnotation.swift in Sources */,
 				81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */,
 				81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */,
 				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
@@ -549,6 +588,7 @@
 				8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */,
 				8141C7DA23FAD075008AC7DD /* Style.swift in Sources */,
 				81AE8E4D24191C70007C8093 /* Anchor.swift in Sources */,
+				81AE8E552419413C007C8093 /* PointAnnotationView.swift in Sources */,
 				813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */,
 				81D580BF240C133D0049B17F /* ProjectAddressEditController.swift in Sources */,
 				8141C7E623FAF91E008AC7DD /* MCToolStackItem.swift in Sources */,
