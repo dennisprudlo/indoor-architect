@@ -36,8 +36,8 @@
 		81D580AC240AF0350049B17F /* IMDFArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580AB240AF0350049B17F /* IMDFArchive.swift */; };
 		81D580AE240AF0BB0049B17F /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580AD240AF0BB0049B17F /* Manifest.swift */; };
 		81D580B0240B02560049B17F /* ProjectArchiveSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580AF240B02560049B17F /* ProjectArchiveSection.swift */; };
-		81D580B2240B04AC0049B17F /* ProjectExtensionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B1240B04AC0049B17F /* ProjectExtensionsController.swift */; };
-		81D580B4240B0BDD0049B17F /* ProjectExtensionCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B3240B0BDD0049B17F /* ProjectExtensionCreateController.swift */; };
+		81D580B2240B04AC0049B17F /* ProjectExtensionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B1240B04AC0049B17F /* ProjectExtensionController.swift */; };
+		81D580B4240B0BDD0049B17F /* ProjectExtensionEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B3240B0BDD0049B17F /* ProjectExtensionEditController.swift */; };
 		81D580B6240BEDA60049B17F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B5240BEDA60049B17F /* Extension.swift */; };
 		81D580B8240C005E0049B17F /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B7240C005E0049B17F /* Feature.swift */; };
 		81D580BA240C04150049B17F /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B9240C04150049B17F /* Address.swift */; };
@@ -104,8 +104,8 @@
 		81D580AB240AF0350049B17F /* IMDFArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFArchive.swift; sourceTree = "<group>"; };
 		81D580AD240AF0BB0049B17F /* Manifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
 		81D580AF240B02560049B17F /* ProjectArchiveSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectArchiveSection.swift; sourceTree = "<group>"; };
-		81D580B1240B04AC0049B17F /* ProjectExtensionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExtensionsController.swift; sourceTree = "<group>"; };
-		81D580B3240B0BDD0049B17F /* ProjectExtensionCreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExtensionCreateController.swift; sourceTree = "<group>"; };
+		81D580B1240B04AC0049B17F /* ProjectExtensionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExtensionController.swift; sourceTree = "<group>"; };
+		81D580B3240B0BDD0049B17F /* ProjectExtensionEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExtensionEditController.swift; sourceTree = "<group>"; };
 		81D580B5240BEDA60049B17F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		81D580B7240C005E0049B17F /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		81D580B9240C04150049B17F /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -262,6 +262,15 @@
 			path = Sections;
 			sourceTree = "<group>";
 		};
+		81AE8E492418F6AC007C8093 /* Extension Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81D580B1240B04AC0049B17F /* ProjectExtensionController.swift */,
+				81D580B3240B0BDD0049B17F /* ProjectExtensionEditController.swift */,
+			);
+			path = "Extension Controllers";
+			sourceTree = "<group>";
+		};
 		81D580A8240AEEB20049B17F /* IMDF Archive */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,14 +283,14 @@
 			path = "IMDF Archive";
 			sourceTree = "<group>";
 		};
-		81D580BD240C13170049B17F /* Addresses Controller */ = {
+		81D580BD240C13170049B17F /* Address Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				81D580BB240C0ADD0049B17F /* ProjectAddressController.swift */,
 				81D580BE240C133D0049B17F /* ProjectAddressEditController.swift */,
 				81D580C0240C20400049B17F /* ProjectAddressLocaleController.swift */,
 			);
-			path = "Addresses Controller";
+			path = "Address Controllers";
 			sourceTree = "<group>";
 		};
 		81D99FBF240AB77600E0D4D2 /* Custom Controller */ = {
@@ -361,9 +370,8 @@
 				81A58DFB240AB9E3008873E9 /* Sections */,
 				81F67DD623F14E9F006B9187 /* ProjectCreateController.swift */,
 				81F67DAF23F06A64006B9187 /* ProjectController.swift */,
-				81D580B1240B04AC0049B17F /* ProjectExtensionsController.swift */,
-				81D580B3240B0BDD0049B17F /* ProjectExtensionCreateController.swift */,
-				81D580BD240C13170049B17F /* Addresses Controller */,
+				81AE8E492418F6AC007C8093 /* Extension Controllers */,
+				81D580BD240C13170049B17F /* Address Controllers */,
 			);
 			path = "Project Controllers";
 			sourceTree = "<group>";
@@ -525,14 +533,14 @@
 				81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */,
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */,
-				81D580B2240B04AC0049B17F /* ProjectExtensionsController.swift in Sources */,
+				81D580B2240B04AC0049B17F /* ProjectExtensionController.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
 				81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */,
 				81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
 				81D580AE240AF0BB0049B17F /* Manifest.swift in Sources */,
 				81D580B6240BEDA60049B17F /* Extension.swift in Sources */,
-				81D580B4240B0BDD0049B17F /* ProjectExtensionCreateController.swift in Sources */,
+				81D580B4240B0BDD0049B17F /* ProjectExtensionEditController.swift in Sources */,
 				81D580C3240D13310049B17F /* ComposePopoverController.swift in Sources */,
 				81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */,
 				8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */,

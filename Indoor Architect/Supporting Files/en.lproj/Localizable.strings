@@ -29,11 +29,15 @@
 "projectExplorer.project.editIndoorMap"				= "Edit Indoor Map";
 "projectExplorer.project.exportImdfArchive"			= "Export IMDF Archive";
 "projectExplorer.project.archiveSectionTitle"		= "IMDF Archive";
+
 "projectExplorer.project.extensions"				= "Extensions";
-"projectExplorer.project.addExtensionTitle"			= "Add Extension";
-"projectExplorer.project.extensionProvider"			= "Provider";
-"projectExplorer.project.extensionName"				= "Name";
-"projectExplorer.project.extensionVersion"			= "Version";
+"projectExplorer.project.extensions.addExtension"	= "Add Extension";
+"projectExplorer.project.extensions.editExtension"	= "Edit Extension";
+"projectExplorer.project.extensions.add"			= "Add";
+"projectExplorer.project.extensions.remove"			= "Remove";
+"projectExplorer.project.extensions.provider"		= "Provider";
+"projectExplorer.project.extensions.name"			= "Name";
+"projectExplorer.project.extensions.version"		= "Version";
 
 "projectExplorer.project.addresses"						= "Addresses";
 "projectExplorer.project.address.addAddress"			= "Add Address";

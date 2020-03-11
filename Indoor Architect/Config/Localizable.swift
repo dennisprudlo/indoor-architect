@@ -38,13 +38,19 @@ struct Localizable {
 			static let editIndoorMap			= NSLocalizedString("projectExplorer.project.editIndoorMap", comment: "")
 			static let exportImdfArchive		= NSLocalizedString("projectExplorer.project.exportImdfArchive", comment: "")
 			static let archiveSectionTitle		= NSLocalizedString("projectExplorer.project.archiveSectionTitle", comment: "")
-			static let extensions				= NSLocalizedString("projectExplorer.project.extensions", comment: "")
-			static let addExtensionTitle		= NSLocalizedString("projectExplorer.project.addExtensionTitle", comment: "")
-			static let extensionProvider		= NSLocalizedString("projectExplorer.project.extensionProvider", comment: "")
-			static let extensionName			= NSLocalizedString("projectExplorer.project.extensionName", comment: "")
-			static let extensionVersion			= NSLocalizedString("projectExplorer.project.extensionVersion", comment: "")
 			
-			static let addresses				= NSLocalizedString("projectExplorer.project.addresses", comment: "")
+			static let extensions = NSLocalizedString("projectExplorer.project.extensions", comment: "")
+			struct Extension {
+				static let addExtension		= NSLocalizedString("projectExplorer.project.extensions.addExtension", comment: "")
+				static let editExtension	= NSLocalizedString("projectExplorer.project.extensions.editExtension", comment: "")
+				static let add				= NSLocalizedString("projectExplorer.project.extensions.add", comment: "")
+				static let remove			= NSLocalizedString("projectExplorer.project.extensions.remove", comment: "")
+				static let provider			= NSLocalizedString("projectExplorer.project.extensions.provider", comment: "")
+				static let name				= NSLocalizedString("projectExplorer.project.extensions.name", comment: "")
+				static let version			= NSLocalizedString("projectExplorer.project.extensions.version", comment: "")
+			}
+			
+			static let addresses = NSLocalizedString("projectExplorer.project.addresses", comment: "")
 			struct Address {
 				static let addAddress				= NSLocalizedString("projectExplorer.project.address.addAddress", comment: "")
 				static let editAddress				= NSLocalizedString("projectExplorer.project.address.editAddress", comment: "")

@@ -59,7 +59,7 @@ class ProjectArchiveSection: ProjectSection {
 	
 	override func didSelectRow(at index: Int) {
 		if cells[index] == customExtensionsCell {
-			let projectExtensionsController = ProjectExtensionsController(style: .insetGrouped)
+			let projectExtensionsController = ProjectExtensionController(style: .insetGrouped)
 			projectExtensionsController.project = delegate?.project
 			delegate?.navigationController?.pushViewController(projectExtensionsController, animated: true)
 		}
