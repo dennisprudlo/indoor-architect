@@ -2,6 +2,1508 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AC</key>
+	<dict>
+		<key>SH-AC</key>
+		<string>Ascension</string>
+		<key>SH-HL</key>
+		<string>St. Helena</string>
+		<key>SH-TA</key>
+		<string>Tristan da Cunha</string>
+	</dict>
+	<key>AD</key>
+	<dict>
+		<key>AD-02</key>
+		<string>Canillo</string>
+		<key>AD-03</key>
+		<string>Encamp</string>
+		<key>AD-04</key>
+		<string>La Massana</string>
+		<key>AD-05</key>
+		<string>Ordino</string>
+		<key>AD-06</key>
+		<string>Sant Julià de Lòria</string>
+		<key>AD-07</key>
+		<string>Andorra la Vella</string>
+		<key>AD-08</key>
+		<string>Escaldes-Engordany</string>
+	</dict>
+	<key>AE</key>
+	<dict>
+		<key>AE-AZ</key>
+		<string>Abu Dhabi (أبو ظبي, Abū Ẓaby)</string>
+		<key>AE-AJ</key>
+		<string>Adschman (عجمان, ʿAǧmān)</string>
+		<key>AE-DU</key>
+		<string>Dubai (دبي, Dubayy)</string>
+		<key>AE-FU</key>
+		<string>Fudschaira (الفجيرة, al-Fuǧaira)</string>
+		<key>AE-RK</key>
+		<string>Ra’s al-Chaima (رأس الخيمة, Raʾs al-Ḫaima)</string>
+		<key>AE-SH</key>
+		<string>Schardscha (الشارقة, aš-Šāriqa)</string>
+		<key>AE-UQ</key>
+		<string>Umm al-Qaiwain (أم القيوين, Umm al-Qaiwain)</string>
+	</dict>
+	<key>AF</key>
+	<dict>
+		<key>AF-BDS</key>
+		<string>Badachschan</string>
+		<key>AF-BDG</key>
+		<string>Badghis</string>
+		<key>AF-BGL</key>
+		<string>Baglan</string>
+		<key>AF-BAL</key>
+		<string>Balch</string>
+		<key>AF-BAM</key>
+		<string>Bamiyan</string>
+		<key>AF-DAY</key>
+		<string>Daikondi</string>
+		<key>AF-FRA</key>
+		<string>Farah</string>
+		<key>AF-FYB</key>
+		<string>Faryab</string>
+		<key>AF-GHA</key>
+		<string>Ghazni</string>
+		<key>AF-GHO</key>
+		<string>Ghor</string>
+		<key>AF-HEL</key>
+		<string>Helmand</string>
+		<key>AF-HER</key>
+		<string>Herat</string>
+		<key>AF-JOW</key>
+		<string>1)</string>
+		<key>AF-KAB</key>
+		<string>Kabul</string>
+		<key>AF-KAN</key>
+		<string>Kandahar</string>
+		<key>AF-KAP</key>
+		<string>Kapisa</string>
+		<key>AF-KHO</key>
+		<string>Chost</string>
+		<key>AF-KNR</key>
+		<string>Kunar</string>
+		<key>AF-KDZ</key>
+		<string>Kundus</string>
+		<key>AF-LAG</key>
+		<string>Laghman</string>
+		<key>AF-LOG</key>
+		<string>Lugar</string>
+		<key>AF-NAN</key>
+		<string>Nangarhar</string>
+		<key>AF-NIM</key>
+		<string>Nimrus</string>
+		<key>AF-NUR</key>
+		<string>Nuristan</string>
+		<key>AF-PAN</key>
+		<string>Pandschschir</string>
+		<key>AF-PIA</key>
+		<string>Paktia</string>
+		<key>AF-PKA</key>
+		<string>Paktika</string>
+		<key>AF-PAR</key>
+		<string>Parwan</string>
+		<key>AF-SAM</key>
+		<string>Samangan</string>
+		<key>AF-SAR</key>
+		<string>Sar-i Pul</string>
+		<key>AF-TAK</key>
+		<string>Tachar</string>
+		<key>AF-URU</key>
+		<string>Uruzgan</string>
+		<key>AF-WAR</key>
+		<string>Wardak</string>
+		<key>AF-ZAB</key>
+		<string>Zabul</string>
+	</dict>
+	<key>AG</key>
+	<dict>
+		<key>AG-03</key>
+		<string>Saint George</string>
+		<key>AG-04</key>
+		<string>Saint John</string>
+		<key>AG-05</key>
+		<string>Saint Mary</string>
+		<key>AG-06</key>
+		<string>Saint Paul</string>
+		<key>AG-07</key>
+		<string>Saint Peter</string>
+		<key>AG-08</key>
+		<string>Saint Phillip</string>
+		<key>AG-10</key>
+		<string>1)</string>
+		<key>AG-11</key>
+		<string>1)</string>
+	</dict>
+	<key>AI</key>
+	<dict>
+		<key>AI</key>
+		<string>AI</string>
+	</dict>
+	<key>AL</key>
+	<dict>
+		<key>AL-01</key>
+		<string>Berat</string>
+		<key>AL-02</key>
+		<string>Durrës</string>
+		<key>AL-03</key>
+		<string>Elbasan</string>
+		<key>AL-04</key>
+		<string>Fier</string>
+		<key>AL-05</key>
+		<string>Gjirokastra</string>
+		<key>AL-06</key>
+		<string>Korça</string>
+		<key>AL-07</key>
+		<string>Kukës</string>
+		<key>AL-08</key>
+		<string>Lezha</string>
+		<key>AL-09</key>
+		<string>Dibra</string>
+		<key>AL-10</key>
+		<string>Shkodra</string>
+		<key>AL-11</key>
+		<string>Tirana</string>
+		<key>AL-12</key>
+		<string>Vlora</string>
+	</dict>
+	<key>AM</key>
+	<dict>
+		<key>AM-AG</key>
+		<string>Aragazotn</string>
+		<key>AM-AR</key>
+		<string>Ararat</string>
+		<key>AM-AV</key>
+		<string>Armawir</string>
+		<key>AM-ER</key>
+		<string>Jerewan</string>
+		<key>AM-GR</key>
+		<string>Gegharkunik</string>
+		<key>AM-KT</key>
+		<string>Kotajk</string>
+		<key>AM-LO</key>
+		<string>Lori</string>
+		<key>AM-SH</key>
+		<string>Schirak</string>
+		<key>AM-SU</key>
+		<string>Sjunik</string>
+		<key>AM-TV</key>
+		<string>Tawusch</string>
+		<key>AM-VD</key>
+		<string>Wajoz Dsor</string>
+	</dict>
+	<key>AN</key>
+	<dict>
+		<key>AN</key>
+		<string>AN</string>
+	</dict>
+	<key>AO</key>
+	<dict>
+		<key>AO-BGO</key>
+		<string>Bengo</string>
+		<key>AO-BGU</key>
+		<string>Benguela</string>
+		<key>AO-BIE</key>
+		<string>Bié</string>
+		<key>AO-CAB</key>
+		<string>Cabinda</string>
+		<key>AO-CCU</key>
+		<string>Cuando Cubango</string>
+		<key>AO-CNO</key>
+		<string>Cuanza Norte</string>
+		<key>AO-CUS</key>
+		<string>Cuanza Sul</string>
+		<key>AO-CNN</key>
+		<string>Cunene</string>
+		<key>AO-HUA</key>
+		<string>Huambo</string>
+		<key>AO-HUI</key>
+		<string>Huíla</string>
+		<key>AO-LUA</key>
+		<string>Luanda</string>
+		<key>AO-LNO</key>
+		<string>Lunda Norte</string>
+		<key>AO-LSU</key>
+		<string>Lunda Sul</string>
+		<key>AO-MAL</key>
+		<string>Malanje</string>
+		<key>AO-MOX</key>
+		<string>Moxico</string>
+		<key>AO-NAM</key>
+		<string>Namibe</string>
+		<key>AO-UIG</key>
+		<string>Uíge</string>
+		<key>AO-ZAI</key>
+		<string>Zaire</string>
+	</dict>
+	<key>AQ</key>
+	<dict>
+		<key>AQ</key>
+		<string>AQ</string>
+	</dict>
+	<key>AR</key>
+	<dict>
+		<key>AR-C</key>
+		<string>Stadt Buenos Aires</string>
+		<key>AR-B</key>
+		<string>Provinz Buenos Aires</string>
+		<key>AR-K</key>
+		<string>Catamarca</string>
+		<key>AR-H</key>
+		<string>Chaco</string>
+		<key>AR-U</key>
+		<string>Chubut</string>
+		<key>AR-X</key>
+		<string>Cordoba</string>
+		<key>AR-W</key>
+		<string>Corrientes</string>
+		<key>AR-E</key>
+		<string>Entre Ríos</string>
+		<key>AR-P</key>
+		<string>Formosa</string>
+		<key>AR-Y</key>
+		<string>Jujuy</string>
+		<key>AR-L</key>
+		<string>La Pampa</string>
+		<key>AR-F</key>
+		<string>La Rioja</string>
+		<key>AR-M</key>
+		<string>Mendoza</string>
+		<key>AR-N</key>
+		<string>Misiones</string>
+		<key>AR-Q</key>
+		<string>Neuquen</string>
+		<key>AR-R</key>
+		<string>Río Negro</string>
+		<key>AR-A</key>
+		<string>Salta</string>
+		<key>AR-J</key>
+		<string>San Juan</string>
+		<key>AR-D</key>
+		<string>San Luis</string>
+		<key>AR-Z</key>
+		<string>Santa Cruz</string>
+		<key>AR-S</key>
+		<string>Santa Fe</string>
+		<key>AR-G</key>
+		<string>Santiago del Estero</string>
+		<key>AR-V</key>
+		<string>Tierra del Fuego</string>
+		<key>AR-T</key>
+		<string>Tucuman</string>
+	</dict>
+	<key>AS</key>
+	<dict>
+		<key>AS</key>
+		<string>AS</string>
+	</dict>
+	<key>AT</key>
+	<dict>
+		<key>AT-1</key>
+		<string>Burgenland</string>
+		<key>AT-2</key>
+		<string>Karnten</string>
+		<key>AT-3</key>
+		<string>Niederosterreich</string>
+		<key>AT-4</key>
+		<string>Oberosterreich</string>
+		<key>AT-5</key>
+		<string>Salzburg</string>
+		<key>AT-6</key>
+		<string>Steiermark</string>
+		<key>AT-7</key>
+		<string>Tirol</string>
+		<key>AT-8</key>
+		<string>Vorarlberg</string>
+		<key>AT-9</key>
+		<string>Wien</string>
+	</dict>
+	<key>AU</key>
+	<dict>
+		<key>AU-NS</key>
+		<string>New South Wales</string>
+		<key>AU-QL</key>
+		<string>Queensland</string>
+		<key></key>
+		<string>Western Australia</string>
+		<key>AU-TS</key>
+		<string>Tasmanien</string>
+		<key>AU-VI</key>
+		<string>Victoria</string>
+	</dict>
+	<key>AW</key>
+	<dict>
+		<key>AW</key>
+		<string>AW</string>
+	</dict>
+	<key>AZ</key>
+	<dict>
+		<key>AZ-ABS</key>
+		<string>Abşeron</string>
+		<key>AZ-AGA</key>
+		<string>Ağstafa</string>
+		<key>AZ-AGC</key>
+		<string>Ağcabədi</string>
+		<key>AZ-AGM</key>
+		<string>Ağdam</string>
+		<key>AZ-AGS</key>
+		<string>Ağdaş</string>
+		<key>AZ-AGU</key>
+		<string>Ağsu</string>
+		<key>AZ-AST</key>
+		<string>Astara</string>
+		<key>AZ-BAB</key>
+		<string>Babək 1</string>
+		<key>AZ-BAL</key>
+		<string>Balakən</string>
+		<key>AZ-BAR</key>
+		<string>Bərdə</string>
+		<key>AZ-BEY</key>
+		<string>Beyləqan</string>
+		<key>AZ-BIL</key>
+		<string>Biləsuvar</string>
+		<key>AZ-CAB</key>
+		<string>Cəbrayıl</string>
+		<key>AZ-CAL</key>
+		<string>Cəlilabad</string>
+		<key>AZ-CUL</key>
+		<string>Culfa 1</string>
+		<key>AZ-DAS</key>
+		<string>Daşkəsən</string>
+		<key>AZ-FUZ</key>
+		<string>Füzuli</string>
+		<key>AZ-GAD</key>
+		<string>Gədəbəy</string>
+		<key>AZ-GOR</key>
+		<string>Goranboy</string>
+		<key>AZ-GOY</key>
+		<string>Göyçay</string>
+		<key>AZ-GYG</key>
+		<string>Göygöl</string>
+		<key>AZ-HAC</key>
+		<string>Hacıqabul</string>
+		<key>AZ-IMI</key>
+		<string>İmişli</string>
+		<key>AZ-ISM</key>
+		<string>İsmayıllı</string>
+		<key>AZ-KAL</key>
+		<string>Kəlbəcər</string>
+		<key>AZ-KAN</key>
+		<string>Kəngərli 1</string>
+		<key>AZ-KUR</key>
+		<string>Kürdəmir</string>
+		<key>AZ-LAC</key>
+		<string>Laçın</string>
+		<key>AZ-LAN</key>
+		<string>Lənkəran</string>
+		<key>AZ-LER</key>
+		<string>Lerik</string>
+		<key>AZ-MAS</key>
+		<string>Masallı</string>
+		<key>AZ-NEF</key>
+		<string>Neftçala</string>
+		<key>AZ-OGU</key>
+		<string>Oğuz</string>
+		<key>AZ-ORD</key>
+		<string>Ordubad 1</string>
+		<key>AZ-QAB</key>
+		<string>Qəbələ</string>
+		<key>AZ-QAX</key>
+		<string>Qax</string>
+		<key>AZ-QAZ</key>
+		<string>Qazax</string>
+		<key>AZ-QBA</key>
+		<string>Quba</string>
+		<key>AZ-QBI</key>
+		<string>Qubadlı</string>
+		<key>AZ-QOB</key>
+		<string>Qobustan (Mərəzə)</string>
+		<key>AZ-QUS</key>
+		<string>Qusar</string>
+		<key>AZ-SAB</key>
+		<string>Sabirabad</string>
+		<key>AZ-SAD</key>
+		<string>Sədərək 1</string>
+		<key>AZ-SAH</key>
+		<string>Şahbuz 1</string>
+		<key>AZ-SAK</key>
+		<string>Şəki</string>
+		<key>AZ-SAL</key>
+		<string>Salyan</string>
+		<key>AZ-SAT</key>
+		<string>Saatlı</string>
+		<key>AZ-SAR</key>
+		<string>Şərur 1</string>
+		<key>AZ-SBN</key>
+		<string>Şabran</string>
+		<key>AZ-SIY</key>
+		<string>Siyəzən</string>
+		<key>AZ-SKR</key>
+		<string>Şəmkir</string>
+		<key>AZ-SMI</key>
+		<string>Şamaxı</string>
+		<key>AZ-SMX</key>
+		<string>Samux</string>
+		<key>AZ-SUS</key>
+		<string>Şuşa</string>
+		<key>AZ-TAR</key>
+		<string>Tərtər</string>
+		<key>AZ-TOV</key>
+		<string>Tovuz</string>
+		<key>AZ-UCA</key>
+		<string>Ucar</string>
+		<key>AZ-XAC</key>
+		<string>Xaçmaz</string>
+		<key>AZ-XCI</key>
+		<string>Xocalı</string>
+		<key>AZ-XIZ</key>
+		<string>Xızı</string>
+		<key>AZ-XVD</key>
+		<string>Xocavənd</string>
+		<key>AZ-YAR</key>
+		<string>Yardımlı</string>
+		<key>AZ-YEV</key>
+		<string>Yevlax</string>
+		<key>AZ-ZAN</key>
+		<string>Zəngilan</string>
+		<key>AZ-ZAQ</key>
+		<string>Zaqatala</string>
+		<key>AZ-ZAR</key>
+		<string>Zərdab</string>
+	</dict>
+	<key>BA</key>
+	<dict>
+		<key>BA-BIH</key>
+		<string>Bosnien und Herzegowina Foderation</string>
+		<key>BA-SRP</key>
+		<string>Srpska Republika</string>
+		<key>BA-BRC</key>
+		<string>K</string>
+	</dict>
+	<key>BB</key>
+	<dict>
+		<key>BB-01</key>
+		<string>Christ Church</string>
+		<key>BB-02</key>
+		<string>Saint Andrew</string>
+		<key>BB-03</key>
+		<string>Saint George</string>
+		<key>BB-04</key>
+		<string>Saint James</string>
+		<key>BB-05</key>
+		<string>Saint John</string>
+		<key>BB-06</key>
+		<string>Saint Joseph</string>
+		<key>BB-07</key>
+		<string>Saint Lucy</string>
+		<key>BB-08</key>
+		<string>Saint Michael</string>
+		<key>BB-09</key>
+		<string>Saint Peter</string>
+		<key>BB-10</key>
+		<string>Saint Philip</string>
+		<key>BB-11</key>
+		<string>Saint Thomas</string>
+	</dict>
+	<key>BD</key>
+	<dict>
+		<key>BD-A</key>
+		<string>Barishal</string>
+		<key>BD-B</key>
+		<string>Chittagong</string>
+		<key>BD-C</key>
+		<string>Dhaka</string>
+		<key>BD-D</key>
+		<string>Khulna</string>
+		<key>BD-E</key>
+		<string>Rajshahi</string>
+		<key>BD-F</key>
+		<string>Rangpur</string>
+		<key>BD-G</key>
+		<string>Sylhet</string>
+		<key>BD-H</key>
+		<string>Maimansingh</string>
+	</dict>
+	<key>BE</key>
+	<dict>
+		<key>BE-BRU</key>
+		<string>Region Brüssel-Hauptstadt</string>
+		<key>BE-VLG</key>
+		<string>Flandern</string>
+		<key>BE-WAL</key>
+		<string>Wallonische Region</string>
+	</dict>
+	<key>BF</key>
+	<dict>
+		<key>BF-01</key>
+		<string>Boucle du Mouhoun</string>
+		<key>BF-02</key>
+		<string>Cascades</string>
+		<key>BF-03</key>
+		<string>Centre</string>
+		<key>BF-04</key>
+		<string>Centre-Est</string>
+		<key>BF-05</key>
+		<string>Centre-Nord</string>
+		<key>BF-06</key>
+		<string>Centre-Ouest</string>
+		<key>BF-07</key>
+		<string>Centre-Sud</string>
+		<key>BF-08</key>
+		<string>Est</string>
+		<key>BF-09</key>
+		<string>Hauts-Bassins</string>
+		<key>BF-10</key>
+		<string>Nord</string>
+		<key>BF-11</key>
+		<string>Plateau Central</string>
+		<key>BF-12</key>
+		<string>Sahel</string>
+		<key>BF-13</key>
+		<string>Sud-Ouest</string>
+	</dict>
+	<key>BG</key>
+	<dict>
+		<key>BG-01</key>
+		<string>Blagoewgrad</string>
+		<key>BG-02</key>
+		<string>Burgas</string>
+		<key>BG-03</key>
+		<string>Warna</string>
+		<key>BG-04</key>
+		<string>Weliko Tarnowo</string>
+		<key>BG-05</key>
+		<string>Widin</string>
+		<key>BG-06</key>
+		<string>Wraza</string>
+		<key>BG-07</key>
+		<string>Gabrowo</string>
+		<key>BG-08</key>
+		<string>Dobritsch</string>
+		<key>BG-09</key>
+		<string>Kardschali</string>
+		<key>BG-10</key>
+		<string>Kjustendil</string>
+		<key>BG-11</key>
+		<string>Lowetsch</string>
+		<key>BG-12</key>
+		<string>Montana</string>
+		<key>BG-13</key>
+		<string>Pasardschik</string>
+		<key>BG-14</key>
+		<string>Pernik</string>
+		<key>BG-15</key>
+		<string>Plewen</string>
+		<key>BG-16</key>
+		<string>Plowdiw</string>
+		<key>BG-17</key>
+		<string>Rasgrad</string>
+		<key>BG-18</key>
+		<string>Russe</string>
+		<key>BG-19</key>
+		<string>Silistra</string>
+		<key>BG-20</key>
+		<string>Sliwen</string>
+		<key>BG-21</key>
+		<string>Smoljan</string>
+		<key>BG-22</key>
+		<string>Sofia-Region</string>
+		<key>BG-23</key>
+		<string>Sofia-Stadt</string>
+		<key>BG-24</key>
+		<string>Stara Sagora</string>
+		<key>BG-25</key>
+		<string>Targowischte</string>
+		<key>BG-26</key>
+		<string>Chaskowo</string>
+		<key>BG-27</key>
+		<string>Schumen</string>
+		<key>BG-28</key>
+		<string>Jambol</string>
+	</dict>
+	<key>BH</key>
+	<dict>
+		<key>BH-13</key>
+		<string>Hauptstadtgouvernement</string>
+		<key>BH-14</key>
+		<string>Südliches Gouvernement</string>
+		<key>BH-15</key>
+		<string>Gouvernement Muharraq</string>
+		<key>BH-17</key>
+		<string>Nördliches Gouvernement</string>
+	</dict>
+	<key>BI</key>
+	<dict>
+		<key>BI-BB</key>
+		<string>Bubanza</string>
+		<key>BI-BM</key>
+		<string>Bujumbura Mairie</string>
+		<key>BI-BL</key>
+		<string>Bujumbura Rural</string>
+		<key>BI-BR</key>
+		<string>Bururi</string>
+		<key>BI-CA</key>
+		<string>Cankuzo</string>
+		<key>BI-CI</key>
+		<string>Cibitoke</string>
+		<key>BI-GI</key>
+		<string>Gitega</string>
+		<key>BI-KR</key>
+		<string>Karuzi</string>
+		<key>BI-KY</key>
+		<string>Kayanza</string>
+		<key>BI-KI</key>
+		<string>Kirundo</string>
+		<key>BI-MA</key>
+		<string>Makamba</string>
+		<key>BI-MU</key>
+		<string>Muramvya</string>
+		<key>BI-MY</key>
+		<string>Muyinga</string>
+		<key>BI-MW</key>
+		<string>Mwaro</string>
+		<key>BI-NG</key>
+		<string>Ngozi</string>
+		<key>BI-RM</key>
+		<string>Rumonge</string>
+		<key>BI-RT</key>
+		<string>Rutana</string>
+		<key>BI-RY</key>
+		<string>Ruyigi</string>
+	</dict>
+	<key>BJ</key>
+	<dict>
+		<key>BJ-AL</key>
+		<string>Alibori</string>
+		<key>BJ-AK</key>
+		<string>Atakora</string>
+		<key>BJ-AQ</key>
+		<string>Atlantique</string>
+		<key>BJ-BO</key>
+		<string>Borgou</string>
+		<key>BJ-CO</key>
+		<string>Collines</string>
+		<key>BJ-KO</key>
+		<string>Couffo</string>
+		<key>BJ-DO</key>
+		<string>Donga</string>
+		<key>BJ-LI</key>
+		<string>Littoral</string>
+		<key>BJ-MO</key>
+		<string>Mono</string>
+		<key>BJ-OU</key>
+		<string>Ouémé</string>
+		<key>BJ-PL</key>
+		<string>Plateau</string>
+		<key>BJ-ZO</key>
+		<string>Zou</string>
+	</dict>
+	<key>BL</key>
+	<dict>
+		<key>BL</key>
+		<string>BL</string>
+	</dict>
+	<key>BM</key>
+	<dict>
+		<key>BM</key>
+		<string>BM</string>
+	</dict>
+	<key>BN</key>
+	<dict>
+		<key>BN-BE</key>
+		<string>Belait</string>
+		<key>BN-BM</key>
+		<string>Brunei-Muara</string>
+		<key>BN-TE</key>
+		<string>Temburong</string>
+		<key>BN-TU</key>
+		<string>Tutong</string>
+	</dict>
+	<key>BO</key>
+	<dict>
+		<key>BO-B</key>
+		<string>Beni</string>
+		<key>BO-H</key>
+		<string>Chuquisaca</string>
+		<key>BO-C</key>
+		<string>Cochabamba</string>
+		<key>BO-L</key>
+		<string>La Paz</string>
+		<key>BO-O</key>
+		<string>Oruro</string>
+		<key>BO-N</key>
+		<string>Pando</string>
+		<key>BO-P</key>
+		<string>Potosí</string>
+		<key>BO-S</key>
+		<string>Santa Cruz</string>
+		<key>BO-T</key>
+		<string>Tarija</string>
+	</dict>
+	<key>BQ</key>
+	<dict>
+		<key>NL-BQ1</key>
+		<string>Bonaire</string>
+		<key>NL-BQ2</key>
+		<string>Saba</string>
+		<key>NL-BQ3</key>
+		<string>Sint Eustatius</string>
+	</dict>
+	<key>BR</key>
+	<dict>
+		<key>BR-AC</key>
+		<string>Acre (Bundesstaat)</string>
+		<key>BR-AL</key>
+		<string>Alagoas</string>
+		<key>BR-AM</key>
+		<string>Amazonas (brasilianischer Bundesstaat)</string>
+		<key>BR-AP</key>
+		<string>Amapá</string>
+		<key>BR-BA</key>
+		<string>Bahia</string>
+		<key>BR-CE</key>
+		<string>Ceará</string>
+		<key>BR-DF</key>
+		<string>Distrito Federal do Brasil</string>
+		<key>BR-ES</key>
+		<string>Espírito Santo</string>
+		<key>BR-GO</key>
+		<string>Goiás</string>
+		<key>BR-MA</key>
+		<string>Maranhão</string>
+		<key>BR-MG</key>
+		<string>Minas Gerais</string>
+		<key>BR-MS</key>
+		<string>Mato Grosso do Sul</string>
+		<key>BR-MT</key>
+		<string>Mato Grosso</string>
+		<key>BR-PA</key>
+		<string>Pará</string>
+		<key>BR-PB</key>
+		<string>Paraíba</string>
+		<key>BR-PE</key>
+		<string>Pernambuco</string>
+		<key>BR-PI</key>
+		<string>Piauí</string>
+		<key>BR-PR</key>
+		<string>Paraná</string>
+		<key>BR-RJ</key>
+		<string>Rio de Janeiro (Bundesstaat)</string>
+		<key>BR-RN</key>
+		<string>Rio Grande do Norte</string>
+		<key>BR-RO</key>
+		<string>Rondônia</string>
+		<key>BR-RR</key>
+		<string>Roraima</string>
+		<key>BR-RS</key>
+		<string>Rio Grande do Sul</string>
+		<key>BR-SC</key>
+		<string>Santa Catarina</string>
+		<key>BR-SE</key>
+		<string>Sergipe</string>
+		<key>BR-SP</key>
+		<string>São Paulo (Bundesstaat)</string>
+		<key>BR-TO</key>
+		<string>Tocantins</string>
+	</dict>
+	<key>BS</key>
+	<dict>
+		<key>BS-AK</key>
+		<string>Acklins</string>
+		<key>BS-BY</key>
+		<string>Berry Islands</string>
+		<key>BS-BI</key>
+		<string>Bimini und Cat Cay</string>
+		<key>BS-BP</key>
+		<string>Black Point</string>
+		<key>BS-CI</key>
+		<string>Cat Island</string>
+		<key>BS-CO</key>
+		<string>Central Abaco</string>
+		<key>BS-CS</key>
+		<string>Central Andros</string>
+		<key>BS-CE</key>
+		<string>Central Eleuthera</string>
+		<key>BS-CK</key>
+		<string>Crooked Island und Long Cay</string>
+		<key>BS-EG</key>
+		<string>East Grand Bahama</string>
+		<key>BS-EX</key>
+		<string>Exuma</string>
+		<key>BS-FP</key>
+		<string>Freeport</string>
+		<key>BS-GC</key>
+		<string>Grand Cay</string>
+		<key>BS-HI</key>
+		<string>Harbour Island</string>
+		<key>BS-HT</key>
+		<string>Hope Town</string>
+		<key>BS-IN</key>
+		<string>Inagua</string>
+		<key>BS-LI</key>
+		<string>Long Island</string>
+		<key>BS-MC</key>
+		<string>Mangrove Cay</string>
+		<key>BS-MG</key>
+		<string>Mayaguana</string>
+		<key>BS-MI</key>
+		<string>Moore's Island</string>
+		<key>BS-NO</key>
+		<string>North Abaco</string>
+		<key>BS-NP</key>
+		<string>New Providence (Insel)</string>
+		<key>BS-NS</key>
+		<string>North Andros</string>
+		<key>BS-NE</key>
+		<string>North Eleuthera</string>
+		<key>BS-RI</key>
+		<string>Ragged Island</string>
+		<key>BS-RC</key>
+		<string>Rum Cay</string>
+		<key>BS-SS</key>
+		<string>San Salvador</string>
+		<key>BS-SO</key>
+		<string>South Abaco</string>
+		<key>BS-SA</key>
+		<string>South Andros</string>
+		<key>BS-SE</key>
+		<string>South Eleuthera</string>
+		<key>BS-SW</key>
+		<string>Spanish Wells</string>
+		<key>BS-WG</key>
+		<string>West Grand Bahama</string>
+	</dict>
+	<key>BT</key>
+	<dict>
+		<key>BT-33</key>
+		<string>Bumthang</string>
+		<key>BT-12</key>
+		<string>Chukha</string>
+		<key>BT-22</key>
+		<string>Dagana</string>
+		<key>BT-GA</key>
+		<string>Gasa</string>
+		<key>BT-13</key>
+		<string>Haa</string>
+		<key>BT-44</key>
+		<string>Lhuntse</string>
+		<key>BT-42</key>
+		<string>Mongar</string>
+		<key>BT-11</key>
+		<string>Paro</string>
+		<key>BT-43</key>
+		<string>Pemagatshel</string>
+		<key>BT-23</key>
+		<string>Punakha</string>
+		<key>BT-45</key>
+		<string>Samdrup Jongkhar</string>
+		<key>BT-14</key>
+		<string>Samtse</string>
+		<key>BT-31</key>
+		<string>Sarpang</string>
+		<key>BT-15</key>
+		<string>Thimphu</string>
+		<key>BT-41</key>
+		<string>Trashigang</string>
+		<key>BT-TY</key>
+		<string>Trashiyangtse</string>
+		<key>BT-32</key>
+		<string>Trongsa</string>
+		<key>BT-21</key>
+		<string>Tsirang</string>
+		<key>BT-24</key>
+		<string>Wangdue Phodrang</string>
+		<key>BT-34</key>
+		<string>Zhemgang</string>
+	</dict>
+	<key>BV</key>
+	<dict>
+		<key>BV</key>
+		<string>BV</string>
+	</dict>
+	<key>BW</key>
+	<dict>
+		<key>BW-CE</key>
+		<string>Central</string>
+		<key>BW-CH</key>
+		<string>Chobe</string>
+		<key>BW-FR</key>
+		<string>1</string>
+		<key>BW-GA</key>
+		<string>1</string>
+		<key>BW-GH</key>
+		<string>Ghanzi</string>
+		<key>BW-JW</key>
+		<string>1</string>
+		<key>BW-KG</key>
+		<string>Kgalagadi</string>
+		<key>BW-KL</key>
+		<string>Kgatleng</string>
+		<key>BW-KW</key>
+		<string>Kweneng</string>
+		<key>BW-LO</key>
+		<string>1</string>
+		<key>BW-NE</key>
+		<string>North East</string>
+		<key>BW-NW</key>
+		<string>North West</string>
+		<key>BW-SP</key>
+		<string>1</string>
+		<key>BW-SE</key>
+		<string>South East</string>
+		<key>BW-SO</key>
+		<string>Southern</string>
+		<key>BW-ST</key>
+		<string>1</string>
+	</dict>
+	<key>BY</key>
+	<dict>
+		<key>BY-HM</key>
+		<string>1</string>
+		<key>BY-BR</key>
+		<string>2</string>
+		<key>BY-HO</key>
+		<string>3</string>
+		<key>BY-HR</key>
+		<string>4</string>
+		<key>BY-MA</key>
+		<string>5</string>
+		<key>BY-MI</key>
+		<string>6</string>
+		<key>BY-VI</key>
+		<string>7</string>
+	</dict>
+	<key>BZ</key>
+	<dict>
+		<key>BZ-BZ</key>
+		<string>Belize</string>
+		<key>BZ-CY</key>
+		<string>Cayo</string>
+		<key>BZ-CZL</key>
+		<string>Corozal</string>
+		<key>BZ-OW</key>
+		<string>Orange Walk</string>
+		<key>BZ-SC</key>
+		<string>Stann Creek</string>
+		<key>BZ-TOL</key>
+		<string>Toledo</string>
+	</dict>
+	<key>CA</key>
+	<dict>
+		<key>CA-AB</key>
+		<string>Alberta</string>
+		<key>CA-BC</key>
+		<string>British Columbia</string>
+		<key>CA-MB</key>
+		<string>Manitoba</string>
+		<key>CA-NB</key>
+		<string>New Brunswick</string>
+		<key>CA-NL</key>
+		<string>Neufundland und Labrador</string>
+		<key>CA-NS</key>
+		<string>Nova Scotia</string>
+		<key>CA-ON</key>
+		<string>Ontario</string>
+		<key>CA-PE</key>
+		<string>Prince Edward Island</string>
+		<key>CA-QC</key>
+		<string>Québec</string>
+		<key>CA-SK</key>
+		<string>Saskatchewan</string>
+	</dict>
+	<key>CC</key>
+	<dict>
+		<key>CC</key>
+		<string>CC</string>
+	</dict>
+	<key>CD</key>
+	<dict>
+		<key>CD-KN</key>
+		<string>1</string>
+		<key>CD-BC</key>
+		<string>2</string>
+		<key>CD-KG</key>
+		<string>3</string>
+		<key>CD-KL</key>
+		<string>4</string>
+		<key>CD-MN</key>
+		<string>5</string>
+		<key>CD-KS</key>
+		<string>6</string>
+		<key>CD-KC</key>
+		<string>7</string>
+		<key>CD-KE</key>
+		<string>8</string>
+		<key>CD-LO</key>
+		<string>9</string>
+		<key>CD-SA</key>
+		<string>10</string>
+		<key>CD-MA</key>
+		<string>11</string>
+		<key>CD-SK</key>
+		<string>12</string>
+		<key>CD-NK</key>
+		<string>13</string>
+		<key>CD-IT</key>
+		<string>14</string>
+		<key>CD-HU</key>
+		<string>15</string>
+		<key>CD-TO</key>
+		<string>16</string>
+		<key>CD-BU</key>
+		<string>17</string>
+		<key>CD-NU</key>
+		<string>18</string>
+		<key>CD-MO</key>
+		<string>19</string>
+		<key>CD-SU</key>
+		<string>20</string>
+		<key>CD-EQ</key>
+		<string>21</string>
+		<key>CD-TU</key>
+		<string>22</string>
+		<key>CD-TA</key>
+		<string>23</string>
+		<key>CD-HL</key>
+		<string>24</string>
+		<key>CD-LU</key>
+		<string>25</string>
+		<key>CD-HK</key>
+		<string>26</string>
+	</dict>
+	<key>CF</key>
+	<dict>
+		<key>CF-BB</key>
+		<string>Bamingui-Bangoran</string>
+		<key>CF-BGF</key>
+		<string>Bangui1</string>
+		<key>CF-BK</key>
+		<string>Basse-Kotto</string>
+		<key>CF-HM</key>
+		<string>Haut-Mbomou</string>
+		<key>CF-HK</key>
+		<string>Haute-Kotto</string>
+		<key>CF-KG</key>
+		<string>Kémo</string>
+		<key>CF-LB</key>
+		<string>Lobaye</string>
+		<key>CF-HS</key>
+		<string>Haute Sangha / Mambéré-Kadéï</string>
+		<key>CF-MB</key>
+		<string>Mbomou</string>
+		<key>CF-KB</key>
+		<string>Nana-Grébizi2</string>
+		<key>CF-NM</key>
+		<string>Nana-Mambéré</string>
+		<key>CF-MP</key>
+		<string>Ombella-Mpoko</string>
+		<key>CF-UK</key>
+		<string>Ouaka</string>
+		<key>CF-AC</key>
+		<string>Ouham</string>
+		<key>CF-OP</key>
+		<string>Ouham-Pendé</string>
+		<key>CF-SE</key>
+		<string>Sangha-Mbaéré2</string>
+		<key>CF-VR</key>
+		<string>Vakaga</string>
+	</dict>
+	<key>CG</key>
+	<dict>
+		<key>CG-11</key>
+		<string>Bouenza</string>
+		<key>CG-BZV</key>
+		<string>Brazzaville</string>
+		<key>CG-8</key>
+		<string>Cuvette</string>
+		<key>CG-15</key>
+		<string>Cuvette-Ouest</string>
+		<key>CG-2</key>
+		<string>Lékoumou</string>
+		<key>CG-5</key>
+		<string>Kouilou</string>
+		<key>CG-7</key>
+		<string>Likouala</string>
+		<key>CG-9</key>
+		<string>Niari</string>
+		<key>CG-14</key>
+		<string>Plateaux</string>
+		<key>CG-16</key>
+		<string>Pointe-Noire</string>
+		<key>CG-12</key>
+		<string>Pool</string>
+		<key>CG-13</key>
+		<string>Sangha</string>
+	</dict>
+	<key>CH</key>
+	<dict>
+		<key>CH-AG</key>
+		<string>Kanton Aargau</string>
+		<key>CH-AR</key>
+		<string>Kanton Appenzell Ausserrhoden</string>
+		<key>CH-AI</key>
+		<string>Kanton Appenzell Innerrhoden</string>
+		<key>CH-BL</key>
+		<string>Kanton Basel-Landschaft</string>
+		<key>CH-BS</key>
+		<string>Kanton Basel-Stadt</string>
+		<key>CH-BE</key>
+		<string>Kanton Bern</string>
+		<key>CH-FR</key>
+		<string>Kanton Freiburg</string>
+		<key>CH-GE</key>
+		<string>Kanton Genf</string>
+		<key>CH-GL</key>
+		<string>Kanton Glarus</string>
+		<key>CH-GR</key>
+		<string>Kanton Graubünden</string>
+		<key>CH-JU</key>
+		<string>Kanton Jura</string>
+		<key>CH-LU</key>
+		<string>Kanton Luzern</string>
+		<key>CH-NE</key>
+		<string>Kanton Neuenburg</string>
+		<key>CH-NW</key>
+		<string>Kanton Nidwalden</string>
+		<key>CH-OW</key>
+		<string>Kanton Obwalden</string>
+		<key>CH-SH</key>
+		<string>Kanton Schaffhausen</string>
+		<key>CH-SZ</key>
+		<string>Kanton Schwyz</string>
+		<key>CH-SO</key>
+		<string>Kanton Solothurn</string>
+		<key>CH-SG</key>
+		<string>Kanton St. Gallen</string>
+		<key>CH-TI</key>
+		<string>Kanton Tessin</string>
+		<key>CH-TG</key>
+		<string>Kanton Thurgau</string>
+		<key>CH-UR</key>
+		<string>Kanton Uri</string>
+		<key>CH-VD</key>
+		<string>Kanton Waadt</string>
+		<key>CH-VS</key>
+		<string>Kanton Wallis</string>
+		<key>CH-ZG</key>
+		<string>Kanton Zug</string>
+		<key>CH-ZH</key>
+		<string>Kanton Zürich</string>
+	</dict>
+	<key>CI</key>
+	<dict>
+		<key>CI-AB</key>
+		<string>Abidjan</string>
+		<key>CI-YM</key>
+		<string>Yamoussoukro</string>
+	</dict>
+	<key>CK</key>
+	<dict>
+		<key>CK</key>
+		<string>CK</string>
+	</dict>
+	<key>CL</key>
+	<dict>
+		<key>CL-RM</key>
+		<string></string>
+		<key>CL-TA</key>
+		<string>I</string>
+		<key>CL-AN</key>
+		<string>II</string>
+		<key>CL-AT</key>
+		<string>III</string>
+		<key>CL-CO</key>
+		<string>IV</string>
+		<key>CL-VS</key>
+		<string>V</string>
+		<key>CL-LI</key>
+		<string>VI</string>
+		<key>CL-ML</key>
+		<string>VII</string>
+		<key>CL-BI</key>
+		<string>VIII</string>
+		<key>CL-AR</key>
+		<string>IX</string>
+		<key>CL-LL</key>
+		<string>X</string>
+		<key>CL-AI</key>
+		<string>XI</string>
+		<key>CL-MA</key>
+		<string>XII</string>
+		<key>CL-LR</key>
+		<string>XIV</string>
+		<key>CL-AP</key>
+		<string>XV</string>
+		<key>CL-NB</key>
+		<string>XVI</string>
+	</dict>
+	<key>CM</key>
+	<dict>
+		<key>CM-AD</key>
+		<string>Adamaoua</string>
+		<key>CM-CE</key>
+		<string>Centre</string>
+		<key>CM-ES</key>
+		<string>Est</string>
+		<key>CM-EN</key>
+		<string>Extrême-Nord</string>
+		<key>CM-LT</key>
+		<string>Littoral</string>
+		<key>CM-NO</key>
+		<string>Nord</string>
+		<key>CM-NW</key>
+		<string>Nord-Ouest</string>
+		<key>CM-OU</key>
+		<string>Ouest</string>
+		<key>CM-SU</key>
+		<string>Sud</string>
+		<key>CM-SW</key>
+		<string>Sud-Ouest</string>
+	</dict>
+	<key>CN</key>
+	<dict>
+		<key>CN-AH</key>
+		<string>Anhui</string>
+		<key>CN-FJ</key>
+		<string>Fujian</string>
+		<key>CN-GS</key>
+		<string>Gansu</string>
+		<key>CN-GD</key>
+		<string>Guangdong</string>
+		<key>CN-GZ</key>
+		<string>Guizhou</string>
+		<key>CN-HI</key>
+		<string>Hainan</string>
+		<key>CN-HE</key>
+		<string>Hebei</string>
+		<key>CN-HL</key>
+		<string>Heilongjiang</string>
+		<key>CN-HA</key>
+		<string>Henan</string>
+		<key>CN-HB</key>
+		<string>Hubei</string>
+		<key>CN-HN</key>
+		<string>Hunan</string>
+		<key>CN-JS</key>
+		<string>Jiangsu</string>
+		<key>CN-JX</key>
+		<string>Jiangxi</string>
+		<key>CN-JL</key>
+		<string>Jilin</string>
+		<key>CN-LN</key>
+		<string>Liaoning</string>
+		<key>CN-QH</key>
+		<string>Qinghai</string>
+		<key>CN-SN</key>
+		<string>Shaanxi</string>
+		<key>CN-SD</key>
+		<string>Shandong</string>
+		<key>CN-SX</key>
+		<string>Shanxi</string>
+		<key>CN-SC</key>
+		<string>Sichuan</string>
+		<key>CN-TW</key>
+		<string>Taiwan(1)</string>
+		<key>CN-YN</key>
+		<string>Yunnan</string>
+		<key>CN-ZJ</key>
+		<string>Zhejiang</string>
+	</dict>
+	<key>CO</key>
+	<dict>
+		<key>CO-DC</key>
+		<string>Bogotá 1</string>
+		<key>CO-AMA</key>
+		<string>Amazonas</string>
+		<key>CO-ANT</key>
+		<string>Antioquia</string>
+		<key>CO-ARA</key>
+		<string>Arauca</string>
+		<key>CO-ATL</key>
+		<string>Atlántico</string>
+		<key>CO-BOL</key>
+		<string>Bolívar</string>
+		<key>CO-BOY</key>
+		<string>Boyacá</string>
+		<key>CO-CAL</key>
+		<string>Caldas</string>
+		<key>CO-CAQ</key>
+		<string>Caquetá</string>
+		<key>CO-CAS</key>
+		<string>Casanare</string>
+		<key>CO-CAU</key>
+		<string>Cauca</string>
+		<key>CO-CES</key>
+		<string>Cesar</string>
+		<key>CO-CHO</key>
+		<string>Chocó</string>
+		<key>CO-COR</key>
+		<string>Departamento de Cordoba</string>
+		<key>CO-CUN</key>
+		<string>Cundinamarca</string>
+		<key>CO-GUA</key>
+		<string>Guainía</string>
+		<key>CO-GUV</key>
+		<string>Guaviare</string>
+		<key>CO-HUI</key>
+		<string>Huila</string>
+		<key>CO-LAG</key>
+		<string>La Guajira</string>
+		<key>CO-MAG</key>
+		<string>Magdalena</string>
+		<key>CO-MET</key>
+		<string>Meta</string>
+		<key>CO-NAR</key>
+		<string>Nariño</string>
+		<key>CO-NSA</key>
+		<string>Norte de Santander</string>
+		<key>CO-PUT</key>
+		<string>Putumayo</string>
+		<key>CO-QUI</key>
+		<string>Quindío</string>
+		<key>CO-RIS</key>
+		<string>Risaralda</string>
+		<key>CO-SAP</key>
+		<string>San Andrés und Providencia</string>
+		<key>CO-SAN</key>
+		<string>Santander</string>
+		<key>CO-SUC</key>
+		<string>Sucre</string>
+		<key>CO-TOL</key>
+		<string>Tolima</string>
+		<key>CO-VAC</key>
+		<string>Valle del Cauca</string>
+		<key>CO-VAU</key>
+		<string>Vaupés</string>
+		<key>CO-VID</key>
+		<string>Vichada</string>
+	</dict>
+	<key>CR</key>
+	<dict>
+		<key>CR-A</key>
+		<string>Alajuela</string>
+		<key>CR-C</key>
+		<string>Cartago</string>
+		<key>CR-G</key>
+		<string>Guanacaste</string>
+		<key>CR-H</key>
+		<string>Heredia</string>
+		<key>CR-L</key>
+		<string>Limón</string>
+		<key>CR-P</key>
+		<string>Puntarenas</string>
+		<key>CR-SJ</key>
+		<string>San José</string>
+	</dict>
+	<key>CS</key>
+	<dict>
+		<key>ME</key>
+		<string>Montenegro (Crna Gora)</string>
+		<key>RS</key>
+		<string>Serbien (Srbija)</string>
+		<key>RS-KM</key>
+		<string>Kosovo (Kosovo-Metohija)</string>
+		<key>RS-VO</key>
+		<string>Vojvodina</string>
+	</dict>
+	<key>CU</key>
+	<dict>
+		<key>CU-01</key>
+		<string>Pinar del Río</string>
+		<key>CU-03</key>
+		<string>Havanna</string>
+		<key>CU-04</key>
+		<string>Matanzas</string>
+		<key>CU-05</key>
+		<string>Villa Clara</string>
+		<key>CU-06</key>
+		<string>Cienfuegos</string>
+		<key>CU-07</key>
+		<string>Sancti Spíritus</string>
+		<key>CU-08</key>
+		<string>Ciego de Ávila</string>
+		<key>CU-09</key>
+		<string>Camagüey</string>
+		<key>CU-10</key>
+		<string>Las Tunas</string>
+		<key>CU-11</key>
+		<string>Holguín</string>
+		<key>CU-12</key>
+		<string>Granma</string>
+		<key>CU-13</key>
+		<string>Santiago de Cuba</string>
+		<key>CU-14</key>
+		<string>Guantánamo</string>
+		<key>CU-15</key>
+		<string>Artemisa</string>
+		<key>CU-16</key>
+		<string>Mayabeque</string>
+		<key>CU-99</key>
+		<string>SonderverwaltungsgebietIsla de la Juventud</string>
+	</dict>
+	<key>CV</key>
+	<dict>
+		<key>CV-B</key>
+		<string>Ilhas de Barlavento</string>
+		<key>CV-S</key>
+		<string>Ilhas de Sotavento</string>
+	</dict>
+	<key>CW</key>
+	<dict>
+		<key>CW</key>
+		<string>CW</string>
+	</dict>
+	<key>CX</key>
+	<dict>
+		<key>CX</key>
+		<string>CX</string>
+	</dict>
+	<key>CY</key>
+	<dict>
+		<key>CY-04</key>
+		<string>Famagusta</string>
+		<key>CY-06</key>
+		<string>Kyrenia</string>
+		<key>CY-03</key>
+		<string>Larnaka</string>
+		<key>CY-02</key>
+		<string>Limassol</string>
+		<key>CY-01</key>
+		<string>Nikosia</string>
+		<key>CY-05</key>
+		<string>Paphos</string>
+	</dict>
+	<key>CZ</key>
+	<dict>
+		<key>CZ-31</key>
+		<string>Jihočeský kraj</string>
+		<key>CZ-64</key>
+		<string>Jihomoravský kraj</string>
+		<key>CZ-41</key>
+		<string>Karlovarský kraj</string>
+		<key>CZ-52</key>
+		<string>Královéhradecký kraj</string>
+		<key>CZ-51</key>
+		<string>Liberecký kraj</string>
+		<key>CZ-80</key>
+		<string>Moravskoslezský kraj</string>
+		<key>CZ-71</key>
+		<string>Olomoucký kraj</string>
+		<key>CZ-53</key>
+		<string>Pardubický kraj</string>
+		<key>CZ-32</key>
+		<string>Plzeňský kraj</string>
+		<key>CZ-10</key>
+		<string>Hlavní město Praha</string>
+		<key>CZ-20</key>
+		<string>Středočeský kraj</string>
+		<key>CZ-42</key>
+		<string>Ústecký kraj</string>
+		<key>CZ-63</key>
+		<string>Kraj Vysočina</string>
+		<key>CZ-72</key>
+		<string>Zlínský kraj</string>
+	</dict>
 	<key>DE</key>
 	<dict>
 		<key>DE-BW</key>
@@ -36,6 +1538,6207 @@
 		<string>Schleswig-Holstein</string>
 		<key>DE-TH</key>
 		<string>Thüringen</string>
+	</dict>
+	<key>DJ</key>
+	<dict>
+		<key>DJ-AS</key>
+		<string>Ali Sabieh</string>
+		<key>DJ-DI</key>
+		<string>Dikhil</string>
+		<key>DJ-DJ</key>
+		<string>Dschibuti 1</string>
+		<key>DJ-OB</key>
+		<string>Obock</string>
+		<key>DJ-TA</key>
+		<string>Tadjourah</string>
+		<key>DJ-AR</key>
+		<string>Arta</string>
+	</dict>
+	<key>DK</key>
+	<dict>
+		<key>DK-81</key>
+		<string>Nordjylland</string>
+		<key>DK-82</key>
+		<string>Midtjylland</string>
+		<key>DK-83</key>
+		<string>Syddanmark</string>
+		<key>DK-84</key>
+		<string>Hovedstaden</string>
+		<key>DK-85</key>
+		<string>Sjælland</string>
+	</dict>
+	<key>DM</key>
+	<dict>
+		<key>DM-02</key>
+		<string>Saint Andrew</string>
+		<key>DM-03</key>
+		<string>Saint David</string>
+		<key>DM-04</key>
+		<string>Saint George</string>
+		<key>DM-05</key>
+		<string>Saint John</string>
+		<key>DM-06</key>
+		<string>Saint Joseph</string>
+		<key>DM-07</key>
+		<string>Saint Luke</string>
+		<key>DM-08</key>
+		<string>Saint Mark</string>
+		<key>DM-09</key>
+		<string>Saint Patrick</string>
+		<key>DM-10</key>
+		<string>Saint Paul</string>
+		<key>DM-11</key>
+		<string>Saint Peter</string>
+	</dict>
+	<key>DO</key>
+	<dict>
+		<key>DO-33</key>
+		<string>Cibao Nordeste</string>
+		<key>DO-34</key>
+		<string>Cibao Noroeste</string>
+		<key>DO-35</key>
+		<string>Cibao Norte</string>
+		<key>DO-36</key>
+		<string>Cibao Sur</string>
+		<key>DO-37</key>
+		<string>El Valle</string>
+		<key>DO-38</key>
+		<string>Enriquillo</string>
+		<key>DO-39</key>
+		<string>Higuamo</string>
+		<key>DO-40</key>
+		<string>Ozama</string>
+		<key>DO-41</key>
+		<string>Valdesia</string>
+		<key>DO-42</key>
+		<string>Yuma</string>
+	</dict>
+	<key>DZ</key>
+	<dict>
+		<key>DZ-01</key>
+		<string>Adrar</string>
+		<key>DZ-44</key>
+		<string>Ain Defla</string>
+		<key>DZ-46</key>
+		<string>Ain Temouchent</string>
+		<key>DZ-16</key>
+		<string>Algier</string>
+		<key>DZ-23</key>
+		<string>Annaba</string>
+		<key>DZ-05</key>
+		<string>Batna</string>
+		<key>DZ-08</key>
+		<string>Bechar</string>
+		<key>DZ-06</key>
+		<string>Bejaia</string>
+		<key>DZ-07</key>
+		<string>Biskra</string>
+		<key>DZ-09</key>
+		<string>Blida</string>
+		<key>DZ-34</key>
+		<string>Bordj Bou Arreridj</string>
+		<key>DZ-10</key>
+		<string>Bouira</string>
+		<key>DZ-35</key>
+		<string>Boumerdes</string>
+		<key>DZ-02</key>
+		<string>Chlef</string>
+		<key>DZ-25</key>
+		<string>Constantine</string>
+		<key>DZ-17</key>
+		<string>Djelfa</string>
+		<key>DZ-32</key>
+		<string>El Bayadh</string>
+		<key>DZ-39</key>
+		<string>El Oued</string>
+		<key>DZ-36</key>
+		<string>El Tarf</string>
+		<key>DZ-47</key>
+		<string>Ghardaia</string>
+		<key>DZ-24</key>
+		<string>Guelma</string>
+		<key>DZ-33</key>
+		<string>Illizi</string>
+		<key>DZ-18</key>
+		<string>Jijel</string>
+		<key>DZ-40</key>
+		<string>Khenchela</string>
+		<key>DZ-03</key>
+		<string>Laghouat</string>
+		<key>DZ-26</key>
+		<string>Medea</string>
+		<key>DZ-43</key>
+		<string>Mila</string>
+		<key>DZ-27</key>
+		<string>Mostaganem</string>
+		<key>DZ-29</key>
+		<string>Muaskar</string>
+		<key>DZ-28</key>
+		<string>M'Sila</string>
+		<key>DZ-45</key>
+		<string>Naama</string>
+		<key>DZ-31</key>
+		<string>Oran</string>
+		<key>DZ-30</key>
+		<string>Ouargla</string>
+		<key>DZ-04</key>
+		<string>Oum el Bouaghi</string>
+		<key>DZ-48</key>
+		<string>Relizane</string>
+		<key>DZ-20</key>
+		<string>Saida</string>
+		<key>DZ-19</key>
+		<string>Sétif</string>
+		<key>DZ-21</key>
+		<string>Skikda</string>
+		<key>DZ-22</key>
+		<string>Sidi Bel Abbès</string>
+		<key>DZ-41</key>
+		<string>Souk Ahras</string>
+		<key>DZ-11</key>
+		<string>Tamanrasset</string>
+		<key>DZ-12</key>
+		<string>Tebessa</string>
+		<key>DZ-13</key>
+		<string>Tlemcen</string>
+		<key>DZ-14</key>
+		<string>Tiaret</string>
+		<key>DZ-37</key>
+		<string>Tindouf</string>
+		<key>DZ-42</key>
+		<string>Tipaza</string>
+		<key>DZ-38</key>
+		<string>Tissemsilt</string>
+		<key>DZ-15</key>
+		<string>Tizi Ouzou</string>
+	</dict>
+	<key>EC</key>
+	<dict>
+		<key>EC-A</key>
+		<string>Azuay</string>
+		<key>EC-B</key>
+		<string>Bolívar</string>
+		<key>EC-F</key>
+		<string>Cañar</string>
+		<key>EC-C</key>
+		<string>Carchi</string>
+		<key>EC-X</key>
+		<string>Cotopaxi</string>
+		<key>EC-H</key>
+		<string>Chimborazo</string>
+		<key>EC-O</key>
+		<string>El Oro</string>
+		<key>EC-E</key>
+		<string>Esmeraldas</string>
+		<key>EC-W</key>
+		<string>Galápagos-Inseln (Islas Galápagos)</string>
+		<key>EC-G</key>
+		<string>Guayas</string>
+		<key>EC-I</key>
+		<string>Imbabura</string>
+		<key>EC-L</key>
+		<string>Loja</string>
+		<key>EC-R</key>
+		<string>Los Ríos</string>
+		<key>EC-M</key>
+		<string>Manabí</string>
+		<key>EC-S</key>
+		<string>Morona Santiago</string>
+		<key>EC-N</key>
+		<string>Napo</string>
+		<key>EC-D</key>
+		<string>Orellana</string>
+		<key>EC-Y</key>
+		<string>Pastaza</string>
+		<key>EC-P</key>
+		<string>Pichincha</string>
+		<key>EC-SE</key>
+		<string>Santa Elena</string>
+		<key>EC-SD</key>
+		<string>Santo Domingo de los Tsáchilas</string>
+		<key>EC-U</key>
+		<string>Sucumbíos</string>
+		<key>EC-T</key>
+		<string>Tungurahua</string>
+		<key>EC-Z</key>
+		<string>Zamora Chinchipe</string>
+	</dict>
+	<key>EE</key>
+	<dict>
+		<key>EE-37</key>
+		<string>Harju (Harrien)</string>
+		<key>EE-39</key>
+		<string>Hiiu (Dagö)</string>
+		<key>EE-44</key>
+		<string>Ida-Viru (Ost-Wierland)</string>
+		<key>EE-49</key>
+		<string>Jõgeva (Laisholm)</string>
+		<key>EE-51</key>
+		<string>Järva (Jerwen)</string>
+		<key>EE-57</key>
+		<string>Lääne (Wiek / Wieck)</string>
+		<key>EE-59</key>
+		<string>Lääne-Viru (West-Wierland)</string>
+		<key>EE-65</key>
+		<string>Põlva (Pölwa)</string>
+		<key>EE-67</key>
+		<string>Pärnu (Pernau)</string>
+		<key>EE-70</key>
+		<string>Rapla (Rappel)</string>
+		<key>EE-74</key>
+		<string>Saare (Ösel)</string>
+		<key>EE-78</key>
+		<string>Tartu (Dorpat)</string>
+		<key>EE-82</key>
+		<string>Valga (Walk)</string>
+		<key>EE-84</key>
+		<string>Viljandi (Fellin)</string>
+		<key>EE-86</key>
+		<string>Võru (Werro)</string>
+	</dict>
+	<key>EG</key>
+	<dict>
+		<key>EG-DK</key>
+		<string>ad-Daqahliyya</string>
+		<key>EG-BA</key>
+		<string>al-Bahr al-ahmar</string>
+		<key>EG-BH</key>
+		<string>al-Buhaira</string>
+		<key>EG-FYM</key>
+		<string>al-Fayyum</string>
+		<key>EG-GH</key>
+		<string>al-Gharbiyya</string>
+		<key>EG-ALX</key>
+		<string>al-Iskandariyya</string>
+		<key>EG-IS</key>
+		<string>al-Ismaʿiliyya</string>
+		<key>EG-GZ</key>
+		<string>al-Dschiza</string>
+		<key>EG-MNF</key>
+		<string>al-Minufiyya</string>
+		<key>EG-MN</key>
+		<string>al-Minya</string>
+		<key>EG-C</key>
+		<string>al-Qahira</string>
+		<key>EG-KB</key>
+		<string>al-Qalyubiyya</string>
+		<key>EG-LX</key>
+		<string>al-Uqsur</string>
+		<key>EG-WAD</key>
+		<string>al-Wadi al-dschadid</string>
+		<key>EG-SHR</key>
+		<string>asch-Scharqiyya</string>
+		<key>EG-SUZ</key>
+		<string>as-Suwais</string>
+		<key>EG-ASN</key>
+		<string>Aswan</string>
+		<key>EG-AST</key>
+		<string>Asyut</string>
+		<key>EG-BNS</key>
+		<string>Bani Suwaif</string>
+		<key>EG-PTS</key>
+		<string>Bur Saʿid</string>
+		<key>EG-DT</key>
+		<string>Dumyat</string>
+		<key>EG-JS</key>
+		<string>Dschanub Sina</string>
+		<key>EG-KFS</key>
+		<string>Kafr asch-Schaich</string>
+		<key>EG-MT</key>
+		<string>Matruh</string>
+		<key>EG-KN</key>
+		<string>Qina</string>
+		<key>EG-SIN</key>
+		<string>Schimal Sina</string>
+		<key>EG-SHG</key>
+		<string>Sauhadsch</string>
+	</dict>
+	<key>EH</key>
+	<dict>
+		<key>EH</key>
+		<string>EH</string>
+	</dict>
+	<key>ER</key>
+	<dict>
+		<key>ER-AN</key>
+		<string>Anseba</string>
+		<key>ER-DK</key>
+		<string>Debubawi Kayih Bahri</string>
+		<key>ER-DU</key>
+		<string>Debub</string>
+		<key>ER-GB</key>
+		<string>Gash-Barka</string>
+		<key>ER-MA</key>
+		<string>Maekel</string>
+		<key>ER-SK</key>
+		<string>Semienawi Kayih Bahri</string>
+	</dict>
+	<key>ES</key>
+	<dict>
+		<key>ES-AN</key>
+		<string>Andalucía • Andalusien</string>
+		<key>ES-AR</key>
+		<string>Aragón • Aragonien</string>
+		<key>ES-AS</key>
+		<string>Principado de Asturias • Asturien • Principáu d'Asturies a</string>
+		<key>ES-IB</key>
+		<string>Illes Balears • Balearische Inseln • Illes Balears k</string>
+		<key>ES-PV</key>
+		<string>País Vasco • Baskenland • Euskadi b</string>
+		<key>ES-EX</key>
+		<string>Extremadura</string>
+		<key>ES-GA</key>
+		<string>Galicia • Galicien • Galiza g</string>
+		<key>ES-CN</key>
+		<string>Canarias • Kanaren</string>
+		<key>ES-CB</key>
+		<string>Cantabria • Kantabrien</string>
+		<key>ES-CL</key>
+		<string>Castilla y León • Kastilien und León</string>
+		<key>ES-CM</key>
+		<string>Castilla-La Mancha • Kastilien-La Mancha</string>
+		<key>ES-CT</key>
+		<string>Cataluña • Katalonien • Catalunya k</string>
+		<key>ES-RI</key>
+		<string>La Rioja</string>
+		<key>ES-MD</key>
+		<string>Comunidad de Madrid • Madrid</string>
+		<key>ES-MC</key>
+		<string>Región de Murcia • Murcia</string>
+		<key>ES-NC</key>
+		<string>Comunidad Foral de Navarra • Navarra • Nafarroako Foru Komunitatea b</string>
+		<key>ES-VC</key>
+		<string>Comunidad Valenciana • Valencia • Comunitat Valenciana v</string>
+	</dict>
+	<key>ET</key>
+	<dict>
+		<key>ET-AA</key>
+		<string>Addis Abeba 1</string>
+		<key>ET-AF</key>
+		<string>Afar</string>
+		<key>ET-AM</key>
+		<string>Amhara</string>
+		<key>ET-BE</key>
+		<string>Benishangul-Gumuz</string>
+		<key>ET-DD</key>
+		<string>Dire Dawa 1</string>
+		<key>ET-GA</key>
+		<string>Gambela</string>
+		<key>ET-HA</key>
+		<string>Harar</string>
+		<key>ET-OR</key>
+		<string>Oromiyaa</string>
+		<key>ET-SO</key>
+		<string>Somali-Region</string>
+		<key>ET-SN</key>
+		<string>Region der südlichen Nationen, Nationalitäten und Völker</string>
+		<key>ET-TI</key>
+		<string>Tigray</string>
+	</dict>
+	<key>FI</key>
+	<dict>
+		<key>FI-01</key>
+		<string>Åland</string>
+		<key>FI-05</key>
+		<string>Kainuu</string>
+		<key>FI-06</key>
+		<string>Kanta-Häme</string>
+		<key>FI-09</key>
+		<string>Kymenlaakso</string>
+		<key>FI-10</key>
+		<string>Lappland</string>
+		<key>FI-08</key>
+		<string>Mittelfinnland</string>
+		<key>FI-07</key>
+		<string>Mittelösterbotten</string>
+		<key>FI-13</key>
+		<string>Nordkarelien</string>
+		<key>FI-14</key>
+		<string>Nordösterbotten</string>
+		<key>FI-15</key>
+		<string>Nordsavo</string>
+		<key>FI-16</key>
+		<string>Päijät-Häme</string>
+		<key>FI-12</key>
+		<string>Österbotten</string>
+		<key>FI-11</key>
+		<string>Pirkanmaa</string>
+		<key>FI-17</key>
+		<string>Satakunta</string>
+		<key>FI-02</key>
+		<string>Südkarelien</string>
+		<key>FI-03</key>
+		<string>Südösterbotten</string>
+		<key>FI-04</key>
+		<string>Südsavo</string>
+		<key>FI-18</key>
+		<string>Uusimaa</string>
+		<key>FI-19</key>
+		<string>Varsinais-Suomi (Eigentliches Finnland)</string>
+	</dict>
+	<key>FJ</key>
+	<dict>
+		<key>FJ-C</key>
+		<string>Central</string>
+		<key>FJ-E</key>
+		<string>Eastern</string>
+		<key>FJ-N</key>
+		<string>Northern</string>
+		<key>FJ-R</key>
+		<string>1</string>
+		<key>FJ-W</key>
+		<string>Western</string>
+	</dict>
+	<key>FK</key>
+	<dict>
+		<key>FK</key>
+		<string>FK</string>
+	</dict>
+	<key>FM</key>
+	<dict>
+		<key>FM-TRK</key>
+		<string>Chuuk</string>
+		<key>FM-KSA</key>
+		<string>Kosrae</string>
+		<key>FM-PNI</key>
+		<string>Pohnpei</string>
+		<key>FM-YAP</key>
+		<string>Yap</string>
+	</dict>
+	<key>FO</key>
+	<dict>
+		<key>FO</key>
+		<string>FO</string>
+	</dict>
+	<key>FR</key>
+	<dict>
+		<key>(FR-A)</key>
+		<string>Elsass (Alsace)</string>
+		<key>(FR-B)</key>
+		<string>Aquitanien (Aquitaine)</string>
+		<key>(FR-C)</key>
+		<string>Auvergne</string>
+		<key>(FR-D)</key>
+		<string>Burgund (Bourgogne)</string>
+		<key>(FR-E)</key>
+		<string>Bretagne</string>
+		<key>(FR-F)</key>
+		<string>Centre-Val de Loire</string>
+		<key>(FR-G)</key>
+		<string>Champagne-Ardenne</string>
+		<key>(FR-H)</key>
+		<string>Korsika (Corse)</string>
+		<key>(FR-I)</key>
+		<string>Franche-Comté</string>
+		<key>(FR-J)</key>
+		<string>Ile-de-France!</string>
+		<key>(FR-K)</key>
+		<string>Languedoc-Roussillon</string>
+		<key>(FR-L)</key>
+		<string>Limousin</string>
+		<key>(FR-M)</key>
+		<string>Lothringen (Lorraine)</string>
+		<key>(FR-N)</key>
+		<string>Midi-Pyrénées</string>
+		<key>(FR-O)</key>
+		<string>Nord-Pas-de-Calais</string>
+		<key>(FR-P)</key>
+		<string>Basse-Normandie</string>
+		<key>(FR-Q)</key>
+		<string>Haute-Normandie</string>
+		<key>(FR-R)</key>
+		<string>Pays de la Loire</string>
+		<key>(FR-S)</key>
+		<string>Picardie</string>
+		<key>(FR-T)</key>
+		<string>Poitou-Charentes</string>
+		<key>(FR-U)</key>
+		<string>Provence-Alpes-Côte d’Azur</string>
+		<key>(FR-V)</key>
+		<string>Rhône-Alpes</string>
+	</dict>
+	<key>GA</key>
+	<dict>
+		<key>GA-1</key>
+		<string>Estuaire</string>
+		<key>GA-2</key>
+		<string>Haut-Ogooué</string>
+		<key>GA-3</key>
+		<string>Moyen-Ogooué</string>
+		<key>GA-4</key>
+		<string>Ngounié</string>
+		<key>GA-5</key>
+		<string>Nyanga</string>
+		<key>GA-6</key>
+		<string>Ogooué-Ivindo</string>
+		<key>GA-7</key>
+		<string>Ogooué-Lolo</string>
+		<key>GA-8</key>
+		<string>Ogooué-Maritime</string>
+		<key>GA-9</key>
+		<string>Woleu-Ntem</string>
+	</dict>
+	<key>GB</key>
+	<dict>
+		<key>GB-BKM</key>
+		<string>Buckinghamshire</string>
+		<key>GB-CAM</key>
+		<string>Cambridgeshire</string>
+		<key>GB-CMA</key>
+		<string>Cumbria</string>
+		<key>GB-DBY</key>
+		<string>Derbyshire</string>
+		<key>GB-DEV</key>
+		<string>Devon</string>
+		<key>GB-DOR</key>
+		<string>Dorset</string>
+		<key>GB-ESX</key>
+		<string>East Sussex</string>
+		<key>GB-ESS</key>
+		<string>Essex</string>
+		<key>GB-GLS</key>
+		<string>Gloucestershire</string>
+		<key>GB-HAM</key>
+		<string>Hampshire</string>
+		<key>GB-HRT</key>
+		<string>Hertfordshire</string>
+		<key>GB-KEN</key>
+		<string>Kent</string>
+		<key>GB-LAN</key>
+		<string>Lancashire</string>
+		<key>GB-LEC</key>
+		<string>Leicestershire</string>
+		<key>GB-LIN</key>
+		<string>Lincolnshire</string>
+		<key>GB-NFK</key>
+		<string>Norfolk</string>
+		<key>GB-NYK</key>
+		<string>North Yorkshire</string>
+		<key>GB-NTH</key>
+		<string>Northamptonshire</string>
+		<key>GB-NTT</key>
+		<string>Nottinghamshire</string>
+		<key>GB-OXF</key>
+		<string>Oxfordshire</string>
+		<key>GB-SOM</key>
+		<string>Somerset</string>
+		<key>GB-STS</key>
+		<string>Staffordshire</string>
+		<key>GB-SFK</key>
+		<string>Suffolk</string>
+		<key>GB-SRY</key>
+		<string>Surrey</string>
+		<key>GB-WAR</key>
+		<string>Warwickshire</string>
+		<key>GB-WSX</key>
+		<string>West Sussex</string>
+		<key>GB-WOR</key>
+		<string>Worcestershire</string>
+	</dict>
+	<key>GD</key>
+	<dict>
+		<key>GD-01</key>
+		<string>Saint Andrew</string>
+		<key>GD-02</key>
+		<string>Saint David</string>
+		<key>GD-03</key>
+		<string>Saint George</string>
+		<key>GD-04</key>
+		<string>Saint John</string>
+		<key>GD-05</key>
+		<string>Saint Mark</string>
+		<key>GD-06</key>
+		<string>Saint Patrick</string>
+		<key>GD-10</key>
+		<string>Carriacou 1</string>
+	</dict>
+	<key>GE</key>
+	<dict>
+		<key>GE-AB</key>
+		<string>Abchasien</string>
+		<key>GE-AJ</key>
+		<string>Adscharien</string>
+	</dict>
+	<key>GF</key>
+	<dict>
+		<key>GF</key>
+		<string>GF</string>
+	</dict>
+	<key>GG</key>
+	<dict>
+		<key>GG</key>
+		<string>GG</string>
+	</dict>
+	<key>GH</key>
+	<dict>
+		<key>GH-AF</key>
+		<string>Ahafo</string>
+		<key>GH-AH</key>
+		<string>Ashanti</string>
+		<key>GH-BO</key>
+		<string>Bono</string>
+		<key>GH-BE</key>
+		<string>Bono East</string>
+		<key>GH-CP</key>
+		<string>Central</string>
+		<key>GH-EP</key>
+		<string>Eastern</string>
+		<key>GH-AA</key>
+		<string>Greater Accra</string>
+		<key>GH-NE</key>
+		<string>North East</string>
+		<key>GH-NP</key>
+		<string>Northern</string>
+		<key>GH-OT</key>
+		<string>Oti</string>
+		<key>GH-SV</key>
+		<string>Savannah</string>
+		<key>GH-UE</key>
+		<string>Upper East</string>
+		<key>GH-UW</key>
+		<string>Upper West</string>
+		<key>GH-TV</key>
+		<string>Volta</string>
+		<key>GH-WP</key>
+		<string>Western</string>
+		<key>GH-WN</key>
+		<string>Western North</string>
+	</dict>
+	<key>GI</key>
+	<dict>
+		<key>GI</key>
+		<string>GI</string>
+	</dict>
+	<key>GL</key>
+	<dict>
+		<key>GL-AV</key>
+		<string>Avannaata Kommunia</string>
+		<key>GL-KU</key>
+		<string>Kommune Kujalleq</string>
+		<key>GL-SM</key>
+		<string>Kommuneqarfik Sermersooq</string>
+		<key>GL-QE</key>
+		<string>Qeqqata Kommunia</string>
+		<key>GL-QT</key>
+		<string>Kommune Qeqertalik</string>
+		<key>–</key>
+		<string>Kommunegarfiit avataanni</string>
+	</dict>
+	<key>GM</key>
+	<dict>
+		<key>GM-M</key>
+		<string>Central River</string>
+		<key>GM-B</key>
+		<string>Greater Banjul Area</string>
+		<key>GM-L</key>
+		<string>Lower River</string>
+		<key>GM-N</key>
+		<string>North Bank</string>
+		<key>GM-U</key>
+		<string>Upper River</string>
+		<key>GM-W</key>
+		<string>West Coast</string>
+	</dict>
+	<key>GN</key>
+	<dict>
+		<key>GN-C</key>
+		<string>Conakry*</string>
+		<key>GN-B</key>
+		<string>Boké</string>
+		<key>GN-F</key>
+		<string>Faranah</string>
+		<key>GN-K</key>
+		<string>Kankan</string>
+		<key>GN-D</key>
+		<string>Kindia</string>
+		<key>GN-L</key>
+		<string>Labé</string>
+		<key>GN-M</key>
+		<string>Mamou</string>
+		<key>GN-N</key>
+		<string>Nzérékoré</string>
+	</dict>
+	<key>GP</key>
+	<dict>
+		<key>GP</key>
+		<string>GP</string>
+	</dict>
+	<key>GQ</key>
+	<dict>
+		<key>GQ-C</key>
+		<string>Región Continental</string>
+		<key>GQ-I</key>
+		<string>Región Insular</string>
+	</dict>
+	<key>GR</key>
+	<dict>
+		<key>GR-I</key>
+		<string>Attika</string>
+		<key>GR-D</key>
+		<string>Epirus</string>
+		<key>GR-F</key>
+		<string>Ionische Inseln</string>
+		<key>GR-M</key>
+		<string>Kreta</string>
+		<key>GR-H</key>
+		<string>Mittelgriechenland</string>
+		<key>GR-K</key>
+		<string>Nördliche Ägäis</string>
+		<key>GR-A</key>
+		<string>Ostmakedonien und Thrakien</string>
+		<key>GR-J</key>
+		<string>Peloponnes</string>
+		<key>GR-L</key>
+		<string>Südliche Ägäis</string>
+		<key>GR-E</key>
+		<string>Thessalien</string>
+		<key>GR-G</key>
+		<string>Westgriechenland</string>
+		<key>GR-C</key>
+		<string>Westmakedonien</string>
+		<key>GR-B</key>
+		<string>Zentralmakedonien</string>
+	</dict>
+	<key>GS</key>
+	<dict>
+		<key>GS</key>
+		<string>GS</string>
+	</dict>
+	<key>GT</key>
+	<dict>
+		<key>GT-AV</key>
+		<string>Alta Verapaz</string>
+		<key>GT-BV</key>
+		<string>Baja Verapaz</string>
+		<key>GT-CM</key>
+		<string>Chimaltenango</string>
+		<key>GT-CQ</key>
+		<string>Chiquimula</string>
+		<key>GT-PE</key>
+		<string>El Petén</string>
+		<key>GT-PR</key>
+		<string>El Progreso</string>
+		<key>GT-QC</key>
+		<string>El Quiché</string>
+		<key>GT-ES</key>
+		<string>Escuintla</string>
+		<key>GT-GU</key>
+		<string>Guatemala</string>
+		<key>GT-HU</key>
+		<string>Huehuetenango</string>
+		<key>GT-IZ</key>
+		<string>Izabal</string>
+		<key>GT-JA</key>
+		<string>Jalapa</string>
+		<key>GT-JU</key>
+		<string>Jutiapa</string>
+		<key>GT-QZ</key>
+		<string>Quetzaltenango</string>
+		<key>GT-RE</key>
+		<string>Retalhuleu</string>
+		<key>GT-SA</key>
+		<string>Sacatepéquez</string>
+		<key>GT-SM</key>
+		<string>San Marcos</string>
+		<key>GT-SR</key>
+		<string>Santa Rosa</string>
+		<key>GT-SO</key>
+		<string>Sololá</string>
+		<key>GT-SU</key>
+		<string>Suchitepéquez</string>
+		<key>GT-TO</key>
+		<string>Totonicapán</string>
+		<key>GT-ZA</key>
+		<string>Zacapa</string>
+	</dict>
+	<key>GU</key>
+	<dict>
+		<key>GU</key>
+		<string>GU</string>
+	</dict>
+	<key>GW</key>
+	<dict>
+		<key>GW-L</key>
+		<string>Leste</string>
+		<key>GW-N</key>
+		<string>Norte</string>
+		<key>GW-S</key>
+		<string>Sul</string>
+	</dict>
+	<key>GY</key>
+	<dict>
+		<key>GY-BA</key>
+		<string>Barima-Waini</string>
+		<key>GY-CU</key>
+		<string>Cuyuni-Mazaruni</string>
+		<key>GY-DE</key>
+		<string>Demerara-Mahaica</string>
+		<key>GY-EB</key>
+		<string>East Berbice-Corentyne</string>
+		<key>GY-ES</key>
+		<string>Essequibo Islands-West Demerara</string>
+		<key>GY-MA</key>
+		<string>Mahaica-Berbice</string>
+		<key>GY-PM</key>
+		<string>Pomeroon-Supenaam</string>
+		<key>GY-PT</key>
+		<string>Potaro-Siparuni</string>
+		<key>GY-UD</key>
+		<string>Upper Demerara-Berbice</string>
+		<key>GY-UT</key>
+		<string>Upper Takutu-Upper Essequibo</string>
+	</dict>
+	<key>HK</key>
+	<dict>
+		<key>HK</key>
+		<string>HK</string>
+	</dict>
+	<key>HM</key>
+	<dict>
+		<key>HM</key>
+		<string>HM</string>
+	</dict>
+	<key>HN</key>
+	<dict>
+		<key>HN-AT</key>
+		<string>Atlántida</string>
+		<key>HN-CH</key>
+		<string>Choluteca</string>
+		<key>HN-CL</key>
+		<string>Colón</string>
+		<key>HN-CM</key>
+		<string>Comayagua</string>
+		<key>HN-CP</key>
+		<string>Copán</string>
+		<key>HN-CR</key>
+		<string>Cortés</string>
+		<key>HN-EP</key>
+		<string>El Paraíso</string>
+		<key>HN-FM</key>
+		<string>Francisco Morazán</string>
+		<key>HN-GD</key>
+		<string>Gracias a Dios</string>
+		<key>HN-IN</key>
+		<string>Intibucá</string>
+		<key>HN-IB</key>
+		<string>Islas de la Bahía</string>
+		<key>HN-LP</key>
+		<string>La Paz</string>
+		<key>HN-LE</key>
+		<string>Lempira</string>
+		<key>HN-OC</key>
+		<string>Ocotepeque</string>
+		<key>HN-OL</key>
+		<string>Olancho</string>
+		<key>HN-SB</key>
+		<string>Santa Bárbara</string>
+		<key>HN-VA</key>
+		<string>Valle</string>
+		<key>HN-YO</key>
+		<string>Yoro</string>
+	</dict>
+	<key>HR</key>
+	<dict>
+		<key>HR-07</key>
+		<string>Bjelovar-Bilogora</string>
+		<key>HR-12</key>
+		<string>Brod-Posavina</string>
+		<key>HR-19</key>
+		<string>Dubrovnik-Neretva</string>
+		<key>HR-18</key>
+		<string>Istrien</string>
+		<key>HR-04</key>
+		<string>Karlovac</string>
+		<key>HR-06</key>
+		<string>Koprivnica-Križevci</string>
+		<key>HR-02</key>
+		<string>Krapina-Zagorje</string>
+		<key>HR-09</key>
+		<string>Lika-Senj</string>
+		<key>HR-20</key>
+		<string>Međimurje</string>
+		<key>HR-14</key>
+		<string>Osijek-Baranja</string>
+		<key>HR-11</key>
+		<string>Požega-Slawonien</string>
+		<key>HR-08</key>
+		<string>Primorje-Gorski kotar</string>
+		<key>HR-03</key>
+		<string>Sisak-Moslavina</string>
+		<key>HR-17</key>
+		<string>Split-Dalmatien</string>
+		<key>HR-15</key>
+		<string>Šibenik-Knin</string>
+		<key>HR-05</key>
+		<string>Varaždin</string>
+		<key>HR-10</key>
+		<string>Virovitica-Podravina</string>
+		<key>HR-16</key>
+		<string>Vukovar-Srijem</string>
+		<key>HR-13</key>
+		<string>Zadar</string>
+		<key>HR-01</key>
+		<string>Zagreb (Gespanschaft)</string>
+		<key>HR-21</key>
+		<string>Zagreb (Stadt)</string>
+	</dict>
+	<key>HT</key>
+	<dict>
+		<key>HT-AR</key>
+		<string>Artibonite</string>
+		<key>HT-CE</key>
+		<string>Centre</string>
+		<key>HT-GA</key>
+		<string>Grand'Anse</string>
+		<key>HT-NI</key>
+		<string>Nippes</string>
+		<key>HT-ND</key>
+		<string>Nord</string>
+		<key>HT-NE</key>
+		<string>Nord-Est</string>
+		<key>HT-NO</key>
+		<string>Nord-Ouest</string>
+		<key>HT-OU</key>
+		<string>Ouest</string>
+		<key>HT-SD</key>
+		<string>Sud</string>
+		<key>HT-SE</key>
+		<string>Sud-Est</string>
+	</dict>
+	<key>HU</key>
+	<dict>
+		<key>HU-BK</key>
+		<string>Bacs-Kiskun!</string>
+		<key>HU-BA</key>
+		<string>Baranya</string>
+		<key>HU-BE</key>
+		<string>Bekes!</string>
+		<key>HU-BC</key>
+		<string>Bekescsaba!</string>
+		<key>HU-BZ</key>
+		<string>Borsod-Abaúj-Zemplén</string>
+		<key>HU-BU</key>
+		<string>Budapest</string>
+		<key>HU-CS</key>
+		<string>Csongrád</string>
+		<key>HU-DE</key>
+		<string>Debrecen</string>
+		<key>HU-DU</key>
+		<string>Dunaújváros</string>
+		<key>HU-EG</key>
+		<string>Eger</string>
+		<key>HU-ER</key>
+		<string>Erd!</string>
+		<key>HU-FE</key>
+		<string>Fejér</string>
+		<key>HU-GY</key>
+		<string>Győr</string>
+		<key>HU-GS</key>
+		<string>Győr-Moson-Sopron</string>
+		<key>HU-HB</key>
+		<string>Hajdú-Bihar</string>
+		<key>HU-HE</key>
+		<string>Heves</string>
+		<key>HU-HV</key>
+		<string>Hódmezővásárhely</string>
+		<key>HU-JN</key>
+		<string>Jász-Nagykun-Szolnok</string>
+		<key>HU-KV</key>
+		<string>Kaposvár</string>
+		<key>HU-KM</key>
+		<string>Kecskemét</string>
+		<key>HU-KE</key>
+		<string>Komárom-Esztergom</string>
+		<key>HU-MI</key>
+		<string>Miskolc</string>
+		<key>HU-NK</key>
+		<string>Nagykanizsa</string>
+		<key>HU-NO</key>
+		<string>Nograd!</string>
+		<key>HU-NY</key>
+		<string>Nyíregyháza</string>
+		<key>HU-PS</key>
+		<string>Pecs!</string>
+		<key>HU-PE</key>
+		<string>Pest</string>
+		<key>HU-ST</key>
+		<string>Salgótarján</string>
+		<key>HU-SO</key>
+		<string>Somogy</string>
+		<key>HU-SN</key>
+		<string>Sopron</string>
+		<key>HU-SZ</key>
+		<string>Szabolcs-Szatmár-Bereg</string>
+		<key>HU-SD</key>
+		<string>Szeged</string>
+		<key>HU-SF</key>
+		<string>Szekesfehervar!</string>
+		<key>HU-SS</key>
+		<string>Szekszárd</string>
+		<key>HU-SK</key>
+		<string>Szolnok</string>
+		<key>HU-SH</key>
+		<string>Szombathely</string>
+		<key>HU-TB</key>
+		<string>Tatabánya</string>
+		<key>HU-TO</key>
+		<string>Tolna</string>
+		<key>HU-VA</key>
+		<string>Vas</string>
+		<key>HU-VM</key>
+		<string>Veszprém</string>
+		<key>HU-VE</key>
+		<string>Veszprém (Komitat)</string>
+		<key>HU-ZA</key>
+		<string>Zala</string>
+		<key>HU-ZE</key>
+		<string>Zalaegerszeg</string>
+	</dict>
+	<key>ID</key>
+	<dict>
+		<key>ID-PP</key>
+		<string>Westneuguinea (Papua)</string>
+		<key>ID-JW</key>
+		<string>Jawa</string>
+		<key>ID-KA</key>
+		<string>Kalimantan</string>
+		<key>ID-ML</key>
+		<string>Molukken</string>
+		<key>ID-NU</key>
+		<string>Nusa Tenggara</string>
+		<key>ID-SL</key>
+		<string>Sulawesi</string>
+		<key>ID-SM</key>
+		<string>Sumatra</string>
+	</dict>
+	<key>IE</key>
+	<dict>
+		<key>IE-C</key>
+		<string>Connacht</string>
+		<key>IE-L</key>
+		<string>Leinster</string>
+		<key>IE-M</key>
+		<string>Munster</string>
+		<key>IE-U</key>
+		<string>Ulster</string>
+	</dict>
+	<key>IL</key>
+	<dict>
+		<key>IL-JM</key>
+		<string>Jerusalem (Mechoz Jeruschalajim)</string>
+		<key>IL-Z</key>
+		<string>Nordbezirk (Mechoz haTzafon)</string>
+		<key>IL-HA</key>
+		<string>Haifa (Mechoz Cheifa)</string>
+		<key>IL-M</key>
+		<string>Zentralbezirk (Mechoz haMerkaz)</string>
+		<key>IL-TA</key>
+		<string>Tel Aviv (Mechoz Tel-Aviv)</string>
+		<key>IL-D</key>
+		<string>Südbezirk (Mechoz haDarom)</string>
+	</dict>
+	<key>IM</key>
+	<dict>
+		<key>IM</key>
+		<string>IM</string>
+	</dict>
+	<key>IN</key>
+	<dict>
+		<key>IN-AP</key>
+		<string>Andhra Pradesh</string>
+		<key>IN-AR</key>
+		<string>Arunachal Pradesh</string>
+		<key>IN-AS</key>
+		<string>Assam</string>
+		<key>IN-BR</key>
+		<string>Bihar</string>
+		<key>IN-CT</key>
+		<string>Chhattisgarh</string>
+		<key>IN-GA</key>
+		<string>Goa</string>
+		<key>IN-GJ</key>
+		<string>Gujarat</string>
+		<key>IN-HR</key>
+		<string>Haryana</string>
+		<key>IN-HP</key>
+		<string>Himachal Pradesh</string>
+		<key>IN-JH</key>
+		<string>Jharkhand</string>
+		<key>IN-KA</key>
+		<string>Karnataka</string>
+		<key>IN-KL</key>
+		<string>Kerala</string>
+		<key>IN-MP</key>
+		<string>Madhya Pradesh</string>
+		<key>IN-MH</key>
+		<string>Maharashtra</string>
+		<key>IN-MN</key>
+		<string>Manipur</string>
+		<key>IN-ML</key>
+		<string>Meghalaya</string>
+		<key>IN-MZ</key>
+		<string>Mizoram</string>
+		<key>IN-NL</key>
+		<string>Nagaland</string>
+		<key>IN-OR</key>
+		<string>Odisha (Orissa)</string>
+		<key>IN-PB</key>
+		<string>Punjab</string>
+		<key>IN-RJ</key>
+		<string>Rajasthan</string>
+		<key>IN-SK</key>
+		<string>Sikkim</string>
+		<key>IN-TN</key>
+		<string>Tamil Nadu</string>
+		<key>IN-TG</key>
+		<string>Telangana</string>
+		<key>IN-TR</key>
+		<string>Tripura</string>
+		<key>IN-UT</key>
+		<string>Uttarakhand</string>
+		<key>IN-UP</key>
+		<string>Uttar Pradesh</string>
+		<key>IN-WB</key>
+		<string>Westbengalen</string>
+	</dict>
+	<key>IO</key>
+	<dict>
+		<key>IO</key>
+		<string>IO</string>
+	</dict>
+	<key>IQ</key>
+	<dict>
+		<key>IQ-AN</key>
+		<string>al-Anbar</string>
+		<key>IQ-AR</key>
+		<string>Erbil</string>
+		<key>IQ-BB</key>
+		<string>Babil</string>
+		<key>IQ-BG</key>
+		<string>Bagdad</string>
+		<key>IQ-BA</key>
+		<string>Basra</string>
+		<key>IQ-DA</key>
+		<string>Dahuk</string>
+		<key>IQ-DQ</key>
+		<string>Dhi Qar</string>
+		<key>IQ-DI</key>
+		<string>Diyala</string>
+		<key>IQ-KA</key>
+		<string>Kerbela</string>
+		<key>IQ-MA</key>
+		<string>Maisan</string>
+		<key>IQ-MU</key>
+		<string>al-Muthanna</string>
+		<key>IQ-NA</key>
+		<string>Nadschaf</string>
+		<key>IQ-NI</key>
+		<string>Ninawa</string>
+		<key>IQ-QA</key>
+		<string>al-Qadisiya</string>
+		<key>IQ-SD</key>
+		<string>Salah ad-Din</string>
+		<key>IQ-SU</key>
+		<string>as-Sulaimaniya</string>
+		<key>IQ-KI</key>
+		<string>Kirkuk1</string>
+		<key>IQ-WA</key>
+		<string>al-Wasit</string>
+	</dict>
+	<key>IR</key>
+	<dict>
+		<key>IR-32</key>
+		<string>Alborz</string>
+		<key>IR-03</key>
+		<string>Ardabil</string>
+		<key>IR-06</key>
+		<string>Buschehr</string>
+		<key>IR-10</key>
+		<string>Chuzestan</string>
+		<key>IR-04</key>
+		<string>Esfahan</string>
+		<key>IR-14</key>
+		<string>Fars</string>
+		<key>IR-19</key>
+		<string>Gilan</string>
+		<key>IR-27</key>
+		<string>Golestan</string>
+		<key>IR-24</key>
+		<string>Hamadan</string>
+		<key>IR-23</key>
+		<string>Hormozgan</string>
+		<key>IR-05</key>
+		<string>Ilam</string>
+		<key>IR-15</key>
+		<string>Kerman</string>
+		<key>IR-17</key>
+		<string>Kermānschāh</string>
+		<key>IR-18</key>
+		<string>Kohgiluye und Boyer Ahmad</string>
+		<key>IR-16</key>
+		<string>Kordestān</string>
+		<key>IR-20</key>
+		<string>Lorestan</string>
+		<key>IR-22</key>
+		<string>Markazi</string>
+		<key>IR-21</key>
+		<string>Mazandaran</string>
+		<key>IR-31</key>
+		<string>Nord-Chorasan</string>
+		<key>IR-01</key>
+		<string>Ost-Aserbaidschan</string>
+		<key>IR-28</key>
+		<string>Qazvin</string>
+		<key>IR-26</key>
+		<string>Ghom</string>
+		<key>IR-30</key>
+		<string>Razavi-Chorasan</string>
+		<key>IR-12</key>
+		<string>Semnan</string>
+		<key>IR-13</key>
+		<string>Sistan und Belutschistan</string>
+		<key>IR-29</key>
+		<string>Süd-Chorasan</string>
+		<key>IR-07</key>
+		<string>Teheran</string>
+		<key>IR-08</key>
+		<string>Tschahār Mahāl und Bachtiyāri</string>
+		<key>IR-02</key>
+		<string>West-Aserbaidschan</string>
+		<key>IR-25</key>
+		<string>Yazd</string>
+		<key>IR-11</key>
+		<string>Zandschan</string>
+	</dict>
+	<key>IS</key>
+	<dict>
+		<key>IS-1</key>
+		<string>Höfuðborgarsvæðið (Hauptstadtregion)</string>
+		<key>IS-6</key>
+		<string>Norðurland eystra (Nordost)</string>
+		<key>IS-5</key>
+		<string>Norðurland vestra (Nordwest)</string>
+		<key>IS-7</key>
+		<string>Austurland (Ost)</string>
+		<key>IS-8</key>
+		<string>Suðurland (Süd)</string>
+		<key>IS-2</key>
+		<string>Suðurnes (Südwest)</string>
+		<key>IS-3</key>
+		<string>Vesturland (West)</string>
+		<key>IS-4</key>
+		<string>Vestfirðir (Westfjorde)</string>
+	</dict>
+	<key>IT</key>
+	<dict>
+		<key>IT-65</key>
+		<string>Abruzzen (Abruzzo)</string>
+		<key>IT-23</key>
+		<string>Aostatal(Valle d’Aosta/Val d’Aoste)</string>
+		<key>IT-75</key>
+		<string>Apulien (Puglia)</string>
+		<key>IT-77</key>
+		<string>Basilikata (Basilicata)</string>
+		<key>IT-45</key>
+		<string>Emilia-Romagna</string>
+		<key>IT-36</key>
+		<string>Friaul-Julisch Venetien(Friuli-Venezia Giulia)</string>
+		<key>IT-78</key>
+		<string>Kalabrien (Calabria)</string>
+		<key>IT-72</key>
+		<string>Kampanien (Campania)</string>
+		<key>IT-62</key>
+		<string>Latium (Lazio)</string>
+		<key>IT-42</key>
+		<string>Ligurien (Liguria)</string>
+		<key>IT-25</key>
+		<string>Lombardei (Lombardia)</string>
+		<key>IT-57</key>
+		<string>Marken (Marche)</string>
+		<key>IT-67</key>
+		<string>Molise</string>
+		<key>IT-21</key>
+		<string>Piemont (Piemonte)</string>
+		<key>IT-88</key>
+		<string>Sardinien (Sardegna)</string>
+		<key>IT-82</key>
+		<string>Sizilien (Sicilia)</string>
+		<key>IT-52</key>
+		<string>Toskana (Toscana)</string>
+		<key>IT-32</key>
+		<string>Trentino-Südtirol(Trentino-Alto Adige)</string>
+		<key>IT-55</key>
+		<string>Umbrien (Umbria)</string>
+		<key>IT-34</key>
+		<string>Venetien (Veneto)</string>
+	</dict>
+	<key>JE</key>
+	<dict>
+		<key>JE</key>
+		<string>JE</string>
+	</dict>
+	<key>JM</key>
+	<dict>
+		<key>JM-13</key>
+		<string>Clarendon</string>
+		<key>JM-09</key>
+		<string>Hanover</string>
+		<key>JM-01</key>
+		<string>Kingston</string>
+		<key>JM-12</key>
+		<string>Manchester</string>
+		<key>JM-04</key>
+		<string>Portland</string>
+		<key>JM-02</key>
+		<string>Saint Andrew</string>
+		<key>JM-06</key>
+		<string>Saint Ann</string>
+		<key>JM-14</key>
+		<string>Saint Catherine</string>
+		<key>JM-11</key>
+		<string>Saint Elizabeth</string>
+		<key>JM-08</key>
+		<string>Saint James</string>
+		<key>JM-05</key>
+		<string>Saint Mary</string>
+		<key>JM-03</key>
+		<string>Saint Thomas</string>
+		<key>JM-07</key>
+		<string>Trelawny</string>
+		<key>JM-10</key>
+		<string>Westmoreland</string>
+	</dict>
+	<key>JO</key>
+	<dict>
+		<key>JO-AJ</key>
+		<string>Adschlun</string>
+		<key>JO-AM</key>
+		<string>Amman</string>
+		<key>JO-AQ</key>
+		<string>Aqaba</string>
+		<key>JO-AT</key>
+		<string>Tafila!</string>
+		<key>JO-AZ</key>
+		<string>Zarqa</string>
+		<key>JO-BA</key>
+		<string>Balqa!</string>
+		<key>JO-IR</key>
+		<string>Irbid</string>
+		<key>JO-JA</key>
+		<string>Dscharasch</string>
+		<key>JO-KA</key>
+		<string>Karak!</string>
+		<key>JO-MA</key>
+		<string>Mafraq!</string>
+		<key>JO-MD</key>
+		<string>Madaba</string>
+		<key>JO-MN</key>
+		<string>Maʿan</string>
+	</dict>
+	<key>JP</key>
+	<dict>
+		<key>JP-23</key>
+		<string>Aichi</string>
+		<key>JP-05</key>
+		<string>Akita</string>
+		<key>JP-02</key>
+		<string>Aomori</string>
+		<key>JP-12</key>
+		<string>Chiba</string>
+		<key>JP-38</key>
+		<string>Ehime</string>
+		<key>JP-18</key>
+		<string>Fukui</string>
+		<key>JP-40</key>
+		<string>Fukuoka</string>
+		<key>JP-07</key>
+		<string>Fukushima</string>
+		<key>JP-21</key>
+		<string>Gifu</string>
+		<key>JP-10</key>
+		<string>Gunma</string>
+		<key>JP-34</key>
+		<string>Hiroshima</string>
+		<key>JP-01</key>
+		<string>Hokkaidō</string>
+		<key>JP-28</key>
+		<string>Hyōgo</string>
+		<key>JP-08</key>
+		<string>Ibaraki</string>
+		<key>JP-17</key>
+		<string>Ishikawa</string>
+		<key>JP-03</key>
+		<string>Iwate</string>
+		<key>JP-37</key>
+		<string>Kagawa</string>
+		<key>JP-46</key>
+		<string>Kagoshima</string>
+		<key>JP-14</key>
+		<string>Kanagawa</string>
+		<key>JP-39</key>
+		<string>Kōchi</string>
+		<key>JP-43</key>
+		<string>Kumamoto</string>
+		<key>JP-26</key>
+		<string>Kyōto</string>
+		<key>JP-24</key>
+		<string>Mie</string>
+		<key>JP-04</key>
+		<string>Miyagi</string>
+		<key>JP-45</key>
+		<string>Miyazaki</string>
+		<key>JP-20</key>
+		<string>Nagano</string>
+		<key>JP-42</key>
+		<string>Nagasaki</string>
+		<key>JP-29</key>
+		<string>Nara</string>
+		<key>JP-15</key>
+		<string>Niigata</string>
+		<key>JP-44</key>
+		<string>Ōita</string>
+		<key>JP-33</key>
+		<string>Okayama</string>
+		<key>JP-47</key>
+		<string>Okinawa</string>
+		<key>JP-27</key>
+		<string>Osaka</string>
+		<key>JP-41</key>
+		<string>Saga</string>
+		<key>JP-11</key>
+		<string>Saitama</string>
+		<key>JP-25</key>
+		<string>Shiga</string>
+		<key>JP-32</key>
+		<string>Shimane</string>
+		<key>JP-22</key>
+		<string>Shizuoka</string>
+		<key>JP-09</key>
+		<string>Tochigi</string>
+		<key>JP-36</key>
+		<string>Tokushima</string>
+		<key>JP-13</key>
+		<string>Tokio</string>
+		<key>JP-31</key>
+		<string>Tottori</string>
+		<key>JP-16</key>
+		<string>Toyama</string>
+		<key>JP-30</key>
+		<string>Wakayama</string>
+		<key>JP-06</key>
+		<string>Yamagata</string>
+		<key>JP-35</key>
+		<string>Yamaguchi</string>
+		<key>JP-19</key>
+		<string>Yamanashi</string>
+	</dict>
+	<key>KE</key>
+	<dict>
+		<key>KE-01</key>
+		<string>Baringo</string>
+		<key>KE-02</key>
+		<string>Bomet</string>
+		<key>KE-03</key>
+		<string>Bungoma</string>
+		<key>KE-04</key>
+		<string>Busia</string>
+		<key>KE-05</key>
+		<string>Elgeyo-Marakwet</string>
+		<key>KE-06</key>
+		<string>Embu</string>
+		<key>KE-07</key>
+		<string>Garissa</string>
+		<key>KE-08</key>
+		<string>Homa Bay</string>
+		<key>KE-09</key>
+		<string>Isiolo</string>
+		<key>KE-10</key>
+		<string>Kajiado</string>
+		<key>KE-11</key>
+		<string>Kakamega</string>
+		<key>KE-12</key>
+		<string>Kericho</string>
+		<key>KE-13</key>
+		<string>Kiambu</string>
+		<key>KE-14</key>
+		<string>Kilifi</string>
+		<key>KE-15</key>
+		<string>Kirinyaga</string>
+		<key>KE-16</key>
+		<string>Kisii</string>
+		<key>KE-17</key>
+		<string>Kisumu</string>
+		<key>KE-18</key>
+		<string>Kitui</string>
+		<key>KE-19</key>
+		<string>Kwale</string>
+		<key>KE-20</key>
+		<string>Laikipia</string>
+		<key>KE-21</key>
+		<string>Lamu</string>
+		<key>KE-22</key>
+		<string>Machakos</string>
+		<key>KE-23</key>
+		<string>Makueni</string>
+		<key>KE-24</key>
+		<string>Mandera</string>
+		<key>KE-25</key>
+		<string>Marsabit</string>
+		<key>KE-26</key>
+		<string>Meru</string>
+		<key>KE-27</key>
+		<string>Migori</string>
+		<key>KE-28</key>
+		<string>Mombasa</string>
+		<key>KE-29</key>
+		<string>Murang’a</string>
+		<key>KE-30</key>
+		<string>Nairobi</string>
+		<key>KE-31</key>
+		<string>Nakuru</string>
+		<key>KE-32</key>
+		<string>Nandi</string>
+		<key>KE-33</key>
+		<string>Narok</string>
+		<key>KE-34</key>
+		<string>Nyamira</string>
+		<key>KE-35</key>
+		<string>Nyandarua</string>
+		<key>KE-36</key>
+		<string>Nyeri</string>
+		<key>KE-37</key>
+		<string>Samburu</string>
+		<key>KE-38</key>
+		<string>Siaya</string>
+		<key>KE-39</key>
+		<string>Taita-Taveta</string>
+		<key>KE-40</key>
+		<string>Tana River</string>
+		<key>KE-41</key>
+		<string>Tharaka-Nithi</string>
+		<key>KE-42</key>
+		<string>Trans-Nzoia</string>
+		<key>KE-43</key>
+		<string>Turkana</string>
+		<key>KE-44</key>
+		<string>Uasin Gishu</string>
+		<key>KE-45</key>
+		<string>Vihiga</string>
+		<key>KE-46</key>
+		<string>Wajir</string>
+		<key>KE-47</key>
+		<string>West Pokot</string>
+	</dict>
+	<key>KG</key>
+	<dict>
+		<key>KG-B</key>
+		<string>Batken</string>
+		<key>KG-GB</key>
+		<string>Bischkek1</string>
+		<key>KG-J</key>
+		<string>Dschalalabat</string>
+		<key>KG-N</key>
+		<string>Naryn</string>
+		<key>KG-O</key>
+		<string>Osch</string>
+		<key>KG-GO</key>
+		<string>Stadt Osch1</string>
+		<key>KG-T</key>
+		<string>Talas</string>
+		<key>KG-C</key>
+		<string>Tschüi</string>
+		<key>KG-Y</key>
+		<string>Yssykköl</string>
+	</dict>
+	<key>KH</key>
+	<dict>
+		<key>KH-1</key>
+		<string>Banteay Meancheay</string>
+		<key>KH-2</key>
+		<string>Battambang</string>
+		<key>KH-7</key>
+		<string>Kampot</string>
+		<key>KH-8</key>
+		<string>Kandal</string>
+		<key>KH-9</key>
+		<string>Koh Kong</string>
+		<key>KH-3</key>
+		<string>Kampong Cham</string>
+		<key>KH-4</key>
+		<string>Kampong Chhnang</string>
+		<key>KH-5</key>
+		<string>Kampong Speu</string>
+		<key>KH-6</key>
+		<string>Kampong Thom</string>
+		<key>KH-23</key>
+		<string>Kep</string>
+		<key>KH-10</key>
+		<string>Kratie</string>
+		<key>KH-11</key>
+		<string>Mondulkiri</string>
+		<key>KH-22</key>
+		<string>Oddar Meancheay</string>
+		<key>KH-24</key>
+		<string>Pailin</string>
+		<key>KH-15</key>
+		<string>Pursat</string>
+		<key>KH-13</key>
+		<string>Preah Vihear</string>
+		<key>KH-14</key>
+		<string>Prey Veng</string>
+		<key>KH-16</key>
+		<string>Ratanakiri</string>
+		<key>KH-17</key>
+		<string>Siem Reap</string>
+		<key>KH-18</key>
+		<string>Sihanoukville</string>
+		<key>KH-19</key>
+		<string>Stung Treng</string>
+		<key>KH-20</key>
+		<string>Svay Rieng</string>
+		<key>KH-21</key>
+		<string>Takeo</string>
+		<key>KH-25</key>
+		<string>Tbong Khmum</string>
+	</dict>
+	<key>KI</key>
+	<dict>
+		<key>KI-G</key>
+		<string>Gilbertinseln</string>
+		<key>KI-L</key>
+		<string>Linieninseln</string>
+		<key>KI-P</key>
+		<string>Phoenixinseln</string>
+	</dict>
+	<key>KM</key>
+	<dict>
+		<key>KM-A</key>
+		<string>Anjouan</string>
+		<key>KM-G</key>
+		<string>Grande Comore</string>
+		<key>KM-M</key>
+		<string>Mohéli</string>
+	</dict>
+	<key>KN</key>
+	<dict>
+		<key>KN-K</key>
+		<string>St. Kitts</string>
+		<key>KN-N</key>
+		<string>Nevis</string>
+	</dict>
+	<key>KP</key>
+	<dict>
+		<key>KP-04</key>
+		<string>Chagang-do</string>
+		<key>KP-08</key>
+		<string>Hamgyŏng-namdo</string>
+		<key>KP-09</key>
+		<string>Hamgyŏng-pukto</string>
+		<key>KP-05</key>
+		<string>Hwanghae-namdo</string>
+		<key>KP-06</key>
+		<string>Hwanghae-pukto</string>
+		<key>KP-07</key>
+		<string>Kangwŏn-do</string>
+		<key>KP-02</key>
+		<string>P’yŏngan-namdo</string>
+		<key>KP-03</key>
+		<string>P’yŏngan-pukto</string>
+		<key>KP-10</key>
+		<string>Ryanggang-do</string>
+	</dict>
+	<key>KR</key>
+	<dict>
+		<key>Stadtprovinz</key>
+		<string>Ulsan</string>
+		<key>Provinz</key>
+		<string>Jeollanam-do</string>
+		<key>spezielle Provinz</key>
+		<string>Jeju-do</string>
+		<key>spezielle autonome Stadt</key>
+		<string>Sejong</string>
+		<key>besondere Stadt</key>
+		<string>Hauptstadt Seoul</string>
+	</dict>
+	<key>KW</key>
+	<dict>
+		<key>KW-AH</key>
+		<string>Ahmadi!</string>
+		<key>KW-JA</key>
+		<string>Dschahra!</string>
+		<key>KW-FA</key>
+		<string>Farwaniyya!</string>
+		<key>KW-KU</key>
+		<string>Kuwait!</string>
+		<key>KW-HA</key>
+		<string>Hawalli!</string>
+		<key>KW-MU</key>
+		<string>Mubarak al-Kabir!</string>
+	</dict>
+	<key>KY</key>
+	<dict>
+		<key>KY</key>
+		<string>KY</string>
+	</dict>
+	<key>KZ</key>
+	<dict>
+		<key>KZ-ALM</key>
+		<string>Almaty</string>
+		<key>KZ-AKM</key>
+		<string>Aqmola</string>
+		<key>KZ-AKT</key>
+		<string>Aqtöbe</string>
+		<key>KZ-ATY</key>
+		<string>Atyrau</string>
+		<key>KZ-MAN</key>
+		<string>Mangghystau</string>
+		<key>KZ-SEV</key>
+		<string>Nordkasachstan</string>
+		<key>KZ-VOS</key>
+		<string>Ostkasachstan</string>
+		<key>KZ-PAV</key>
+		<string>Pawlodar</string>
+		<key>KZ-KAR</key>
+		<string>Qaraghandy</string>
+		<key>KZ-KUS</key>
+		<string>Qostanai</string>
+		<key>KZ-KZY</key>
+		<string>Qysylorda</string>
+		<key>KZ-ZHA</key>
+		<string>Schambyl</string>
+		<key>KZ-YUZ</key>
+		<string>Türkistan</string>
+		<key>KZ-ZAP</key>
+		<string>Westkasachstan</string>
+	</dict>
+	<key>LA</key>
+	<dict>
+		<key>LA-AT</key>
+		<string>Attapeu</string>
+		<key>LA-BK</key>
+		<string>Bokeo</string>
+		<key>LA-BL</key>
+		<string>Bolikhamsai</string>
+		<key>LA-CH</key>
+		<string>Champasak</string>
+		<key>LA-HO</key>
+		<string>Houaphan</string>
+		<key>LA-KH</key>
+		<string>Khammuan</string>
+		<key>LA-LM</key>
+		<string>Luang Namtha</string>
+		<key>LA-LP</key>
+		<string>Luang Prabang</string>
+		<key>LA-OU</key>
+		<string>Oudomxay</string>
+		<key>LA-PH</key>
+		<string>Phongsali</string>
+		<key>LA-XA</key>
+		<string>Sainyabuli</string>
+		<key>LA-SL</key>
+		<string>Salavan</string>
+		<key>LA-SV</key>
+		<string>Savannakhet</string>
+		<key>LA-XS</key>
+		<string>Saysomboun</string>
+		<key>LA-XE</key>
+		<string>Sekong</string>
+		<key>LA-VT</key>
+		<string>Vientiane (Präfektur)</string>
+		<key>LA-VI</key>
+		<string>Vientiane (Provinz)</string>
+		<key>LA-XI</key>
+		<string>Xieng Khouang</string>
+	</dict>
+	<key>LB</key>
+	<dict>
+		<key>LB-AK</key>
+		<string>Akkar</string>
+		<key>LB-BH</key>
+		<string>Baalbek-Hermel</string>
+		<key>LB-BA</key>
+		<string>Beirut</string>
+		<key>LB-BI</key>
+		<string>Bekaa</string>
+		<key>LB-JL</key>
+		<string>Libanonberg</string>
+		<key>LB-NA</key>
+		<string>Nabatäa</string>
+		<key>LB-AS</key>
+		<string>Nord-Libanon</string>
+		<key>LB-JA</key>
+		<string>Süd-Libanon</string>
+	</dict>
+	<key>LC</key>
+	<dict>
+		<key>LC-01</key>
+		<string>Anse-la-Raye</string>
+		<key>LC-02</key>
+		<string>Castries</string>
+		<key>LC-03</key>
+		<string>Choiseul</string>
+		<key>LC-05</key>
+		<string>Dennery</string>
+		<key>LC-06</key>
+		<string>Gros Islet</string>
+		<key>LC-07</key>
+		<string>Laborie</string>
+		<key>LC-08</key>
+		<string>Micoud</string>
+		<key>LC-10</key>
+		<string>Soufrière</string>
+		<key>LC-11</key>
+		<string>Vieux Fort</string>
+		<key>LC-12</key>
+		<string>Canaries</string>
+	</dict>
+	<key>LI</key>
+	<dict>
+		<key>LI-01</key>
+		<string>Balzers</string>
+		<key>LI-02</key>
+		<string>Eschen</string>
+		<key>LI-03</key>
+		<string>Gamprin</string>
+		<key>LI-04</key>
+		<string>Mauren</string>
+		<key>LI-05</key>
+		<string>Planken</string>
+		<key>LI-06</key>
+		<string>Ruggell</string>
+		<key>LI-07</key>
+		<string>Schaan</string>
+		<key>LI-08</key>
+		<string>Schellenberg</string>
+		<key>LI-09</key>
+		<string>Triesen</string>
+		<key>LI-10</key>
+		<string>Triesenberg</string>
+		<key>LI-11</key>
+		<string>Vaduz</string>
+	</dict>
+	<key>LK</key>
+	<dict>
+		<key>Basnahira Palata (si), Westprovinz</key>
+		<string>LK-1</string>
+		<key>Dakunu Palata (si), Südprovinz</key>
+		<string>LK-3</string>
+		<key>Madhyama Palata (si), Zentralprovinz</key>
+		<string>LK-2</string>
+		<key>Negenahira Palata (si), Ostprovinz</key>
+		<string>LK-5</string>
+		<key>Sabaragamuwa Palata (si), Provinz Sabaragamuwa</key>
+		<string>LK-9</string>
+		<key>Uturumeda Palata (si), Nördliche Zentralprovinz</key>
+		<string>LK-7</string>
+		<key>Uturu Palata (si), Nordprovinz</key>
+		<string>LK-4</string>
+		<key>Uva Palata (si), Provinz Uva</key>
+		<string>LK-8</string>
+		<key>Wayamba Palata (si), Nordwestprovinz</key>
+		<string>LK-6</string>
+	</dict>
+	<key>LR</key>
+	<dict>
+		<key>LR-BM</key>
+		<string>Bomi</string>
+		<key>LR-BG</key>
+		<string>Bong</string>
+		<key>LR-GP</key>
+		<string>Gbarpolu</string>
+		<key>LR-CM</key>
+		<string>Grand Cape Mount</string>
+		<key>LR-GB</key>
+		<string>Grand Bassa</string>
+		<key>LR-GG</key>
+		<string>Grand Gedeh</string>
+		<key>LR-GK</key>
+		<string>Grand Kru</string>
+		<key>LR-LO</key>
+		<string>Lofa</string>
+		<key>LR-MG</key>
+		<string>Margibi</string>
+		<key>LR-MY</key>
+		<string>Maryland</string>
+		<key>LR-MO</key>
+		<string>Montserrado</string>
+		<key>LR-NI</key>
+		<string>Nimba</string>
+		<key>LR-RI</key>
+		<string>River Cess</string>
+		<key>LR-RG</key>
+		<string>River Gee</string>
+		<key>LR-SI</key>
+		<string>Sinoe</string>
+	</dict>
+	<key>LS</key>
+	<dict>
+		<key>LS-A</key>
+		<string>Maseru</string>
+		<key>LS-B</key>
+		<string>Butha-Buthe</string>
+		<key>LS-C</key>
+		<string>Leribe</string>
+		<key>LS-D</key>
+		<string>Berea</string>
+		<key>LS-E</key>
+		<string>Mafeteng</string>
+		<key>LS-F</key>
+		<string>Mohale’s Hoek</string>
+		<key>LS-G</key>
+		<string>Quthing</string>
+		<key>LS-H</key>
+		<string>Qacha’s Nek</string>
+		<key>LS-J</key>
+		<string>Mokhotlong</string>
+		<key>LS-K</key>
+		<string>Thaba-Tseka</string>
+	</dict>
+	<key>LT</key>
+	<dict>
+		<key>LT-AL</key>
+		<string>Alytaus apskritis</string>
+		<key>LT-KU</key>
+		<string>Kauno apskritis</string>
+		<key>LT-KL</key>
+		<string>Klaipėdos apskritis</string>
+		<key>LT-MR</key>
+		<string>Marijampolės apskritis</string>
+		<key>LT-PN</key>
+		<string>Panevėžio apskritis</string>
+		<key>LT-SA</key>
+		<string>Šiaulių apskritis</string>
+		<key>LT-TA</key>
+		<string>Tauragės apskritis</string>
+		<key>LT-TE</key>
+		<string>Telšių apskritis</string>
+		<key>LT-UT</key>
+		<string>Utenos apskritis</string>
+		<key>LT-VL</key>
+		<string>Vilniaus apskritis</string>
+	</dict>
+	<key>LU</key>
+	<dict>
+		<key>LU-CA</key>
+		<string>Capellen</string>
+		<key>LU-CL</key>
+		<string>Clerf</string>
+		<key>LU-DI</key>
+		<string>Diekirch</string>
+		<key>LU-EC</key>
+		<string>Echternach</string>
+		<key>LU-ES</key>
+		<string>Esch an der Alzette</string>
+		<key>LU-GR</key>
+		<string>Grevenmacher</string>
+		<key>LU-LU</key>
+		<string>Luxemburg</string>
+		<key>LU-ME</key>
+		<string>Mersch</string>
+		<key>LU-RD</key>
+		<string>Redingen</string>
+		<key>LU-RM</key>
+		<string>Remich</string>
+		<key>LU-VD</key>
+		<string>Vianden</string>
+		<key>LU-WI</key>
+		<string>Wiltz</string>
+	</dict>
+	<key>LV</key>
+	<dict>
+		<key>LV-001</key>
+		<string>Aglonas novads</string>
+		<key>LV-002</key>
+		<string>Aizkraukles novads</string>
+		<key>LV-003</key>
+		<string>Aizputes novads</string>
+		<key>LV-004</key>
+		<string>Aknīstes novads</string>
+		<key>LV-005</key>
+		<string>Alojas novads</string>
+		<key>LV-006</key>
+		<string>Alsungas novads</string>
+		<key>LV-007</key>
+		<string>Alūksnes novads</string>
+		<key>LV-008</key>
+		<string>Amatas novads</string>
+		<key>LV-009</key>
+		<string>Apes novads</string>
+		<key>LV-010</key>
+		<string>Auces novads</string>
+		<key>LV-011</key>
+		<string>Ādažu novads</string>
+		<key>LV-012</key>
+		<string>Babītes novads</string>
+		<key>LV-013</key>
+		<string>Baldones novads</string>
+		<key>LV-014</key>
+		<string>Baltinavas novads</string>
+		<key>LV-015</key>
+		<string>Balvu novads</string>
+		<key>LV-016</key>
+		<string>Bauskas novads</string>
+		<key>LV-017</key>
+		<string>Beverīnas novads</string>
+		<key>LV-018</key>
+		<string>Brocēnu novads</string>
+		<key>LV-019</key>
+		<string>Burtnieku novads</string>
+		<key>LV-020</key>
+		<string>Carnikavas novads</string>
+		<key>LV-021</key>
+		<string>Cesvaines novads</string>
+		<key>LV-022</key>
+		<string>Cēsu novads</string>
+		<key>LV-023</key>
+		<string>Ciblas novads</string>
+		<key>LV-024</key>
+		<string>Dagdas novads</string>
+		<key>LV-025</key>
+		<string>Daugavpils novads</string>
+		<key>LV-026</key>
+		<string>Dobeles novads</string>
+		<key>LV-027</key>
+		<string>Dundagas novads</string>
+		<key>LV-028</key>
+		<string>Durbes novads</string>
+		<key>LV-029</key>
+		<string>Engures novads</string>
+		<key>LV-030</key>
+		<string>Ērgļu novads</string>
+		<key>LV-031</key>
+		<string>Garkalnes novads</string>
+		<key>LV-032</key>
+		<string>Grobiņas novads</string>
+		<key>LV-033</key>
+		<string>Gulbenes novads</string>
+		<key>LV-034</key>
+		<string>Iecavas novads</string>
+		<key>LV-035</key>
+		<string>Ikšķiles novads</string>
+		<key>LV-036</key>
+		<string>Ilūkstes novads</string>
+		<key>LV-037</key>
+		<string>Inčukalna novads</string>
+		<key>LV-038</key>
+		<string>Jaunjelgavas novads</string>
+		<key>LV-039</key>
+		<string>Jaunpiebalgas novads</string>
+		<key>LV-040</key>
+		<string>Jaunpils novads</string>
+		<key>LV-041</key>
+		<string>Jelgavas novads</string>
+		<key>LV-042</key>
+		<string>Jēkabpils novads</string>
+		<key>LV-043</key>
+		<string>Kandavas novads</string>
+		<key>LV-044</key>
+		<string>Kārsavas novads</string>
+		<key>LV-045</key>
+		<string>Kocēnu novads</string>
+		<key>LV-046</key>
+		<string>Kokneses novads</string>
+		<key>LV-047</key>
+		<string>Krāslavas novads</string>
+		<key>LV-048</key>
+		<string>Krimuldas novads</string>
+		<key>LV-049</key>
+		<string>Krustpils novads</string>
+		<key>LV-050</key>
+		<string>Kuldīgas novads</string>
+		<key>LV-051</key>
+		<string>Ķeguma novads</string>
+		<key>LV-052</key>
+		<string>Ķekavas novads</string>
+		<key>LV-053</key>
+		<string>Lielvārdes novads</string>
+		<key>LV-054</key>
+		<string>Limbažu novads</string>
+		<key>LV-055</key>
+		<string>Līgatnes novads</string>
+		<key>LV-056</key>
+		<string>Līvānu novads</string>
+		<key>LV-057</key>
+		<string>Lubānas novads</string>
+		<key>LV-058</key>
+		<string>Ludzas novads</string>
+		<key>LV-059</key>
+		<string>Madonas novads</string>
+		<key>LV-060</key>
+		<string>Mazsalacas novads</string>
+		<key>LV-061</key>
+		<string>Mālpils novads</string>
+		<key>LV-062</key>
+		<string>Mārupes novads</string>
+		<key>LV-063</key>
+		<string>Mērsraga novads</string>
+		<key>LV-064</key>
+		<string>Naukšēnu novads</string>
+		<key>LV-065</key>
+		<string>Neretas novads</string>
+		<key>LV-066</key>
+		<string>Nīcas novads</string>
+		<key>LV-067</key>
+		<string>Ogres novads</string>
+		<key>LV-068</key>
+		<string>Olaines novads</string>
+		<key>LV-069</key>
+		<string>Ozolnieku novads</string>
+		<key>LV-070</key>
+		<string>Pārgaujas novads</string>
+		<key>LV-071</key>
+		<string>Pāvilostas novads</string>
+		<key>LV-072</key>
+		<string>Pļaviņu novads</string>
+		<key>LV-073</key>
+		<string>Preiļu novads</string>
+		<key>LV-074</key>
+		<string>Priekules novads</string>
+		<key>LV-075</key>
+		<string>Priekuļu novads</string>
+		<key>LV-076</key>
+		<string>Raunas novads</string>
+		<key>LV-077</key>
+		<string>Rēzeknes novads</string>
+		<key>LV-078</key>
+		<string>Riebiņu novads</string>
+		<key>LV-079</key>
+		<string>Rojas novads</string>
+		<key>LV-080</key>
+		<string>Ropažu novads</string>
+		<key>LV-081</key>
+		<string>Rucavas novads</string>
+		<key>LV-082</key>
+		<string>Rugāju novads</string>
+		<key>LV-083</key>
+		<string>Rundāles novads</string>
+		<key>LV-084</key>
+		<string>Rūjienas novads</string>
+		<key>LV-085</key>
+		<string>Salas novads</string>
+		<key>LV-086</key>
+		<string>Salacgrīvas novads</string>
+		<key>LV-087</key>
+		<string>Salaspils novads</string>
+		<key>LV-088</key>
+		<string>Saldus novads</string>
+		<key>LV-089</key>
+		<string>Saulkrastu novads</string>
+		<key>LV-090</key>
+		<string>Sējas novads</string>
+		<key>LV-091</key>
+		<string>Siguldas novads</string>
+		<key>LV-092</key>
+		<string>Skrīveru novads</string>
+		<key>LV-093</key>
+		<string>Skrundas novads</string>
+		<key>LV-094</key>
+		<string>Smiltenes novads</string>
+		<key>LV-095</key>
+		<string>Stopiņu novads</string>
+		<key>LV-096</key>
+		<string>Strenču novads</string>
+		<key>LV-097</key>
+		<string>Talsu novads</string>
+		<key>LV-098</key>
+		<string>Tērvetes novads</string>
+		<key>LV-099</key>
+		<string>Tukuma novads</string>
+		<key>LV-100</key>
+		<string>Vaiņodes novads</string>
+		<key>LV-101</key>
+		<string>Valkas novads</string>
+		<key>LV-102</key>
+		<string>Varakļānu novads</string>
+		<key>LV-103</key>
+		<string>Vārkavas novads</string>
+		<key>LV-104</key>
+		<string>Vecpiebalgas novads</string>
+		<key>LV-105</key>
+		<string>Vecumnieku novads</string>
+		<key>LV-106</key>
+		<string>Ventspils novads</string>
+		<key>LV-107</key>
+		<string>Viesītes novads</string>
+		<key>LV-108</key>
+		<string>Viļakas novads</string>
+		<key>LV-109</key>
+		<string>Viļānu novads</string>
+		<key>LV-110</key>
+		<string>Zilupes novads</string>
+	</dict>
+	<key>LY</key>
+	<dict>
+		<key>LY-BU</key>
+		<string>al-Butnan</string>
+		<key>LY-JA</key>
+		<string>al-Dschabal al-Achdar</string>
+		<key>LY-JG</key>
+		<string>al-Dschabal al-Gharbi</string>
+		<key>LY-JI</key>
+		<string>al-Dschifara</string>
+		<key>LY-JU</key>
+		<string>al-Dschufra</string>
+		<key>LY-KF</key>
+		<string>al-Kufra</string>
+		<key>LY-MJ</key>
+		<string>al-Mardsch</string>
+		<key>LY-MB</key>
+		<string>al-Murgub</string>
+		<key>LY-WA</key>
+		<string>al-Wahat</string>
+		<key>LY-NQ</key>
+		<string>an-Nuqat al-Chams</string>
+		<key>LY-ZA</key>
+		<string>az-Zawiya</string>
+		<key>LY-BA</key>
+		<string>Benghazi</string>
+		<key>LY-DR</key>
+		<string>Darna</string>
+		<key>LY-GT</key>
+		<string>Ghat</string>
+		<key>LY-MI</key>
+		<string>Misrata</string>
+		<key>LY-MQ</key>
+		<string>Murzuk</string>
+		<key>LY-NL</key>
+		<string>Nalut</string>
+		<key>LY-SB</key>
+		<string>Sabha</string>
+		<key>LY-SR</key>
+		<string>Surt</string>
+		<key>LY-TB</key>
+		<string>Tripolis</string>
+		<key>LY-WD</key>
+		<string>Wadi al-Haya</string>
+		<key>LY-WS</key>
+		<string>Wadi asch-Schati'</string>
+	</dict>
+	<key>MA</key>
+	<dict>
+		<key>MA-01</key>
+		<string>Tanger-Tétouan-Al Hoceïma</string>
+		<key>MA-02</key>
+		<string>Oriental</string>
+		<key>MA-03</key>
+		<string>Fès-Meknès</string>
+		<key>MA-04</key>
+		<string>Rabat-Salé-Kénitra</string>
+		<key>MA-05</key>
+		<string>Béni Mellal-Khénifra</string>
+		<key>MA-06</key>
+		<string>Casablanca-Settat</string>
+		<key>MA-07</key>
+		<string>Marrakesch-Safi</string>
+		<key>MA-08</key>
+		<string>Drâa-Tafilalet</string>
+		<key>MA-09</key>
+		<string>Souss-Massa</string>
+		<key>MA-10</key>
+		<string>Guelmim-Oued Noun</string>
+		<key>MA-11</key>
+		<string>Laâyoune-Sakia El Hamra</string>
+		<key>MA-12</key>
+		<string>Dakhla-Oued Ed-Dahab</string>
+	</dict>
+	<key>MC</key>
+	<dict>
+		<key>MC-CO</key>
+		<string>La Condamine</string>
+		<key>MC-FO</key>
+		<string>Fontvieille</string>
+		<key>MC-JE</key>
+		<string>Jardin Exotique</string>
+		<key>MC-CL</key>
+		<string>La Colle</string>
+		<key>MC-GA</key>
+		<string>La Gare</string>
+		<key>MC-SO</key>
+		<string>La Source</string>
+		<key>MC-LA</key>
+		<string>Larvotto</string>
+		<key>MC-MA</key>
+		<string>Malbousquet</string>
+		<key>MC-MO</key>
+		<string>Monaco-Ville</string>
+		<key>MC-MG</key>
+		<string>Moneghetti</string>
+		<key>MC-MC</key>
+		<string>Monte Carlo</string>
+		<key>MC-MU</key>
+		<string>Moulins</string>
+		<key>MC-PH</key>
+		<string>Port-Hercule</string>
+		<key>MC-SR</key>
+		<string>Saint-Roman</string>
+		<key>MC-SD</key>
+		<string>Sainte-Dévote</string>
+		<key>MC-SP</key>
+		<string>Spélugues</string>
+		<key>MC-VR</key>
+		<string>Vallon de la Rousse</string>
+	</dict>
+	<key>MD</key>
+	<dict>
+		<key>MD-GA</key>
+		<string>Gagausien (Găgăuzia)</string>
+		<key>MD-BA</key>
+		<string>Bălți</string>
+		<key>MD-BD</key>
+		<string>Bender</string>
+		<key>MD-CU</key>
+		<string>Chișinău</string>
+		<key>MD-AN</key>
+		<string>Anenii Noi</string>
+		<key>MD-BS</key>
+		<string>Basarabeasca</string>
+		<key>MD-BR</key>
+		<string>Briceni</string>
+		<key>MD-CA</key>
+		<string>Cahul</string>
+		<key>MD-CT</key>
+		<string>Cantemir</string>
+		<key>MD-CL</key>
+		<string>Călărași</string>
+		<key>MD-CS</key>
+		<string>Căușeni</string>
+		<key>MD-CM</key>
+		<string>Cimișlia</string>
+		<key>MD-CR</key>
+		<string>Criuleni</string>
+		<key>MD-DO</key>
+		<string>Dondușeni</string>
+		<key>MD-DR</key>
+		<string>Drochia</string>
+		<key>MD-DU</key>
+		<string>Dubăsari</string>
+		<key>MD-ED</key>
+		<string>Edineț</string>
+		<key>MD-FA</key>
+		<string>Fălești</string>
+		<key>MD-FL</key>
+		<string>Florești</string>
+		<key>MD-GL</key>
+		<string>Glodeni</string>
+		<key>MD-HI</key>
+		<string>Hîncești</string>
+		<key>MD-IA</key>
+		<string>Ialoveni</string>
+		<key>MD-LE</key>
+		<string>Leova</string>
+		<key>MD-NI</key>
+		<string>Nisporeni</string>
+		<key>MD-OC</key>
+		<string>Ocnița</string>
+		<key>MD-OR</key>
+		<string>Orhei</string>
+		<key>MD-RE</key>
+		<string>Rezina</string>
+		<key>MD-RI</key>
+		<string>Rîșcani</string>
+		<key>MD-SI</key>
+		<string>Sîngerei</string>
+		<key>MD-SO</key>
+		<string>Soroca</string>
+		<key>MD-ST</key>
+		<string>Strășeni</string>
+		<key>MD-SD</key>
+		<string>Șoldănești</string>
+		<key>MD-SV</key>
+		<string>Ștefan Vodă</string>
+		<key>MD-TA</key>
+		<string>Taraclia</string>
+		<key>MD-TE</key>
+		<string>Telenești</string>
+		<key>MD-UN</key>
+		<string>Ungheni</string>
+		<key>MD-SN</key>
+		<string>Transnistrien (Stînga Nistrului)</string>
+	</dict>
+	<key>ME</key>
+	<dict>
+		<key>ME-01</key>
+		<string>Andrijevica</string>
+		<key>ME-02</key>
+		<string>Bar</string>
+		<key>ME-03</key>
+		<string>Berane</string>
+		<key>ME-04</key>
+		<string>Bijelo Polje</string>
+		<key>ME-05</key>
+		<string>Budva</string>
+		<key>ME-06</key>
+		<string>Cetinje</string>
+		<key>ME-07</key>
+		<string>Danilovgrad</string>
+		<key>ME-08</key>
+		<string>Herceg Novi</string>
+		<key>ME-09</key>
+		<string>Kolašin</string>
+		<key>ME-10</key>
+		<string>Kotor</string>
+		<key>ME-11</key>
+		<string>Mojkovac</string>
+		<key>ME-12</key>
+		<string>Nikšić</string>
+		<key>ME-13</key>
+		<string>Plav</string>
+		<key>ME-14</key>
+		<string>Pljevlja</string>
+		<key>ME-15</key>
+		<string>Plužine</string>
+		<key>ME-16</key>
+		<string>Podgorica</string>
+		<key>ME-17</key>
+		<string>Rožaje</string>
+		<key>ME-18</key>
+		<string>Šavnik</string>
+		<key>ME-19</key>
+		<string>Tivat</string>
+		<key>ME-20</key>
+		<string>Ulcinj</string>
+		<key>ME-21</key>
+		<string>Žabljak</string>
+		<key>ME-22</key>
+		<string>Gusinje</string>
+		<key>ME-23</key>
+		<string>Petnjica</string>
+		<key>ME-24</key>
+		<string>Tuzi</string>
+	</dict>
+	<key>MF</key>
+	<dict>
+		<key>MF</key>
+		<string>MF</string>
+	</dict>
+	<key>MG</key>
+	<dict>
+		<key>MG-T</key>
+		<string>Antananarivo</string>
+		<key>MG-D</key>
+		<string>Antsiranana</string>
+		<key>MG-F</key>
+		<string>Fianarantsoa</string>
+		<key>MG-M</key>
+		<string>Mahajanga</string>
+		<key>MG-A</key>
+		<string>Toamasina</string>
+		<key>MG-U</key>
+		<string>Toliara</string>
+	</dict>
+	<key>MH</key>
+	<dict>
+		<key>MH-T</key>
+		<string>Ratak-Kette</string>
+		<key>MH-L</key>
+		<string>Ralik-Kette</string>
+	</dict>
+	<key>MK</key>
+	<dict>
+		<key>MK-02</key>
+		<string>Aračinovo</string>
+		<key>MK-03</key>
+		<string>Berovo</string>
+		<key>MK-04</key>
+		<string>Bitola</string>
+		<key>MK-05</key>
+		<string>Bogdanci</string>
+		<key>MK-06</key>
+		<string>Bogovinje</string>
+		<key>MK-07</key>
+		<string>Bosilovo</string>
+		<key>MK-08</key>
+		<string>Brvenica</string>
+		<key>MK-10</key>
+		<string>Valandovo</string>
+		<key>MK-11</key>
+		<string>Vasilevo</string>
+		<key>MK-12</key>
+		<string>Vevčani</string>
+		<key>MK-13</key>
+		<string>Veles</string>
+		<key>MK-14</key>
+		<string>Vinitsa</string>
+		<key>MK-15</key>
+		<string>Vraneštica</string>
+		<key>MK-16</key>
+		<string>Vrapčište</string>
+		<key>MK-18</key>
+		<string>Gevgelija</string>
+		<key>MK-19</key>
+		<string>Gostivar</string>
+		<key>MK-20</key>
+		<string>Gradsko</string>
+		<key>MK-21</key>
+		<string>Debar</string>
+		<key>MK-22</key>
+		<string>Debarca</string>
+		<key>MK-23</key>
+		<string>Delčevo</string>
+		<key>MK-24</key>
+		<string>Demir Kapija</string>
+		<key>MK-25</key>
+		<string>Demir Hisar</string>
+		<key>MK-26</key>
+		<string>Dojran</string>
+		<key>MK-27</key>
+		<string>Dolneni</string>
+		<key>MK-28</key>
+		<string>Drugovo</string>
+		<key>MK-30</key>
+		<string>Želino</string>
+		<key>MK-31</key>
+		<string>Zajas</string>
+		<key>MK-32</key>
+		<string>Zelenikovo</string>
+		<key>MK-33</key>
+		<string>Zrnovci</string>
+		<key>MK-34</key>
+		<string>Ilinden</string>
+		<key>MK-35</key>
+		<string>Jegunovce</string>
+		<key>MK-36</key>
+		<string>Kavadarci</string>
+		<key>MK-37</key>
+		<string>Karbinci</string>
+		<key>MK-40</key>
+		<string>Kičevo</string>
+		<key>MK-41</key>
+		<string>Konče</string>
+		<key>MK-42</key>
+		<string>Kočani</string>
+		<key>MK-43</key>
+		<string>Kratovo</string>
+		<key>MK-44</key>
+		<string>Kriva Palanka</string>
+		<key>MK-45</key>
+		<string>Krivogaštani</string>
+		<key>MK-46</key>
+		<string>Kruševo</string>
+		<key>MK-47</key>
+		<string>Kumanovo</string>
+		<key>MK-48</key>
+		<string>Lipkovo</string>
+		<key>MK-49</key>
+		<string>Lozovo</string>
+		<key>MK-50</key>
+		<string>Mavrovo i Rostuša</string>
+		<key>MK-51</key>
+		<string>Makedonska Kamenica</string>
+		<key>MK-52</key>
+		<string>Makedonski Brod</string>
+		<key>MK-53</key>
+		<string>Mogila</string>
+		<key>MK-54</key>
+		<string>Negotino</string>
+		<key>MK-55</key>
+		<string>Novaci</string>
+		<key>MK-56</key>
+		<string>Novo Selo</string>
+		<key>MK-57</key>
+		<string>Oslomej</string>
+		<key>MK-58</key>
+		<string>Ohrid</string>
+		<key>MK-59</key>
+		<string>Petrovec</string>
+		<key>MK-60</key>
+		<string>Pehčevo</string>
+		<key>MK-61</key>
+		<string>Plasnica</string>
+		<key>MK-62</key>
+		<string>Prilep</string>
+		<key>MK-63</key>
+		<string>Probištip</string>
+		<key>MK-64</key>
+		<string>Radoviš</string>
+		<key>MK-65</key>
+		<string>Rankovce</string>
+		<key>MK-66</key>
+		<string>Resen</string>
+		<key>MK-67</key>
+		<string>Rosoman</string>
+		<key>MK-69</key>
+		<string>Sveti Nikole</string>
+		<key>MK-70</key>
+		<string>Sopište</string>
+		<key>MK-71</key>
+		<string>Opština Staro Nagoričane</string>
+		<key>MK-72</key>
+		<string>Struga</string>
+		<key>MK-73</key>
+		<string>Strumica</string>
+		<key>MK-74</key>
+		<string>Studeničani</string>
+		<key>MK-75</key>
+		<string>Tearce</string>
+		<key>MK-76</key>
+		<string>Tetovo</string>
+		<key>MK-78</key>
+		<string>Centar Župa</string>
+		<key>MK-80</key>
+		<string>Čaška</string>
+		<key>MK-81</key>
+		<string>Češinovo-Obleševo</string>
+		<key>MK-82</key>
+		<string>Čučer-Sandevo</string>
+		<key>MK-83</key>
+		<string>Štip</string>
+		<key>MK-85</key>
+		<string>Skopje (Hauptstadt)</string>
+	</dict>
+	<key>ML</key>
+	<dict>
+		<key>ML-BKO</key>
+		<string>(H)</string>
+		<key>ML-7</key>
+		<string>Gao</string>
+		<key>ML-1</key>
+		<string>Kayes</string>
+		<key>ML-8</key>
+		<string>Kidal</string>
+		<key>ML-2</key>
+		<string>Koulikoro</string>
+		<key>ML-9</key>
+		<string>Ménaka</string>
+		<key>ML-5</key>
+		<string>Mopti</string>
+		<key>ML-4</key>
+		<string>Ségou</string>
+		<key>ML-3</key>
+		<string>Sikasso</string>
+		<key>ML-10</key>
+		<string>Taoudénit</string>
+		<key>ML-6</key>
+		<string>Timbuktu</string>
+	</dict>
+	<key>MM</key>
+	<dict>
+		<key>MM-14</key>
+		<string>Chin-Staat</string>
+		<key>MM-11</key>
+		<string>Kachin-Staat</string>
+		<key>MM-12</key>
+		<string>Kayah-Staat</string>
+		<key>MM-13</key>
+		<string>Kayin-Staat</string>
+		<key>MM-15</key>
+		<string>Mon-Staat</string>
+		<key>MM-16</key>
+		<string>Rakhaing-Staat</string>
+		<key>MM-17</key>
+		<string>Shan-Staat</string>
+	</dict>
+	<key>MN</key>
+	<dict>
+		<key>MN-073</key>
+		<string>Archangai</string>
+		<key>MN-071</key>
+		<string>Bajan-Ölgii</string>
+		<key>MN-069</key>
+		<string>Bajanchongor</string>
+		<key>MN-067</key>
+		<string>Bulgan</string>
+		<key>MN-039</key>
+		<string>Chentii</string>
+		<key>MN-043</key>
+		<string>Chowd</string>
+		<key>MN-041</key>
+		<string>Chöwsgöl</string>
+		<key>MN-037</key>
+		<string>Darchan-Uul</string>
+		<key>MN-063</key>
+		<string>Dorno-Gobi</string>
+		<key>MN-061</key>
+		<string>Dornod</string>
+		<key>MN-057</key>
+		<string>Dsawchan</string>
+		<key>MN-059</key>
+		<string>Dund-Gobi</string>
+		<key>MN-065</key>
+		<string>Gobi-Altai</string>
+		<key>MN-064</key>
+		<string>Gobi-Sümber</string>
+		<key>MN-035</key>
+		<string>Orchon</string>
+		<key>MN-053</key>
+		<string>Ömnö-Gobi</string>
+		<key>MN-055</key>
+		<string>Öwörchangai</string>
+		<key>MN-049</key>
+		<string>Selenge</string>
+		<key>MN-051</key>
+		<string>Süchbaatar</string>
+		<key>MN-047</key>
+		<string>Töw</string>
+		<key>MN-1</key>
+		<string>Hauptstadt Ulaanbaatar</string>
+		<key>MN-046</key>
+		<string>Uws</string>
+	</dict>
+	<key>MO</key>
+	<dict>
+		<key>MO</key>
+		<string>MO</string>
+	</dict>
+	<key>MP</key>
+	<dict>
+		<key>MP</key>
+		<string>MP</string>
+	</dict>
+	<key>MQ</key>
+	<dict>
+		<key>MQ</key>
+		<string>MQ</string>
+	</dict>
+	<key>MR</key>
+	<dict>
+		<key>MR-07</key>
+		<string>Adrar</string>
+		<key>MR-03</key>
+		<string>Assaba</string>
+		<key>MR-05</key>
+		<string>Brakna</string>
+		<key>MR-08</key>
+		<string>Dakhlet Nouadhibou</string>
+		<key>MR-04</key>
+		<string>Gorgol</string>
+		<key>MR-10</key>
+		<string>Guidimaka</string>
+		<key>MR-01</key>
+		<string>Hodh Ech Chargui</string>
+		<key>MR-02</key>
+		<string>Hodh El Gharbi</string>
+		<key>MR-12</key>
+		<string>Inchiri</string>
+		<key>MR-14</key>
+		<string>Nouakchott Nord</string>
+		<key>MR-13</key>
+		<string>Nouakchott Ouest</string>
+		<key>MR-15</key>
+		<string>Nouakchott Sud</string>
+		<key>MR-09</key>
+		<string>Tagant</string>
+		<key>MR-11</key>
+		<string>Tiris Zemmour</string>
+		<key>MR-06</key>
+		<string>Trarza</string>
+	</dict>
+	<key>MS</key>
+	<dict>
+		<key>MS</key>
+		<string>MS</string>
+	</dict>
+	<key>MT</key>
+	<dict>
+		<key>MT-01</key>
+		<string>Attard</string>
+		<key>MT-02</key>
+		<string>Balzan</string>
+		<key>MT-03</key>
+		<string>Birgu siehe Vittoriosa</string>
+		<key>MT-04</key>
+		<string>Birkirkara</string>
+		<key>MT-05</key>
+		<string>Birżebbuġa</string>
+		<key>MT-06</key>
+		<string>Bormla siehe Cospicua</string>
+		<key>MT-07</key>
+		<string>Dingli</string>
+		<key>MT-08</key>
+		<string>Fgura</string>
+		<key>MT-09</key>
+		<string>Floriana</string>
+		<key>MT-10</key>
+		<string>Fontana</string>
+		<key>MT-11</key>
+		<string>Gudja</string>
+		<key>MT-12</key>
+		<string>Gżira</string>
+		<key>MT-13</key>
+		<string>Għajnsielem</string>
+		<key>MT-14</key>
+		<string>Għarb</string>
+		<key>MT-15</key>
+		<string>Għargħur</string>
+		<key>MT-16</key>
+		<string>Għasri</string>
+		<key>MT-17</key>
+		<string>Għaxaq</string>
+		<key>MT-18</key>
+		<string>Ħamrun</string>
+		<key>MT-19</key>
+		<string>Iklin</string>
+		<key>MT-20</key>
+		<string>Isla siehe Senglea</string>
+		<key>MT-21</key>
+		<string>Kalkara</string>
+		<key>MT-22</key>
+		<string>Kerċem</string>
+		<key>MT-23</key>
+		<string>Kirkop</string>
+		<key>MT-24</key>
+		<string>Lija</string>
+		<key>MT-25</key>
+		<string>Luqa</string>
+		<key>MT-26</key>
+		<string>Marsa</string>
+		<key>MT-27</key>
+		<string>Marsaskala</string>
+		<key>MT-28</key>
+		<string>Marsaxlokk</string>
+		<key>MT-29</key>
+		<string>Mdina</string>
+		<key>MT-30</key>
+		<string>Mellieħa</string>
+		<key>MT-31</key>
+		<string>Mġarr</string>
+		<key>MT-32</key>
+		<string>Mosta</string>
+		<key>MT-33</key>
+		<string>Mqabba</string>
+		<key>MT-34</key>
+		<string>Msida</string>
+		<key>MT-35</key>
+		<string>Mtarfa</string>
+		<key>MT-36</key>
+		<string>Munxar</string>
+		<key>MT-37</key>
+		<string>Nadur</string>
+		<key>MT-38</key>
+		<string>Naxxar</string>
+		<key>MT-39</key>
+		<string>Paola</string>
+		<key>MT-40</key>
+		<string>Pembroke</string>
+		<key>MT-41</key>
+		<string>Pietà</string>
+		<key>MT-42</key>
+		<string>Qala</string>
+		<key>MT-43</key>
+		<string>Qormi</string>
+		<key>MT-44</key>
+		<string>Qrendi</string>
+		<key>MT-45</key>
+		<string>Victoria (Rabat)</string>
+		<key>MT-46</key>
+		<string>Rabat</string>
+		<key>MT-47</key>
+		<string>Safi</string>
+		<key>MT-48</key>
+		<string>San Ġiljan (St Julian's)</string>
+		<key>MT-49</key>
+		<string>San Ġwann</string>
+		<key>MT-50</key>
+		<string>San Lawrenz</string>
+		<key>MT-51</key>
+		<string>San Pawl il-Baħar (St Paul's Bay)</string>
+		<key>MT-52</key>
+		<string>Sannat</string>
+		<key>MT-53</key>
+		<string>Santa Luċija</string>
+		<key>MT-54</key>
+		<string>Santa Venera</string>
+		<key>MT-55</key>
+		<string>Siġġiewi</string>
+		<key>MT-56</key>
+		<string>Sliema</string>
+		<key>MT-57</key>
+		<string>Swieqi</string>
+		<key>MT-58</key>
+		<string>Ta’ Xbiex</string>
+		<key>MT-59</key>
+		<string>Tarxien</string>
+		<key>MT-60</key>
+		<string>Valletta</string>
+		<key>MT-61</key>
+		<string>Xagħra</string>
+		<key>MT-62</key>
+		<string>Xewkija</string>
+		<key>MT-63</key>
+		<string>Xgħajra</string>
+		<key>MT-64</key>
+		<string>Żabbar</string>
+		<key>MT-65</key>
+		<string>Żebbuġ (Gozo)</string>
+		<key>MT-66</key>
+		<string>Żebbuġ</string>
+		<key>MT-67</key>
+		<string>Żejtun</string>
+		<key>MT-68</key>
+		<string>Żurrieq</string>
+	</dict>
+	<key>MU</key>
+	<dict>
+		<key>MU-BR</key>
+		<string>Beau Bassin-Rose Hill</string>
+		<key>MU-CU</key>
+		<string>Curepipe</string>
+		<key>MU-PU</key>
+		<string>Port Louis (Stadt)</string>
+		<key>MU-QB</key>
+		<string>Quatre Bornes</string>
+		<key>MU-VP</key>
+		<string>Vacoas-Phoenix</string>
+	</dict>
+	<key>MV</key>
+	<dict>
+		<key>MV-MLE</key>
+		<string>Malé</string>
+		<key>MV-01</key>
+		<string>Addu City</string>
+	</dict>
+	<key>MW</key>
+	<dict>
+		<key>MW-N</key>
+		<string>Northern Region</string>
+		<key>MW-C</key>
+		<string>Central Region</string>
+		<key>MW-S</key>
+		<string>Southern Region</string>
+	</dict>
+	<key>MX</key>
+	<dict>
+		<key>MX-AGU</key>
+		<string>Aguascalientes</string>
+		<key>MX-BCN</key>
+		<string>Baja California</string>
+		<key>MX-BCS</key>
+		<string>Baja California Sur</string>
+		<key>MX-CAM</key>
+		<string>Campeche</string>
+		<key>MX-CHP</key>
+		<string>Chiapas</string>
+		<key>MX-CHH</key>
+		<string>Chihuahua</string>
+		<key>MX-COA</key>
+		<string>Coahuila</string>
+		<key>MX-COL</key>
+		<string>Colima</string>
+		<key>MX-DUR</key>
+		<string>Durango</string>
+		<key>MX-GUA</key>
+		<string>Guanajuato</string>
+		<key>MX-GRO</key>
+		<string>Guerrero</string>
+		<key>MX-HID</key>
+		<string>Hidalgo</string>
+		<key>MX-JAL</key>
+		<string>Jalisco</string>
+		<key>MX-MEX</key>
+		<string>México</string>
+		<key>MX-CMX</key>
+		<string>Mexiko-Stadt (Hauptstadt)</string>
+		<key>MX-MIC</key>
+		<string>Michoacán</string>
+		<key>MX-MOR</key>
+		<string>Morelos</string>
+		<key>MX-NAY</key>
+		<string>Nayarit</string>
+		<key>MX-NLE</key>
+		<string>Nuevo León</string>
+		<key>MX-OAX</key>
+		<string>Oaxaca</string>
+		<key>MX-PUE</key>
+		<string>Puebla</string>
+		<key>MX-QUE</key>
+		<string>Querétaro</string>
+		<key>MX-ROO</key>
+		<string>Quintana Roo</string>
+		<key>MX-SLP</key>
+		<string>San Luis Potosí</string>
+		<key>MX-SIN</key>
+		<string>Sinaloa</string>
+		<key>MX-SON</key>
+		<string>Sonora</string>
+		<key>MX-TAB</key>
+		<string>Tabasco</string>
+		<key>MX-TAM</key>
+		<string>Tamaulipas</string>
+		<key>MX-TLA</key>
+		<string>Tlaxcala</string>
+		<key>MX-VER</key>
+		<string>Veracruz</string>
+		<key>MX-YUC</key>
+		<string>Yucatán</string>
+		<key>MX-ZAC</key>
+		<string>Zacatecas</string>
+	</dict>
+	<key>MY</key>
+	<dict>
+		<key>MY-01</key>
+		<string>Johor</string>
+		<key>MY-02</key>
+		<string>Kedah</string>
+		<key>MY-03</key>
+		<string>Kelantan</string>
+		<key>MY-04</key>
+		<string>Malakka</string>
+		<key>MY-05</key>
+		<string>Negeri Sembilan</string>
+		<key>MY-06</key>
+		<string>Pahang</string>
+		<key>MY-07</key>
+		<string>Penang</string>
+		<key>MY-08</key>
+		<string>Perak</string>
+		<key>MY-09</key>
+		<string>Perlis</string>
+		<key>MY-12</key>
+		<string>Sabah</string>
+		<key>MY-13</key>
+		<string>Sarawak</string>
+		<key>MY-10</key>
+		<string>Selangor</string>
+		<key>MY-11</key>
+		<string>Terengganu</string>
+		<key>MY-14 *</key>
+		<string>Kuala Lumpur</string>
+		<key>MY-15 *</key>
+		<string>Labuan</string>
+		<key>MY-16 *</key>
+		<string>Putrajaya</string>
+	</dict>
+	<key>MZ</key>
+	<dict>
+		<key>MZ-P</key>
+		<string>Cabo Delgado</string>
+		<key>MZ-G</key>
+		<string>Gaza</string>
+		<key>MZ-I</key>
+		<string>Inhambane</string>
+		<key>MZ-B</key>
+		<string>Manica</string>
+		<key>MZ-MPM</key>
+		<string>Maputo (Hauptstadt)</string>
+		<key>MZ-L</key>
+		<string>Maputo (Provinz)</string>
+		<key>MZ-N</key>
+		<string>Nampula</string>
+		<key>MZ-A</key>
+		<string>Niassa</string>
+		<key>MZ-S</key>
+		<string>Sofala</string>
+		<key>MZ-T</key>
+		<string>Tete</string>
+		<key>MZ-Q</key>
+		<string>Zambezia</string>
+	</dict>
+	<key>NA</key>
+	<dict>
+		<key>bis 1993 Western</key>
+		<string>Erongo</string>
+		<key></key>
+		<string>Otjozondjupa</string>
+		<key>bis August 2013 Karas</key>
+		<string>ǁKaras[Khi 1]</string>
+		<key>bis August 2013 Teil von Kavango</key>
+		<string>Kavango-West</string>
+		<key>bis August 2013 Caprivi</key>
+		<string>Sambesi</string>
+	</dict>
+	<key>NC</key>
+	<dict>
+		<key>NC</key>
+		<string>NC</string>
+	</dict>
+	<key>NE</key>
+	<dict>
+		<key>NE-1</key>
+		<string>Agadez</string>
+		<key>NE-2</key>
+		<string>Diffa</string>
+		<key>NE-3</key>
+		<string>Dosso</string>
+		<key>NE-4</key>
+		<string>Maradi</string>
+		<key>NE-8</key>
+		<string>Niamey 1</string>
+		<key>NE-5</key>
+		<string>Tahoua</string>
+		<key>NE-6</key>
+		<string>Tillabéri</string>
+		<key>NE-7</key>
+		<string>Zinder</string>
+	</dict>
+	<key>NF</key>
+	<dict>
+		<key>NF</key>
+		<string>NF</string>
+	</dict>
+	<key>NG</key>
+	<dict>
+		<key>NG-AB</key>
+		<string>Abia</string>
+		<key>NG-AD</key>
+		<string>Adamawa</string>
+		<key>NG-AK</key>
+		<string>Akwa Ibom</string>
+		<key>NG-AN</key>
+		<string>Anambra</string>
+		<key>NG-BA</key>
+		<string>Bauchi</string>
+		<key>NG-BY</key>
+		<string>Bayelsa</string>
+		<key>NG-BE</key>
+		<string>Benue</string>
+		<key>NG-BO</key>
+		<string>Borno</string>
+		<key>NG-CR</key>
+		<string>Cross River</string>
+		<key>NG-DE</key>
+		<string>Delta</string>
+		<key>NG-EB</key>
+		<string>Ebonyi</string>
+		<key>NG-ED</key>
+		<string>Edo</string>
+		<key>NG-EK</key>
+		<string>Ekiti</string>
+		<key>NG-EN</key>
+		<string>Enugu</string>
+		<key>NG-FC</key>
+		<string>Federal Capital Territory</string>
+		<key>NG-GO</key>
+		<string>Gombe</string>
+		<key>NG-IM</key>
+		<string>Imo</string>
+		<key>NG-JI</key>
+		<string>Jigawa</string>
+		<key>NG-KD</key>
+		<string>Kaduna</string>
+		<key>NG-KN</key>
+		<string>Kano</string>
+		<key>NG-KT</key>
+		<string>Katsina</string>
+		<key>NG-KE</key>
+		<string>Kebbi</string>
+		<key>NG-KO</key>
+		<string>Kogi</string>
+		<key>NG-KW</key>
+		<string>Kwara</string>
+		<key>NG-LA</key>
+		<string>Lagos</string>
+		<key>NG-NA</key>
+		<string>Nassarawa</string>
+		<key>NG-NI</key>
+		<string>Niger</string>
+		<key>NG-OG</key>
+		<string>Ogun</string>
+		<key>NG-ON</key>
+		<string>Ondo</string>
+		<key>NG-OS</key>
+		<string>Osun</string>
+		<key>NG-OY</key>
+		<string>Oyo</string>
+		<key>NG-PL</key>
+		<string>Plateau</string>
+		<key>NG-RI</key>
+		<string>Rivers</string>
+		<key>NG-SO</key>
+		<string>Sokoto</string>
+		<key>NG-TA</key>
+		<string>Taraba</string>
+		<key>NG-YO</key>
+		<string>Yobe</string>
+		<key>NG-ZA</key>
+		<string>Zamfara</string>
+	</dict>
+	<key>NI</key>
+	<dict>
+		<key>NI-BO</key>
+		<string>Boaco</string>
+		<key>NI-CA</key>
+		<string>Carazo</string>
+		<key>NI-CI</key>
+		<string>Chinandega</string>
+		<key>NI-CO</key>
+		<string>Chontales</string>
+		<key>NI-ES</key>
+		<string>Estelí</string>
+		<key>NI-GR</key>
+		<string>Granada</string>
+		<key>NI-JI</key>
+		<string>Jinotega</string>
+		<key>NI-LE</key>
+		<string>León</string>
+		<key>NI-MD</key>
+		<string>Madriz</string>
+		<key>NI-MN</key>
+		<string>Managua</string>
+		<key>NI-MS</key>
+		<string>Masaya</string>
+		<key>NI-MT</key>
+		<string>Matagalpa</string>
+		<key>NI-NS</key>
+		<string>Nueva Segovia</string>
+		<key>NI-SJ</key>
+		<string>Rio San Juan</string>
+		<key>NI-RI</key>
+		<string>Rivas</string>
+	</dict>
+	<key>NL</key>
+	<dict>
+		<key>NL-DR</key>
+		<string>Drenthe</string>
+		<key>NL-FL</key>
+		<string>Flevoland</string>
+		<key>NL-FR</key>
+		<string>Fryslân</string>
+		<key>NL-GE</key>
+		<string>Gelderland</string>
+		<key>NL-GR</key>
+		<string>Groningen</string>
+		<key>NL-LI</key>
+		<string>Limburg</string>
+		<key>NL-NB</key>
+		<string>Noord-Brabant</string>
+		<key>NL-NH</key>
+		<string>Noord-Holland</string>
+		<key>NL-OV</key>
+		<string>Overijssel</string>
+		<key>NL-UT</key>
+		<string>Utrecht</string>
+		<key>NL-ZE</key>
+		<string>Zeeland</string>
+		<key>NL-ZH</key>
+		<string>Zuid-Holland</string>
+	</dict>
+	<key>NO</key>
+	<dict>
+		<key>NO-01</key>
+		<string>Østfold</string>
+		<key>NO-02</key>
+		<string>Akershus</string>
+		<key>NO-03</key>
+		<string>Oslo</string>
+		<key>NO-04</key>
+		<string>Hedmark</string>
+		<key>NO-05</key>
+		<string>Oppland</string>
+		<key>NO-06</key>
+		<string>Buskerud</string>
+		<key>NO-07</key>
+		<string>Vestfold</string>
+		<key>NO-08</key>
+		<string>Telemark</string>
+		<key>NO-09</key>
+		<string>Aust-Agder</string>
+		<key>NO-10</key>
+		<string>Vest-Agder</string>
+		<key>NO-11</key>
+		<string>Rogaland</string>
+		<key>NO-12</key>
+		<string>Hordaland</string>
+		<key>NO-14</key>
+		<string>Sogn og Fjordane</string>
+		<key>NO-15</key>
+		<string>Møre og Romsdal</string>
+		<key>NO-18</key>
+		<string>Nordland</string>
+		<key>NO-19</key>
+		<string>Troms</string>
+		<key>NO-20</key>
+		<string>Finnmark</string>
+		<key>NO-21</key>
+		<string>Svalbard1</string>
+		<key>NO-22</key>
+		<string>Jan Mayen1</string>
+		<key>NO-50</key>
+		<string>Trøndelag</string>
+	</dict>
+	<key>NP</key>
+	<dict>
+		<key>NP-P1</key>
+		<string>Provinz Nr. 1</string>
+		<key>NP-P2</key>
+		<string>Provinz Nr. 2</string>
+		<key>NP-P3</key>
+		<string>Provinz Bagmati</string>
+		<key>NP-P4</key>
+		<string>Provinz Gandaki</string>
+		<key>NP-P5</key>
+		<string>Provinz Nr. 5</string>
+		<key>NP-P6</key>
+		<string>Provinz Karnali</string>
+		<key>NP-P7</key>
+		<string>Provinz Sudurpashchim</string>
+	</dict>
+	<key>NR</key>
+	<dict>
+		<key>NR-01</key>
+		<string>Aiwo</string>
+		<key>NR-02</key>
+		<string>Anabar</string>
+		<key>NR-03</key>
+		<string>Anetan</string>
+		<key>NR-04</key>
+		<string>Anibare</string>
+		<key>NR-05</key>
+		<string>Baiti</string>
+		<key>NR-06</key>
+		<string>Boe</string>
+		<key>NR-07</key>
+		<string>Buada</string>
+		<key>NR-08</key>
+		<string>Denigomodu</string>
+		<key>NR-09</key>
+		<string>Ewa</string>
+		<key>NR-10</key>
+		<string>Ijuw</string>
+		<key>NR-11</key>
+		<string>Meneng</string>
+		<key>NR-12</key>
+		<string>Nibok</string>
+		<key>NR-13</key>
+		<string>Uaboe</string>
+		<key>NR-14</key>
+		<string>Yaren</string>
+	</dict>
+	<key>NU</key>
+	<dict>
+		<key>NU</key>
+		<string>NU</string>
+	</dict>
+	<key>NZ</key>
+	<dict>
+		<key>NZ-AUK</key>
+		<string>Auckland</string>
+		<key>NZ-BOP</key>
+		<string>Bay of Plenty</string>
+		<key>NZ-CAN</key>
+		<string>Canterbury</string>
+		<key>NZ-CIT</key>
+		<string>1</string>
+		<key>NZ-GIS</key>
+		<string>Gisborne</string>
+		<key>NZ-HKB</key>
+		<string>Hawke’s Bay</string>
+		<key>NZ-MWT</key>
+		<string>Manawatu-Wanganui</string>
+		<key>NZ-MBH</key>
+		<string>Marlborough</string>
+		<key>NZ-NSN</key>
+		<string>Nelson</string>
+		<key>NZ-NTL</key>
+		<string>Northland</string>
+		<key>NZ-OTA</key>
+		<string>Otago</string>
+		<key>NZ-STL</key>
+		<string>Southland</string>
+		<key>NZ-TKI</key>
+		<string>Taranaki</string>
+		<key>NZ-TAS</key>
+		<string>Tasman</string>
+		<key>NZ-WKO</key>
+		<string>Waikato</string>
+		<key>NZ-WGN</key>
+		<string>Wellington</string>
+		<key>NZ-WTC</key>
+		<string>West Coast</string>
+	</dict>
+	<key>OM</key>
+	<dict>
+		<key>OM-DA</key>
+		<string>ad-Dachiliyya</string>
+		<key>OM-BU</key>
+		<string>al-Buraimi</string>
+		<key>OM-WU</key>
+		<string>al-Wusta</string>
+		<key>OM-ZA</key>
+		<string>az-Zahira</string>
+		<key>OM-BJ</key>
+		<string>Dschanub al-Batina</string>
+		<key>OM-SJ</key>
+		<string>Dschanub asch-Scharqiyya</string>
+		<key>OM-MA</key>
+		<string>Maskat</string>
+		<key>OM-MU</key>
+		<string>Musandam</string>
+		<key>OM-BS</key>
+		<string>Schamal al-Batina</string>
+		<key>OM-SS</key>
+		<string>Schamal asch-Scharqiyya</string>
+		<key>OM-ZU</key>
+		<string>Dhofar</string>
+	</dict>
+	<key>PA</key>
+	<dict>
+		<key></key>
+		<string>Veraguas</string>
+		<key>= West-Panama</key>
+		<string>Panamá Oeste</string>
+		<key>indigenes Territorium mit Provinzstatus</key>
+		<string>Ngöbe-Buglé</string>
+		<key>= Kuna Yala indigenes Territorium mit Provinzstatus</key>
+		<string>Guna Yala</string>
+	</dict>
+	<key>PE</key>
+	<dict>
+		<key>PE-AMA</key>
+		<string>Amazonas</string>
+		<key>PE-ANC</key>
+		<string>Ancash</string>
+		<key>PE-APU</key>
+		<string>Apurímac</string>
+		<key>PE-ARE</key>
+		<string>Arequipa</string>
+		<key>PE-AYA</key>
+		<string>Ayacucho</string>
+		<key>PE-CAJ</key>
+		<string>Cajamarca</string>
+		<key>PE-CAL</key>
+		<string>1</string>
+		<key>PE-CUS</key>
+		<string>Cusco</string>
+		<key>PE-HUV</key>
+		<string>Huancavelica</string>
+		<key>PE-HUC</key>
+		<string>Huánuco</string>
+		<key>PE-ICA</key>
+		<string>Ica</string>
+		<key>PE-JUN</key>
+		<string>Junín</string>
+		<key>PE-LAL</key>
+		<string>La Libertad</string>
+		<key>PE-LAM</key>
+		<string>Lambayeque</string>
+		<key>PE-LMA</key>
+		<string>1</string>
+		<key>PE-LIM</key>
+		<string>Region Lima</string>
+		<key>PE-LOR</key>
+		<string>Loreto</string>
+		<key>PE-MDD</key>
+		<string>Madre de Dios</string>
+		<key>PE-MOQ</key>
+		<string>Moquegua</string>
+		<key>PE-PAS</key>
+		<string>Pasco</string>
+		<key>PE-PIU</key>
+		<string>Piura</string>
+		<key>PE-PUN</key>
+		<string>Puno</string>
+		<key>PE-SAM</key>
+		<string>San Martín</string>
+		<key>PE-TAC</key>
+		<string>Tacna</string>
+		<key>PE-TUM</key>
+		<string>Tumbes</string>
+		<key>PE-UCA</key>
+		<string>Ucayali</string>
+	</dict>
+	<key>PF</key>
+	<dict>
+		<key>PF</key>
+		<string>PF</string>
+	</dict>
+	<key>PG</key>
+	<dict>
+		<key>PG-NSB</key>
+		<string>Bougainville</string>
+		<key>PG-CPM</key>
+		<string>Central Province</string>
+		<key>PG-CPK</key>
+		<string>Chimbu (Simbu)</string>
+		<key>PG-EHG</key>
+		<string>Eastern Highlands</string>
+		<key>PG-EBR</key>
+		<string>East New Britain</string>
+		<key>PG-ESW</key>
+		<string>East Sepik</string>
+		<key>PG-EPW</key>
+		<string>Enga</string>
+		<key>PG-GPK</key>
+		<string>Gulf</string>
+		<key>PG-HLA</key>
+		<string>Hela</string>
+		<key>PG-JWK</key>
+		<string>Jiwaka</string>
+		<key>PG-MPM</key>
+		<string>Madang</string>
+		<key>PG-MRL</key>
+		<string>Manus</string>
+		<key>PG-MBA</key>
+		<string>Milne Bay</string>
+		<key>PG-MPL</key>
+		<string>Morobe</string>
+		<key>PG-NCD</key>
+		<string>National Capital District</string>
+		<key>PG-NIK</key>
+		<string>New Ireland</string>
+		<key>PG-NPP</key>
+		<string>Oro (Northern)</string>
+		<key>PG-SAN</key>
+		<string>Sandaun (West Sepik)</string>
+		<key>PG-SHM</key>
+		<string>Southern Highlands</string>
+		<key>PG-WPD</key>
+		<string>Western (Fly River)</string>
+		<key>PG-WHM</key>
+		<string>Western Highlands</string>
+		<key>PG-WBK</key>
+		<string>West New Britain</string>
+	</dict>
+	<key>PH</key>
+	<dict>
+		<key>PH-00</key>
+		<string>National Capital Region (Metro Manila)</string>
+		<key>PH-01</key>
+		<string>Ilocos Region</string>
+		<key>PH-02</key>
+		<string>Cagayan Valley</string>
+		<key>PH-03</key>
+		<string>Central Luzon</string>
+		<key>PH-05</key>
+		<string>Bicol Region</string>
+		<key>PH-06</key>
+		<string>Western Visayas</string>
+		<key>PH-07</key>
+		<string>Central Visayas</string>
+		<key>PH-08</key>
+		<string>Eastern Visayas</string>
+		<key>PH-09</key>
+		<string>Zamboanga Peninsula</string>
+		<key>PH-10</key>
+		<string>Northern Mindanao</string>
+		<key>PH-11</key>
+		<string>Davao-Region</string>
+		<key>PH-12</key>
+		<string>SOCCSKSARGEN</string>
+		<key>PH-13</key>
+		<string>Caraga</string>
+		<key>PH-14</key>
+		<string>Autonomous Region in Muslim Mindanao (ARMM)</string>
+		<key>PH-15</key>
+		<string>Cordillera Administrative Region (CAR)</string>
+		<key>PH-40</key>
+		<string>CALABARZON</string>
+		<key>PH-41</key>
+		<string>MIMAROPA</string>
+	</dict>
+	<key>PK</key>
+	<dict>
+		<key>PK-JK</key>
+		<string>Asad Jammu und Kaschmir</string>
+		<key>PK-BA</key>
+		<string>Belutschistan</string>
+		<key>PK-GB</key>
+		<string>Gilgit-Baltistan</string>
+		<key>PK-IS</key>
+		<string>Hauptstadtterritorium Islamabad</string>
+		<key>PK-KP</key>
+		<string>Khyber Pakhtunkhwa</string>
+		<key>PK-PB</key>
+		<string>Punjab</string>
+		<key>PK-SD</key>
+		<string>Sindh</string>
+	</dict>
+	<key>PL</key>
+	<dict>
+		<key>PL-28</key>
+		<string>Warmińsko-Mazurskie</string>
+		<key>PL-30</key>
+		<string>Wielkopolskie</string>
+		<key>PL-26</key>
+		<string>Swietokrzyskie</string>
+		<key>PL-18</key>
+		<string>Podkarpackie</string>
+		<key>PL-12</key>
+		<string>Malopolskie</string>
+		<key>PL-04</key>
+		<string>Kujawsko-Pomorskie</string>
+		<key>PL-08</key>
+		<string>Lubuskie</string>
+		<key>PL-06</key>
+		<string>Lubelskie</string>
+		<key>PL-10</key>
+		<string>Lodzkie</string>
+		<key>PL-14</key>
+		<string>Mazowieckie</string>
+		<key>PL-02</key>
+		<string>Dolnośląskie</string>
+		<key>PL-16</key>
+		<string>Opolskie</string>
+		<key>PL-20</key>
+		<string>Podlaskie</string>
+		<key>PL-22</key>
+		<string>Pomorskie</string>
+		<key>PL-24</key>
+		<string>Slaskie</string>
+		<key>PL-32</key>
+		<string>Zachodniopomorskie</string>
+	</dict>
+	<key>PM</key>
+	<dict>
+		<key>PM</key>
+		<string>PM</string>
+	</dict>
+	<key>PN</key>
+	<dict>
+		<key>PN</key>
+		<string>PN</string>
+	</dict>
+	<key>PR</key>
+	<dict>
+		<key>PR</key>
+		<string>PR</string>
+	</dict>
+	<key>PS</key>
+	<dict>
+		<key>PS-BTH</key>
+		<string>Gouvernement Bethlehem</string>
+		<key>PS-DEB</key>
+		<string>Gouvernement Dair al-Balah</string>
+		<key>PS-GZA</key>
+		<string>Gouvernement Gaza</string>
+		<key>PS-HBN</key>
+		<string>Gouvernement Hebron</string>
+		<key>PS-JEN</key>
+		<string>Gouvernement Dschenin</string>
+		<key>PS-JEM</key>
+		<string>Gouvernement Jerusalem</string>
+		<key>PS-JRH</key>
+		<string>Gouvernement Jericho</string>
+		<key>PS-KYS</key>
+		<string>Gouvernement Chan Yunis</string>
+		<key>PS-NBS</key>
+		<string>Gouvernement Nablus</string>
+		<key>PS-NGZ</key>
+		<string>Gouvernement Nordgaza</string>
+		<key>PS-QQA</key>
+		<string>Gouvernement Qalqilya</string>
+		<key>PS-RFH</key>
+		<string>Gouvernement Rafah</string>
+		<key>PS-RBH</key>
+		<string>Gouvernement Ramallah und al-Bira</string>
+		<key>PS-SLT</key>
+		<string>Gouvernement Salfit</string>
+		<key>PS-TBS</key>
+		<string>Gouvernement Tubas</string>
+		<key>PS-TKM</key>
+		<string>Gouvernement Tulkarm</string>
+	</dict>
+	<key>PT</key>
+	<dict>
+		<key>PT-01</key>
+		<string>Aveiro</string>
+		<key>PT-20</key>
+		<string>Azoren (Ilhas dos Açores)</string>
+		<key>PT-02</key>
+		<string>Beja</string>
+		<key>PT-03</key>
+		<string>Braga</string>
+		<key>PT-04</key>
+		<string>Bragança</string>
+		<key>PT-05</key>
+		<string>Castelo Branco</string>
+		<key>PT-06</key>
+		<string>Coimbra</string>
+		<key>PT-07</key>
+		<string>Evora</string>
+		<key>PT-08</key>
+		<string>Faro</string>
+		<key>PT-09</key>
+		<string>Guarda</string>
+		<key>PT-10</key>
+		<string>Leiria</string>
+		<key>PT-11</key>
+		<string>Lissabon (Lisboa)</string>
+		<key>PT-30</key>
+		<string>Madeira</string>
+		<key>PT-12</key>
+		<string>Portalegre</string>
+		<key>PT-13</key>
+		<string>Porto</string>
+		<key>PT-14</key>
+		<string>Santarém</string>
+		<key>PT-15</key>
+		<string>Setúbal</string>
+		<key>PT-16</key>
+		<string>Viana do Castelo</string>
+		<key>PT-17</key>
+		<string>Vila Real</string>
+		<key>PT-18</key>
+		<string>Viseu</string>
+	</dict>
+	<key>PW</key>
+	<dict>
+		<key>PW-002</key>
+		<string>Aimeliik</string>
+		<key>PW-004</key>
+		<string>Airai</string>
+		<key>PW-010</key>
+		<string>Angaur</string>
+		<key>PW-050</key>
+		<string>Hatohobei</string>
+		<key>PW-100</key>
+		<string>Kayangel</string>
+		<key>PW-150</key>
+		<string>Koror</string>
+		<key>PW-212</key>
+		<string>Melekeok</string>
+		<key>PW-214</key>
+		<string>Ngaraard</string>
+		<key>PW-218</key>
+		<string>Ngarchelong</string>
+		<key>PW-222</key>
+		<string>Ngardmau</string>
+		<key>PW-224</key>
+		<string>Ngatpang</string>
+		<key>PW-226</key>
+		<string>Ngchesar</string>
+		<key>PW-227</key>
+		<string>Ngeremlengui</string>
+		<key>PW-228</key>
+		<string>Ngiwal</string>
+		<key>PW-350</key>
+		<string>Peleliu</string>
+		<key>PW-370</key>
+		<string>Sonsorol</string>
+	</dict>
+	<key>PY</key>
+	<dict>
+		<key>PY-16</key>
+		<string>Alto Paraguay</string>
+		<key>PY-10</key>
+		<string>Alto Paraná</string>
+		<key>PY-13</key>
+		<string>Amambay</string>
+		<key>PY-19</key>
+		<string>Boquerón</string>
+		<key>PY-5</key>
+		<string>Caaguazú</string>
+		<key>PY-6</key>
+		<string>Caazapá</string>
+		<key>PY-14</key>
+		<string>Canindeyú</string>
+		<key>PY-11</key>
+		<string>Central</string>
+		<key>PY-1</key>
+		<string>Concepción</string>
+		<key>PY-3</key>
+		<string>Cordillera</string>
+		<key>PY-ASU</key>
+		<string>Asunción (Distrito Capital)1</string>
+		<key>PY-4</key>
+		<string>Guairá</string>
+		<key>PY-7</key>
+		<string>Itapúa</string>
+		<key>PY-8</key>
+		<string>Misiones</string>
+		<key>PY-12</key>
+		<string>Ñeembucú</string>
+		<key>PY-9</key>
+		<string>Paraguarí</string>
+		<key>PY-15</key>
+		<string>Presidente Hayes</string>
+		<key>PY-2</key>
+		<string>San Pedro</string>
+	</dict>
+	<key>QA</key>
+	<dict>
+		<key>QA-DA</key>
+		<string>Doha</string>
+		<key>QA-KH</key>
+		<string>Chaur!</string>
+		<key>QA-MS</key>
+		<string>Schamal!</string>
+		<key>QA-RA</key>
+		<string>Rayyan!</string>
+		<key>QA-SH</key>
+		<string>Schahaniyya!</string>
+		<key>QA-US</key>
+		<string>Umm Salal</string>
+		<key>QA-WA</key>
+		<string>Wakra!</string>
+		<key>QA-ZA</key>
+		<string>Dayan!</string>
+	</dict>
+	<key>RE</key>
+	<dict>
+		<key>RE</key>
+		<string>RE</string>
+	</dict>
+	<key>RO</key>
+	<dict>
+		<key>RO-B</key>
+		<string>Curaçao</string>
+		<key>RO-AB</key>
+		<string>Alba</string>
+		<key>RO-AR</key>
+		<string>Arad</string>
+		<key>RO-AG</key>
+		<string>Argeș</string>
+		<key>RO-BC</key>
+		<string>Bacău</string>
+		<key>RO-BH</key>
+		<string>Bihor</string>
+		<key>RO-BN</key>
+		<string>Bistrița-Năsăud</string>
+		<key>RO-BT</key>
+		<string>Botoșani</string>
+		<key>RO-BR</key>
+		<string>Brăila</string>
+		<key>RO-BV</key>
+		<string>Brașov</string>
+		<key>RO-BZ</key>
+		<string>Buzău</string>
+		<key>RO-CS</key>
+		<string>Caraș-Severin</string>
+		<key>RO-CL</key>
+		<string>Călărași</string>
+		<key>RO-CJ</key>
+		<string>Cluj</string>
+		<key>RO-CT</key>
+		<string>Constanța</string>
+		<key>RO-CV</key>
+		<string>Covasna</string>
+		<key>RO-DB</key>
+		<string>Dâmbovița</string>
+		<key>RO-DJ</key>
+		<string>Dolj</string>
+		<key>RO-GL</key>
+		<string>Galați</string>
+		<key>RO-GR</key>
+		<string>Giurgiu</string>
+		<key>RO-GJ</key>
+		<string>Gorj</string>
+		<key>RO-HR</key>
+		<string>Harghita</string>
+		<key>RO-HD</key>
+		<string>Hunedoara</string>
+		<key>RO-IL</key>
+		<string>Ialomița</string>
+		<key>RO-IS</key>
+		<string>Iași</string>
+		<key>RO-IF</key>
+		<string>Ilfov</string>
+		<key>RO-MM</key>
+		<string>Maramureș</string>
+		<key>RO-MH</key>
+		<string>Mehedinți</string>
+		<key>RO-MS</key>
+		<string>Mureș</string>
+		<key>RO-NT</key>
+		<string>Neamț</string>
+		<key>RO-OT</key>
+		<string>Olt</string>
+		<key>RO-PH</key>
+		<string>Prahova</string>
+		<key>RO-SJ</key>
+		<string>Sălaj</string>
+		<key>RO-SM</key>
+		<string>Satu Mare</string>
+		<key>RO-SB</key>
+		<string>Sibiu</string>
+		<key>RO-SV</key>
+		<string>Suceava</string>
+		<key>RO-TR</key>
+		<string>Teleorman</string>
+		<key>RO-TM</key>
+		<string>Timiș</string>
+		<key>RO-TL</key>
+		<string>Tulcea</string>
+		<key>RO-VL</key>
+		<string>Vâlcea</string>
+		<key>RO-VS</key>
+		<string>Vaslui</string>
+		<key>RO-VN</key>
+		<string>Vrancea</string>
+	</dict>
+	<key>RS</key>
+	<dict>
+		<key>RS-00</key>
+		<string>Belgrad</string>
+	</dict>
+	<key>RU</key>
+	<dict>
+		<key>RU-AD</key>
+		<string>Adygeja</string>
+		<key>RU-AL</key>
+		<string>Altai (Republik)</string>
+		<key>RU-BA</key>
+		<string>Baschkortostan</string>
+		<key>RU-BU</key>
+		<string>Burjatien</string>
+		<key>RU-KK</key>
+		<string>Chakassien</string>
+		<key>RU-DA</key>
+		<string>Dagestan</string>
+		<key>RU-IN</key>
+		<string>Inguschetien</string>
+		<key>RU-KB</key>
+		<string>Kabardino-Balkarien</string>
+		<key>RU-KL</key>
+		<string>Kalmückien</string>
+		<key>RU-KC</key>
+		<string>Karatschai-Tscherkessien</string>
+		<key>RU-KR</key>
+		<string>Karelien</string>
+		<key>RU-KO</key>
+		<string>Komi</string>
+		<key>RU-ME</key>
+		<string>Mari El</string>
+		<key>RU-MO</key>
+		<string>Mordwinien</string>
+		<key>RU-SE</key>
+		<string>Nordossetien-Alanien</string>
+		<key>RU-SA</key>
+		<string>Sacha (Jakutien)</string>
+		<key>RU-TA</key>
+		<string>Tatarstan</string>
+		<key>RU-CE</key>
+		<string>Tschetschenien</string>
+		<key>RU-CU</key>
+		<string>Tschuwaschien</string>
+		<key>RU-TY</key>
+		<string>Tuwa</string>
+		<key>RU-UD</key>
+		<string>Udmurtien</string>
+	</dict>
+	<key>RW</key>
+	<dict>
+		<key>RW-01</key>
+		<string>Kigali</string>
+		<key>RW-02</key>
+		<string>Ost</string>
+		<key>RW-03</key>
+		<string>Nord</string>
+		<key>RW-04</key>
+		<string>West</string>
+		<key>RW-05</key>
+		<string>Süd</string>
+	</dict>
+	<key>SA</key>
+	<dict>
+		<key>SA-01</key>
+		<string>Riad</string>
+		<key>SA-02</key>
+		<string>Mekka</string>
+		<key>SA-03</key>
+		<string>Medina</string>
+		<key>SA-04</key>
+		<string>asch-Scharqiyya</string>
+		<key>SA-05</key>
+		<string>Qasim</string>
+		<key>SA-06</key>
+		<string>Ha'il</string>
+		<key>SA-07</key>
+		<string>Tabuk</string>
+		<key>SA-08</key>
+		<string>al-Hudud asch-schamaliyya</string>
+		<key>SA-09</key>
+		<string>Dschāzān</string>
+		<key>SA-10</key>
+		<string>Nadschran</string>
+		<key>SA-11</key>
+		<string>Baha</string>
+		<key>SA-12</key>
+		<string>Dschauf</string>
+		<key>SA-14</key>
+		<string>Asir</string>
+	</dict>
+	<key>SB</key>
+	<dict>
+		<key>SB-CT</key>
+		<string>Honiara (Hauptstadt)</string>
+		<key>SB-CE</key>
+		<string>Central</string>
+		<key>SB-CH</key>
+		<string>Choiseul</string>
+		<key>SB-GU</key>
+		<string>Guadalcanal</string>
+		<key>SB-IS</key>
+		<string>Isabel</string>
+		<key>SB-MK</key>
+		<string>Makira und Ulawa</string>
+		<key>SB-ML</key>
+		<string>Malaita</string>
+		<key>SB-RB</key>
+		<string>Rennell und Bellona</string>
+		<key>SB-TE</key>
+		<string>Temotu</string>
+		<key>SB-WE</key>
+		<string>Western</string>
+	</dict>
+	<key>SC</key>
+	<dict>
+		<key>SC-01</key>
+		<string>Anse aux Pins</string>
+		<key>SC-02</key>
+		<string>Anse Boileau</string>
+		<key>SC-03</key>
+		<string>Anse Étoile</string>
+		<key>SC-04</key>
+		<string>Au Cap (Anse Louis)</string>
+		<key>SC-05</key>
+		<string>Anse Royale</string>
+		<key>SC-06</key>
+		<string>Baie Lazare</string>
+		<key>SC-07</key>
+		<string>Baie Sainte Anne</string>
+		<key>SC-08</key>
+		<string>Beau Vallon</string>
+		<key>SC-09</key>
+		<string>Bel Air</string>
+		<key>SC-10</key>
+		<string>Bel Ombre</string>
+		<key>SC-11</key>
+		<string>Cascade</string>
+		<key>SC-12</key>
+		<string>Glacis</string>
+		<key>SC-13</key>
+		<string>Grand Anse (Mahé)</string>
+		<key>SC-14</key>
+		<string>Grand Anse (Praslin)</string>
+		<key>SC-15</key>
+		<string>La Digue and Inner Islands</string>
+		<key>SC-16</key>
+		<string>English River (La Rivière Anglaise)</string>
+		<key>SC-17</key>
+		<string>Mont Buxton</string>
+		<key>SC-18</key>
+		<string>Mont Fleuri</string>
+		<key>SC-19</key>
+		<string>Plaisance</string>
+		<key>SC-20</key>
+		<string>Pointe La Rue</string>
+		<key>SC-21</key>
+		<string>Port Glaud</string>
+		<key>SC-22</key>
+		<string>Saint Louis</string>
+		<key>SC-23</key>
+		<string>Takamaka</string>
+		<key>SC-24</key>
+		<string>Les Mamelles</string>
+		<key>SC-25</key>
+		<string>Roche Caïman</string>
+	</dict>
+	<key>SD</key>
+	<dict>
+		<key>SD-RS</key>
+		<string>al-Bahr al-ahmar</string>
+		<key>SD-KH</key>
+		<string>al-Chartum</string>
+		<key>SD-GZ</key>
+		<string>al-Dschazira</string>
+		<key>SD-GD</key>
+		<string>al-Qadarif</string>
+		<key>SD-NW</key>
+		<string>an-Nil al-abyad</string>
+		<key>SD-NB</key>
+		<string>an-Nil al-azraq</string>
+		<key>SD-NO</key>
+		<string>asch-Schamaliyya</string>
+		<key>SD-DS</key>
+		<string>Dschanub Darfur</string>
+		<key>SD-KS</key>
+		<string>Dschanub Kurdufan</string>
+		<key>SD-DW</key>
+		<string>Gharb Darfur</string>
+		<key>SD-GK</key>
+		<string>Gharb Kurdufan</string>
+		<key>SD-KA</key>
+		<string>Kassala</string>
+		<key>SD-NR</key>
+		<string>Nahr an-Nil</string>
+		<key>SD-SI</key>
+		<string>Sannar</string>
+		<key>SD-DN</key>
+		<string>Schamal Darfur</string>
+		<key>SD-KN</key>
+		<string>Schamal Kurdufan</string>
+		<key>SD-DE</key>
+		<string>Scharq Darfur</string>
+		<key>SD-DC</key>
+		<string>Wasat Darfur (Darfur al-wusta)</string>
+	</dict>
+	<key>SE</key>
+	<dict>
+		<key>SE-K</key>
+		<string>Blekinge län</string>
+		<key>SE-W</key>
+		<string>Dalarnas län</string>
+		<key>SE-I</key>
+		<string>Gotlands län</string>
+		<key>SE-X</key>
+		<string>Gävleborgs län</string>
+		<key>SE-N</key>
+		<string>Hallands län</string>
+		<key>SE-Z</key>
+		<string>Jämtlands län</string>
+		<key>SE-F</key>
+		<string>Jönköpings län</string>
+		<key>SE-H</key>
+		<string>Kalmar län</string>
+		<key>SE-G</key>
+		<string>Kronobergs län</string>
+		<key>SE-BD</key>
+		<string>Norrbottens län</string>
+		<key>SE-M</key>
+		<string>Skåne län</string>
+		<key>SE-AB</key>
+		<string>Stockholms län</string>
+		<key>SE-D</key>
+		<string>Södermanlands län</string>
+		<key>SE-C</key>
+		<string>Uppsala län</string>
+		<key>SE-S</key>
+		<string>Värmlands län</string>
+		<key>SE-AC</key>
+		<string>Västerbottens län</string>
+		<key>SE-Y</key>
+		<string>Västernorrlands län</string>
+		<key>SE-U</key>
+		<string>Västmanlands län</string>
+		<key>SE-O</key>
+		<string>Västra Götalands län</string>
+		<key>SE-T</key>
+		<string>Örebro län</string>
+		<key>SE-E</key>
+		<string>Östergötlands län</string>
+	</dict>
+	<key>SG</key>
+	<dict>
+		<key>SG-01</key>
+		<string>Zentral</string>
+		<key>SG-02</key>
+		<string>Nordost</string>
+		<key>SG-03</key>
+		<string>Nordwest</string>
+		<key>SG-04</key>
+		<string>Südost</string>
+		<key>SG-05</key>
+		<string>Südwest</string>
+	</dict>
+	<key>SH</key>
+	<dict>
+		<key>SH-AC</key>
+		<string>Ascension</string>
+		<key>SH-HL</key>
+		<string>St. Helena</string>
+		<key>SH-TA</key>
+		<string>Tristan da Cunha</string>
+	</dict>
+	<key>SI</key>
+	<dict>
+		<key>SI-001</key>
+		<string>Ajdovščina</string>
+		<key>SI-213</key>
+		<string>Ankaran</string>
+		<key>SI-195</key>
+		<string>Apače</string>
+		<key>SI-002</key>
+		<string>Beltinci</string>
+		<key>SI-148</key>
+		<string>Benedikt</string>
+		<key>SI-149</key>
+		<string>Bistrica ob Sotli</string>
+		<key>SI-003</key>
+		<string>Bled</string>
+		<key>SI-150</key>
+		<string>Bloke</string>
+		<key>SI-004</key>
+		<string>Bohinj</string>
+		<key>SI-005</key>
+		<string>Borovnica</string>
+		<key>SI-006</key>
+		<string>Bovec</string>
+		<key>SI-151</key>
+		<string>Braslovče</string>
+		<key>SI-007</key>
+		<string>Brda</string>
+		<key>SI-009</key>
+		<string>Brežice</string>
+		<key>SI-008</key>
+		<string>Brezovica</string>
+		<key>SI-152</key>
+		<string>Cankova</string>
+		<key>SI-011</key>
+		<string>Celje</string>
+		<key>SI-012</key>
+		<string>Cerklje na Gorenjskem</string>
+		<key>SI-013</key>
+		<string>Cerknica</string>
+		<key>SI-014</key>
+		<string>Cerkno</string>
+		<key>SI-153</key>
+		<string>Cerkvenjak</string>
+		<key>SI-196</key>
+		<string>Cirkulane</string>
+		<key>SI-015</key>
+		<string>Črenšovci</string>
+		<key>SI-016</key>
+		<string>Črna na Koroškem</string>
+		<key>SI-017</key>
+		<string>Črnomelj</string>
+		<key>SI-018</key>
+		<string>Destrnik</string>
+		<key>SI-019</key>
+		<string>Divača</string>
+		<key>SI-154</key>
+		<string>Dobje</string>
+		<key>SI-020</key>
+		<string>Dobrepolje</string>
+		<key>SI-155</key>
+		<string>Dobrna</string>
+		<key>SI-021</key>
+		<string>Dobrova-Polhov Gradec</string>
+		<key>SI-156</key>
+		<string>Dobrovnik</string>
+		<key>SI-022</key>
+		<string>Dol pri Ljubljani</string>
+		<key>SI-157</key>
+		<string>Dolenjske Toplice</string>
+		<key>SI-023</key>
+		<string>Domžale</string>
+		<key>SI-024</key>
+		<string>Dornava</string>
+		<key>SI-025</key>
+		<string>Dravograd</string>
+		<key>SI-026</key>
+		<string>Duplek</string>
+		<key>SI-027</key>
+		<string>Gorenja vas-Poljane</string>
+		<key>SI-028</key>
+		<string>Gorišnica</string>
+		<key>SI-029</key>
+		<string>Gornja Radgona</string>
+		<key>SI-030</key>
+		<string>Gornji Grad</string>
+		<key>SI-031</key>
+		<string>Gornji Petrovci</string>
+		<key>SI-207</key>
+		<string>Gorje</string>
+		<key>SI-158</key>
+		<string>Grad</string>
+		<key>SI-032</key>
+		<string>Grosuplje</string>
+		<key>SI-159</key>
+		<string>Hajdina</string>
+		<key>SI-160</key>
+		<string>Hoče-Slivnica</string>
+		<key>SI-161</key>
+		<string>Hodoš</string>
+		<key>SI-162</key>
+		<string>Horjul</string>
+		<key>SI-034</key>
+		<string>Hrastnik</string>
+		<key>SI-035</key>
+		<string>Hrpelje-Kozina</string>
+		<key>SI-036</key>
+		<string>Idrija</string>
+		<key>SI-037</key>
+		<string>Ig</string>
+		<key>SI-038</key>
+		<string>Ilirska Bistrica</string>
+		<key>SI-039</key>
+		<string>Ivančna Gorica</string>
+		<key>SI-040</key>
+		<string>Izola</string>
+		<key>SI-041</key>
+		<string>Jesenice</string>
+		<key>SI-163</key>
+		<string>Jezersko</string>
+		<key>SI-042</key>
+		<string>Juršinci</string>
+		<key>SI-043</key>
+		<string>Kamnik</string>
+		<key>SI-044</key>
+		<string>Kanal ob Soči</string>
+		<key>SI-045</key>
+		<string>Kidričevo</string>
+		<key>SI-046</key>
+		<string>Kobarid</string>
+		<key>SI-047</key>
+		<string>Kobilje</string>
+		<key>SI-048</key>
+		<string>Kočevje</string>
+		<key>SI-049</key>
+		<string>Komen</string>
+		<key>SI-164</key>
+		<string>Komenda</string>
+		<key>SI-050</key>
+		<string>Koper</string>
+		<key>SI-197</key>
+		<string>Kostanjevica na Krki</string>
+		<key>SI-165</key>
+		<string>Kostel</string>
+		<key>SI-051</key>
+		<string>Kozje</string>
+		<key>SI-052</key>
+		<string>Kranj</string>
+		<key>SI-053</key>
+		<string>Kranjska Gora</string>
+		<key>SI-166</key>
+		<string>Križevci</string>
+		<key>SI-054</key>
+		<string>Krško</string>
+		<key>SI-055</key>
+		<string>Kungota</string>
+		<key>SI-056</key>
+		<string>Kuzma</string>
+		<key>SI-057</key>
+		<string>Laško</string>
+		<key>SI-058</key>
+		<string>Lenart</string>
+		<key>SI-059</key>
+		<string>Lendava</string>
+		<key>SI-060</key>
+		<string>Litija</string>
+		<key>SI-061</key>
+		<string>Ljubljana</string>
+		<key>SI-062</key>
+		<string>Ljubno</string>
+		<key>SI-063</key>
+		<string>Ljutomer</string>
+		<key>SI-208</key>
+		<string>Log-Dragomer</string>
+		<key>SI-064</key>
+		<string>Logatec</string>
+		<key>SI-065</key>
+		<string>Loška Dolina</string>
+		<key>SI-066</key>
+		<string>Loški Potok</string>
+		<key>SI-167</key>
+		<string>Lovrenc na Pohorju</string>
+		<key>SI-067</key>
+		<string>Luče</string>
+		<key>SI-068</key>
+		<string>Lukovica</string>
+		<key>SI-069</key>
+		<string>Majšperk</string>
+		<key>SI-198</key>
+		<string>Makole</string>
+		<key>SI-070</key>
+		<string>Maribor</string>
+		<key>SI-168</key>
+		<string>Markovci</string>
+		<key>SI-071</key>
+		<string>Medvode</string>
+		<key>SI-072</key>
+		<string>Mengeš</string>
+		<key>SI-073</key>
+		<string>Metlika</string>
+		<key>SI-074</key>
+		<string>Mežica</string>
+		<key>SI-169</key>
+		<string>Miklavž na Dravskem Polju</string>
+		<key>SI-075</key>
+		<string>Miren-Kostanjevica</string>
+		<key>SI-212</key>
+		<string>Mirna</string>
+		<key>SI-170</key>
+		<string>Mirna Peč</string>
+		<key>SI-076</key>
+		<string>Mislinja</string>
+		<key>SI-199</key>
+		<string>Mokronog-Trebelno</string>
+		<key>SI-077</key>
+		<string>Moravče</string>
+		<key>SI-078</key>
+		<string>Moravske Toplice</string>
+		<key>SI-079</key>
+		<string>Mozirje</string>
+		<key>SI-080</key>
+		<string>Murska Sobota</string>
+		<key>SI-081</key>
+		<string>Muta</string>
+		<key>SI-082</key>
+		<string>Naklo</string>
+		<key>SI-083</key>
+		<string>Nazarje</string>
+		<key>SI-084</key>
+		<string>Nova Gorica</string>
+		<key>SI-085</key>
+		<string>Novo mesto</string>
+		<key>SI-086</key>
+		<string>Odranci</string>
+		<key>SI-171</key>
+		<string>Oplotnica</string>
+		<key>SI-087</key>
+		<string>Ormož</string>
+		<key>SI-088</key>
+		<string>Osilnica</string>
+		<key>SI-089</key>
+		<string>Pesnica</string>
+		<key>SI-090</key>
+		<string>Piran</string>
+		<key>SI-091</key>
+		<string>Pivka</string>
+		<key>SI-092</key>
+		<string>Podčetrtek</string>
+		<key>SI-172</key>
+		<string>Podlehnik</string>
+		<key>SI-093</key>
+		<string>Podvelka</string>
+		<key>SI-200</key>
+		<string>Poljčane</string>
+		<key>SI-173</key>
+		<string>Polzela</string>
+		<key>SI-094</key>
+		<string>Postojna</string>
+		<key>SI-174</key>
+		<string>Prebold</string>
+		<key>SI-095</key>
+		<string>Preddvor</string>
+		<key>SI-175</key>
+		<string>Prevalje</string>
+		<key>SI-096</key>
+		<string>Ptuj</string>
+		<key>SI-097</key>
+		<string>Puconci</string>
+		<key>SI-098</key>
+		<string>Rače-Fram</string>
+		<key>SI-099</key>
+		<string>Radeče</string>
+		<key>SI-100</key>
+		<string>Radenci</string>
+		<key>SI-101</key>
+		<string>Radlje ob Dravi</string>
+		<key>SI-102</key>
+		<string>Radovljica</string>
+		<key>SI-103</key>
+		<string>Ravne na Koroškem</string>
+		<key>SI-176</key>
+		<string>Razkrižje</string>
+		<key>SI-209</key>
+		<string>Rečica ob Savinji</string>
+		<key>SI-201</key>
+		<string>Renče-Vogrsko</string>
+		<key>SI-104</key>
+		<string>Ribnica</string>
+		<key>SI-177</key>
+		<string>Ribnica na Pohorju</string>
+		<key>SI-106</key>
+		<string>Rogaška Slatina</string>
+		<key>SI-105</key>
+		<string>Rogašovci</string>
+		<key>SI-107</key>
+		<string>Rogatec</string>
+		<key>SI-108</key>
+		<string>Ruše</string>
+		<key>SI-178</key>
+		<string>Selnica ob Dravi</string>
+		<key>SI-109</key>
+		<string>Semič</string>
+		<key>SI-110</key>
+		<string>Sevnica</string>
+		<key>SI-111</key>
+		<string>Sežana</string>
+		<key>SI-112</key>
+		<string>Slovenj Gradec</string>
+		<key>SI-113</key>
+		<string>Slovenska Bistrica</string>
+		<key>SI-114</key>
+		<string>Slovenske Konjice</string>
+		<key>SI-179</key>
+		<string>Sodražica</string>
+		<key>SI-180</key>
+		<string>Solčava</string>
+		<key>SI-202</key>
+		<string>Središče ob Dravi</string>
+		<key>SI-203</key>
+		<string>Straža</string>
+		<key>SI-181</key>
+		<string>Sveta Ana</string>
+		<key>SI-204</key>
+		<string>Sveta Trojica v Slovenskih goricah</string>
+		<key>SI-182</key>
+		<string>Sveti Andraž v Slovenskih goricah</string>
+		<key>SI-116</key>
+		<string>Sveti Jurij ob Ščavnici</string>
+		<key>SI-210</key>
+		<string>Sveti Jurij v Slovenskih goricah</string>
+		<key>SI-205</key>
+		<string>Sveti Tomaž</string>
+		<key>SI-115</key>
+		<string>Starše</string>
+		<key>SI-033</key>
+		<string>Šalovci</string>
+		<key>SI-183</key>
+		<string>Šempeter-Vrtojba</string>
+		<key>SI-117</key>
+		<string>Šenčur</string>
+		<key>SI-118</key>
+		<string>Šentilj</string>
+		<key>SI-119</key>
+		<string>Šentjernej</string>
+		<key>SI-120</key>
+		<string>Šentjur pri Celju</string>
+		<key>SI-211</key>
+		<string>Šentrupert</string>
+		<key>SI-121</key>
+		<string>Škocjan</string>
+		<key>SI-122</key>
+		<string>Škofja Loka</string>
+		<key>SI-123</key>
+		<string>Škofljica</string>
+		<key>SI-124</key>
+		<string>Šmarje pri Jelšah</string>
+		<key>SI-206</key>
+		<string>Šmarješke Toplice</string>
+		<key>SI-125</key>
+		<string>Šmartno ob Paki</string>
+		<key>SI-194</key>
+		<string>Šmartno pri Litiji</string>
+		<key>SI-126</key>
+		<string>Šoštanj</string>
+		<key>SI-127</key>
+		<string>Štore</string>
+		<key>SI-184</key>
+		<string>Tabor</string>
+		<key>SI-010</key>
+		<string>Tišina</string>
+		<key>SI-128</key>
+		<string>Tolmin</string>
+		<key>SI-129</key>
+		<string>Trbovlje</string>
+		<key>SI-130</key>
+		<string>Trebnje</string>
+		<key>SI-185</key>
+		<string>Trnovska vas</string>
+		<key>SI-131</key>
+		<string>Tržič</string>
+		<key>SI-186</key>
+		<string>Trzin</string>
+		<key>SI-132</key>
+		<string>Turnišče</string>
+		<key>SI-133</key>
+		<string>Velenje</string>
+		<key>SI-187</key>
+		<string>Velika Polana</string>
+		<key>SI-134</key>
+		<string>Velike Lašče</string>
+		<key>SI-188</key>
+		<string>Veržej</string>
+		<key>SI-135</key>
+		<string>Videm</string>
+		<key>SI-136</key>
+		<string>Vipava</string>
+		<key>SI-137</key>
+		<string>Vitanje</string>
+		<key>SI-138</key>
+		<string>Vodice</string>
+		<key>SI-139</key>
+		<string>Vojnik</string>
+		<key>SI-189</key>
+		<string>Vransko</string>
+		<key>SI-140</key>
+		<string>Vrhnika</string>
+		<key>SI-141</key>
+		<string>Vuzenica</string>
+		<key>SI-142</key>
+		<string>Zagorje ob Savi</string>
+		<key>SI-143</key>
+		<string>Zavrč</string>
+		<key>SI-144</key>
+		<string>Zreče</string>
+		<key>SI-190</key>
+		<string>Žalec</string>
+		<key>SI-146</key>
+		<string>Železniki</string>
+		<key>SI-191</key>
+		<string>Žetale</string>
+		<key>SI-147</key>
+		<string>Žiri</string>
+		<key>SI-192</key>
+		<string>Žirovnica</string>
+		<key>SI-193</key>
+		<string>Žužemberk</string>
+	</dict>
+	<key>SJ</key>
+	<dict>
+		<key>SJ</key>
+		<string>SJ</string>
+	</dict>
+	<key>SK</key>
+	<dict>
+		<key>SK-BC</key>
+		<string>Banskobystrický kraj</string>
+		<key>SK-BL</key>
+		<string>Bratislavský kraj</string>
+		<key>SK-KI</key>
+		<string>Košický kraj</string>
+		<key>SK-NI</key>
+		<string>Nitriansky kraj</string>
+		<key>SK-PV</key>
+		<string>Prešovský kraj</string>
+		<key>SK-TC</key>
+		<string>Trenčiansky kraj</string>
+		<key>SK-TA</key>
+		<string>Trnavský kraj</string>
+		<key>SK-ZI</key>
+		<string>Žilinský kraj</string>
+	</dict>
+	<key>SL</key>
+	<dict>
+		<key>SL-E</key>
+		<string>Eastern Province</string>
+		<key>SL-N</key>
+		<string>Northern Province</string>
+		<key>SL-NW</key>
+		<string>North West Province</string>
+		<key>SL-S</key>
+		<string>Southern Province</string>
+		<key>SL-W</key>
+		<string>Western Area</string>
+	</dict>
+	<key>SM</key>
+	<dict>
+		<key>SM-01</key>
+		<string>Acquaviva</string>
+		<key>SM-02</key>
+		<string>Chiesanuova</string>
+		<key>SM-03</key>
+		<string>Domagnano</string>
+		<key>SM-04</key>
+		<string>Faetano</string>
+		<key>SM-05</key>
+		<string>Fiorentino</string>
+		<key>SM-06</key>
+		<string>Borgo Maggiore</string>
+		<key>SM-07</key>
+		<string>San Marino</string>
+		<key>SM-08</key>
+		<string>Montegiardino</string>
+		<key>SM-09</key>
+		<string>Serravalle</string>
+	</dict>
+	<key>SN</key>
+	<dict>
+		<key>SN-DB</key>
+		<string>Diourbel</string>
+		<key>SN-DK</key>
+		<string>Dakar</string>
+		<key>SN-FK</key>
+		<string>Fatick</string>
+		<key>SN-KA</key>
+		<string>Kaffrine</string>
+		<key>SN-KL</key>
+		<string>Kaolack</string>
+		<key>SN-KE</key>
+		<string>Kédougou</string>
+		<key>SN-KD</key>
+		<string>Kolda</string>
+		<key>SN-LG</key>
+		<string>Louga</string>
+		<key>SN-MT</key>
+		<string>Matam</string>
+		<key>SN-SL</key>
+		<string>Saint-Louis</string>
+		<key>SN-SE</key>
+		<string>Sédhiou</string>
+		<key>SN-TC</key>
+		<string>Tambacounda</string>
+		<key>SN-TH</key>
+		<string>Thiès</string>
+		<key>SN-ZG</key>
+		<string>Ziguinchor</string>
+	</dict>
+	<key>SO</key>
+	<dict>
+		<key>SO-AW</key>
+		<string>Awdal</string>
+		<key>SO-BK</key>
+		<string>Bakool</string>
+		<key>SO-BN</key>
+		<string>Banaadir</string>
+		<key>SO-BR</key>
+		<string>Bari</string>
+		<key>SO-BY</key>
+		<string>Bay (Bai)</string>
+		<key>SO-GA</key>
+		<string>Galguduud</string>
+		<key>SO-GE</key>
+		<string>Gedo (Ghedo)</string>
+		<key>SO-HI</key>
+		<string>Hiiraan</string>
+		<key>SO-JD</key>
+		<string>Jubbada Dhexe (Medio Giuba)</string>
+		<key>SO-JH</key>
+		<string>Jubbada Hoose (Basso Giuba)</string>
+		<key>SO-MU</key>
+		<string>Mudug</string>
+		<key>SO-NU</key>
+		<string>Nugaal</string>
+		<key>SO-SA</key>
+		<string>Sanaag</string>
+		<key>SO-SD</key>
+		<string>Shabeellaha Dhexe (Medio Scebeli)</string>
+		<key>SO-SH</key>
+		<string>Shabeellaha Hoose (Basso Scebeli)</string>
+		<key>SO-SO</key>
+		<string>Sool</string>
+		<key>SO-TO</key>
+		<string>Togdheer</string>
+		<key>SO-WO</key>
+		<string>Woqooyi Galbeed</string>
+	</dict>
+	<key>SR</key>
+	<dict>
+		<key>SR-BR</key>
+		<string>Brokopondo</string>
+		<key>SR-CM</key>
+		<string>Commewijne</string>
+		<key>SR-CR</key>
+		<string>Coronie</string>
+		<key>SR-MA</key>
+		<string>Marowijne</string>
+		<key>SR-NI</key>
+		<string>Nickerie</string>
+		<key>SR-PR</key>
+		<string>Para</string>
+		<key>SR-PM</key>
+		<string>Paramaribo</string>
+		<key>SR-SA</key>
+		<string>Saramacca</string>
+		<key>SR-SI</key>
+		<string>Sipaliwini</string>
+		<key>SR-WA</key>
+		<string>Wanica</string>
+	</dict>
+	<key>SS</key>
+	<dict>
+		<key>SD-17</key>
+		<string>Central Equatoria</string>
+		<key>SD-19</key>
+		<string>Eastern Equatoria</string>
+		<key>SD-20</key>
+		<string>Jonglei</string>
+		<key>SD-18</key>
+		<string>Lakes</string>
+		<key>SD-15</key>
+		<string>Northern Bahr el Ghazal</string>
+		<key>SD-22</key>
+		<string>Unity</string>
+		<key>SD-23</key>
+		<string>Upper Nile</string>
+		<key>SD-21</key>
+		<string>Warrap</string>
+		<key>SD-14</key>
+		<string>Western Bahr el Ghazal</string>
+		<key>SD-16</key>
+		<string>Western Equatoria</string>
+	</dict>
+	<key>ST</key>
+	<dict>
+		<key>ST-P</key>
+		<string>Príncipe</string>
+		<key>ST-S</key>
+		<string>São Tomé</string>
+	</dict>
+	<key>SV</key>
+	<dict>
+		<key>SV-AH</key>
+		<string>Ahuachapán</string>
+		<key>SV-CA</key>
+		<string>Cabañas</string>
+		<key>SV-CH</key>
+		<string>Chalatenango</string>
+		<key>SV-CU</key>
+		<string>Cuscatlán</string>
+		<key>SV-LI</key>
+		<string>La Libertad</string>
+		<key>SV-PA</key>
+		<string>La Paz</string>
+		<key>SV-UN</key>
+		<string>La Unión</string>
+		<key>SV-MO</key>
+		<string>Morazán</string>
+		<key>SV-SM</key>
+		<string>San Miguel</string>
+		<key>SV-SS</key>
+		<string>San Salvador</string>
+		<key>SV-SV</key>
+		<string>San Vicente</string>
+		<key>SV-SA</key>
+		<string>Santa Ana</string>
+		<key>SV-SO</key>
+		<string>Sonsonate</string>
+		<key>SV-US</key>
+		<string>Usulután</string>
+	</dict>
+	<key>SX</key>
+	<dict>
+		<key>SX</key>
+		<string>SX</string>
+	</dict>
+	<key>SY</key>
+	<dict>
+		<key>SY-HA</key>
+		<string>al-Hasaka</string>
+		<key>SY-HL</key>
+		<string>Aleppo</string>
+		<key>SY-RA</key>
+		<string>ar-Raqqa</string>
+		<key>SY-SU</key>
+		<string>as-Suwaida</string>
+		<key>SY-DY</key>
+		<string>Deir ez-Zor</string>
+		<key>SY-DI</key>
+		<string>Damaskus</string>
+		<key>SY-DR</key>
+		<string>Dar'a</string>
+		<key>SY-HM</key>
+		<string>Hama</string>
+		<key>SY-HI</key>
+		<string>Homs</string>
+		<key>SY-ID</key>
+		<string>Idlib</string>
+		<key>SY-LA</key>
+		<string>Latakia</string>
+		<key>SY-QU</key>
+		<string>Quneitra</string>
+		<key>SY-RD</key>
+		<string>Rif Dimaschq</string>
+		<key>SY-TA</key>
+		<string>Tartus</string>
+	</dict>
+	<key>SZ</key>
+	<dict>
+		<key>SZ-HH</key>
+		<string>Hhohho</string>
+		<key>SZ-LU</key>
+		<string>Lubombo</string>
+		<key>SZ-MA</key>
+		<string>Manzini</string>
+		<key>SZ-SH</key>
+		<string>Shiselweni</string>
+	</dict>
+	<key>TA</key>
+	<dict>
+		<key>SH-AC</key>
+		<string>Ascension</string>
+		<key>SH-HL</key>
+		<string>St. Helena</string>
+		<key>SH-TA</key>
+		<string>Tristan da Cunha</string>
+	</dict>
+	<key>TC</key>
+	<dict>
+		<key>TC</key>
+		<string>TC</string>
+	</dict>
+	<key>TD</key>
+	<dict>
+		<key>TD-BA</key>
+		<string>Batha</string>
+		<key>TD-BG</key>
+		<string>Barh El Gazel</string>
+		<key>TD-BO</key>
+		<string>Borkou</string>
+		<key>TD-CB</key>
+		<string>Chari-Baguirmi</string>
+		<key>TD-EE</key>
+		<string>Ennedi-Est</string>
+		<key>TD-EO</key>
+		<string>Ennedi-Ouest</string>
+		<key>TD-GR</key>
+		<string>Guéra</string>
+		<key>TD-HL</key>
+		<string>Hadjer-Lamis</string>
+		<key>TD-KA</key>
+		<string>Kanem</string>
+		<key>TD-LC</key>
+		<string>Lac</string>
+		<key>TD-LO</key>
+		<string>Logone Occidental</string>
+		<key>TD-LR</key>
+		<string>Logone Oriental</string>
+		<key>TD-MA</key>
+		<string>Mandoul</string>
+		<key>TD-MC</key>
+		<string>Moyen-Chari</string>
+		<key>TD-ME</key>
+		<string>Mayo-Kebbi Est</string>
+		<key>TD-MO</key>
+		<string>Mayo-Kebbi Ouest</string>
+		<key>TD-ND</key>
+		<string>Ville de N’Djamena</string>
+		<key>TD-OD</key>
+		<string>Wadai</string>
+		<key>TD-SA</key>
+		<string>Salamat</string>
+		<key>TD-SI</key>
+		<string>Sila</string>
+		<key>TD-TA</key>
+		<string>Tandjilé</string>
+		<key>TD-TI</key>
+		<string>Tibesti</string>
+		<key>TD-WF</key>
+		<string>Wadi Fira</string>
+	</dict>
+	<key>TF</key>
+	<dict>
+		<key>TF</key>
+		<string>TF</string>
+	</dict>
+	<key>TG</key>
+	<dict>
+		<key>TG-C</key>
+		<string>Centrale</string>
+		<key>TG-K</key>
+		<string>Kara</string>
+		<key>TG-M</key>
+		<string>Maritime</string>
+		<key>TG-P</key>
+		<string>Plateaux</string>
+		<key>TG-S</key>
+		<string>Savanes</string>
+	</dict>
+	<key>TH</key>
+	<dict>
+		<key>TH-37</key>
+		<string>Amnat Charoen</string>
+		<key>TH-15</key>
+		<string>Ang Thong</string>
+		<key>TH-14</key>
+		<string>Phra Nakhon Si Ayutthaya</string>
+		<key>TH-38</key>
+		<string>Bueng Kan</string>
+		<key>TH-31</key>
+		<string>Buri Ram</string>
+		<key>TH-24</key>
+		<string>Chachoengsao</string>
+		<key>TH-18</key>
+		<string>Chai Nat</string>
+		<key>TH-36</key>
+		<string>Chaiyaphum</string>
+		<key>TH-22</key>
+		<string>Chanthaburi</string>
+		<key>TH-50</key>
+		<string>Chiang Mai</string>
+		<key>TH-57</key>
+		<string>Chiang Rai</string>
+		<key>TH-20</key>
+		<string>Chon Buri</string>
+		<key>TH-86</key>
+		<string>Chumpon</string>
+		<key>TH-46</key>
+		<string>Kalasin</string>
+		<key>TH-62</key>
+		<string>Kamphaeng Phet</string>
+		<key>TH-71</key>
+		<string>Kanchanaburi</string>
+		<key>TH-40</key>
+		<string>Khon Kaen</string>
+		<key>TH-81</key>
+		<string>Krabi</string>
+		<key>TH-52</key>
+		<string>Lampang</string>
+		<key>TH-51</key>
+		<string>Lamphun</string>
+		<key>TH-42</key>
+		<string>Loei</string>
+		<key>TH-16</key>
+		<string>Lop Buri</string>
+		<key>TH-58</key>
+		<string>Mae Hong Son</string>
+		<key>TH-44</key>
+		<string>Maha Sarakham</string>
+		<key>TH-49</key>
+		<string>Mukdahan</string>
+		<key>TH-26</key>
+		<string>Nakhon Nayok</string>
+		<key>TH-73</key>
+		<string>Nakhon Pathom</string>
+		<key>TH-48</key>
+		<string>Nakhon Phanom</string>
+		<key>TH-30</key>
+		<string>Nakhon Ratchasima</string>
+		<key>TH-60</key>
+		<string>Nakhon Sawan</string>
+		<key>TH-80</key>
+		<string>Nakhon Si Thammarat</string>
+		<key>TH-55</key>
+		<string>Nan</string>
+		<key>TH-96</key>
+		<string>Narathiwat</string>
+		<key>TH-43</key>
+		<string>Nong Khai</string>
+		<key>TH-39</key>
+		<string>Nong Bua Lam Phu</string>
+		<key>TH-12</key>
+		<string>Nonthaburi</string>
+		<key>TH-13</key>
+		<string>Pathum Thani</string>
+		<key>TH-94</key>
+		<string>Pattani</string>
+		<key>TH-82</key>
+		<string>Phang-nga</string>
+		<key>TH-93</key>
+		<string>Phatthalung</string>
+		<key>TH-56</key>
+		<string>Phayao</string>
+		<key>TH-67</key>
+		<string>Phetchabun</string>
+		<key>TH-76</key>
+		<string>Phetchaburi</string>
+		<key>TH-66</key>
+		<string>Phichit</string>
+		<key>TH-65</key>
+		<string>Phitsanulok</string>
+		<key>TH-54</key>
+		<string>Phrae</string>
+		<key>TH-83</key>
+		<string>Phuket</string>
+		<key>TH-25</key>
+		<string>Prachinburi</string>
+		<key>TH-77</key>
+		<string>Prachuap Khiri Khan</string>
+		<key>TH-85</key>
+		<string>Ranong</string>
+		<key>TH-70</key>
+		<string>Ratchaburi</string>
+		<key>TH-21</key>
+		<string>Rayong</string>
+		<key>TH-45</key>
+		<string>Roi Et</string>
+		<key>TH-27</key>
+		<string>Sa Kaeo</string>
+		<key>TH-47</key>
+		<string>Sakon Nakhon</string>
+		<key>TH-11</key>
+		<string>Samut Prakan</string>
+		<key>TH-74</key>
+		<string>Samut Sakhon</string>
+		<key>TH-75</key>
+		<string>Samut Songkhram</string>
+		<key>TH-19</key>
+		<string>Saraburi</string>
+		<key>TH-91</key>
+		<string>Satun</string>
+		<key>TH-33</key>
+		<string>Si Sa Ket</string>
+		<key>TH-17</key>
+		<string>Sing Buri</string>
+		<key>TH-90</key>
+		<string>Songkhla</string>
+		<key>TH-64</key>
+		<string>Sukhothai</string>
+		<key>TH-72</key>
+		<string>Suphan Buri</string>
+		<key>TH-84</key>
+		<string>Surat Thani</string>
+		<key>TH-32</key>
+		<string>Surin</string>
+		<key>TH-63</key>
+		<string>Tak</string>
+		<key>TH-92</key>
+		<string>Trang</string>
+		<key>TH-23</key>
+		<string>Trat</string>
+		<key>TH-34</key>
+		<string>Ubon Ratchathani</string>
+		<key>TH-41</key>
+		<string>Udon Thani</string>
+		<key>TH-61</key>
+		<string>Uthai Thani</string>
+		<key>TH-53</key>
+		<string>Uttaradit</string>
+		<key>TH-95</key>
+		<string>Yala</string>
+		<key>TH-35</key>
+		<string>Yasothon</string>
+	</dict>
+	<key>TJ</key>
+	<dict>
+		<key>TJ-GB</key>
+		<string>1</string>
+		<key>TJ-KT</key>
+		<string>Chatlon</string>
+		<key>TJ-SU</key>
+		<string>Sughd</string>
+		<key>TJ-RA</key>
+		<string>2</string>
+		<key>TJ-DU</key>
+		<string>3</string>
+	</dict>
+	<key>TK</key>
+	<dict>
+		<key>TK</key>
+		<string>TK</string>
+	</dict>
+	<key>TL</key>
+	<dict>
+		<key>TL-AL</key>
+		<string>Aileu</string>
+		<key>TL-AN</key>
+		<string>Ainaro</string>
+		<key>TL-BA</key>
+		<string>Baucau</string>
+		<key>TL-BO</key>
+		<string>Bobonaro</string>
+		<key>TL-CO</key>
+		<string>Cova Lima</string>
+		<key>TL-DI</key>
+		<string>Dili</string>
+		<key>TL-ER</key>
+		<string>Ermera</string>
+		<key>TL-LA</key>
+		<string>Lautém</string>
+		<key>TL-LI</key>
+		<string>Liquiçá</string>
+		<key>TL-MT</key>
+		<string>Manatuto</string>
+		<key>TL-MF</key>
+		<string>Manufahi</string>
+		<key>TL-OE</key>
+		<string>Oe-Cusse Ambeno</string>
+		<key>TL-VI</key>
+		<string>Viqueque</string>
+	</dict>
+	<key>TM</key>
+	<dict>
+		<key>TM-A</key>
+		<string>Ahal</string>
+		<key>TM-B</key>
+		<string>Balkan</string>
+		<key>TM-D</key>
+		<string>Daşoguz</string>
+		<key>TM-L</key>
+		<string>Lebap</string>
+		<key>TM-M</key>
+		<string>Mary</string>
+		<key>TM-S</key>
+		<string>Aşgabat</string>
+	</dict>
+	<key>TN</key>
+	<dict>
+		<key>TN-12</key>
+		<string>Ariana أريانة</string>
+		<key>TN-31</key>
+		<string>Beja باجة</string>
+		<key>TN-13</key>
+		<string>Ben Arous بن عروس</string>
+		<key>TN-23</key>
+		<string>Bizerta بنزرت</string>
+		<key>TN-71</key>
+		<string>Gafsa قفصة</string>
+		<key>TN-81</key>
+		<string>Gabès قابس</string>
+		<key>TN-32</key>
+		<string>Jendouba جندوبة</string>
+		<key>TN-41</key>
+		<string>Kairouan القيروان</string>
+		<key>TN-42</key>
+		<string>Kasserine القصرين</string>
+		<key>TN-73</key>
+		<string>Kebili قبلي</string>
+		<key>TN-33</key>
+		<string>El Kef الكاف</string>
+		<key>TN-53</key>
+		<string>Mahdia المهدية</string>
+		<key>TN-14</key>
+		<string>Manouba منوبة</string>
+		<key>TN-82</key>
+		<string>Medenine مدنين</string>
+		<key>TN-52</key>
+		<string>Monastir المنستير</string>
+		<key>TN-21</key>
+		<string>Nabeul نابل</string>
+		<key>TN-61</key>
+		<string>Sfax صفاقس</string>
+		<key>TN-43</key>
+		<string>Sidi Bouzid سيدي بوزيد</string>
+		<key>TN-34</key>
+		<string>Siliana سليانة</string>
+		<key>TN-51</key>
+		<string>Sousse سوسة</string>
+		<key>TN-83</key>
+		<string>Tataouine تطاوين</string>
+		<key>TN-72</key>
+		<string>Tozeur توزر</string>
+		<key>TN-11</key>
+		<string>Tunis تونس</string>
+		<key>TN-22</key>
+		<string>Zaghouan زغوان</string>
+	</dict>
+	<key>TO</key>
+	<dict>
+		<key>TO-01</key>
+		<string>ʻEua</string>
+		<key>TO-02</key>
+		<string>Haʻapai</string>
+		<key>TO-03</key>
+		<string>Niuas</string>
+		<key>TO-04</key>
+		<string>Tongatapu</string>
+		<key>TO-05</key>
+		<string>Vavaʻu</string>
+	</dict>
+	<key>TP</key>
+	<dict>
+		<key>TP</key>
+		<string>TP</string>
+	</dict>
+	<key>TR</key>
+	<dict>
+		<key>TR-01</key>
+		<string>Adana</string>
+		<key>TR-02</key>
+		<string>Adıyaman</string>
+		<key>TR-03</key>
+		<string>Afyonkarahisar</string>
+		<key>TR-04</key>
+		<string>Ağrı</string>
+		<key>TR-05</key>
+		<string>Amasya</string>
+		<key>TR-06</key>
+		<string>Ankara</string>
+		<key>TR-07</key>
+		<string>Antalya</string>
+		<key>TR-08</key>
+		<string>Artvin</string>
+		<key>TR-09</key>
+		<string>Aydın</string>
+		<key>TR-10</key>
+		<string>Balıkesir</string>
+		<key>TR-11</key>
+		<string>Bilecik</string>
+		<key>TR-12</key>
+		<string>Bingöl</string>
+		<key>TR-13</key>
+		<string>Bitlis</string>
+		<key>TR-14</key>
+		<string>Bolu</string>
+		<key>TR-15</key>
+		<string>Burdur</string>
+		<key>TR-16</key>
+		<string>Bursa</string>
+		<key>TR-17</key>
+		<string>Çanakkale</string>
+		<key>TR-18</key>
+		<string>Çankırı</string>
+		<key>TR-19</key>
+		<string>Çorum</string>
+		<key>TR-20</key>
+		<string>Denizli</string>
+		<key>TR-21</key>
+		<string>Diyarbakır</string>
+		<key>TR-22</key>
+		<string>Edirne</string>
+		<key>TR-23</key>
+		<string>Elazığ</string>
+		<key>TR-24</key>
+		<string>Erzincan</string>
+		<key>TR-25</key>
+		<string>Erzurum</string>
+		<key>TR-26</key>
+		<string>Eskişehir</string>
+		<key>TR-27</key>
+		<string>Gaziantep</string>
+		<key>TR-28</key>
+		<string>Giresun</string>
+		<key>TR-29</key>
+		<string>Gümüşhane</string>
+		<key>TR-30</key>
+		<string>Hakkâri</string>
+		<key>TR-31</key>
+		<string>Hatay</string>
+		<key>TR-32</key>
+		<string>Isparta</string>
+		<key>TR-33</key>
+		<string>Mersin</string>
+		<key>TR-34</key>
+		<string>İstanbul</string>
+		<key>TR-35</key>
+		<string>İzmir</string>
+		<key>TR-36</key>
+		<string>Kars</string>
+		<key>TR-37</key>
+		<string>Kastamonu</string>
+		<key>TR-38</key>
+		<string>Kayseri</string>
+		<key>TR-39</key>
+		<string>Kırklareli</string>
+		<key>TR-40</key>
+		<string>Kırşehir</string>
+		<key>TR-41</key>
+		<string>Kocaeli</string>
+		<key>TR-42</key>
+		<string>Konya</string>
+		<key>TR-43</key>
+		<string>Kütahya</string>
+		<key>TR-44</key>
+		<string>Malatya</string>
+		<key>TR-45</key>
+		<string>Manisa</string>
+		<key>TR-46</key>
+		<string>Kahramanmaraş</string>
+		<key>TR-47</key>
+		<string>Mardin</string>
+		<key>TR-48</key>
+		<string>Muğla</string>
+		<key>TR-49</key>
+		<string>Muş</string>
+		<key>TR-50</key>
+		<string>Nevşehir</string>
+		<key>TR-51</key>
+		<string>Niğde</string>
+		<key>TR-52</key>
+		<string>Ordu</string>
+		<key>TR-53</key>
+		<string>Rize</string>
+		<key>TR-54</key>
+		<string>Sakarya</string>
+		<key>TR-55</key>
+		<string>Samsun</string>
+		<key>TR-56</key>
+		<string>Siirt</string>
+		<key>TR-57</key>
+		<string>Sinop</string>
+		<key>TR-58</key>
+		<string>Sivas</string>
+		<key>TR-59</key>
+		<string>Tekirdağ</string>
+		<key>TR-60</key>
+		<string>Tokat</string>
+		<key>TR-61</key>
+		<string>Trabzon</string>
+		<key>TR-62</key>
+		<string>Tunceli</string>
+		<key>TR-63</key>
+		<string>Şanlıurfa</string>
+		<key>TR-64</key>
+		<string>Uşak</string>
+		<key>TR-65</key>
+		<string>Van</string>
+		<key>TR-66</key>
+		<string>Yozgat</string>
+		<key>TR-67</key>
+		<string>Zonguldak</string>
+		<key>TR-68</key>
+		<string>Aksaray</string>
+		<key>TR-69</key>
+		<string>Bayburt</string>
+		<key>TR-70</key>
+		<string>Karaman</string>
+		<key>TR-71</key>
+		<string>Kırıkkale</string>
+		<key>TR-72</key>
+		<string>Batman</string>
+		<key>TR-73</key>
+		<string>Şırnak</string>
+		<key>TR-74</key>
+		<string>Bartın</string>
+		<key>TR-75</key>
+		<string>Ardahan</string>
+		<key>TR-76</key>
+		<string>Iğdır</string>
+		<key>TR-77</key>
+		<string>Yalova</string>
+		<key>TR-78</key>
+		<string>Karabük</string>
+		<key>TR-79</key>
+		<string>Kilis</string>
+		<key>TR-80</key>
+		<string>Osmaniye</string>
+		<key>TR-81</key>
+		<string>Düzce</string>
+	</dict>
+	<key>TT</key>
+	<dict>
+		<key>TT-ARI</key>
+		<string>Arima</string>
+		<key>TT-CHA</key>
+		<string>Chaguanas</string>
+		<key>TT-CTT</key>
+		<string>Couva-Tabaquite-Talparo</string>
+		<key>TT-DMN</key>
+		<string>Diego Martin</string>
+		<key>TT-MRC</key>
+		<string>Mayaro-Rio Claro</string>
+		<key>TT-PED</key>
+		<string>Penal-Debe</string>
+		<key>TT-PTF</key>
+		<string>Point Fortin</string>
+		<key>TT-POS</key>
+		<string>Port of Spain</string>
+		<key>TT-PRT</key>
+		<string>Princes Town</string>
+		<key>TT-SFO</key>
+		<string>San Fernando</string>
+		<key>TT-SGE</key>
+		<string>Sangre Grande</string>
+		<key>TT-SJL</key>
+		<string>San Juan-Laventille</string>
+		<key>TT-SIP</key>
+		<string>Siparia</string>
+		<key>TT-TOB</key>
+		<string>Tobago</string>
+		<key>TT-TUP</key>
+		<string>Tunapuna-Piarco</string>
+	</dict>
+	<key>TV</key>
+	<dict>
+		<key>TV-FUN</key>
+		<string>1)</string>
+		<key>TV-NMG</key>
+		<string>Nanumanga</string>
+		<key>TV-NMA</key>
+		<string>Nanumea</string>
+		<key>TV-NIT</key>
+		<string>2)</string>
+		<key>TV-NUI</key>
+		<string>Nui</string>
+		<key>TV-NKF</key>
+		<string>Nukufetau</string>
+		<key>TV-NKL</key>
+		<string>Nukulaelae</string>
+		<key>TV-VAI</key>
+		<string>Vaitupu</string>
+	</dict>
+	<key>TW</key>
+	<dict>
+		<key>TW-CHA</key>
+		<string>Changhua</string>
+		<key>TW-CYQ</key>
+		<string>Chiayi</string>
+		<key>TW-HSQ</key>
+		<string>Hsinchu</string>
+		<key>TW-HUA</key>
+		<string>Hualien</string>
+		<key>TW-KIN</key>
+		<string>Kinmen</string>
+		<key>TW-LIE</key>
+		<string>Lienchiang</string>
+		<key>TW-MIA</key>
+		<string>Miaoli</string>
+		<key>TW-NAN</key>
+		<string>Nantou</string>
+		<key>TW-PEN</key>
+		<string>Penghu</string>
+		<key>TW-PIF</key>
+		<string>Pingtung</string>
+		<key>TW-TTT</key>
+		<string>Taitung</string>
+		<key>TW-ILA</key>
+		<string>Yilan</string>
+		<key>TW-YUN</key>
+		<string>Yunlin</string>
+	</dict>
+	<key>TZ</key>
+	<dict>
+		<key>TZ-01</key>
+		<string>Arusha</string>
+		<key>TZ-02</key>
+		<string>Daressalam</string>
+		<key>TZ-03</key>
+		<string>Dodoma</string>
+		<key>TZ-27</key>
+		<string>Geita</string>
+		<key>TZ-04</key>
+		<string>Iringa</string>
+		<key>TZ-05</key>
+		<string>Kagera</string>
+		<key>TZ-28</key>
+		<string>Katavi</string>
+		<key>TZ-08</key>
+		<string>Kigoma</string>
+		<key>TZ-09</key>
+		<string>Kilimandscharo</string>
+		<key>TZ-12</key>
+		<string>Lindi</string>
+		<key>TZ-13</key>
+		<string>Mara</string>
+		<key>TZ-26</key>
+		<string>Manyara</string>
+		<key>TZ-14</key>
+		<string>Mbeya</string>
+		<key>TZ-16</key>
+		<string>Morogoro</string>
+		<key>TZ-17</key>
+		<string>Mtwara</string>
+		<key>TZ-18</key>
+		<string>Mwanza</string>
+		<key>TZ-29</key>
+		<string>Njombe</string>
+		<key>TZ-06</key>
+		<string>Pemba Kaskazini</string>
+		<key>TZ-10</key>
+		<string>Pemba Kusini</string>
+		<key>TZ-20</key>
+		<string>Rukwa</string>
+		<key>TZ-19</key>
+		<string>Pwani</string>
+		<key>TZ-21</key>
+		<string>Ruvuma</string>
+		<key>TZ-22</key>
+		<string>Shinyanga</string>
+		<key>TZ-30</key>
+		<string>Simiyu</string>
+		<key>TZ-23</key>
+		<string>Singida</string>
+		<key>TZ-31</key>
+		<string>Songwe</string>
+		<key>TZ-24</key>
+		<string>Tabora</string>
+		<key>TZ-25</key>
+		<string>Tanga</string>
+		<key>TZ-07</key>
+		<string>Unguja Kaskazini</string>
+		<key>TZ-11</key>
+		<string>Unguja Kusini</string>
+		<key>TZ-15</key>
+		<string>Unguja Mjini Magharibi</string>
+	</dict>
+	<key>UA</key>
+	<dict>
+		<key>UA-63</key>
+		<string>Oblast Charkiw (Харківська область)</string>
+		<key>UA-65</key>
+		<string>Oblast Cherson (Херсонська область)</string>
+		<key>UA-68</key>
+		<string>Oblast Chmelnyzkyj (Хмельницька область)</string>
+		<key>UA-77</key>
+		<string>Oblast Tscherniwzi (Чернівецька область)</string>
+		<key>UA-12</key>
+		<string>Oblast Dnipropetrowsk (Дніпропетровська область)</string>
+		<key>UA-14</key>
+		<string>Oblast Donezk (Донецька область)</string>
+		<key>UA-26</key>
+		<string>Oblast Iwano-Frankiwsk (Івано-Франківська область)</string>
+		<key>UA-30</key>
+		<string>Kiew (Київ) 1</string>
+		<key>UA-32</key>
+		<string>Oblast Kiew (Київська область)</string>
+		<key>UA-35</key>
+		<string>Oblast Kirowohrad (Кіровоградська область)</string>
+		<key>UA-43</key>
+		<string>Krim (Автономна Республіка Крим) 2</string>
+		<key>UA-46</key>
+		<string>Oblast Lwiw (Львівська область)</string>
+		<key>UA-09</key>
+		<string>Oblast Luhansk (Луганська область)</string>
+		<key>UA-48</key>
+		<string>Oblast Mykolajiw (Миколаївська область)</string>
+		<key>UA-51</key>
+		<string>Oblast Odessa (Одеська область)</string>
+		<key>UA-53</key>
+		<string>Oblast Poltawa (Полтавська область)</string>
+		<key>UA-56</key>
+		<string>Oblast Riwne (Рівненська область)</string>
+		<key>UA-23</key>
+		<string>Oblast Saporischschja (Запорізька область)</string>
+		<key>UA-18</key>
+		<string>Oblast Schytomyr (Житомирська область)</string>
+		<key>UA-40</key>
+		<string>Sewastopol (місто Севастополь) 1</string>
+		<key>UA-59</key>
+		<string>Oblast Sumy (Сумська область)</string>
+		<key>UA-61</key>
+		<string>Oblast Ternopil (Тернопільська область)</string>
+		<key>UA-21</key>
+		<string>Oblast Transkarpatien (Закарпатська область)</string>
+		<key>UA-71</key>
+		<string>Oblast Tscherkassy (Черкаська область)</string>
+		<key>UA-74</key>
+		<string>Oblast Tschernihiw (Чернігівська область)</string>
+		<key>UA-05</key>
+		<string>Oblast Winnyzja (Вінницька область)</string>
+		<key>UA-07</key>
+		<string>Oblast Wolyn (Волинська область)</string>
+	</dict>
+	<key>UG</key>
+	<dict>
+		<key>UG-C</key>
+		<string>Zentral</string>
+		<key>UG-E</key>
+		<string>Osten</string>
+		<key>UG-N</key>
+		<string>Norden</string>
+		<key>UG-W</key>
+		<string>Westen</string>
+	</dict>
+	<key>UM</key>
+	<dict>
+		<key>UM-81</key>
+		<string>Bakerinsel</string>
+		<key>UM-84</key>
+		<string>Howlandinsel</string>
+		<key>UM-86</key>
+		<string>Jarvisinsel</string>
+		<key>UM-67</key>
+		<string>Johnstoninsel</string>
+		<key>UM-89</key>
+		<string>Kingmanriff</string>
+		<key>UM-71</key>
+		<string>Midwayinseln</string>
+		<key>UM-76</key>
+		<string>Navassa</string>
+		<key>UM-95</key>
+		<string>Palmyra</string>
+		<key>UM-79</key>
+		<string>Wake</string>
+	</dict>
+	<key>US</key>
+	<dict>
+		<key>US-AL</key>
+		<string>USA-Alabama</string>
+		<key>US-AK</key>
+		<string>USA-Alaska</string>
+		<key>US-AZ</key>
+		<string>USA-Arizona</string>
+		<key>US-AR</key>
+		<string>USA-Arkansas</string>
+		<key>US-CA</key>
+		<string>USA-Kalifornien</string>
+		<key>US-CO</key>
+		<string>USA-Colorado</string>
+		<key>US-CT</key>
+		<string>USA-Connecticut</string>
+		<key>US-DE</key>
+		<string>USA-Delaware</string>
+		<key>US-DC</key>
+		<string>USA-District of Columbia</string>
+		<key>US-FL</key>
+		<string>USA-Florida</string>
+		<key>US-GA</key>
+		<string>USA-Georgia</string>
+		<key>US-HI</key>
+		<string>USA-Hawaii</string>
+		<key>US-ID</key>
+		<string>USA-Idaho</string>
+		<key>US-IL</key>
+		<string>USA-Illinois</string>
+		<key>US-IN</key>
+		<string>USA-Indiana</string>
+		<key>US-IA</key>
+		<string>USA-Iowa</string>
+		<key>US-KS</key>
+		<string>USA-Kansas</string>
+		<key>US-KY</key>
+		<string>USA-Kentucky</string>
+		<key>US-LA</key>
+		<string>USA-Louisiana</string>
+		<key>US-ME</key>
+		<string>USA-Maine</string>
+		<key>US-MD</key>
+		<string>USA-Maryland</string>
+		<key>US-MA</key>
+		<string>USA-Massachusetts</string>
+		<key>US-MI</key>
+		<string>USA-Michigan</string>
+		<key>US-MN</key>
+		<string>USA-Minnesota</string>
+		<key>US-MS</key>
+		<string>USA-Mississippi</string>
+		<key>US-MO</key>
+		<string>USA-Missouri</string>
+		<key>US-MT</key>
+		<string>USA-Montana</string>
+		<key>US-NE</key>
+		<string>USA-Nebraska</string>
+		<key>US-NV</key>
+		<string>USA-Nevada</string>
+		<key>US-NH</key>
+		<string>USA-New Hampshire</string>
+		<key>US-NJ</key>
+		<string>USA-New Jersey</string>
+		<key>US-NM</key>
+		<string>USA-New Mexico</string>
+		<key>US-NY</key>
+		<string>USA-New York</string>
+		<key>US-NC</key>
+		<string>USA-North Carolina</string>
+		<key>US-ND</key>
+		<string>USA-North Dakota</string>
+		<key>US-OH</key>
+		<string>USA-Ohio</string>
+		<key>US-OK</key>
+		<string>USA-Oklahoma</string>
+		<key>US-OR</key>
+		<string>USA-Oregon</string>
+		<key>US-PA</key>
+		<string>USA-Pennsylvania</string>
+		<key>US-RI</key>
+		<string>USA-Rhode Island</string>
+		<key>US-SC</key>
+		<string>USA-South Carolina</string>
+		<key>US-SD</key>
+		<string>USA-South Dakota</string>
+		<key>US-TN</key>
+		<string>USA-Tennessee</string>
+		<key>US-TX</key>
+		<string>USA-Texas</string>
+		<key>US-UT</key>
+		<string>USA-Utah</string>
+		<key>US-VT</key>
+		<string>USA-Vermont</string>
+		<key>US-VA</key>
+		<string>USA-Virginia</string>
+		<key>US-WA</key>
+		<string>USA-Washington</string>
+		<key>US-WV</key>
+		<string>USA-West Virginia</string>
+		<key>US-WI</key>
+		<string>USA-Wisconsin</string>
+		<key>US-WY</key>
+		<string>USA-Wyoming</string>
+	</dict>
+	<key>UY</key>
+	<dict>
+		<key>UY-AR</key>
+		<string>Artigas</string>
+		<key>UY-CA</key>
+		<string>Canelones</string>
+		<key>UY-CL</key>
+		<string>Cerro Largo</string>
+		<key>UY-CO</key>
+		<string>Colonia</string>
+		<key>UY-DU</key>
+		<string>Durazno</string>
+		<key>UY-FS</key>
+		<string>Flores</string>
+		<key>UY-FD</key>
+		<string>Florida</string>
+		<key>UY-LA</key>
+		<string>Lavalleja</string>
+		<key>UY-MA</key>
+		<string>Maldonado</string>
+		<key>UY-MO</key>
+		<string>Montevideo</string>
+		<key>UY-PA</key>
+		<string>Paysandú</string>
+		<key>UY-RN</key>
+		<string>Río Negro</string>
+		<key>UY-RV</key>
+		<string>Rivera</string>
+		<key>UY-RO</key>
+		<string>Rocha</string>
+		<key>UY-SA</key>
+		<string>Salto</string>
+		<key>UY-SJ</key>
+		<string>San José</string>
+		<key>UY-SO</key>
+		<string>Soriano</string>
+		<key>UY-TA</key>
+		<string>Tacuarembó</string>
+		<key>UY-TT</key>
+		<string>Treinta y Tres</string>
+	</dict>
+	<key>UZ</key>
+	<dict>
+		<key>UZ-AN</key>
+		<string>Andijon</string>
+		<key>UZ-BU</key>
+		<string>Buxoro</string>
+		<key>UZ-FA</key>
+		<string>Fargʻona</string>
+		<key>UZ-JI</key>
+		<string>Jizzax</string>
+		<key>UZ-NG</key>
+		<string>Namangan</string>
+		<key>UZ-NW</key>
+		<string>Navoiy</string>
+		<key>UZ-QA</key>
+		<string>Qashqadaryo</string>
+		<key>UZ-QR</key>
+		<string>Karakalpakistan (Republik)</string>
+		<key>UZ-SA</key>
+		<string>Samarqand</string>
+		<key>UZ-SI</key>
+		<string>Sirdaryo</string>
+		<key>UZ-SU</key>
+		<string>Surxondaryo</string>
+		<key>UZ-TK</key>
+		<string>Taschkent (Hauptstadt)</string>
+		<key>UZ-TO</key>
+		<string>Taschkent (Provinz)</string>
+		<key>UZ-XO</key>
+		<string>Xorazm</string>
+	</dict>
+	<key>VA</key>
+	<dict>
+		<key>VA</key>
+		<string>VA</string>
+	</dict>
+	<key>VC</key>
+	<dict>
+		<key>VC-01</key>
+		<string>Charlotte</string>
+		<key>VC-02</key>
+		<string>Saint Andrew</string>
+		<key>VC-03</key>
+		<string>Saint David</string>
+		<key>VC-04</key>
+		<string>Saint George</string>
+		<key>VC-05</key>
+		<string>Saint Patrick</string>
+		<key>VC-06</key>
+		<string>Grenadines</string>
+	</dict>
+	<key>VE</key>
+	<dict>
+		<key>VE-Z</key>
+		<string>Amazonas</string>
+		<key>VE-B</key>
+		<string>Anzoátegui</string>
+		<key>VE-C</key>
+		<string>Apure</string>
+		<key>VE-D</key>
+		<string>Aragua</string>
+		<key>VE-E</key>
+		<string>Barinas</string>
+		<key>VE-F</key>
+		<string>Bolívar</string>
+		<key>VE-G</key>
+		<string>Carabobo</string>
+		<key>VE-H</key>
+		<string>Cojedes</string>
+		<key>VE-Y</key>
+		<string>Delta Amacuro</string>
+		<key>VE-W</key>
+		<string>Dependencias Federales 1</string>
+		<key>VE-A</key>
+		<string>Distrito Capital 2</string>
+		<key>VE-I</key>
+		<string>Falcón</string>
+		<key>VE-J</key>
+		<string>Guárico</string>
+		<key>VE-K</key>
+		<string>Lara</string>
+		<key>VE-L</key>
+		<string>Mérida</string>
+		<key>VE-M</key>
+		<string>Miranda</string>
+		<key>VE-N</key>
+		<string>Monagas</string>
+		<key>VE-O</key>
+		<string>Nueva Esparta</string>
+		<key>VE-P</key>
+		<string>Portuguesa</string>
+		<key>VE-R</key>
+		<string>Sucre</string>
+		<key>VE-S</key>
+		<string>Táchira</string>
+		<key>VE-T</key>
+		<string>Trujillo</string>
+		<key>VE-X</key>
+		<string>Vargas</string>
+		<key>VE-U</key>
+		<string>Yaracuy</string>
+		<key>VE-V</key>
+		<string>Zulia</string>
+	</dict>
+	<key>VG</key>
+	<dict>
+		<key>VG</key>
+		<string>VG</string>
+	</dict>
+	<key>VI</key>
+	<dict>
+		<key>VI</key>
+		<string>VI</string>
+	</dict>
+	<key>VN</key>
+	<dict>
+		<key>VN-44</key>
+		<string>An Giang</string>
+		<key>VN-43</key>
+		<string>Ba Ria-Vung Tau</string>
+		<key>VN-54</key>
+		<string>Bac Giang</string>
+		<key>VN-53</key>
+		<string>Bac Kạn</string>
+		<key>VN-55</key>
+		<string>Bac Lieu</string>
+		<key>VN-56</key>
+		<string>Bac Ninh</string>
+		<key>VN-50</key>
+		<string>Ben Tre</string>
+		<key>VN-31</key>
+		<string>Binh Dinh</string>
+		<key>VN-57</key>
+		<string>Binh Duong</string>
+		<key>VN-58</key>
+		<string>Binh Phuoc</string>
+		<key>VN-40</key>
+		<string>Binh Thuan</string>
+		<key>VN-59</key>
+		<string>Ca Mau</string>
+		<key>VN-CT</key>
+		<string>Cần Thơ</string>
+		<key>VN-04</key>
+		<string>Cao Bang</string>
+		<key>VN-DN</key>
+		<string>Da Nang</string>
+		<key>VN-33</key>
+		<string>Dac Lac</string>
+		<key>VN-72</key>
+		<string>Dak Nong</string>
+		<key>VN-71</key>
+		<string>Dien Bien</string>
+		<key>VN-39</key>
+		<string>Dong Nai</string>
+		<key>VN-45</key>
+		<string>Dong Thap</string>
+		<key>VN-30</key>
+		<string>Gia Lai</string>
+		<key>VN-03</key>
+		<string>Ha Giang</string>
+		<key>VN-63</key>
+		<string>Ha Nam</string>
+		<key>VN-HN</key>
+		<string>Ha Noi, thu do</string>
+		<key>VN-23</key>
+		<string>Ha Tinh</string>
+		<key>VN-61</key>
+		<string>Hai Duong</string>
+		<key>VN-HP</key>
+		<string>Thanh Pho Hai Phong</string>
+		<key>VN-73</key>
+		<string>Hau Giang</string>
+		<key>VN-14</key>
+		<string>Hoa Binh</string>
+		<key>VN-SG</key>
+		<string>Thanh Pho Ho Chi Minh</string>
+		<key>VN-66</key>
+		<string>Hung Yen</string>
+		<key>VN-34</key>
+		<string>Khanh Hoa</string>
+		<key>VN-47</key>
+		<string>Kien Giang</string>
+		<key>VN-28</key>
+		<string>Kon Tum</string>
+		<key>VN-01</key>
+		<string>Lai Chau</string>
+		<key>VN-35</key>
+		<string>Lam Dong</string>
+		<key>VN-09</key>
+		<string>Lang Son</string>
+		<key>VN-02</key>
+		<string>Lao Cai</string>
+		<key>VN-41</key>
+		<string>Long An</string>
+		<key>VN-67</key>
+		<string>Nam Dinh</string>
+		<key>VN-22</key>
+		<string>Nghe An</string>
+		<key>VN-18</key>
+		<string>Ninh Binh</string>
+		<key>VN-36</key>
+		<string>Ninh Thuan</string>
+		<key>VN-68</key>
+		<string>Phu Tho</string>
+		<key>VN-32</key>
+		<string>Phu Yen</string>
+		<key>VN-24</key>
+		<string>Quang Binh</string>
+		<key>VN-27</key>
+		<string>Quang Nam</string>
+		<key>VN-29</key>
+		<string>Quang Ngai</string>
+		<key>VN-13</key>
+		<string>Quang Ninh</string>
+		<key>VN-25</key>
+		<string>Quang Tri</string>
+		<key>VN-52</key>
+		<string>Soc Trang</string>
+		<key>VN-05</key>
+		<string>Son La</string>
+		<key>VN-37</key>
+		<string>Tay Ninh</string>
+		<key>VN-20</key>
+		<string>Thai Binh</string>
+		<key>VN-69</key>
+		<string>Thai Nguyen</string>
+		<key>VN-21</key>
+		<string>Thanh Hoa</string>
+		<key>VN-26</key>
+		<string>Thua Thien-Hue</string>
+		<key>VN-46</key>
+		<string>Tien Giang</string>
+		<key>VN-51</key>
+		<string>Tra Vinh</string>
+		<key>VN-07</key>
+		<string>Tuyen Quang</string>
+		<key>VN-49</key>
+		<string>Vinh Long</string>
+		<key>VN-70</key>
+		<string>Vinh Phuc</string>
+		<key>VN-06</key>
+		<string>Yen Bai</string>
+	</dict>
+	<key>VU</key>
+	<dict>
+		<key>VU-MAP</key>
+		<string>Malampa</string>
+		<key>VU-PAM</key>
+		<string>Penama</string>
+		<key>VU-SAM</key>
+		<string>Sanma</string>
+		<key>VU-SEE</key>
+		<string>Shefa</string>
+		<key>VU-TAE</key>
+		<string>Tafea</string>
+		<key>VU-TOB</key>
+		<string>Torba</string>
+	</dict>
+	<key>WF</key>
+	<dict>
+		<key>WF-AL</key>
+		<string>Alo</string>
+		<key>WF-SG</key>
+		<string>Sigave</string>
+		<key>WF-UV</key>
+		<string>Uvea</string>
+	</dict>
+	<key>WS</key>
+	<dict>
+		<key>WS-AA</key>
+		<string>Aʻana</string>
+		<key>WS-AL</key>
+		<string>Aiga-i-le-Tai</string>
+		<key>WS-AT</key>
+		<string>Atua</string>
+		<key>WS-FA</key>
+		<string>Faʻasaleleaga</string>
+		<key>WS-GE</key>
+		<string>Gagaʻemauga</string>
+		<key>WS-GI</key>
+		<string>Gagaʻifomauga</string>
+		<key>WS-PA</key>
+		<string>Palauli</string>
+		<key>WS-SA</key>
+		<string>Satupaʻitea</string>
+		<key>WS-TU</key>
+		<string>Tuamasaga</string>
+		<key>WS-VF</key>
+		<string>Vaʻa-o-Fonoti</string>
+		<key>WS-VS</key>
+		<string>Vaisigano</string>
+	</dict>
+	<key>YE</key>
+	<dict>
+		<key>YE-AB</key>
+		<string>Abyan</string>
+		<key>YE-DA</key>
+		<string>Dali!</string>
+		<key>YE-BA</key>
+		<string>Baida!</string>
+		<key>YE-HU</key>
+		<string>Hudaida!</string>
+		<key>YE-JA</key>
+		<string>Dschauf!</string>
+		<key>YE-MR</key>
+		<string>Mahra!</string>
+		<key>YE-MW</key>
+		<string>Mahwit!</string>
+		<key>YE-AD</key>
+		<string>Adan!</string>
+		<key>YE-AM</key>
+		<string>Amran</string>
+		<key>YE-DH</key>
+		<string>Dhamar</string>
+		<key>YE-HD</key>
+		<string>Hadramaut</string>
+		<key>YE-HJ</key>
+		<string>Haddscha</string>
+		<key>YE-IB</key>
+		<string>Ibb</string>
+		<key>YE-LA</key>
+		<string>Lahidsch</string>
+		<key>YE-MA</key>
+		<string>Ma'rib</string>
+		<key>YE-RA</key>
+		<string>Raima</string>
+		<key>YE-SA</key>
+		<string>Sanaa (Hauptstadtdistrikt)</string>
+		<key>YE-SN</key>
+		<string>Sanaa (Gouvernement)</string>
+		<key>YE-SD</key>
+		<string>Sa'da</string>
+		<key>YE-SH</key>
+		<string>Schabwa</string>
+		<key>YE-SU</key>
+		<string>Sokotra</string>
+		<key>YE-TA</key>
+		<string>Ta'izz</string>
+	</dict>
+	<key>YT</key>
+	<dict>
+		<key>YT</key>
+		<string>YT</string>
+	</dict>
+	<key>YU</key>
+	<dict>
+		<key>ME</key>
+		<string>Montenegro (Crna Gora)</string>
+		<key>RS</key>
+		<string>Serbien (Srbija)</string>
+		<key>RS-KM</key>
+		<string>Kosovo (Kosovo-Metohija)</string>
+		<key>RS-VO</key>
+		<string>Vojvodina</string>
+	</dict>
+	<key>ZA</key>
+	<dict>
+		<key>ZA-FS</key>
+		<string>Freistaat (Free State)</string>
+		<key>ZA-GT</key>
+		<string>Gauteng</string>
+		<key>ZA-EC</key>
+		<string>Ostkap (Eastern Cape)</string>
+		<key>ZA-NL</key>
+		<string>KwaZulu-Natal</string>
+		<key>ZA-LP</key>
+		<string>Limpopo</string>
+		<key>ZA-MP</key>
+		<string>Mpumalanga</string>
+		<key>ZA-NC</key>
+		<string>Nordkap (Northern Cape)</string>
+		<key>ZA-NW</key>
+		<string>Nordwest (North-West)</string>
+		<key>ZA-WC</key>
+		<string>Westkap (Western Cape)</string>
+	</dict>
+	<key>ZM</key>
+	<dict>
+		<key>ZM-08</key>
+		<string>Copperbelt</string>
+		<key>ZM-04</key>
+		<string>Luapula</string>
+		<key>ZM-09</key>
+		<string>Lusaka</string>
+		<key>ZM-10</key>
+		<string>Muchinga</string>
+		<key>ZM-05</key>
+		<string>Nordprovinz</string>
+		<key>ZM-06</key>
+		<string>Nordwestprovinz</string>
+		<key>ZM-03</key>
+		<string>Ostprovinz</string>
+		<key>ZM-07</key>
+		<string>Südprovinz</string>
+		<key>ZM-01</key>
+		<string>Westprovinz</string>
+		<key>ZM-02</key>
+		<string>Zentralprovinz</string>
+	</dict>
+	<key>ZW</key>
+	<dict>
+		<key>ZW-BU</key>
+		<string>Bulawayo1</string>
+		<key>ZW-HA</key>
+		<string>Harare1</string>
+		<key>ZW-MA</key>
+		<string>Manicaland</string>
+		<key>ZW-MC</key>
+		<string>Mashonaland Central</string>
+		<key>ZW-ME</key>
+		<string>Mashonaland East</string>
+		<key>ZW-MW</key>
+		<string>Mashonaland West</string>
+		<key>ZW-MV</key>
+		<string>Masvingo</string>
+		<key>ZW-MN</key>
+		<string>Matabeleland North</string>
+		<key>ZW-MS</key>
+		<string>Matabeleland South</string>
+		<key>ZW-MI</key>
+		<string>Midlands</string>
 	</dict>
 </dict>
 </plist>
