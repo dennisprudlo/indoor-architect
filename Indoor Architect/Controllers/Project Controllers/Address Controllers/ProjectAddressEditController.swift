@@ -188,7 +188,7 @@ class ProjectAddressEditController: ComposePopoverController {
 		
 		do {
 			let archive = displayController.project.imdfArchive
-			try archive.enocde(archive.addresses, of: Address.Properties.self, in: .address, forProjectWithUuid: displayController.project.manifest.uuid)
+			try archive.save(.address)
 		} catch {
 			print(error)
 		}

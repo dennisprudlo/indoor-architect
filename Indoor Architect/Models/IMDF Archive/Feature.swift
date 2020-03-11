@@ -14,6 +14,11 @@ protocol CodableFeature: Encodable {
 	init(feature: MKGeoJSONFeature, type: ProjectManager.ArchiveFeature) throws
 }
 
+struct IMDFPointGeometry: Encodable {
+	let type: String
+	let coordinates: [Double]
+}
+
 class Feature<Properties: Codable>: NSObject, CodableFeature {
 	
 	/// The globally unique feature id identifier
@@ -69,8 +74,14 @@ class Feature<Properties: Codable>: NSObject, CodableFeature {
 		try container.encode(id, forKey: .id)
 		try container.encode("\(type)", forKey: .featureType)
 		
-		let transformedGeometry: String? = nil
-		try container.encode(transformedGeometry, forKey: .geometry)
+		//
+		// If the feature has no geometry object the geometry is encoded as a null value
+		if geometry.count == 0 {
+			let transformedGeometry: String? = nil
+			try container.encode(transformedGeometry, forKey: .geometry)
+		} else {
+			try container.encode(self.transformPointGeometry(), forKey: .geometry)
+		}
 		
 		try container.encode("Feature", forKey: .type)
 		try container.encode(properties, forKey: .properties)
@@ -88,5 +99,10 @@ class Feature<Properties: Codable>: NSObject, CodableFeature {
 		self.geometry	= geometry
 		self.type		= type
 		super.init()
+	}
+	
+	func transformPointGeometry() -> IMDFPointGeometry {
+		let coordinates = geometry.first?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
+		return IMDFPointGeometry(type: "Point", coordinates: [coordinates.longitude, coordinates.latitude])
 	}
 }

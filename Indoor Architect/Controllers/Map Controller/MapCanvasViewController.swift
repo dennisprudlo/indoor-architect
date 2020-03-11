@@ -24,6 +24,8 @@ class MapCanvasViewController: UIViewController, MCMapCanvasDelegate {
 		
 		view.addSubview(canvas)
 		canvas.edgesToSuperview()
+		
+		canvas.addAnchorAnnotations(project.imdfArchive.anchors)
 	}
 	
 	func present(forProject project: IMDFProject) -> Void {
@@ -39,5 +41,20 @@ class MapCanvasViewController: UIViewController, MCMapCanvasDelegate {
 	
 	func mapCanvas(_ canvas: MCMapCanvas, didTapOn location: CLLocationCoordinate2D, with drawingTool: MCMapCanvas.DrawingTool) {
 		canvas.toolPalette.coordinateToolStack.setCoordinate(location)
+		
+		if drawingTool == .anchor {
+			let uuid = project.imdfArchive.getUnusedGlobalUuid()
+			let properties = Anchor.Properties(addressId: nil, unitId: nil)
+			let point = MKPointAnnotation()
+			point.coordinate = location
+			let anchor = Anchor(withIdentifier: uuid, properties: properties, geometry: [point], type: .anchor)
+			project.imdfArchive.anchors.append(anchor)
+			
+			try? project.imdfArchive.save(.anchor)
+	
+			if let geometry = anchor.geometry.first {
+				canvas.addAnnotation(geometry)
+			}
+		}
 	}
 }

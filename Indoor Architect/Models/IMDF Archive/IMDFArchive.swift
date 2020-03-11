@@ -18,18 +18,25 @@ enum IMDFDecodingError: Error {
 
 class IMDFArchive {
 	
+	let projectUuid: UUID
+	
 	/// The IMDF archives manifest
 	let manifest: Manifest
 	
 	/// The IMDF address features
 	var addresses: [Address]
 	
+	/// The IMDF anchor features
+	var anchors: [Anchor]
+	
 	/// Initializes the IMDFArchive
 	/// - Parameter uuid: The UUID of the project
 	init(fromUuid uuid: UUID) throws {
-		self.manifest = try Manifest.decode(fromProjectWith: uuid)
+		self.projectUuid	= uuid
+		self.manifest		= try Manifest.decode(fromProjectWith: uuid)
 		
-		self.addresses = try IMDFArchive.decode(Address.self, file: .address, forProjectWithUuid: uuid)
+		self.addresses		= try IMDFArchive.decode(Address.self, file: .address, forProjectWithUuid: uuid)
+		self.anchors		= try IMDFArchive.decode(Anchor.self, file: .anchor, forProjectWithUuid: uuid)
 	}
 	
 	/// Decodes the features from the corresponding GeoJSON file in a project with the given UUID
@@ -47,7 +54,7 @@ class IMDFArchive {
 			throw IMDFDecodingError.malformedFeatureData
 		}
 		
-		return try features.map { try type.init(feature: $0, type: file) }
+		return features.compactMap { try? type.init(feature: $0, type: file) }
 	}
 	
 	/// Encodes the features of a given type and writes it into the corresponding GeoJSON file
@@ -56,7 +63,7 @@ class IMDFArchive {
 	///   - propertiesType: The type of the features properties
 	///   - file: The file case to write the data into
 	///   - uuid: The UUID of the project
-	func enocde<T: Feature<Properties>, Properties: Codable>(_ features: [T], of propertiesType: Properties.Type, in file: ProjectManager.ArchiveFeature, forProjectWithUuid uuid: UUID) throws -> Void {
+	func enocde<T: Feature<Properties>, Properties: Codable>(_ features: [T], of propertiesType: Properties.Type, in file: ProjectManager.ArchiveFeature) throws -> Void {
 		
 		let encoder = JSONEncoder()
 		encoder.keyEncodingStrategy	= .convertToSnakeCase
@@ -74,8 +81,19 @@ class IMDFArchive {
 			"features":	encodedFeatures
 		], options: .prettyPrinted)
 		
-		let fileUrl = ProjectManager.shared.url(forPathComponent: .archive(feature: file), inProjectWithUuid: uuid)
+		let fileUrl = ProjectManager.shared.url(forPathComponent: .archive(feature: file), inProjectWithUuid: self.projectUuid)
 		FileManager.default.createFile(atPath: fileUrl.path, contents: data, attributes: nil)
+	}
+	
+	func save(_ type: ProjectManager.ArchiveFeature) throws -> Void {
+		switch type {
+			case .address:
+				try self.enocde(self.addresses, of: Address.Properties.self, in: .address)
+			case .anchor:
+				try self.enocde(self.anchors, of: Anchor.Properties.self, in: .anchor)
+			default:
+				break
+		}
 	}
 	
 	/// Generates a UUID that is globally unique throughout all features in the IMDF data

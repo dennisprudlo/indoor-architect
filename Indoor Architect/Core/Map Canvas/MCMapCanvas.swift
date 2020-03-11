@@ -115,4 +115,41 @@ class MCMapCanvas: MKMapView, MKMapViewDelegate {
 		
 		drawingDelegate?.mapCanvas(self, didTapOn: coordinate, with: selectedDrawingTool)
 	}
+	
+	func addAnchorAnnotations(_ anchors: [Anchor]) {
+		anchors.forEach({
+			if let geometry = $0.geometry.first {
+				let annotation = geometry as MKAnnotation
+				self.addAnnotation(annotation)
+				anchorAnnotationPairs[$0] = annotation
+			}
+		})
+	}
+	
+	override func renderer(for overlay: MKOverlay) -> MKOverlayRenderer? {		
+		let renderer: MKOverlayPathRenderer
+
+		switch overlay {
+			case is MKMultiPolygon:
+				renderer = MKMultiPolygonRenderer(overlay: overlay)
+			case is MKPolygon:
+				renderer = MKPolygonRenderer(overlay: overlay)
+			case is MKMultiPolyline:
+				renderer = MKMultiPolylineRenderer(overlay: overlay)
+			case is MKPolyline:
+				renderer = MKPolylineRenderer(overlay: overlay)
+			default:
+				return MKOverlayRenderer(overlay: overlay)
+		}
+		
+		return renderer
+	}
+	
+	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
+		
+		if newState == .ending, let coordinates = view.annotation?.coordinate {
+			
+			print("stopped dragging point geometry with id: \(view.reuseIdentifier ?? "none")")
+		}
+	}
 }
