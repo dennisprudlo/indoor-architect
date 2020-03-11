@@ -60,6 +60,9 @@ class ProjectController: DetailTableViewController {
 	
 	/// Reloads the data from the passed project instance
 	private func reloadProjectDetails() -> Void {
+		print("reload..")
+		print(ProjectManager.shared.url(forPathComponent: .rootDirectory, inProjectWithUuid: project.manifest.uuid).path)
+		
 		title = project.manifest.title
 		generalSection.projectTitleCell.setText(project.manifest.title)
 		generalSection.projectDescriptionCell.setText(project.manifest.description)
