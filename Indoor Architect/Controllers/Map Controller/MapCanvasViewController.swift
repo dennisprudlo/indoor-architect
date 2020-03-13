@@ -10,8 +10,6 @@ import UIKit
 import MapKit
 
 class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasDelegate {
-
-	static let shared		= MapCanvasViewController()
 	
 	let canvas				= MCMapCanvas()
 	
@@ -21,6 +19,7 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
         super.viewDidLoad()
 		
 		canvas.delegate = self
+		canvas.controller = self
 		canvas.drawingDelegate = self
 		
 		view.addSubview(canvas)

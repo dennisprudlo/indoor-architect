@@ -18,6 +18,10 @@ class MCGeneralToolsPalette: MCToolPalette {
 	
 	init() {
 		super.init(axis: .horizontal)
+		
+		closeToolStack.palette = self
+		coordinateToolStack.palette = self
+		
 		addToolStack(closeToolStack)
 		addToolStack(coordinateToolStack)
 	}

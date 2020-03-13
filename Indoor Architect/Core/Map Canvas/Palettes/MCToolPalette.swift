@@ -10,6 +10,9 @@ import UIKit
 
 class MCToolPalette: UIStackView {
 	
+	/// The canvas where the tool palette is in
+	var canvas: MCMapCanvas!
+	
 	init(axis: NSLayoutConstraint.Axis) {
 		super.init(frame: .zero)
 		autolayout()

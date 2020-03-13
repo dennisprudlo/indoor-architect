@@ -18,6 +18,9 @@ class MCCloseToolStack: MCToolStack {
 	override init(forAxis axis: NSLayoutConstraint.Axis) {
 		super.init(forAxis: axis)
 		
+		closeItem.stack = self
+		infoLabel.stack = self
+		
 		addItem(closeItem)
 		addItem(infoLabel)
 		

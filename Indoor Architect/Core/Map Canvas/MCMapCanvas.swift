@@ -21,10 +21,10 @@ class MCMapCanvas: MKMapView {
 	private static let toolPaletteInset: CGFloat = 10
 	
 	/// The general tools palette which is at the top left corner of the canvas
-	let toolPalette	= MCGeneralToolsPalette()
+	var toolPalette			= MCGeneralToolsPalette()
 	
 	/// The drawing tools palette which is at the leading edge of the canvas and holds all drawing tools
-	let drawingToolPalette	= MCDrawingToolsPalette()
+	var drawingToolPalette	= MCDrawingToolsPalette()
 	
 	/// The info tool stack which appears each time its told to display a text. It is located at the top edge of the canvas
 	let infoToolStack		= MCSlidingInfoToolStack(forAxis: .horizontal)
@@ -34,6 +34,9 @@ class MCMapCanvas: MKMapView {
 	
 	/// The delegate for the map canvas events
 	var drawingDelegate: MCMapCanvasDelegate?
+	
+	/// The map canvas view controller
+	var controller: MapCanvasViewController!
 	
 	/// The different drawing tools available in the map canvas
 	enum DrawingTool {
@@ -69,6 +72,9 @@ class MCMapCanvas: MKMapView {
 			.nationalPark,
 			.publicTransport
 		])
+		
+		toolPalette.canvas = self
+		drawingToolPalette.canvas = self
 		
 		//
 		// Configure the different palettes and overlay
@@ -173,5 +179,16 @@ class MCMapCanvas: MKMapView {
 				self.removeOverlay(overlay)
 			}
 		}
+	}
+	
+	func saveAndClose() -> Void {
+		toolPalette.closeToolStack.showInfoLabel(withText: "Saving...")
+		
+		try? project.save()
+		try? project.imdfArchive.save(.anchor)
+
+		toolPalette.closeToolStack.hideInfoLabel()
+		
+		controller.dismiss(animated: true, completion: nil)
 	}
 }

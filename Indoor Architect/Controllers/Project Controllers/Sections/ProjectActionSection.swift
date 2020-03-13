@@ -46,7 +46,8 @@ class ProjectActionSection: ProjectSection {
 			return
 		}
 		
-		MapCanvasViewController.shared.present(forProject: project)
+		let mapCanvasViewController = MapCanvasViewController()
+		mapCanvasViewController.present(forProject: project)
 	}
 	
 	@objc private func didTapExportArchive(_ sender: UIButton) -> Void {

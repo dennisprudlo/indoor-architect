@@ -186,7 +186,8 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			let canvasAction = UIContextualAction(style: .normal, title: nil, handler: { (action, view, completion) in
 				
 				let imdfProject = IMDFProject.projects[indexPath.row]
-				MapCanvasViewController.shared.present(forProject: imdfProject)
+				let mapCanvasViewController = MapCanvasViewController()
+				mapCanvasViewController.present(forProject: imdfProject)
 				completion(true)
 			})
 			canvasAction.backgroundColor = Color.indoorMapEdit

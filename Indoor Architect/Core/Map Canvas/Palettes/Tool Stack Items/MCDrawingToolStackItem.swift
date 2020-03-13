@@ -37,6 +37,6 @@ class MCDrawingToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 	}
 	
 	func toolStackItem(_ toolStackItem: MCToolStackItem, registeredTapFrom tapGestureRecognizer: UITapGestureRecognizer) {
-		MapCanvasViewController.shared.canvas.switchDrawingTool(self.drawingTool)
+		stack?.palette.canvas.switchDrawingTool(self.drawingTool)
 	}
 }

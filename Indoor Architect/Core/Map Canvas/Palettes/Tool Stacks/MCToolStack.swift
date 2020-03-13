@@ -19,6 +19,9 @@ class MCToolStack: UIView {
 	/// Defines whether the tool stack is currently performing a control switch animation
 	var isPerformingAnimation: Bool = false
 	
+	/// The tool palette where the tool stack is in
+	var palette: MCToolPalette!
+	
 	init(forAxis axis: NSLayoutConstraint.Axis) {
 		super.init(frame: .zero)
 		autolayout()
