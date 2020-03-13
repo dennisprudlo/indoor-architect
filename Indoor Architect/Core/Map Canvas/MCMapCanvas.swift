@@ -13,7 +13,7 @@ protocol MCMapCanvasDelegate {
 	func mapCanvas(_ canvas: MCMapCanvas, didTapOn location: CLLocationCoordinate2D, with drawingTool: MCMapCanvas.DrawingTool) -> Void
 }
 
-class MCMapCanvas: MKMapView, MKMapViewDelegate {
+class MCMapCanvas: MKMapView {
 	
 	var project: IMDFProject!
 	
@@ -54,9 +54,10 @@ class MCMapCanvas: MKMapView, MKMapViewDelegate {
 		case measure
 	}
 	
+	var measuringEdges: [MKMapPoint] = []
+	
 	init() {
 		super.init(frame: .zero)
-		delegate = self
 		autolayout()
 		
 		showsUserLocation = false
@@ -109,6 +110,11 @@ class MCMapCanvas: MKMapView, MKMapViewDelegate {
 	func switchDrawingTool(_ drawingTool: MCMapCanvas.DrawingTool) -> Void {
 		selectedDrawingTool = drawingTool
 		infoToolStack.display(text: "\(drawingTool)".capitalized, withLabel: "Drawing Tool")
+		
+		if drawingTool != .measure {
+			removeRulerOverlay()
+			measuringEdges = []
+		}
 	}
 
 	@objc func didTapMap(_ gestureRecognizer: UITapGestureRecognizer) -> Void {
@@ -122,40 +128,43 @@ class MCMapCanvas: MKMapView, MKMapViewDelegate {
 		removeOverlays(overlays)
 		removeAnnotations(annotations)
 		
+		measuringEdges = []
+		
 		//
 		// Render anchors
 		project.imdfArchive.anchors.forEach { self.addAnnotation(IMDFAnchorAnnotation(coordinate: $0.getCoordinates(), anchor: $0)) }
 	}
 	
-	override func renderer(for overlay: MKOverlay) -> MKOverlayRenderer? {		
-		let renderer: MKOverlayPathRenderer
-
-		switch overlay {
-			case is MKMultiPolygon:
-				renderer = MKMultiPolygonRenderer(overlay: overlay)
-			case is MKPolygon:
-				renderer = MKPolygonRenderer(overlay: overlay)
-			case is MKMultiPolyline:
-				renderer = MKMultiPolylineRenderer(overlay: overlay)
-			case is MKPolyline:
-				renderer = MKPolylineRenderer(overlay: overlay)
-			default:
-				return MKOverlayRenderer(overlay: overlay)
+	func addAnchor(at location: CLLocationCoordinate2D) -> Void {
+		let uuid = project.imdfArchive.getUnusedGlobalUuid()
+		let properties = Anchor.Properties(addressId: nil, unitId: nil)
+		
+		let point = MKPointAnnotation()
+		point.coordinate = location
+		
+		let anchor = Anchor(withIdentifier: uuid, properties: properties, geometry: [point], type: .anchor)
+		project.imdfArchive.anchors.append(anchor)
+		
+		if let geometry = anchor.geometry.first {
+			addAnnotation(geometry)
 		}
-		
-		return renderer
 	}
 	
-	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-		let annotationView = PointAnnotationView(annotation: annotation, reuseIdentifier: nil)
-		return annotationView
+	func addMeasuringEdge(at location: CLLocationCoordinate2D) -> Void {
+		let mapPoint = MKMapPoint(location)
+		measuringEdges.append(mapPoint)
+		
+		removeRulerOverlay()
+		
+		let rulerLine = FlexibleRulerPolyline(points: &measuringEdges, count: measuringEdges.count)
+		addOverlay(rulerLine)
 	}
 	
-	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
-		
-		if newState == .ending, let annotation = view.annotation as? IMDFAnchorAnnotation {
-			annotation.anchor.setCoordinates(annotation.coordinate)
-			try? project.imdfArchive.save(.anchor)
+	func removeRulerOverlay() -> Void {
+		overlays.forEach { (overlay) in
+			if let overlay = overlay as? FlexibleRulerPolyline {
+				self.removeOverlay(overlay)
+			}
 		}
 	}
 }

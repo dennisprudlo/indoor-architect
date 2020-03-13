@@ -34,6 +34,7 @@
 		81AE8E4D24191C70007C8093 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE8E4C24191C70007C8093 /* Anchor.swift */; };
 		81AE8E5124193C90007C8093 /* IMDFAnchorAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE8E5024193C90007C8093 /* IMDFAnchorAnnotation.swift */; };
 		81AE8E552419413C007C8093 /* PointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE8E542419413C007C8093 /* PointAnnotationView.swift */; };
+		81AE8E5E241C2000007C8093 /* FlexibleRulerPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE8E5D241C2000007C8093 /* FlexibleRulerPolyline.swift */; };
 		81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */; };
 		81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */; };
 		81D580AC240AF0350049B17F /* IMDFArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580AB240AF0350049B17F /* IMDFArchive.swift */; };
@@ -105,6 +106,7 @@
 		81AE8E4C24191C70007C8093 /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 		81AE8E5024193C90007C8093 /* IMDFAnchorAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFAnchorAnnotation.swift; sourceTree = "<group>"; };
 		81AE8E542419413C007C8093 /* PointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotationView.swift; sourceTree = "<group>"; };
+		81AE8E5D241C2000007C8093 /* FlexibleRulerPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleRulerPolyline.swift; sourceTree = "<group>"; };
 		81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerPlaceholderCell.swift; sourceTree = "<group>"; };
 		81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerHandler.swift; sourceTree = "<group>"; };
 		81D580AB240AF0350049B17F /* IMDFArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFArchive.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		81AE8E4E24193C6E007C8093 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				81AE8E5C241C1FE7007C8093 /* Polylines */,
 				81AE8E4F24193C77007C8093 /* Annotations */,
 			);
 			path = Renderer;
@@ -309,6 +312,14 @@
 				81AE8E542419413C007C8093 /* PointAnnotationView.swift */,
 			);
 			path = "Map Canvas";
+			sourceTree = "<group>";
+		};
+		81AE8E5C241C1FE7007C8093 /* Polylines */ = {
+			isa = PBXGroup;
+			children = (
+				81AE8E5D241C2000007C8093 /* FlexibleRulerPolyline.swift */,
+			);
+			path = Polylines;
 			sourceTree = "<group>";
 		};
 		81D580A8240AEEB20049B17F /* IMDF Archive */ = {
@@ -592,6 +603,7 @@
 				813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */,
 				81D580BF240C133D0049B17F /* ProjectAddressEditController.swift in Sources */,
 				8141C7E623FAF91E008AC7DD /* MCToolStackItem.swift in Sources */,
+				81AE8E5E241C2000007C8093 /* FlexibleRulerPolyline.swift in Sources */,
 				81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */,
 				8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */,
 				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,

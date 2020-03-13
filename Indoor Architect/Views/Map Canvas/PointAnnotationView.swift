@@ -9,14 +9,19 @@
 import MapKit
 
 class PointAnnotationView: MKAnnotationView {
+	
+	private let diameter: CGFloat = 10
+	
+	private let borderWidth: CGFloat = 0.5
+	
 	override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
 		super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
 		
-		self.frame				= CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: 10, height: 10)
-		self.backgroundColor = Color.primary
-		self.layer.cornerRadius	= 5
-		self.layer.borderWidth	= 1.0
-		self.layer.borderColor	= Color.primary.cgColor
+		self.frame				= CGRect(x: self.frame.origin.x - (diameter / 2), y: self.frame.origin.y - (diameter / 2), width: diameter, height: diameter)
+		self.backgroundColor	= Color.anchorPointAnnotationTint
+		self.layer.cornerRadius	= diameter / 2
+		self.layer.borderWidth	= borderWidth
+		self.layer.borderColor	= Color.anchorPointAnnotationBorder.cgColor
 		isDraggable = true
 	}
 	

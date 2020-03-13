@@ -30,7 +30,10 @@ class MCCloseToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 	func toolStackItem(_ toolStackItem: MCToolStackItem, registeredTapFrom tapGestureRecognizer: UITapGestureRecognizer) {
 		MapCanvasViewController.shared.canvas.toolPalette.closeToolStack.showInfoLabel(withText: "Saving...")
 		do {
-			try MapCanvasViewController.shared.project.save()
+			let project: IMDFProject! = MapCanvasViewController.shared.project
+			try project.save()
+			try project.imdfArchive.save(.anchor)
+			
 			MapCanvasViewController.shared.canvas.toolPalette.closeToolStack.hideInfoLabel()
 			MapCanvasViewController.shared.dismiss(animated: true, completion: nil)
 		} catch {

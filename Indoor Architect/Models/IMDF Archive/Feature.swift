@@ -71,8 +71,12 @@ class Feature<Properties: Codable>: NSObject, CodableFeature {
 	/// - Parameter encoder: The encoder instance
 	func encode(to encoder: Encoder) throws {
 		var container = encoder.container(keyedBy: CodingKeys.self)
-		try container.encode(id, forKey: .id)
-		try container.encode("\(type)", forKey: .featureType)
+		
+		//
+		// Encode the default feature properties
+		try container.encode(id.uuidString.lowercased(),	forKey: .id)
+		try container.encode("\(type)",						forKey: .featureType)
+		try container.encode("Feature",						forKey: .type)
 		
 		//
 		// If the feature has no geometry object the geometry is encoded as a null value
@@ -83,7 +87,8 @@ class Feature<Properties: Codable>: NSObject, CodableFeature {
 			try container.encode(self.transformPointGeometry(), forKey: .geometry)
 		}
 		
-		try container.encode("Feature", forKey: .type)
+		//
+		// Encode the features generic properties
 		try container.encode(properties, forKey: .properties)
 	}
 	

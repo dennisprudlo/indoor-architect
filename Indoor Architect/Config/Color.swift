@@ -22,4 +22,11 @@ enum Color {
 	static let lightStyleCellSeparatorColor: UIColor = .clear
 	
 	static let lightStyleCellBackground = UIColor(named: "light-style-cell-background-color")
+	
+	
+	// MARK: Map Canvas
+	
+	static let anchorPointAnnotationTint: UIColor = .systemRed
+	
+	static let anchorPointAnnotationBorder: UIColor = .systemGray3
 }

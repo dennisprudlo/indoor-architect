@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapCanvasViewController: UIViewController, MCMapCanvasDelegate {
+class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasDelegate {
 
 	static let shared		= MapCanvasViewController()
 	
@@ -20,6 +20,7 @@ class MapCanvasViewController: UIViewController, MCMapCanvasDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		canvas.delegate = self
 		canvas.drawingDelegate = self
 		
 		view.addSubview(canvas)
@@ -44,18 +45,32 @@ class MapCanvasViewController: UIViewController, MCMapCanvasDelegate {
 		canvas.toolPalette.coordinateToolStack.setCoordinate(location)
 		
 		if drawingTool == .anchor {
-			let uuid = project.imdfArchive.getUnusedGlobalUuid()
-			let properties = Anchor.Properties(addressId: nil, unitId: nil)
-			let point = MKPointAnnotation()
-			point.coordinate = location
-			let anchor = Anchor(withIdentifier: uuid, properties: properties, geometry: [point], type: .anchor)
-			project.imdfArchive.anchors.append(anchor)
-			
-			try? project.imdfArchive.save(.anchor)
+			canvas.addAnchor(at: location)
+		} else if drawingTool == .measure {
+			canvas.addMeasuringEdge(at: location)
+		}
+	}
 	
-			if let geometry = anchor.geometry.first {
-				canvas.addAnnotation(geometry)
-			}
+	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+		if let ruler = overlay as? FlexibleRulerPolyline {
+			let renderer = MKPolylineRenderer(overlay: ruler)
+			renderer.strokeColor = UIColor.systemGray.withAlphaComponent(0.5)
+			renderer.lineWidth = 5
+			return renderer
+		}
+		
+		return MKOverlayRenderer(overlay: overlay)
+	}
+	
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		let annotationView = PointAnnotationView(annotation: annotation, reuseIdentifier: nil)
+		return annotationView
+	}
+	
+	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
+		
+		if newState == .ending, let annotation = view.annotation as? IMDFAnchorAnnotation {
+			annotation.anchor.setCoordinates(annotation.coordinate)
 		}
 	}
 }
