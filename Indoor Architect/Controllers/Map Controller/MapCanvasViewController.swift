@@ -38,6 +38,13 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 	
 		canvas.remakeMap()
 		
+		if let session = project.manifest.session {
+			let center	= CLLocationCoordinate2D(latitude: session.centerLatitude, longitude: session.centerLongitude)
+			let span	= MKCoordinateSpan(latitudeDelta: session.spanLatitude, longitudeDelta: session.spanLongitude)
+			let region	= MKCoordinateRegion(center: center, span: span)
+			canvas.setRegion(region, animated: true)
+		}
+		
 		Application.rootController.present(self, animated: true, completion: nil)
 	}
 	
@@ -72,5 +79,15 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		if newState == .ending, let annotation = view.annotation as? IMDFAnchorAnnotation {
 			annotation.anchor.setCoordinates(annotation.coordinate)
 		}
+	}
+	
+	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+		let centerLat	= mapView.region.center.latitude
+		let centerLng	= mapView.region.center.longitude
+		let spanLat		= mapView.region.span.latitudeDelta
+		let spanLng		= mapView.region.span.longitudeDelta
+		let session = IMDFProjectManifest.MappingSession(centerLatitude: centerLat, centerLongitude: centerLng, spanLatitude: spanLat, spanLongitude: spanLng)
+	
+		project.manifest.session = session
 	}
 }

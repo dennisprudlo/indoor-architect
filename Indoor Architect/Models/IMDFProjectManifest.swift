@@ -28,6 +28,20 @@ class IMDFProjectManifest: Codable {
 	/// The date the project was last updated at
 	var updatedAt: Date
 	
+	/// The meta data information for the mapping session of that project
+	var session: MappingSession?
+	
+	struct MappingSession: Codable {
+		/// The latitude of the last position
+		var centerLatitude: Double
+		/// The longitude of the last position
+		var centerLongitude: Double
+		/// The latitude span of the last position
+		var spanLatitude: Double
+		/// The longitude span of the last position
+		var spanLongitude: Double
+	}
+	
 	/// The IMDFPROJ-data version used for migration to future versions
 	let imdfprojVersion: Int
 	
@@ -43,6 +57,7 @@ class IMDFProjectManifest: Codable {
 		self.createdAt			= Date()
 		self.updatedAt			= Date()
 		self.imdfprojVersion	= 1
+		self.session			= nil
 	}
 	
 	/// Encodes the manifest as JSON data
