@@ -62,6 +62,13 @@ class MCMapCanvas: MKMapView {
 		
 		showsUserLocation = false
 		showsTraffic = false
+		pointOfInterestFilter = MKPointOfInterestFilter(including: [
+			.airport,
+			.evCharger,
+			.hospital,
+			.nationalPark,
+			.publicTransport
+		])
 		
 		//
 		// Configure the different palettes and overlay
