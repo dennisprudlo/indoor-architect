@@ -39,6 +39,9 @@ class MCSlidingInfoToolStack: MCToolStack {
 	/// Defines whether the sliding animation is currently playing
 	private var isInAnimation: Bool = false
 	
+	/// The amount of seconds the animation will be visible
+	private var secondsVisible: TimeInterval = 0
+	
 	/// The queue with all texts to display
 	private var animationQueue: [(title: String, label: String?)] = []
 	
@@ -88,20 +91,36 @@ class MCSlidingInfoToolStack: MCToolStack {
 		// If some info is currently in animation we add the text to the queue
 		// to display it later on
 		if isInAnimation {
+			secondsVisible = 0
+			if !animationQueue.isEmpty {
+				let _ = animationQueue.popLast()
+			}
 			animationQueue.append((title: text, label: label))
 			return
 		}
 		
 		isInAnimation = true
 		
+		secondsVisible = remain
+		
 		slideIn(withText: text, withLabel: label)
-		DispatchQueue.main.asyncAfter(deadline: .now() + remain) {
-			self.slideOut(immediately: false) { (success) in
-				self.isInAnimation = false
-				if (self.animationQueue.count > 0) {
-					let nextText = self.animationQueue.removeFirst()
-					self.display(text: nextText.title, withLabel: nextText.label, remain: MCSlidingInfoToolStack.displayTimeInQueue)
+		
+		tickAnimation()
+	}
+	
+	private func tickAnimation() -> Void {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+			self.secondsVisible -= 1
+			if self.secondsVisible <= 0 {
+				self.slideOut(immediately: false) { (success) in
+					self.isInAnimation = false
+					if (self.animationQueue.count > 0) {
+						let nextText = self.animationQueue.removeFirst()
+						self.display(text: nextText.title, withLabel: nextText.label, remain: MCSlidingInfoToolStack.displayTimeInQueue)
+					}
 				}
+			} else {
+				self.tickAnimation()
 			}
 		}
 	}
