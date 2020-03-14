@@ -18,9 +18,8 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		canvas.delegate = self
-		canvas.controller = self
-		canvas.drawingDelegate = self
+		canvas.delegate		= self
+		canvas.controller	= self
 		
 		view.addSubview(canvas)
 		canvas.edgesToSuperview()
@@ -54,13 +53,11 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 	}
 	
 	func mapCanvas(_ canvas: MCMapCanvas, didSwitch drawingTool: MCMapCanvas.DrawingTool) {
-		canvas.subviews.first?.isUserInteractionEnabled = true
-		
 		if drawingTool != .measure {
-			canvas.measuringEdges.begin	= nil
-			canvas.measuringEdges.end	= nil
+			canvas.distanceRuler.invalidate()
+			canvas.distanceRuler.releaseRecognizersForMeasuring()
 		} else {
-			canvas.subviews.first?.isUserInteractionEnabled = false
+			canvas.distanceRuler.holdRecognizersForMeasuring()
 		}
 	}
 	

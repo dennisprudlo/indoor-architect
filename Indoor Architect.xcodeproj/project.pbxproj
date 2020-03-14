@@ -21,6 +21,7 @@
 		81475990241832E4006DB242 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8147598F241832E4006DB242 /* Colors.xcassets */; };
 		814EBB74241D626E0028225C /* RulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB73241D626E0028225C /* RulerView.swift */; };
 		814EBB76241D6A170028225C /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB75241D6A170028225C /* Spacing.swift */; };
+		814EBB78241D71150028225C /* MCDistanceRuler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB77241D71150028225C /* MCDistanceRuler.swift */; };
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
 		816DC53E23F0679900E1471D /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootController.swift */; };
@@ -90,6 +91,7 @@
 		8147598F241832E4006DB242 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		814EBB73241D626E0028225C /* RulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerView.swift; sourceTree = "<group>"; };
 		814EBB75241D6A170028225C /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		814EBB77241D71150028225C /* MCDistanceRuler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDistanceRuler.swift; sourceTree = "<group>"; };
 		816DC52223F0606B00E1471D /* Indoor Architect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Architect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816DC52523F0606B00E1471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,7 +178,7 @@
 		8141C7DE23FAEE05008AC7DD /* Map Canvas */ = {
 			isa = PBXGroup;
 			children = (
-				81AE8E4E24193C6E007C8093 /* Renderer */,
+				81AE8E4E24193C6E007C8093 /* Components */,
 				8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */,
 				81FC47E22409AB900078551E /* Palettes */,
 			);
@@ -279,13 +281,14 @@
 			path = "Extension Controllers";
 			sourceTree = "<group>";
 		};
-		81AE8E4E24193C6E007C8093 /* Renderer */ = {
+		81AE8E4E24193C6E007C8093 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				81AE8E5C241C1FE7007C8093 /* Polylines */,
 				81AE8E4F24193C77007C8093 /* Annotations */,
+				814EBB77241D71150028225C /* MCDistanceRuler.swift */,
 			);
-			path = Renderer;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		81AE8E4F24193C77007C8093 /* Annotations */ = {
@@ -541,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81D580B0240B02560049B17F /* ProjectArchiveSection.swift in Sources */,
+				814EBB78241D71150028225C /* MCDistanceRuler.swift in Sources */,
 				81F67DB323F06F6E006B9187 /* Application.swift in Sources */,
 				8141C7E023FAEE15008AC7DD /* MCMapCanvas.swift in Sources */,
 				81D580AC240AF0350049B17F /* IMDFArchive.swift in Sources */,

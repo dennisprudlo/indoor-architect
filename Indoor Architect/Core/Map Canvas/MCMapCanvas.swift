@@ -29,10 +29,7 @@ class MCMapCanvas: MKMapView {
 	var selectedDrawingTool: MCMapCanvas.DrawingTool = .pointer
 	
 	/// The delegate for the map canvas events
-	var drawingDelegate: MCMapCanvasDelegate?
-	
-	/// The map canvas view controller
-	var controller: MapCanvasViewController!
+	var controller: (UIViewController & MCMapCanvasDelegate)!
 	
 	/// The different drawing tools available in the map canvas
 	enum DrawingTool {
@@ -53,7 +50,7 @@ class MCMapCanvas: MKMapView {
 		case measure
 	}
 	
-	var measuringEdges: (begin: CLLocationCoordinate2D?, end: CLLocationCoordinate2D?) = (begin: nil, end: nil)
+	var distanceRuler = MCDistanceRuler()
 	
 	init() {
 		super.init(frame: .zero)
@@ -76,6 +73,10 @@ class MCMapCanvas: MKMapView {
 		configureToolStackOverlay()
 		
 		//
+		// Configure the distance ruler component
+		distanceRuler.canvas = self
+		
+		//
 		// Add custom gesture recognizer
 		addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMap)))
 		addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(didPanMap)))
@@ -85,6 +86,7 @@ class MCMapCanvas: MKMapView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	/// Configures the base overlay for the map canvas
 	func configureToolStackOverlay() -> Void {
 		
 		//
@@ -134,43 +136,25 @@ class MCMapCanvas: MKMapView {
 		selectedDrawingTool = drawingTool
 		infoToolStack.display(text: "\(drawingTool)".capitalized, withLabel: "Drawing Tool")
 		
-		drawingDelegate?.mapCanvas(self, didSwitch: drawingTool)
+		controller.mapCanvas(self, didSwitch: drawingTool)
 	}
 
 	@objc func didTapMap(_ gestureRecognizer: UITapGestureRecognizer) -> Void {
 		let point = gestureRecognizer.location(in: self)
 		let coordinate = self.convert(point, toCoordinateFrom: self)
 		
-		drawingDelegate?.mapCanvas(self, didTapOn: coordinate, with: selectedDrawingTool)
+		controller.mapCanvas(self, didTapOn: coordinate, with: selectedDrawingTool)
 	}
 	
 	@objc func didPanMap(_ gestureRecognizer: UIPanGestureRecognizer) -> Void {
-		let point = gestureRecognizer.location(in: self)
-		let coordinate = self.convert(point, toCoordinateFrom: self)
-		
-		if gestureRecognizer.state == .began {
-			measuringEdges.begin	= coordinate
-			measuringEdges.end		= nil
-		} else if gestureRecognizer.state == .ended {
-			measuringEdges.end		= coordinate
-			
-			guard let begin = measuringEdges.begin, let end = measuringEdges.end else {
-				return
-			}
-			
-			let distance = NSNumber(value: MKMapPoint(begin).distance(to: MKMapPoint(end)))
-			let nf = NumberFormatter()
-			nf.numberStyle = .decimal
-			nf.maximumFractionDigits = 2
-			infoToolStack.display(text: "\(nf.string(from: distance) ?? "0") m", withLabel: "Distance", remain: 5)
-		}
+		distanceRuler.makeUsingGesture(recognizer: gestureRecognizer)
 	}
 	
 	func generateIMDFOverlays() -> Void {
 		removeOverlays(overlays)
 		removeAnnotations(annotations)
 		
-		measuringEdges = (begin: nil, end: nil)
+		distanceRuler.invalidate()
 		
 		//
 		// Render anchors
