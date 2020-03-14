@@ -9,17 +9,17 @@
 import Foundation
 import CoreGraphics
 
-class Mathematics {
+struct Mathematics {
 	
 	/// Converts an angle in degrees to radians
 	/// - Parameter degrees: The angle in degrees
-	func radians(from degrees: Double) -> Double {
+	static func radians(from degrees: Double) -> Double {
 		return degrees * Double.pi / 180
 	}
 	
 	/// Converts an angle in radians to degrees
 	/// - Parameter radians: The angle in radians
-	func degrees(from radians: Double) -> Double {
+	static func degrees(from radians: Double) -> Double {
 		return radians / Double.pi * 180
 	}
 	
@@ -27,7 +27,7 @@ class Mathematics {
 	/// - Parameters:
 	///   - point: The point where the vector is pointing at
 	///   - target: The origin of the vector
-	func vector(from point: CGPoint, origin: CGPoint = CGPoint(x: 0, y: 0)) -> CGVector {
+	static func vector(from point: CGPoint, origin: CGPoint = CGPoint(x: 0, y: 0)) -> CGVector {
 		return CGVector(dx: point.x - origin.x, dy: point.y - origin.y)
 	}
 }
