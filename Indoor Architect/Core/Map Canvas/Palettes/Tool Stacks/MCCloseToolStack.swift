@@ -15,8 +15,8 @@ class MCCloseToolStack: MCToolStack {
 	let closeItem = MCCloseToolStackItem()
 	let infoLabel = MCLabelToolStackItem()
 	
-	override init(forAxis axis: NSLayoutConstraint.Axis) {
-		super.init(forAxis: axis)
+	init() {
+		super.init(forAxis: .horizontal)
 		
 		closeItem.stack = self
 		infoLabel.stack = self
@@ -30,11 +30,6 @@ class MCCloseToolStack: MCToolStack {
 	
 	required init(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
-	}
-	
-	override func reset() {
-		super.reset()
-		self.infoLabel.isHidden = true
 	}
 	
 	func showInfoLabel(withText text: String) -> Void {

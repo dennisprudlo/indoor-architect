@@ -31,11 +31,9 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		self.modalPresentationStyle = .fullScreen
 		
 		canvas.project = project
-		canvas.toolPalette.reset()
-		canvas.toolPalette.reset()
 		canvas.selectedDrawingTool = .pointer
 	
-		canvas.remakeMap()
+		canvas.generateIMDFOverlays()
 		
 		if let session = project.manifest.session {
 			let center	= CLLocationCoordinate2D(latitude: session.centerLatitude, longitude: session.centerLongitude)
@@ -48,24 +46,26 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 	}
 	
 	func mapCanvas(_ canvas: MCMapCanvas, didTapOn location: CLLocationCoordinate2D, with drawingTool: MCMapCanvas.DrawingTool) {
-		canvas.toolPalette.coordinateToolStack.setCoordinate(location)
+		canvas.coordinateToolStack.setCoordinate(location)
 		
 		if drawingTool == .anchor {
 			canvas.addAnchor(at: location)
-		} else if drawingTool == .measure {
-			canvas.addMeasuringEdge(at: location)
+		}
+	}
+	
+	func mapCanvas(_ canvas: MCMapCanvas, didSwitch drawingTool: MCMapCanvas.DrawingTool) {
+		canvas.subviews.first?.isUserInteractionEnabled = true
+		
+		if drawingTool != .measure {
+			canvas.measuringEdges.begin	= nil
+			canvas.measuringEdges.end	= nil
+		} else {
+			canvas.subviews.first?.isUserInteractionEnabled = false
 		}
 	}
 	
 	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-		if let ruler = overlay as? FlexibleRulerPolyline {
-			let renderer = MKPolylineRenderer(overlay: ruler)
-			renderer.strokeColor = UIColor.systemGray.withAlphaComponent(0.5)
-			renderer.lineWidth = 5
-			return renderer
-		}
-		
-		return MKOverlayRenderer(overlay: overlay)
+		return MKOverlayRenderer()
 	}
 	
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

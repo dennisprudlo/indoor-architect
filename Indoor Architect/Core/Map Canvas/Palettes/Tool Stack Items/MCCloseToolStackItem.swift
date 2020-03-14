@@ -28,6 +28,6 @@ class MCCloseToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 	}
 	
 	func toolStackItem(_ toolStackItem: MCToolStackItem, registeredTapFrom tapGestureRecognizer: UITapGestureRecognizer) {
-		(stack as? MCCloseToolStack)?.palette.canvas.saveAndClose()
+		(stack as? MCCloseToolStack)?.canvas.saveAndClose()
 	}
 }

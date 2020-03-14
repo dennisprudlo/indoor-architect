@@ -19,8 +19,8 @@ class MCToolStack: UIView {
 	/// Defines whether the tool stack is currently performing a control switch animation
 	var isPerformingAnimation: Bool = false
 	
-	/// The tool palette where the tool stack is in
-	var palette: MCToolPalette!
+	/// The map canvas where the tool stack is in
+	var canvas: MCMapCanvas!
 	
 	init(forAxis axis: NSLayoutConstraint.Axis) {
 		super.init(frame: .zero)
@@ -87,11 +87,6 @@ class MCToolStack: UIView {
 				toolStackItem.setSelected(true)
 			}
 		}
-	}
-	
-	func reset() -> Void {
-		deselectAll()
-		selectDefault()
 	}
 	
 	/// Gets the rectangle of the currently selected item

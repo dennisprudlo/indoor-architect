@@ -45,8 +45,8 @@ class MCSlidingInfoToolStack: MCToolStack {
 	/// Whether the initial layout of the subviews has been happened
 	private var initialized: Bool = false
 	
-	override init(forAxis axis: NSLayoutConstraint.Axis) {
-		super.init(forAxis: axis)
+	init() {
+		super.init(forAxis: .horizontal)
 		
 		addItem(infoItem)
 		
@@ -57,10 +57,6 @@ class MCSlidingInfoToolStack: MCToolStack {
 	
 	required init(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
-	}
-	
-	override func reset() {
-		infoItem.setTitle(nil)
 	}
 	
 	func slideOut(immediately: Bool = false, completion: ((Bool) -> Void)? = nil) -> Void {

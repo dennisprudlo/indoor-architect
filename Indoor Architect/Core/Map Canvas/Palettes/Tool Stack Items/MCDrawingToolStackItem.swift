@@ -26,6 +26,10 @@ class MCDrawingToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 			case .measure:	imageView.image = Icon.drawingToolMeasure
 		}
 		
+		if isDefault {
+			setSelected(true)
+		}
+		
 		NSLayoutConstraint.activate([
 			widthAnchor.constraint(equalToConstant: MCToolStackItem.toolStackItemSize),
 			heightAnchor.constraint(equalTo: widthAnchor)
@@ -37,6 +41,6 @@ class MCDrawingToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 	}
 	
 	func toolStackItem(_ toolStackItem: MCToolStackItem, registeredTapFrom tapGestureRecognizer: UITapGestureRecognizer) {
-		stack?.palette.canvas.switchDrawingTool(self.drawingTool)
+		stack?.canvas.switchDrawingTool(drawingTool)
 	}
 }

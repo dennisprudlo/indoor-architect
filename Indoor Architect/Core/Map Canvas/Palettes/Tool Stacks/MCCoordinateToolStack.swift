@@ -30,11 +30,6 @@ class MCCoordinateToolStack: MCToolStack {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	override func reset() {
-		super.reset()
-		setCoordinate(nil)
-	}
-	
 	func setCoordinate(_ coordinate: CLLocationCoordinate2D?) -> Void {
 		var latitudeString	= "--"
 		var longitudeString	= "--"

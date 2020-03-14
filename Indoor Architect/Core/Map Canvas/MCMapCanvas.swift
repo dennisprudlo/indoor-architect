@@ -11,23 +11,19 @@ import MapKit
 
 protocol MCMapCanvasDelegate {
 	func mapCanvas(_ canvas: MCMapCanvas, didTapOn location: CLLocationCoordinate2D, with drawingTool: MCMapCanvas.DrawingTool) -> Void
+	func mapCanvas(_ canvas: MCMapCanvas, didSwitch drawingTool: MCMapCanvas.DrawingTool) -> Void
 }
 
 class MCMapCanvas: MKMapView {
 	
+	/// The project which is being handles in the map
 	var project: IMDFProject!
 	
-	/// The spacing between the palette and their superview as well as between the children tool stacks
-	private static let toolPaletteInset: CGFloat = 10
-	
-	/// The general tools palette which is at the top left corner of the canvas
-	var toolPalette			= MCGeneralToolsPalette()
-	
-	/// The drawing tools palette which is at the leading edge of the canvas and holds all drawing tools
-	var drawingToolPalette	= MCDrawingToolsPalette()
-	
-	/// The info tool stack which appears each time its told to display a text. It is located at the top edge of the canvas
-	let infoToolStack		= MCSlidingInfoToolStack(forAxis: .horizontal)
+	var closeToolStack		= MCCloseToolStack()
+	var coordinateToolStack	= MCCoordinateToolStack()
+	var infoToolStack		= MCSlidingInfoToolStack()
+	var drawingToolStack	= MCToolStack(forAxis: .vertical)
+
 	
 	/// The currently selected drawing tool
 	var selectedDrawingTool: MCMapCanvas.DrawingTool = .pointer
@@ -57,15 +53,17 @@ class MCMapCanvas: MKMapView {
 		case measure
 	}
 	
-	var measuringEdges: [MKMapPoint] = []
+	var measuringEdges: (begin: CLLocationCoordinate2D?, end: CLLocationCoordinate2D?) = (begin: nil, end: nil)
 	
 	init() {
 		super.init(frame: .zero)
 		autolayout()
 		
-		showsUserLocation = false
-		showsTraffic = false
-		pointOfInterestFilter = MKPointOfInterestFilter(including: [
+		//
+		// Disable distracting map information
+		showsUserLocation		= false
+		showsTraffic			= false
+		pointOfInterestFilter	= MKPointOfInterestFilter(including: [
 			.airport,
 			.evCharger,
 			.hospital,
@@ -73,44 +71,56 @@ class MCMapCanvas: MKMapView {
 			.publicTransport
 		])
 		
-		toolPalette.canvas = self
-		drawingToolPalette.canvas = self
-		
 		//
 		// Configure the different palettes and overlay
-		configureGeneralToolsPalette()
-		configureDrawingToolsPalette()
-		configureInfoToolStack()
+		configureToolStackOverlay()
 		
+		//
+		// Add custom gesture recognizer
 		addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMap)))
+		addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(didPanMap)))
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	/// Configure the general tools palette in the canvas
-	func configureGeneralToolsPalette() -> Void {
-		toolPalette.spacing = MCMapCanvas.toolPaletteInset
+	func configureToolStackOverlay() -> Void {
 		
-		addSubview(toolPalette)
-		toolPalette.topEdgeToSafeSuperview()
-		toolPalette.leadingEdgeToSafeSuperview(withInset: MCMapCanvas.toolPaletteInset)
-		toolPalette.reset()
-	}
-	
-	/// Configure the drawing tools palette in the canvas
-	func configureDrawingToolsPalette() -> Void {
-		drawingToolPalette.spacing = MCMapCanvas.toolPaletteInset
+		//
+		// Set the reference to the canvas for all tool stacks
+		closeToolStack.canvas		= self
+		coordinateToolStack.canvas	= self
+		drawingToolStack.canvas		= self
+		infoToolStack.canvas		= self
 		
-		addSubview(drawingToolPalette)
-		drawingToolPalette.leadingEdgeToSafeSuperview(withInset: MCMapCanvas.toolPaletteInset)
-		drawingToolPalette.centerVertically()
-		drawingToolPalette.reset()
-	}
-	
-	/// Configure the info tool stack in the canvas
-	func configureInfoToolStack() -> Void {
+		//
+		// Add all drawing tool stack items to the drawing tool stack
+		drawingToolStack.addItem(MCDrawingToolStackItem(for: .pointer, isDefault: true))
+		drawingToolStack.addItem(MCDrawingToolStackItem(for: .anchor))
+		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polyline))
+		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polygon))
+		drawingToolStack.addItem(MCDrawingToolStackItem(for: .measure))
+		
+		let topEdgePalette			= UIStackView(arrangedSubviews: [closeToolStack, coordinateToolStack])
+		topEdgePalette.spacing		= Spacing.mapCanvasToolPalette
+		
+		let leadingEdgePalette		= UIStackView(arrangedSubviews: [drawingToolStack])
+		leadingEdgePalette.spacing	= Spacing.mapCanvasToolPalette
+		
+		topEdgePalette.autolayout()
+		leadingEdgePalette.autolayout()
+		
+		addSubview(topEdgePalette)
+		topEdgePalette.topEdgeToSafeSuperview()
+		topEdgePalette.leadingEdgeToSafeSuperview(withInset: Spacing.mapCanvasToolPalette)
+		
+		addSubview(leadingEdgePalette)
+		leadingEdgePalette.leadingEdgeToSafeSuperview(withInset: Spacing.mapCanvasToolPalette)
+		leadingEdgePalette.centerVertically()
+		
+		//
+		// Add the sliding info tool stack
 		addSubview(infoToolStack)
 		infoToolStack.centerHorizontally()
 		infoToolStack.topConstraint				= infoToolStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
@@ -124,10 +134,7 @@ class MCMapCanvas: MKMapView {
 		selectedDrawingTool = drawingTool
 		infoToolStack.display(text: "\(drawingTool)".capitalized, withLabel: "Drawing Tool")
 		
-		if drawingTool != .measure {
-			removeRulerOverlay()
-			measuringEdges = []
-		}
+		drawingDelegate?.mapCanvas(self, didSwitch: drawingTool)
 	}
 
 	@objc func didTapMap(_ gestureRecognizer: UITapGestureRecognizer) -> Void {
@@ -137,11 +144,33 @@ class MCMapCanvas: MKMapView {
 		drawingDelegate?.mapCanvas(self, didTapOn: coordinate, with: selectedDrawingTool)
 	}
 	
-	func remakeMap() -> Void {
+	@objc func didPanMap(_ gestureRecognizer: UIPanGestureRecognizer) -> Void {
+		let point = gestureRecognizer.location(in: self)
+		let coordinate = self.convert(point, toCoordinateFrom: self)
+		
+		if gestureRecognizer.state == .began {
+			measuringEdges.begin	= coordinate
+			measuringEdges.end		= nil
+		} else if gestureRecognizer.state == .ended {
+			measuringEdges.end		= coordinate
+			
+			guard let begin = measuringEdges.begin, let end = measuringEdges.end else {
+				return
+			}
+			
+			let distance = NSNumber(value: MKMapPoint(begin).distance(to: MKMapPoint(end)))
+			let nf = NumberFormatter()
+			nf.numberStyle = .decimal
+			nf.maximumFractionDigits = 2
+			infoToolStack.display(text: "\(nf.string(from: distance) ?? "0") m", withLabel: "Distance", remain: 5)
+		}
+	}
+	
+	func generateIMDFOverlays() -> Void {
 		removeOverlays(overlays)
 		removeAnnotations(annotations)
 		
-		measuringEdges = []
+		measuringEdges = (begin: nil, end: nil)
 		
 		//
 		// Render anchors
@@ -163,31 +192,13 @@ class MCMapCanvas: MKMapView {
 		}
 	}
 	
-	func addMeasuringEdge(at location: CLLocationCoordinate2D) -> Void {
-		let mapPoint = MKMapPoint(location)
-		measuringEdges.append(mapPoint)
-		
-		removeRulerOverlay()
-		
-		let rulerLine = FlexibleRulerPolyline(points: &measuringEdges, count: measuringEdges.count)
-		addOverlay(rulerLine)
-	}
-	
-	func removeRulerOverlay() -> Void {
-		overlays.forEach { (overlay) in
-			if let overlay = overlay as? FlexibleRulerPolyline {
-				self.removeOverlay(overlay)
-			}
-		}
-	}
-	
 	func saveAndClose() -> Void {
-		toolPalette.closeToolStack.showInfoLabel(withText: "Saving...")
+		closeToolStack.showInfoLabel(withText: "Saving...")
 		
 		try? project.save()
 		try? project.imdfArchive.save(.anchor)
 
-		toolPalette.closeToolStack.hideInfoLabel()
+		closeToolStack.hideInfoLabel()
 		
 		controller.dismiss(animated: true, completion: nil)
 	}
