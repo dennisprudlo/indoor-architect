@@ -22,6 +22,7 @@
 		814EBB74241D626E0028225C /* RulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB73241D626E0028225C /* RulerView.swift */; };
 		814EBB76241D6A170028225C /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB75241D6A170028225C /* Spacing.swift */; };
 		814EBB78241D71150028225C /* MCDistanceRuler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB77241D71150028225C /* MCDistanceRuler.swift */; };
+		814EBB7A241D7FBE0028225C /* Mathematics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB79241D7FBE0028225C /* Mathematics.swift */; };
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
 		816DC53E23F0679900E1471D /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootController.swift */; };
@@ -92,6 +93,7 @@
 		814EBB73241D626E0028225C /* RulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerView.swift; sourceTree = "<group>"; };
 		814EBB75241D6A170028225C /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814EBB77241D71150028225C /* MCDistanceRuler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDistanceRuler.swift; sourceTree = "<group>"; };
+		814EBB79241D7FBE0028225C /* Mathematics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mathematics.swift; sourceTree = "<group>"; };
 		816DC52223F0606B00E1471D /* Indoor Architect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Architect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816DC52523F0606B00E1471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				81F67DE123F1991F006B9187 /* DateUtils.swift */,
 				81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */,
 				8141C7DB23FAE980008AC7DD /* Constraints.swift */,
+				814EBB79241D7FBE0028225C /* Mathematics.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */,
 				81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */,
 				8174854C24182A4400EE3E12 /* DetailTableViewController.swift in Sources */,
+				814EBB7A241D7FBE0028225C /* Mathematics.swift in Sources */,
 				81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */,
 				81D580BC240C0ADD0049B17F /* ProjectAddressController.swift in Sources */,
 				81A58E03240AD1E1008873E9 /* ProjectDeleteSection.swift in Sources */,
