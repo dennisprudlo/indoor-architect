@@ -25,10 +25,6 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		canvas.edgesToSuperview()
 	}
 	
-	override func viewDidLayoutSubviews() {
-		canvas.distanceRuler.ruler.frame = canvas.frame
-	}
-	
 	func present(forProject project: IMDFProject) -> Void {
 		self.project = project
 		self.modalPresentationStyle = .fullScreen

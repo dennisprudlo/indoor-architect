@@ -17,7 +17,6 @@ class MCDistanceRuler {
 		}
 		didSet {
 			canvas.addSubview(ruler)
-			ruler.frame = CGRect(x: 0, y: 0, width: 500, height: 500)
 		}
 	}
 	
@@ -40,10 +39,6 @@ class MCDistanceRuler {
 		
 		if recognizer.state == .began {
 			startLocation	= coordinate
-		}
-		
-		if recognizer.state == .ended {
-			
 		}
 		
 		endLocation		= coordinate
@@ -76,6 +71,9 @@ class MCDistanceRuler {
 	
 	/// Holds the native map views gesture recognizers so the user can measure with a pan gesture
 	func holdRecognizersForMeasuring() -> Void {
+		canvas.panGestureRecognizer.isEnabled = true
+		ruler.frame = canvas.frame
+		
 		guard let gestureRecognizers = canvas.subviews.first?.gestureRecognizers else {
 			return
 		}
@@ -88,6 +86,9 @@ class MCDistanceRuler {
 	
 	/// Releases the native map views gesture recognizers so the user can use the pan gesture to move around
 	func releaseRecognizersForMeasuring() -> Void {
+		canvas.panGestureRecognizer.isEnabled = false
+		ruler.frame = CGRect.zero
+		
 		guard let gestureRecognizers = canvas.subviews.first?.gestureRecognizers else {
 			return
 		}
@@ -101,7 +102,9 @@ class MCDistanceRuler {
 	func invalidate() -> Void {
 		startLocation	= nil
 		endLocation		= nil
+		ruler.edges		= nil
+		ruler.frame		= CGRect.zero
 		
-		ruler.frame = CGRect.zero
+		ruler.setNeedsDisplay()
 	}
 }

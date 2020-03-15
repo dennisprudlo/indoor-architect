@@ -14,7 +14,7 @@ class RulerView: UIView {
 	
 	typealias Edges = (origin: CGPoint, target: CGPoint, lowerOrigin: CGPoint, lowerTarget: CGPoint)
 	
-	private var edges: Edges?
+	var edges: Edges?
 	
 	init() {
 		super.init(frame: CGRect.zero)
@@ -36,29 +36,23 @@ class RulerView: UIView {
 	}
 	
 	func drawRulerPath(context: CGContext, _ edges: Edges) -> Void {
-		context.move(to: edges.origin)
-		context.addLine(to: edges.target)
-		context.addLine(to: edges.lowerTarget)
-		context.addLine(to: edges.lowerOrigin)
-		context.closePath()
 		
-		context.setStrokeColor(UIColor.blue.cgColor)
-		context.setLineWidth(5)
+		let path = CGMutablePath()
+		path.move(to: edges.origin)
+		path.addLine(to: edges.target)
+		path.addLine(to: edges.lowerTarget)
+		path.addLine(to: edges.lowerOrigin)
+		path.closeSubpath()
+		
+		context.setStrokeColor(UIColor.systemGray.cgColor)
+		context.setFillColor(UIColor.systemGray.withAlphaComponent(0.7).cgColor)
+		context.setLineWidth(1)
+		
+		context.addPath(path)
+		context.fillPath()
+		
+		context.addPath(path)
 		context.strokePath()
-		let size = CGSize(width: 5, height: 5)
-		context.setFillColor(UIColor.green.cgColor)
-		
-		context.fill([
-			CGRect(origin: edges.origin, size: size),
-			CGRect(origin: edges.target, size: size)
-		])
-		
-		context.setFillColor(UIColor.red.cgColor)
-		
-		context.fill([
-			CGRect(origin: edges.lowerOrigin, size: size),
-			CGRect(origin: edges.lowerTarget, size: size)
-		])
 	}
 	
 	func transform(from start: CGPoint, to end: CGPoint) -> Void {
