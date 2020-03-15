@@ -18,7 +18,7 @@ class PointAnnotationView: MKAnnotationView {
 		super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
 		
 		self.frame				= CGRect(x: self.frame.origin.x - (diameter / 2), y: self.frame.origin.y - (diameter / 2), width: diameter, height: diameter)
-		self.backgroundColor	= Color.anchorPointAnnotationTint
+		self.backgroundColor	= Color.anchorPointAnnotationTint.withAlphaComponent(0.8)
 		self.layer.cornerRadius	= diameter / 2
 		self.layer.borderWidth	= borderWidth
 		self.layer.borderColor	= Color.anchorPointAnnotationBorder.cgColor
