@@ -69,12 +69,12 @@ class MCMapCanvas: MKMapView {
 		])
 		
 		//
-		// Configure the different palettes and overlay
-		configureToolStackOverlay()
-		
-		//
 		// Configure the distance ruler component
 		distanceRuler.canvas = self
+		
+		//
+		// Configure the different palettes and overlay
+		configureToolStackOverlay()
 		
 		//
 		// Add custom gesture recognizer

@@ -11,7 +11,6 @@
 		8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */; };
 		8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC8023F9982800696FCA /* ScrollViewController.swift */; };
 		813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */; };
-		813E065E241CE3760015E6B9 /* RulerRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E065D241CE3760015E6B9 /* RulerRenderer.swift */; };
 		8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */; };
 		8141C7DA23FAD075008AC7DD /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D923FAD075008AC7DD /* Style.swift */; };
 		8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7DB23FAE980008AC7DD /* Constraints.swift */; };
@@ -82,7 +81,6 @@
 		8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEProjectTableViewCell.swift; sourceTree = "<group>"; };
 		8120AC8023F9982800696FCA /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCanvasViewController.swift; sourceTree = "<group>"; };
-		813E065D241CE3760015E6B9 /* RulerRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerRenderer.swift; sourceTree = "<group>"; };
 		8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverInfoViewController.swift; sourceTree = "<group>"; };
 		8141C7D923FAD075008AC7DD /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		8141C7DB23FAE980008AC7DD /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 		81AE8E4E24193C6E007C8093 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				81AE8E5C241C1FE7007C8093 /* Polylines */,
 				81AE8E4F24193C77007C8093 /* Annotations */,
 				814EBB77241D71150028225C /* MCDistanceRuler.swift */,
 			);
@@ -316,14 +313,6 @@
 				814EBB73241D626E0028225C /* RulerView.swift */,
 			);
 			path = "Map Canvas";
-			sourceTree = "<group>";
-		};
-		81AE8E5C241C1FE7007C8093 /* Polylines */ = {
-			isa = PBXGroup;
-			children = (
-				813E065D241CE3760015E6B9 /* RulerRenderer.swift */,
-			);
-			path = Polylines;
 			sourceTree = "<group>";
 		};
 		81D580A8240AEEB20049B17F /* IMDF Archive */ = {
@@ -587,7 +576,6 @@
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
 				81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */,
 				81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */,
-				813E065E241CE3760015E6B9 /* RulerRenderer.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
 				81D580AE240AF0BB0049B17F /* Manifest.swift in Sources */,
 				81D580B6240BEDA60049B17F /* Extension.swift in Sources */,
