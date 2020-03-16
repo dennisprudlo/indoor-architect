@@ -12,7 +12,15 @@ import CoreLocation
 
 class MCShapeAssembler {
 	
+	var canvas: MCMapCanvas
+	
+	var activeOverlay: MKOverlay?
+	
 	var coordinates: [CLLocationCoordinate2D] = []
+	
+	init(in canvas: MCMapCanvas) {
+		self.canvas = canvas
+	}
 	
 	func add(_ coordinate: CLLocationCoordinate2D) -> Void {
 		coordinates.append(coordinate)
@@ -20,5 +28,23 @@ class MCShapeAssembler {
 	
 	func collect() -> [MKShape & MKGeoJSONObject] {
 		return []
+	}
+	
+	func renderActiveOverlay(overlay: MKOverlay) -> Void {
+		print(canvas.overlays)
+		if let activeOverlay = activeOverlay {
+			print(activeOverlay)
+			canvas.removeOverlay(activeOverlay)
+			print(canvas.overlays)
+		}
+		
+		canvas.addOverlay(overlay)
+		activeOverlay = overlay
+	}
+	
+	func removeActiveOverlay() -> Void {
+		if let activeOverlay = activeOverlay {
+			canvas.removeOverlay(activeOverlay)
+		}
 	}
 }

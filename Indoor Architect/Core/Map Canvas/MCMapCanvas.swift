@@ -51,6 +51,8 @@ class MCMapCanvas: MKMapView {
 		case measure
 	}
 	
+	var activeDrawingOverlay: MKOverlay?
+	
 	var polygonAssembler: MCPolygonAssembler?
 	
 	var distanceRuler = MCDistanceRuler()
@@ -151,6 +153,8 @@ class MCMapCanvas: MKMapView {
 		selectedDrawingTool = drawingTool
 		infoToolStack.display(text: "\(drawingTool)".capitalized, withLabel: "Drawing Tool")
 		
+		discardActiveShapeAssembler()
+		
 		controller.mapCanvas(self, didSwitch: drawingTool)
 	}
 
@@ -227,6 +231,14 @@ class MCMapCanvas: MKMapView {
 		}
 		
 		return nil
+	}
+	
+	func discardActiveShapeAssembler() -> Void {
+		getActiveShapeAssembler()?.removeActiveOverlay()
+		
+		polygonAssembler = nil
+		
+		hideConfirmShapeButton()
 	}
 	
 	func showConfirmShapeButton() -> Void {

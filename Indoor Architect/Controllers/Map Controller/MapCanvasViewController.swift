@@ -48,14 +48,14 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		canvas.coordinateToolStack.setCoordinate(location)
 		
 		if drawingTool == .anchor {
-			let pointAssembler = MCPointAssembler()
+			let pointAssembler = MCPointAssembler(in: canvas)
 			pointAssembler.add(location)
 			canvas.addAnchor(pointAssembler.collect())
 		}
 		
 		if drawingTool == .polygon {
 			if canvas.polygonAssembler == nil {
-				canvas.polygonAssembler = MCPolygonAssembler()
+				canvas.polygonAssembler = MCPolygonAssembler(in: canvas)
 				canvas.showConfirmShapeButton()
 			}
 			
@@ -80,6 +80,7 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 				renderer = MKPolygonRenderer(overlay: overlay)
 				renderer.strokeColor = UIColor.red
 				renderer.fillColor = UIColor.red.withAlphaComponent(0.3)
+				renderer.lineWidth = 2
 			default:
 				return MKOverlayRenderer(overlay: overlay)
 		}

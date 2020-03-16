@@ -11,12 +11,12 @@ import MapKit
 
 class MCPolygonAssembler: MCShapeAssembler {
 	
-	var polygon: MKPolygon?
-	
 	override func add(_ coordinate: CLLocationCoordinate2D) -> Void {
 		super.add(coordinate)
 		
-		polygon = collect().first as? MKPolygon
+		if let overlay = collect().first as? MKPolygon {
+			renderActiveOverlay(overlay: overlay)
+		}
 	}
 	
 	override func collect() -> [MKShape & MKGeoJSONObject] {

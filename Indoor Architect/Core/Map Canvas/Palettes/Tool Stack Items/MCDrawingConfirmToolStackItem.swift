@@ -46,7 +46,8 @@ class MCDrawingConfirmToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 				break
 		}
 		
-		canvas.hideConfirmShapeButton()
+		assembler.removeActiveOverlay()
+		canvas.discardActiveShapeAssembler()
 	}
 	
 }
