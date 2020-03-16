@@ -17,11 +17,12 @@ enum Icon {
 	static let link		= UIImage(systemName: "link")!
 	static let help		= UIImage(systemName: "questionmark.circle")!
 	
-	static let toolClose	= UIImage(systemName: "xmark")!
+	static let toolClose		= UIImage(systemName: "xmark")!
+	static let toolConfirmShape	= UIImage(systemName: "checkmark")
 	
-	static let drawingToolPointer = UIImage(systemName: "hand.draw")!
-	static let drawingToolAnchor = UIImage(systemName: "pin.fill")!
-	static let drawingToolPolyline = UIImage(systemName: "italic")!
-	static let drawingToolPolygon = UIImage(systemName: "skew")!
-	static let drawingToolMeasure = UIImage(systemName: "perspective")!
+	static let drawingToolPointer	= UIImage(systemName: "hand.draw")!
+	static let drawingToolAnchor	= UIImage(systemName: "pin.fill")!
+	static let drawingToolPolyline	= UIImage(systemName: "italic")!
+	static let drawingToolPolygon	= UIImage(systemName: "skew")!
+	static let drawingToolMeasure	= UIImage(systemName: "perspective")!
 }

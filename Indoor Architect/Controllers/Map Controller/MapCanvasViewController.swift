@@ -56,15 +56,10 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		if drawingTool == .polygon {
 			if canvas.polygonAssembler == nil {
 				canvas.polygonAssembler = MCPolygonAssembler()
+				canvas.showConfirmShapeButton()
 			}
 			
 			canvas.polygonAssembler?.add(location)
-			
-			if canvas.polygonAssembler?.coordinates.count ?? 0 == 4 {
-				if let geo = canvas.polygonAssembler?.collect() {
-					canvas.addVenue(geo)
-				}
-			}
 		}
 	}
 	

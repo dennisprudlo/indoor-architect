@@ -19,10 +19,11 @@ class MCMapCanvas: MKMapView {
 	/// The project which is being handles in the map
 	var project: IMDFProject!
 	
-	var closeToolStack		= MCCloseToolStack()
-	var coordinateToolStack	= MCCoordinateToolStack()
-	var infoToolStack		= MCSlidingInfoToolStack()
-	var drawingToolStack	= MCToolStack(forAxis: .vertical)
+	var closeToolStack			= MCCloseToolStack()
+	var coordinateToolStack		= MCCoordinateToolStack()
+	var infoToolStack			= MCSlidingInfoToolStack()
+	var drawingToolStack		= MCToolStack(forAxis: .vertical)
+	var drawingConfirmToolStack = MCToolStack(forAxis: .vertical)
 
 	
 	/// The currently selected drawing tool
@@ -97,10 +98,11 @@ class MCMapCanvas: MKMapView {
 		
 		//
 		// Set the reference to the canvas for all tool stacks
-		closeToolStack.canvas		= self
-		coordinateToolStack.canvas	= self
-		drawingToolStack.canvas		= self
-		infoToolStack.canvas		= self
+		closeToolStack.canvas			= self
+		coordinateToolStack.canvas		= self
+		infoToolStack.canvas			= self
+		drawingToolStack.canvas			= self
+		drawingConfirmToolStack.canvas	= self
 		
 		//
 		// Add all drawing tool stack items to the drawing tool stack
@@ -110,10 +112,17 @@ class MCMapCanvas: MKMapView {
 		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polygon))
 		drawingToolStack.addItem(MCDrawingToolStackItem(for: .measure))
 		
+		//
+		// Add the drawing confirm button for the tool stack
+		drawingConfirmToolStack.addItem(MCDrawingConfirmToolStackItem())
+		drawingConfirmToolStack.isHidden = true
+		
 		let topEdgePalette			= UIStackView(arrangedSubviews: [closeToolStack, coordinateToolStack])
+		topEdgePalette.axis			= .horizontal
 		topEdgePalette.spacing		= Spacing.mapCanvasToolPalette
 		
-		let leadingEdgePalette		= UIStackView(arrangedSubviews: [drawingToolStack])
+		let leadingEdgePalette		= UIStackView(arrangedSubviews: [drawingToolStack, drawingConfirmToolStack])
+		leadingEdgePalette.axis		= .vertical
 		leadingEdgePalette.spacing	= Spacing.mapCanvasToolPalette
 		
 		topEdgePalette.autolayout()
@@ -201,5 +210,24 @@ class MCMapCanvas: MKMapView {
 		closeToolStack.hideInfoLabel()
 		
 		controller.dismiss(animated: true, completion: nil)
+	}
+	
+	/// Returns the currently active shape assembler
+	///
+	/// This function can return `nil` if no shape assembler is currently active and awaiting further orders
+	func getActiveShapeAssembler() -> MCShapeAssembler? {
+		if let polygonAssembler = polygonAssembler {
+			return polygonAssembler
+		}
+		
+		return nil
+	}
+	
+	func showConfirmShapeButton() -> Void {
+		drawingConfirmToolStack.isHidden = false
+	}
+	
+	func hideConfirmShapeButton() -> Void {
+		drawingConfirmToolStack.isHidden = true
 	}
 }

@@ -11,10 +11,6 @@ import MapKit
 
 class MCPolygonAssembler: MCShapeAssembler {
 	
-	override func add(_ coordinate: CLLocationCoordinate2D) -> [CLLocationCoordinate2D] {		
-		return super.add(coordinate)
-	}
-	
 	override func collect() -> [MKShape & MKGeoJSONObject] {
 		let polygon = MKPolygon(coordinates: coordinates, count: coordinates.count)
 		return [polygon]
