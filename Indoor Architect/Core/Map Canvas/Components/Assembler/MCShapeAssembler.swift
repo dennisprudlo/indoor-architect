@@ -14,11 +14,8 @@ class MCShapeAssembler {
 	
 	var coordinates: [CLLocationCoordinate2D] = []
 	
-	@discardableResult
-	func add(_ coordinate: CLLocationCoordinate2D) -> [CLLocationCoordinate2D] {
+	func add(_ coordinate: CLLocationCoordinate2D) -> Void {
 		coordinates.append(coordinate)
-		
-		return coordinates
 	}
 	
 	func collect() -> [MKShape & MKGeoJSONObject] {

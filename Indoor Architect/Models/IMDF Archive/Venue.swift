@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 import CoreLocation
 
 class Venue: Feature<Venue.Properties> {

@@ -41,11 +41,6 @@ class IMDFArchive {
 		self.addresses		= try IMDFArchive.decode(Address.self, file: .address, forProjectWithUuid: uuid)
 		self.venues			= try IMDFArchive.decode(Venue.self, file: .venue, forProjectWithUuid: uuid)
 		self.anchors		= try IMDFArchive.decode(Anchor.self, file: .anchor, forProjectWithUuid: uuid)
-		
-		if let venue = self.venues.first {
-			print(venue.geometry)
-			print(venue.transformPolygonGeometry())
-		}
 	}
 	
 	/// Decodes the features from the corresponding GeoJSON file in a project with the given UUID

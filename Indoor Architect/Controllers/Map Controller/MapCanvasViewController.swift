@@ -73,7 +73,18 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 	}
 	
 	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-		return MKOverlayRenderer()
+		let renderer: MKOverlayPathRenderer
+		
+		switch overlay {
+			case is MKPolygon:
+				renderer = MKPolygonRenderer(overlay: overlay)
+				renderer.strokeColor = UIColor.red
+				renderer.fillColor = UIColor.red.withAlphaComponent(0.3)
+			default:
+				return MKOverlayRenderer(overlay: overlay)
+		}
+		
+		return renderer
 	}
 	
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

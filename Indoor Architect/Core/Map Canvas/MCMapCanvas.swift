@@ -176,6 +176,12 @@ class MCMapCanvas: MKMapView {
 		//
 		// Render anchors
 		project.imdfArchive.anchors.forEach { self.addAnnotation(IMDFAnchorAnnotation(coordinate: $0.getCoordinates(), anchor: $0)) }
+		
+		project.imdfArchive.venues.forEach { (venue) in
+			if let polygon = venue.geometry.first as? MKPolygon {
+				self.addOverlay(polygon)
+			}
+		}
 	}
 	
 	func addAnchor(_ geometry: [MKShape & MKGeoJSONObject]) -> Void {
@@ -195,9 +201,9 @@ class MCMapCanvas: MKMapView {
 		let venue = Venue(withIdentifier: uuid, properties: Venue.Properties(), geometry: geometry, type: .venue)
 		project.imdfArchive.venues.append(venue)
 		
-//		if let geometry = venue.geometry.first {
-//			addAnnotation(geometry)
-//		}
+		if let polygon = geometry.first as? MKPolygon {
+			addOverlay(polygon)
+		}
 	}
 	
 	func saveAndClose() -> Void {
