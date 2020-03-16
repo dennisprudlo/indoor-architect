@@ -167,14 +167,11 @@ class MCMapCanvas: MKMapView {
 		project.imdfArchive.anchors.forEach { self.addAnnotation(IMDFAnchorAnnotation(coordinate: $0.getCoordinates(), anchor: $0)) }
 	}
 	
-	func addAnchor(at location: CLLocationCoordinate2D) -> Void {
+	func addAnchor(_ geometry: [MKShape & MKGeoJSONObject]) -> Void {
 		let uuid = project.imdfArchive.getUnusedGlobalUuid()
 		let properties = Anchor.Properties(addressId: nil, unitId: nil)
 		
-		let point = MKPointAnnotation()
-		point.coordinate = location
-		
-		let anchor = Anchor(withIdentifier: uuid, properties: properties, geometry: [point], type: .anchor)
+		let anchor = Anchor(withIdentifier: uuid, properties: properties, geometry: geometry, type: .anchor)
 		project.imdfArchive.anchors.append(anchor)
 		
 		if let geometry = anchor.geometry.first {

@@ -22,6 +22,8 @@
 		814EBB76241D6A170028225C /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB75241D6A170028225C /* Spacing.swift */; };
 		814EBB78241D71150028225C /* MCDistanceRuler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB77241D71150028225C /* MCDistanceRuler.swift */; };
 		814EBB7A241D7FBE0028225C /* Mathematics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB79241D7FBE0028225C /* Mathematics.swift */; };
+		8153BB20241FB76700FF6335 /* MCPointAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB1F241FB76700FF6335 /* MCPointAssembler.swift */; };
+		8153BB22241FB78B00FF6335 /* MCShapeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB21241FB78B00FF6335 /* MCShapeAssembler.swift */; };
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
 		816DC53E23F0679900E1471D /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootController.swift */; };
@@ -92,6 +94,8 @@
 		814EBB75241D6A170028225C /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814EBB77241D71150028225C /* MCDistanceRuler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDistanceRuler.swift; sourceTree = "<group>"; };
 		814EBB79241D7FBE0028225C /* Mathematics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mathematics.swift; sourceTree = "<group>"; };
+		8153BB1F241FB76700FF6335 /* MCPointAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPointAssembler.swift; sourceTree = "<group>"; };
+		8153BB21241FB78B00FF6335 /* MCShapeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCShapeAssembler.swift; sourceTree = "<group>"; };
 		816DC52223F0606B00E1471D /* Indoor Architect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Architect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816DC52523F0606B00E1471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +187,15 @@
 				81FC47E22409AB900078551E /* Palettes */,
 			);
 			path = "Map Canvas";
+			sourceTree = "<group>";
+		};
+		8153BB1E241FB75A00FF6335 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				8153BB1F241FB76700FF6335 /* MCPointAssembler.swift */,
+				8153BB21241FB78B00FF6335 /* MCShapeAssembler.swift */,
+			);
+			path = Assembler;
 			sourceTree = "<group>";
 		};
 		816DC51923F0606B00E1471D = {
@@ -284,6 +297,7 @@
 		81AE8E4E24193C6E007C8093 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8153BB1E241FB75A00FF6335 /* Assembler */,
 				81AE8E4F24193C77007C8093 /* Annotations */,
 				814EBB77241D71150028225C /* MCDistanceRuler.swift */,
 			);
@@ -538,12 +552,14 @@
 				81D580B0240B02560049B17F /* ProjectArchiveSection.swift in Sources */,
 				814EBB78241D71150028225C /* MCDistanceRuler.swift in Sources */,
 				81F67DB323F06F6E006B9187 /* Application.swift in Sources */,
+				8153BB22241FB78B00FF6335 /* MCShapeAssembler.swift in Sources */,
 				8141C7E023FAEE15008AC7DD /* MCMapCanvas.swift in Sources */,
 				81D580AC240AF0350049B17F /* IMDFArchive.swift in Sources */,
 				81F67DAE23F06A4B006B9187 /* MasterController.swift in Sources */,
 				8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */,
 				81F67DBF23F0A36A006B9187 /* Icon.swift in Sources */,
 				81F67DDE23F19458006B9187 /* IMDFProject.swift in Sources */,
+				8153BB20241FB76700FF6335 /* MCPointAssembler.swift in Sources */,
 				81A58E05240ADBC5008873E9 /* ProjectMetaInfoSection.swift in Sources */,
 				810D0D0123F3284100DC5D74 /* IMDFProjectManifest.swift in Sources */,
 				81AE8E5124193C90007C8093 /* IMDFAnchorAnnotation.swift in Sources */,

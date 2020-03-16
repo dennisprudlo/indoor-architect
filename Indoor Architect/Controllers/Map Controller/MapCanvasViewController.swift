@@ -48,7 +48,9 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		canvas.coordinateToolStack.setCoordinate(location)
 		
 		if drawingTool == .anchor {
-			canvas.addAnchor(at: location)
+			let pointAssembler = MCPointAssembler()
+			pointAssembler.add(location)
+			canvas.addAnchor(pointAssembler.collect())
 		}
 	}
 	
