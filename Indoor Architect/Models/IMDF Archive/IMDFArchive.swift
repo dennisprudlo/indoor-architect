@@ -26,6 +26,9 @@ class IMDFArchive {
 	/// The IMDF address features
 	var addresses: [Address]
 	
+	/// The IMDF venue features
+	var venues: [Venue]
+	
 	/// The IMDF anchor features
 	var anchors: [Anchor]
 	
@@ -36,7 +39,13 @@ class IMDFArchive {
 		self.manifest		= try Manifest.decode(fromProjectWith: uuid)
 		
 		self.addresses		= try IMDFArchive.decode(Address.self, file: .address, forProjectWithUuid: uuid)
+		self.venues			= try IMDFArchive.decode(Venue.self, file: .venue, forProjectWithUuid: uuid)
 		self.anchors		= try IMDFArchive.decode(Anchor.self, file: .anchor, forProjectWithUuid: uuid)
+		
+		if let venue = self.venues.first {
+			print(venue.geometry)
+			print(venue.transformPolygonGeometry())
+		}
 	}
 	
 	/// Decodes the features from the corresponding GeoJSON file in a project with the given UUID
@@ -91,6 +100,8 @@ class IMDFArchive {
 				try self.enocde(self.addresses, of: Address.Properties.self, in: .address)
 			case .anchor:
 				try self.enocde(self.anchors, of: Anchor.Properties.self, in: .anchor)
+			case .venue:
+				try self.enocde(self.venues, of: Venue.Properties.self, in: .venue)
 			default:
 				break
 		}

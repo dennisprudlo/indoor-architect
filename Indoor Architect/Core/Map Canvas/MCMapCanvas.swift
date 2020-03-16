@@ -50,6 +50,8 @@ class MCMapCanvas: MKMapView {
 		case measure
 	}
 	
+	var polygonAssembler: MCPolygonAssembler?
+	
 	var distanceRuler = MCDistanceRuler()
 	
 	var panGestureRecognizer: UIPanGestureRecognizer!
@@ -169,9 +171,8 @@ class MCMapCanvas: MKMapView {
 	
 	func addAnchor(_ geometry: [MKShape & MKGeoJSONObject]) -> Void {
 		let uuid = project.imdfArchive.getUnusedGlobalUuid()
-		let properties = Anchor.Properties(addressId: nil, unitId: nil)
 		
-		let anchor = Anchor(withIdentifier: uuid, properties: properties, geometry: geometry, type: .anchor)
+		let anchor = Anchor(withIdentifier: uuid, properties: Anchor.Properties(), geometry: geometry, type: .anchor)
 		project.imdfArchive.anchors.append(anchor)
 		
 		if let geometry = anchor.geometry.first {
@@ -179,11 +180,23 @@ class MCMapCanvas: MKMapView {
 		}
 	}
 	
+	func addVenue(_ geometry: [MKShape & MKGeoJSONObject]) -> Void {
+		let uuid = project.imdfArchive.getUnusedGlobalUuid()
+		
+		let venue = Venue(withIdentifier: uuid, properties: Venue.Properties(), geometry: geometry, type: .venue)
+		project.imdfArchive.venues.append(venue)
+		
+//		if let geometry = venue.geometry.first {
+//			addAnnotation(geometry)
+//		}
+	}
+	
 	func saveAndClose() -> Void {
 		closeToolStack.showInfoLabel(withText: "Saving...")
 		
 		try? project.save()
 		try? project.imdfArchive.save(.anchor)
+		try? project.imdfArchive.save(.venue)
 
 		closeToolStack.hideInfoLabel()
 		

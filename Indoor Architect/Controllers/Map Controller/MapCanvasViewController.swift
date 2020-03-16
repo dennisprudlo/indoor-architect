@@ -52,6 +52,20 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 			pointAssembler.add(location)
 			canvas.addAnchor(pointAssembler.collect())
 		}
+		
+		if drawingTool == .polygon {
+			if canvas.polygonAssembler == nil {
+				canvas.polygonAssembler = MCPolygonAssembler()
+			}
+			
+			canvas.polygonAssembler?.add(location)
+			
+			if canvas.polygonAssembler?.coordinates.count ?? 0 == 4 {
+				if let geo = canvas.polygonAssembler?.collect() {
+					canvas.addVenue(geo)
+				}
+			}
+		}
 	}
 	
 	func mapCanvas(_ canvas: MCMapCanvas, didSwitch drawingTool: MCMapCanvas.DrawingTool) {

@@ -15,8 +15,13 @@ protocol CodableFeature: Encodable {
 }
 
 struct IMDFPointGeometry: Encodable {
-	let type: String
+	let type: String = "Point"
 	let coordinates: [Double]
+}
+
+struct IMDFPolygonGeometry: Encodable {
+	let type: String = "Polygon"
+	let coordinates: [[[Double]]]
 }
 
 class Feature<Properties: Codable>: NSObject, CodableFeature {
@@ -84,7 +89,13 @@ class Feature<Properties: Codable>: NSObject, CodableFeature {
 			let transformedGeometry: String? = nil
 			try container.encode(transformedGeometry, forKey: .geometry)
 		} else {
-			try container.encode(self.transformPointGeometry(), forKey: .geometry)
+			
+			switch type {
+				case .anchor:	try container.encode(self.transformPointGeometry(), forKey: .geometry)
+				case .venue:	try container.encode(self.transformPolygonGeometry(), forKey: .geometry)
+				default:
+					break
+			}
 		}
 		
 		//
@@ -108,6 +119,21 @@ class Feature<Properties: Codable>: NSObject, CodableFeature {
 	
 	func transformPointGeometry() -> IMDFPointGeometry {
 		let coordinates = geometry.first?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
-		return IMDFPointGeometry(type: "Point", coordinates: [coordinates.longitude, coordinates.latitude])
+		return IMDFPointGeometry(coordinates: [coordinates.longitude, coordinates.latitude])
+	}
+	
+	func transformPolygonGeometry() -> IMDFPolygonGeometry {
+		guard let polygon = geometry.first as? MKPolygon else {
+			return IMDFPolygonGeometry(coordinates: [])
+		}
+		
+		var coordinates = [CLLocationCoordinate2D](repeating: kCLLocationCoordinate2DInvalid, count: polygon.pointCount)
+		polygon.getCoordinates(&coordinates, range: NSRange(location: 0, length: polygon.pointCount))
+		
+		let doubleCoordinates = coordinates.map { (coordinate) -> [Double] in
+			return [coordinate.longitude, coordinate.latitude]
+		}
+		
+		return IMDFPolygonGeometry(coordinates: [doubleCoordinates])
 	}
 }
