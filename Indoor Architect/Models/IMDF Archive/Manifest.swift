@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Manifest {
+class Manifest: Codable {
 	
 	/// The version of the IMDF data format used in this project
 	var version: String			= Application.imdfVersion
@@ -23,66 +23,35 @@ class Manifest {
 	let generatedBy: String		= Application.versionIdentifier
 	
 	/// The list of extensions used in this project
-	var extensions: [Extension]	= []
+	var extensions: [Extension]?
 	
-	/// Decodes the archive manifest from the project with the given UUID
-	/// - Parameter uuid: The projects UUID
-	static func decode(fromProjectWith uuid: UUID) throws -> Manifest {
-		let manifestUrl = ProjectManager.shared.url(forPathComponent: .archive(feature: .manifest), inProjectWithUuid: uuid)
-		
-		guard let contents = FileManager.default.contents(atPath: manifestUrl.path) else {
-			throw IMDFDecodingError.corruptedFile
-		}
-		
-		guard let object = try JSONSerialization.jsonObject(with: contents, options: .fragmentsAllowed) as? [String: Any] else {
-			throw IMDFDecodingError.malformedManifest
-		}
-		
-		//
-		// Create a clean manifest
-		let manifest = Manifest()
-		
-		//
-		// Override the version
-		if let version = object["version"] as? String {
-			manifest.version = version
-		}
-		
-		//
-		// Override the created at date
-		if let date = object["date"] as? String, let instance = DateUtils.instance(iso8601: date) {
-			manifest.created = instance
-		}
-		
-		//
-		// Override the default language
-		if let language	= object["language"] as? String {
-			manifest.language = language
-		}
-		
-		//
-		// Add the extensions
-		if let extensions = object["extensions"] as? [String] {
-			extensions.forEach { (extensionIdentifier) in
-				if let extensionToAdd = Extension.make(fromIdentifier: extensionIdentifier) {
-					manifest.extensions.append(extensionToAdd)
-				}
-			}
-		}
-		
-		return manifest
+	enum CodingKeys: String, CodingKey {
+		case version
+		case created
+		case language
+		case generatedBy
+		case extensions
 	}
 	
-	/// Encodes the IMDF manifest as JSON data
-	func encode() throws -> Data {
-		return try JSONSerialization.data(withJSONObject: [
-			"version":		version,
-			"created":		DateUtils.iso8601(for: created),
-			"language":		language,
-			"generated_by":	generatedBy,
-			"extensions":	extensions.map({ (imdfExtension) -> String in
-				return imdfExtension.identifier
-			})
-		], options: .prettyPrinted)
+	func encode(to encoder: Encoder) throws {
+		var container = encoder.container(keyedBy: CodingKeys.self)
+		try container.encode(version,		forKey: .version)
+		try container.encode(created,		forKey: .created)
+		try container.encode(language,		forKey: .language)
+		try container.encode(generatedBy,	forKey: .generatedBy)
+		try container.encode(extensions,	forKey: .extensions)
+	}
+	
+	init() {
+		// Empty initializer uses the default values
+	}
+	
+	required init(from decoder: Decoder) throws {
+		let container = try decoder.container(keyedBy: CodingKeys.self)
+		
+		version		= try container.decode(String.self, forKey: .version)
+		created		= try container.decode(Date.self, forKey: .created)
+		language	= try container.decode(String.self, forKey: .language)
+		extensions	= try container.decode([Extension]?.self, forKey: .extensions)
 	}
 }

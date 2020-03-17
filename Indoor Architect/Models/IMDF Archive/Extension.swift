@@ -45,6 +45,48 @@ struct Extension: Codable {
 		self.version	= version
 	}
 	
+	init(from decoder: Decoder) throws {
+		let container = try decoder.singleValueContainer()
+		let identifier = try container.decode(String.self)
+		
+		let parts = identifier.split(separator: ":")
+		
+		//
+		// We expect exactly four colon-separated parts
+		if parts.count != 4 {
+			throw DecodingError.dataCorruptedError(in: container, debugDescription: "The identifier must have four colon-separatable parts.")
+		}
+		
+		//
+		// The last part must contain hash which is used to split the name and the version of the extension
+		let nameVersionPart = parts[3].split(separator: "#")
+		if nameVersionPart.count != 2 {
+			throw DecodingError.dataCorruptedError(in: container, debugDescription: "The last colon separated part must have two hash-separatable parts.")
+		}
+		
+		//
+		// Retrieve the raw string parts for the identifier
+		let provider	= String(parts[2])
+		let name		= String(nameVersionPart[0])
+		let version		= String(nameVersionPart[1])
+		
+		if !Extension.isValidExtensionPart(provider) {
+			throw ValidationError.invalidProvider
+		}
+		
+		if !Extension.isValidExtensionPart(name) {
+			throw ValidationError.invalidName
+		}
+		
+		if !Extension.isValidExtensionPart(version) {
+			throw ValidationError.invalidVersion
+		}
+		
+		self.provider	= provider
+		self.name		= name
+		self.version	= version
+	}
+	
 	/// Validates given extension parameters and returns an extension string if all are valid
 	/// - Parameters:
 	///   - provider: The extensions provider
@@ -66,37 +108,6 @@ struct Extension: Codable {
 		//
 		// Create an extension with the given parts
 		return Extension(provider: provider, name: name, version: version)
-	}
-	
-	/// Create an extension by a given identifier
-	///
-	/// This function is used to decode the extension identifier string in a project and split the extension in their parts
-	/// - Parameter identifier: The identifier string of the extension
-	static func make(fromIdentifier identifier: String) -> Extension? {
-		let parts = identifier.split(separator: ":")
-		
-		//
-		// We expect exactly four colon-separated parts
-		if parts.count != 4 {
-			return nil
-		}
-		
-		//
-		// The last part must contain hash which is used to split the name and the version of the extension
-		let nameVersionPart = parts[3].split(separator: "#")
-		if nameVersionPart.count != 2 {
-			return nil
-		}
-		
-		//
-		// Retrieve the raw string parts for the identifier
-		let provider	= String(parts[2])
-		let name		= String(nameVersionPart[0])
-		let version		= String(nameVersionPart[1])
-		
-		//
-		// Create the extension using the extracted parts
-		return try? Extension.make(provider: provider, name: name, version: version)
 	}
 	
 	/// Check whether the given string is a valid extension part string
@@ -150,5 +161,10 @@ struct Extension: Codable {
 	/// - Parameter character: The character to validate
 	private static func isCharacterValidMidString(_ character: Character) -> Bool {
 		return Extension.isCharacterAlphanumeric(character) || character == "." || character == "-" || character == "_"
+	}
+	
+	func encode(to encoder: Encoder) throws {
+		var container = encoder.singleValueContainer()
+		try container.encode(identifier)
 	}
 }

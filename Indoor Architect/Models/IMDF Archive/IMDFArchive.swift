@@ -36,7 +36,15 @@ class IMDFArchive {
 	/// - Parameter uuid: The UUID of the project
 	init(fromUuid uuid: UUID) throws {
 		self.projectUuid	= uuid
-		self.manifest		= try Manifest.decode(fromProjectWith: uuid)
+		
+		let manifestUrl = ProjectManager.shared.url(forPathComponent: .archive(feature: .manifest), inProjectWithUuid: uuid)
+		guard let contents = FileManager.default.contents(atPath: manifestUrl.path) else {
+			throw IMDFDecodingError.corruptedFile
+		}
+		
+		let decoder = JSONDecoder()
+		decoder.dateDecodingStrategy = .iso8601
+		self.manifest		= try decoder.decode(Manifest.self, from: contents)
 		
 		self.addresses		= try IMDFArchive.decode(Address.self, file: .address, forProjectWithUuid: uuid)
 		self.venues			= try IMDFArchive.decode(Venue.self, file: .venue, forProjectWithUuid: uuid)

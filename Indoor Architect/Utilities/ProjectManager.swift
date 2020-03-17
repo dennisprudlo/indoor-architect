@@ -162,7 +162,10 @@ class ProjectManager {
 	
 		//
 		// Create the archives manifest data representation
-		let manifestData = try Manifest().encode()
+		let encoder = JSONEncoder()
+		encoder.dateEncodingStrategy	= .iso8601
+		encoder.outputFormatting		= .prettyPrinted
+		let manifestData				= try encoder.encode(Manifest())
 		
 		//
 		// Create all file in the IMDF archive with a blueprint content

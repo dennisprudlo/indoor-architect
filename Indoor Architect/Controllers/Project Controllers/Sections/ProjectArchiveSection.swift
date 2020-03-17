@@ -32,13 +32,13 @@ class ProjectArchiveSection: ProjectSection {
 	}
 	
 	func resetExtensionCount() -> Void {
-		guard let extensionCount = archive?.manifest.extensions.count else {
+		guard let extensionCount = archive?.manifest.extensions?.count else {
 			customExtensionsCell.detailTextLabel?.text = "None"
 			return
 		}
 		
 		if extensionCount == 1 {
-			customExtensionsCell.detailTextLabel?.text = archive?.manifest.extensions.first?.identifier
+			customExtensionsCell.detailTextLabel?.text = archive?.manifest.extensions?.first?.identifier
 		} else {
 			customExtensionsCell.detailTextLabel?.text = "\(extensionCount)"
 		}
