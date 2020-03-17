@@ -21,7 +21,6 @@
 		814EBB74241D626E0028225C /* RulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB73241D626E0028225C /* RulerView.swift */; };
 		814EBB76241D6A170028225C /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB75241D6A170028225C /* Spacing.swift */; };
 		814EBB78241D71150028225C /* MCDistanceRuler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB77241D71150028225C /* MCDistanceRuler.swift */; };
-		814EBB7A241D7FBE0028225C /* Mathematics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB79241D7FBE0028225C /* Mathematics.swift */; };
 		8153BB20241FB76700FF6335 /* MCPointAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB1F241FB76700FF6335 /* MCPointAssembler.swift */; };
 		8153BB22241FB78B00FF6335 /* MCShapeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB21241FB78B00FF6335 /* MCShapeAssembler.swift */; };
 		8153BB24241FBC4F00FF6335 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB23241FBC4F00FF6335 /* Venue.swift */; };
@@ -84,7 +83,6 @@
 		81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */; };
 		81F67DDE23F19458006B9187 /* IMDFProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDD23F19458006B9187 /* IMDFProject.swift */; };
 		81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DDF23F195D9006B9187 /* ProjectManager.swift */; };
-		81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DE123F1991F006B9187 /* DateUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,7 +100,6 @@
 		814EBB73241D626E0028225C /* RulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerView.swift; sourceTree = "<group>"; };
 		814EBB75241D6A170028225C /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814EBB77241D71150028225C /* MCDistanceRuler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDistanceRuler.swift; sourceTree = "<group>"; };
-		814EBB79241D7FBE0028225C /* Mathematics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mathematics.swift; sourceTree = "<group>"; };
 		8153BB1F241FB76700FF6335 /* MCPointAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPointAssembler.swift; sourceTree = "<group>"; };
 		8153BB21241FB78B00FF6335 /* MCShapeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCShapeAssembler.swift; sourceTree = "<group>"; };
 		8153BB23241FBC4F00FF6335 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
@@ -167,7 +164,6 @@
 		81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		81F67DDD23F19458006B9187 /* IMDFProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFProject.swift; sourceTree = "<group>"; };
 		81F67DDF23F195D9006B9187 /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
-		81F67DE123F1991F006B9187 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,10 +446,8 @@
 			children = (
 				81F67DD123F1411B006B9187 /* FontUtils.swift */,
 				81F67DDF23F195D9006B9187 /* ProjectManager.swift */,
-				81F67DE123F1991F006B9187 /* DateUtils.swift */,
 				81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */,
 				8141C7DB23FAE980008AC7DD /* Constraints.swift */,
-				814EBB79241D7FBE0028225C /* Mathematics.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -619,7 +613,6 @@
 				8153BB2A241FC13A00FF6335 /* MCPolygonAssembler.swift in Sources */,
 				81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */,
 				8174854C24182A4400EE3E12 /* DetailTableViewController.swift in Sources */,
-				814EBB7A241D7FBE0028225C /* Mathematics.swift in Sources */,
 				81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */,
 				81D580BC240C0ADD0049B17F /* ProjectAddressController.swift in Sources */,
 				81A58E03240AD1E1008873E9 /* ProjectDeleteSection.swift in Sources */,
@@ -633,7 +626,6 @@
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
 				81E48EF9242149F100837EEF /* MCOverlayRenderer.swift in Sources */,
 				81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */,
-				81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
 				81D580AE240AF0BB0049B17F /* Manifest.swift in Sources */,
 				81D580B6240BEDA60049B17F /* Extension.swift in Sources */,

@@ -191,6 +191,7 @@ class MCMapCanvas: MKMapView {
 		
 		let anchor = Anchor(withIdentifier: uuid, properties: Anchor.Properties(), geometry: geometry, type: .anchor)
 		project.imdfArchive.anchors.append(anchor)
+		project.hasChangesToStoredVersion = true
 		
 		if let geometry = anchor.geometry.first {
 			addAnnotation(geometry)
@@ -202,6 +203,7 @@ class MCMapCanvas: MKMapView {
 		
 		let venue = Venue(withIdentifier: uuid, properties: Venue.Properties(), geometry: geometry, type: .venue)
 		project.imdfArchive.venues.append(venue)
+		project.hasChangesToStoredVersion = true
 		
 		if let polygon = geometry.first as? MKPolygon {
 			addOverlay(polygon)
