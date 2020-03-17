@@ -73,14 +73,16 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 	}
 	
 	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+		var isCurrentlyDrawing: Bool = false
+		if let activeOverlay = canvas.getActiveShapeAssembler()?.activeOverlay {
+			isCurrentlyDrawing = overlay === activeOverlay
+		}
+		
 		let renderer: MKOverlayPathRenderer
 		
 		switch overlay {
 			case is MKPolygon:
-				renderer = MKPolygonRenderer(overlay: overlay)
-				renderer.strokeColor = UIColor.red
-				renderer.fillColor = UIColor.red.withAlphaComponent(0.3)
-				renderer.lineWidth = 2
+				renderer = MCPolygonRenderer(overlay: overlay, isCurrentlyDrawing)
 			case is MKPolyline:
 				renderer = MKPolylineRenderer(overlay: overlay)
 				renderer.strokeColor = UIColor.red

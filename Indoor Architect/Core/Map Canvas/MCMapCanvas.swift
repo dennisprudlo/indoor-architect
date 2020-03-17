@@ -51,8 +51,6 @@ class MCMapCanvas: MKMapView {
 		case measure
 	}
 	
-	var activeDrawingOverlay: MKOverlay?
-	
 	var polygonAssembler: MCPolygonAssembler?
 	
 	var distanceRuler = MCDistanceRuler()

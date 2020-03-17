@@ -64,6 +64,7 @@
 		81E2FA462401486C00CA82AA /* MCSlidingInfoToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA452401486C00CA82AA /* MCSlidingInfoToolStack.swift */; };
 		81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA472401937100CA82AA /* MCCloseToolStack.swift */; };
 		81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA4B2401999D00CA82AA /* MCCloseToolStackItem.swift */; };
+		81E48EF324213A1000837EEF /* MCPolygonRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E48EF224213A0F00837EEF /* MCPolygonRenderer.swift */; };
 		81F67DAE23F06A4B006B9187 /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAD23F06A4B006B9187 /* MasterController.swift */; };
 		81F67DB023F06A64006B9187 /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAF23F06A64006B9187 /* ProjectController.swift */; };
 		81F67DB323F06F6E006B9187 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DB223F06F6E006B9187 /* Application.swift */; };
@@ -143,6 +144,7 @@
 		81E2FA452401486C00CA82AA /* MCSlidingInfoToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSlidingInfoToolStack.swift; sourceTree = "<group>"; };
 		81E2FA472401937100CA82AA /* MCCloseToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCloseToolStack.swift; sourceTree = "<group>"; };
 		81E2FA4B2401999D00CA82AA /* MCCloseToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCloseToolStackItem.swift; sourceTree = "<group>"; };
+		81E48EF224213A0F00837EEF /* MCPolygonRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPolygonRenderer.swift; sourceTree = "<group>"; };
 		81F67DAD23F06A4B006B9187 /* MasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
 		81F67DAF23F06A64006B9187 /* ProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
 		81F67DB223F06F6E006B9187 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		81AE8E4E24193C6E007C8093 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81E48EF12421361000837EEF /* Renderer */,
 				8153BB1E241FB75A00FF6335 /* Assembler */,
 				81AE8E4F24193C77007C8093 /* Overlays */,
 				814EBB77241D71150028225C /* MCDistanceRuler.swift */,
@@ -396,6 +399,14 @@
 				8153BB2B241FCA3500FF6335 /* MCDrawingConfirmToolStackItem.swift */,
 			);
 			path = "Tool Stack Items";
+			sourceTree = "<group>";
+		};
+		81E48EF12421361000837EEF /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				81E48EF224213A0F00837EEF /* MCPolygonRenderer.swift */,
+			);
+			path = Renderer;
 			sourceTree = "<group>";
 		};
 		81F67DB123F06F60006B9187 /* Config */ = {
@@ -620,6 +631,7 @@
 				81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */,
 				8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */,
 				8141C7DA23FAD075008AC7DD /* Style.swift in Sources */,
+				81E48EF324213A1000837EEF /* MCPolygonRenderer.swift in Sources */,
 				81AE8E4D24191C70007C8093 /* Anchor.swift in Sources */,
 				81AE8E552419413C007C8093 /* PointAnnotationView.swift in Sources */,
 				813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */,

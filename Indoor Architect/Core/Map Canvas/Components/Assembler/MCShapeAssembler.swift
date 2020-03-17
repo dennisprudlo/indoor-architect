@@ -31,15 +31,12 @@ class MCShapeAssembler {
 	}
 	
 	func renderActiveOverlay(overlay: MKOverlay) -> Void {
-		print(canvas.overlays)
 		if let activeOverlay = activeOverlay {
-			print(activeOverlay)
 			canvas.removeOverlay(activeOverlay)
-			print(canvas.overlays)
 		}
 		
-		canvas.addOverlay(overlay)
 		activeOverlay = overlay
+		canvas.addOverlay(overlay)
 	}
 	
 	func removeActiveOverlay() -> Void {
