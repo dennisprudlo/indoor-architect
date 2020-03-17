@@ -197,8 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				81AE8E4E24193C6E007C8093 /* Components */,
-				8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */,
 				81FC47E22409AB900078551E /* Palettes */,
+				8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */,
 			);
 			path = "Map Canvas";
 			sourceTree = "<group>";
