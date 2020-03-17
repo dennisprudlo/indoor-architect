@@ -28,7 +28,7 @@ enum Color {
 	
 	static let currentDrawingTintColor: UIColor = Color.primary
 	
-	static let currentDrawingBorderColor: UIColor = .black
+	static let currentDrawingBorderColor: UIColor = UIColor.black.withAlphaComponent(0.8)
 	
 	static let anchorPointAnnotationTint: UIColor = .systemRed
 	
