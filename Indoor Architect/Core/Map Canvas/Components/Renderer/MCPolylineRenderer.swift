@@ -1,5 +1,5 @@
 //
-//  MCPolygonRenderer.swift
+//  MCPolylineRenderer.swift
 //  Indoor Architect
 //
 //  Created by Dennis Prudlo on 3/17/20.
@@ -9,24 +9,29 @@
 import Foundation
 import MapKit
 
-class MCPolygonRenderer: MKPolygonRenderer, MCOverlayRenderer {
+class MCPolylineRenderer: MKPolylineRenderer, MCOverlayRenderer {
 	
 	var isCurrentlyDrawing: Bool = false
 	
 	init(overlay: MKOverlay, _ isCurrentlyDrawing: Bool) {
-		super.init(polygon: overlay as! MKPolygon)
+		super.init(polyline: overlay as! MKPolyline)
 		
 		self.isCurrentlyDrawing = isCurrentlyDrawing
 		
 		if isCurrentlyDrawing {
 			strokeColor	= Color.currentDrawingTintColor
-			fillColor	= Color.currentDrawingTintColor.withAlphaComponent(0.3)
 			lineWidth	= Renderer.featureLineWidth
 		} else {
 			strokeColor	= UIColor.systemGray
-			fillColor	= UIColor.systemGray.withAlphaComponent(0.3)
 			lineWidth	= Renderer.featureLineWidth
 		}
+	}
+	
+	override init(overlay: MKOverlay) {
+		//
+		// Overriding this initializer is necessary otherwise the MKPolylineRenderer
+		// won't find this overlay initializer
+		super.init(overlay: overlay)
 	}
 	
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
@@ -51,21 +56,14 @@ class MCPolygonRenderer: MKPolygonRenderer, MCOverlayRenderer {
 	
 	override func createPath() {
 		let path = CGMutablePath()
-		
-		var firstPoint: CGPoint?
-		
-		for index in 0..<polygon.pointCount {
-			let point = self.point(for: polygon.points()[index])
+	
+		for index in 0..<polyline.pointCount {
+			let point = self.point(for: polyline.points()[index])
 			if path.isEmpty {
-				firstPoint = point
 				path.move(to: point)
 			} else {
 				path.addLine(to: point)
 			}
-		}
-		
-		if !isCurrentlyDrawing, let firstPoint = firstPoint {
-			path.addLine(to: firstPoint)
 		}
 		
 		self.path = path

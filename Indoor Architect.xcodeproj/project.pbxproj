@@ -66,6 +66,8 @@
 		81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA4B2401999D00CA82AA /* MCCloseToolStackItem.swift */; };
 		81E48EF324213A1000837EEF /* MCPolygonRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E48EF224213A0F00837EEF /* MCPolygonRenderer.swift */; };
 		81E48EF5242147E600837EEF /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E48EF4242147E600837EEF /* Renderer.swift */; };
+		81E48EF72421492300837EEF /* MCPolylineRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E48EF62421492300837EEF /* MCPolylineRenderer.swift */; };
+		81E48EF9242149F100837EEF /* MCOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E48EF8242149F100837EEF /* MCOverlayRenderer.swift */; };
 		81F67DAE23F06A4B006B9187 /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAD23F06A4B006B9187 /* MasterController.swift */; };
 		81F67DB023F06A64006B9187 /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DAF23F06A64006B9187 /* ProjectController.swift */; };
 		81F67DB323F06F6E006B9187 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DB223F06F6E006B9187 /* Application.swift */; };
@@ -147,6 +149,8 @@
 		81E2FA4B2401999D00CA82AA /* MCCloseToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCloseToolStackItem.swift; sourceTree = "<group>"; };
 		81E48EF224213A0F00837EEF /* MCPolygonRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPolygonRenderer.swift; sourceTree = "<group>"; };
 		81E48EF4242147E600837EEF /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		81E48EF62421492300837EEF /* MCPolylineRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPolylineRenderer.swift; sourceTree = "<group>"; };
+		81E48EF8242149F100837EEF /* MCOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCOverlayRenderer.swift; sourceTree = "<group>"; };
 		81F67DAD23F06A4B006B9187 /* MasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
 		81F67DAF23F06A64006B9187 /* ProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
 		81F67DB223F06F6E006B9187 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
@@ -406,7 +410,9 @@
 		81E48EF12421361000837EEF /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				81E48EF8242149F100837EEF /* MCOverlayRenderer.swift */,
 				81E48EF224213A0F00837EEF /* MCPolygonRenderer.swift */,
+				81E48EF62421492300837EEF /* MCPolylineRenderer.swift */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -625,6 +631,7 @@
 				81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */,
 				81D580B2240B04AC0049B17F /* ProjectExtensionController.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
+				81E48EF9242149F100837EEF /* MCOverlayRenderer.swift in Sources */,
 				81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */,
 				81F67DE223F1991F006B9187 /* DateUtils.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
@@ -644,6 +651,7 @@
 				81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */,
 				8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */,
 				81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */,
+				81E48EF72421492300837EEF /* MCPolylineRenderer.swift in Sources */,
 				81F67DE023F195D9006B9187 /* ProjectManager.swift in Sources */,
 				81B1F7F923F86513004AF904 /* ProjectExplorerPlaceholderCell.swift in Sources */,
 				81A58E07240AE0A0008873E9 /* ProjectActionSection.swift in Sources */,

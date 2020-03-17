@@ -84,9 +84,7 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 			case is MKPolygon:
 				renderer = MCPolygonRenderer(overlay: overlay, isCurrentlyDrawing)
 			case is MKPolyline:
-				renderer = MKPolylineRenderer(overlay: overlay)
-				renderer.strokeColor = UIColor.red
-				renderer.lineWidth = 2
+				renderer = MCPolylineRenderer(overlay: overlay, isCurrentlyDrawing)
 			default:
 				return MKOverlayRenderer(overlay: overlay)
 		}
