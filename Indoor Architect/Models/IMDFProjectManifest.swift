@@ -17,22 +17,10 @@ class IMDFProjectManifest: Codable {
 	var title: String
 	
 	/// The optional description of the project
-	var description: String? {
-		didSet {
-			if description?.count ?? 0 == 0 {
-				description = nil
-			}
-		}
-	}
+	var description: String?
 	
 	/// The optional client of the project
-	var client: String? {
-		didSet {
-			if client?.count ?? 0 == 0 {
-				client = nil
-			}
-		}
-	}
+	var client: String?
 	
 	/// The date the project was created at
 	let createdAt: Date
@@ -76,8 +64,13 @@ class IMDFProjectManifest: Codable {
 		var container = encoder.container(keyedBy: CodingKeys.self)
 		try container.encode(uuid,				forKey: .uuid)
 		try container.encode(title,				forKey: .title)
-		try container.encode(description,		forKey: .description)
-		try container.encode(client,			forKey: .client)
+		
+		let descriptionToEncode = description?.count ?? 0 == 0 ? description : nil
+		try container.encode(descriptionToEncode, forKey: .description)
+		
+		let clientToEncode = client?.count ?? 0 == 0 ? client : nil
+		try container.encode(clientToEncode,	forKey: .client)
+		
 		try container.encode(createdAt,			forKey: .createdAt)
 		try container.encode(updatedAt,			forKey: .updatedAt)
 		try container.encode(session,			forKey: .session)
