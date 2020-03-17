@@ -14,14 +14,18 @@ class MCPolygonAssembler: MCShapeAssembler {
 	override func add(_ coordinate: CLLocationCoordinate2D) -> Void {
 		super.add(coordinate)
 		
-		if let overlay = collect().first as? MKPolygon {
-			renderActiveOverlay(overlay: overlay)
+		let overlay: MKOverlay
+		if coordinates.count == 2 {
+			overlay = MKPolyline(coordinates: coordinates, count: coordinates.count)
+		} else {
+			overlay = collect().first as! MKPolygon
 		}
+		
+		renderActiveOverlay(overlay: overlay)
 	}
 	
 	override func collect() -> [MKShape & MKGeoJSONObject] {
-		let polygon = MKPolygon(coordinates: coordinates, count: coordinates.count)
-		return [polygon]
+		return [MKPolygon(coordinates: coordinates, count: coordinates.count)]
 	}
 	
 }

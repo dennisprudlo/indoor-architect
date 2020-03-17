@@ -81,6 +81,10 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 				renderer.strokeColor = UIColor.red
 				renderer.fillColor = UIColor.red.withAlphaComponent(0.3)
 				renderer.lineWidth = 2
+			case is MKPolyline:
+				renderer = MKPolylineRenderer(overlay: overlay)
+				renderer.strokeColor = UIColor.red
+				renderer.lineWidth = 2
 			default:
 				return MKOverlayRenderer(overlay: overlay)
 		}
