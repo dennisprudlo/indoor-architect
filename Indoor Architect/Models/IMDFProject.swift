@@ -50,16 +50,20 @@ class IMDFProject {
 	
 	/// Saves the project
 	func save() throws -> Void {
-		let data = try manifest.data()
-		let projectManifestUrl = ProjectManager.shared.url(forPathComponent: .manifest, inProjectWithUuid: manifest.uuid)
-		FileManager.default.createFile(atPath: projectManifestUrl.path, contents: data, attributes: nil)
-		
 		let encoder = JSONEncoder()
 		encoder.dateEncodingStrategy	= .iso8601
 		encoder.outputFormatting		= .prettyPrinted
-		let archiveManifestData			= try encoder.encode(self.imdfArchive.manifest)
 		
-		let archiveManifestUrl = ProjectManager.shared.url(forPathComponent: .archive(feature: .manifest), inProjectWithUuid: manifest.uuid)
+		//
+		// Write the project manifest
+		let projectManifestData	= try encoder.encode(manifest)
+		let projectManifestUrl	= ProjectManager.shared.url(forPathComponent: .manifest, inProjectWithUuid: manifest.uuid)
+		FileManager.default.createFile(atPath: projectManifestUrl.path, contents: projectManifestData, attributes: nil)
+		
+		//
+		// Write the archive manifest
+		let archiveManifestData	= try encoder.encode(self.imdfArchive.manifest)
+		let archiveManifestUrl	= ProjectManager.shared.url(forPathComponent: .archive(feature: .manifest), inProjectWithUuid: manifest.uuid)
 		FileManager.default.createFile(atPath: archiveManifestUrl.path, contents: archiveManifestData, attributes: nil)
 		
 		hasChangesToStoredVersion = false

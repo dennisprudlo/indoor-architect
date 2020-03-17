@@ -229,7 +229,9 @@ class ProjectManager {
 			return nil
 		}
 		
-		guard let manifest = try? JSONDecoder().decode(IMDFProjectManifest.self, from: contents) else {
+		let decoder = JSONDecoder()
+		decoder.dateDecodingStrategy = .iso8601
+		guard let manifest = try? decoder.decode(IMDFProjectManifest.self, from: contents) else {
 			return nil
 		}
 		

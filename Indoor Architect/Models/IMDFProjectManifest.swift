@@ -17,10 +17,22 @@ class IMDFProjectManifest: Codable {
 	var title: String
 	
 	/// The optional description of the project
-	var description: String?
+	var description: String? {
+		didSet {
+			if description?.count ?? 0 == 0 {
+				description = nil
+			}
+		}
+	}
 	
 	/// The optional client of the project
-	var client: String?
+	var client: String? {
+		didSet {
+			if client?.count ?? 0 == 0 {
+				client = nil
+			}
+		}
+	}
 	
 	/// The date the project was created at
 	let createdAt: Date
@@ -60,10 +72,15 @@ class IMDFProjectManifest: Codable {
 		self.session			= nil
 	}
 	
-	/// Encodes the manifest as JSON data
-	func data() throws -> Data {
-		let encoder = JSONEncoder()
-		encoder.outputFormatting = .prettyPrinted
-		return try encoder.encode(self)
+	func encode(to encoder: Encoder) throws {
+		var container = encoder.container(keyedBy: CodingKeys.self)
+		try container.encode(uuid,				forKey: .uuid)
+		try container.encode(title,				forKey: .title)
+		try container.encode(description,		forKey: .description)
+		try container.encode(client,			forKey: .client)
+		try container.encode(createdAt,			forKey: .createdAt)
+		try container.encode(updatedAt,			forKey: .updatedAt)
+		try container.encode(session,			forKey: .session)
+		try container.encode(imdfprojVersion,	forKey: .imdfprojVersion)
 	}
 }
