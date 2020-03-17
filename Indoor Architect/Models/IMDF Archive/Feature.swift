@@ -14,16 +14,6 @@ protocol CodableFeature: Encodable {
 	init(feature: MKGeoJSONFeature, type: ProjectManager.ArchiveFeature) throws
 }
 
-struct IMDFPointGeometry: Encodable {
-	let type: String = "Point"
-	let coordinates: [Double]
-}
-
-struct IMDFPolygonGeometry: Encodable {
-	let type: String = "Polygon"
-	let coordinates: [[[Double]]]
-}
-
 class Feature<Properties: Codable>: NSObject, CodableFeature {
 	
 	/// The globally unique feature id identifier
@@ -117,14 +107,14 @@ class Feature<Properties: Codable>: NSObject, CodableFeature {
 		super.init()
 	}
 	
-	func transformPointGeometry() -> IMDFPointGeometry {
+	func transformPointGeometry() -> IMDFType.PointGeometry {
 		let coordinates = geometry.first?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
-		return IMDFPointGeometry(coordinates: [coordinates.longitude, coordinates.latitude])
+		return IMDFType.PointGeometry(coordinates: [coordinates.longitude, coordinates.latitude])
 	}
 	
-	func transformPolygonGeometry() -> IMDFPolygonGeometry {
+	func transformPolygonGeometry() -> IMDFType.PolygonGeometry {
 		guard let polygon = geometry.first as? MKPolygon else {
-			return IMDFPolygonGeometry(coordinates: [])
+			return IMDFType.PolygonGeometry(coordinates: [])
 		}
 		
 		var coordinates = [CLLocationCoordinate2D](repeating: kCLLocationCoordinate2DInvalid, count: polygon.pointCount)
@@ -134,6 +124,6 @@ class Feature<Properties: Codable>: NSObject, CodableFeature {
 			return [coordinate.longitude, coordinate.latitude]
 		}
 		
-		return IMDFPolygonGeometry(coordinates: [doubleCoordinates])
+		return IMDFType.PolygonGeometry(coordinates: [doubleCoordinates])
 	}
 }

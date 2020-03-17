@@ -10,9 +10,22 @@ import Foundation
 
 struct IMDFType {
 	
+	struct PointGeometry: Codable {
+		let type: String = "Point"
+		let coordinates: [Double]
+	}
+	
+	struct PolygonGeometry: Codable {
+		let type: String = "Polygon"
+		let coordinates: [[[Double]]]
+	}
+	
 	typealias Labels = Dictionary<String, String>
 	
+	typealias FeatureID = UUID
 	typealias Hours = String
+	typealias Website = String
+	typealias Phone = String
 	
 	enum Restriction: String, Codable {
 		case employeesonly

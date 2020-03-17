@@ -12,15 +12,33 @@ import CoreLocation
 
 class Venue: Feature<Venue.Properties> {
 	
+	/// The venues properties
 	struct Properties: Codable {
-		var category: IMDFType.VenueCategory = .businesscampus
-		var restriction: IMDFType.Restriction?
-		var name: IMDFType.Labels?
-		var altName: IMDFType.Labels?
-		var hours: String?
-		var phone: String?
-		var website: String?
-//		var displayPoint: String?
-		var addressId: UUID?
+		/// The venues category. Use one of the predefined categories that fits the most
+		var category:		IMDFType.VenueCategory = .businesscampus
+		
+		/// The venues restriction category
+		var restriction:	IMDFType.Restriction?
+		
+		/// The venues name
+		var name:			IMDFType.Labels?
+		
+		/// The venues alternative name. This can be used for internal names
+		var altName:		IMDFType.Labels?
+		
+		/// The venues hours of operation. This must be a valid OSM Opening Hours string
+		var hours:			IMDFType.Hours?
+		
+		/// The venues main phone number
+		var phone:			IMDFType.Phone?
+		
+		/// The venues website address
+		var website:		IMDFType.Website?
+		
+		/// The venues display point
+		var displayPoint:	IMDFType.PointGeometry?
+		
+		/// Reference to an address entry for this venue
+		var addressId:		IMDFType.FeatureID?
 	}
 }

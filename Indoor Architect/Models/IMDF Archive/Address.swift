@@ -39,6 +39,7 @@ class Address: Feature<Address.Properties> {
 		let postalCodeVanity: String?
 	}
 	
+	/// Gets a `LocalityCodeCombination` for the country of the address
 	func getCountryData() -> Address.LocalityCodeCombination? {
 		let countryIdentifier	= NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: properties.country])
 		if let countryName		= NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: NSLocale.Key.identifier, value: countryIdentifier) {
@@ -48,6 +49,7 @@ class Address: Feature<Address.Properties> {
 		return nil
 	}
 	
+	/// Gets a `LocalityCodeCombination` for the province/subdivision of the address
 	func getSubdivisionData() -> Address.LocalityCodeCombination? {
 		let combinations = Address.getSubdivisions(forCountry: properties.country)
 		return combinations.first { (combination) -> Bool in
@@ -55,6 +57,7 @@ class Address: Feature<Address.Properties> {
 		}
 	}
 	
+	/// Gets a list of `LocalityCodeCombination` for all available countries
 	static func getLocalizedCountryCodes() -> [Address.LocalityCodeCombination] {
 		var combinations: [Address.LocalityCodeCombination] = []
 		
@@ -72,6 +75,8 @@ class Address: Feature<Address.Properties> {
 		return combinations
 	}
 	
+	/// Gets a list of `LocalityCodeCombination` for all available subdivisions in a country
+	/// - Parameter countryCode: The country code to get the subdivision entries for
 	static func getSubdivisions(forCountry countryCode: String) -> [Address.LocalityCodeCombination] {
 		guard let propertyListPath = Bundle.main.path(forResource: "ISO-3166-2", ofType: "plist") else {
 			return []
