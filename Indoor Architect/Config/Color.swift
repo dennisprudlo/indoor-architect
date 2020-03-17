@@ -26,7 +26,9 @@ enum Color {
 	
 	// MARK: Map Canvas
 	
-	static let currentDrawingFeatureColor: UIColor = .red
+	static let currentDrawingTintColor: UIColor = Color.primary
+	
+	static let currentDrawingBorderColor: UIColor = .black
 	
 	static let anchorPointAnnotationTint: UIColor = .systemRed
 	
