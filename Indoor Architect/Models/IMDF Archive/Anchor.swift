@@ -18,6 +18,12 @@ class Anchor: Feature<Anchor.Properties> {
 		
 		/// Reference to a unit entry for this anchor
 		var unitId:		IMDFType.FeatureID?
+		
+		func encode(to encoder: Encoder) throws {
+			var container = encoder.container(keyedBy: CodingKeys.self)
+			try container.encode(addressId,	forKey: .addressId)
+			try container.encode(unitId,	forKey: .unitId)
+		}
 	}
 	
 	/// Gets the coordinates of the anchor

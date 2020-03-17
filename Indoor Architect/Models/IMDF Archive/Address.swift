@@ -37,6 +37,18 @@ class Address: Feature<Address.Properties> {
 		
 		/// The vanity of the postal code
 		let postalCodeVanity: String?
+		
+		func encode(to encoder: Encoder) throws {
+			var container = encoder.container(keyedBy: CodingKeys.self)
+			try container.encode(address,			forKey: .address)
+			try container.encode(unit,				forKey: .unit)
+			try container.encode(locality,			forKey: .locality)
+			try container.encode(province,			forKey: .province)
+			try container.encode(country,			forKey: .country)
+			try container.encode(postalCode,		forKey: .postalCodeVanity)
+			try container.encode(postalCodeExt,		forKey: .postalCodeExt)
+			try container.encode(postalCodeVanity,	forKey: .postalCodeVanity)
+		}
 	}
 	
 	/// Gets a `LocalityCodeCombination` for the country of the address

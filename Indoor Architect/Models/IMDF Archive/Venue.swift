@@ -40,5 +40,18 @@ class Venue: Feature<Venue.Properties> {
 		
 		/// Reference to an address entry for this venue
 		var addressId:		IMDFType.FeatureID?
+		
+		func encode(to encoder: Encoder) throws {
+			var container = encoder.container(keyedBy: CodingKeys.self)
+			try container.encode(category,		forKey: .category)
+			try container.encode(restriction,	forKey: .restriction)
+			try container.encode(name,			forKey: .name)
+			try container.encode(altName,		forKey: .altName)
+			try container.encode(hours,			forKey: .hours)
+			try container.encode(phone,			forKey: .phone)
+			try container.encode(website,		forKey: .website)
+			try container.encode(displayPoint,	forKey: .displayPoint)
+			try container.encode(addressId,		forKey: .addressId)
+		}
 	}
 }
