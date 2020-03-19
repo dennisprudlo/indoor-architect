@@ -10,11 +10,20 @@ import UIKit
 
 class MCDrawingConfirmToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 	
-	override init(isDefault: Bool = false) {
-		super.init(isDefault: isDefault)
+	private var actionType: ActionType = .confirm
+	
+	enum ActionType {
+		case confirm
+		case discard
+	}
+	
+	init(actionType: ActionType) {
+		super.init(isDefault: false)
 		super.delegate = self
 		
-		imageView.image = Icon.toolConfirmShape
+		self.actionType = actionType
+		
+		imageView.image = actionType == .confirm ? Icon.toolConfirmShape : Icon.toolClose
 		preventIndicatingSelection = true
 		
 		NSLayoutConstraint.activate([
@@ -37,8 +46,20 @@ class MCDrawingConfirmToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 			return
 		}
 		
+		//
+		// If the action type is the discard button we want to discard the overlay
+		if actionType == .discard {
+			assembler.removeActiveOverlay()
+			canvas.discardActiveShapeAssembler()
+			return
+		}
+		
+		//
+		// Retrieve the geometry from the current overlay
 		let geometry = assembler.collect()
 		
+		//
+		// Add the feature to the canvas
 		switch assembler {
 			case is MCPolygonAssembler:
 				canvas.addVenue(geometry)
@@ -46,6 +67,8 @@ class MCDrawingConfirmToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 				break
 		}
 		
+		//
+		// Clean-up the shape assembler
 		assembler.removeActiveOverlay()
 		canvas.discardActiveShapeAssembler()
 	}

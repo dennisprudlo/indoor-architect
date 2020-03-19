@@ -114,7 +114,8 @@ class MCMapCanvas: MKMapView {
 		
 		//
 		// Add the drawing confirm button for the tool stack
-		drawingConfirmToolStack.addItem(MCDrawingConfirmToolStackItem())
+		drawingConfirmToolStack.addItem(MCDrawingConfirmToolStackItem(actionType: .confirm))
+		drawingConfirmToolStack.addItem(MCDrawingConfirmToolStackItem(actionType: .discard))
 		drawingConfirmToolStack.isHidden = true
 		
 		let topEdgePalette			= UIStackView(arrangedSubviews: [closeToolStack, coordinateToolStack])
