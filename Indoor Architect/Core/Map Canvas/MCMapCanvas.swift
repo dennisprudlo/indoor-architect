@@ -55,7 +55,7 @@ class MCMapCanvas: MKMapView {
 	
 	var distanceRuler = MCDistanceRuler()
 	
-	var panGestureRecognizer: UIPanGestureRecognizer!
+	var panGestureRecognizer: InitialPanGestureRecognizer!
 	
 	init() {
 		super.init(frame: .zero)
@@ -85,7 +85,7 @@ class MCMapCanvas: MKMapView {
 		// Add custom gesture recognizer
 		addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMap)))
 		
-		panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanMap))
+		panGestureRecognizer = InitialPanGestureRecognizer(target: self, action: #selector(didPanMap))
 		addGestureRecognizer(panGestureRecognizer)
 	}
 	
@@ -164,7 +164,7 @@ class MCMapCanvas: MKMapView {
 		controller.mapCanvas(self, didTapOn: coordinate, with: selectedDrawingTool)
 	}
 	
-	@objc func didPanMap(_ gestureRecognizer: UIPanGestureRecognizer) -> Void {
+	@objc func didPanMap(_ gestureRecognizer: InitialPanGestureRecognizer) -> Void {
 		if selectedDrawingTool == .measure {
 			distanceRuler.makeUsingGesture(recognizer: gestureRecognizer)
 		}

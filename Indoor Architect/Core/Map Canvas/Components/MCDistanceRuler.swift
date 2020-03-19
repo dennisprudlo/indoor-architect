@@ -33,12 +33,14 @@ class MCDistanceRuler {
 	
 	/// Makes the ruler using the given pan gesture recognizer
 	/// - Parameter recognizer: The pan gesture recognizer while using it
-	func makeUsingGesture(recognizer: UIPanGestureRecognizer) -> Void {
+	func makeUsingGesture(recognizer: InitialPanGestureRecognizer) -> Void {
 		let point = recognizer.location(in: canvas)
 		let coordinate = canvas.convert(point, toCoordinateFrom: canvas)
 		
 		if recognizer.state == .began {
-			startLocation	= coordinate
+			let initialPoint: CGPoint	= recognizer.getInitialPoint()
+			let startCoordinate			= canvas.convert(initialPoint, toCoordinateFrom: canvas)
+			startLocation				= startCoordinate
 		}
 		
 		endLocation		= coordinate

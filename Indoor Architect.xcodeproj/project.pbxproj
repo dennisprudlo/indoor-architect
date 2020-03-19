@@ -31,6 +31,7 @@
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
 		816DC53E23F0679900E1471D /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootController.swift */; };
+		817323222423EDF10050AD34 /* InitialPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817323212423EDF10050AD34 /* InitialPanGestureRecognizer.swift */; };
 		8174854A2418177F00EE3E12 /* ISO-3166-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 817485492418177F00EE3E12 /* ISO-3166-2.plist */; };
 		8174854C24182A4400EE3E12 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174854B24182A4400EE3E12 /* DetailTableViewController.swift */; };
 		81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFC240AB9FE008873E9 /* ProjectSection.swift */; };
@@ -112,6 +113,7 @@
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		816DC53323F0606E00E1471D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		816DC53D23F0679900E1471D /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		817323212423EDF10050AD34 /* InitialPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		817485492418177F00EE3E12 /* ISO-3166-2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ISO-3166-2.plist"; sourceTree = "<group>"; };
 		8174854B24182A4400EE3E12 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		81A58DFC240AB9FE008873E9 /* ProjectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSection.swift; sourceTree = "<group>"; };
@@ -270,6 +272,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		817323202423EDD20050AD34 /* Recognizer */ = {
+			isa = PBXGroup;
+			children = (
+				817323212423EDF10050AD34 /* InitialPanGestureRecognizer.swift */,
+			);
+			path = Recognizer;
+			sourceTree = "<group>";
+		};
 		81748547241816CC00EE3E12 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +322,7 @@
 		81AE8E4E24193C6E007C8093 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				817323202423EDD20050AD34 /* Recognizer */,
 				81E48EF12421361000837EEF /* Renderer */,
 				8153BB1E241FB75A00FF6335 /* Assembler */,
 				81AE8E4F24193C77007C8093 /* Overlays */,
@@ -593,6 +604,7 @@
 				810D0D0123F3284100DC5D74 /* IMDFProjectManifest.swift in Sources */,
 				81AE8E5124193C90007C8093 /* IMDFAnchorAnnotation.swift in Sources */,
 				814EBB74241D626E0028225C /* RulerView.swift in Sources */,
+				817323222423EDF10050AD34 /* InitialPanGestureRecognizer.swift in Sources */,
 				81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */,
 				81E48EF5242147E600837EEF /* Renderer.swift in Sources */,
 				8153BB2C241FCA3500FF6335 /* MCDrawingConfirmToolStackItem.swift in Sources */,
