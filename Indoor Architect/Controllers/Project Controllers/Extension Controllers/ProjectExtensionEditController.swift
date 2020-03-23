@@ -83,23 +83,35 @@ class ProjectExtensionEditController: ComposePopoverController {
 	}
 	
 	override func didTapCreate(_ sender: UIButton) -> Void {
-		guard let provider = providerCell.textField.text, let name = nameCell.textField.text, let version = versionCell.textField.text else {
-			return
+		
+		if !shouldRenderToCreate {
+			if let extensionToRemove = extensionToEdit {
+				displayController?.project?.removeExtension(extensionToRemove)
+			}
+		} else {
+			guard let provider = providerCell.textField.text, let name = nameCell.textField.text, let version = versionCell.textField.text else {
+				return
+			}
+			
+			do {
+				//
+				// Add the new extension if valid and reset the table view
+				try displayController?.project?.addExtension(provider: provider, name: name, version: version)
+			} catch {
+				print(error)
+			}
 		}
 		
-		do {
-			//
-			// Add the new extension if valid and reset the table view
-			try displayController?.project?.addExtension(provider: provider, name: name, version: version)
-			displayController?.resetExtensions()
-			
-			//
-			// Try to save the project with the added extensions
-			try displayController?.project?.save()
-			
+		//
+		// Try to save the project with the added extensions
+		try? displayController?.project?.save()
+		
+		displayController?.resetExtensions()
+		
+		if !shouldRenderToCreate {
+			navigationController?.popViewController(animated: true)
+		} else {
 			dismiss(animated: true, completion: nil)
-		} catch {
-			print(error)
 		}
 	}
 	
