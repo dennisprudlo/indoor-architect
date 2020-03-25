@@ -10,6 +10,8 @@ import UIKit
 
 class ProjectExtensionEditController: ComposePopoverController {
 	
+	let saveBarButtonItem	= UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveChanges))
+	
 	let providerCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Extension.provider)
 	let nameCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Extension.name)
 	let versionCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Extension.version)
@@ -17,6 +19,12 @@ class ProjectExtensionEditController: ComposePopoverController {
 	var displayController: ProjectExtensionController?
 	var shouldRenderToCreate: Bool = false
 	var extensionToEdit: Extension?
+	
+	var hasChangesToSave: Bool = false {
+		didSet {
+			navigationItem.setRightBarButton(hasChangesToSave ? saveBarButtonItem : nil, animated: true)
+		}
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -70,7 +78,7 @@ class ProjectExtensionEditController: ComposePopoverController {
 		
 		tableViewSections.append((
 			title: nil,
-			description: nil,
+			description: "",
 			cells: [providerCell, nameCell, versionCell]
 		))
 		tableViewSections.append((
@@ -79,10 +87,14 @@ class ProjectExtensionEditController: ComposePopoverController {
 			cells:			[confirmButtonCell]
 		))
 		
-		checkAddExtensionButtonState()
+		setExtensionButtonStates()
 	}
 	
-	override func didTapCreate(_ sender: UIButton) -> Void {
+	@objc func saveChanges(_ button: UIBarButtonItem) -> Void {
+		
+	}
+	
+	override func didTapConfirm(_ sender: UIButton) -> Void {
 		
 		if !shouldRenderToCreate {
 			if let extensionToRemove = extensionToEdit {
@@ -116,21 +128,41 @@ class ProjectExtensionEditController: ComposePopoverController {
 	}
 	
 	@objc func didChangeText(in textField: UITextField) -> Void {
-		checkAddExtensionButtonState()
+		setExtensionButtonStates()
 	}
 	
-	private func checkAddExtensionButtonState() -> Void {
-//		guard let provider = providerCell.textField.text, let name = nameCell.textField.text, let version = versionCell.textField.text else {
-//			addExtensionCell.setEnabled(false)
-//			return
-//		}
-//		
-//		if provider.count == 0 || name.count == 0 || version.count == 0 {
-//			addExtensionCell.setEnabled(false)
-//			return
-//		}
-//		
-//		addExtensionCell.setEnabled(true)
+	/// Sets the extension button states, whether they are enabled or disabled
+	private func setExtensionButtonStates() -> Void {
+		let provider	= providerCell.textField.text ?? ""
+		let name		= nameCell.textField.text ?? ""
+		let version		= versionCell.textField.text ?? ""
+		
+		if shouldRenderToCreate {
+			do {
+				let _ = try Extension.make(provider: provider, name: name, version: version)
+				isConfirmButtonEnabled = true
+			} catch {
+				isConfirmButtonEnabled = false
+			}
+		}
+		
+		if !shouldRenderToCreate {
+			guard let extensionToEdit = extensionToEdit else {
+				hasChangesToSave = false
+				return
+			}
+
+			do {
+				let extensionToCompare = try Extension.make(provider: provider, name: name, version: version)
+
+				//
+				// If the both extensions (the one we want to edit and the one we created from our inputs)
+				// are different, there are changes to commit
+				hasChangesToSave = extensionToCompare.identifier != extensionToEdit.identifier
+			} catch {
+				hasChangesToSave = false
+			}
+		}
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

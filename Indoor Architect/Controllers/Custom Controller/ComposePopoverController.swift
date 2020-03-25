@@ -39,7 +39,7 @@ class ComposePopoverController: UITableViewController {
 		
 		//
 		// Configure create button
-		confirmButtonCell.cellButton.addTarget(self, action: #selector(didTapCreate), for: .touchUpInside)
+		confirmButtonCell.cellButton.addTarget(self, action: #selector(didTapConfirm), for: .touchUpInside)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +62,7 @@ class ComposePopoverController: UITableViewController {
 		dismiss(animated: true, completion: nil)
 	}
 	
-	@objc func didTapCreate(_ sender: UIButton) -> Void {
+	@objc func didTapConfirm(_ sender: UIButton) -> Void {
 		
 	}
 	

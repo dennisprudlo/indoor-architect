@@ -142,7 +142,7 @@ class ProjectAddressEditController: ComposePopoverController {
 		checkAddAddressButtonState()
 	}
 	
-	override func didTapCreate(_ sender: UIButton) -> Void {
+	override func didTapConfirm(_ sender: UIButton) -> Void {
 		
 		//
 		// The controller shows the delete button instead
