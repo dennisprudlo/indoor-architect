@@ -15,7 +15,7 @@ class ComposePopoverController: UITableViewController {
 	var tableViewSections: [TableViewSection] = []
 	
 	let saveBarButtonItem	= UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(didTapSave))
-	let confirmButtonCell	= ButtonTableViewCell(title: "Add")
+	let confirmButtonCell	= ButtonTableViewCell(title: Localizable.General.add)
 	
 	var confirmButtonTitle: String? {
 		didSet {
