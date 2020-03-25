@@ -57,7 +57,7 @@ class ProjectAddressEditController: ComposePopoverController {
 		
 		//
 		// Configure cell event handler
-		for cell in [addressCell, localityCell] {
+		for cell in [addressCell, localityCell, postalCodeCell, postalCodeExtensionCell, postalCodeVanityCell, unitCell] {
 			cell.textField.addTarget(self, action: #selector(didChangeText(in:)), for: .editingChanged)
 		}
 		
@@ -87,6 +87,7 @@ class ProjectAddressEditController: ComposePopoverController {
 			postalCodeCell.textField.text			= addressToEdit?.properties.postalCode
 			postalCodeExtensionCell.textField.text	= addressToEdit?.properties.postalCodeExt
 			postalCodeVanityCell.textField.text		= addressToEdit?.properties.postalCodeVanity
+			unitCell.textField.text					= addressToEdit?.properties.unit
 		}
 		
 		tableViewSections.append((
@@ -135,11 +136,26 @@ class ProjectAddressEditController: ComposePopoverController {
 			provinceCell.textLabel?.textColor = .placeholderText
 		}
 		
-		checkAddAddressButtonState()
+		setAddressButtonStates()
 	}
 	
 	@objc func didChangeText(in textField: UITextField) -> Void {
-		checkAddAddressButtonState()
+		setAddressButtonStates()
+	}
+	
+	override func didTapSave(_ barButtonItem: UIBarButtonItem) {
+		super.didTapSave(barButtonItem)
+		
+		guard let properties = createAddressProperties() else {
+			return
+		}
+		
+		addressToEdit?.properties = properties
+		
+		//
+		// Save the created address and reload the main controllers table view
+		try? displayController.project.imdfArchive.save(.address)
+		displayController.tableView.reloadData()
 	}
 	
 	override func didTapConfirm(_ sender: UIButton) -> Void {
@@ -151,73 +167,95 @@ class ProjectAddressEditController: ComposePopoverController {
 				displayController.project.imdfArchive.addresses.removeAll { (address) -> Bool in
 					return address.id.uuidString == visibleAddress.id.uuidString
 				}
+				
+				//
+				// Save the created address and reload the main controllers table view
+				try? displayController.project.imdfArchive.save(.address)
 				displayController.tableView.reloadData()
+				
+				navigationController?.popViewController(animated: true)
 			}
-		} else {
+		}
 		
-			guard
-				let address = addressCell.textField.text,
-				let country = countryData?.code,
-				let province = provinceData?.code,
-				let locality = localityCell.textField.text
-			else {
+		if shouldRenderToCreate {
+			let uuid = displayController.project.imdfArchive.getUnusedGlobalUuid()
+			
+			guard let properties = createAddressProperties() else {
 				return
 			}
 			
-			let unitValue = unitCell.textField.text
-			let postalCodeValue = postalCodeCell.textField.text
-			let postalCodeExtValue = postalCodeExtensionCell.textField.text
-			let postalCodeVanityValue = postalCodeVanityCell.textField.text
-			
-			let uuid = displayController.project.imdfArchive.getUnusedGlobalUuid()
-			let properties = Address.Properties(
-				address:			address,
-				unit:				unitValue?.count ?? 0 == 0 ? nil : unitValue,
-				locality:			locality,
-				province:			province,
-				country:			country,
-				postalCode:			postalCodeValue?.count ?? 0 == 0 ? nil : postalCodeValue,
-				postalCodeExt:		postalCodeExtValue?.count ?? 0 == 0 ? nil : postalCodeExtValue,
-				postalCodeVanity:	postalCodeVanityValue?.count ?? 0 == 0 ? nil : postalCodeVanityValue
-			)
-			
 			let addressToAdd = Address(withIdentifier: uuid, properties: properties, geometry: [], type: .address)
 			displayController.project.imdfArchive.addresses.append(addressToAdd)
-			displayController.tableView.reloadData()
-		}
-		
-		do {
-			let archive = displayController.project.imdfArchive
-			try archive.save(.address)
-		} catch {
-			print(error)
-		}
-		
 			
-		if !shouldRenderToCreate {
-			navigationController?.popViewController(animated: true)
-		} else {
+			//
+			// Save the created address and reload the main controllers table view
+			try? displayController.project.imdfArchive.save(.address)
+			displayController.tableView.reloadData()
+			
 			dismiss(animated: true, completion: nil)
 		}
 	}
 	
-	private func checkAddAddressButtonState() -> Void {
-		if !shouldRenderToCreate {
-			isConfirmButtonEnabled = true
-			return
+	private func createAddressProperties() -> Address.Properties? {
+		guard
+			let address = addressCell.textField.text,
+			let country = countryData?.code,
+			let province = provinceData?.code,
+			let locality = localityCell.textField.text
+		else {
+				return nil
 		}
 		
-		guard let address = addressCell.textField.text, let locality = localityCell.textField.text, let _ = countryData, let _ = provinceData else {
-			isConfirmButtonEnabled = false
-			return
+		let unitValue = unitCell.textField.text
+		let postalCodeValue = postalCodeCell.textField.text
+		let postalCodeExtValue = postalCodeExtensionCell.textField.text
+		let postalCodeVanityValue = postalCodeVanityCell.textField.text
+		
+		return Address.Properties(
+			address:			address,
+			unit:				unitValue?.count ?? 0 == 0 ? nil : unitValue,
+			locality:			locality,
+			province:			province,
+			country:			country,
+			postalCode:			postalCodeValue?.count ?? 0 == 0 ? nil : postalCodeValue,
+			postalCodeExt:		postalCodeExtValue?.count ?? 0 == 0 ? nil : postalCodeExtValue,
+			postalCodeVanity:	postalCodeVanityValue?.count ?? 0 == 0 ? nil : postalCodeVanityValue
+		)
+	}
+	
+	private func setAddressButtonStates() -> Void {
+		
+		if shouldRenderToCreate {
+			guard let address = addressCell.textField.text, let locality = localityCell.textField.text, let _ = countryData, let _ = provinceData else {
+				isConfirmButtonEnabled = false
+				return
+			}
+			
+			if address.count == 0 || locality.count == 0 {
+				isConfirmButtonEnabled = false
+				return
+			}
+			
+			isConfirmButtonEnabled = true
 		}
-
-		if address.count == 0 || locality.count == 0 {
-			isConfirmButtonEnabled = false
-			return
+		
+		if !shouldRenderToCreate {
+			guard let addressToEdit = addressToEdit, let properties = createAddressProperties() else {
+				hasChangesToSave = false
+				return
+			}
+			
+			var hasChanges = addressToEdit.properties.address != properties.address
+			hasChanges = hasChanges || addressToEdit.properties.country != properties.country
+			hasChanges = hasChanges || addressToEdit.properties.province != properties.province
+			hasChanges = hasChanges || addressToEdit.properties.locality != properties.locality
+			hasChanges = hasChanges || addressToEdit.properties.postalCode != properties.postalCode
+			hasChanges = hasChanges || addressToEdit.properties.postalCodeExt != properties.postalCodeExt
+			hasChanges = hasChanges || addressToEdit.properties.postalCodeVanity != properties.postalCodeVanity
+			hasChanges = hasChanges || addressToEdit.properties.unit != properties.unit
+			
+			hasChangesToSave = hasChanges
 		}
-
-		isConfirmButtonEnabled = true
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
