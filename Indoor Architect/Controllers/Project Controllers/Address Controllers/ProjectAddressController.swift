@@ -48,10 +48,20 @@ class ProjectAddressController: DetailTableViewController {
 		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
 		cell.accessoryType = .disclosureIndicator
 		
-		let address		= project.imdfArchive.addresses[indexPath.row].properties
-		cell.textLabel?.text		= address.unit == nil ? address.address : "\(address.address), \(address.unit!)"
-		cell.detailTextLabel?.text	= "\(address.locality), \(address.province), \(address.country)"
-		cell.backgroundColor = Color.lightStyleCellBackground
+		let address		= project.imdfArchive.addresses[indexPath.row]
+		
+		var addressString = address.properties.address
+		if let unit = address.properties.unit {
+			addressString = "\(addressString), \(unit)"
+		}
+		
+		var localityString	= address.properties.locality
+		localityString		= "\(localityString), \(address.getSubdivisionData()?.title ?? address.properties.province)"
+		localityString		= "\(localityString), \(address.getCountryData()?.title ?? address.properties.country)"
+		
+		cell.textLabel?.text		= addressString
+		cell.detailTextLabel?.text	= localityString
+		cell.backgroundColor		= Color.lightStyleCellBackground
 		return cell
 	}
 
