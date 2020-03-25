@@ -11,7 +11,11 @@ import Foundation
 struct Localizable {
 	
 	struct General {
-		static let missingInformation = NSLocalizedString("general.missingInformation", comment: "")
+		static let missingInformation	= NSLocalizedString("general.missingInformation", comment: "")
+		static let add					= NSLocalizedString("general.add", comment: "")
+		static let delete				= NSLocalizedString("general.delete", comment: "")
+		static let remove				= NSLocalizedString("general.remove", comment: "")
+		static let none					= NSLocalizedString("general.none", comment: "")
 	}
 	
 	struct ProjectExplorer {
@@ -43,8 +47,6 @@ struct Localizable {
 			struct Extension {
 				static let addExtension		= NSLocalizedString("projectExplorer.project.extensions.addExtension", comment: "")
 				static let editExtension	= NSLocalizedString("projectExplorer.project.extensions.editExtension", comment: "")
-				static let add				= NSLocalizedString("projectExplorer.project.extensions.add", comment: "")
-				static let remove			= NSLocalizedString("projectExplorer.project.extensions.remove", comment: "")
 				static let provider			= NSLocalizedString("projectExplorer.project.extensions.provider", comment: "")
 				static let name				= NSLocalizedString("projectExplorer.project.extensions.name", comment: "")
 				static let version			= NSLocalizedString("projectExplorer.project.extensions.version", comment: "")
@@ -54,8 +56,6 @@ struct Localizable {
 			struct Address {
 				static let addAddress				= NSLocalizedString("projectExplorer.project.address.addAddress", comment: "")
 				static let editAddress				= NSLocalizedString("projectExplorer.project.address.editAddress", comment: "")
-				static let add						= NSLocalizedString("projectExplorer.project.address.add", comment: "")
-				static let delete					= NSLocalizedString("projectExplorer.project.address.delete", comment: "")
 				static let addressDescription		= NSLocalizedString("projectExplorer.project.address.addressDescription", comment: "")
 				static let placeholderAddress		= NSLocalizedString("projectExplorer.project.address.placeholderAddress", comment: "")
 				static let placeholderCountry		= NSLocalizedString("projectExplorer.project.address.placeholderCountry", comment: "")

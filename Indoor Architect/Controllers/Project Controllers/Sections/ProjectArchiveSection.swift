@@ -33,7 +33,12 @@ class ProjectArchiveSection: ProjectSection {
 	
 	func resetExtensionCount() -> Void {
 		guard let extensionCount = archive?.manifest.extensions?.count else {
-			customExtensionsCell.detailTextLabel?.text = "None"
+			customExtensionsCell.detailTextLabel?.text = Localizable.General.none
+			return
+		}
+		
+		if extensionCount == 0 {
+			customExtensionsCell.detailTextLabel?.text = Localizable.General.none
 			return
 		}
 		
@@ -46,7 +51,12 @@ class ProjectArchiveSection: ProjectSection {
 	
 	func resetAddressesCount() -> Void {
 		guard let addressesCount = archive?.addresses.count else {
-			addressesCell.detailTextLabel?.text = "None"
+			addressesCell.detailTextLabel?.text = Localizable.General.none
+			return
+		}
+		
+		if addressesCount == 0 {
+			addressesCell.detailTextLabel?.text = Localizable.General.none
 			return
 		}
 		

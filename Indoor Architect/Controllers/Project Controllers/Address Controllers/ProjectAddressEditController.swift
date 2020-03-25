@@ -39,7 +39,7 @@ class ProjectAddressEditController: ComposePopoverController {
 		
 		//
 		// Set the confirm button title
-		confirmButtonTitle = shouldRenderToCreate ? Localizable.ProjectExplorer.Project.Address.add : Localizable.ProjectExplorer.Project.Address.delete
+		confirmButtonTitle = shouldRenderToCreate ? Localizable.General.add : Localizable.General.remove
 		
 		//
 		// Set the controller title

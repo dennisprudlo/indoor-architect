@@ -6,7 +6,11 @@
   Copyright © 2020 Dennis Prudlo. All rights reserved.
 */
 
-"general.missingInformation" = "Missing Information 😢";
+"general.missingInformation"	= "Missing Information 😢";
+"general.add"					= "Add";
+"general.delete"				= "Delete";
+"general.remove"				= "Remove";
+"general.none"					= "None";
 
 "projectExplorer.searchBarPlaceholder"		= "Quick Search";
 "projectExplorer.sectionTitleProjects"		= "Projects";
@@ -33,8 +37,6 @@
 "projectExplorer.project.extensions"				= "Extensions";
 "projectExplorer.project.extensions.addExtension"	= "Add Extension";
 "projectExplorer.project.extensions.editExtension"	= "Edit Extension";
-"projectExplorer.project.extensions.add"			= "Add";
-"projectExplorer.project.extensions.remove"			= "Remove";
 "projectExplorer.project.extensions.provider"		= "Provider";
 "projectExplorer.project.extensions.name"			= "Name";
 "projectExplorer.project.extensions.version"		= "Version";
@@ -42,8 +44,6 @@
 "projectExplorer.project.addresses"						= "Addresses";
 "projectExplorer.project.address.addAddress"			= "Add Address";
 "projectExplorer.project.address.editAddress"			= "Edit Address";
-"projectExplorer.project.address.add"					= "Add";
-"projectExplorer.project.address.delete"				= "Delete";
 "projectExplorer.project.address.addressDescription"	= "The address is the significant name of the place. It can be a simple street name or the name of a venue.";
 "projectExplorer.project.address.placeholderAddress"	= "Address";
 "projectExplorer.project.address.placeholderCountry"	= "Country";

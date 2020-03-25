@@ -25,7 +25,7 @@ class ProjectExtensionEditController: ComposePopoverController {
 		// Set the controller title
 		title = shouldRenderToCreate ? Localizable.ProjectExplorer.Project.Extension.addExtension : Localizable.ProjectExplorer.Project.Extension.editExtension
 		
-		confirmButtonTitle = shouldRenderToCreate ? Localizable.ProjectExplorer.Project.Extension.add : Localizable.ProjectExplorer.Project.Extension.remove
+		confirmButtonTitle = shouldRenderToCreate ? Localizable.General.add : Localizable.General.remove
 		
 		//
 		// Add the cancel bar button item
