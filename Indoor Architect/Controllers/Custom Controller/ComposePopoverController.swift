@@ -14,7 +14,8 @@ class ComposePopoverController: UITableViewController {
 	
 	var tableViewSections: [TableViewSection] = []
 	
-	let confirmButtonCell = ButtonTableViewCell(title: "Add")
+	let saveBarButtonItem	= UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(didTapSave))
+	let confirmButtonCell	= ButtonTableViewCell(title: "Add")
 	
 	var confirmButtonTitle: String? {
 		didSet {
@@ -25,6 +26,12 @@ class ComposePopoverController: UITableViewController {
 	var isConfirmButtonEnabled: Bool = true {
 		didSet {
 			self.confirmButtonCell.setEnabled(self.isConfirmButtonEnabled)
+		}
+	}
+	
+	var hasChangesToSave: Bool = false {
+		didSet {
+			navigationItem.setRightBarButton(hasChangesToSave ? saveBarButtonItem : nil, animated: true)
 		}
 	}
 	
@@ -60,6 +67,10 @@ class ComposePopoverController: UITableViewController {
 	
 	@objc func didTapCancel(_ barButtonItem: UIBarButtonItem) -> Void {
 		dismiss(animated: true, completion: nil)
+	}
+	
+	@objc func didTapSave(_ barButtonItem: UIBarButtonItem) -> Void {
+		hasChangesToSave = false
 	}
 	
 	@objc func didTapConfirm(_ sender: UIButton) -> Void {

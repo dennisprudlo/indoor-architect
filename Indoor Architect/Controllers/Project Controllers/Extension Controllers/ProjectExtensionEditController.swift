@@ -10,8 +10,6 @@ import UIKit
 
 class ProjectExtensionEditController: ComposePopoverController {
 	
-	let saveBarButtonItem	= UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveChanges))
-	
 	let providerCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Extension.provider)
 	let nameCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Extension.name)
 	let versionCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Extension.version)
@@ -19,12 +17,6 @@ class ProjectExtensionEditController: ComposePopoverController {
 	var displayController: ProjectExtensionController?
 	var shouldRenderToCreate: Bool = false
 	var extensionToEdit: Extension?
-	
-	var hasChangesToSave: Bool = false {
-		didSet {
-			navigationItem.setRightBarButton(hasChangesToSave ? saveBarButtonItem : nil, animated: true)
-		}
-	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -90,8 +82,26 @@ class ProjectExtensionEditController: ComposePopoverController {
 		setExtensionButtonStates()
 	}
 	
-	@objc func saveChanges(_ button: UIBarButtonItem) -> Void {
+	override func didTapSave(_ barButtonItem: UIBarButtonItem) -> Void {
+		super.didTapSave(barButtonItem)
 		
+		guard let extensionToEdit = extensionToEdit else {
+			return
+		}
+		
+		let provider	= providerCell.textField.text ?? ""
+		let name		= nameCell.textField.text ?? ""
+		let version		= versionCell.textField.text ?? ""
+		
+		do {
+			try displayController?.project?.addExtension(provider: provider, name: name, version: version)
+			displayController?.project?.removeExtension(extensionToEdit)
+			try displayController?.project?.save()
+			
+			displayController?.resetExtensions()
+		} catch {
+			print(error)
+		}
 	}
 	
 	override func didTapConfirm(_ sender: UIButton) -> Void {

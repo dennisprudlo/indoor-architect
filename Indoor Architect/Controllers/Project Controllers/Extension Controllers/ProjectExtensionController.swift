@@ -38,6 +38,8 @@ class ProjectExtensionController: DetailTableViewController {
 	
 	func resetExtensions() -> Void {
 		guard let extensions = project?.imdfArchive.manifest.extensions else {
+			groupedExtensions = []
+			tableView.reloadData()
 			return
 		}
 		
