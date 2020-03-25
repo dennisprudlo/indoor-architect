@@ -31,90 +31,90 @@
 	<key>AE</key>
 	<dict>
 		<key>AE-AZ</key>
-		<string>Abu Dhabi (أبو ظبي, Abū Ẓaby)</string>
+		<string>أبو ظبي (Abū Ẓaby)</string>
 		<key>AE-AJ</key>
-		<string>Adschman (عجمان, ʿAǧmān)</string>
+		<string>عجمان (ʿAǧmān)</string>
 		<key>AE-DU</key>
-		<string>Dubai (دبي, Dubayy)</string>
+		<string>دبي (Dubayy)</string>
 		<key>AE-FU</key>
-		<string>Fudschaira (الفجيرة, al-Fuǧaira)</string>
+		<string>الفجيرة (al-Fuǧaira)</string>
 		<key>AE-RK</key>
-		<string>Ra’s al-Chaima (رأس الخيمة, Raʾs al-Ḫaima)</string>
+		<string>رأس الخيمة (Raʾs al-Ḫaima)</string>
 		<key>AE-SH</key>
-		<string>Schardscha (الشارقة, aš-Šāriqa)</string>
+		<string>الشارقة (aš-Šāriqa)</string>
 		<key>AE-UQ</key>
-		<string>Umm al-Qaiwain (أم القيوين, Umm al-Qaiwain)</string>
+		<string>أم القيوين (Umm al-Qaiwain)</string>
 	</dict>
 	<key>AF</key>
 	<dict>
 		<key>AF-BDS</key>
-		<string>Badachschan</string>
+		<string>Badakhshān</string>
 		<key>AF-BDG</key>
-		<string>Badghis</string>
+		<string>Bādghīs</string>
 		<key>AF-BGL</key>
-		<string>Baglan</string>
+		<string>Baghlān</string>
 		<key>AF-BAL</key>
-		<string>Balch</string>
+		<string>Balkh</string>
 		<key>AF-BAM</key>
-		<string>Bamiyan</string>
+		<string>Bāmyān</string>
 		<key>AF-DAY</key>
-		<string>Daikondi</string>
+		<string>Dāykundī</string>
 		<key>AF-FRA</key>
-		<string>Farah</string>
+		<string>Farāh</string>
 		<key>AF-FYB</key>
-		<string>Faryab</string>
+		<string>Fāryāb</string>
 		<key>AF-GHA</key>
-		<string>Ghazni</string>
+		<string>Ghaznī</string>
 		<key>AF-GHO</key>
-		<string>Ghor</string>
+		<string>Ghōr</string>
 		<key>AF-HEL</key>
 		<string>Helmand</string>
 		<key>AF-HER</key>
-		<string>Herat</string>
+		<string>Herāt</string>
 		<key>AF-JOW</key>
-		<string>1)</string>
+		<string>Jowzjān</string>
 		<key>AF-KAB</key>
-		<string>Kabul</string>
+		<string>Kābul</string>
 		<key>AF-KAN</key>
-		<string>Kandahar</string>
+		<string>Kandahār</string>
 		<key>AF-KAP</key>
-		<string>Kapisa</string>
+		<string>Kāpīsā</string>
 		<key>AF-KHO</key>
-		<string>Chost</string>
+		<string>Khōst</string>
 		<key>AF-KNR</key>
 		<string>Kunar</string>
 		<key>AF-KDZ</key>
-		<string>Kundus</string>
+		<string>Kunduz</string>
 		<key>AF-LAG</key>
-		<string>Laghman</string>
+		<string>Laghmān</string>
 		<key>AF-LOG</key>
-		<string>Lugar</string>
+		<string>Lōgar</string>
 		<key>AF-NAN</key>
-		<string>Nangarhar</string>
+		<string>Nangarhār</string>
 		<key>AF-NIM</key>
-		<string>Nimrus</string>
+		<string>Nīmrōz</string>
 		<key>AF-NUR</key>
-		<string>Nuristan</string>
+		<string>Nūristān</string>
 		<key>AF-PAN</key>
-		<string>Pandschschir</string>
+		<string>Panjshīr</string>
 		<key>AF-PIA</key>
-		<string>Paktia</string>
+		<string>Paktiyā</string>
 		<key>AF-PKA</key>
-		<string>Paktika</string>
+		<string>Paktīkā</string>
 		<key>AF-PAR</key>
-		<string>Parwan</string>
+		<string>Parwān</string>
 		<key>AF-SAM</key>
-		<string>Samangan</string>
+		<string>Samangān</string>
 		<key>AF-SAR</key>
-		<string>Sar-i Pul</string>
+		<string>Sar-e Pul</string>
 		<key>AF-TAK</key>
-		<string>Tachar</string>
+		<string>Takhār</string>
 		<key>AF-URU</key>
-		<string>Uruzgan</string>
+		<string>Uruzgān</string>
 		<key>AF-WAR</key>
 		<string>Wardak</string>
 		<key>AF-ZAB</key>
-		<string>Zabul</string>
+		<string>Zābul</string>
 	</dict>
 	<key>AG</key>
 	<dict>
@@ -131,9 +131,9 @@
 		<key>AG-08</key>
 		<string>Saint Phillip</string>
 		<key>AG-10</key>
-		<string>1)</string>
+		<string>Barbuda</string>
 		<key>AG-11</key>
-		<string>1)</string>
+		<string>Redonda</string>
 	</dict>
 	<key>AI</key>
 	<dict>
@@ -170,27 +170,27 @@
 	<key>AM</key>
 	<dict>
 		<key>AM-AG</key>
-		<string>Aragazotn</string>
+		<string>Aragacotn</string>
 		<key>AM-AR</key>
 		<string>Ararat</string>
 		<key>AM-AV</key>
-		<string>Armawir</string>
+		<string>Armavir</string>
 		<key>AM-ER</key>
-		<string>Jerewan</string>
+		<string>Erevan</string>
 		<key>AM-GR</key>
-		<string>Gegharkunik</string>
+		<string>Gegark'unik'</string>
 		<key>AM-KT</key>
-		<string>Kotajk</string>
+		<string>Kotayk'</string>
 		<key>AM-LO</key>
 		<string>Lori</string>
 		<key>AM-SH</key>
-		<string>Schirak</string>
+		<string>Sirak</string>
 		<key>AM-SU</key>
-		<string>Sjunik</string>
+		<string>Syunik'</string>
 		<key>AM-TV</key>
-		<string>Tawusch</string>
+		<string>Tavus</string>
 		<key>AM-VD</key>
-		<string>Wajoz Dsor</string>
+		<string>Vayoc Jor</string>
 	</dict>
 	<key>AN</key>
 	<dict>
