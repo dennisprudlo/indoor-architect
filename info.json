@@ -1,0 +1,16 @@
+{
+	"primaryColor" : {
+		"normalized" : {
+			"red" : 1.0,
+			"green" : 0.23137254901960785,
+			"blue" : 0.18823529411764706,
+			"alpha" : 1.0
+		},
+		"hex" : {
+			"red" : "0xFF",
+			"green" : "0x3B",
+			"blue" : "0x30",
+			"alpha" : "0xFF"
+		}
+	}
+}
