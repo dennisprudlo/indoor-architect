@@ -72,4 +72,29 @@ class ProjectAddressController: DetailTableViewController {
 		
 		navigationController?.pushViewController(editController, animated: true)
 	}
+	
+	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		
+		let deleteAction = UIContextualAction(style: .destructive, title: nil, handler: { (action, view, completion) in
+			let archive			= self.project.imdfArchive
+			let addressToDelete = archive.addresses[indexPath.row]
+			
+			archive.delete(addressToDelete)
+			
+			guard let _ = try? archive.save(.address) else {
+				completion(false)
+				return
+			}
+			
+			tableView.beginUpdates()
+			tableView.deleteRows(at: [indexPath], with: .left)
+			tableView.endUpdates()
+			
+			completion(true)
+		})
+		deleteAction.backgroundColor = Color.primary
+		deleteAction.image = Icon.trash
+		
+		return UISwipeActionsConfiguration(actions: [deleteAction])
+	}
 }

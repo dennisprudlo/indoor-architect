@@ -36,10 +36,12 @@ class ProjectExtensionController: DetailTableViewController {
 		present(createProjectViewController, animated: true, completion: nil)
 	}
 	
-	func resetExtensions() -> Void {
+	func resetExtensions(reloadTableView: Bool = true) -> Void {
 		guard let extensions = project?.imdfArchive.manifest.extensions else {
 			groupedExtensions = []
-			tableView.reloadData()
+			if reloadTableView {
+				tableView.reloadData()
+			}
 			return
 		}
 		
@@ -48,7 +50,9 @@ class ProjectExtensionController: DetailTableViewController {
 			return firstKey.key.lowercased() > secondKey.key.lowercased()
 		}
 		
-		tableView.reloadData()
+		if reloadTableView {
+			tableView.reloadData()
+		}
 	}
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,5 +89,35 @@ class ProjectExtensionController: DetailTableViewController {
 		editController.extensionToEdit		= groupedExtensions[indexPath.section].value[indexPath.row]
 		
 		navigationController?.pushViewController(editController, animated: true)
+	}
+	
+	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		
+		let deleteAction = UIContextualAction(style: .destructive, title: nil, handler: { (action, view, completion) in
+			let section				= self.groupedExtensions[indexPath.section].value
+			let extensionToRemove	= section[indexPath.row]
+			self.project?.removeExtension(extensionToRemove)
+			
+			guard let _ = try? self.project?.save() else {
+				completion(false)
+				return
+			}
+			
+			self.resetExtensions(reloadTableView: false)
+			
+			tableView.beginUpdates()
+			if section.count == 1 {
+				tableView.deleteSections(IndexSet([indexPath.section]), with: .left)
+			} else {
+				tableView.deleteRows(at: [indexPath], with: .left)
+			}
+			tableView.endUpdates()
+			
+			completion(true)
+		})
+		deleteAction.backgroundColor = Color.primary
+		deleteAction.image = Icon.trash
+		
+		return UISwipeActionsConfiguration(actions: [deleteAction])
 	}
 }

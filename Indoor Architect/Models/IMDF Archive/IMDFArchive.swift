@@ -123,4 +123,10 @@ class IMDFArchive {
 		
 		return unusedUuid
 	}
+	
+	func delete(_ address: Address) -> Void {
+		addresses.removeAll { (indexedAddress) -> Bool in
+			return indexedAddress.id.uuidString == address.id.uuidString
+		}
+	}
 }
