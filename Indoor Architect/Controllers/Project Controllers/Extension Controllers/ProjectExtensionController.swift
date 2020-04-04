@@ -47,7 +47,7 @@ class ProjectExtensionController: DetailTableViewController {
 		
 		let grouped = Dictionary(grouping: extensions, by: { $0.provider.lowercased() })
 		groupedExtensions = grouped.sorted { (firstKey, secondKey) -> Bool in
-			return firstKey.key.lowercased() > secondKey.key.lowercased()
+			return firstKey.key.lowercased() < secondKey.key.lowercased()
 		}
 		
 		if reloadTableView {
