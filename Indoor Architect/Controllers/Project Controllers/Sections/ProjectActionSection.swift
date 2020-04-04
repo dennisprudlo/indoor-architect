@@ -20,7 +20,7 @@ class ProjectActionSection: ProjectSection {
 	override init() {
 		super.init()
 		
-		editIndoorMapButton.setTitle(Localizable.ProjectExplorer.Project.editIndoorMap, for: .normal)
+		editIndoorMapButton.setTitle(Localizable.Project.editIndoorMap, for: .normal)
 		editIndoorMapButton.backgroundColor = Color.indoorMapEdit
 		editIndoorMapButton.setImage(Icon.map, for: .normal)
 		editIndoorMapButton.tintColor = .white
@@ -28,7 +28,7 @@ class ProjectActionSection: ProjectSection {
 		editIndoorMapButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: iconSpacing / 2)
 		editIndoorMapButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: iconSpacing / 2, bottom: 0, right: 0)
 		
-		exportArchiveButton.setTitle(Localizable.ProjectExplorer.Project.exportImdfArchive, for: .normal)
+		exportArchiveButton.setTitle(Localizable.Project.exportImdfArchive, for: .normal)
 		exportArchiveButton.backgroundColor = Color.indoorMapExport
 		exportArchiveButton.setImage(Icon.download, for: .normal)
 		exportArchiveButton.tintColor = .white

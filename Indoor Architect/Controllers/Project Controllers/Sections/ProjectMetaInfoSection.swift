@@ -19,11 +19,11 @@ class ProjectMetaInfoSection: ProjectSection {
 		cells.append(updatedAtCell)
 		
 		createdAtCell.selectionStyle	= .none
-		createdAtCell.textLabel?.text	= Localizable.ProjectExplorer.Project.created
+		createdAtCell.textLabel?.text	= Localizable.Project.created
 		createdAtCell.backgroundColor	= Color.lightStyleCellBackground
 		
 		updatedAtCell.selectionStyle	= .none
-		updatedAtCell.textLabel?.text	= Localizable.ProjectExplorer.Project.updated
+		updatedAtCell.textLabel?.text	= Localizable.Project.updated
 		updatedAtCell.backgroundColor	= Color.lightStyleCellBackground
 	}
 	

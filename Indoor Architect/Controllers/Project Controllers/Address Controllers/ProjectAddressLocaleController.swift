@@ -25,7 +25,7 @@ class ProjectAddressLocaleController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		title = dataType == .country ? Localizable.ProjectExplorer.Project.Address.placeholderCountry : Localizable.ProjectExplorer.Project.Address.placeholderProvince
+		title = dataType == .country ? Localizable.Project.Address.placeholderCountry : Localizable.Project.Address.placeholderProvince
 		
 		if !displayController.shouldRenderToCreate {
 			tableView.cellLayoutMarginsFollowReadableWidth	= true

@@ -16,14 +16,14 @@ class ProjectAddressEditController: ComposePopoverController {
 	var addressToEdit: Address?
 	
 	let featureIdCell			= UITableViewCell(style: .default, reuseIdentifier: nil)
-	let addressCell				= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderAddress)
+	let addressCell				= TextInputTableViewCell(placeholder: Localizable.Project.Address.placeholderAddress)
 	let countryCell				= UITableViewCell(style: .value1, reuseIdentifier: nil)
 	let provinceCell			= UITableViewCell(style: .value1, reuseIdentifier: nil)
-	let localityCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderLocality)
-	let postalCodeCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderCode)
-	let postalCodeExtensionCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderExtension)
-	let postalCodeVanityCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderVanity)
-	let unitCell				= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Address.placeholderUnit)
+	let localityCell			= TextInputTableViewCell(placeholder: Localizable.Project.Address.placeholderLocality)
+	let postalCodeCell			= TextInputTableViewCell(placeholder: Localizable.Project.Address.placeholderCode)
+	let postalCodeExtensionCell	= TextInputTableViewCell(placeholder: Localizable.Project.Address.placeholderExtension)
+	let postalCodeVanityCell	= TextInputTableViewCell(placeholder: Localizable.Project.Address.placeholderVanity)
+	let unitCell				= TextInputTableViewCell(placeholder: Localizable.Project.Address.placeholderUnit)
 	
 	var countryData: Address.LocalityCodeCombination? {
 		didSet {
@@ -43,15 +43,15 @@ class ProjectAddressEditController: ComposePopoverController {
 		
 		//
 		// Set the controller title
-		title = shouldRenderToCreate ? Localizable.ProjectExplorer.Project.Address.addAddress : Localizable.ProjectExplorer.Project.Address.editAddress
+		title = shouldRenderToCreate ? Localizable.Project.Address.addAddress : Localizable.Project.Address.editAddress
 		
 		//
 		// Configure table view cells
-		countryCell.textLabel?.text			= Localizable.ProjectExplorer.Project.Address.placeholderCountry
+		countryCell.textLabel?.text			= Localizable.Project.Address.placeholderCountry
 		countryCell.textLabel?.textColor	= .placeholderText
 		countryCell.accessoryType			= .disclosureIndicator
 		
-		provinceCell.textLabel?.text		= Localizable.ProjectExplorer.Project.Address.placeholderProvince
+		provinceCell.textLabel?.text		= Localizable.Project.Address.placeholderProvince
 		provinceCell.textLabel?.textColor	= .placeholderText
 		provinceCell.accessoryType			= .disclosureIndicator
 		
@@ -92,7 +92,7 @@ class ProjectAddressEditController: ComposePopoverController {
 		
 		tableViewSections.append((
 			title: nil,
-			description: Localizable.ProjectExplorer.Project.Address.addressDescription,
+			description: Localizable.Project.Address.addressDescription,
 			cells: [addressCell]
 		))
 		tableViewSections.append((
@@ -101,13 +101,13 @@ class ProjectAddressEditController: ComposePopoverController {
 			cells:			[countryCell, provinceCell, localityCell]
 		))
 		tableViewSections.append((
-			title:			Localizable.ProjectExplorer.Project.Address.postalCode,
-			description:	Localizable.ProjectExplorer.Project.Address.postalCodeDescription,
+			title:			Localizable.Project.Address.postalCode,
+			description:	Localizable.Project.Address.postalCodeDescription,
 			cells:			[postalCodeCell, postalCodeExtensionCell, postalCodeVanityCell]
 		))
 		tableViewSections.append((
-			title:			Localizable.ProjectExplorer.Project.Address.unit,
-			description:	Localizable.ProjectExplorer.Project.Address.unitDescription,
+			title:			Localizable.Project.Address.unit,
+			description:	Localizable.Project.Address.unitDescription,
 			cells:			[unitCell]
 		))
 		tableViewSections.append((
@@ -124,7 +124,7 @@ class ProjectAddressEditController: ComposePopoverController {
 			countryCell.textLabel?.text = countryData.title
 			countryCell.textLabel?.textColor = .label
 		} else {
-			countryCell.textLabel?.text = Localizable.ProjectExplorer.Project.Address.placeholderCountry
+			countryCell.textLabel?.text = Localizable.Project.Address.placeholderCountry
 			countryCell.textLabel?.textColor = .placeholderText
 		}
 		
@@ -132,7 +132,7 @@ class ProjectAddressEditController: ComposePopoverController {
 			provinceCell.textLabel?.text = provinceData.title
 			provinceCell.textLabel?.textColor = .label
 		} else {
-			provinceCell.textLabel?.text = Localizable.ProjectExplorer.Project.Address.placeholderProvince
+			provinceCell.textLabel?.text = Localizable.Project.Address.placeholderProvince
 			provinceCell.textLabel?.textColor = .placeholderText
 		}
 		

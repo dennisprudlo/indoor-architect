@@ -27,8 +27,8 @@ class ProjectArchiveSection: ProjectSection {
 		cells.append(customExtensionsCell)
 		cells.append(addressesCell)
 		
-		customExtensionsCell.textLabel?.text = Localizable.ProjectExplorer.Project.extensions
-		addressesCell.textLabel?.text = Localizable.ProjectExplorer.Project.addresses
+		customExtensionsCell.textLabel?.text = Localizable.Project.extensions
+		addressesCell.textLabel?.text = Localizable.Project.addresses
 	}
 	
 	func resetExtensionCount() -> Void {
@@ -64,7 +64,7 @@ class ProjectArchiveSection: ProjectSection {
 	}
 	
 	override func titleForHeader() -> String? {
-		return Localizable.ProjectExplorer.Project.archiveSectionTitle
+		return Localizable.Project.archiveSectionTitle
 	}
 	
 	override func didSelectRow(at index: Int) {

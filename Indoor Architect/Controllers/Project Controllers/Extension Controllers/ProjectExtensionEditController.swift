@@ -10,9 +10,9 @@ import UIKit
 
 class ProjectExtensionEditController: ComposePopoverController {
 	
-	let providerCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Extension.provider)
-	let nameCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Extension.name)
-	let versionCell			= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.Extension.version)
+	let providerCell		= TextInputTableViewCell(placeholder: Localizable.Project.Extension.provider)
+	let nameCell			= TextInputTableViewCell(placeholder: Localizable.Project.Extension.name)
+	let versionCell			= TextInputTableViewCell(placeholder: Localizable.Project.Extension.version)
 	
 	var displayController: ProjectExtensionController?
 	var shouldRenderToCreate: Bool = false
@@ -23,7 +23,7 @@ class ProjectExtensionEditController: ComposePopoverController {
 		
 		//
 		// Set the controller title
-		title = shouldRenderToCreate ? Localizable.ProjectExplorer.Project.Extension.addExtension : Localizable.ProjectExplorer.Project.Extension.editExtension
+		title = shouldRenderToCreate ? Localizable.Project.Extension.addExtension : Localizable.Project.Extension.editExtension
 		
 		confirmButtonTitle = shouldRenderToCreate ? Localizable.General.add : Localizable.General.remove
 		

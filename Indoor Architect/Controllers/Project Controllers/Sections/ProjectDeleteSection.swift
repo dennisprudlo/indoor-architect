@@ -10,7 +10,7 @@ import UIKit
 
 class ProjectDeleteSection: ProjectSection {
 	
-	let deleteButtonCell = ButtonTableViewCell(title: Localizable.ProjectExplorer.Project.buttonDelete)
+	let deleteButtonCell = ButtonTableViewCell(title: Localizable.Project.buttonDelete)
 	
 	override init() {
 		super.init()
@@ -42,6 +42,6 @@ class ProjectDeleteSection: ProjectSection {
 	}
 	
 	override func titleForFooter() -> String? {
-		return Localizable.ProjectExplorer.Project.buttonDeleteDescription
+		return Localizable.Project.buttonDeleteDescription
 	}
 }

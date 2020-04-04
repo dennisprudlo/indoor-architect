@@ -10,9 +10,9 @@ import UIKit
 
 class ProjectGeneralSection: ProjectSection {
 	
-	let projectTitleCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.projectTitle, maxLength: 50)
-	let projectDescriptionCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.projectDescription)
-	let projectClientCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.projectClient)
+	let projectTitleCell		= TextInputTableViewCell(placeholder: Localizable.Project.projectTitle, maxLength: 50)
+	let projectDescriptionCell	= TextInputTableViewCell(placeholder: Localizable.Project.projectDescription)
+	let projectClientCell		= TextInputTableViewCell(placeholder: Localizable.Project.projectClient)
 	
 	override init() {
 		super.init()
@@ -61,7 +61,7 @@ class ProjectGeneralSection: ProjectSection {
 	}
 	
 	override func titleForFooter() -> String? {
-		return Localizable.ProjectExplorer.Project.projectClientHelp
+		return Localizable.Project.projectClientHelp
 	}
 	
 	override func initialize() {

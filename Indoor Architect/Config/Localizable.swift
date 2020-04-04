@@ -20,6 +20,50 @@ struct Localizable {
 		static let actionConfirmation	= NSLocalizedString("general.actionConfirmation", comment: "")
 	}
 	
+	struct Project {
+		static let buttonDelete				= NSLocalizedString("project.buttonDelete", comment: "")
+		static let buttonDeleteDescription	= NSLocalizedString("project.buttonDeleteDescription", comment: "")
+		static let projectTitle				= NSLocalizedString("project.projectTitle", comment: "")
+		static let projectDescription		= NSLocalizedString("project.projectDescription", comment: "")
+		static let projectClient			= NSLocalizedString("project.projectClient", comment: "")
+		static let projectClientHelp		= NSLocalizedString("project.projectClientHelp", comment: "")
+		static let created					= NSLocalizedString("project.created", comment: "")
+		static let updated					= NSLocalizedString("project.updated", comment: "")
+		static let editIndoorMap			= NSLocalizedString("project.editIndoorMap", comment: "")
+		static let exportImdfArchive		= NSLocalizedString("project.exportImdfArchive", comment: "")
+		static let archiveSectionTitle		= NSLocalizedString("project.archiveSectionTitle", comment: "")
+		
+		static let extensions = NSLocalizedString("project.extensions", comment: "")
+		struct Extension {
+			static let addExtension			= NSLocalizedString("project.extensions.addExtension", comment: "")
+			static let editExtension		= NSLocalizedString("project.extensions.editExtension", comment: "")
+			static let removeExtensionInfo	= NSLocalizedString("project.extensions.removeExtensionInfo", comment: "")
+			static let provider				= NSLocalizedString("project.extensions.provider", comment: "")
+			static let name					= NSLocalizedString("project.extensions.name", comment: "")
+			static let version				= NSLocalizedString("project.extensions.version", comment: "")
+		}
+		
+		static let addresses = NSLocalizedString("project.addresses", comment: "")
+		struct Address {
+			static let addAddress				= NSLocalizedString("project.address.addAddress", comment: "")
+			static let editAddress				= NSLocalizedString("project.address.editAddress", comment: "")
+			static let removeAddressInfo		= NSLocalizedString("project.address.removeAddressInfo", comment: "")
+			static let addressDescription		= NSLocalizedString("project.address.addressDescription", comment: "")
+			static let placeholderAddress		= NSLocalizedString("project.address.placeholderAddress", comment: "")
+			static let placeholderCountry		= NSLocalizedString("project.address.placeholderCountry", comment: "")
+			static let placeholderProvince		= NSLocalizedString("project.address.placeholderProvince", comment: "")
+			static let placeholderLocality		= NSLocalizedString("project.address.placeholderLocality", comment: "")
+			static let postalCode				= NSLocalizedString("project.address.postalCode", comment: "")
+			static let postalCodeDescription	= NSLocalizedString("project.address.postalCodeDescription", comment: "")
+			static let placeholderCode			= NSLocalizedString("project.address.placeholderCode", comment: "")
+			static let placeholderExtension		= NSLocalizedString("project.address.placeholderExtension", comment: "")
+			static let placeholderVanity		= NSLocalizedString("project.address.placeholderVanity", comment: "")
+			static let unit						= NSLocalizedString("project.address.unit", comment: "")
+			static let unitDescription			= NSLocalizedString("project.address.unitDescription", comment: "")
+			static let placeholderUnit			= NSLocalizedString("project.address.placeholderUnit", comment: "")
+		}
+	}
+	
 	struct ProjectExplorer {
 	
 		static let searchBarPlaceholder		= NSLocalizedString("projectExplorer.searchBarPlaceholder", comment: "")
@@ -31,50 +75,6 @@ struct Localizable {
 		static let sectionEmptyResources	= NSLocalizedString("projectExplorer.sectionEmptyResources", comment: "")
 		static let createNewProject			= NSLocalizedString("projectExplorer.createNewProject", comment: "")
 		static let buttonCreate				= NSLocalizedString("projectExplorer.buttonCreate", comment: "")
-		
-		struct Project {
-			static let buttonDelete				= NSLocalizedString("projectExplorer.project.buttonDelete", comment: "")
-			static let buttonDeleteDescription	= NSLocalizedString("projectExplorer.project.buttonDeleteDescription", comment: "")
-			static let projectTitle				= NSLocalizedString("projectExplorer.project.projectTitle", comment: "")
-			static let projectDescription		= NSLocalizedString("projectExplorer.project.projectDescription", comment: "")
-			static let projectClient			= NSLocalizedString("projectExplorer.project.projectClient", comment: "")
-			static let projectClientHelp		= NSLocalizedString("projectExplorer.project.projectClientHelp", comment: "")
-			static let created					= NSLocalizedString("projectExplorer.project.created", comment: "")
-			static let updated					= NSLocalizedString("projectExplorer.project.updated", comment: "")
-			static let editIndoorMap			= NSLocalizedString("projectExplorer.project.editIndoorMap", comment: "")
-			static let exportImdfArchive		= NSLocalizedString("projectExplorer.project.exportImdfArchive", comment: "")
-			static let archiveSectionTitle		= NSLocalizedString("projectExplorer.project.archiveSectionTitle", comment: "")
-			
-			static let extensions = NSLocalizedString("projectExplorer.project.extensions", comment: "")
-			struct Extension {
-				static let addExtension			= NSLocalizedString("projectExplorer.project.extensions.addExtension", comment: "")
-				static let editExtension		= NSLocalizedString("projectExplorer.project.extensions.editExtension", comment: "")
-				static let removeExtensionInfo	= NSLocalizedString("projectExplorer.project.extensions.removeExtensionInfo", comment: "")
-				static let provider				= NSLocalizedString("projectExplorer.project.extensions.provider", comment: "")
-				static let name					= NSLocalizedString("projectExplorer.project.extensions.name", comment: "")
-				static let version				= NSLocalizedString("projectExplorer.project.extensions.version", comment: "")
-			}
-			
-			static let addresses = NSLocalizedString("projectExplorer.project.addresses", comment: "")
-			struct Address {
-				static let addAddress				= NSLocalizedString("projectExplorer.project.address.addAddress", comment: "")
-				static let editAddress				= NSLocalizedString("projectExplorer.project.address.editAddress", comment: "")
-				static let removeAddressInfo		= NSLocalizedString("projectExplorer.project.address.removeAddressInfo", comment: "")
-				static let addressDescription		= NSLocalizedString("projectExplorer.project.address.addressDescription", comment: "")
-				static let placeholderAddress		= NSLocalizedString("projectExplorer.project.address.placeholderAddress", comment: "")
-				static let placeholderCountry		= NSLocalizedString("projectExplorer.project.address.placeholderCountry", comment: "")
-				static let placeholderProvince		= NSLocalizedString("projectExplorer.project.address.placeholderProvince", comment: "")
-				static let placeholderLocality		= NSLocalizedString("projectExplorer.project.address.placeholderLocality", comment: "")
-				static let postalCode				= NSLocalizedString("projectExplorer.project.address.postalCode", comment: "")
-				static let postalCodeDescription	= NSLocalizedString("projectExplorer.project.address.postalCodeDescription", comment: "")
-				static let placeholderCode			= NSLocalizedString("projectExplorer.project.address.placeholderCode", comment: "")
-				static let placeholderExtension		= NSLocalizedString("projectExplorer.project.address.placeholderExtension", comment: "")
-				static let placeholderVanity		= NSLocalizedString("projectExplorer.project.address.placeholderVanity", comment: "")
-				static let unit						= NSLocalizedString("projectExplorer.project.address.unit", comment: "")
-				static let unitDescription			= NSLocalizedString("projectExplorer.project.address.unitDescription", comment: "")
-				static let placeholderUnit			= NSLocalizedString("projectExplorer.project.address.placeholderUnit", comment: "")
-			}
-		}
 		
 	}
 }

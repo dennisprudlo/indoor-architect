@@ -12,9 +12,9 @@ class ProjectCreateController: UITableViewController {
 
 	var tableViewSections: [[UITableViewCell]] = []
 	
-	let projectTitleCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.projectTitle, maxLength: 50)
-	let projectDescriptionCell	= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.projectDescription)
-	let projectClientCell		= TextInputTableViewCell(placeholder: Localizable.ProjectExplorer.Project.projectClient)
+	let projectTitleCell		= TextInputTableViewCell(placeholder: Localizable.Project.projectTitle, maxLength: 50)
+	let projectDescriptionCell	= TextInputTableViewCell(placeholder: Localizable.Project.projectDescription)
+	let projectClientCell		= TextInputTableViewCell(placeholder: Localizable.Project.projectClient)
 	let projectCreateCell		= ButtonTableViewCell(title: Localizable.ProjectExplorer.buttonCreate)
 	
     override func viewDidLoad() {
