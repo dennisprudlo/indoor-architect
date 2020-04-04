@@ -76,21 +76,27 @@ class ProjectAddressController: DetailTableViewController {
 	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 		
 		let deleteAction = UIContextualAction(style: .destructive, title: nil, handler: { (action, view, completion) in
-			let archive			= self.project.imdfArchive
-			let addressToDelete = archive.addresses[indexPath.row]
-			
-			archive.delete(addressToDelete)
-			
-			guard let _ = try? archive.save(.address) else {
-				completion(false)
-				return
-			}
-			
-			tableView.beginUpdates()
-			tableView.deleteRows(at: [indexPath], with: .left)
-			tableView.endUpdates()
-			
-			completion(true)
+			let controller = UIAlertController(title: Localizable.General.actionConfirmation, message: Localizable.ProjectExplorer.Project.Address.removeAddressInfo, preferredStyle: .alert)
+			controller.addAction(UIAlertAction(title: Localizable.General.cancel, style: .cancel, handler: { _ in completion(false) }))
+			controller.addAction(UIAlertAction(title: Localizable.General.remove, style: .destructive, handler: { _ in
+				let archive			= self.project.imdfArchive
+				let addressToDelete = archive.addresses[indexPath.row]
+				
+				archive.delete(addressToDelete)
+				
+				guard let _ = try? archive.save(.address) else {
+					completion(false)
+					return
+				}
+				
+				tableView.beginUpdates()
+				tableView.deleteRows(at: [indexPath], with: .left)
+				tableView.endUpdates()
+				
+				completion(true)
+			}))
+		
+			self.present(controller, animated: true, completion: nil)
 		})
 		deleteAction.backgroundColor = Color.primary
 		deleteAction.image = Icon.trash

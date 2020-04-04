@@ -47,7 +47,7 @@
 "projectExplorer.project.addresses"						= "Addresses";
 "projectExplorer.project.address.addAddress"			= "Add Address";
 "projectExplorer.project.address.editAddress"			= "Edit Address";
-"projectExplorer.project.address.removeAddressInfo"		= "Remove the address is irrevocable and will unlink all entities tied to the address.";
+"projectExplorer.project.address.removeAddressInfo"		= "Removing the address is irrevocable and will unlink all entities tied to the address.";
 "projectExplorer.project.address.addressDescription"	= "The address is the significant name of the place. It can be a simple street name or the name of a venue.";
 "projectExplorer.project.address.placeholderAddress"	= "Address";
 "projectExplorer.project.address.placeholderCountry"	= "Country";
