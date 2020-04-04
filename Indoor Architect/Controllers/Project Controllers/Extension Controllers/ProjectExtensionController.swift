@@ -94,26 +94,32 @@ class ProjectExtensionController: DetailTableViewController {
 	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 		
 		let deleteAction = UIContextualAction(style: .destructive, title: nil, handler: { (action, view, completion) in
-			let section				= self.groupedExtensions[indexPath.section].value
-			let extensionToRemove	= section[indexPath.row]
-			self.project?.removeExtension(extensionToRemove)
+			let controller = UIAlertController(title: Localizable.General.actionConfirmation, message: Localizable.ProjectExplorer.Project.Extension.removeExtensionInfo, preferredStyle: .alert)
+			controller.addAction(UIAlertAction(title: Localizable.General.cancel, style: .cancel, handler: { _ in completion(false) }))
+			controller.addAction(UIAlertAction(title: Localizable.General.remove, style: .destructive, handler: { _ in
+				let section				= self.groupedExtensions[indexPath.section].value
+				let extensionToRemove	= section[indexPath.row]
+				self.project?.removeExtension(extensionToRemove)
+				
+				guard let _ = try? self.project?.save() else {
+					completion(false)
+					return
+				}
+				
+				self.resetExtensions(reloadTableView: false)
+				
+				tableView.beginUpdates()
+				if section.count == 1 {
+					tableView.deleteSections(IndexSet([indexPath.section]), with: .left)
+				} else {
+					tableView.deleteRows(at: [indexPath], with: .left)
+				}
+				tableView.endUpdates()
+				
+				completion(true)
+			}))
 			
-			guard let _ = try? self.project?.save() else {
-				completion(false)
-				return
-			}
-			
-			self.resetExtensions(reloadTableView: false)
-			
-			tableView.beginUpdates()
-			if section.count == 1 {
-				tableView.deleteSections(IndexSet([indexPath.section]), with: .left)
-			} else {
-				tableView.deleteRows(at: [indexPath], with: .left)
-			}
-			tableView.endUpdates()
-			
-			completion(true)
+			self.present(controller, animated: true, completion: nil)
 		})
 		deleteAction.backgroundColor = Color.primary
 		deleteAction.image = Icon.trash

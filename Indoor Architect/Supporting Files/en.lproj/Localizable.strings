@@ -10,7 +10,9 @@
 "general.add"					= "Add";
 "general.delete"				= "Delete";
 "general.remove"				= "Remove";
+"general.cancel"				= "Cancel";
 "general.none"					= "None";
+"general.actionConfirmation"	= "Are you sure?";
 
 "projectExplorer.searchBarPlaceholder"		= "Quick Search";
 "projectExplorer.sectionTitleProjects"		= "Projects";
@@ -34,16 +36,18 @@
 "projectExplorer.project.exportImdfArchive"			= "Export IMDF Archive";
 "projectExplorer.project.archiveSectionTitle"		= "IMDF Archive";
 
-"projectExplorer.project.extensions"				= "Extensions";
-"projectExplorer.project.extensions.addExtension"	= "Add Extension";
-"projectExplorer.project.extensions.editExtension"	= "Edit Extension";
-"projectExplorer.project.extensions.provider"		= "Provider";
-"projectExplorer.project.extensions.name"			= "Name";
-"projectExplorer.project.extensions.version"		= "Version";
+"projectExplorer.project.extensions"						= "Extensions";
+"projectExplorer.project.extensions.addExtension"			= "Add Extension";
+"projectExplorer.project.extensions.editExtension"			= "Edit Extension";
+"projectExplorer.project.extensions.removeExtensionInfo"	= "Removing the extension is irrevocable and cannot be undone.";
+"projectExplorer.project.extensions.provider"				= "Provider";
+"projectExplorer.project.extensions.name"					= "Name";
+"projectExplorer.project.extensions.version"				= "Version";
 
 "projectExplorer.project.addresses"						= "Addresses";
 "projectExplorer.project.address.addAddress"			= "Add Address";
 "projectExplorer.project.address.editAddress"			= "Edit Address";
+"projectExplorer.project.address.removeAddressInfo"		= "Remove the address is irrevocable and will unlink all entities tied to the address.";
 "projectExplorer.project.address.addressDescription"	= "The address is the significant name of the place. It can be a simple street name or the name of a venue.";
 "projectExplorer.project.address.placeholderAddress"	= "Address";
 "projectExplorer.project.address.placeholderCountry"	= "Country";
