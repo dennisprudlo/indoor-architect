@@ -272,21 +272,29 @@ class ProjectAddressEditController: ComposePopoverController {
 		let cell = tableView.cellForRow(at: indexPath)
 		
 		if cell == countryCell {
-			let localePickerController					= ProjectAddressLocaleController(style: .insetGrouped)
-			localePickerController.displayController	= self
-			localePickerController.dataType				= .country
-			navigationController?.pushViewController(localePickerController, animated: true)
+			
+			//
+			// Prepare the locality picker controller
+			let localityPickerController				= ProjectAddressLocalityController(style: .insetGrouped)
+			localityPickerController.displayController	= self
+			localityPickerController.dataType			= .country
+			localityPickerController.existingAddresses	= displayController.project.imdfArchive.addresses
+			navigationController?.pushViewController(localityPickerController, animated: true)
 		} else if cell == provinceCell {
 			
 			guard let code = countryData?.code else {
 				return tableView.deselectRow(at: indexPath, animated: true)
 			}
 			
-			let localePickerController					= ProjectAddressLocaleController(style: .insetGrouped)
-			localePickerController.displayController	= self
-			localePickerController.dataType				= .province
-			localePickerController.preselectedCountry	= code
-			navigationController?.pushViewController(localePickerController, animated: true)
+			//
+			// Prepare the locality picker controller
+			let localityPickerController				= ProjectAddressLocalityController(style: .insetGrouped)
+			localityPickerController.displayController	= self
+			localityPickerController.dataType			= .province
+			localityPickerController.preselectedCountry	= code
+			localityPickerController.existingAddresses	= displayController.project.imdfArchive.addresses
+			
+			navigationController?.pushViewController(localityPickerController, animated: true)
 		}
 	}
 }

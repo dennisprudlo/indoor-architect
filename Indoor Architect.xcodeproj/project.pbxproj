@@ -57,7 +57,7 @@
 		81D580BA240C04150049B17F /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580B9240C04150049B17F /* Address.swift */; };
 		81D580BC240C0ADD0049B17F /* ProjectAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580BB240C0ADD0049B17F /* ProjectAddressController.swift */; };
 		81D580BF240C133D0049B17F /* ProjectAddressEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580BE240C133D0049B17F /* ProjectAddressEditController.swift */; };
-		81D580C1240C20400049B17F /* ProjectAddressLocaleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580C0240C20400049B17F /* ProjectAddressLocaleController.swift */; };
+		81D580C1240C20400049B17F /* ProjectAddressLocalityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580C0240C20400049B17F /* ProjectAddressLocalityController.swift */; };
 		81D580C3240D13310049B17F /* ComposePopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D580C2240D13310049B17F /* ComposePopoverController.swift */; };
 		81DBBC4A24019FF3008AEE60 /* MCLabelToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */; };
 		81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */; };
@@ -140,7 +140,7 @@
 		81D580B9240C04150049B17F /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		81D580BB240C0ADD0049B17F /* ProjectAddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAddressController.swift; sourceTree = "<group>"; };
 		81D580BE240C133D0049B17F /* ProjectAddressEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAddressEditController.swift; sourceTree = "<group>"; };
-		81D580C0240C20400049B17F /* ProjectAddressLocaleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAddressLocaleController.swift; sourceTree = "<group>"; };
+		81D580C0240C20400049B17F /* ProjectAddressLocalityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAddressLocalityController.swift; sourceTree = "<group>"; };
 		81D580C2240D13310049B17F /* ComposePopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposePopoverController.swift; sourceTree = "<group>"; };
 		81DBBC4924019FF3008AEE60 /* MCLabelToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLabelToolStackItem.swift; sourceTree = "<group>"; };
 		81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDrawingToolStackItem.swift; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 			children = (
 				81D580BB240C0ADD0049B17F /* ProjectAddressController.swift */,
 				81D580BE240C133D0049B17F /* ProjectAddressEditController.swift */,
-				81D580C0240C20400049B17F /* ProjectAddressLocaleController.swift */,
+				81D580C0240C20400049B17F /* ProjectAddressLocalityController.swift */,
 			);
 			path = "Address Controllers";
 			sourceTree = "<group>";
@@ -617,7 +617,7 @@
 				81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */,
 				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
 				81F67DB723F09971006B9187 /* Color.swift in Sources */,
-				81D580C1240C20400049B17F /* ProjectAddressLocaleController.swift in Sources */,
+				81D580C1240C20400049B17F /* ProjectAddressLocalityController.swift in Sources */,
 				81D580B8240C005E0049B17F /* Feature.swift in Sources */,
 				81A58E09240AE249008873E9 /* ButtonSetTableViewCell.swift in Sources */,
 				81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */,

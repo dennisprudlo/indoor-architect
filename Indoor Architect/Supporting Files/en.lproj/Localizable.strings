@@ -47,6 +47,7 @@
 "project.addresses"						= "Addresses";
 "project.address.addAddress"			= "Add Address";
 "project.address.editAddress"			= "Edit Address";
+"project.address.titlePreviouslyUsed"	= "Previously Used";
 "project.address.removeAddressInfo"		= "Removing the address is irrevocable and will unlink all entities tied to the address.";
 "project.address.addressDescription"	= "The address is the significant name of the place. It can be a simple street name or the name of a venue.";
 "project.address.placeholderAddress"	= "Address";
