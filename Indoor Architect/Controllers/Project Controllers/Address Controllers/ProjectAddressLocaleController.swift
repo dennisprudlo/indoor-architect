@@ -52,8 +52,12 @@ class ProjectAddressLocaleController: UITableViewController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
 		
+		//
+		// Format the cell
 		cell.textLabel?.text = dataset[indexPath.row].title
 		cell.detailTextLabel?.text = dataset[indexPath.row].code
+		cell.detailTextLabel?.font = cell.detailTextLabel?.font.monospaced()
+		
 		if !displayController.shouldRenderToCreate {
 			cell.backgroundColor = Color.lightStyleCellBackground
 		}

@@ -14,7 +14,7 @@ extension UIFont {
 	/// - Parameter traits: The trait to apply
 	func withTraits(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
 		let descriptor = fontDescriptor.withSymbolicTraits(traits)
-		return UIFont(descriptor: descriptor!, size: 0)
+		return UIFont(descriptor: descriptor!, size: self.pointSize)
 	}
 	
 	/// Returns a `UIFont` with applied bold trait.
