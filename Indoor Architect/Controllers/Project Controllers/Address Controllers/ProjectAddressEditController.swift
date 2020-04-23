@@ -49,10 +49,12 @@ class ProjectAddressEditController: ComposePopoverController {
 		// Configure table view cells
 		countryCell.textLabel?.text			= Localizable.Project.Address.placeholderCountry
 		countryCell.textLabel?.textColor	= .placeholderText
+		countryCell.detailTextLabel?.font	= countryCell.detailTextLabel?.font.monospaced()
 		countryCell.accessoryType			= .disclosureIndicator
 		
 		provinceCell.textLabel?.text		= Localizable.Project.Address.placeholderProvince
 		provinceCell.textLabel?.textColor	= .placeholderText
+		provinceCell.detailTextLabel?.font	= provinceCell.detailTextLabel?.font.monospaced()
 		provinceCell.accessoryType			= .disclosureIndicator
 		
 		//
@@ -121,19 +123,23 @@ class ProjectAddressEditController: ComposePopoverController {
 		super.viewWillAppear(animated)
 		
 		if let countryData = self.countryData {
-			countryCell.textLabel?.text = countryData.title
-			countryCell.textLabel?.textColor = .label
+			countryCell.textLabel?.text			= countryData.title
+			countryCell.detailTextLabel?.text	= countryData.code
+			countryCell.textLabel?.textColor	= .label
 		} else {
-			countryCell.textLabel?.text = Localizable.Project.Address.placeholderCountry
-			countryCell.textLabel?.textColor = .placeholderText
+			countryCell.textLabel?.text			= Localizable.Project.Address.placeholderCountry
+			countryCell.detailTextLabel?.text	= nil
+			countryCell.textLabel?.textColor	= .placeholderText
 		}
 		
 		if let provinceData = self.provinceData {
-			provinceCell.textLabel?.text = provinceData.title
-			provinceCell.textLabel?.textColor = .label
+			provinceCell.textLabel?.text		= provinceData.title
+			provinceCell.detailTextLabel?.text	= provinceData.code
+			provinceCell.textLabel?.textColor	= .label
 		} else {
-			provinceCell.textLabel?.text = Localizable.Project.Address.placeholderProvince
-			provinceCell.textLabel?.textColor = .placeholderText
+			provinceCell.textLabel?.text		= Localizable.Project.Address.placeholderProvince
+			provinceCell.detailTextLabel?.text	= nil
+			provinceCell.textLabel?.textColor	= .placeholderText
 		}
 		
 		setAddressButtonStates()
