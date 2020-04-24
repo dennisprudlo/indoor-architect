@@ -14,8 +14,8 @@ class MCCloseToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 		super.init(isDefault: isDefault)
 		super.delegate = self
 		
-		imageView.image = Icon.toolClose
-		preventIndicatingSelection = true
+		imageView.image				= Icon.toolClose
+		preventIndicatingSelection	= true
 		
 		NSLayoutConstraint.activate([
 			widthAnchor.constraint(equalToConstant: MCToolStackItem.toolStackItemSize),

@@ -15,7 +15,7 @@ protocol MCToolStackItemDelegate {
 class MCToolStackItem: UIView {
 	
 	/// The default background color for a selected tool stack item
-	private static let selectedBackgroundColor = UIColor.white.withAlphaComponent(0.2)
+	private static let selectedBackgroundColor = UIColor.label.withAlphaComponent(0.1)
 	
 	/// The default size for the tool stack item
 	static let toolStackItemSize: CGFloat = 32
@@ -28,10 +28,10 @@ class MCToolStackItem: UIView {
 	}
 	
 	/// The default tint color of the icons or the labels in the tool stack
-	static let tintColor = UIColor.white.withAlphaComponent(0.6)
+	static let tintColor = UIColor.label.withAlphaComponent(0.6)
 	
 	/// The default prominent tint color of the icons or the labels in the tool stack
-	static let prominentTintColor = UIColor.white.withAlphaComponent(0.8)
+	static let prominentTintColor = UIColor.label.withAlphaComponent(0.8)
 	
 	/// A reference to the tool stack the item is part of
 	var stack: MCToolStack?

@@ -21,10 +21,10 @@ class MCDrawingConfirmToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 		super.init(isDefault: false)
 		super.delegate = self
 		
-		self.actionType = actionType
+		self.actionType				= actionType
 		
-		imageView.image = actionType == .confirm ? Icon.toolConfirmShape : Icon.toolClose
-		preventIndicatingSelection = true
+		imageView.image				= actionType == .confirm ? Icon.toolConfirmShape : Icon.toolClose
+		preventIndicatingSelection	= true
 		
 		NSLayoutConstraint.activate([
 			widthAnchor.constraint(equalToConstant: MCToolStackItem.toolStackItemSize),

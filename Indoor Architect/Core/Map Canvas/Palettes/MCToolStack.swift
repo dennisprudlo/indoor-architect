@@ -22,13 +22,15 @@ class MCToolStack: UIView {
 	/// The map canvas where the tool stack is in
 	var canvas: MCMapCanvas!
 	
+	private var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .systemThickMaterial))
+	
 	init(forAxis axis: NSLayoutConstraint.Axis) {
 		super.init(frame: .zero)
 		autolayout()
 		
 		//
 		// Make every overflow of the tool stack invisible
-		layer.masksToBounds = true
+		visualEffectView.layer.masksToBounds = true
 		
 		//
 		// Configure the stack view itself
@@ -37,10 +39,14 @@ class MCToolStack: UIView {
 		
 		//
 		// Add a dark visual effect view as a background
-		let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .prominent))
 		addSubview(visualEffectView)
 		visualEffectView.autolayout()
 		visualEffectView.edgesToSuperview()
+		
+		layer.shadowColor	= UIColor.black.cgColor
+		layer.shadowOpacity	= 0.1
+		layer.shadowRadius	= 6
+		layer.shadowOffset	= CGSize(width: 5, height: 5)
 		
 		//
 		// Add the stack view to the superview
@@ -106,9 +112,10 @@ class MCToolStack: UIView {
 		//
 		// Sets the corner radius for the tool stack
 		if stackView.axis == .horizontal {
-			layer.cornerRadius = frame.size.height / 2
+			
+			visualEffectView.layer.cornerRadius = frame.size.height / 2
 		} else {
-			layer.cornerRadius = frame.size.width / 2
+			visualEffectView.layer.cornerRadius = frame.size.width / 2
 		}
 	}
 }
