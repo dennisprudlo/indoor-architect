@@ -10,13 +10,17 @@ import UIKit
 
 class ProjectMetaInfoSection: ProjectSection {
 	
-	let createdAtCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-	let updatedAtCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+	var archive: IMDFArchive?
+	
+	let createdAtCell 			= UITableViewCell(style: .value1, reuseIdentifier: nil)
+	let updatedAtCell			= UITableViewCell(style: .value1, reuseIdentifier: nil)
+	let customExtensionsCell	= UITableViewCell(style: .value1, reuseIdentifier: nil)
 	
 	override init() {
 		super.init()
 		cells.append(createdAtCell)
 		cells.append(updatedAtCell)
+		cells.append(customExtensionsCell)
 		
 		createdAtCell.selectionStyle	= .none
 		createdAtCell.textLabel?.text	= Localizable.Project.created
@@ -25,6 +29,10 @@ class ProjectMetaInfoSection: ProjectSection {
 		updatedAtCell.selectionStyle	= .none
 		updatedAtCell.textLabel?.text	= Localizable.Project.updated
 		updatedAtCell.backgroundColor	= Color.lightStyleCellBackground
+		
+		customExtensionsCell.textLabel?.text = Localizable.Project.extensions
+		customExtensionsCell.backgroundColor	= Color.lightStyleCellBackground
+		customExtensionsCell.accessoryType		= .disclosureIndicator
 	}
 	
 	private func prettyDate(_ date: Date?) -> String {
@@ -38,6 +46,24 @@ class ProjectMetaInfoSection: ProjectSection {
 		return dateFormatter.string(from: date)
 	}
 	
+	func resetExtensionCount() -> Void {
+		guard let extensionCount = archive?.manifest.extensions?.count else {
+			customExtensionsCell.detailTextLabel?.text = Localizable.General.none
+			return
+		}
+		
+		if extensionCount == 0 {
+			customExtensionsCell.detailTextLabel?.text = Localizable.General.none
+			return
+		}
+		
+		if extensionCount == 1 {
+			customExtensionsCell.detailTextLabel?.text = archive?.manifest.extensions?.first?.identifier
+		} else {
+			customExtensionsCell.detailTextLabel?.text = "\(extensionCount)"
+		}
+	}
+	
 	func setCreatedAt(date: Date?) -> Void {
 		createdAtCell.detailTextLabel?.text = prettyDate(date)
 	}
@@ -46,8 +72,22 @@ class ProjectMetaInfoSection: ProjectSection {
 		updatedAtCell.detailTextLabel?.text = prettyDate(date)
 	}
 	
+	override func didSelectRow(at index: Int) {
+		if cells[index] == customExtensionsCell {
+			let projectExtensionsController = ProjectExtensionController(style: .insetGrouped)
+			projectExtensionsController.project = delegate?.project
+			delegate?.navigationController?.pushViewController(projectExtensionsController, animated: true)
+		}
+	}
+	
 	override func initialize() {
 		setCreatedAt(date: delegate?.project.manifest.createdAt)
 		setUpdatedAt(date: delegate?.project.manifest.updatedAt)
+		archive = delegate?.project.imdfArchive
+		reloadOnAppear()
+	}
+	
+	override func reloadOnAppear() {
+		resetExtensionCount()
 	}
 }

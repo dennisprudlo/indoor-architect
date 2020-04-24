@@ -12,41 +12,17 @@ class ProjectArchiveSection: ProjectSection {
 	
 	var archive: IMDFArchive?
 	
-	let customExtensionsCell	= UITableViewCell(style: .value1, reuseIdentifier: nil)
 	let addressesCell			= UITableViewCell(style: .value1, reuseIdentifier: nil)
 	
 	override init() {
 		super.init()
 		
-		customExtensionsCell.backgroundColor	= Color.lightStyleCellBackground
-		customExtensionsCell.accessoryType		= .disclosureIndicator
-		
 		addressesCell.backgroundColor			= Color.lightStyleCellBackground
 		addressesCell.accessoryType				= .disclosureIndicator
-		
-		cells.append(customExtensionsCell)
+
 		cells.append(addressesCell)
-		
-		customExtensionsCell.textLabel?.text = Localizable.Project.extensions
-		addressesCell.textLabel?.text = Localizable.Project.addresses
-	}
 	
-	func resetExtensionCount() -> Void {
-		guard let extensionCount = archive?.manifest.extensions?.count else {
-			customExtensionsCell.detailTextLabel?.text = Localizable.General.none
-			return
-		}
-		
-		if extensionCount == 0 {
-			customExtensionsCell.detailTextLabel?.text = Localizable.General.none
-			return
-		}
-		
-		if extensionCount == 1 {
-			customExtensionsCell.detailTextLabel?.text = archive?.manifest.extensions?.first?.identifier
-		} else {
-			customExtensionsCell.detailTextLabel?.text = "\(extensionCount)"
-		}
+		addressesCell.textLabel?.text = Localizable.Project.addresses
 	}
 	
 	func resetAddressesCount() -> Void {
@@ -68,12 +44,6 @@ class ProjectArchiveSection: ProjectSection {
 	}
 	
 	override func didSelectRow(at index: Int) {
-		if cells[index] == customExtensionsCell {
-			let projectExtensionsController = ProjectExtensionController(style: .insetGrouped)
-			projectExtensionsController.project = delegate?.project
-			delegate?.navigationController?.pushViewController(projectExtensionsController, animated: true)
-		}
-		
 		if cells[index] == addressesCell {
 			let projectAddressesController = ProjectAddressController(style: .insetGrouped)
 			projectAddressesController.project = delegate?.project
@@ -87,7 +57,6 @@ class ProjectArchiveSection: ProjectSection {
 	}
 	
 	override func reloadOnAppear() {
-		resetExtensionCount()
 		resetAddressesCount()
 	}
 }
