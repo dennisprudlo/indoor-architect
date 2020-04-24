@@ -10,9 +10,9 @@ import UIKit
 
 class ProjectExtensionEditController: ComposePopoverController {
 	
-	let providerCell		= TextInputTableViewCell(placeholder: Localizable.Project.Extension.provider)
-	let nameCell			= TextInputTableViewCell(placeholder: Localizable.Project.Extension.name)
-	let versionCell			= TextInputTableViewCell(placeholder: Localizable.Project.Extension.version)
+	let providerCell		= TextInputTableViewCell(placeholder: "vision-software")
+	let nameCell			= TextInputTableViewCell(placeholder: "parking-spots")
+	let versionCell			= TextInputTableViewCell(placeholder: "2.3")
 	
 	var displayController: ProjectExtensionController?
 	var shouldRenderToCreate: Bool = false
@@ -23,7 +23,7 @@ class ProjectExtensionEditController: ComposePopoverController {
 		
 		//
 		// Set the controller title
-		title = shouldRenderToCreate ? Localizable.Project.Extension.addExtension : Localizable.Project.Extension.editExtension
+		title = shouldRenderToCreate ? Localizable.Extension.addExtension : Localizable.Extension.editExtension
 		
 		confirmButtonTitle = shouldRenderToCreate ? Localizable.General.add : Localizable.General.remove
 		
@@ -64,14 +64,20 @@ class ProjectExtensionEditController: ComposePopoverController {
 		nameCell.textField.addTarget(self, action: #selector(didChangeText(in:)), for: .editingChanged)
 		versionCell.textField.addTarget(self, action: #selector(didChangeText(in:)), for: .editingChanged)
 		
-		//
-		// Set the provider cell to become the first responder
-		providerCell.textField.becomeFirstResponder()
-		
 		tableViewSections.append((
-			title: nil,
-			description: "",
-			cells: [providerCell, nameCell, versionCell]
+			title: Localizable.Extension.provider,
+			description: Localizable.Extension.providerDescription,
+			cells: [providerCell]
+		))
+		tableViewSections.append((
+			title: Localizable.Extension.name,
+			description: Localizable.Extension.nameDescription,
+			cells: [nameCell]
+		))
+		tableViewSections.append((
+			title: Localizable.Extension.version,
+			description: Localizable.Extension.versionDescription,
+			cells: [versionCell]
 		))
 		tableViewSections.append((
 			title:			nil,

@@ -30,7 +30,7 @@ class ProjectMetaInfoSection: ProjectSection {
 		updatedAtCell.textLabel?.text	= Localizable.Project.updated
 		updatedAtCell.backgroundColor	= Color.lightStyleCellBackground
 		
-		customExtensionsCell.textLabel?.text = Localizable.Project.extensions
+		customExtensionsCell.textLabel?.text	= Localizable.Extension.title
 		customExtensionsCell.backgroundColor	= Color.lightStyleCellBackground
 		customExtensionsCell.accessoryType		= .disclosureIndicator
 	}

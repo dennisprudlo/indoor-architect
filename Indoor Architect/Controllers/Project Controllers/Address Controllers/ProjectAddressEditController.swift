@@ -64,10 +64,6 @@ class ProjectAddressEditController: ComposePopoverController {
 		}
 		
 		//
-		// Set the address cell to become the first responder
-		addressCell.textField.becomeFirstResponder()
-		
-		//
 		// Configure the table view sections
 		if !shouldRenderToCreate {
 			tableView.cellLayoutMarginsFollowReadableWidth	= true

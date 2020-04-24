@@ -33,16 +33,6 @@ struct Localizable {
 		static let exportImdfArchive		= NSLocalizedString("project.exportImdfArchive", comment: "")
 		static let archiveSectionTitle		= NSLocalizedString("project.archiveSectionTitle", comment: "")
 		
-		static let extensions = NSLocalizedString("project.extensions", comment: "")
-		struct Extension {
-			static let addExtension			= NSLocalizedString("project.extensions.addExtension", comment: "")
-			static let editExtension		= NSLocalizedString("project.extensions.editExtension", comment: "")
-			static let removeExtensionInfo	= NSLocalizedString("project.extensions.removeExtensionInfo", comment: "")
-			static let provider				= NSLocalizedString("project.extensions.provider", comment: "")
-			static let name					= NSLocalizedString("project.extensions.name", comment: "")
-			static let version				= NSLocalizedString("project.extensions.version", comment: "")
-		}
-		
 		static let addresses = NSLocalizedString("project.addresses", comment: "")
 		struct Address {
 			static let addAddress				= NSLocalizedString("project.address.addAddress", comment: "")
@@ -66,7 +56,6 @@ struct Localizable {
 	}
 	
 	struct ProjectExplorer {
-	
 		static let searchBarPlaceholder		= NSLocalizedString("projectExplorer.searchBarPlaceholder", comment: "")
 		static let sectionTitleProjects		= NSLocalizedString("projectExplorer.sectionTitleProjects", comment: "")
 		static let sectionEmptyProjects		= NSLocalizedString("projectExplorer.sectionEmptyProjects", comment: "")
@@ -76,6 +65,18 @@ struct Localizable {
 		static let sectionEmptyResources	= NSLocalizedString("projectExplorer.sectionEmptyResources", comment: "")
 		static let createNewProject			= NSLocalizedString("projectExplorer.createNewProject", comment: "")
 		static let buttonCreate				= NSLocalizedString("projectExplorer.buttonCreate", comment: "")
-		
+	}
+	
+	struct Extension {
+		static let title				= NSLocalizedString("extensions.title", comment: "")
+		static let addExtension			= NSLocalizedString("extensions.addExtension", comment: "")
+		static let editExtension		= NSLocalizedString("extensions.editExtension", comment: "")
+		static let removeExtensionInfo	= NSLocalizedString("extensions.removeExtensionInfo", comment: "")
+		static let provider				= NSLocalizedString("extensions.provider", comment: "")
+		static let providerDescription	= NSLocalizedString("extensions.providerDescription", comment: "")
+		static let name					= NSLocalizedString("extensions.name", comment: "")
+		static let nameDescription		= NSLocalizedString("extensions.nameDescription", comment: "")
+		static let version				= NSLocalizedString("extensions.version", comment: "")
+		static let versionDescription	= NSLocalizedString("extensions.versionDescription", comment: "")
 	}
 }

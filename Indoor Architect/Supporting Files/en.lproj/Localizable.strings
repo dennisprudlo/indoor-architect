@@ -24,6 +24,17 @@
 "projectExplorer.createNewProject"			= "New Project";
 "projectExplorer.buttonCreate"				= "Create Project";
 
+"extensions.title"					= "Extensions";
+"extensions.addExtension"			= "Add Extension";
+"extensions.editExtension"			= "Edit Extension";
+"extensions.removeExtensionInfo"	= "Removing the extension is irrevocable and cannot be undone.";
+"extensions.provider"				= "Provider";
+"extensions.providerDescription"	= "To ensure not to have duplicate extension names put the provider name in here. This could be your organization name or the name of your clients organization.";
+"extensions.name"					= "Name";
+"extensions.nameDescription"		= "The extension name should describe which features are being added or modified. If the extensions adds a parking spot category to the anchor features it could be named \"parking-spots\".";
+"extensions.version"				= "Version";
+"extensions.versionDescription"		= "The version number is important if the extension has different versions due to updates in terminology or the way the extending information is being interpreted.";
+
 "project.buttonDelete"				= "Delete Project";
 "project.buttonDeleteDescription"	= "If you delete this project it cannot be restored. The project and its content such as overlay will be deleted from this device permanentely.";
 "project.projectTitle"				= "Project Title";
@@ -35,14 +46,6 @@
 "project.editIndoorMap"				= "Edit Indoor Map";
 "project.exportImdfArchive"			= "Export IMDF Archive";
 "project.archiveSectionTitle"		= "IMDF Archive";
-
-"project.extensions"						= "Extensions";
-"project.extensions.addExtension"			= "Add Extension";
-"project.extensions.editExtension"			= "Edit Extension";
-"project.extensions.removeExtensionInfo"	= "Removing the extension is irrevocable and cannot be undone.";
-"project.extensions.provider"				= "Provider";
-"project.extensions.name"					= "Name";
-"project.extensions.version"				= "Version";
 
 "project.addresses"						= "Addresses";
 "project.address.addAddress"			= "Add Address";
