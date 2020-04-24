@@ -12,31 +12,29 @@ class ProjectArchiveSection: ProjectSection {
 	
 	var archive: IMDFArchive?
 	
-	let addressesCell			= UITableViewCell(style: .value1, reuseIdentifier: nil)
+	let addressesCell	= UITableViewCell(style: .value1, reuseIdentifier: nil)
+	let anchorsCell		= UITableViewCell(style: .value1, reuseIdentifier: nil)
 	
 	override init() {
 		super.init()
 		
-		addressesCell.backgroundColor			= Color.lightStyleCellBackground
-		addressesCell.accessoryType				= .disclosureIndicator
-
-		cells.append(addressesCell)
+		[addressesCell, anchorsCell].forEach { (archiveCell) in
+			archiveCell.backgroundColor	= Color.lightStyleCellBackground
+			archiveCell.accessoryType	= .disclosureIndicator
+			cells.append(archiveCell)
+		}
 	
 		addressesCell.textLabel?.text = Localizable.Project.addresses
+		anchorsCell.textLabel?.text = "Anchors"
 	}
 	
-	func resetAddressesCount() -> Void {
-		guard let addressesCount = archive?.addresses.count else {
-			addressesCell.detailTextLabel?.text = Localizable.General.none
+	func resetCellCount(cell: UITableViewCell, count: Int?) -> Void {
+		guard let safeCount = count, safeCount > 0 else {
+			cell.detailTextLabel?.text = Localizable.General.none
 			return
 		}
 		
-		if addressesCount == 0 {
-			addressesCell.detailTextLabel?.text = Localizable.General.none
-			return
-		}
-		
-		addressesCell.detailTextLabel?.text = "\(addressesCount)"
+		cell.detailTextLabel?.text = "\(safeCount)"
 	}
 	
 	override func titleForHeader() -> String? {
@@ -57,6 +55,7 @@ class ProjectArchiveSection: ProjectSection {
 	}
 	
 	override func reloadOnAppear() {
-		resetAddressesCount()
+		resetCellCount(cell: addressesCell, count: archive?.addresses.count)
+		resetCellCount(cell: anchorsCell, count: archive?.anchors.count)
 	}
 }
