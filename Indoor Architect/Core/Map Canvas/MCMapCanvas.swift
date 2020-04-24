@@ -150,7 +150,7 @@ class MCMapCanvas: MKMapView {
 	///   - drawingTool: The drawing tool to switch to
 	func switchDrawingTool(_ drawingTool: MCMapCanvas.DrawingTool) -> Void {
 		selectedDrawingTool = drawingTool
-		infoToolStack.display(text: "\(drawingTool)".capitalized, withLabel: "Drawing Tool")
+		infoToolStack.display(text: "\(drawingTool)".capitalized, withLabel: "Tool")
 		
 		discardActiveShapeAssembler()
 		
