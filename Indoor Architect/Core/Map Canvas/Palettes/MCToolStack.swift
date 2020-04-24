@@ -37,7 +37,7 @@ class MCToolStack: UIView {
 		
 		//
 		// Add a dark visual effect view as a background
-		let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+		let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .prominent))
 		addSubview(visualEffectView)
 		visualEffectView.autolayout()
 		visualEffectView.edgesToSuperview()
