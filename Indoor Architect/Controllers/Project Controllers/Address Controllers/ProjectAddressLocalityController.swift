@@ -113,7 +113,15 @@ class ProjectAddressLocalityController: UITableViewController {
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		// When there is an additional previously used section and its being processed
 		// a localized title should be appended
-		return dataset.count > 1 && section == 0 ? Localizable.Project.Address.titlePreviouslyUsed : nil
+		if dataset.count > 1 && section == 0 {
+			return Localizable.Project.Address.titlePreviouslyUsed
+		}
+		
+		if let countryCode = preselectedCountry {
+			return ISO3166.provinceCategory(for: countryCode)
+		}
+		
+		return nil
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

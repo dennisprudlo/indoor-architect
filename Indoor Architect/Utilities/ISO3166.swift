@@ -79,4 +79,24 @@ class ISO3166 {
 		
 		return combinations
 	}
+	
+	
+	/// Returns the name of the subdivisional unit in a specific country
+	/// - Parameter countryCode: The country code
+	/// - Returns: The name of the subdivision unit
+	static func provinceCategory(for countryCode: String) -> String? {
+		guard let propertyListPath = Bundle.main.path(forResource: "ISO-3166-2-units", ofType: "plist") else {
+			return nil
+		}
+		
+		guard let units = NSDictionary(contentsOfFile: propertyListPath) as? Dictionary<String, String> else {
+			return nil
+		}
+		
+		guard let unit = units[countryCode] else {
+			return nil
+		}
+		
+		return unit
+	}
 }
