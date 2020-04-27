@@ -106,10 +106,12 @@ class Address: Feature<Address.Properties> {
 			return Address.LocalityCodeCombination(title: entry.value, code: entry.key)
 		}
 		
-		if combinations.count == 1, let first = combinations.first, first.code == countryCode && first.title == countryCode {
+		//
+		// If the country is not divided into subdivisions we use the country identifier as a subdivision
+		if combinations.count == 0 {
 			let countryIdentifier	= NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
 			let countryName			= NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: NSLocale.Key.identifier, value: countryIdentifier)
-			return [Address.LocalityCodeCombination(code: countryCode, title: countryName ?? "No subdivisions")]
+			return [Address.LocalityCodeCombination(code: countryCode, title: countryName ?? Localizable.General.none)]
 		}
 		
 		combinations.sort { (first, second) -> Bool in
