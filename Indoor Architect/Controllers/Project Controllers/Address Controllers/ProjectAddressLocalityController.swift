@@ -25,7 +25,7 @@ class ProjectAddressLocalityController: UITableViewController {
 	var preselectedCountry: String?
 	
 	/// The dataset of countries and subdivision to display
-	var dataset: [[Address.LocalityCodeCombination]] = []
+	var dataset: [[ISO3166.CodeCombination]] = []
 	
 	/// A list of existing addresses to determine already used countries and subdivisions
 	var existingAddresses: [Address] = []
@@ -49,7 +49,7 @@ class ProjectAddressLocalityController: UITableViewController {
 			
 			//
 			// If a list of countries is being displayed we show previously used countries in a distinct section first
-			var previouslyUsedCountries: [Address.LocalityCodeCombination] = []
+			var previouslyUsedCountries: [ISO3166.CodeCombination] = []
 			existingAddresses.forEach { (address) in
 				
 				//
@@ -68,12 +68,12 @@ class ProjectAddressLocalityController: UITableViewController {
 				dataset.append(previouslyUsedCountries)
 			}
 			
-			dataset.append(Address.getLocalizedCountryCodes())
+			dataset.append(ISO3166.getCountryData())
 		} else {
 			
 			//
 			// If a list of subdivisions is being displayed we show previously used subdivisiions in a distinct section first
-			var previouslyUsedSubdivisions: [Address.LocalityCodeCombination] = []
+			var previouslyUsedSubdivisions: [ISO3166.CodeCombination] = []
 			existingAddresses.forEach { (address) in
 
 				//
@@ -98,7 +98,7 @@ class ProjectAddressLocalityController: UITableViewController {
 				dataset.append(previouslyUsedSubdivisions)
 			}
 			
-			dataset.append(Address.getSubdivisions(forCountry: preselectedCountry ?? ""))
+			dataset.append(ISO3166.getSubdivisionData(for: preselectedCountry ?? ""))
 		}
 	}
 	

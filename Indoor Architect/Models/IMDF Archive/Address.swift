@@ -10,8 +10,6 @@ import Foundation
 
 class Address: Feature<Address.Properties> {
 	
-	typealias LocalityCodeCombination = (code: String, title: String)
-	
 	/// The adresses properties
 	struct Properties: Codable {
 		/// The prominent title of the address. This can be either a street name or a point of interest such as "Empire State Building"
@@ -52,72 +50,14 @@ class Address: Feature<Address.Properties> {
 	}
 	
 	/// Gets a `LocalityCodeCombination` for the country of the address
-	func getCountryData() -> Address.LocalityCodeCombination? {
-		let countryIdentifier	= NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: properties.country])
-		if let countryName		= NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: NSLocale.Key.identifier, value: countryIdentifier) {
-			return Address.LocalityCodeCombination(code: properties.country, title: countryName)
-		}
-		
-		return nil
+	func getCountryData() -> ISO3166.CodeCombination? {
+		return ISO3166.getCountryData(for: properties.country)
 	}
 	
 	/// Gets a `LocalityCodeCombination` for the province/subdivision of the address
-	func getSubdivisionData() -> Address.LocalityCodeCombination? {
-		let combinations = Address.getSubdivisions(forCountry: properties.country)
-		return combinations.first { (combination) -> Bool in
-			return combination.code == properties.province
+	func getSubdivisionData() -> ISO3166.CodeCombination? {
+		return ISO3166.getSubdivisionData(for: properties.country).first { (subdivision) -> Bool in
+			return subdivision.code == properties.province
 		}
-	}
-	
-	/// Gets a list of `LocalityCodeCombination` for all available countries
-	static func getLocalizedCountryCodes() -> [Address.LocalityCodeCombination] {
-		var combinations: [Address.LocalityCodeCombination] = []
-		
-		Locale.isoRegionCodes.forEach { (isoCountryCode) in
-			let countryIdentifier	= NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: isoCountryCode])
-			if let countryName			= NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: NSLocale.Key.identifier, value: countryIdentifier) {
-				combinations.append(Address.LocalityCodeCombination(code: isoCountryCode, title: countryName))
-			}
-		}
-		
-		combinations.sort { (first, second) -> Bool in
-			return first.title < second.title
-		}
-		
-		return combinations
-	}
-	
-	/// Gets a list of `LocalityCodeCombination` for all available subdivisions in a country
-	/// - Parameter countryCode: The country code to get the subdivision entries for
-	static func getSubdivisions(forCountry countryCode: String) -> [Address.LocalityCodeCombination] {
-		guard let propertyListPath = Bundle.main.path(forResource: "ISO-3166-2", ofType: "plist") else {
-			return []
-		}
-		
-		guard let propertyList = NSDictionary(contentsOfFile: propertyListPath) as? Dictionary<String, Dictionary<String, String>> else {
-			return []
-		}
-		
-		guard let subdivisionCodes = propertyList[countryCode] else {
-			return []
-		}
-		
-		var combinations = subdivisionCodes.map { (entry) -> Address.LocalityCodeCombination in
-			return Address.LocalityCodeCombination(title: entry.value, code: entry.key)
-		}
-		
-		//
-		// If the country is not divided into subdivisions we use the country identifier as a subdivision
-		if combinations.count == 0 {
-			let countryIdentifier	= NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
-			let countryName			= NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: NSLocale.Key.identifier, value: countryIdentifier)
-			return [Address.LocalityCodeCombination(code: countryCode, title: countryName ?? Localizable.General.none)]
-		}
-		
-		combinations.sort { (first, second) -> Bool in
-			return first.title < second.title
-		}
-		
-		return combinations
 	}
 }

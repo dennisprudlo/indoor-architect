@@ -11,6 +11,7 @@
 		8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */; };
 		8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC8023F9982800696FCA /* ScrollViewController.swift */; };
 		81241547242C144200D60ED9 /* App Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81241546242C144200D60ED9 /* App Icon.xcassets */; };
+		8124FD672457167A0099581E /* ISO3166.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8124FD662457167A0099581E /* ISO3166.swift */; };
 		813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */; };
 		8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */; };
 		8141C7DA23FAD075008AC7DD /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D923FAD075008AC7DD /* Style.swift */; };
@@ -92,6 +93,7 @@
 		8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEProjectTableViewCell.swift; sourceTree = "<group>"; };
 		8120AC8023F9982800696FCA /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		81241546242C144200D60ED9 /* App Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "App Icon.xcassets"; sourceTree = "<group>"; };
+		8124FD662457167A0099581E /* ISO3166.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO3166.swift; sourceTree = "<group>"; };
 		813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCanvasViewController.swift; sourceTree = "<group>"; };
 		8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverInfoViewController.swift; sourceTree = "<group>"; };
 		8141C7D923FAD075008AC7DD /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 				81F67DDF23F195D9006B9187 /* ProjectManager.swift */,
 				81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */,
 				8141C7DB23FAE980008AC7DD /* Constraints.swift */,
+				8124FD662457167A0099581E /* ISO3166.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				8153BB24241FBC4F00FF6335 /* Venue.swift in Sources */,
 				814EBB76241D6A170028225C /* Spacing.swift in Sources */,
 				81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */,
+				8124FD672457167A0099581E /* ISO3166.swift in Sources */,
 				81D580B2240B04AC0049B17F /* ProjectExtensionController.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
 				81E48EF9242149F100837EEF /* MCOverlayRenderer.swift in Sources */,

@@ -25,12 +25,12 @@ class ProjectAddressEditController: ComposePopoverController {
 	let postalCodeVanityCell	= TextInputTableViewCell(placeholder: Localizable.Project.Address.placeholderVanity)
 	let unitCell				= TextInputTableViewCell(placeholder: Localizable.Project.Address.placeholderUnit)
 	
-	var countryData: Address.LocalityCodeCombination? {
+	var countryData: ISO3166.CodeCombination? {
 		didSet {
 			provinceData = nil
 		}
 	}
-	var provinceData: Address.LocalityCodeCombination?
+	var provinceData: ISO3166.CodeCombination?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
