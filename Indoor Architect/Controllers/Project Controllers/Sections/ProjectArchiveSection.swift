@@ -46,6 +46,10 @@ class ProjectArchiveSection: ProjectSection {
 			let projectAddressesController = ProjectAddressController(style: .insetGrouped)
 			projectAddressesController.project = delegate?.project
 			delegate?.navigationController?.pushViewController(projectAddressesController, animated: true)
+		} else if cells[index] == anchorsCell {
+			let anchorsListController = AnchorsListController(style: .insetGrouped)
+			anchorsListController.project = delegate?.project
+			delegate?.navigationController?.pushViewController(anchorsListController, animated: true)
 		}
 	}
 	

@@ -9,9 +9,407 @@
 -->
 <plist version="1.0">
 	<dict>
+		<key>AC</key>
+		<string>Geographical Entity</string>
+		<key>AD</key>
+		<string>Parròquies</string>
+		<key>AE</key>
+		<string>Imārāt</string>
+		<key>AF</key>
+		<string>Wilāyat</string>
+		<key>AG</key>
+		<string>Parishes and dependencies</string>
+		<key>AL</key>
+		<string>Qarqe</string>
+		<key>AM</key>
+		<string>Marzer</string>
+		<key>AO</key>
+		<string>Províncias</string>
+		<key>AR</key>
+		<string>Provincias</string>
+		<key>AT</key>
+		<string>Bundesländer</string>
+		<key>AU</key>
+		<string>States and Territories</string>
+		<key>AZ</key>
+		<string>Rayonlar</string>
+		<key>BA</key>
+		<string>Entiteti</string>
+		<key>BB</key>
+		<string>Parishes</string>
+		<key>BD</key>
+		<string>Zila</string>
+		<key>BE</key>
+		<string>Provinces</string>
+		<key>BF</key>
+		<string>Provinces</string>
+		<key>BG</key>
+		<string>Oblasti</string>
+		<key>BH</key>
+		<string>Muḥāfaẓāt</string>
+		<key>BI</key>
+		<string>Provinces</string>
+		<key>BJ</key>
+		<string>Départements</string>
+		<key>BN</key>
+		<string>Daerah</string>
+		<key>BO</key>
+		<string>Departamentos</string>
+		<key>BQ</key>
+		<string>Bijzondere Gemeenten</string>
+		<key>BR</key>
+		<string>Unidades Federativas</string>
+		<key>BS</key>
+		<string>Districts</string>
+		<key>BT</key>
+		<string>Dzongkhags</string>
+		<key>BW</key>
+		<string>Districts, Towns &amp; Cities</string>
+		<key>BY</key>
+		<string>Voblasts</string>
+		<key>BZ</key>
+		<string>Districts</string>
+		<key>CA</key>
+		<string>Provinces &amp; Territories</string>
+		<key>CD</key>
+		<string>Provinces</string>
+		<key>CF</key>
+		<string>Préfectures</string>
+		<key>CG</key>
+		<string>Départements</string>
 		<key>CH</key>
 		<string>Kantone</string>
+		<key>CI</key>
+		<string>Districts</string>
+		<key>CL</key>
+		<string>Regiones</string>
+		<key>CM</key>
+		<string>Regions</string>
+		<key>CN</key>
+		<string>Sheng, Zizhiqu, Shi</string>
+		<key>CO</key>
+		<string>Departamentos</string>
+		<key>CR</key>
+		<string>Provincias</string>
+		<key>CU</key>
+		<string>Provincias</string>
+		<key>CU</key>
+		<string>Concelhos</string>
+		<key>CY</key>
+		<string>Eparchíes (Kazalar)</string>
+		<key>CZ</key>
+		<string>Kraje</string>
 		<key>DE</key>
 		<string>Bundesländer</string>
+		<key>DJ</key>
+		<string>Manatiq, Madīnah</string>
+		<key>DK</key>
+		<string>Regioner</string>
+		<key>DM</key>
+		<string>Parishes</string>
+		<key>DO</key>
+		<string>Provincias y Distritos</string>
+		<key>DZ</key>
+		<string>Wilayat</string>
+		<key>EC</key>
+		<string>Provincias</string>
+		<key>EE</key>
+		<string>Maakonnad</string>
+		<key>EG</key>
+		<string>Muḥāfaẓāt</string>
+		<key>ER</key>
+		<string>Manatiq</string>
+		<key>ES</key>
+		<string>Comunidades Autónomas</string>
+		<key>ET</key>
+		<string>Kililoch, Āstedader Akababiwach</string>
+		<key>FI</key>
+		<string>Maakunnat</string>
+		<key>FJ</key>
+		<string>Provinces</string>
+		<key>FM</key>
+		<string>States</string>
+		<key>FR</key>
+		<string>Régions</string>
+		<key>GA</key>
+		<string>Provinces</string>
+		<key>GB</key>
+		<string>Administrative Regions</string>
+		<key>GD</key>
+		<string>Parishes &amp; Dependencies</string>
+		<key>GE</key>
+		<string>Mkhareebi</string>
+		<key>GH</key>
+		<string>Regions</string>
+		<key>GL</key>
+		<string>Kommunia</string>
+		<key>GM</key>
+		<string>Divisions</string>
+		<key>GN</key>
+		<string>Régions administrative, Gouvernorat</string>
+		<key>GQ</key>
+		<string>Provincias</string>
+		<key>GR</key>
+		<string>Periféreies</string>
+		<key>GR</key>
+		<string>Departamentos</string>
+		<key>GW</key>
+		<string>Províncias</string>
+		<key>GY</key>
+		<string>Regions</string>
+		<key>HN</key>
+		<string>Departamentos</string>
+		<key>HR</key>
+		<string>Županije</string>
+		<key>HT</key>
+		<string>Depatman</string>
+		<key>HU</key>
+		<string>Megyék</string>
+		<key>ID</key>
+		<string>Geographical Units</string>
+		<key>IE</key>
+		<string>Provinces</string>
+		<key>IL</key>
+		<string>Mehozot</string>
+		<key>IN</key>
+		<string>State &amp; Union Territories</string>
+		<key>IQ</key>
+		<string>Manatiqs</string>
+		<key>IR</key>
+		<string>Ostānhā</string>
+		<key>IS</key>
+		<string>Landsvæði</string>
+		<key>IT</key>
+		<string>Regione</string>
+		<key>JM</key>
+		<string>Parishes</string>
+		<key>JO</key>
+		<string>Manatiqs</string>
+		<key>JO</key>
+		<string>Manatiqs</string>
+		<key>JP</key>
+		<string>To, Dô, Hu, Ken</string>
+		<key>KE</key>
+		<string>Counties</string>
+		<key>KG</key>
+		<string>Khet</string>
+		<key>KI</key>
+		<string>Group of Islands</string>
+		<key>KM</key>
+		<string>Îles</string>
+		<key>KN</key>
+		<string>Parishes</string>
+		<key>KP</key>
+		<string>Do</string>
+		<key>KR</key>
+		<string>Do, Gwangyeoksi</string>
+		<key>KW</key>
+		<string>Manatiqs</string>
+		<key>KZ</key>
+		<string>Oblasti</string>
+		<key>LA</key>
+		<string>Khouèng</string>
+		<key>LB</key>
+		<string>Manatiqs</string>
+		<key>LC</key>
+		<string>Districts</string>
+		<key>LI</key>
+		<string>Gemeinden</string>
+		<key>LK</key>
+		<string>Paḷāta</string>
+		<key>LR</key>
+		<string>Counties</string>
+		<key>LS</key>
+		<string>Setereke</string>
+		<key>LT</key>
+		<string>Apskritys</string>
+		<key>LU</key>
+		<string>Kantone</string>
+		<key>LV</key>
+		<string>Republikas Pilsēta</string>
+		<key>LY</key>
+		<string>Sha‘bīyah</string>
+		<key>MA</key>
+		<string>Jihāt</string>
+		<key>MA</key>
+		<string>Quartiers</string>
+		<key>MD</key>
+		<string>Raion</string>
+		<key>ME</key>
+		<string>Opština</string>
+		<key>MG</key>
+		<string>Faritany</string>
+		<key>MH</key>
+		<string>Jukjuk</string>
+		<key>MK</key>
+		<string>Opština</string>
+		<key>ML</key>
+		<string>Région</string>
+		<key>MM</key>
+		<string>Pyinè &amp; Taing</string>
+		<key>MN</key>
+		<string>Aymag</string>
+		<key>MR</key>
+		<string>Wilayat</string>
+		<key>MT</key>
+		<string>Kunsilli Lokali</string>
+		<key>MU</key>
+		<string>Dependencies, Cities &amp; Districts</string>
+		<key>MV</key>
+		<string>Administrative Atolls</string>
+		<key>MW</key>
+		<string>Boma</string>
+		<key>MX</key>
+		<string>Distritos Federal</string>
+		<key>MY</key>
+		<string>Negeri &amp; Wilayah Persekutuan</string>
+		<key>MZ</key>
+		<string>Províncias</string>
+		<key>NA</key>
+		<string>Regions</string>
+		<key>NE</key>
+		<string>Régions</string>
+		<key>NG</key>
+		<string>States</string>
+		<key>NI</key>
+		<string>Departamentos</string>
+		<key>NL</key>
+		<string>Provincie</string>
+		<key>NO</key>
+		<string>Fylke</string>
+		<key>NP</key>
+		<string>Pradesh &amp; Vikas Kshetra</string>
+		<key>NR</key>
+		<string>Distric</string>
+		<key>NZ</key>
+		<string>Regions</string>
+		<key>OM</key>
+		<string>Manatiqs</string>
+		<key>PA</key>
+		<string>Provincias</string>
+		<key>PE</key>
+		<string>Regiones</string>
+		<key>PG</key>
+		<string>Province</string>
+		<key>PH</key>
+		<string>Lalawigan &amp; Rehiyon</string>
+		<key>PK</key>
+		<string>Sūbah</string>
+		<key>PL</key>
+		<string>Województwa</string>
+		<key>PS</key>
+		<string>Manatiqs</string>
+		<key>PT</key>
+		<string>Sistrito &amp; Região Autónoma</string>
+		<key>PW</key>
+		<string>States</string>
+		<key>PY</key>
+		<string>Departamentos</string>
+		<key>QA</key>
+		<string>Baladīyah</string>
+		<key>RO</key>
+		<string>Judeţ</string>
+		<key>RS</key>
+		<string>Okrug</string>
+		<key>RU</key>
+		<string>Oblasti</string>
+		<key>RW</key>
+		<string>Umujyi &amp; Intara</string>
+		<key>SA</key>
+		<string>Manatiqs</string>
+		<key>SB</key>
+		<string>Province</string>
+		<key>SC</key>
+		<string>Districts</string>
+		<key>SD</key>
+		<string>Wilayaht</string>
+		<key>SE</key>
+		<string>Län</string>
+		<key>SG</key>
+		<string>Districts</string>
+		<key>SH</key>
+		<string>Geographical Entity</string>
+		<key>SI</key>
+		<string>Občina</string>
+		<key>SK</key>
+		<string>Kraj</string>
+		<key>SL</key>
+		<string>Provinces &amp; Areas</string>
+		<key>SM</key>
+		<string>Municipality</string>
+		<key>SN</key>
+		<string>Régions</string>
+		<key>SO</key>
+		<string>Gobol</string>
+		<key>SR</key>
+		<string>Distrikt</string>
+		<key>SS</key>
+		<string>States</string>
+		<key>ST</key>
+		<string>Províncias</string>
+		<key>SV</key>
+		<string>Departamentos</string>
+		<key>SY</key>
+		<string>Manatiqs</string>
+		<key>SZ</key>
+		<string>Regions</string>
+		<key>TD</key>
+		<string>Manatiqs</string>
+		<key>TG</key>
+		<string>Régions</string>
+		<key>TH</key>
+		<string>Changwat</string>
+		<key>TJ</key>
+		<string>Viloyat</string>
+		<key>TL</key>
+		<string>Município</string>
+		<key>TM</key>
+		<string>Welaýat</string>
+		<key>TN</key>
+		<string>Wilayat</string>
+		<key>TO</key>
+		<string>Divisions</string>
+		<key>TR</key>
+		<string>Il</string>
+		<key>TT</key>
+		<string>Regions &amp; Minicipalities</string>
+		<key>TV</key>
+		<string>Island Councils</string>
+		<key>TW</key>
+		<string>Hsien &amp; Shih</string>
+		<key>TZ</key>
+		<string>Mkoa</string>
+		<key>UA</key>
+		<string>Oblasti</string>
+		<key>UG</key>
+		<string>Districts</string>
+		<key>UM</key>
+		<string>Groups of Islands</string>
+		<key>US</key>
+		<string>States</string>
+		<key>UY</key>
+		<string>Departamentos</string>
+		<key>UZ</key>
+		<string>Viloyat</string>
+		<key>VC</key>
+		<string>Parishes</string>
+		<key>VE</key>
+		<string>States</string>
+		<key>VN</key>
+		<string>Tinh</string>
+		<key>VU</key>
+		<string>Provinces</string>
+		<key>WF</key>
+		<string>Circonscription</string>
+		<key>WS</key>
+		<string>Districts</string>
+		<key>YE</key>
+		<string>Manatiqs</string>
+		<key>ZA</key>
+		<string>Provinces</string>
+		<key>ZM</key>
+		<string>Provinces</string>
+		<key>ZW</key>
+		<string>Provinces</string>
 	</dict>
 </plist>

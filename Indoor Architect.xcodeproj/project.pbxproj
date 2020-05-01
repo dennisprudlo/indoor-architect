@@ -13,6 +13,7 @@
 		81241547242C144200D60ED9 /* App Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81241546242C144200D60ED9 /* App Icon.xcassets */; };
 		8124FD672457167A0099581E /* ISO3166.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8124FD662457167A0099581E /* ISO3166.swift */; };
 		8124FD6924571D0D0099581E /* ISO-3166-2-units.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8124FD6824571D0D0099581E /* ISO-3166-2-units.plist */; };
+		812608F02458A19300FF0D08 /* AnchorsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812608EF2458A19300FF0D08 /* AnchorsListController.swift */; };
 		813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */; };
 		8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */; };
 		8141C7DA23FAD075008AC7DD /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D923FAD075008AC7DD /* Style.swift */; };
@@ -96,6 +97,7 @@
 		81241546242C144200D60ED9 /* App Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "App Icon.xcassets"; sourceTree = "<group>"; };
 		8124FD662457167A0099581E /* ISO3166.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO3166.swift; sourceTree = "<group>"; };
 		8124FD6824571D0D0099581E /* ISO-3166-2-units.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ISO-3166-2-units.plist"; sourceTree = "<group>"; };
+		812608EF2458A19300FF0D08 /* AnchorsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorsListController.swift; sourceTree = "<group>"; };
 		813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCanvasViewController.swift; sourceTree = "<group>"; };
 		8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverInfoViewController.swift; sourceTree = "<group>"; };
 		8141C7D923FAD075008AC7DD /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -185,6 +187,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		812608EE2458A16000FF0D08 /* Feature Edit Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				812608F12458A1FA00FF0D08 /* Anchors */,
+			);
+			path = "Feature Edit Controllers";
+			sourceTree = "<group>";
+		};
+		812608F12458A1FA00FF0D08 /* Anchors */ = {
+			isa = PBXGroup;
+			children = (
+				812608EF2458A19300FF0D08 /* AnchorsListController.swift */,
+			);
+			path = Anchors;
+			sourceTree = "<group>";
+		};
 		813B3E4C23F899AE00D02404 /* Map Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +498,7 @@
 				81F67DAF23F06A64006B9187 /* ProjectController.swift */,
 				81AE8E492418F6AC007C8093 /* Extension Controllers */,
 				81D580BD240C13170049B17F /* Address Controllers */,
+				812608EE2458A16000FF0D08 /* Feature Edit Controllers */,
 			);
 			path = "Project Controllers";
 			sourceTree = "<group>";
@@ -653,6 +672,7 @@
 				81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
 				81D580AE240AF0BB0049B17F /* Manifest.swift in Sources */,
+				812608F02458A19300FF0D08 /* AnchorsListController.swift in Sources */,
 				81D580B6240BEDA60049B17F /* Extension.swift in Sources */,
 				81D580B4240B0BDD0049B17F /* ProjectExtensionEditController.swift in Sources */,
 				81D580C3240D13310049B17F /* ComposePopoverController.swift in Sources */,
