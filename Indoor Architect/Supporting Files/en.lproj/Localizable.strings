@@ -40,7 +40,6 @@
 "project.projectTitle"				= "Project Title";
 "project.projectDescription"		= "Description";
 "project.projectClient"				= "Client";
-"project.projectClientHelp"			= "The client is the person or organization that ordered the Indoor Map.";
 "project.created"					= "Created";
 "project.updated"					= "Last edited";
 "project.editIndoorMap"				= "Edit Indoor Map";

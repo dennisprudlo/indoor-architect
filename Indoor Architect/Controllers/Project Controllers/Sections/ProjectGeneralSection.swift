@@ -60,10 +60,6 @@ class ProjectGeneralSection: ProjectSection {
 		delegate?.projectDetailsDidChange()
 	}
 	
-	override func titleForFooter() -> String? {
-		return Localizable.Project.projectClientHelp
-	}
-	
 	override func initialize() {
 		projectTitleCell.setText(delegate?.project.manifest.title)
 		projectDescriptionCell.setText(delegate?.project.manifest.description)
