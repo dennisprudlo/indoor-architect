@@ -145,6 +145,15 @@ class ProjectAddressLocalityController: UITableViewController {
 		
 		if dataType == .country {
 			displayController.countryData = data
+			
+			//
+			// Get the subdivision for the selected country and check
+			// if there is only one (representing the country).
+			// If so, automatically set the province data
+			let subdivisions = ISO3166.getSubdivisionData(for: data.code)
+			if subdivisions.count == 1 {
+				displayController.provinceData = data
+			}
 		} else {
 			displayController.provinceData = data
 		}
