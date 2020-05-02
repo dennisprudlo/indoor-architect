@@ -35,6 +35,8 @@
 "extensions.version"				= "Version";
 "extensions.versionDescription"		= "The version number is important if the extension has different versions due to updates in terminology or the way the extending information is being interpreted.";
 
+"address.localitySearchBarPlaceholder"	= "Search";
+
 "project.buttonDelete"				= "Delete Project";
 "project.buttonDeleteDescription"	= "If you delete this project it cannot be restored. The project and its content such as overlay will be deleted from this device permanentely.";
 "project.projectTitle"				= "Project Title";

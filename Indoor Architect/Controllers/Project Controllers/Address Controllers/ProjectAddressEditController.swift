@@ -86,6 +86,8 @@ class ProjectAddressEditController: ComposePopoverController {
 			postalCodeExtensionCell.textField.text	= addressToEdit?.properties.postalCodeExt
 			postalCodeVanityCell.textField.text		= addressToEdit?.properties.postalCodeVanity
 			unitCell.textField.text					= addressToEdit?.properties.unit
+		} else {
+			navigationController?.navigationBar.prefersLargeTitles = true
 		}
 		
 		tableViewSections.append((

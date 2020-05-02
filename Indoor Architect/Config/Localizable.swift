@@ -78,4 +78,8 @@ struct Localizable {
 		static let version				= NSLocalizedString("extensions.version", comment: "")
 		static let versionDescription	= NSLocalizedString("extensions.versionDescription", comment: "")
 	}
+	
+	struct Address {
+		static let localitySearchBarPlaceholder = NSLocalizedString("address.localitySearchBarPlaceholder", comment: "")
+	}
 }

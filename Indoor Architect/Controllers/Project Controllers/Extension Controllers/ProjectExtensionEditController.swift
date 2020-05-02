@@ -47,6 +47,8 @@ class ProjectExtensionEditController: ComposePopoverController {
 			providerCell.textField.text	= extensionToEdit?.provider
 			nameCell.textField.text		= extensionToEdit?.name
 			versionCell.textField.text	= extensionToEdit?.version
+		} else {
+			navigationController?.navigationBar.prefersLargeTitles = true
 		}
 		
 		//

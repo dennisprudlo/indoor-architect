@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectAddressLocalityController: UITableViewController {
+class ProjectAddressLocalityController: UITableViewController, UISearchBarDelegate {
 	
 	enum DataType {
 		case country
@@ -24,11 +24,17 @@ class ProjectAddressLocalityController: UITableViewController {
 	/// A preselected country code. This is important when selecting a subdivision
 	var preselectedCountry: String?
 	
-	/// The dataset of countries and subdivision to display
+	/// The dataset of countries and subdivision
 	var dataset: [[ISO3166.CodeCombination]] = []
+	
+	/// The dataset of countries and subdivisions which is currently displayed
+	var displayedDataset: [[ISO3166.CodeCombination]] = []
 	
 	/// A list of existing addresses to determine already used countries and subdivisions
 	var existingAddresses: [Address] = []
+	
+	/// A reference to the search bar appearing when creating a new address
+	let projectSearchController = UISearchController(searchResultsController: nil)
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -39,6 +45,15 @@ class ProjectAddressLocalityController: UITableViewController {
 			tableView.cellLayoutMarginsFollowReadableWidth	= true
 			tableView.backgroundColor						= Color.lightStyleTableViewBackground
 			tableView.separatorColor						= Color.lightStyleCellSeparatorColor
+		} else {
+			//
+			// Configure search controller and search bar
+			projectSearchController.obscuresBackgroundDuringPresentation	= false
+			projectSearchController.hidesNavigationBarDuringPresentation	= false
+			projectSearchController.searchBar.placeholder					= Localizable.Address.localitySearchBarPlaceholder
+			projectSearchController.searchBar.delegate						= self
+			navigationItem.searchController									= projectSearchController
+			navigationItem.hidesSearchBarWhenScrolling						= false
 		}
 		
 		//
@@ -100,20 +115,38 @@ class ProjectAddressLocalityController: UITableViewController {
 			
 			dataset.append(ISO3166.getSubdivisionData(for: preselectedCountry ?? ""))
 		}
+		
+		searchBar(projectSearchController.searchBar, textDidChange: "")
+	}
+	
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		displayedDataset = dataset
+
+		if searchText.count > 0 {
+			
+			let query = searchText.lowercased()
+			let filtered = dataset[dataset.count - 1].filter({
+				query.contains($0.code.lowercased()) || query.contains($0.title.lowercased()) || $0.title.lowercased().contains(query) || $0.code.lowercased().contains(query)
+			})
+			
+			displayedDataset[displayedDataset.count - 1] = filtered
+		}
+		
+		tableView.reloadData()
 	}
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return dataset.count
+		return displayedDataset.count
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return dataset[section].count
+		return displayedDataset[section].count
 	}
 	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		// When there is an additional previously used section and its being processed
 		// a localized title should be appended
-		if dataset.count > 1 && section == 0 {
+		if displayedDataset.count > 1 && section == 0 {
 			return Localizable.Project.Address.titlePreviouslyUsed
 		}
 		
@@ -129,9 +162,9 @@ class ProjectAddressLocalityController: UITableViewController {
 		
 		//
 		// Format the cell
-		cell.textLabel?.text = dataset[indexPath.section][indexPath.row].title
-		cell.detailTextLabel?.text = dataset[indexPath.section][indexPath.row].code
-		cell.detailTextLabel?.font = cell.detailTextLabel?.font.monospaced()
+		cell.textLabel?.text		= displayedDataset[indexPath.section][indexPath.row].title
+		cell.detailTextLabel?.text	= displayedDataset[indexPath.section][indexPath.row].code
+		cell.detailTextLabel?.font	= cell.detailTextLabel?.font.monospaced()
 		
 		if !displayController.shouldRenderToCreate {
 			cell.backgroundColor = Color.lightStyleCellBackground
@@ -141,7 +174,7 @@ class ProjectAddressLocalityController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let data = (code: dataset[indexPath.section][indexPath.row].code, title: dataset[indexPath.section][indexPath.row].title)
+		let data = (code: displayedDataset[indexPath.section][indexPath.row].code, title: displayedDataset[indexPath.section][indexPath.row].title)
 		
 		if dataType == .country {
 			displayController.countryData = data
