@@ -10,7 +10,8 @@ import UIKit
 
 class RulerView: UIView {
 	
-	private let rulerHeight: CGFloat = 50
+	private let rulerHeightUpperBound: Double = 90
+	private let rulerHeightLowerBound: Double = 50
 	
 	typealias Edges = (origin: CGPoint, target: CGPoint, lowerOrigin: CGPoint, lowerTarget: CGPoint)
 	
@@ -44,8 +45,8 @@ class RulerView: UIView {
 		path.addLine(to: edges.lowerOrigin)
 		path.closeSubpath()
 		
-		context.setStrokeColor(UIColor.systemGray.cgColor)
-		context.setFillColor(UIColor.systemGray.withAlphaComponent(0.7).cgColor)
+		context.setStrokeColor(Color.rulerBaseColor.withAlphaComponent(0.7).cgColor)
+		context.setFillColor(Color.rulerBaseColor.withAlphaComponent(0.4).cgColor)
 		context.setLineWidth(1)
 		
 		context.addPath(path)
@@ -65,13 +66,17 @@ class RulerView: UIView {
 		let dx = Double(end.x - start.x)
 		let dy = Double(end.y - start.y)
 		
+		//
+		// Calculate the ruler length to determine the height
+		let rulerLength			= sqrt(dx * dx + dy + dy)
+		let appliedRulerHeight	= Double.maximum(rulerHeightLowerBound, Double.minimum(rulerHeightUpperBound, rulerLength * 0.1))
+		
 		let thetaFirst = dy == 0 ? 0 : Double.pi - (Double.pi / 2) - atan(dx / dy)
 		let thetaSecond = Double.pi - (Double.pi / 2) - thetaFirst
 		let thetaThird = Double.pi - (Double.pi / 2) - thetaSecond
 		
-		let offsetX = CGFloat(sin(thetaThird) * Double(rulerHeight)) * rightToLeft
-		let offsetY = CGFloat(cos(thetaThird) * Double(rulerHeight)) * rightToLeft
-		
+		let offsetX = CGFloat(sin(thetaThird) * appliedRulerHeight) * rightToLeft
+		let offsetY = CGFloat(cos(thetaThird) * appliedRulerHeight) * rightToLeft
 		
 		let lowerOrigin = CGPoint(x: start.x - offsetX, y: start.y + offsetY)
 		let lowerTarget = CGPoint(x: end.x - offsetX, y: end.y + offsetY)

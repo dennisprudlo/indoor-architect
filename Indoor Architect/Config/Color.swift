@@ -26,6 +26,8 @@ enum Color {
 	
 	// MARK: Map Canvas
 	
+	static let rulerBaseColor: UIColor = UIColor.black
+	
 	static let currentDrawingTintColor: UIColor = Color.primary
 	
 	static let currentDrawingBorderColor: UIColor = UIColor.black.withAlphaComponent(0.8)
