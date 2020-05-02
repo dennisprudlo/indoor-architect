@@ -31,27 +31,6 @@ struct Localizable {
 		static let editIndoorMap			= NSLocalizedString("project.editIndoorMap", comment: "")
 		static let exportImdfArchive		= NSLocalizedString("project.exportImdfArchive", comment: "")
 		static let archiveSectionTitle		= NSLocalizedString("project.archiveSectionTitle", comment: "")
-		
-		static let addresses = NSLocalizedString("project.addresses", comment: "")
-		struct Address {
-			static let addAddress				= NSLocalizedString("project.address.addAddress", comment: "")
-			static let editAddress				= NSLocalizedString("project.address.editAddress", comment: "")
-			static let titlePreviouslyUsed		= NSLocalizedString("project.address.titlePreviouslyUsed", comment: "")
-			static let removeAddressInfo		= NSLocalizedString("project.address.removeAddressInfo", comment: "")
-			static let addressDescription		= NSLocalizedString("project.address.addressDescription", comment: "")
-			static let placeholderAddress		= NSLocalizedString("project.address.placeholderAddress", comment: "")
-			static let placeholderCountry		= NSLocalizedString("project.address.placeholderCountry", comment: "")
-			static let placeholderProvince		= NSLocalizedString("project.address.placeholderProvince", comment: "")
-			static let placeholderLocality		= NSLocalizedString("project.address.placeholderLocality", comment: "")
-			static let postalCode				= NSLocalizedString("project.address.postalCode", comment: "")
-			static let postalCodeDescription	= NSLocalizedString("project.address.postalCodeDescription", comment: "")
-			static let placeholderCode			= NSLocalizedString("project.address.placeholderCode", comment: "")
-			static let placeholderExtension		= NSLocalizedString("project.address.placeholderExtension", comment: "")
-			static let placeholderVanity		= NSLocalizedString("project.address.placeholderVanity", comment: "")
-			static let unit						= NSLocalizedString("project.address.unit", comment: "")
-			static let unitDescription			= NSLocalizedString("project.address.unitDescription", comment: "")
-			static let placeholderUnit			= NSLocalizedString("project.address.placeholderUnit", comment: "")
-		}
 	}
 	
 	struct ProjectExplorer {
@@ -80,6 +59,24 @@ struct Localizable {
 	}
 	
 	struct Address {
+		static let title						= NSLocalizedString("address.title", comment: "")
+		static let addAddress					= NSLocalizedString("address.addAddress", comment: "")
+		static let editAddress					= NSLocalizedString("address.editAddress", comment: "")
+		static let titlePreviouslyUsed			= NSLocalizedString("address.titlePreviouslyUsed", comment: "")
+		static let removeAddressInfo			= NSLocalizedString("address.removeAddressInfo", comment: "")
+		static let addressDescription			= NSLocalizedString("address.addressDescription", comment: "")
+		static let placeholderAddress			= NSLocalizedString("address.placeholderAddress", comment: "")
+		static let placeholderCountry			= NSLocalizedString("address.placeholderCountry", comment: "")
+		static let placeholderProvince			= NSLocalizedString("address.placeholderProvince", comment: "")
+		static let placeholderLocality			= NSLocalizedString("address.placeholderLocality", comment: "")
+		static let postalCode					= NSLocalizedString("address.postalCode", comment: "")
+		static let postalCodeDescription		= NSLocalizedString("address.postalCodeDescription", comment: "")
+		static let placeholderCode				= NSLocalizedString("address.placeholderCode", comment: "")
+		static let placeholderExtension			= NSLocalizedString("address.placeholderExtension", comment: "")
+		static let placeholderVanity			= NSLocalizedString("address.placeholderVanity", comment: "")
+		static let unit							= NSLocalizedString("address.unit", comment: "")
+		static let unitDescription				= NSLocalizedString("address.unitDescription", comment: "")
+		static let placeholderUnit				= NSLocalizedString("address.placeholderUnit", comment: "")
 		static let localitySearchBarPlaceholder = NSLocalizedString("address.localitySearchBarPlaceholder", comment: "")
 	}
 }

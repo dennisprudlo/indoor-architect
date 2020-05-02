@@ -39,7 +39,7 @@ class ProjectAddressLocalityController: UITableViewController, UISearchBarDelega
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		title = dataType == .country ? Localizable.Project.Address.placeholderCountry : Localizable.Project.Address.placeholderProvince
+		title = dataType == .country ? Localizable.Address.placeholderCountry : Localizable.Address.placeholderProvince
 		
 		if !displayController.shouldRenderToCreate {
 			tableView.cellLayoutMarginsFollowReadableWidth	= true
@@ -147,7 +147,7 @@ class ProjectAddressLocalityController: UITableViewController, UISearchBarDelega
 		// When there is an additional previously used section and its being processed
 		// a localized title should be appended
 		if displayedDataset.count > 1 && section == 0 {
-			return Localizable.Project.Address.titlePreviouslyUsed
+			return Localizable.Address.titlePreviouslyUsed
 		}
 		
 		if let countryCode = preselectedCountry {

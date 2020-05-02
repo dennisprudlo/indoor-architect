@@ -24,7 +24,7 @@ class ProjectArchiveSection: ProjectSection {
 			cells.append(archiveCell)
 		}
 	
-		addressesCell.textLabel?.text = Localizable.Project.addresses
+		addressesCell.textLabel?.text = Localizable.Address.title
 		anchorsCell.textLabel?.text = "Anchors"
 	}
 	

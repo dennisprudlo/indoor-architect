@@ -35,6 +35,24 @@
 "extensions.version"				= "Version";
 "extensions.versionDescription"		= "The version number is important if the extension has different versions due to updates in terminology or the way the extending information is being interpreted.";
 
+"address.title"							= "Addresses";
+"address.addAddress"					= "Add Address";
+"address.editAddress"					= "Edit Address";
+"address.titlePreviouslyUsed"			= "Previously Used";
+"address.removeAddressInfo"				= "Removing the address is irrevocable and will unlink all entities tied to the address.";
+"address.addressDescription"			= "The address is the significant name of the place. It can be a simple street name or the name of a venue.";
+"address.placeholderAddress"			= "Address";
+"address.placeholderCountry"			= "Country";
+"address.placeholderProvince"			= "Province";
+"address.placeholderLocality"			= "Locality";
+"address.postalCode"					= "Postal Code";
+"address.postalCodeDescription"			= "The postal code fields are optional and must not be set.";
+"address.placeholderCode"				= "Code";
+"address.placeholderExtension"			= "Extension";
+"address.placeholderVanity"				= "Vanity";
+"address.unit"							= "Unit";
+"address.unitDescription"				= "The unit is an optional field and must not be set if the address is an unqualified building address.";
+"address.placeholderUnit"				= "2A";
 "address.localitySearchBarPlaceholder"	= "Search";
 
 "project.buttonDelete"				= "Delete Project";
@@ -47,22 +65,3 @@
 "project.editIndoorMap"				= "Edit Indoor Map";
 "project.exportImdfArchive"			= "Export IMDF Archive";
 "project.archiveSectionTitle"		= "IMDF Archive";
-
-"project.addresses"						= "Addresses";
-"project.address.addAddress"			= "Add Address";
-"project.address.editAddress"			= "Edit Address";
-"project.address.titlePreviouslyUsed"	= "Previously Used";
-"project.address.removeAddressInfo"		= "Removing the address is irrevocable and will unlink all entities tied to the address.";
-"project.address.addressDescription"	= "The address is the significant name of the place. It can be a simple street name or the name of a venue.";
-"project.address.placeholderAddress"	= "Address";
-"project.address.placeholderCountry"	= "Country";
-"project.address.placeholderProvince"	= "Province";
-"project.address.placeholderLocality"	= "Locality";
-"project.address.postalCode"			= "Postal Code";
-"project.address.postalCodeDescription"	= "The postal code fields are optional and must not be set.";
-"project.address.placeholderCode"		= "Code";
-"project.address.placeholderExtension"	= "Extension";
-"project.address.placeholderVanity"		= "Vanity";
-"project.address.unit"					= "Unit";
-"project.address.unitDescription"		= "The unit is an optional field and must not be set if the address is an unqualified building address.";
-"project.address.placeholderUnit"		= "2A";

@@ -19,7 +19,7 @@ class ProjectAddressController: DetailTableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		title = Localizable.Project.addresses
+		title = Localizable.Address.title
 		
 		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapAddAddress))
 	}
@@ -76,7 +76,7 @@ class ProjectAddressController: DetailTableViewController {
 	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 		
 		let deleteAction = UIContextualAction(style: .destructive, title: nil, handler: { (action, view, completion) in
-			let controller = UIAlertController(title: Localizable.General.actionConfirmation, message: Localizable.Project.Address.removeAddressInfo, preferredStyle: .alert)
+			let controller = UIAlertController(title: Localizable.General.actionConfirmation, message: Localizable.Address.removeAddressInfo, preferredStyle: .alert)
 			controller.addAction(UIAlertAction(title: Localizable.General.cancel, style: .cancel, handler: { _ in completion(false) }))
 			controller.addAction(UIAlertAction(title: Localizable.General.remove, style: .destructive, handler: { _ in
 				let archive			= self.project.imdfArchive
