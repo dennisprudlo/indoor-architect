@@ -31,9 +31,10 @@ class AnchorsListController: DetailTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
 
-		let anchor = project.imdfArchive.anchors[indexPath.row]
-		cell.textLabel?.text = anchor.id.uuidString
-		cell.detailTextLabel?.text = "Lat: \(anchor.getCoordinates().latitude), Lng: \(anchor.getCoordinates().longitude)"
+		let anchor					= project.imdfArchive.anchors[indexPath.row]
+		cell.textLabel?.text		= anchor.id.uuidString
+		cell.detailTextLabel?.text	= "Lat: \(anchor.getCoordinates().latitude), Lng: \(anchor.getCoordinates().longitude)"
+		cell.backgroundColor		= Color.lightStyleCellBackground
 
         return cell
     }
