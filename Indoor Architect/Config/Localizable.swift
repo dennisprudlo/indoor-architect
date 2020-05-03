@@ -79,4 +79,15 @@ struct Localizable {
 		static let placeholderUnit				= NSLocalizedString("address.placeholderUnit", comment: "")
 		static let localitySearchBarPlaceholder = NSLocalizedString("address.localitySearchBarPlaceholder", comment: "")
 	}
+	
+	struct Feature {
+		static let comment					= NSLocalizedString("feature.comment", comment: "")
+		static let coordinates				= NSLocalizedString("feature.coordinates", comment: "")
+		static let latitude					= NSLocalizedString("feature.latitude", comment: "")
+		static let longitude				= NSLocalizedString("feature.longitude", comment: "")
+		static let editSaveChanges			= NSLocalizedString("feature.editSaveChanges", comment: "")
+		static let removeAlertDescription	= NSLocalizedString("feature.removeAlertDescription", comment: "")
+		static let selectAddressDetail		= NSLocalizedString("feature.selectAddressDetail", comment: "")
+		static let selectAddressDescription	= NSLocalizedString("feature.selectAddressDescription", comment: "")
+	}
 }

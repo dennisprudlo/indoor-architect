@@ -19,7 +19,6 @@ class ProjectArchiveSection: ProjectSection {
 		super.init()
 		
 		[addressesCell, anchorsCell].forEach { (archiveCell) in
-			archiveCell.backgroundColor	= Color.lightStyleCellBackground
 			archiveCell.accessoryType	= .disclosureIndicator
 			cells.append(archiveCell)
 		}

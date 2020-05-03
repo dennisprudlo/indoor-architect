@@ -16,12 +16,25 @@ class ProjectAddressController: DetailTableViewController {
 		}
 	}
 	
+	var didSelectAddress: ((Address?) -> Void)?
+	var currentlySelectedAddress: Address?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		title = Localizable.Address.title
-		
-		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapAddAddress))
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		let composeButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapAddAddress))
+		if didSelectAddress != nil && currentlySelectedAddress != nil {
+			navigationItem.rightBarButtonItems = [
+				composeButton,
+				UIBarButtonItem(title: Localizable.General.remove, style: .plain, target: self, action: #selector(didTapRemoveSelection(_:)))
+			]
+		} else {
+			navigationItem.rightBarButtonItem = composeButton
+		}
 	}
 	
 	@objc private func didTapAddAddress(_ sender: UIBarButtonItem) -> Void {
@@ -36,6 +49,11 @@ class ProjectAddressController: DetailTableViewController {
 		present(navigationController, animated: true, completion: nil)
 	}
 	
+	@objc private func didTapRemoveSelection(_ sender: UIBarButtonItem) -> Void {
+		didSelectAddress?(nil)
+		navigationController?.popViewController(animated: true)
+	}
+	
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
@@ -46,26 +64,38 @@ class ProjectAddressController: DetailTableViewController {
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-		cell.accessoryType = .disclosureIndicator
-		
+			
 		let address		= project.imdfArchive.addresses[indexPath.row]
+		
+		if didSelectAddress == nil {
+			cell.accessoryType = .disclosureIndicator
+		} else {
+			cell.accessoryType = .none
+			if let currentAddress = currentlySelectedAddress, currentAddress.id.uuidString == address.id.uuidString {
+				cell.accessoryType = .checkmark
+			}
+		}
 		
 		var addressString = address.properties.address
 		if let unit = address.properties.unit {
 			addressString = "\(addressString), \(unit)"
 		}
 		
-		var localityString	= address.properties.locality
-		localityString		= "\(localityString), \(address.getSubdivisionData()?.title ?? address.properties.province)"
-		localityString		= "\(localityString), \(address.getCountryData()?.title ?? address.properties.country)"
-		
 		cell.textLabel?.text		= addressString
-		cell.detailTextLabel?.text	= localityString
-		cell.backgroundColor		= Color.lightStyleCellBackground
+		cell.detailTextLabel?.text	= address.getInlineLocality()
+		cell.tintColor				= Color.primary
 		return cell
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let address = project.imdfArchive.addresses[indexPath.row]
+		
+		if didSelectAddress != nil {
+			didSelectAddress?(address)
+			navigationController?.popViewController(animated: true)
+			return
+		}
+		
 		let editController = ProjectAddressEditController(style: .insetGrouped)
 		editController.displayController = self
 		editController.addressToEdit = project.imdfArchive.addresses[indexPath.row]
@@ -74,6 +104,9 @@ class ProjectAddressController: DetailTableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		if didSelectAddress != nil {
+			return nil
+		}
 		
 		let deleteAction = UIContextualAction(style: .destructive, title: nil, handler: { (action, view, completion) in
 			let controller = UIAlertController(title: Localizable.General.actionConfirmation, message: Localizable.Address.removeAddressInfo, preferredStyle: .alert)

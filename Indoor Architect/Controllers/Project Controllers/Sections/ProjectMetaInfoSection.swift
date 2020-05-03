@@ -24,14 +24,11 @@ class ProjectMetaInfoSection: ProjectSection {
 		
 		createdAtCell.selectionStyle	= .none
 		createdAtCell.textLabel?.text	= Localizable.Project.created
-		createdAtCell.backgroundColor	= Color.lightStyleCellBackground
 		
 		updatedAtCell.selectionStyle	= .none
 		updatedAtCell.textLabel?.text	= Localizable.Project.updated
-		updatedAtCell.backgroundColor	= Color.lightStyleCellBackground
 		
 		customExtensionsCell.textLabel?.text	= Localizable.Extension.title
-		customExtensionsCell.backgroundColor	= Color.lightStyleCellBackground
 		customExtensionsCell.accessoryType		= .disclosureIndicator
 	}
 	

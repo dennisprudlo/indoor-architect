@@ -57,4 +57,8 @@ struct IMDFType {
 		case university
 	}
 	
+	/// A structure that defines the properties each feature has to describe its meta information
+	struct EntityInformation: Codable {
+		var comment: String?
+	}
 }

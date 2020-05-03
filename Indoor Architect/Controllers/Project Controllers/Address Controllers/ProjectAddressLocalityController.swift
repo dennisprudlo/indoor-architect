@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectAddressLocalityController: UITableViewController, UISearchBarDelegate {
+class ProjectAddressLocalityController: DetailTableViewController, UISearchBarDelegate {
 	
 	enum DataType {
 		case country
@@ -41,11 +41,7 @@ class ProjectAddressLocalityController: UITableViewController, UISearchBarDelega
 		
 		title = dataType == .country ? Localizable.Address.placeholderCountry : Localizable.Address.placeholderProvince
 		
-		if !displayController.shouldRenderToCreate {
-			tableView.cellLayoutMarginsFollowReadableWidth	= true
-			tableView.backgroundColor						= Color.lightStyleTableViewBackground
-			tableView.separatorColor						= Color.lightStyleCellSeparatorColor
-		} else {
+		if displayController.shouldRenderToCreate {
 			//
 			// Configure search controller and search bar
 			projectSearchController.obscuresBackgroundDuringPresentation	= false
@@ -165,10 +161,6 @@ class ProjectAddressLocalityController: UITableViewController, UISearchBarDelega
 		cell.textLabel?.text		= displayedDataset[indexPath.section][indexPath.row].title
 		cell.detailTextLabel?.text	= displayedDataset[indexPath.section][indexPath.row].code
 		cell.detailTextLabel?.font	= cell.detailTextLabel?.font.monospaced()
-		
-		if !displayController.shouldRenderToCreate {
-			cell.backgroundColor = Color.lightStyleCellBackground
-		}
 		
 		return cell
 	}

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectCreateController: UITableViewController {
+class ProjectCreateController: DetailTableViewController {
 
 	var tableViewSections: [[UITableViewCell]] = []
 	

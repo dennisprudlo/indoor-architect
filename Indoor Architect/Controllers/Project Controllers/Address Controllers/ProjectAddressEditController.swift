@@ -66,10 +66,6 @@ class ProjectAddressEditController: ComposePopoverController {
 		//
 		// Configure the table view sections
 		if !shouldRenderToCreate {
-			tableView.cellLayoutMarginsFollowReadableWidth	= true
-			tableView.backgroundColor						= Color.lightStyleTableViewBackground
-			tableView.separatorColor						= Color.lightStyleCellSeparatorColor
-			
 			navigationItem.leftBarButtonItem = navigationItem.backBarButtonItem
 			
 			tableViewSections.append((title: "Feature ID", description: nil, cells: [featureIdCell]))
@@ -263,13 +259,7 @@ class ProjectAddressEditController: ComposePopoverController {
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableViewSections[indexPath.section].cells[indexPath.row]
-		
-		if !shouldRenderToCreate {
-			cell.backgroundColor = Color.lightStyleCellBackground
-		}
-		
-		return cell
+		return tableViewSections[indexPath.section].cells[indexPath.row]
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

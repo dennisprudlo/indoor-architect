@@ -45,7 +45,25 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 	}
 	
 	func mapCanvas(_ canvas: MCMapCanvas, didTapOn location: CLLocationCoordinate2D, with drawingTool: MCMapCanvas.DrawingTool) {
+		let tapPoint = canvas.convert(location, toPointTo: canvas)
+		
 		canvas.coordinateToolStack.setCoordinate(location)
+		
+		//
+		// Determine the nearest feature and select it
+		if drawingTool == .pointer {
+			if let anchor = Anchor.respondToSelection(in: canvas, point: tapPoint) {
+				let editController			= AnchorsEditController(style: .insetGrouped)
+				editController.project		= project
+				editController.anchor		= anchor
+				editController.canvas		= canvas
+				let navigationController	= UINavigationController(rootViewController: editController)
+				navigationController.modalPresentationStyle = .formSheet
+				present(navigationController, animated: true, completion: nil)
+				return
+			}
+			
+		}
 		
 		if drawingTool == .anchor {
 			let pointAssembler = MCPointAssembler(in: canvas)

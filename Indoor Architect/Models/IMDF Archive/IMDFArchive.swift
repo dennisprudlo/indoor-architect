@@ -49,6 +49,17 @@ class IMDFArchive {
 		self.addresses		= try IMDFArchive.decode(Address.self, file: .address, forProjectWithUuid: uuid)
 		self.venues			= try IMDFArchive.decode(Venue.self, file: .venue, forProjectWithUuid: uuid)
 		self.anchors		= try IMDFArchive.decode(Anchor.self, file: .anchor, forProjectWithUuid: uuid)
+		
+		//
+		// Create anchor references
+		anchors.forEach { (anchor) in
+			// Link address
+			if let addressId = anchor.properties.addressId?.uuidString, let address = addresses.first(where: { $0.id.uuidString == addressId }) {
+				anchor.address = address
+			}
+			
+			// Link unit
+		}
 	}
 	
 	/// Decodes the features from the corresponding GeoJSON file in a project with the given UUID
@@ -124,9 +135,21 @@ class IMDFArchive {
 		return unusedUuid
 	}
 	
-	func delete(_ address: Address) -> Void {
-		addresses.removeAll { (indexedAddress) -> Bool in
-			return indexedAddress.id.uuidString == address.id.uuidString
+	func removeReferences(_ uuid: UUID) -> Void {
+		anchors.forEach { (anchor) in
+			if let addressId = anchor.properties.addressId, addressId.uuidString == uuid.uuidString {
+				anchor.properties.addressId = nil
+			}
 		}
+	}
+	
+	func delete(_ address: Address) -> Void {
+		removeReferences(address.id)
+		addresses.removeAll(where: { $0.id.uuidString == address.id.uuidString })
+	}
+	
+	func delete(_ anchor: Anchor) -> Void {
+		removeReferences(anchor.id)
+		anchors.removeAll(where: { $0.id.uuidString == anchor.id.uuidString })
 	}
 }

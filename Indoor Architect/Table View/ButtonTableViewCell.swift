@@ -33,12 +33,15 @@ class ButtonTableViewCell: UITableViewCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	func setEnabled(_ enabled: Bool) -> Void {
-		cellButton.isEnabled = enabled
-		if enabled {
-			cellButton.backgroundColor = Color.primary
+	func setEnabled(_ enabled: Bool, animated: Bool = false) -> Void {
+		if animated {
+			UIView.animate(withDuration: 0.2) {
+				self.cellButton.backgroundColor = enabled ? Color.primary : .systemGray5
+				self.cellButton.isEnabled = enabled
+			}
 		} else {
-			cellButton.backgroundColor = .systemGray5
+			self.cellButton.backgroundColor = enabled ? Color.primary : .systemGray5
+			self.cellButton.isEnabled = enabled
 		}
 	}
 }

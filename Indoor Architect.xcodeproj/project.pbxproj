@@ -38,6 +38,10 @@
 		817323222423EDF10050AD34 /* InitialPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817323212423EDF10050AD34 /* InitialPanGestureRecognizer.swift */; };
 		8174854A2418177F00EE3E12 /* ISO-3166-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 817485492418177F00EE3E12 /* ISO-3166-2.plist */; };
 		8174854C24182A4400EE3E12 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174854B24182A4400EE3E12 /* DetailTableViewController.swift */; };
+		817C3F6E245DC84800D00034 /* CGPointUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F6D245DC84800D00034 /* CGPointUtils.swift */; };
+		817C3F70245DDA8200D00034 /* AnchorsEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F6F245DDA8200D00034 /* AnchorsEditController.swift */; };
+		817C3F72245DDACA00D00034 /* PointFeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F71245DDACA00D00034 /* PointFeatureEditController.swift */; };
+		817C3F74245DDAF900D00034 /* FeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F73245DDAF900D00034 /* FeatureEditController.swift */; };
 		81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFC240AB9FE008873E9 /* ProjectSection.swift */; };
 		81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFE240ABB24008873E9 /* WelcomeController.swift */; };
 		81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */; };
@@ -124,6 +128,10 @@
 		817323212423EDF10050AD34 /* InitialPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		817485492418177F00EE3E12 /* ISO-3166-2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ISO-3166-2.plist"; sourceTree = "<group>"; };
 		8174854B24182A4400EE3E12 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		817C3F6D245DC84800D00034 /* CGPointUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointUtils.swift; sourceTree = "<group>"; };
+		817C3F6F245DDA8200D00034 /* AnchorsEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorsEditController.swift; sourceTree = "<group>"; };
+		817C3F71245DDACA00D00034 /* PointFeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointFeatureEditController.swift; sourceTree = "<group>"; };
+		817C3F73245DDAF900D00034 /* FeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureEditController.swift; sourceTree = "<group>"; };
 		81A58DFC240AB9FE008873E9 /* ProjectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSection.swift; sourceTree = "<group>"; };
 		81A58DFE240ABB24008873E9 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGeneralSection.swift; sourceTree = "<group>"; };
@@ -190,6 +198,8 @@
 		812608EE2458A16000FF0D08 /* Feature Edit Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				817C3F73245DDAF900D00034 /* FeatureEditController.swift */,
+				817C3F71245DDACA00D00034 /* PointFeatureEditController.swift */,
 				812608F12458A1FA00FF0D08 /* Anchors */,
 			);
 			path = "Feature Edit Controllers";
@@ -199,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				812608EF2458A19300FF0D08 /* AnchorsListController.swift */,
+				817C3F6F245DDA8200D00034 /* AnchorsEditController.swift */,
 			);
 			path = Anchors;
 			sourceTree = "<group>";
@@ -486,6 +497,7 @@
 				81B1F7FA23F87A16004AF904 /* ProjectExplorerHandler.swift */,
 				8141C7DB23FAE980008AC7DD /* Constraints.swift */,
 				8124FD662457167A0099581E /* ISO3166.swift */,
+				817C3F6D245DC84800D00034 /* CGPointUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -654,6 +666,7 @@
 				8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */,
 				81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */,
 				8153BB2A241FC13A00FF6335 /* MCPolygonAssembler.swift in Sources */,
+				817C3F6E245DC84800D00034 /* CGPointUtils.swift in Sources */,
 				81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */,
 				8174854C24182A4400EE3E12 /* DetailTableViewController.swift in Sources */,
 				81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */,
@@ -665,17 +678,20 @@
 				8153BB24241FBC4F00FF6335 /* Venue.swift in Sources */,
 				814EBB76241D6A170028225C /* Spacing.swift in Sources */,
 				81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */,
+				817C3F72245DDACA00D00034 /* PointFeatureEditController.swift in Sources */,
 				8124FD672457167A0099581E /* ISO3166.swift in Sources */,
 				81D580B2240B04AC0049B17F /* ProjectExtensionController.swift in Sources */,
 				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
 				81E48EF9242149F100837EEF /* MCOverlayRenderer.swift in Sources */,
 				81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */,
+				817C3F70245DDA8200D00034 /* AnchorsEditController.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,
 				81D580AE240AF0BB0049B17F /* Manifest.swift in Sources */,
 				812608F02458A19300FF0D08 /* AnchorsListController.swift in Sources */,
 				81D580B6240BEDA60049B17F /* Extension.swift in Sources */,
 				81D580B4240B0BDD0049B17F /* ProjectExtensionEditController.swift in Sources */,
 				81D580C3240D13310049B17F /* ComposePopoverController.swift in Sources */,
+				817C3F74245DDAF900D00034 /* FeatureEditController.swift in Sources */,
 				81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */,
 				8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */,
 				8141C7DA23FAD075008AC7DD /* Style.swift in Sources */,

@@ -17,10 +17,6 @@ enum Color {
 	
 	static let indoorMapExport: UIColor = .systemGray2
 	
-	static let lightStyleTableViewBackground: UIColor = .systemBackground
-	
-	static let lightStyleCellSeparatorColor: UIColor = .clear
-	
 	static let lightStyleCellBackground = UIColor(named: "light-style-cell-background-color")
 	
 	

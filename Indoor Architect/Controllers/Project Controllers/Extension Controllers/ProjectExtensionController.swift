@@ -76,7 +76,6 @@ class ProjectExtensionController: DetailTableViewController {
 		
 		cell.textLabel?.text		= name
 		cell.detailTextLabel?.text	= "\(version) – \(identifier)"
-		cell.backgroundColor		= Color.lightStyleCellBackground
 		cell.accessoryType			= .disclosureIndicator
 		
 		return cell

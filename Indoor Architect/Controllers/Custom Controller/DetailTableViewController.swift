@@ -14,7 +14,6 @@ class DetailTableViewController: UITableViewController {
         super.viewDidLoad()
 
 		tableView.cellLayoutMarginsFollowReadableWidth	= true
-		tableView.backgroundColor						= Color.lightStyleTableViewBackground
-		tableView.separatorColor						= Color.lightStyleCellSeparatorColor
+		tableView.separatorStyle						= .none
     }
 }

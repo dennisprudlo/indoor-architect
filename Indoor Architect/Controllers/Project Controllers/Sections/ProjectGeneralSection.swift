@@ -17,10 +17,6 @@ class ProjectGeneralSection: ProjectSection {
 	override init() {
 		super.init()
 		
-		projectTitleCell.backgroundColor		= Color.lightStyleCellBackground
-		projectDescriptionCell.backgroundColor	= Color.lightStyleCellBackground
-		projectClientCell.backgroundColor		= Color.lightStyleCellBackground
-		
 		cells.append(projectTitleCell)
 		cells.append(projectDescriptionCell)
 		cells.append(projectClientCell)

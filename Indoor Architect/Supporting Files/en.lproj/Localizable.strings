@@ -55,6 +55,15 @@
 "address.placeholderUnit"				= "2A";
 "address.localitySearchBarPlaceholder"	= "Search";
 
+"feature.comment"					= "Comment";
+"feature.coordinates"				= "Coordinates";
+"feature.latitude"					= "Latitude";
+"feature.longitude"					= "Longitude";
+"feature.editSaveChanges"			= "Save Changes";
+"feature.removeAlertDescription"	= "Removing a feature is irrevocable and will remove all references to this feature.";
+"feature.selectAddressDetail"		= "Select an address";
+"feature.selectAddressDescription"	= "Use an address as a reference to create a searchable entity.";
+
 "project.buttonDelete"				= "Delete Project";
 "project.buttonDeleteDescription"	= "If you delete this project it cannot be restored. The project and its content such as overlay will be deleted from this device permanentely.";
 "project.projectTitle"				= "Project Title";

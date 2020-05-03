@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import CoreGraphics
 
 class Address: Feature<Address.Properties> {
+	
+	static let selectionDistanceThreshold: CGFloat = 10
 	
 	/// The adresses properties
 	struct Properties: Codable {
@@ -36,6 +39,9 @@ class Address: Feature<Address.Properties> {
 		/// The vanity of the postal code
 		let postalCodeVanity: String?
 		
+		/// A comment for the feature
+		var information: IMDFType.EntityInformation?
+		
 		func encode(to encoder: Encoder) throws {
 			var container = encoder.container(keyedBy: CodingKeys.self)
 			try container.encode(address,			forKey: .address)
@@ -46,7 +52,16 @@ class Address: Feature<Address.Properties> {
 			try container.encode(postalCode,		forKey: .postalCodeVanity)
 			try container.encode(postalCodeExt,		forKey: .postalCodeExt)
 			try container.encode(postalCodeVanity,	forKey: .postalCodeVanity)
+			try container.encode(information,		forKey: .information)
 		}
+	}
+	
+	func set(comment: String?) -> Void {
+		if properties.information == nil {
+			properties.information = IMDFType.EntityInformation()
+		}
+
+		properties.information?.comment = comment
 	}
 	
 	/// Gets a `LocalityCodeCombination` for the country of the address
@@ -59,5 +74,10 @@ class Address: Feature<Address.Properties> {
 		return ISO3166.getSubdivisionData(for: properties.country).first { (subdivision) -> Bool in
 			return subdivision.code == properties.province
 		}
+	}
+	
+	func getInlineLocality() -> String {
+		let localityString = "\(properties.locality), \(getSubdivisionData()?.title ?? properties.province)"
+		return "\(localityString), \(getCountryData()?.title ?? properties.country)"
 	}
 }

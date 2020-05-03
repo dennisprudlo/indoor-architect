@@ -34,8 +34,8 @@ class AnchorsListController: DetailTableViewController {
 		let anchor					= project.imdfArchive.anchors[indexPath.row]
 		cell.textLabel?.text		= anchor.id.uuidString
 		cell.detailTextLabel?.text	= "Lat: \(anchor.getCoordinates().latitude), Lng: \(anchor.getCoordinates().longitude)"
-		cell.backgroundColor		= Color.lightStyleCellBackground
-
+		cell.accessoryType			= .disclosureIndicator
+		
         return cell
     }
 }
