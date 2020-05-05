@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ProjectAddressEditController: ComposePopoverController {
+class ProjectAddressEditController: ComposePopoverController, ProjectAddressLocalityControllerDelegate {
 	
 	var displayController: ProjectAddressController!
 	var shouldRenderToCreate: Bool = false
@@ -269,9 +269,9 @@ class ProjectAddressEditController: ComposePopoverController {
 			
 			//
 			// Prepare the locality picker controller
-			let localityPickerController				= ProjectAddressLocalityController(style: .insetGrouped)
-			localityPickerController.displayController	= self
-			localityPickerController.dataType			= .country
+			let localityPickerController			= ProjectAddressLocalityController(dataType: .country)
+			localityPickerController.delegate		= self
+			localityPickerController.showSearchBar	= shouldRenderToCreate
 			localityPickerController.existingAddresses	= displayController.project.imdfArchive.addresses
 			navigationController?.pushViewController(localityPickerController, animated: true)
 		} else if cell == provinceCell {
@@ -282,13 +282,31 @@ class ProjectAddressEditController: ComposePopoverController {
 			
 			//
 			// Prepare the locality picker controller
-			let localityPickerController				= ProjectAddressLocalityController(style: .insetGrouped)
-			localityPickerController.displayController	= self
-			localityPickerController.dataType			= .province
+			let localityPickerController			= ProjectAddressLocalityController(dataType: .province)
+			localityPickerController.delegate		= self
+			localityPickerController.showSearchBar	= shouldRenderToCreate
 			localityPickerController.preselectedCountry	= code
 			localityPickerController.existingAddresses	= displayController.project.imdfArchive.addresses
 			
 			navigationController?.pushViewController(localityPickerController, animated: true)
+		}
+	}
+	
+	func addressLocalityPicker(_ picker: ProjectAddressLocalityController, didPickDataOfType dataType: ProjectAddressLocalityController.DataType, data: ISO3166.CodeCombination) {
+		picker.navigationController?.popViewController(animated: true)
+		
+		if dataType == .country {
+			countryData = data
+			
+			//
+			// Get the subdivision for the selected country and check
+			// if there is only one (representing the country).
+			// If so, automatically set the province data
+			if ISO3166.getSubdivisionData(for: data.code).count == 1 {
+				provinceData = data
+			}
+		} else {
+			provinceData = data
 		}
 	}
 }

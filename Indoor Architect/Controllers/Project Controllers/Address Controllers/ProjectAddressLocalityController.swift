@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ProjectAddressLocalityControllerDelegate {
+	func addressLocalityPicker(_ picker: ProjectAddressLocalityController, didPickDataOfType dataType: ProjectAddressLocalityController.DataType, data: ISO3166.CodeCombination) -> Void
+}
+
 class ProjectAddressLocalityController: DetailTableViewController, UISearchBarDelegate {
 	
 	enum DataType {
@@ -15,33 +19,44 @@ class ProjectAddressLocalityController: DetailTableViewController, UISearchBarDe
 		case province
 	}
 	
-	/// A reference to the controller that is displaying the selection
-	var displayController: ProjectAddressEditController!
+	var delegate: ProjectAddressLocalityControllerDelegate?
 	
 	/// The data type of the locality selector
 	var dataType: DataType = .country
 	
+	/// Whether to include a search bar
+	var showSearchBar: Bool = false
+	
 	/// A preselected country code. This is important when selecting a subdivision
 	var preselectedCountry: String?
-	
-	/// The dataset of countries and subdivision
-	var dataset: [[ISO3166.CodeCombination]] = []
-	
-	/// The dataset of countries and subdivisions which is currently displayed
-	var displayedDataset: [[ISO3166.CodeCombination]] = []
 	
 	/// A list of existing addresses to determine already used countries and subdivisions
 	var existingAddresses: [Address] = []
 	
+	/// The dataset of countries and subdivision
+	private var dataset: [[ISO3166.CodeCombination]] = []
+	
+	/// The dataset of countries and subdivisions which is currently displayed
+	private var displayedDataset: [[ISO3166.CodeCombination]] = []
+	
 	/// A reference to the search bar appearing when creating a new address
-	let projectSearchController = UISearchController(searchResultsController: nil)
+	private let projectSearchController = UISearchController(searchResultsController: nil)
+	
+	init(dataType: DataType) {
+		super.init(style: .insetGrouped)
+		self.dataType = dataType
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		title = dataType == .country ? Localizable.Address.placeholderCountry : Localizable.Address.placeholderProvince
 		
-		if displayController.shouldRenderToCreate {
+		if showSearchBar {
 			//
 			// Configure search controller and search bar
 			projectSearchController.obscuresBackgroundDuringPresentation	= false
@@ -131,6 +146,15 @@ class ProjectAddressLocalityController: DetailTableViewController, UISearchBarDe
 		tableView.reloadData()
 	}
 	
+	/// Returns a code combination for an item at an specific index path
+	/// - Parameter indexPath: The index path of the cell to get the code combination from
+	/// - Returns: An `ISO3166.CodeCombination`
+	func codeCombination(at indexPath: IndexPath) -> ISO3166.CodeCombination {
+		let code	= displayedDataset[indexPath.section][indexPath.row].code
+		let title	= displayedDataset[indexPath.section][indexPath.row].title
+		return ISO3166.CodeCombination(code: code, title: title)
+	}
+	
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return displayedDataset.count
 	}
@@ -156,33 +180,18 @@ class ProjectAddressLocalityController: DetailTableViewController, UISearchBarDe
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
 		
+		let data = codeCombination(at: indexPath)
+		
 		//
 		// Format the cell
-		cell.textLabel?.text		= displayedDataset[indexPath.section][indexPath.row].title
-		cell.detailTextLabel?.text	= displayedDataset[indexPath.section][indexPath.row].code
+		cell.textLabel?.text		= data.title
+		cell.detailTextLabel?.text	= data.code
 		cell.detailTextLabel?.font	= cell.detailTextLabel?.font.monospaced()
 		
 		return cell
 	}
-	
+
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let data = (code: displayedDataset[indexPath.section][indexPath.row].code, title: displayedDataset[indexPath.section][indexPath.row].title)
-		
-		if dataType == .country {
-			displayController.countryData = data
-			
-			//
-			// Get the subdivision for the selected country and check
-			// if there is only one (representing the country).
-			// If so, automatically set the province data
-			let subdivisions = ISO3166.getSubdivisionData(for: data.code)
-			if subdivisions.count == 1 {
-				displayController.provinceData = data
-			}
-		} else {
-			displayController.provinceData = data
-		}
-		
-		navigationController?.popViewController(animated: true)
+		delegate?.addressLocalityPicker(self, didPickDataOfType: dataType, data: codeCombination(at: indexPath))
 	}
 }
