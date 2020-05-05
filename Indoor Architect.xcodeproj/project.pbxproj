@@ -15,7 +15,6 @@
 		8124FD6924571D0D0099581E /* ISO-3166-2-units.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8124FD6824571D0D0099581E /* ISO-3166-2-units.plist */; };
 		812608F02458A19300FF0D08 /* AnchorsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812608EF2458A19300FF0D08 /* AnchorsListController.swift */; };
 		813B3E4E23F899D700D02404 /* MapCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */; };
-		8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */; };
 		8141C7DA23FAD075008AC7DD /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7D923FAD075008AC7DD /* Style.swift */; };
 		8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7DB23FAE980008AC7DD /* Constraints.swift */; };
 		8141C7E023FAEE15008AC7DD /* MCMapCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */; };
@@ -70,7 +69,6 @@
 		81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */; };
 		81DBBC4E2401A6D5008AEE60 /* MCCoordinateToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */; };
 		81E2FA462401486C00CA82AA /* MCSlidingInfoToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA452401486C00CA82AA /* MCSlidingInfoToolStack.swift */; };
-		81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA472401937100CA82AA /* MCCloseToolStack.swift */; };
 		81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2FA4B2401999D00CA82AA /* MCCloseToolStackItem.swift */; };
 		81E48EF324213A1000837EEF /* MCPolygonRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E48EF224213A0F00837EEF /* MCPolygonRenderer.swift */; };
 		81E48EF5242147E600837EEF /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E48EF4242147E600837EEF /* Renderer.swift */; };
@@ -103,7 +101,6 @@
 		8124FD6824571D0D0099581E /* ISO-3166-2-units.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ISO-3166-2-units.plist"; sourceTree = "<group>"; };
 		812608EF2458A19300FF0D08 /* AnchorsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorsListController.swift; sourceTree = "<group>"; };
 		813B3E4D23F899D700D02404 /* MapCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCanvasViewController.swift; sourceTree = "<group>"; };
-		8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverInfoViewController.swift; sourceTree = "<group>"; };
 		8141C7D923FAD075008AC7DD /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		8141C7DB23FAE980008AC7DD /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCMapCanvas.swift; sourceTree = "<group>"; };
@@ -160,7 +157,6 @@
 		81DBBC4B2401A1FA008AEE60 /* MCDrawingToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDrawingToolStackItem.swift; sourceTree = "<group>"; };
 		81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCoordinateToolStack.swift; sourceTree = "<group>"; };
 		81E2FA452401486C00CA82AA /* MCSlidingInfoToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSlidingInfoToolStack.swift; sourceTree = "<group>"; };
-		81E2FA472401937100CA82AA /* MCCloseToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCloseToolStack.swift; sourceTree = "<group>"; };
 		81E2FA4B2401999D00CA82AA /* MCCloseToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCloseToolStackItem.swift; sourceTree = "<group>"; };
 		81E48EF224213A0F00837EEF /* MCPolygonRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPolygonRenderer.swift; sourceTree = "<group>"; };
 		81E48EF4242147E600837EEF /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
@@ -398,7 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				8153BB27241FBDC300FF6335 /* IMDFType.swift */,
-				81D580AB240AF0350049B17F /* IMDFArchive.swift */,
 				81D580AD240AF0BB0049B17F /* Manifest.swift */,
 				81D580B5240BEDA60049B17F /* Extension.swift */,
 				81D580B7240C005E0049B17F /* Feature.swift */,
@@ -423,7 +418,6 @@
 			isa = PBXGroup;
 			children = (
 				8120AC8023F9982800696FCA /* ScrollViewController.swift */,
-				8141C7D723FABFAA008AC7DD /* PopoverInfoViewController.swift */,
 				81D580C2240D13310049B17F /* ComposePopoverController.swift */,
 				8174854B24182A4400EE3E12 /* DetailTableViewController.swift */,
 			);
@@ -434,7 +428,6 @@
 			isa = PBXGroup;
 			children = (
 				81E2FA452401486C00CA82AA /* MCSlidingInfoToolStack.swift */,
-				81E2FA472401937100CA82AA /* MCCloseToolStack.swift */,
 				81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */,
 			);
 			path = "Tool Stacks";
@@ -521,6 +514,7 @@
 				81D580A8240AEEB20049B17F /* IMDF Archive */,
 				81F67DDD23F19458006B9187 /* IMDFProject.swift */,
 				810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */,
+				81D580AB240AF0350049B17F /* IMDFArchive.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -663,7 +657,6 @@
 				8153BB2E241FD0FC00FF6335 /* IMDFVenueOverlay.swift in Sources */,
 				81D580BA240C04150049B17F /* Address.swift in Sources */,
 				81F67DB023F06A64006B9187 /* ProjectController.swift in Sources */,
-				8141C7D823FABFAA008AC7DD /* PopoverInfoViewController.swift in Sources */,
 				81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */,
 				8153BB2A241FC13A00FF6335 /* MCPolygonAssembler.swift in Sources */,
 				817C3F6E245DC84800D00034 /* CGPointUtils.swift in Sources */,
@@ -677,7 +670,6 @@
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				8153BB24241FBC4F00FF6335 /* Venue.swift in Sources */,
 				814EBB76241D6A170028225C /* Spacing.swift in Sources */,
-				81E2FA482401937100CA82AA /* MCCloseToolStack.swift in Sources */,
 				817C3F72245DDACA00D00034 /* PointFeatureEditController.swift in Sources */,
 				8124FD672457167A0099581E /* ISO3166.swift in Sources */,
 				81D580B2240B04AC0049B17F /* ProjectExtensionController.swift in Sources */,

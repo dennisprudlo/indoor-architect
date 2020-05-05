@@ -16,7 +16,6 @@ class FeatureEditController: DetailTableViewController {
 
 	typealias TableViewSection = (title: String?, description: String?, cells: [UITableViewCell])
 	
-	var project: IMDFProject!
 	var canvas: MCMapCanvas?
 	
 	var tableViewSections: [TableViewSection] = []

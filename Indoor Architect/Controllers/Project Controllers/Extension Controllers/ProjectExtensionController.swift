@@ -10,8 +10,6 @@ import UIKit
 
 class ProjectExtensionController: DetailTableViewController {
 	
-	var project: IMDFProject?
-	
 	private var groupedExtensions: [(key: String, value: [Extension])] = []
 	
 	override func viewDidLoad() {
@@ -37,7 +35,7 @@ class ProjectExtensionController: DetailTableViewController {
 	}
 	
 	func resetExtensions(reloadTableView: Bool = true) -> Void {
-		guard let extensions = project?.imdfArchive.manifest.extensions else {
+		guard let extensions = Application.currentProject.imdfArchive.manifest.extensions else {
 			groupedExtensions = []
 			if reloadTableView {
 				tableView.reloadData()
@@ -98,9 +96,9 @@ class ProjectExtensionController: DetailTableViewController {
 			controller.addAction(UIAlertAction(title: Localizable.General.remove, style: .destructive, handler: { _ in
 				let section				= self.groupedExtensions[indexPath.section].value
 				let extensionToRemove	= section[indexPath.row]
-				self.project?.removeExtension(extensionToRemove)
+				Application.currentProject.removeExtension(extensionToRemove)
 				
-				guard let _ = try? self.project?.save() else {
+				guard let _ = try? Application.currentProject.save() else {
 					completion(false)
 					return
 				}

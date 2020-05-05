@@ -10,9 +10,13 @@ import UIKit
 
 class MCCloseToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 	
-	override init(isDefault: Bool = false) {
+	var canvas: MCMapCanvas?
+	
+	init(_ canvas: MCMapCanvas, isDefault: Bool = false) {
 		super.init(isDefault: isDefault)
 		super.delegate = self
+		
+		self.canvas = canvas
 		
 		imageView.image				= Icon.toolClose
 		preventIndicatingSelection	= true
@@ -28,6 +32,6 @@ class MCCloseToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 	}
 	
 	func toolStackItem(_ toolStackItem: MCToolStackItem, registeredTapFrom tapGestureRecognizer: UITapGestureRecognizer) {
-		(stack as? MCCloseToolStack)?.canvas.saveAndClose()
+		canvas?.saveAndClose()
 	}
 }

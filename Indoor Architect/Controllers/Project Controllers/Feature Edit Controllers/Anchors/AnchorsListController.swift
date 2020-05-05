@@ -9,8 +9,6 @@
 import UIKit
 
 class AnchorsListController: DetailTableViewController {
-
-	var project: IMDFProject!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +23,13 @@ class AnchorsListController: DetailTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return project.imdfArchive.anchors.count
+		return Application.currentProject.imdfArchive.anchors.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
 
-		let anchor					= project.imdfArchive.anchors[indexPath.row]
+		let anchor					= Application.currentProject.imdfArchive.anchors[indexPath.row]
 		cell.textLabel?.text		= anchor.id.uuidString
 		cell.detailTextLabel?.text	= "Lat: \(anchor.getCoordinates().latitude), Lng: \(anchor.getCoordinates().longitude)"
 		cell.accessoryType			= .disclosureIndicator

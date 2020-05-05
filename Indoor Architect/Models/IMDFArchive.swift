@@ -121,20 +121,6 @@ class IMDFArchive {
 		}
 	}
 	
-	/// Generates a UUID that is globally unique throughout all features in the IMDF data
-	func getUnusedGlobalUuid() -> UUID {
-		var usedUuids: [String] = []
-		
-		addresses.forEach { usedUuids.append($0.id.uuidString) }
-		
-		var unusedUuid: UUID
-		repeat {
-			unusedUuid = UUID()
-		} while usedUuids.contains(unusedUuid.uuidString)
-		
-		return unusedUuid
-	}
-	
 	func removeReferences(_ uuid: UUID) -> Void {
 		anchors.forEach { (anchor) in
 			if let addressId = anchor.properties.addressId, addressId.uuidString == uuid.uuidString {

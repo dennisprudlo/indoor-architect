@@ -42,12 +42,7 @@ class ProjectActionSection: ProjectSection {
 	}
 	
 	@objc private func didTapEditIndoorMap(_ sender: UIButton) -> Void {
-		guard let project = delegate?.project else {
-			return
-		}
-		
-		let mapCanvasViewController = MapCanvasViewController()
-		mapCanvasViewController.present(forProject: project)
+		(MapCanvasViewController()).presentForSelectedProject()
 	}
 	
 	@objc private func didTapExportArchive(_ sender: UIButton) -> Void {

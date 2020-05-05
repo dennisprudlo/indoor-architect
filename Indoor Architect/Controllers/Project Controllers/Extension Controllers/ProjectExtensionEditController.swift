@@ -98,9 +98,9 @@ class ProjectExtensionEditController: ComposePopoverController {
 		let version		= versionCell.textField.text ?? ""
 		
 		do {
-			try displayController?.project?.addExtension(provider: provider, name: name, version: version)
-			displayController?.project?.removeExtension(extensionToEdit)
-			try displayController?.project?.save()
+			try Application.currentProject.addExtension(provider: provider, name: name, version: version)
+			Application.currentProject.removeExtension(extensionToEdit)
+			try Application.currentProject.save()
 			
 			displayController?.resetExtensions()
 		} catch {
@@ -112,12 +112,12 @@ class ProjectExtensionEditController: ComposePopoverController {
 		
 		if !shouldRenderToCreate {
 			if let extensionToRemove = extensionToEdit {
-				displayController?.project?.removeExtension(extensionToRemove)
+				Application.currentProject.removeExtension(extensionToRemove)
 			}
 			
 			//
 			// Try to save the project with the added extensions
-			try? displayController?.project?.save()
+			try? Application.currentProject.save()
 			displayController?.resetExtensions()
 			
 			navigationController?.popViewController(animated: true)
@@ -131,11 +131,11 @@ class ProjectExtensionEditController: ComposePopoverController {
 			do {
 				//
 				// Add the new extension if valid and reset the table view
-				try displayController?.project?.addExtension(provider: provider, name: name, version: version)
+				try Application.currentProject.addExtension(provider: provider, name: name, version: version)
 				
 				//
 				// Try to save the project with the added extensions
-				try? displayController?.project?.save()
+				try? Application.currentProject.save()
 				displayController?.resetExtensions()
 				
 				dismiss(animated: true, completion: nil)

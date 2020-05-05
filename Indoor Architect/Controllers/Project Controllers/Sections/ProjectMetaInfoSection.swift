@@ -10,8 +10,6 @@ import UIKit
 
 class ProjectMetaInfoSection: ProjectSection {
 	
-	var archive: IMDFArchive?
-	
 	let createdAtCell 			= UITableViewCell(style: .value1, reuseIdentifier: nil)
 	let updatedAtCell			= UITableViewCell(style: .value1, reuseIdentifier: nil)
 	let customExtensionsCell	= UITableViewCell(style: .value1, reuseIdentifier: nil)
@@ -44,7 +42,8 @@ class ProjectMetaInfoSection: ProjectSection {
 	}
 	
 	func resetExtensionCount() -> Void {
-		guard let extensionCount = archive?.manifest.extensions?.count else {
+		let archive = Application.currentProject.imdfArchive
+		guard let extensionCount = archive.manifest.extensions?.count else {
 			customExtensionsCell.detailTextLabel?.text = Localizable.General.none
 			return
 		}
@@ -55,7 +54,7 @@ class ProjectMetaInfoSection: ProjectSection {
 		}
 		
 		if extensionCount == 1 {
-			customExtensionsCell.detailTextLabel?.text = archive?.manifest.extensions?.first?.identifier
+			customExtensionsCell.detailTextLabel?.text = archive.manifest.extensions?.first?.identifier
 		} else {
 			customExtensionsCell.detailTextLabel?.text = "\(extensionCount)"
 		}
@@ -72,15 +71,13 @@ class ProjectMetaInfoSection: ProjectSection {
 	override func didSelectRow(at index: Int) {
 		if cells[index] == customExtensionsCell {
 			let projectExtensionsController = ProjectExtensionController(style: .insetGrouped)
-			projectExtensionsController.project = delegate?.project
 			delegate?.navigationController?.pushViewController(projectExtensionsController, animated: true)
 		}
 	}
 	
 	override func initialize() {
-		setCreatedAt(date: delegate?.project.manifest.createdAt)
-		setUpdatedAt(date: delegate?.project.manifest.updatedAt)
-		archive = delegate?.project.imdfArchive
+		setCreatedAt(date: Application.currentProject.manifest.createdAt)
+		setUpdatedAt(date: Application.currentProject.manifest.updatedAt)
 		reloadOnAppear()
 	}
 	

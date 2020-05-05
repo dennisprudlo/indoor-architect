@@ -102,4 +102,20 @@ class IMDFProject {
 			self.imdfArchive.manifest.extensions = nil
 		}
 	}
+	
+	/// Generates a UUID that is globally unique throughout all features in the IMDF data
+	func getUnusedGlobalUuid() -> UUID {
+		var usedUuids: [String] = []
+		
+		imdfArchive.addresses.forEach { usedUuids.append($0.id.uuidString) }
+		imdfArchive.anchors.forEach { usedUuids.append($0.id.uuidString) }
+		imdfArchive.venues.forEach { usedUuids.append($0.id.uuidString) }
+		
+		var unusedUuid: UUID
+		repeat {
+			unusedUuid = UUID()
+		} while usedUuids.contains(unusedUuid.uuidString)
+		
+		return unusedUuid
+	}
 }

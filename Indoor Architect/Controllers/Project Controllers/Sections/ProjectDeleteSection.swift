@@ -21,9 +21,7 @@ class ProjectDeleteSection: ProjectSection {
 	}
 	
 	@objc private func didTapDelete(_ sender: UIButton) -> Void {
-		guard let project = delegate?.project else {
-			return
-		}
+		let project: IMDFProject = Application.currentProject
 		
 		guard let indexPath = ProjectExplorerHandler.shared.indexPath(for: project) else {
 			return
@@ -39,6 +37,7 @@ class ProjectDeleteSection: ProjectSection {
 		
 		ProjectExplorerHandler.shared.delete(at: indexPath, with: .left)
 		Application.masterController.showDetailViewController(WelcomeController(), sender: nil)
+		Application.currentProject = nil
 	}
 	
 	override func titleForFooter() -> String? {

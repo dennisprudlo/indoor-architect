@@ -11,9 +11,7 @@ import MapKit
 
 class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasDelegate {
 	
-	let canvas				= MCMapCanvas()
-	
-	var project: IMDFProject!
+	let canvas = MCMapCanvas()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +23,18 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		canvas.edgesToSuperview()
 	}
 	
-	func present(forProject project: IMDFProject) -> Void {
-		self.project = project
+	func presentForSelectedProject() -> Void {
+		if Application.currentProject == nil {
+			return
+		}
+		
 		self.modalPresentationStyle = .fullScreen
 		
-		canvas.project = project
 		canvas.selectedDrawingTool = .pointer
 	
 		canvas.generateIMDFOverlays()
 		
-		if let session = project.manifest.session {
+		if let session = Application.currentProject.manifest.session {
 			let center	= CLLocationCoordinate2D(latitude: session.centerLatitude, longitude: session.centerLongitude)
 			let span	= MKCoordinateSpan(latitudeDelta: session.spanLatitude, longitudeDelta: session.spanLongitude)
 			let region	= MKCoordinateRegion(center: center, span: span)
@@ -54,7 +54,6 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		if drawingTool == .pointer {
 			if let anchor = Anchor.respondToSelection(in: canvas, point: tapPoint) {
 				let editController			= AnchorsEditController(style: .insetGrouped)
-				editController.project		= project
 				editController.anchor		= anchor
 				editController.canvas		= canvas
 				let navigationController	= UINavigationController(rootViewController: editController)
@@ -129,6 +128,6 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		let spanLng		= mapView.region.span.longitudeDelta
 		let session = IMDFProjectManifest.MappingSession(centerLatitude: centerLat, centerLongitude: centerLng, spanLatitude: spanLat, spanLongitude: spanLng)
 	
-		project.manifest.session = session
+		Application.currentProject.manifest.session = session
 	}
 }

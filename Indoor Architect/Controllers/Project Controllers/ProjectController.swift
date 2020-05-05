@@ -20,16 +20,11 @@ class ProjectController: DetailTableViewController {
 	let archiveSection	= ProjectArchiveSection()
 	let deleteSection	= ProjectDeleteSection()
 	
-	var project: IMDFProject! {
-		didSet {
-			reloadProjectDetails()
-		}
-	}
-	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		title = project.manifest.title
+		reloadProjectDetails()
+		
 		tableView.rowHeight = UITableView.automaticDimension
 		
 		sections.append(generalSection)
@@ -45,7 +40,7 @@ class ProjectController: DetailTableViewController {
 		
 		//
 		// If the project has unsaved changes the save-button will be shown
-		if project.hasChangesToStoredVersion {
+		if Application.currentProject.hasChangesToStoredVersion {
 			projectDetailsDidChange()
 		}
     }
@@ -60,13 +55,14 @@ class ProjectController: DetailTableViewController {
 	
 	/// Reloads the data from the passed project instance
 	private func reloadProjectDetails() -> Void {
-		print("reload..")
-		print(ProjectManager.shared.url(forPathComponent: .rootDirectory, inProjectWithUuid: project.manifest.uuid).path)
+		let manifest = Application.currentProject.manifest
 		
-		title = project.manifest.title
-		generalSection.projectTitleCell.setText(project.manifest.title)
-		generalSection.projectDescriptionCell.setText(project.manifest.description)
-		generalSection.projectClientCell.setText(project.manifest.client)
+		print(ProjectManager.shared.url(forPathComponent: .rootDirectory, inProjectWithUuid: manifest.uuid).path)
+		
+		title = manifest.title
+		generalSection.projectTitleCell.setText(manifest.title)
+		generalSection.projectDescriptionCell.setText(manifest.description)
+		generalSection.projectClientCell.setText(manifest.client)
 	}
 	
 	/// Enables the save button in the navigation bar so the changes can be stored
@@ -83,7 +79,7 @@ class ProjectController: DetailTableViewController {
 	@objc private func saveProject(_ sender: UIBarButtonItem) -> Void {
 		do {
 			navigationItem.setRightBarButton(nil, animated: true)
-			try project.save()
+			try Application.currentProject.save()
 			ProjectExplorerHandler.shared.reloadData()
 		} catch {
 			print(error)

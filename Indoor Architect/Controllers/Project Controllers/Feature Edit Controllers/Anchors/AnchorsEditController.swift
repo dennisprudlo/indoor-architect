@@ -53,7 +53,7 @@ class AnchorsEditController: PointFeatureEditController, PromisesFeatureDeleteHa
 		}
 		
 		do {
-			try project.imdfArchive.save(.anchor)
+			try Application.currentProject.imdfArchive.save(.anchor)
 			
 			coordinates = anchor.getCoordinates()
 			
@@ -87,13 +87,12 @@ class AnchorsEditController: PointFeatureEditController, PromisesFeatureDeleteHa
 	}
 	
 	func delete() {
-		project.imdfArchive.delete(anchor)
+		Application.currentProject.imdfArchive.delete(anchor)
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if tableView.cellForRow(at: indexPath) == addressCell {
 			let addressPickerController = ProjectAddressController(style: .insetGrouped)
-			addressPickerController.project = project
 			addressPickerController.currentlySelectedAddress = address
 			addressPickerController.didSelectAddress = { address in
 				self.setAddress(address)

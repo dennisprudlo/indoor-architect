@@ -185,9 +185,15 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		if indexPath.section == SectionCategory.projects.rawValue {
 			let canvasAction = UIContextualAction(style: .normal, title: nil, handler: { (action, view, completion) in
 				
-				let imdfProject = IMDFProject.projects[indexPath.row]
-				let mapCanvasViewController = MapCanvasViewController()
-				mapCanvasViewController.present(forProject: imdfProject)
+				let project = IMDFProject.projects[indexPath.row]
+				
+				//
+				// When using the leading swip option to navigate into one projects map canvas
+				// the current project needs to be set for the reference
+				Application.currentProject = project
+				
+				(MapCanvasViewController()).presentForSelectedProject()
+				
 				completion(true)
 			})
 			canvasAction.backgroundColor = Color.indoorMapEdit
@@ -223,10 +229,8 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 				}
 				self.delete(at: indexPath, with: .left)
 				
-				if let displayedProject = Application.rootController.getCurrentlyDisplayedProject() {
-					if project.manifest.uuid == displayedProject.manifest.uuid {
-						Application.rootController.showDetailViewController(WelcomeController(), sender: nil)
-					}
+				if project.manifest.uuid == Application.currentProject.manifest.uuid {
+					Application.rootController.showDetailViewController(WelcomeController(), sender: nil)
 				}
 				
 				completion(true)
@@ -254,10 +258,8 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 		if indexPath.section == SectionCategory.projects.rawValue && sections[indexPath.section].cells.count > 0 {
 			let project = IMDFProject.projects[indexPath.row]
 			
-			let projectController = ProjectController(style: .insetGrouped)
-			projectController.project = project
-			
 			Application.currentProject = project
+			let projectController = ProjectController(style: .insetGrouped)
 			
 			let navigationController = UINavigationController(rootViewController: projectController)
 			Application.rootController.showDetailViewController(navigationController, sender: nil)

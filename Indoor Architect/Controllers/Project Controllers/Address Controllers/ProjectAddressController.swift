@@ -9,13 +9,7 @@
 import UIKit
 
 class ProjectAddressController: DetailTableViewController {
-		
-	var project: IMDFProject! {
-		didSet {
-			tableView.reloadData()
-		}
-	}
-	
+			
 	var didSelectAddress: ((Address?) -> Void)?
 	var currentlySelectedAddress: Address?
 	
@@ -59,13 +53,13 @@ class ProjectAddressController: DetailTableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return project.imdfArchive.addresses.count
+		return Application.currentProject.imdfArchive.addresses.count
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
 			
-		let address		= project.imdfArchive.addresses[indexPath.row]
+		let address	= Application.currentProject.imdfArchive.addresses[indexPath.row]
 		
 		if didSelectAddress == nil {
 			cell.accessoryType = .disclosureIndicator
@@ -88,7 +82,7 @@ class ProjectAddressController: DetailTableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let address = project.imdfArchive.addresses[indexPath.row]
+		let address = Application.currentProject.imdfArchive.addresses[indexPath.row]
 		
 		if didSelectAddress != nil {
 			didSelectAddress?(address)
@@ -98,7 +92,7 @@ class ProjectAddressController: DetailTableViewController {
 		
 		let editController = ProjectAddressEditController(style: .insetGrouped)
 		editController.displayController = self
-		editController.addressToEdit = project.imdfArchive.addresses[indexPath.row]
+		editController.addressToEdit = Application.currentProject.imdfArchive.addresses[indexPath.row]
 		
 		navigationController?.pushViewController(editController, animated: true)
 	}
@@ -112,7 +106,7 @@ class ProjectAddressController: DetailTableViewController {
 			let controller = UIAlertController(title: Localizable.General.actionConfirmation, message: Localizable.Address.removeAddressInfo, preferredStyle: .alert)
 			controller.addAction(UIAlertAction(title: Localizable.General.cancel, style: .cancel, handler: { _ in completion(false) }))
 			controller.addAction(UIAlertAction(title: Localizable.General.remove, style: .destructive, handler: { _ in
-				let archive			= self.project.imdfArchive
+				let archive			= Application.currentProject.imdfArchive
 				let addressToDelete = archive.addresses[indexPath.row]
 				
 				archive.delete(addressToDelete)

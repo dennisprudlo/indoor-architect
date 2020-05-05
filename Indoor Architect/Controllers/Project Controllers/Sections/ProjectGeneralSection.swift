@@ -35,30 +35,30 @@ class ProjectGeneralSection: ProjectSection {
 		
 		delegate?.title = title
 		
-		delegate?.project.manifest.title = title
-		delegate?.project.hasChangesToStoredVersion = true
+		Application.currentProject.manifest.title = title
+		Application.currentProject.hasChangesToStoredVersion = true
 		delegate?.projectDetailsDidChange()
 	}
 	
 	/// Updates the project data after the description was changed
 	/// - Parameter sender: The text field that was edited
 	@objc func didChangeDescription(_ sender: UITextField) -> Void {
-		delegate?.project.manifest.description = sender.text
-		delegate?.project.hasChangesToStoredVersion = true
+		Application.currentProject.manifest.description = sender.text
+		Application.currentProject.hasChangesToStoredVersion = true
 		delegate?.projectDetailsDidChange()
 	}
 	
 	/// Updates the project data after the client title was changed
 	/// - Parameter sender: The text field that was edited
 	@objc func didChangeClient(_ sender: UITextField) -> Void {
-		delegate?.project.manifest.client = sender.text
-		delegate?.project.hasChangesToStoredVersion = true
+		Application.currentProject.manifest.client = sender.text
+		Application.currentProject.hasChangesToStoredVersion = true
 		delegate?.projectDetailsDidChange()
 	}
 	
 	override func initialize() {
-		projectTitleCell.setText(delegate?.project.manifest.title)
-		projectDescriptionCell.setText(delegate?.project.manifest.description)
-		projectClientCell.setText(delegate?.project.manifest.client)
+		projectTitleCell.setText(Application.currentProject.manifest.title)
+		projectDescriptionCell.setText(Application.currentProject.manifest.description)
+		projectClientCell.setText(Application.currentProject.manifest.client)
 	}
 }

@@ -154,7 +154,7 @@ class ProjectAddressEditController: ComposePopoverController, ProjectAddressLoca
 		
 		//
 		// Save the created address and reload the main controllers table view
-		try? displayController.project.imdfArchive.save(.address)
+		try? Application.currentProject.imdfArchive.save(.address)
 		displayController.tableView.reloadData()
 	}
 	
@@ -164,13 +164,13 @@ class ProjectAddressEditController: ComposePopoverController, ProjectAddressLoca
 		// The controller shows the delete button instead
 		if !shouldRenderToCreate {
 			if let visibleAddress = addressToEdit {
-				displayController.project.imdfArchive.addresses.removeAll { (address) -> Bool in
+				Application.currentProject.imdfArchive.addresses.removeAll { (address) -> Bool in
 					return address.id.uuidString == visibleAddress.id.uuidString
 				}
 				
 				//
 				// Save the created address and reload the main controllers table view
-				try? displayController.project.imdfArchive.save(.address)
+				try? Application.currentProject.imdfArchive.save(.address)
 				displayController.tableView.reloadData()
 				
 				navigationController?.popViewController(animated: true)
@@ -178,18 +178,18 @@ class ProjectAddressEditController: ComposePopoverController, ProjectAddressLoca
 		}
 		
 		if shouldRenderToCreate {
-			let uuid = displayController.project.imdfArchive.getUnusedGlobalUuid()
+			let uuid = Application.currentProject.getUnusedGlobalUuid()
 			
 			guard let properties = createAddressProperties() else {
 				return
 			}
 			
 			let addressToAdd = Address(withIdentifier: uuid, properties: properties, geometry: [], type: .address)
-			displayController.project.imdfArchive.addresses.append(addressToAdd)
+			Application.currentProject.imdfArchive.addresses.append(addressToAdd)
 			
 			//
 			// Save the created address and reload the main controllers table view
-			try? displayController.project.imdfArchive.save(.address)
+			try? Application.currentProject.imdfArchive.save(.address)
 			displayController.tableView.reloadData()
 			
 			dismiss(animated: true, completion: nil)
@@ -272,7 +272,7 @@ class ProjectAddressEditController: ComposePopoverController, ProjectAddressLoca
 			let localityPickerController			= ProjectAddressLocalityController(dataType: .country)
 			localityPickerController.delegate		= self
 			localityPickerController.showSearchBar	= shouldRenderToCreate
-			localityPickerController.existingAddresses	= displayController.project.imdfArchive.addresses
+			localityPickerController.existingAddresses	= Application.currentProject.imdfArchive.addresses
 			navigationController?.pushViewController(localityPickerController, animated: true)
 		} else if cell == provinceCell {
 			
@@ -286,7 +286,7 @@ class ProjectAddressEditController: ComposePopoverController, ProjectAddressLoca
 			localityPickerController.delegate		= self
 			localityPickerController.showSearchBar	= shouldRenderToCreate
 			localityPickerController.preselectedCountry	= code
-			localityPickerController.existingAddresses	= displayController.project.imdfArchive.addresses
+			localityPickerController.existingAddresses	= Application.currentProject.imdfArchive.addresses
 			
 			navigationController?.pushViewController(localityPickerController, animated: true)
 		}

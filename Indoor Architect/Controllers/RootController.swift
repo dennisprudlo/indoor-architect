@@ -16,20 +16,4 @@ class RootController: UISplitViewController {
 		
 		Application.rootController = self
     }
-	
-	func getCurrentlyDisplayedProject() -> IMDFProject? {
-		guard self.viewControllers.count > 1 else {
-			return nil
-		}
-		
-		guard let navigationController = self.viewControllers[1] as? UINavigationController, navigationController.viewControllers.count > 0 else {
-			return nil
-		}
-		
-		guard let projectController = navigationController.viewControllers.first as? ProjectController else {
-			return nil
-		}
-		
-		return projectController.project
-	}
 }

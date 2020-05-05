@@ -65,10 +65,10 @@ class IMDFProjectManifest: Codable {
 		try container.encode(uuid,				forKey: .uuid)
 		try container.encode(title,				forKey: .title)
 		
-		let descriptionToEncode = description?.count ?? 0 == 0 ? description : nil
+		let descriptionToEncode = description?.count ?? 0 == 0 ? nil : description
 		try container.encode(descriptionToEncode, forKey: .description)
 		
-		let clientToEncode = client?.count ?? 0 == 0 ? client : nil
+		let clientToEncode = client?.count ?? 0 == 0 ? nil : client
 		try container.encode(clientToEncode,	forKey: .client)
 		
 		try container.encode(createdAt,			forKey: .createdAt)

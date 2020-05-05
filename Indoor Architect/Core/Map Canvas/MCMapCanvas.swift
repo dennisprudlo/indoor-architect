@@ -16,10 +16,7 @@ protocol MCMapCanvasDelegate {
 
 class MCMapCanvas: MKMapView {
 	
-	/// The project which is being handles in the map
-	var project: IMDFProject!
-	
-	var closeToolStack			= MCCloseToolStack()
+	var closeToolStack			= MCToolStack(forAxis: .horizontal)
 	var coordinateToolStack		= MCCoordinateToolStack()
 	var infoToolStack			= MCSlidingInfoToolStack()
 	var drawingToolStack		= MCToolStack(forAxis: .vertical)
@@ -104,6 +101,8 @@ class MCMapCanvas: MKMapView {
 		drawingToolStack.canvas			= self
 		drawingConfirmToolStack.canvas	= self
 		
+		closeToolStack.addItem(MCCloseToolStackItem(self))
+		
 		//
 		// Add all drawing tool stack items to the drawing tool stack
 		drawingToolStack.addItem(MCDrawingToolStackItem(for: .pointer, isDefault: true))
@@ -178,9 +177,9 @@ class MCMapCanvas: MKMapView {
 		
 		//
 		// Render anchors
-		project.imdfArchive.anchors.forEach { self.addAnnotation(IMDFAnchorAnnotation(coordinate: $0.getCoordinates(), anchor: $0)) }
+		Application.currentProject.imdfArchive.anchors.forEach { self.addAnnotation(IMDFAnchorAnnotation(coordinate: $0.getCoordinates(), anchor: $0)) }
 		
-		project.imdfArchive.venues.forEach { (venue) in
+		Application.currentProject.imdfArchive.venues.forEach { (venue) in
 			if let polygon = venue.geometry.first as? MKPolygon {
 				self.addOverlay(polygon)
 			}
@@ -188,21 +187,21 @@ class MCMapCanvas: MKMapView {
 	}
 	
 	func addAnchor(_ geometry: [MKShape & MKGeoJSONObject]) -> Void {
-		let uuid = project.imdfArchive.getUnusedGlobalUuid()
+		let uuid = Application.currentProject.getUnusedGlobalUuid()
 		
 		let anchor = Anchor(withIdentifier: uuid, properties: Anchor.Properties(), geometry: geometry, type: .anchor)
-		project.imdfArchive.anchors.append(anchor)
-		try? project.imdfArchive.save(.anchor)
+		Application.currentProject.imdfArchive.anchors.append(anchor)
+		try? Application.currentProject.imdfArchive.save(.anchor)
 		
 		addAnnotation(IMDFAnchorAnnotation(coordinate: anchor.getCoordinates(), anchor: anchor))
 	}
 	
 	func addVenue(_ geometry: [MKShape & MKGeoJSONObject]) -> Void {
-		let uuid = project.imdfArchive.getUnusedGlobalUuid()
+		let uuid = Application.currentProject.getUnusedGlobalUuid()
 		
 		let venue = Venue(withIdentifier: uuid, properties: Venue.Properties(), geometry: geometry, type: .venue)
-		project.imdfArchive.venues.append(venue)
-		try? project.imdfArchive.save(.venue)
+		Application.currentProject.imdfArchive.venues.append(venue)
+		try? Application.currentProject.imdfArchive.save(.venue)
 		
 		if let polygon = geometry.first as? MKPolygon {
 			addOverlay(polygon)
@@ -210,14 +209,6 @@ class MCMapCanvas: MKMapView {
 	}
 	
 	func saveAndClose() -> Void {
-		closeToolStack.showInfoLabel(withText: "Saving...")
-		
-		try? project.save()
-		try? project.imdfArchive.save(.anchor)
-		try? project.imdfArchive.save(.venue)
-
-		closeToolStack.hideInfoLabel()
-		
 		controller.dismiss(animated: true, completion: nil)
 	}
 	
