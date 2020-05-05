@@ -82,7 +82,12 @@ class ProjectCreateController: DetailTableViewController {
 			//
 			// Add the project to the global projects array and animate the insertion in the table view
 			IMDFProject.projects.insert(project, at: 0)
-			ProjectExplorerHandler.shared.insert(at: IndexPath(row: 0, section: ProjectExplorerHandler.SectionCategory.projects.rawValue), with: .fade)
+			
+			let projectIndexPath = IndexPath(row: 0, section: ProjectExplorerHandler.SectionCategory.projects.rawValue)
+			ProjectExplorerHandler.shared.insert(at: projectIndexPath, with: .fade)
+			ProjectExplorerHandler.shared.tableView(ProjectExplorerHandler.shared.tableView, didSelectRowAt: projectIndexPath)
+			ProjectExplorerHandler.shared.tableView.selectRow(at: projectIndexPath, animated: true, scrollPosition: .none)
+			
 			dismiss(animated: true, completion: nil)
 		} catch {
 			print(error)

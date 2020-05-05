@@ -252,8 +252,12 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == SectionCategory.projects.rawValue && sections[indexPath.section].cells.count > 0 {
+			let project = IMDFProject.projects[indexPath.row]
+			
 			let projectController = ProjectController(style: .insetGrouped)
-			projectController.project = IMDFProject.projects[indexPath.row]
+			projectController.project = project
+			
+			Application.currentProject = project
 			
 			let navigationController = UINavigationController(rootViewController: projectController)
 			Application.rootController.showDetailViewController(navigationController, sender: nil)
@@ -263,6 +267,8 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			guard let url = self.resources[indexPath.row].url else {
 				return
 			}
+			
+			Application.currentProject = nil
 			
 			let safariViewController = SFSafariViewController(url: url)
 			safariViewController.preferredControlTintColor	= Color.primary
