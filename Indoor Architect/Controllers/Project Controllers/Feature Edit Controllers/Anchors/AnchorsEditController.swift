@@ -17,7 +17,7 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 	let addressCell	= UITableViewCell(style: .subtitle, reuseIdentifier: nil)
 	
 	/// The unit cell to pick a reference unit
-	let unitCell	= UITableViewCell(style: .default, reuseIdentifier: nil)
+	let unitCell	= UITableViewCell(style: .subtitle, reuseIdentifier: nil)
 		
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 		// Add the unit cell
 		tableViewSections.append((
 			title: "Unit",
-			description: nil,
+			description: Localizable.Feature.selectUnitDescription,
 			cells: [unitCell]
 		))
     }
@@ -97,7 +97,7 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 			unitCell.detailTextLabel?.textColor	= .label
 		} else {
 			unitCell.textLabel?.text			= Localizable.General.none
-			unitCell.detailTextLabel?.text		= "Select unit"
+			unitCell.detailTextLabel?.text		= Localizable.Feature.selectUnitDetail
 			unitCell.textLabel?.textColor		= .placeholderText
 			unitCell.detailTextLabel?.textColor	= .placeholderText
 		}

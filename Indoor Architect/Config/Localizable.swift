@@ -89,5 +89,7 @@ struct Localizable {
 		static let removeAlertDescription	= NSLocalizedString("feature.removeAlertDescription", comment: "")
 		static let selectAddressDetail		= NSLocalizedString("feature.selectAddressDetail", comment: "")
 		static let selectAddressDescription	= NSLocalizedString("feature.selectAddressDescription", comment: "")
+		static let selectUnitDetail			= NSLocalizedString("feature.selectUnitDetail", comment: "")
+		static let selectUnitDescription	= NSLocalizedString("feature.selectUnitDescription", comment: "")
 	}
 }
