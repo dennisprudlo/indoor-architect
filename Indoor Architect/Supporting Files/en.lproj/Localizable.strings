@@ -25,7 +25,7 @@
 "projectExplorer.buttonCreate"				= "Create Project";
 
 "extensions.title"					= "Extensions";
-"extensions.addExtension"			= "Add Extension";
+"extensions.addExtension"			= "New Extension";
 "extensions.editExtension"			= "Edit Extension";
 "extensions.removeExtensionInfo"	= "Removing the extension is irrevocable and cannot be undone.";
 "extensions.provider"				= "Provider";
@@ -36,7 +36,7 @@
 "extensions.versionDescription"		= "The version number is important if the extension has different versions due to updates in terminology or the way the extending information is being interpreted.";
 
 "address.title"							= "Addresses";
-"address.addAddress"					= "Add Address";
+"address.addAddress"					= "New Address";
 "address.editAddress"					= "Edit Address";
 "address.titlePreviouslyUsed"			= "Previously Used";
 "address.removeAddressInfo"				= "Removing the address is irrevocable and will unlink all entities tied to the address.";
