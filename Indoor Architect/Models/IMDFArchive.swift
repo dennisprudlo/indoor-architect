@@ -108,13 +108,17 @@ class IMDFArchive {
 		FileManager.default.createFile(atPath: fileUrl.path, contents: data, attributes: nil)
 	}
 	
-	func save(_ type: ProjectManager.ArchiveFeature) throws -> Void {
+	func save(_ type: ProjectManager.ArchiveFeature? = nil) throws -> Void {
 		switch type {
 			case .address:
 				try self.enocde(self.addresses, of: Address.Properties.self, in: .address)
 			case .anchor:
 				try self.enocde(self.anchors, of: Anchor.Properties.self, in: .anchor)
 			case .venue:
+				try self.enocde(self.venues, of: Venue.Properties.self, in: .venue)
+			case nil:
+				try self.enocde(self.addresses, of: Address.Properties.self, in: .address)
+				try self.enocde(self.anchors, of: Anchor.Properties.self, in: .anchor)
 				try self.enocde(self.venues, of: Venue.Properties.self, in: .venue)
 			default:
 				break
@@ -123,8 +127,8 @@ class IMDFArchive {
 	
 	func removeReferences(_ uuid: UUID) -> Void {
 		anchors.forEach { (anchor) in
-			if let addressId = anchor.properties.addressId, addressId.uuidString == uuid.uuidString {
-				anchor.properties.addressId = nil
+			if let addressId = anchor.address?.id, addressId.uuidString == uuid.uuidString {
+				anchor.address = nil
 			}
 		}
 	}
