@@ -129,13 +129,9 @@ class IMDFArchive {
 		}
 	}
 	
-	func delete(_ address: Address) -> Void {
-		removeReferences(address.id)
-		addresses.removeAll(where: { $0.id.uuidString == address.id.uuidString })
-	}
-	
-	func delete(_ anchor: Anchor) -> Void {
-		removeReferences(anchor.id)
-		anchors.removeAll(where: { $0.id.uuidString == anchor.id.uuidString })
+	func removeFeature(with uuid: UUID) -> Void {
+		removeReferences(uuid)
+		addresses.removeAll(where: { $0.id.uuidString == uuid.uuidString })
+		anchors.removeAll(where: { $0.id.uuidString == uuid.uuidString })
 	}
 }

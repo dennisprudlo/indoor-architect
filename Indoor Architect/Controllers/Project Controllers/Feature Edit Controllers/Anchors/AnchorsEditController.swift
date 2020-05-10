@@ -8,35 +8,47 @@
 
 import UIKit
 
-class AnchorsEditController: PointFeatureEditController, PromisesFeatureDeleteHandler {
-
+class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDelegate, ProjectAddressControllerDelegate {
+	
+	/// A reference to the anchor that is being edited
 	var anchor: Anchor!
 	
+	/// The address cell to pick a reference address
 	let addressCell	= UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+	
+	/// The unit cell to pick a reference unit
 	let unitCell	= UITableViewCell(style: .default, reuseIdentifier: nil)
-	
-	var address: Address?
-	
+		
     override func viewDidLoad() {
-		coordinates = anchor.getCoordinates()
-		
         super.viewDidLoad()
-		super.propagateFeature(anchor, of: Anchor.Properties.self, information: anchor.properties.information)
+		super.prepareForFeature(with: anchor.id, information: anchor.properties.information, from: self)
 		
-		deleteHandlerDelegate = self
+		//
+		// Prepare PointFeatureEditController
+		super.setInputCoordinates(anchor.getCoordinates())
 		
 		title = "Edit Anchor"
 		
-		addressCell.accessoryType			= .disclosureIndicator
+		//
+		// Format the address and unit cells
+		addressCell.accessoryType	= .disclosureIndicator
+		unitCell.accessoryType		= .disclosureIndicator
+		
+		//
+		// Initialize the address and unit cells
 		setAddress(anchor.address)
+		setUnit(nil)
 		
-		unitCell.textLabel?.text = anchor.properties.unitId?.uuidString
-		
+		//
+		// Add the address cell
 		tableViewSections.append((
 			title: "Address",
 			description: Localizable.Feature.selectAddressDescription,
 			cells: [addressCell]
 		))
+		
+		//
+		// Add the unit cell
 		tableViewSections.append((
 			title: "Unit",
 			description: nil,
@@ -44,35 +56,24 @@ class AnchorsEditController: PointFeatureEditController, PromisesFeatureDeleteHa
 		))
     }
 
-	override func didTapSaveChanges(_ button: UIButton) {
+	func willCloseEditController() -> Void {
 		anchor.set(comment: commentCell.textField.text)
 		if let coordinates = getInputCoordinates() {
 			anchor.setCoordinates(coordinates)
-			anchor.address = address
-			canvas?.generateIMDFOverlays()
 		}
-		
-		do {
-			try Application.currentProject.imdfArchive.save(.anchor)
-			
-			coordinates = anchor.getCoordinates()
-			
-			super.propagateFeature(anchor, of: Anchor.Properties.self, information: anchor.properties.information)
-			super.notifiyChangesMade()
-		} catch {
-			print(error)
-		}
+
+		try? Application.currentProject.imdfArchive.save(.anchor)
 	}
 	
-	override func notifiyChangesMade() {
-		super.notifiyChangesMade()
-		if !saveChangesButton.cellButton.isEnabled {
-			saveChangesButton.setEnabled(address?.id.uuidString ?? "" != anchor.address?.id.uuidString ?? "")
-		}
+	func didConfirmDeleteFeature() {
+		Application.currentProject.imdfArchive.removeFeature(with: anchor.id)
+		try? Application.currentProject.imdfArchive.save(.anchor)
 	}
 	
-	func setAddress(_ address: Address?) -> Void {
-		self.address = address
+	/// Sets the address selection cell value
+	/// - Parameter address: The address or nil if none selected
+	private func setAddress(_ address: Address?) -> Void {
+		anchor.address = address
 		if let address = address {
 			addressCell.textLabel?.text				= address.properties.address
 			addressCell.detailTextLabel?.text		= address.getInlineLocality()
@@ -86,20 +87,33 @@ class AnchorsEditController: PointFeatureEditController, PromisesFeatureDeleteHa
 		}
 	}
 	
-	func delete() {
-		Application.currentProject.imdfArchive.delete(anchor)
+	/// Sets the unit selection cell value
+	/// - Parameter unit: The unit or nil if none selected
+	private func setUnit(_ unit: Void?) -> Void {
+		if let _ = unit {
+			unitCell.textLabel?.text			= ""
+			unitCell.detailTextLabel?.text		= ""
+			unitCell.textLabel?.textColor		= .label
+			unitCell.detailTextLabel?.textColor	= .label
+		} else {
+			unitCell.textLabel?.text			= Localizable.General.none
+			unitCell.detailTextLabel?.text		= "Select unit"
+			unitCell.textLabel?.textColor		= .placeholderText
+			unitCell.detailTextLabel?.textColor	= .placeholderText
+		}
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if tableView.cellForRow(at: indexPath) == addressCell {
-			let addressPickerController = ProjectAddressController(style: .insetGrouped)
-			addressPickerController.currentlySelectedAddress = address
-			addressPickerController.didSelectAddress = { address in
-				self.setAddress(address)
-				self.notifiyChangesMade()
-			}
+			let addressPickerController			= ProjectAddressController(style: .insetGrouped)
+			addressPickerController.address		= anchor.address
+			addressPickerController.delegate	= self
 			
 			navigationController?.pushViewController(addressPickerController, animated: true)
 		}
+	}
+	
+	func addressPicker(_ picker: ProjectAddressController, didPickAddress address: Address?) {
+		setAddress(address)
 	}
 }

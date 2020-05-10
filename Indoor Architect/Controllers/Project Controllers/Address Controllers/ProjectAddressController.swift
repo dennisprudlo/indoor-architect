@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol ProjectAddressControllerDelegate {
+	func addressPicker(_ picker: ProjectAddressController, didPickAddress address: Address?) -> Void
+}
+
 class ProjectAddressController: DetailTableViewController {
-			
-	var didSelectAddress: ((Address?) -> Void)?
-	var currentlySelectedAddress: Address?
+	
+	var address: Address?
+	
+	var delegate: ProjectAddressControllerDelegate?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -21,7 +26,7 @@ class ProjectAddressController: DetailTableViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		let composeButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapAddAddress))
-		if didSelectAddress != nil && currentlySelectedAddress != nil {
+		if delegate != nil && address != nil {
 			navigationItem.rightBarButtonItems = [
 				composeButton,
 				UIBarButtonItem(title: Localizable.General.remove, style: .plain, target: self, action: #selector(didTapRemoveSelection(_:)))
@@ -44,7 +49,7 @@ class ProjectAddressController: DetailTableViewController {
 	}
 	
 	@objc private func didTapRemoveSelection(_ sender: UIBarButtonItem) -> Void {
-		didSelectAddress?(nil)
+		delegate?.addressPicker(self, didPickAddress: nil)
 		navigationController?.popViewController(animated: true)
 	}
 	
@@ -61,11 +66,11 @@ class ProjectAddressController: DetailTableViewController {
 			
 		let address	= Application.currentProject.imdfArchive.addresses[indexPath.row]
 		
-		if didSelectAddress == nil {
+		if delegate == nil {
 			cell.accessoryType = .disclosureIndicator
 		} else {
 			cell.accessoryType = .none
-			if let currentAddress = currentlySelectedAddress, currentAddress.id.uuidString == address.id.uuidString {
+			if let currentAddress = self.address, currentAddress.id.uuidString == address.id.uuidString {
 				cell.accessoryType = .checkmark
 			}
 		}
@@ -84,8 +89,8 @@ class ProjectAddressController: DetailTableViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let address = Application.currentProject.imdfArchive.addresses[indexPath.row]
 		
-		if didSelectAddress != nil {
-			didSelectAddress?(address)
+		if delegate != nil {
+			delegate?.addressPicker(self, didPickAddress: address)
 			navigationController?.popViewController(animated: true)
 			return
 		}
@@ -98,7 +103,7 @@ class ProjectAddressController: DetailTableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-		if didSelectAddress != nil {
+		if delegate != nil {
 			return nil
 		}
 		
@@ -109,7 +114,7 @@ class ProjectAddressController: DetailTableViewController {
 				let archive			= Application.currentProject.imdfArchive
 				let addressToDelete = archive.addresses[indexPath.row]
 				
-				archive.delete(addressToDelete)
+				archive.removeFeature(with: addressToDelete.id)
 				
 				guard let _ = try? archive.save(.address) else {
 					completion(false)

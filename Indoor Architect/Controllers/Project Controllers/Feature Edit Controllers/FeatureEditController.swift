@@ -8,53 +8,61 @@
 
 import UIKit
 
-protocol PromisesFeatureDeleteHandler {
-	func delete() -> Void
+protocol FeatureEditControllerDelegate {
+	
+	/// Tells the delegate, that the user confirmed he wants to delete the currently editing feature. Perform deleting here.
+	func didConfirmDeleteFeature() -> Void
+	
+	/// Tells the delegate, that the feature controller is about to be dismissed. Perform saving here.
+	func willCloseEditController() -> Void
 }
 
-class FeatureEditController: DetailTableViewController {
-
-	typealias TableViewSection = (title: String?, description: String?, cells: [UITableViewCell])
+class FeatureEditController: IATableViewController {
 	
+	/// A reference to the map canvas if the edit controller was opened inside a map canvas
 	var canvas: MCMapCanvas?
-	
-	var tableViewSections: [TableViewSection] = []
-	
+
+	/// The cell which displays the feature id
 	let featureIdCell		= UITableViewCell(style: .default, reuseIdentifier: nil)
+	
+	/// The cell which contains the textField to edit the feature comment
 	let commentCell			= TextInputTableViewCell(placeholder: Localizable.Feature.comment)
 	
-	let saveChangesButton	= ButtonTableViewCell(title: Localizable.Feature.editSaveChanges)
-	
-	var	information: IMDFType.EntityInformation?
-	var featureId: UUID?
-	
-	var deleteHandlerDelegate: PromisesFeatureDeleteHandler?
+	/// A reference to the specific feature edit controller
+	var featureController: FeatureEditControllerDelegate?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeEditController(_:)))
-		navigationItem.rightBarButtonItems = [
-			UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didTapRemoveFeature(_:)))
-		]
-		
+		//
+		// Use large titles when editing a feature
 		navigationController?.navigationBar.prefersLargeTitles = true
 		
+		//
+		// Add the delete feature and close controller buttons
+		navigationItem.leftBarButtonItem	= UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeEditController(_:)))
+		navigationItem.rightBarButtonItem	= UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didTapRemoveFeature(_:)))
+		
+		//
+		// Adjust the table view cells row height to the content
 		tableView.rowHeight = UITableView.automaticDimension
 		
+		//
+		// Format the feature id cell
 		featureIdCell.selectionStyle		= .none
 		featureIdCell.textLabel?.isEnabled	= false
+		featureIdCell.textLabel?.font		= featureIdCell.textLabel?.font.monospaced()
 		
-		commentCell.textField.addTarget(self, action: #selector(didChangeComment), for: .editingChanged)
-
-		saveChangesButton.setEnabled(false)
-		saveChangesButton.cellButton.addTarget(self, action: #selector(didTapSaveChanges), for: .touchUpInside)
-		
+		//
+		// Append the feature id cell
 		tableViewSections.append((
 			title: "Feature ID",
 			description: nil,
 			cells: [featureIdCell]
 		))
+		
+		//
+		// Append further information meta data cells
 		tableViewSections.append((
 			title: nil,
 			description: nil,
@@ -62,73 +70,50 @@ class FeatureEditController: DetailTableViewController {
 		))
     }
 	
-	func propagateFeature<T: Feature<Properties>, Properties: Codable>(_ feature: T, of type: Properties.Type, information: IMDFType.EntityInformation?) -> Void {
-		self.information	= information
-		self.featureId		= feature.id
-		
-		featureIdCell.textLabel?.text	= feature.id.uuidString
+	/// Prepares the feature edit controller for the feature
+	/// - Parameters:
+	///   - id: The id of the feature to display
+	///   - information: The information meta data set to display
+	///   - featureController: The reference to the specific feature controller for event propagation
+	func prepareForFeature(with id: UUID, information: IMDFType.EntityInformation?, from featureController: FeatureEditControllerDelegate) -> Void {
+		self.featureController			= featureController
+		featureIdCell.textLabel?.text	= id.uuidString
 		commentCell.textField.text		= information?.comment
 	}
 	
-	func notifiyChangesMade() -> Void {
-		let commentFieldText	= commentCell.textField.text ?? ""
-		let commentFeatureText	= information?.comment ?? ""
-		
-		saveChangesButton.setEnabled(false)
-		saveChangesButton.setEnabled(commentFieldText != commentFeatureText)
-	}
-	
+	/// Triggers the willCloseEditController event for the specific feature edit controller to perform saving
+	/// and dismisses the controller afterwards
+	/// - Parameter barButtonItem: The barButtonItem that was tapped to trigger the event
 	@objc func closeEditController(_ barButtonItem: UIBarButtonItem) -> Void {
+		featureController?.willCloseEditController()
+		canvas?.generateIMDFOverlays()
 		dismiss(animated: true, completion: nil)
 	}
 	
+	/// Shows a confirmation dialog whether the user really wants to remove the feature from the project
+	/// - Parameter barButtonItem: The barButtonItem that was tapped to trigger the event
 	@objc func didTapRemoveFeature(_ barButtonItem: UIBarButtonItem) -> Void {
 		let confirmationController = UIAlertController(title: Localizable.General.actionConfirmation, message: Localizable.Feature.removeAlertDescription, preferredStyle: .alert)
 		confirmationController.addAction(UIAlertAction(title: Localizable.General.remove, style: .destructive, handler: { (action) in
-			self.deleteHandlerDelegate?.delete()
+			
+			//
+			// Triggers the event that performs deleting of the feature
+			self.featureController?.didConfirmDeleteFeature()
+			
+			//
+			// If the canvas property is set and the edit controller was opened in a canvas session
+			// The overlays should be regenerated
 			self.canvas?.generateIMDFOverlays()
+			
+			//
+			// Dismiss the controller after the feature was deleted
 			self.dismiss(animated: true, completion: nil)
 		}))
+		
 		confirmationController.addAction(UIAlertAction(title: Localizable.General.cancel, style: .cancel, handler: nil))
+		
+		//
+		// Present the confirmation controller
 		present(confirmationController, animated: true, completion: nil)
-	}
-	
-	@objc func didChangeComment(_ textField: UITextField) -> Void {
-		notifiyChangesMade()
-	}
-	
-	@objc func didTapSaveChanges(_ button: UIButton) -> Void {
-		
-	}
-	
-	override func numberOfSections(in tableView: UITableView) -> Int {
-		return tableViewSections.count + 1
-	}
-	
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if section == tableViewSections.count {
-			return 1
-		}
-		
-		return tableViewSections[section].cells.count
-	}
-	
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if indexPath.section == tableViewSections.count {
-			return saveChangesButton
-		}
-		
-		let cell = tableViewSections[indexPath.section].cells[indexPath.row]
-		return cell
-	}
-	
-	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if section == tableViewSections.count { return nil }
-		return tableViewSections[section].title
-	}
-	
-	override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-		if section == tableViewSections.count { return nil }
-		return tableViewSections[section].description
 	}
 }

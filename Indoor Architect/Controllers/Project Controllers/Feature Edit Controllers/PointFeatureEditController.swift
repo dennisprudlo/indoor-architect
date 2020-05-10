@@ -10,11 +10,12 @@ import UIKit
 import CoreLocation
 
 class PointFeatureEditController: FeatureEditController, UITextFieldDelegate {
-
-	let latitudeCell	= TextInputTableViewCell(placeholder: Localizable.Feature.latitude)
-	let longitudeCell	= TextInputTableViewCell(placeholder: Localizable.Feature.longitude)
 	
-	var coordinates: CLLocationCoordinate2D?
+	/// The cell that allows to edit the latitude value
+	let latitudeCell	= TextInputTableViewCell(placeholder: Localizable.Feature.latitude)
+	
+	/// The cell that allows to edit the longitude value
+	let longitudeCell	= TextInputTableViewCell(placeholder: Localizable.Feature.longitude)
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,25 +24,28 @@ class PointFeatureEditController: FeatureEditController, UITextFieldDelegate {
 		// Store the default text input font
 		let defaultFont = latitudeCell.textField.font
 		
+		//
+		// Format the latitude textField
 		latitudeCell.textField.font				= latitudeCell.textField.font?.monospaced()
 		latitudeCell.textField.keyboardType		= .decimalPad
 		latitudeCell.textField.delegate			= self
-		latitudeCell.textField.text				= "\(coordinates?.latitude ?? 0)"
 		
+		//
+		// Format the longitude textField
 		longitudeCell.textField.font			= longitudeCell.textField.font?.monospaced()
 		longitudeCell.textField.keyboardType	= .decimalPad
 		longitudeCell.textField.delegate		= self
-		longitudeCell.textField.text			= "\(coordinates?.longitude ?? 0)"
 		
-		latitudeCell.textField.addTarget(self, action: #selector(coordinatesInputChanged(_:)), for: .editingChanged)
-		longitudeCell.textField.addTarget(self, action: #selector(coordinatesInputChanged(_:)), for: .editingChanged)
-		
+		//
+		// Use the default font for the placeholder
 		if let font = defaultFont {
 			let attributes = [ NSAttributedString.Key.font: font ]
 			latitudeCell.textField.attributedPlaceholder = NSAttributedString(string: Localizable.Feature.latitude, attributes: attributes)
 			longitudeCell.textField.attributedPlaceholder = NSAttributedString(string: Localizable.Feature.latitude, attributes: attributes)
 		}
-			
+		
+		//
+		// Append the latitude and longitude cells
 		tableViewSections.append((
 			title: Localizable.Feature.coordinates,
 			description: nil,
@@ -49,22 +53,8 @@ class PointFeatureEditController: FeatureEditController, UITextFieldDelegate {
 		))
     }
 	
-	@objc func coordinatesInputChanged(_ textField: UITextField) -> Void {
-		notifiyChangesMade()
-	}
-
-	override func notifiyChangesMade() {
-		super.notifiyChangesMade()
-		
-		guard let inputCoordinates = getInputCoordinates(), let coordinates = coordinates else {
-			return
-		}
-		
-		if !saveChangesButton.cellButton.isEnabled {
-			saveChangesButton.setEnabled(inputCoordinates.latitude != coordinates.latitude || inputCoordinates.longitude != coordinates.longitude)
-		}
-	}
-	
+	/// Gets the coordinates from the textField Inputs
+	/// - Returns: The coordinates or nil if the values are invalid
 	func getInputCoordinates() -> CLLocationCoordinate2D? {
 		guard let textFieldLatitude	= latitudeCell.textField.text, let textFieldLongitude = longitudeCell.textField.text else {
 			return nil
@@ -77,6 +67,19 @@ class PointFeatureEditController: FeatureEditController, UITextFieldDelegate {
 		return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 	}
 	
+	/// Sets the coordinates for the textFields
+	/// - Parameter coordinates: The coordinates to set
+	func setInputCoordinates(_ coordinates: CLLocationCoordinate2D) -> Void {
+		latitudeCell.textField.text		= "\(coordinates.latitude)"
+		longitudeCell.textField.text	= "\(coordinates.longitude)"
+	}
+	
+	/// Validates the character input in the latitude and longitude cells and determines whether the changes should be applied or not
+	/// - Parameters:
+	///   - textField: The textField being edited
+	///   - range: The range of characters to be replaced
+	///   - string: The content of the textField
+	/// - Returns: Whether to apply the changes
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 		if textField == latitudeCell.textField || textField == longitudeCell.textField {
 			let permittedCharacterSet	= CharacterSet(charactersIn:".0123456789")

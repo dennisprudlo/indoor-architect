@@ -41,6 +41,7 @@
 		817C3F70245DDA8200D00034 /* AnchorsEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F6F245DDA8200D00034 /* AnchorsEditController.swift */; };
 		817C3F72245DDACA00D00034 /* PointFeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F71245DDACA00D00034 /* PointFeatureEditController.swift */; };
 		817C3F74245DDAF900D00034 /* FeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F73245DDAF900D00034 /* FeatureEditController.swift */; };
+		818D1DCB246861BF0058E4E5 /* IATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCA246861BF0058E4E5 /* IATableViewController.swift */; };
 		81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFC240AB9FE008873E9 /* ProjectSection.swift */; };
 		81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFE240ABB24008873E9 /* WelcomeController.swift */; };
 		81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */; };
@@ -129,6 +130,7 @@
 		817C3F6F245DDA8200D00034 /* AnchorsEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorsEditController.swift; sourceTree = "<group>"; };
 		817C3F71245DDACA00D00034 /* PointFeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointFeatureEditController.swift; sourceTree = "<group>"; };
 		817C3F73245DDAF900D00034 /* FeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureEditController.swift; sourceTree = "<group>"; };
+		818D1DCA246861BF0058E4E5 /* IATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IATableViewController.swift; sourceTree = "<group>"; };
 		81A58DFC240AB9FE008873E9 /* ProjectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSection.swift; sourceTree = "<group>"; };
 		81A58DFE240ABB24008873E9 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGeneralSection.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				8120AC8023F9982800696FCA /* ScrollViewController.swift */,
 				81D580C2240D13310049B17F /* ComposePopoverController.swift */,
 				8174854B24182A4400EE3E12 /* DetailTableViewController.swift */,
+				818D1DCA246861BF0058E4E5 /* IATableViewController.swift */,
 			);
 			path = "Custom Controller";
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */,
 				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
 				81F67DB723F09971006B9187 /* Color.swift in Sources */,
+				818D1DCB246861BF0058E4E5 /* IATableViewController.swift in Sources */,
 				81D580C1240C20400049B17F /* ProjectAddressLocalityController.swift in Sources */,
 				81D580B8240C005E0049B17F /* Feature.swift in Sources */,
 				81A58E09240AE249008873E9 /* ButtonSetTableViewCell.swift in Sources */,
