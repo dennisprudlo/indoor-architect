@@ -25,14 +25,16 @@ class ProjectAddressController: DetailTableViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		let composeButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapAddAddress))
 		if delegate != nil && address != nil {
-			navigationItem.rightBarButtonItems = [
-				composeButton,
-				UIBarButtonItem(title: Localizable.General.remove, style: .plain, target: self, action: #selector(didTapRemoveSelection(_:)))
-			]
-		} else {
-			navigationItem.rightBarButtonItem = composeButton
+			
+			//
+			// If the delegate is set and a currently selected address we want to show a remove button
+			navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable.General.remove, style: .plain, target: self, action: #selector(didTapRemoveSelection(_:)))
+		} else if delegate == nil {
+			
+			//
+			// If the delegate is not set we show the compose button (we are not in edit mode)
+			navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapAddAddress))
 		}
 	}
 	
