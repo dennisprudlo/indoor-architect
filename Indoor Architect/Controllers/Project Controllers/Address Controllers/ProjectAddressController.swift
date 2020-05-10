@@ -25,6 +25,8 @@ class ProjectAddressController: DetailTableViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
 		if delegate != nil && address != nil {
 			
 			//
