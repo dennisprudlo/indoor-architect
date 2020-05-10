@@ -16,6 +16,12 @@ class Anchor: Feature<Anchor.Properties> {
 			self.properties.addressId = address?.id
 		}
 	}
+	
+	var unit: Unit? {
+		didSet {
+			self.properties.unitId = unit?.id
+		}
+	}
 
 	/// The anchors properties
 	struct Properties: Codable {

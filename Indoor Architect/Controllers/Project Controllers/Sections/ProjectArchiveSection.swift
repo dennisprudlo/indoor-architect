@@ -12,17 +12,19 @@ class ProjectArchiveSection: ProjectSection {
 	
 	let addressesCell	= UITableViewCell(style: .value1, reuseIdentifier: nil)
 	let anchorsCell		= UITableViewCell(style: .value1, reuseIdentifier: nil)
+	let unitsCell		= UITableViewCell(style: .value1, reuseIdentifier: nil)
 	
 	override init() {
 		super.init()
 		
-		[addressesCell, anchorsCell].forEach { (archiveCell) in
+		[addressesCell, anchorsCell, unitsCell].forEach { (archiveCell) in
 			archiveCell.accessoryType	= .disclosureIndicator
 			cells.append(archiveCell)
 		}
 	
 		addressesCell.textLabel?.text = Localizable.Address.title
 		anchorsCell.textLabel?.text = "Anchors"
+		unitsCell.textLabel?.text = "Units"
 	}
 	
 	func resetCellCount(cell: UITableViewCell, count: Int) -> Void {
@@ -50,5 +52,6 @@ class ProjectArchiveSection: ProjectSection {
 	override func reloadOnAppear() {
 		resetCellCount(cell: addressesCell, count: Application.currentProject.imdfArchive.addresses.count)
 		resetCellCount(cell: anchorsCell, count: Application.currentProject.imdfArchive.anchors.count)
+		resetCellCount(cell: unitsCell, count: Application.currentProject.imdfArchive.units.count)
 	}
 }

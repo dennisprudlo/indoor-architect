@@ -32,6 +32,9 @@ class IMDFArchive {
 	/// The IMDF anchor features
 	var anchors: [Anchor]
 	
+	/// The IMDF unit features
+	var units: [Unit]
+	
 	/// Initializes the IMDFArchive
 	/// - Parameter uuid: The UUID of the project
 	init(fromUuid uuid: UUID) throws {
@@ -49,6 +52,7 @@ class IMDFArchive {
 		self.addresses		= try IMDFArchive.decode(Address.self, file: .address, forProjectWithUuid: uuid)
 		self.venues			= try IMDFArchive.decode(Venue.self, file: .venue, forProjectWithUuid: uuid)
 		self.anchors		= try IMDFArchive.decode(Anchor.self, file: .anchor, forProjectWithUuid: uuid)
+		self.units			= try IMDFArchive.decode(Unit.self, file: .unit, forProjectWithUuid: uuid)
 		
 		//
 		// Create anchor references
@@ -59,6 +63,9 @@ class IMDFArchive {
 			}
 			
 			// Link unit
+			if let unitId = anchor.properties.unitId?.uuidString, let unit = units.first(where: { $0.id.uuidString == unitId }) {
+				anchor.unit = unit
+			}
 		}
 	}
 	
@@ -114,11 +121,14 @@ class IMDFArchive {
 				try self.enocde(self.addresses, of: Address.Properties.self, in: .address)
 			case .anchor:
 				try self.enocde(self.anchors, of: Anchor.Properties.self, in: .anchor)
+			case .unit:
+				try self.enocde(self.units, of: Unit.Properties.self, in: .unit)
 			case .venue:
 				try self.enocde(self.venues, of: Venue.Properties.self, in: .venue)
 			case nil:
 				try self.enocde(self.addresses, of: Address.Properties.self, in: .address)
 				try self.enocde(self.anchors, of: Anchor.Properties.self, in: .anchor)
+				try self.enocde(self.units, of: Unit.Properties.self, in: .unit)
 				try self.enocde(self.venues, of: Venue.Properties.self, in: .venue)
 			default:
 				break
@@ -130,6 +140,9 @@ class IMDFArchive {
 			if let addressId = anchor.address?.id, addressId.uuidString == uuid.uuidString {
 				anchor.address = nil
 			}
+			if let unitId = anchor.unit?.id, unitId.uuidString == uuid.uuidString {
+				anchor.unit = nil
+			}
 		}
 	}
 	
@@ -137,5 +150,7 @@ class IMDFArchive {
 		removeReferences(uuid)
 		addresses.removeAll(where: { $0.id.uuidString == uuid.uuidString })
 		anchors.removeAll(where: { $0.id.uuidString == uuid.uuidString })
+		units.removeAll(where: { $0.id.uuidString == uuid.uuidString })
+		venues.removeAll(where: { $0.id.uuidString == uuid.uuidString })
 	}
 }

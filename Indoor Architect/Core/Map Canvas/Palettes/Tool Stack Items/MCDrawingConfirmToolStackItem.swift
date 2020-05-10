@@ -62,7 +62,7 @@ class MCDrawingConfirmToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 		// Add the feature to the canvas
 		switch assembler {
 			case is MCPolygonAssembler:
-				canvas.addVenue(geometry)
+				canvas.addUnit(geometry)
 			default:
 				break
 		}

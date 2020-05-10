@@ -32,7 +32,7 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		
 		canvas.selectedDrawingTool = .pointer
 	
-		canvas.generateIMDFOverlays()
+		canvas.renderFeatures()
 		
 		if let session = Application.currentProject.manifest.session {
 			let center	= CLLocationCoordinate2D(latitude: session.centerLatitude, longitude: session.centerLongitude)

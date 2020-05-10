@@ -86,7 +86,7 @@ class FeatureEditController: IATableViewController {
 	/// - Parameter barButtonItem: The barButtonItem that was tapped to trigger the event
 	@objc func closeEditController(_ barButtonItem: UIBarButtonItem) -> Void {
 		featureController?.willCloseEditController()
-		canvas?.generateIMDFOverlays()
+		canvas?.renderFeatures()
 		dismiss(animated: true, completion: nil)
 	}
 	
@@ -103,7 +103,7 @@ class FeatureEditController: IATableViewController {
 			//
 			// If the canvas property is set and the edit controller was opened in a canvas session
 			// The overlays should be regenerated
-			self.canvas?.generateIMDFOverlays()
+			self.canvas?.renderFeatures()
 			
 			//
 			// Dismiss the controller after the feature was deleted

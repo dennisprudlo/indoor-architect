@@ -169,7 +169,7 @@ class MCMapCanvas: MKMapView {
 		}
 	}
 	
-	func generateIMDFOverlays() -> Void {
+	func renderFeatures() -> Void {
 		removeOverlays(overlays)
 		removeAnnotations(annotations)
 		
@@ -184,8 +184,16 @@ class MCMapCanvas: MKMapView {
 				self.addOverlay(polygon)
 			}
 		}
+		
+		Application.currentProject.imdfArchive.units.forEach { (units) in
+			if let polygon = units.geometry.first as? MKPolygon {
+				self.addOverlay(polygon)
+			}
+		}
 	}
 	
+	/// Adds a new anchor annotation to the project
+	/// - Parameter geometry: The point geometry of the anchor
 	func addAnchor(_ geometry: [MKShape & MKGeoJSONObject]) -> Void {
 		let uuid = Application.currentProject.getUnusedGlobalUuid()
 		
@@ -196,12 +204,14 @@ class MCMapCanvas: MKMapView {
 		addAnnotation(IMDFAnchorAnnotation(coordinate: anchor.getCoordinates(), anchor: anchor))
 	}
 	
-	func addVenue(_ geometry: [MKShape & MKGeoJSONObject]) -> Void {
+	/// Adds a new unit to the project representing a polygonal feature
+	/// - Parameter geometry: The polygonal geometry of the unit
+	func addUnit(_ geometry: [MKShape & MKGeoJSONObject]) -> Void {
 		let uuid = Application.currentProject.getUnusedGlobalUuid()
 		
-		let venue = Venue(withIdentifier: uuid, properties: Venue.Properties(), geometry: geometry, type: .venue)
-		Application.currentProject.imdfArchive.venues.append(venue)
-		try? Application.currentProject.imdfArchive.save(.venue)
+		let unit = Unit(withIdentifier: uuid, properties: Unit.Properties(), geometry: geometry, type: .unit)
+		Application.currentProject.imdfArchive.units.append(unit)
+		try? Application.currentProject.imdfArchive.save(.unit)
 		
 		if let polygon = geometry.first as? MKPolygon {
 			addOverlay(polygon)
