@@ -79,12 +79,18 @@ class IMDFArchive {
 		let fileUrl		= ProjectManager.shared.url(forPathComponent: .archive(feature: file), inProjectWithUuid: uuid)
 		let fileData	= try Data(contentsOf: fileUrl)
 		
-		let geoJSONData	= try MKGeoJSONDecoder().decode(fileData)
-		guard let features = geoJSONData as? [MKGeoJSONFeature] else {
-			throw IMDFDecodingError.malformedFeatureData
+		do {
+			let geoJSONData	= try MKGeoJSONDecoder().decode(fileData)
+			guard let features = geoJSONData as? [MKGeoJSONFeature] else {
+				throw IMDFDecodingError.malformedFeatureData
+			}
+			
+			return features.compactMap { try? type.init(feature: $0, type: file) }
+		} catch {
+			print(error)
 		}
 		
-		return features.compactMap { try? type.init(feature: $0, type: file) }
+		return []
 	}
 	
 	/// Encodes the features of a given type and writes it into the corresponding GeoJSON file

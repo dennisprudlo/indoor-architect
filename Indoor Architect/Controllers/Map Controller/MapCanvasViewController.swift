@@ -52,16 +52,32 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		//
 		// Determine the nearest feature and select it
 		if drawingTool == .pointer {
+			var featureEditController: FeatureEditController?
+
+			//
+			// Check for nearby anchors to edit
 			if let anchor = Anchor.respondToSelection(in: canvas, point: tapPoint) {
-				let editController			= AnchorsEditController(style: .insetGrouped)
-				editController.anchor		= anchor
-				editController.canvas		= canvas
-				let navigationController	= UINavigationController(rootViewController: editController)
+				let controller			= AnchorsEditController(style: .insetGrouped)
+				controller.anchor		= anchor
+				controller.canvas		= canvas
+				featureEditController	= controller
+			}
+
+			//
+			// Check for nearby units to edit
+			if featureEditController == nil, let unit = Unit.respondToSelection(in: canvas, coordinate: location) {
+				let controller			= UnitsEditController(style: .insetGrouped)
+				controller.unit			= unit
+				controller.canvas		= canvas
+				featureEditController	= controller
+			}
+			
+			if let featureEditController = featureEditController {
+				let navigationController	= UINavigationController(rootViewController: featureEditController)
 				navigationController.modalPresentationStyle = .formSheet
 				present(navigationController, animated: true, completion: nil)
 				return
 			}
-			
 		}
 		
 		if drawingTool == .anchor {

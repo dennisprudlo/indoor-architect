@@ -83,6 +83,7 @@ class Feature<Properties: Codable>: NSObject, CodableFeature {
 			switch type {
 				case .anchor:	try container.encode(self.transformPointGeometry(), forKey: .geometry)
 				case .venue:	try container.encode(self.transformPolygonGeometry(), forKey: .geometry)
+				case .unit:		try container.encode(self.transformPolygonGeometry(), forKey: .geometry)
 				default:
 					break
 			}

@@ -179,17 +179,9 @@ class MCMapCanvas: MKMapView {
 		// Render anchors
 		Application.currentProject.imdfArchive.anchors.forEach { self.addAnnotation(IMDFAnchorAnnotation(coordinate: $0.getCoordinates(), anchor: $0)) }
 		
-		Application.currentProject.imdfArchive.venues.forEach { (venue) in
-			if let polygon = venue.geometry.first as? MKPolygon {
-				self.addOverlay(polygon)
-			}
-		}
-		
-		Application.currentProject.imdfArchive.units.forEach { (units) in
-			if let polygon = units.geometry.first as? MKPolygon {
-				self.addOverlay(polygon)
-			}
-		}
+		//
+		// Render units
+		Application.currentProject.imdfArchive.units.compactMap({ IMDFUnitOverlay.from(unit: $0) }).forEach({ self.addOverlay($0) })
 	}
 	
 	/// Adds a new anchor annotation to the project

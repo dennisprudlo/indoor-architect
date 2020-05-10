@@ -10,9 +10,6 @@ import UIKit
 
 protocol FeatureEditControllerDelegate {
 	
-	/// Tells the delegate, that the user confirmed he wants to delete the currently editing feature. Perform deleting here.
-	func didConfirmDeleteFeature() -> Void
-	
 	/// Tells the delegate, that the feature controller is about to be dismissed. Perform saving here.
 	func willCloseEditController() -> Void
 }
@@ -21,6 +18,9 @@ class FeatureEditController: IATableViewController {
 	
 	/// A reference to the map canvas if the edit controller was opened inside a map canvas
 	var canvas: MCMapCanvas?
+	
+	/// A reference to the features id
+	var featureId: UUID!
 
 	/// The cell which displays the feature id
 	let featureIdCell		= UITableViewCell(style: .default, reuseIdentifier: nil)
@@ -77,6 +77,8 @@ class FeatureEditController: IATableViewController {
 	///   - featureController: The reference to the specific feature controller for event propagation
 	func prepareForFeature(with id: UUID, information: IMDFType.EntityInformation?, from featureController: FeatureEditControllerDelegate) -> Void {
 		self.featureController			= featureController
+		
+		featureId						= id
 		featureIdCell.textLabel?.text	= id.uuidString
 		commentCell.textField.text		= information?.comment
 	}
@@ -98,7 +100,8 @@ class FeatureEditController: IATableViewController {
 			
 			//
 			// Triggers the event that performs deleting of the feature
-			self.featureController?.didConfirmDeleteFeature()
+			Application.currentProject.imdfArchive.removeFeature(with: self.featureId)
+			try? Application.currentProject.imdfArchive.save()
 			
 			//
 			// If the canvas property is set and the edit controller was opened in a canvas session

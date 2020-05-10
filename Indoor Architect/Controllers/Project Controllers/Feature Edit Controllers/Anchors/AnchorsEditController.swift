@@ -65,11 +65,6 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 		try? Application.currentProject.imdfArchive.save(.anchor)
 	}
 	
-	func didConfirmDeleteFeature() {
-		Application.currentProject.imdfArchive.removeFeature(with: anchor.id)
-		try? Application.currentProject.imdfArchive.save()
-	}
-	
 	/// Sets the address selection cell value
 	/// - Parameter address: The address or nil if none selected
 	private func setAddress(_ address: Address?) -> Void {

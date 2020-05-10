@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreGraphics
+import MapKit
 
 class Unit: Feature<Unit.Properties> {
 
@@ -55,5 +57,9 @@ class Unit: Feature<Unit.Properties> {
 		}
 		
 		properties.information?.comment = comment
+	}
+	
+	static func respondToSelection(in canvas: MCMapCanvas, coordinate: CLLocationCoordinate2D) -> Unit? {
+		return canvas.overlays.compactMap({ $0 as? IMDFUnitOverlay }).first(where: { $0.contains(coordinate: coordinate) })?.unit
 	}
 }

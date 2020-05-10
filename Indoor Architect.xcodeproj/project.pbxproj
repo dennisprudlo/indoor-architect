@@ -24,13 +24,15 @@
 		814EBB74241D626E0028225C /* RulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB73241D626E0028225C /* RulerView.swift */; };
 		814EBB76241D6A170028225C /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB75241D6A170028225C /* Spacing.swift */; };
 		814EBB78241D71150028225C /* MCDistanceRuler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB77241D71150028225C /* MCDistanceRuler.swift */; };
+		814F5FCE24688D6C004E0215 /* MKPolygonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F5FCD24688D6C004E0215 /* MKPolygonUtils.swift */; };
+		814F5FD124688FA1004E0215 /* UnitsEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F5FD024688FA1004E0215 /* UnitsEditController.swift */; };
 		8153BB20241FB76700FF6335 /* MCPointAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB1F241FB76700FF6335 /* MCPointAssembler.swift */; };
 		8153BB22241FB78B00FF6335 /* MCShapeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB21241FB78B00FF6335 /* MCShapeAssembler.swift */; };
 		8153BB24241FBC4F00FF6335 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB23241FBC4F00FF6335 /* Venue.swift */; };
 		8153BB28241FBDC300FF6335 /* IMDFType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB27241FBDC300FF6335 /* IMDFType.swift */; };
 		8153BB2A241FC13A00FF6335 /* MCPolygonAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB29241FC13A00FF6335 /* MCPolygonAssembler.swift */; };
 		8153BB2C241FCA3500FF6335 /* MCDrawingConfirmToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB2B241FCA3500FF6335 /* MCDrawingConfirmToolStackItem.swift */; };
-		8153BB2E241FD0FC00FF6335 /* IMDFVenueOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB2D241FD0FC00FF6335 /* IMDFVenueOverlay.swift */; };
+		8153BB2E241FD0FC00FF6335 /* IMDFUnitOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8153BB2D241FD0FC00FF6335 /* IMDFUnitOverlay.swift */; };
 		816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52523F0606B00E1471D /* AppDelegate.swift */; };
 		816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC52723F0606B00E1471D /* SceneDelegate.swift */; };
 		816DC53E23F0679900E1471D /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DC53D23F0679900E1471D /* RootController.swift */; };
@@ -112,13 +114,15 @@
 		814EBB73241D626E0028225C /* RulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerView.swift; sourceTree = "<group>"; };
 		814EBB75241D6A170028225C /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814EBB77241D71150028225C /* MCDistanceRuler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDistanceRuler.swift; sourceTree = "<group>"; };
+		814F5FCD24688D6C004E0215 /* MKPolygonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPolygonUtils.swift; sourceTree = "<group>"; };
+		814F5FD024688FA1004E0215 /* UnitsEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsEditController.swift; sourceTree = "<group>"; };
 		8153BB1F241FB76700FF6335 /* MCPointAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPointAssembler.swift; sourceTree = "<group>"; };
 		8153BB21241FB78B00FF6335 /* MCShapeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCShapeAssembler.swift; sourceTree = "<group>"; };
 		8153BB23241FBC4F00FF6335 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		8153BB27241FBDC300FF6335 /* IMDFType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFType.swift; sourceTree = "<group>"; };
 		8153BB29241FC13A00FF6335 /* MCPolygonAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPolygonAssembler.swift; sourceTree = "<group>"; };
 		8153BB2B241FCA3500FF6335 /* MCDrawingConfirmToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDrawingConfirmToolStackItem.swift; sourceTree = "<group>"; };
-		8153BB2D241FD0FC00FF6335 /* IMDFVenueOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFVenueOverlay.swift; sourceTree = "<group>"; };
+		8153BB2D241FD0FC00FF6335 /* IMDFUnitOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFUnitOverlay.swift; sourceTree = "<group>"; };
 		816DC52223F0606B00E1471D /* Indoor Architect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Architect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816DC52523F0606B00E1471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		816DC52723F0606B00E1471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 				817C3F73245DDAF900D00034 /* FeatureEditController.swift */,
 				817C3F71245DDACA00D00034 /* PointFeatureEditController.swift */,
 				812608F12458A1FA00FF0D08 /* Anchors */,
+				814F5FCF24688F7B004E0215 /* Units */,
 			);
 			path = "Feature Edit Controllers";
 			sourceTree = "<group>";
@@ -238,6 +243,14 @@
 				8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */,
 			);
 			path = "Map Canvas";
+			sourceTree = "<group>";
+		};
+		814F5FCF24688F7B004E0215 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				814F5FD024688FA1004E0215 /* UnitsEditController.swift */,
+			);
+			path = Units;
 			sourceTree = "<group>";
 		};
 		8153BB1E241FB75A00FF6335 /* Assembler */ = {
@@ -372,7 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				81AE8E5024193C90007C8093 /* IMDFAnchorAnnotation.swift */,
-				8153BB2D241FD0FC00FF6335 /* IMDFVenueOverlay.swift */,
+				8153BB2D241FD0FC00FF6335 /* IMDFUnitOverlay.swift */,
 			);
 			path = Overlays;
 			sourceTree = "<group>";
@@ -497,6 +510,7 @@
 				8141C7DB23FAE980008AC7DD /* Constraints.swift */,
 				8124FD662457167A0099581E /* ISO3166.swift */,
 				817C3F6D245DC84800D00034 /* CGPointUtils.swift */,
+				814F5FCD24688D6C004E0215 /* MKPolygonUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -661,9 +675,10 @@
 				81A58E09240AE249008873E9 /* ButtonSetTableViewCell.swift in Sources */,
 				81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */,
 				816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */,
-				8153BB2E241FD0FC00FF6335 /* IMDFVenueOverlay.swift in Sources */,
+				8153BB2E241FD0FC00FF6335 /* IMDFUnitOverlay.swift in Sources */,
 				81D580BA240C04150049B17F /* Address.swift in Sources */,
 				81F67DB023F06A64006B9187 /* ProjectController.swift in Sources */,
+				814F5FCE24688D6C004E0215 /* MKPolygonUtils.swift in Sources */,
 				81E2FA4C2401999D00CA82AA /* MCCloseToolStackItem.swift in Sources */,
 				8153BB2A241FC13A00FF6335 /* MCPolygonAssembler.swift in Sources */,
 				817C3F6E245DC84800D00034 /* CGPointUtils.swift in Sources */,
@@ -677,6 +692,7 @@
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				8153BB24241FBC4F00FF6335 /* Venue.swift in Sources */,
 				814EBB76241D6A170028225C /* Spacing.swift in Sources */,
+				814F5FD124688FA1004E0215 /* UnitsEditController.swift in Sources */,
 				817C3F72245DDACA00D00034 /* PointFeatureEditController.swift in Sources */,
 				8124FD672457167A0099581E /* ISO3166.swift in Sources */,
 				81D580B2240B04AC0049B17F /* ProjectExtensionController.swift in Sources */,
