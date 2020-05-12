@@ -60,7 +60,6 @@ class FeatureAccessibilityPickerController: IATableViewController {
 		// all selected accessibilities and return them
 		if isMovingFromParent {
 			let selectedAccessibilities = accessibilityCells.filter({ $0.key.accessoryType == .checkmark }).map({ $0.value })
-			print(selectedAccessibilities)
 			delegate?.accessibilityPicker(self, didDismissWith: selectedAccessibilities.count > 0 ? selectedAccessibilities : nil)
 		}
 	}

@@ -60,7 +60,6 @@ class FeatureRestrictionPickerController: IATableViewController {
 		// all selected accessibilities and return them
 		if isMovingFromParent {
 			let selectedRestriction = restrictionCells.first(where: { $0.key.accessoryType == .checkmark })?.value
-			print(selectedRestriction)
 			delegate?.restrictionPicker(self, didDismissWith: selectedRestriction)
 		}
 	}
