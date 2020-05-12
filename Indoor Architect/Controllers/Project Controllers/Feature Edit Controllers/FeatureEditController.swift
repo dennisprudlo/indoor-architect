@@ -35,8 +35,10 @@ class FeatureEditController: IATableViewController {
         super.viewDidLoad()
 		
 		//
-		// Use large titles when editing a feature
-		navigationController?.navigationBar.prefersLargeTitles = true
+		// Use large titles when editing a feature but only when opened from the canvas
+		if let _ = canvas {
+			navigationController?.navigationBar.prefersLargeTitles = true
+		}
 		
 		//
 		// Add the delete feature and close controller buttons

@@ -59,7 +59,6 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 			if let anchor = Anchor.respondToSelection(in: canvas, point: tapPoint) {
 				let controller			= AnchorsEditController(style: .insetGrouped)
 				controller.anchor		= anchor
-				controller.canvas		= canvas
 				featureEditController	= controller
 			}
 
@@ -68,13 +67,13 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 			if featureEditController == nil, let unit = Unit.respondToSelection(in: canvas, coordinate: location) {
 				let controller			= UnitsEditController(style: .insetGrouped)
 				controller.unit			= unit
-				controller.canvas		= canvas
 				featureEditController	= controller
 			}
 			
 			if let featureEditController = featureEditController {
-				let navigationController	= UINavigationController(rootViewController: featureEditController)
-				navigationController.modalPresentationStyle = .formSheet
+				featureEditController.canvas				= canvas
+				let navigationController					= UINavigationController(rootViewController: featureEditController)
+				navigationController.modalPresentationStyle	= .formSheet
 				present(navigationController, animated: true, completion: nil)
 				return
 			}
