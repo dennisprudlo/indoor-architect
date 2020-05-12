@@ -62,3 +62,14 @@
 "imdf.unitCategory.walkway"					= "Walkway";
 "imdf.unitCategory.walkway.island"			= "Walkway (Island)";
 "imdf.unitCategory.wood"					= "Wood";
+
+"imdf.accessibility.assisted.listening"		= "Assisted listening";
+"imdf.accessibility.braille"				= "Braille";
+"imdf.accessibility.hearing"				= "Hearing";
+"imdf.accessibility.hearingloop"			= "Hearingloop";
+"imdf.accessibility.signlanginterpreter"	= "Sign language interpreter";
+"imdf.accessibility.tactilepaving"			= "Tactile paving";
+"imdf.accessibility.tdd"					= "Telecommunications device for the deaf";
+"imdf.accessibility.trs"					= "Telecommunications relay service";
+"imdf.accessibility.volume"					= "Volume";
+"imdf.accessibility.wheelchair"				= "Wheelchair";

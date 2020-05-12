@@ -27,7 +27,7 @@ struct IMDFType {
 	typealias Website = String
 	typealias Phone = String
 	
-	enum Accessibility: String, Codable {
+	enum Accessibility: String, Codable, CaseIterable {
 		case assistedListening = "assisted.listening"
 		case braille
 		case hearing
@@ -40,7 +40,7 @@ struct IMDFType {
 		case wheelchair
 	}
 	
-	enum Restriction: String, Codable {
+	enum Restriction: String, Codable, CaseIterable {
 		case employeesonly
 		case restricted
 	}

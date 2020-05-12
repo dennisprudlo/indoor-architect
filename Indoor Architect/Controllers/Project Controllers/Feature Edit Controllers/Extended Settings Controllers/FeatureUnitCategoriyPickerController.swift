@@ -14,10 +14,13 @@ protocol FeatureUnitCategoryPickerDelegate {
 
 class FeatureUnitCategoryPickerController: IATableViewController {
 
+	/// A mapping dictionary to store the category value for each cell
 	var categoryCells: [UITableViewCell: IMDFType.UnitCategory] = [:]
 	
+	/// The currently selected category on initialization
 	var currentCategory: IMDFType.UnitCategory = .unspecified
 	
+	/// The delegate that handles the selection
 	var delegate: FeatureUnitCategoryPickerDelegate?
 	
     override func viewDidLoad() {
@@ -25,8 +28,12 @@ class FeatureUnitCategoryPickerController: IATableViewController {
 		
 		title = Localizable.Feature.selectCategory
 		
+		//
+		// In this case for better readability we use the separator line between the cells
 		tableView.separatorStyle = .singleLine
 		
+		//
+		// Compose the cells for the categories
 		IMDFType.UnitCategory.allCases.forEach { (category) in
 			let categoryCell = UITableViewCell(style: .default, reuseIdentifier: nil)
 			categoryCell.textLabel?.text	= Localizable.IMDF.unitCategory(category)
@@ -36,6 +43,8 @@ class FeatureUnitCategoryPickerController: IATableViewController {
 			categoryCells[categoryCell] = category
 		}
 		
+		//
+		// Add the accessibility cells
 		tableViewSections.append((
 			title: nil,
 			description: nil,

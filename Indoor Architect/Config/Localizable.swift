@@ -100,5 +100,8 @@ struct Localizable {
 		static func unitCategory(_ category: IMDFType.UnitCategory) -> String {
 			return NSLocalizedString("imdf.unitCategory.\(category.rawValue)", tableName: "IMDFLocalizable", comment: "")
 		}
+		static func accessibility(_ accessibility: IMDFType.Accessibility) -> String {
+			return NSLocalizedString("imdf.accessibility.\(accessibility.rawValue)", tableName: "IMDFLocalizable", comment: "")
+		}
 	}
 }

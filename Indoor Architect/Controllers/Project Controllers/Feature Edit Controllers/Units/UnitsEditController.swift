@@ -99,6 +99,13 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 			unitCategoryController.delegate			= self
 			navigationController?.pushViewController(unitCategoryController, animated: true)
 		}
+		
+		if cell == accessibilityCell {
+			let accessibilityPicker						= FeatureAccessibilityPickerController(style: .insetGrouped)
+			accessibilityPicker.currentAccessibilities	= unit.properties.accessibility
+			accessibilityPicker.delegate				= self
+			navigationController?.pushViewController(accessibilityPicker, animated: true)
+		}
 	}
 }
 
@@ -107,6 +114,15 @@ extension UnitsEditController: FeatureUnitCategoryPickerDelegate {
 	func unitCategoryPicker(_ pickerController: FeatureUnitCategoryPickerController, didPick category: IMDFType.UnitCategory) {
 		setCategory(category)
 		pickerController.navigationController?.popViewController(animated: true)
+	}
+	
+}
+
+extension UnitsEditController: FeatureAccessibilityPickerDelegate {
+	
+	func accessibilityPicker(_ pickerController: FeatureAccessibilityPickerController, didDismissWith accessibilities: [IMDFType.Accessibility]?) {
+		setAccessibility(accessibilities)
+		unit.properties.accessibility = accessibilities
 	}
 	
 }

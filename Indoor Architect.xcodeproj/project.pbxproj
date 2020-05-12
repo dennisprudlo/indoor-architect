@@ -49,6 +49,7 @@
 		8193C330246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C32F246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift */; };
 		8193C333246B0558005D6262 /* IMDFLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8193C335246B0558005D6262 /* IMDFLocalizable.strings */; };
 		8193C337246B0E34005D6262 /* FeatureAccessibilityPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C336246B0E34005D6262 /* FeatureAccessibilityPickerController.swift */; };
+		8193C339246B1E04005D6262 /* FeatureRestrictionPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C338246B1E04005D6262 /* FeatureRestrictionPickerController.swift */; };
 		81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFC240AB9FE008873E9 /* ProjectSection.swift */; };
 		81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFE240ABB24008873E9 /* WelcomeController.swift */; };
 		81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */; };
@@ -145,6 +146,7 @@
 		8193C32F246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureUnitCategoriyPickerController.swift; sourceTree = "<group>"; };
 		8193C334246B0558005D6262 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IMDFLocalizable.strings; sourceTree = "<group>"; };
 		8193C336246B0E34005D6262 /* FeatureAccessibilityPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAccessibilityPickerController.swift; sourceTree = "<group>"; };
+		8193C338246B1E04005D6262 /* FeatureRestrictionPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRestrictionPickerController.swift; sourceTree = "<group>"; };
 		81A58DFC240AB9FE008873E9 /* ProjectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSection.swift; sourceTree = "<group>"; };
 		81A58DFE240ABB24008873E9 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGeneralSection.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			children = (
 				8193C32F246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift */,
 				8193C336246B0E34005D6262 /* FeatureAccessibilityPickerController.swift */,
+				8193C338246B1E04005D6262 /* FeatureRestrictionPickerController.swift */,
 			);
 			path = "Extended Settings Controllers";
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8193C339246B1E04005D6262 /* FeatureRestrictionPickerController.swift in Sources */,
 				81D580B0240B02560049B17F /* ProjectArchiveSection.swift in Sources */,
 				814EBB78241D71150028225C /* MCDistanceRuler.swift in Sources */,
 				81F67DB323F06F6E006B9187 /* Application.swift in Sources */,

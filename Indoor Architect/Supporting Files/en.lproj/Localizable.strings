@@ -67,7 +67,7 @@
 "feature.selectUnitDescription"		= "Select a unit to specify where the anchor should be linked to.";
 "feature.selectCategory"			= "Category";
 "feature.selectRestriction"			= "Restriction";
-"feature.selectAccessibility"		= "Accessibility";
+"feature.selectAccessibility"		= "Accessibilities";
 
 "project.buttonDelete"				= "Delete Project";
 "project.buttonDeleteDescription"	= "If you delete this project it cannot be restored. The project and its content such as overlay will be deleted from this device permanentely.";
