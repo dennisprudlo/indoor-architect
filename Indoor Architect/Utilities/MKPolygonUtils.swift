@@ -25,4 +25,10 @@ extension MKPolygon {
 		return rendererPath.contains(point)
 	}
 	
+	/// An array of all coordinates used to compose the polygon
+	var coordinates: [CLLocationCoordinate2D] {
+		var coordinates = [CLLocationCoordinate2D](repeating: kCLLocationCoordinate2DInvalid, count: pointCount)
+		getCoordinates(&coordinates, range: NSRange(location: 0, length: pointCount))
+		return coordinates
+	}
 }

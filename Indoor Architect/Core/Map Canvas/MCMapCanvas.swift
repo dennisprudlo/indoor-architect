@@ -205,8 +205,8 @@ class MCMapCanvas: MKMapView {
 		Application.currentProject.imdfArchive.units.append(unit)
 		try? Application.currentProject.imdfArchive.save(.unit)
 		
-		if let polygon = geometry.first as? MKPolygon {
-			addOverlay(polygon)
+		if let overlay = IMDFUnitOverlay.from(unit: unit) {
+			addOverlay(overlay)
 		}
 	}
 	

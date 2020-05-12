@@ -31,6 +31,9 @@ class FeatureEditController: IATableViewController {
 	/// A reference to the specific feature edit controller
 	var featureController: FeatureEditControllerDelegate?
 	
+	/// An array which stores all right bar button items that are currently displayed
+	private var rightBarButtonItems: [UIBarButtonItem] = []
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -43,7 +46,7 @@ class FeatureEditController: IATableViewController {
 		//
 		// Add the delete feature and close controller buttons
 		navigationItem.leftBarButtonItem	= UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeEditController(_:)))
-		navigationItem.rightBarButtonItem	= UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didTapRemoveFeature(_:)))
+		addNavigationBarButton(UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didTapRemoveFeature(_:))), animated: true)
 		
 		//
 		// Adjust the table view cells row height to the content
@@ -120,5 +123,14 @@ class FeatureEditController: IATableViewController {
 		//
 		// Present the confirmation controller
 		present(confirmationController, animated: true, completion: nil)
+	}
+	
+	/// Adds a new bar button item to the navigation bar
+	/// - Parameters:
+	///   - barButtonItem: The item to add
+	///   - animated: whether to animate the insert
+	func addNavigationBarButton(_ barButtonItem: UIBarButtonItem, animated: Bool) -> Void {
+		rightBarButtonItems.append(barButtonItem)
+		navigationItem.setRightBarButtonItems(rightBarButtonItems, animated: animated)
 	}
 }

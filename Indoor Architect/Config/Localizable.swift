@@ -91,5 +91,14 @@ struct Localizable {
 		static let selectAddressDescription	= NSLocalizedString("feature.selectAddressDescription", comment: "")
 		static let selectUnitDetail			= NSLocalizedString("feature.selectUnitDetail", comment: "")
 		static let selectUnitDescription	= NSLocalizedString("feature.selectUnitDescription", comment: "")
+		static let selectCategory			= NSLocalizedString("feature.selectCategory", comment: "")
+		static let selectRestriction		= NSLocalizedString("feature.selectRestriction", comment: "")
+		static let selectAccessibility		= NSLocalizedString("feature.selectAccessibility", comment: "")
+	}
+	
+	struct IMDF {
+		static func unitCategory(_ category: IMDFType.UnitCategory) -> String {
+			return NSLocalizedString("imdf.unitCategory.\(category.rawValue)", tableName: "IMDFLocalizable", comment: "")
+		}
 	}
 }

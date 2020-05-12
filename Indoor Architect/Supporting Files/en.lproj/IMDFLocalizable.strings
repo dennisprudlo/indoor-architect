@@ -1,0 +1,64 @@
+/* 
+  IMDFLocalizable.strings
+  Indoor Architect
+
+  Created by Dennis Prudlo on 5/12/20.
+  Copyright © 2020 Dennis Prudlo. All rights reserved.
+*/
+"imdf.unitCategory.auditorium"				= "Auditorium";
+"imdf.unitCategory.brick"					= "Brick";
+"imdf.unitCategory.classroom"				= "Class room";
+"imdf.unitCategory.column"					= "Column";
+"imdf.unitCategory.concrete"				= "Concrete";
+"imdf.unitCategory.conferenceroom"			= "Conference room";
+"imdf.unitCategory.drywall"					= "Drywall";
+"imdf.unitCategory.elevator"				= "Elevator";
+"imdf.unitCategory.escalator"				= "Escalator";
+"imdf.unitCategory.fieldofplay"				= "Field of play";
+"imdf.unitCategory.firstaid"				= "First aid";
+"imdf.unitCategory.fitnessroom"				= "Fitness room";
+"imdf.unitCategory.foodservice"				= "Food service";
+"imdf.unitCategory.footbridge"				= "Footbridge";
+"imdf.unitCategory.glass"					= "Glass";
+"imdf.unitCategory.huddleroom"				= "Huddle room";
+"imdf.unitCategory.kitchen"					= "Kitchen";
+"imdf.unitCategory.laboratory"				= "Laboratory";
+"imdf.unitCategory.library"					= "Library";
+"imdf.unitCategory.lobby"					= "Lobby";
+"imdf.unitCategory.lounge"					= "Lounge";
+"imdf.unitCategory.mailroom"				= "Mail room";
+"imdf.unitCategory.mothersroom"				= "Mother's room";
+"imdf.unitCategory.movietheater"			= "Movie theater";
+"imdf.unitCategory.movingwalkway"			= "Moving walkway";
+"imdf.unitCategory.nonpublic"				= "Non-public";
+"imdf.unitCategory.office"					= "Office";
+"imdf.unitCategory.opentobelow"				= "Open to below";
+"imdf.unitCategory.parking"					= "Parking";
+"imdf.unitCategory.phoneroom"				= "Phone room";
+"imdf.unitCategory.platform"				= "Platform";
+"imdf.unitCategory.privatelounge"			= "Private lounge";
+"imdf.unitCategory.ramp"					= "Ramp";
+"imdf.unitCategory.recreation"				= "Recreation";
+"imdf.unitCategory.restroom"				= "Restroom";
+"imdf.unitCategory.restroom.family"			= "Restroom (Family)";
+"imdf.unitCategory.restroom.female"			= "Restroom (Female)";
+"imdf.unitCategory.restroom.male"			= "Restroom (Male)";
+"imdf.unitCategory.restroom.transgender"	= "Restroom (Transgender)";
+"imdf.unitCategory.restroom.unisex"			= "Restroom (Unisex)";
+"imdf.unitCategory.road"					= "Road";
+"imdf.unitCategory.room"					= "Room";
+"imdf.unitCategory.serverroom"				= "Server room";
+"imdf.unitCategory.shower"					= "Shower";
+"imdf.unitCategory.smokingarea"				= "Smoking area";
+"imdf.unitCategory.stairs"					= "Stairs";
+"imdf.unitCategory.steps"					= "Steps";
+"imdf.unitCategory.storage"					= "Storage";
+"imdf.unitCategory.structure"				= "Structure";
+"imdf.unitCategory.theater"					= "Theater";
+"imdf.unitCategory.unenclosedarea"			= "Unenclosed Area";
+"imdf.unitCategory.unspecified"				= "Unspecified";
+"imdf.unitCategory.vegetation"				= "Vegetation";
+"imdf.unitCategory.waitingroom"				= "Waiting room";
+"imdf.unitCategory.walkway"					= "Walkway";
+"imdf.unitCategory.walkway.island"			= "Walkway (Island)";
+"imdf.unitCategory.wood"					= "Wood";

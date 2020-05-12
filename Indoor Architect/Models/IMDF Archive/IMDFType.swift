@@ -70,7 +70,8 @@ struct IMDFType {
 		case university
 	}
 	
-	enum UnitCategory: String, Codable {
+	/// The unit categories to choose for a specific unit
+	enum UnitCategory: String, Codable, CaseIterable {
 		case auditorium
 		case brick
 		case classroom

@@ -21,7 +21,7 @@ class Unit: Feature<Unit.Properties> {
 		var restriction:	IMDFType.Restriction?
 		
 		/// The units name
-		var accessibility:	IMDFType.Accessibility?
+		var accessibility:	[IMDFType.Accessibility]?
 		
 		/// The units name
 		var name:			IMDFType.Labels?
@@ -57,6 +57,15 @@ class Unit: Feature<Unit.Properties> {
 		}
 		
 		properties.information?.comment = comment
+	}
+	
+	/// Returns the coordinates of the units polygon
+	/// - Returns: An array of coordinates
+	func getCoordinates() -> [CLLocationCoordinate2D] {
+		guard let polygon = geometry.first as? MKPolygon else {
+			return []
+		}
+		return polygon.coordinates
 	}
 	
 	static func respondToSelection(in canvas: MCMapCanvas, coordinate: CLLocationCoordinate2D) -> Unit? {

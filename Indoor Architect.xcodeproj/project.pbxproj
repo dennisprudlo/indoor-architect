@@ -45,6 +45,10 @@
 		817C3F74245DDAF900D00034 /* FeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F73245DDAF900D00034 /* FeatureEditController.swift */; };
 		818D1DCB246861BF0058E4E5 /* IATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCA246861BF0058E4E5 /* IATableViewController.swift */; };
 		818D1DCD24687A2D0058E4E5 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCC24687A2D0058E4E5 /* Unit.swift */; };
+		8193C32D246AF739005D6262 /* PolygonalFeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */; };
+		8193C330246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C32F246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift */; };
+		8193C333246B0558005D6262 /* IMDFLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8193C335246B0558005D6262 /* IMDFLocalizable.strings */; };
+		8193C337246B0E34005D6262 /* FeatureAccessibilityPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C336246B0E34005D6262 /* FeatureAccessibilityPickerController.swift */; };
 		81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFC240AB9FE008873E9 /* ProjectSection.swift */; };
 		81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58DFE240ABB24008873E9 /* WelcomeController.swift */; };
 		81A58E01240ABEA8008873E9 /* ProjectGeneralSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */; };
@@ -137,6 +141,10 @@
 		817C3F73245DDAF900D00034 /* FeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureEditController.swift; sourceTree = "<group>"; };
 		818D1DCA246861BF0058E4E5 /* IATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IATableViewController.swift; sourceTree = "<group>"; };
 		818D1DCC24687A2D0058E4E5 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonalFeatureEditController.swift; sourceTree = "<group>"; };
+		8193C32F246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureUnitCategoriyPickerController.swift; sourceTree = "<group>"; };
+		8193C334246B0558005D6262 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IMDFLocalizable.strings; sourceTree = "<group>"; };
+		8193C336246B0E34005D6262 /* FeatureAccessibilityPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAccessibilityPickerController.swift; sourceTree = "<group>"; };
 		81A58DFC240AB9FE008873E9 /* ProjectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSection.swift; sourceTree = "<group>"; };
 		81A58DFE240ABB24008873E9 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		81A58E00240ABEA8008873E9 /* ProjectGeneralSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGeneralSection.swift; sourceTree = "<group>"; };
@@ -204,6 +212,8 @@
 			children = (
 				817C3F73245DDAF900D00034 /* FeatureEditController.swift */,
 				817C3F71245DDACA00D00034 /* PointFeatureEditController.swift */,
+				8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */,
+				8193C32E246AFDA7005D6262 /* Extended Settings Controllers */,
 				812608F12458A1FA00FF0D08 /* Anchors */,
 				814F5FCF24688F7B004E0215 /* Units */,
 			);
@@ -302,6 +312,7 @@
 				816DC52723F0606B00E1471D /* SceneDelegate.swift */,
 				816DC53323F0606E00E1471D /* Info.plist */,
 				81F67DC623F0A581006B9187 /* Localizable.strings */,
+				8193C335246B0558005D6262 /* IMDFLocalizable.strings */,
 				81F67DC823F0AA5E006B9187 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -345,6 +356,15 @@
 				8124FD6824571D0D0099581E /* ISO-3166-2-units.plist */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		8193C32E246AFDA7005D6262 /* Extended Settings Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8193C32F246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift */,
+				8193C336246B0E34005D6262 /* FeatureAccessibilityPickerController.swift */,
+			);
+			path = "Extended Settings Controllers";
 			sourceTree = "<group>";
 		};
 		81A58DFB240AB9E3008873E9 /* Sections */ = {
@@ -609,6 +629,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8193C333246B0558005D6262 /* IMDFLocalizable.strings in Resources */,
 				81F67DC423F0A581006B9187 /* Localizable.strings in Resources */,
 				81241547242C144200D60ED9 /* App Icon.xcassets in Resources */,
 				81475990241832E4006DB242 /* Colors.xcassets in Resources */,
@@ -664,6 +685,7 @@
 				817323222423EDF10050AD34 /* InitialPanGestureRecognizer.swift in Sources */,
 				81A58DFF240ABB24008873E9 /* WelcomeController.swift in Sources */,
 				81E48EF5242147E600837EEF /* Renderer.swift in Sources */,
+				8193C32D246AF739005D6262 /* PolygonalFeatureEditController.swift in Sources */,
 				8153BB2C241FCA3500FF6335 /* MCDrawingConfirmToolStackItem.swift in Sources */,
 				8153BB28241FBDC300FF6335 /* IMDFType.swift in Sources */,
 				81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */,
@@ -692,7 +714,9 @@
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				8153BB24241FBC4F00FF6335 /* Venue.swift in Sources */,
 				814EBB76241D6A170028225C /* Spacing.swift in Sources */,
+				8193C337246B0E34005D6262 /* FeatureAccessibilityPickerController.swift in Sources */,
 				814F5FD124688FA1004E0215 /* UnitsEditController.swift in Sources */,
+				8193C330246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift in Sources */,
 				817C3F72245DDACA00D00034 /* PointFeatureEditController.swift in Sources */,
 				8124FD672457167A0099581E /* ISO3166.swift in Sources */,
 				81D580B2240B04AC0049B17F /* ProjectExtensionController.swift in Sources */,
@@ -733,6 +757,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		8193C335246B0558005D6262 /* IMDFLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8193C334246B0558005D6262 /* en */,
+			);
+			name = IMDFLocalizable.strings;
+			sourceTree = "<group>";
+		};
 		81F67DC623F0A581006B9187 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
