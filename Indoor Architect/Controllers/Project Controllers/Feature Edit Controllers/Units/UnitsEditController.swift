@@ -72,7 +72,7 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 	/// - Parameter restriction: The restriction type to write
 	func setRestriction(_ restriction: IMDFType.Restriction?) -> Void {
 		if let restriction = restriction {
-			restrictionCell.detailTextLabel?.text = restriction.rawValue
+			restrictionCell.detailTextLabel?.text = Localizable.IMDF.restriction(restriction)
 		} else {
 			restrictionCell.detailTextLabel?.text = Localizable.General.none
 		}
@@ -83,7 +83,7 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 	/// - Parameter accessibility: The accessibility type to write
 	func setAccessibility(_ accessibility: [IMDFType.Accessibility]?) -> Void {
 		if let accessibility = accessibility, accessibility.count > 0 {
-			accessibilityCell.detailTextLabel?.text	= "\(accessibility.count)"
+			accessibilityCell.detailTextLabel?.text	= accessibility.count == 1 ? Localizable.IMDF.accessibility(accessibility.first!) : "Multiple (\(accessibility.count))"
 		} else {
 			accessibilityCell.detailTextLabel?.text	= Localizable.General.none
 		}
@@ -100,6 +100,13 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 			navigationController?.pushViewController(unitCategoryController, animated: true)
 		}
 		
+		if cell == restrictionCell {
+			let restrictionPicker					= FeatureRestrictionPickerController(style: .insetGrouped)
+			restrictionPicker.currentRestriction	= unit.properties.restriction
+			restrictionPicker.delegate				= self
+			navigationController?.pushViewController(restrictionPicker, animated: true)
+		}
+		
 		if cell == accessibilityCell {
 			let accessibilityPicker						= FeatureAccessibilityPickerController(style: .insetGrouped)
 			accessibilityPicker.currentAccessibilities	= unit.properties.accessibility
@@ -110,19 +117,20 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 }
 
 extension UnitsEditController: FeatureUnitCategoryPickerDelegate {
-	
 	func unitCategoryPicker(_ pickerController: FeatureUnitCategoryPickerController, didPick category: IMDFType.UnitCategory) {
 		setCategory(category)
 		pickerController.navigationController?.popViewController(animated: true)
 	}
-	
 }
 
 extension UnitsEditController: FeatureAccessibilityPickerDelegate {
-	
 	func accessibilityPicker(_ pickerController: FeatureAccessibilityPickerController, didDismissWith accessibilities: [IMDFType.Accessibility]?) {
 		setAccessibility(accessibilities)
-		unit.properties.accessibility = accessibilities
 	}
-	
+}
+
+extension UnitsEditController: FeatureRestrictionPickerDelegate {
+	func restrictionPicker(_ pickerController: FeatureRestrictionPickerController, didDismissWith restriction: IMDFType.Restriction?) {
+		setRestriction(restriction)
+	}
 }

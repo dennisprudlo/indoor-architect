@@ -73,3 +73,6 @@
 "imdf.accessibility.trs"					= "Telecommunications relay service";
 "imdf.accessibility.volume"					= "Volume";
 "imdf.accessibility.wheelchair"				= "Wheelchair";
+
+"imdf.restriction.employeesonly"			= "Employees only";
+"imdf.restriction.restricted"				= "Restricted";

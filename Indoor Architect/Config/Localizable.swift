@@ -17,6 +17,7 @@ struct Localizable {
 		static let remove				= NSLocalizedString("general.remove", comment: "")
 		static let cancel				= NSLocalizedString("general.cancel", comment: "")
 		static let none					= NSLocalizedString("general.none", comment: "")
+		static let multiple				= NSLocalizedString("general.multiple", comment: "")
 		static let actionConfirmation	= NSLocalizedString("general.actionConfirmation", comment: "")
 	}
 	
@@ -97,11 +98,15 @@ struct Localizable {
 	}
 	
 	struct IMDF {
+		static let table = "IMDFLocalizable"
 		static func unitCategory(_ category: IMDFType.UnitCategory) -> String {
-			return NSLocalizedString("imdf.unitCategory.\(category.rawValue)", tableName: "IMDFLocalizable", comment: "")
+			return NSLocalizedString("imdf.unitCategory.\(category.rawValue)", tableName: table, comment: "")
 		}
 		static func accessibility(_ accessibility: IMDFType.Accessibility) -> String {
-			return NSLocalizedString("imdf.accessibility.\(accessibility.rawValue)", tableName: "IMDFLocalizable", comment: "")
+			return NSLocalizedString("imdf.accessibility.\(accessibility.rawValue)", tableName: table, comment: "")
+		}
+		static func restriction(_ restriction: IMDFType.Restriction) -> String {
+			return NSLocalizedString("imdf.restriction.\(restriction.rawValue)", tableName: table, comment: "")
 		}
 	}
 }
