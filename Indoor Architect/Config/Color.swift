@@ -17,8 +17,6 @@ enum Color {
 	
 	static let indoorMapExport: UIColor = .systemGray2
 	
-	static let lightStyleCellBackground = UIColor(named: "light-style-cell-background-color")
-	
 	
 	// MARK: Map Canvas
 	

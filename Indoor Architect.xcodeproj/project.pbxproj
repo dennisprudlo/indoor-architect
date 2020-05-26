@@ -20,7 +20,6 @@
 		8141C7E023FAEE15008AC7DD /* MCMapCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */; };
 		8141C7E423FAF8AB008AC7DD /* MCToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7E323FAF8AB008AC7DD /* MCToolStack.swift */; };
 		8141C7E623FAF91E008AC7DD /* MCToolStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141C7E523FAF91E008AC7DD /* MCToolStackItem.swift */; };
-		81475990241832E4006DB242 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8147598F241832E4006DB242 /* Colors.xcassets */; };
 		814EBB74241D626E0028225C /* RulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB73241D626E0028225C /* RulerView.swift */; };
 		814EBB76241D6A170028225C /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB75241D6A170028225C /* Spacing.swift */; };
 		814EBB78241D71150028225C /* MCDistanceRuler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814EBB77241D71150028225C /* MCDistanceRuler.swift */; };
@@ -47,6 +46,7 @@
 		8182AFC8247D4C6F00925FF2 /* FeatureLabelsComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFC7247D4C6F00925FF2 /* FeatureLabelsComposeController.swift */; };
 		8182AFCA247D657300925FF2 /* FeatureDisplayPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFC9247D657300925FF2 /* FeatureDisplayPointController.swift */; };
 		8182AFCD247D686A00925FF2 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFCC247D686A00925FF2 /* SwitchTableViewCell.swift */; };
+		8182AFD0247D94D600925FF2 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFCF247D94D600925FF2 /* AboutController.swift */; };
 		818D1DCB246861BF0058E4E5 /* IATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCA246861BF0058E4E5 /* IATableViewController.swift */; };
 		818D1DCD24687A2D0058E4E5 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCC24687A2D0058E4E5 /* Unit.swift */; };
 		8193C32D246AF739005D6262 /* PolygonalFeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */; };
@@ -119,7 +119,6 @@
 		8141C7DF23FAEE15008AC7DD /* MCMapCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCMapCanvas.swift; sourceTree = "<group>"; };
 		8141C7E323FAF8AB008AC7DD /* MCToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCToolStack.swift; sourceTree = "<group>"; };
 		8141C7E523FAF91E008AC7DD /* MCToolStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCToolStackItem.swift; sourceTree = "<group>"; };
-		8147598F241832E4006DB242 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		814EBB73241D626E0028225C /* RulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerView.swift; sourceTree = "<group>"; };
 		814EBB75241D6A170028225C /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814EBB77241D71150028225C /* MCDistanceRuler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDistanceRuler.swift; sourceTree = "<group>"; };
@@ -148,6 +147,7 @@
 		8182AFC7247D4C6F00925FF2 /* FeatureLabelsComposeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureLabelsComposeController.swift; sourceTree = "<group>"; };
 		8182AFC9247D657300925FF2 /* FeatureDisplayPointController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDisplayPointController.swift; sourceTree = "<group>"; };
 		8182AFCC247D686A00925FF2 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		8182AFCF247D94D600925FF2 /* AboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
 		818D1DCA246861BF0058E4E5 /* IATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IATableViewController.swift; sourceTree = "<group>"; };
 		818D1DCC24687A2D0058E4E5 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonalFeatureEditController.swift; sourceTree = "<group>"; };
@@ -331,6 +331,7 @@
 		816DC53C23F0677900E1471D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8182AFCE247D94B100925FF2 /* About Controller */,
 				81D99FBF240AB77600E0D4D2 /* Custom Controller */,
 				813B3E4C23F899AE00D02404 /* Map Controller */,
 				81F67DD523F14E7B006B9187 /* Project Controllers */,
@@ -353,7 +354,6 @@
 			isa = PBXGroup;
 			children = (
 				81748548241816DC00EE3E12 /* Data */,
-				8147598F241832E4006DB242 /* Colors.xcassets */,
 				81241546242C144200D60ED9 /* App Icon.xcassets */,
 			);
 			path = Resources;
@@ -377,6 +377,14 @@
 				81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */,
 			);
 			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		8182AFCE247D94B100925FF2 /* About Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8182AFCF247D94D600925FF2 /* AboutController.swift */,
+			);
+			path = "About Controller";
 			sourceTree = "<group>";
 		};
 		8193C32E246AFDA7005D6262 /* Extended Settings Controllers */ = {
@@ -655,7 +663,6 @@
 				8193C333246B0558005D6262 /* IMDFLocalizable.strings in Resources */,
 				81F67DC423F0A581006B9187 /* Localizable.strings in Resources */,
 				81241547242C144200D60ED9 /* App Icon.xcassets in Resources */,
-				81475990241832E4006DB242 /* Colors.xcassets in Resources */,
 				8174854A2418177F00EE3E12 /* ISO-3166-2.plist in Resources */,
 				81F67DC923F0AA5E006B9187 /* LaunchScreen.storyboard in Resources */,
 				8124FD6924571D0D0099581E /* ISO-3166-2-units.plist in Resources */,
@@ -761,6 +768,7 @@
 				81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */,
 				8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */,
 				8182AFCD247D686A00925FF2 /* SwitchTableViewCell.swift in Sources */,
+				8182AFD0247D94D600925FF2 /* AboutController.swift in Sources */,
 				8141C7DA23FAD075008AC7DD /* Style.swift in Sources */,
 				81E48EF324213A1000837EEF /* MCPolygonRenderer.swift in Sources */,
 				81AE8E4D24191C70007C8093 /* Anchor.swift in Sources */,

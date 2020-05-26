@@ -8,9 +8,7 @@
 
 import UIKit
 
-class ProjectCreateController: DetailTableViewController {
-
-	var tableViewSections: [[UITableViewCell]] = []
+class ProjectCreateController: IATableViewController {
 	
 	let projectTitleCell		= TextInputTableViewCell(placeholder: Localizable.Project.projectTitle)
 	let projectDescriptionCell	= TextInputTableViewCell(placeholder: Localizable.Project.projectDescription)
@@ -20,11 +18,6 @@ class ProjectCreateController: DetailTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		configure()
-		projectTitleCell.textField.becomeFirstResponder()
-	}
-	
-	private func configure() -> Void {
 		title = Localizable.ProjectExplorer.createNewProject
 		
 		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didTapCancel))
@@ -34,16 +27,18 @@ class ProjectCreateController: DetailTableViewController {
 		tableView.rowHeight = UITableView.automaticDimension
 		tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
 		
+		projectTitleCell.textField.addTarget(self,		action: #selector(didUpdateProjectTitle),	for: .editingChanged)
+		projectCreateCell.cellButton.addTarget(self,	action: #selector(didTapCreate),			for: .touchUpInside)
+		
 		//
 		// Prepare the table view sections
-		tableViewSections.append([projectTitleCell, projectDescriptionCell])
-		tableViewSections.append([projectClientCell])
-		tableViewSections.append([projectCreateCell])
-		
-		projectTitleCell.textField.addTarget(self, action: #selector(didUpdateProjectTitle), for: .editingChanged)
-		projectCreateCell.cellButton.addTarget(self, action: #selector(didTapCreate), for: .touchUpInside)
+		tableViewSections.append((title: nil, description: nil, cells: [projectTitleCell, projectDescriptionCell]))
+		tableViewSections.append((title: nil, description: nil, cells: [projectClientCell]))
+		tableViewSections.append((title: nil, description: nil, cells: [projectCreateCell]))
 		
 		didUpdateProjectTitle(projectTitleCell.textField)
+		
+		projectTitleCell.textField.becomeFirstResponder()
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {
@@ -102,19 +97,5 @@ class ProjectCreateController: DetailTableViewController {
 	/// - Parameter sender: The text field where the content was changed
 	@objc func didUpdateProjectTitle(_ sender: UITextField) -> Void {
 		projectCreateCell.setEnabled(sender.text?.count ?? 0 > 0)
-	}
-	
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-		return tableViewSections.count
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return tableViewSections[section].count
-    }
-	
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return tableViewSections[indexPath.section][indexPath.row]
 	}
 }

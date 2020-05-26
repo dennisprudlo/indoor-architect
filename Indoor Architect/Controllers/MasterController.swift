@@ -35,7 +35,8 @@ class MasterController: UITableViewController {
 	
 		//
 		// Configure navigation bar buttons
-		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
+		navigationItem.rightBarButtonItem	= UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
+		navigationItem.leftBarButtonItem	= UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(didTapAbout))
 		
 		//
 		// Configure content table view
@@ -56,6 +57,11 @@ class MasterController: UITableViewController {
 		createProjectViewController.popoverPresentationController?.barButtonItem = sender
 		
 		present(createProjectViewController, animated: true, completion: nil)
+	}
+	
+	@objc func didTapAbout(_ sender: UIBarButtonItem) -> Void {
+		Application.rootController.showDetailViewController(WelcomeController(), sender: nil)
+		Application.masterController.deselectSelectedRow()
 	}
 	
 	func deselectSelectedRow() -> Void {
