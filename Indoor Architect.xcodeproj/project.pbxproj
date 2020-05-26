@@ -47,6 +47,9 @@
 		8182AFCA247D657300925FF2 /* FeatureDisplayPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFC9247D657300925FF2 /* FeatureDisplayPointController.swift */; };
 		8182AFCD247D686A00925FF2 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFCC247D686A00925FF2 /* SwitchTableViewCell.swift */; };
 		8182AFD0247D94D600925FF2 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFCF247D94D600925FF2 /* AboutController.swift */; };
+		8182AFD3247D980B00925FF2 /* AboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFD2247D980B00925FF2 /* AboutTableViewCell.swift */; };
+		8182AFD5247D9F9700925FF2 /* TableViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFD4247D9F9700925FF2 /* TableViewUtils.swift */; };
+		8182AFD7247DA57900925FF2 /* LeadingIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFD6247DA57900925FF2 /* LeadingIconTableViewCell.swift */; };
 		818D1DCB246861BF0058E4E5 /* IATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCA246861BF0058E4E5 /* IATableViewController.swift */; };
 		818D1DCD24687A2D0058E4E5 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCC24687A2D0058E4E5 /* Unit.swift */; };
 		8193C32D246AF739005D6262 /* PolygonalFeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */; };
@@ -95,7 +98,6 @@
 		81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DC023F0A4EC006B9187 /* Localizable.swift */; };
 		81F67DC423F0A581006B9187 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81F67DC623F0A581006B9187 /* Localizable.strings */; };
 		81F67DC923F0AA5E006B9187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F67DC823F0AA5E006B9187 /* LaunchScreen.storyboard */; };
-		81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DCB23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift */; };
 		81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */; };
 		81F67DD223F1411B006B9187 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD123F1411B006B9187 /* FontUtils.swift */; };
 		81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F67DD623F14E9F006B9187 /* ProjectCreateController.swift */; };
@@ -148,6 +150,9 @@
 		8182AFC9247D657300925FF2 /* FeatureDisplayPointController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDisplayPointController.swift; sourceTree = "<group>"; };
 		8182AFCC247D686A00925FF2 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		8182AFCF247D94D600925FF2 /* AboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
+		8182AFD2247D980B00925FF2 /* AboutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewCell.swift; sourceTree = "<group>"; };
+		8182AFD4247D9F9700925FF2 /* TableViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUtils.swift; sourceTree = "<group>"; };
+		8182AFD6247DA57900925FF2 /* LeadingIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingIconTableViewCell.swift; sourceTree = "<group>"; };
 		818D1DCA246861BF0058E4E5 /* IATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IATableViewController.swift; sourceTree = "<group>"; };
 		818D1DCC24687A2D0058E4E5 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonalFeatureEditController.swift; sourceTree = "<group>"; };
@@ -196,7 +201,6 @@
 		81F67DC023F0A4EC006B9187 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		81F67DC523F0A581006B9187 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81F67DC823F0AA5E006B9187 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		81F67DCB23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerTableViewCell.swift; sourceTree = "<group>"; };
 		81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerSectionHeaderView.swift; sourceTree = "<group>"; };
 		81F67DD123F1411B006B9187 /* FontUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
 		81F67DD623F14E9F006B9187 /* ProjectCreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCreateController.swift; sourceTree = "<group>"; };
@@ -371,10 +375,12 @@
 		8182AFCB247D684B00925FF2 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8182AFD1247D97FB00925FF2 /* About Controller */,
 				8182AFCC247D686A00925FF2 /* SwitchTableViewCell.swift */,
 				81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */,
 				81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */,
 				81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */,
+				8182AFD6247DA57900925FF2 /* LeadingIconTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -383,6 +389,14 @@
 			isa = PBXGroup;
 			children = (
 				8182AFCF247D94D600925FF2 /* AboutController.swift */,
+			);
+			path = "About Controller";
+			sourceTree = "<group>";
+		};
+		8182AFD1247D97FB00925FF2 /* About Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8182AFD2247D980B00925FF2 /* AboutTableViewCell.swift */,
 			);
 			path = "About Controller";
 			sourceTree = "<group>";
@@ -544,7 +558,6 @@
 		81F67DCA23F12EDE006B9187 /* Table View */ = {
 			isa = PBXGroup;
 			children = (
-				81F67DCB23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift */,
 				8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */,
 				81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */,
 				81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */,
@@ -562,6 +575,7 @@
 				8124FD662457167A0099581E /* ISO3166.swift */,
 				817C3F6D245DC84800D00034 /* CGPointUtils.swift */,
 				814F5FCD24688D6C004E0215 /* MKPolygonUtils.swift */,
+				8182AFD4247D9F9700925FF2 /* TableViewUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -719,6 +733,8 @@
 				8193C32D246AF739005D6262 /* PolygonalFeatureEditController.swift in Sources */,
 				8153BB2C241FCA3500FF6335 /* MCDrawingConfirmToolStackItem.swift in Sources */,
 				8153BB28241FBDC300FF6335 /* IMDFType.swift in Sources */,
+				8182AFD3247D980B00925FF2 /* AboutTableViewCell.swift in Sources */,
+				8182AFD5247D9F9700925FF2 /* TableViewUtils.swift in Sources */,
 				8182AFCA247D657300925FF2 /* FeatureDisplayPointController.swift in Sources */,
 				81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */,
 				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
@@ -753,8 +769,8 @@
 				817C3F72245DDACA00D00034 /* PointFeatureEditController.swift in Sources */,
 				8124FD672457167A0099581E /* ISO3166.swift in Sources */,
 				81D580B2240B04AC0049B17F /* ProjectExtensionController.swift in Sources */,
-				81F67DCC23F12EF2006B9187 /* ProjectExplorerTableViewCell.swift in Sources */,
 				81E48EF9242149F100837EEF /* MCOverlayRenderer.swift in Sources */,
+				8182AFD7247DA57900925FF2 /* LeadingIconTableViewCell.swift in Sources */,
 				81F67DD723F14E9F006B9187 /* ProjectCreateController.swift in Sources */,
 				817C3F70245DDA8200D00034 /* AnchorsEditController.swift in Sources */,
 				81F67DDB23F16A28006B9187 /* ButtonTableViewCell.swift in Sources */,

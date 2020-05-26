@@ -24,7 +24,7 @@ class MasterController: UITableViewController {
 		//
 		// Configure master view title
 		navigationController?.navigationBar.prefersLargeTitles = true
-		title = Application.title
+		title = Localizable.About.title
 		
 		//
 		// Configure search controller and search bar
@@ -60,7 +60,7 @@ class MasterController: UITableViewController {
 	}
 	
 	@objc func didTapAbout(_ sender: UIBarButtonItem) -> Void {
-		Application.rootController.showDetailViewController(WelcomeController(), sender: nil)
+		Application.rootController.showDetailViewController(AboutController(style: .insetGrouped), sender: nil)
 		Application.masterController.deselectSelectedRow()
 	}
 	

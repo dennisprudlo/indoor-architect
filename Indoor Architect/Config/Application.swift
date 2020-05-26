@@ -10,9 +10,6 @@ import Foundation
 
 struct Application {
 	
-	/// The application title used all over the app
-	static let title		= "Indoor Architect"
-	
 	/// The applications current version
 	static let version		= Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
 	
@@ -20,7 +17,7 @@ struct Application {
 	static let build		= Int(Bundle.main.infoDictionary?["CFBundleVersion"] as! String) ?? 0
 	
 	/// An application identifier string which contains the name and versioning information
-	static let versionIdentifier = "\(title) \(version)b\(build)"
+	static let versionIdentifier = "\(Localizable.About.title) \(version)b\(build)"
 	
 	/// The currently used version of the indoor mapping data format
 	static let imdfVersion	= "1.0.0.rc.1"

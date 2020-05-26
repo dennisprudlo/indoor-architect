@@ -8,6 +8,15 @@
 
 import UIKit
 
+extension UIEdgeInsets {
+	static func h(left: CGFloat, right: CGFloat) -> UIEdgeInsets {
+		return UIEdgeInsets(top: 0, left: left, bottom: 0, right: right)
+	}
+	static func v(top: CGFloat, bottom: CGFloat) -> UIEdgeInsets {
+		return UIEdgeInsets(top: top, left: 0, bottom: bottom, right: 0)
+	}
+}
+
 extension UIView {
 	
 	func autolayout() -> Void {

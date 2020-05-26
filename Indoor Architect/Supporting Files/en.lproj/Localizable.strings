@@ -7,6 +7,7 @@
 */
 
 "general.missingInformation"	= "Missing Information 😢";
+"general.ok"					= "Ok";
 "general.add"					= "Add";
 "general.delete"				= "Delete";
 "general.remove"				= "Remove";
@@ -16,6 +17,15 @@
 "general.on"					= "On";
 "general.off"					= "Off";
 "general.actionConfirmation"	= "Are you sure?";
+
+"about.title"					= "Indoor Architect";
+"about.version"					= "Version %@ (Build: %@)";
+"about.supportedImdf"			= "Supported IMDF Version";
+"about.privacyPolicy"			= "Privacy Policy";
+"about.developersSite"			= "Developers Site";
+"about.reportIssue"				= "Report an Issue";
+"about.noMailConfigured"		= "Missing Configuration";
+"about.noMailConfiguredText"	= "Unfortunately there is no mail account configured on this device. You can always send a mail to mail@dennisprudlo.com.";
 
 "projectExplorer.searchBarPlaceholder"		= "Quick Search";
 "projectExplorer.sectionTitleProjects"		= "Projects";

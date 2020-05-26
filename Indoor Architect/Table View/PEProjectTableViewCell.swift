@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PEProjectTableViewCell: ProjectExplorerTableViewCell {
+class PEProjectTableViewCell: LeadingIconTableViewCell {
 
     var project: IMDFProject?
 

@@ -71,7 +71,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			reload:	{
 				var cells: [UITableViewCell] = []
 				for resource in self.resources {
-					let cell = ProjectExplorerTableViewCell(title: resource.title, icon: resource.icon)
+					let cell = LeadingIconTableViewCell(title: resource.title, icon: resource.icon)
 					cells.append(cell)
 				}
 				return cells

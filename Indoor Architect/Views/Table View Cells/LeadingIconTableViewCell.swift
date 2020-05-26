@@ -1,20 +1,27 @@
 //
-//  ProjectExplorerTableViewCell.swift
+//  LeadingIconTableViewCell.swift
 //  Indoor Architect
 //
-//  Created by Dennis Prudlo on 2/10/20.
+//  Created by Dennis Prudlo on 5/26/20.
 //  Copyright © 2020 Dennis Prudlo. All rights reserved.
 //
 
 import UIKit
 
-class ProjectExplorerTableViewCell: UITableViewCell {
+class LeadingIconTableViewCell: UITableViewCell {
 
 	private let viewInset: CGFloat	= 12
-	private let iconSize: CGFloat	= 20
-	
+
 	let iconView		= UIImageView()
 	let titleLabel		= UILabel()
+	
+	var defaultSelectionStyle: Bool = false {
+		didSet {
+			if defaultSelectionStyle {
+				selectionStyle = .default
+			}
+		}
+	}
 	
 	init(title: String, icon: UIImage?) {
 		super.init(style: .default, reuseIdentifier: nil)
@@ -24,13 +31,16 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 		iconView.autolayout()
 		iconView.leadingEdgeToSafeSuperview(withInset: viewInset)
 		iconView.centerVertically()
+		iconView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+		iconView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
 		
 		addSubview(titleLabel)
 		titleLabel.autolayout()
-		titleLabel.topAnchor.constraint(equalTo:			topAnchor,		constant: viewInset).isActive = true
+		titleLabel.centerVertically()
 		titleLabel.trailingAnchor.constraint(equalTo:		trailingAnchor,	constant: -viewInset).isActive = true
-		titleLabel.bottomAnchor.constraint(equalTo:			bottomAnchor,	constant: -viewInset).isActive = true
 		titleLabel.leadingAnchor.constraint(equalTo:		iconView.trailingAnchor, constant: viewInset).isActive = true
+		titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+		titleLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
 		
 		let preferredFont = UIFont.preferredFont(forTextStyle: .body)
 		
@@ -39,7 +49,7 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 		iconView.tintColor								= Color.primary
 		
 		titleLabel.text									= title
-		titleLabel.numberOfLines						= 0
+		titleLabel.numberOfLines						= 1
 		titleLabel.font									= preferredFont
 		titleLabel.adjustsFontForContentSizeCategory	= true
 	}
@@ -49,6 +59,10 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 	}
 	
 	func setSelectedState(_ selected: Bool) -> Void {
+		if defaultSelectionStyle {
+			return
+		}
+		
 		if selected {
 			backgroundColor			= Color.primary
 			titleLabel.textColor	= .white
@@ -69,4 +83,5 @@ class ProjectExplorerTableViewCell: UITableViewCell {
 		super.setHighlighted(highlighted, animated: animated)
 		setSelectedState(highlighted)
 	}
+
 }

@@ -21,6 +21,11 @@ class IATableViewController: UITableViewController {
 		tableView.separatorStyle						= .none
 	}
 	
+	@discardableResult func appendSection(cells: [UITableViewCell], title: String? = nil, description: String? = nil) -> IATableViewController {
+		tableViewSections.append((title: title, description: description, cells: cells))
+		return self
+	}
+	
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return tableViewSections.count
 	}

@@ -12,6 +12,7 @@ struct Localizable {
 	
 	struct General {
 		static let missingInformation	= NSLocalizedString("general.missingInformation", comment: "")
+		static let ok					= NSLocalizedString("general.ok", comment: "")
 		static let add					= NSLocalizedString("general.add", comment: "")
 		static let delete				= NSLocalizedString("general.delete", comment: "")
 		static let remove				= NSLocalizedString("general.remove", comment: "")
@@ -21,6 +22,17 @@ struct Localizable {
 		static let on					= NSLocalizedString("general.on", comment: "")
 		static let off					= NSLocalizedString("general.off", comment: "")
 		static let actionConfirmation	= NSLocalizedString("general.actionConfirmation", comment: "")
+	}
+	
+	struct About {
+		static let title				= NSLocalizedString("about.title", comment: "")
+		static let version				= String.localizedStringWithFormat(NSLocalizedString("about.version", comment: ""), Application.version, String(Application.build))
+		static let supportedImdf		= NSLocalizedString("about.supportedImdf", comment: "")
+		static let privacyPolicy		= NSLocalizedString("about.privacyPolicy", comment: "")
+		static let developersSite		= NSLocalizedString("about.developersSite", comment: "")
+		static let reportIssue			= NSLocalizedString("about.reportIssue", comment: "")
+		static let noMailConfigured		= NSLocalizedString("about.noMailConfigured", comment: "")
+		static let noMailConfiguredText	= NSLocalizedString("about.noMailConfiguredText", comment: "")
 	}
 	
 	struct Project {
