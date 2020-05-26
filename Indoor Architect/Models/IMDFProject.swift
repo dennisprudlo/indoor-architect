@@ -12,16 +12,6 @@ class IMDFProject {
 	
 	static var projects: [IMDFProject] = IMDFProject.all()
 	
-	/// Determines whether the project has unsaved changed to the stored version
-	/// If the value is being set to true the manifests updated at value changes automatically
-	var hasChangesToStoredVersion: Bool = false {
-		didSet {
-			if self.hasChangesToStoredVersion {
-				manifest.updatedAt = Date()
-			}
-		}
-	}
-	
 	/// The projects manifest
 	let manifest: IMDFProjectManifest
 	
@@ -65,8 +55,6 @@ class IMDFProject {
 		let archiveManifestData	= try encoder.encode(self.imdfArchive.manifest)
 		let archiveManifestUrl	= ProjectManager.shared.url(forPathComponent: .archive(feature: .manifest), inProjectWithUuid: manifest.uuid)
 		FileManager.default.createFile(atPath: archiveManifestUrl.path, contents: archiveManifestData, attributes: nil)
-		
-		hasChangesToStoredVersion = false
 	}
 	
 	/// Deletes the project permanentely

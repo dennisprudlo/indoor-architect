@@ -10,7 +10,7 @@ import UIKit
 
 class ProjectController: DetailTableViewController {
 
-	let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveProject))
+	lazy var saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveProject))
 	
 	var sections: [ProjectSection] = []
 	
@@ -40,9 +40,7 @@ class ProjectController: DetailTableViewController {
 		
 		//
 		// If the project has unsaved changes the save-button will be shown
-		if Application.currentProject.hasChangesToStoredVersion {
-			projectDetailsDidChange()
-		}
+		toggleSaveButton()
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -66,21 +64,31 @@ class ProjectController: DetailTableViewController {
 	}
 	
 	/// Enables the save button in the navigation bar so the changes can be stored
-	func projectDetailsDidChange() -> Void {
-		if navigationItem.rightBarButtonItem == saveBarButtonItem {
-			return
+	func toggleSaveButton() -> Void {
+		if generalSection.hasChangesToCurrentManifest() {
+			if navigationItem.rightBarButtonItem == saveBarButtonItem {
+				return
+			}
+			
+			navigationItem.setRightBarButton(saveBarButtonItem, animated: true)
+		} else {
+			navigationItem.setRightBarButton(nil, animated: true)
 		}
-		
-		navigationItem.setRightBarButton(saveBarButtonItem, animated: true)
 	}
 	
 	/// Tries to save the project and disables the save button
 	/// - Parameter sender: The button which was tapped
-	@objc private func saveProject(_ sender: UIBarButtonItem) -> Void {
+	@objc public func saveProject(_ sender: UIBarButtonItem) -> Void {
 		do {
-			navigationItem.setRightBarButton(nil, animated: true)
+			let data = generalSection.getProcessedInputs()
+			Application.currentProject.manifest.title		= data.title
+			Application.currentProject.manifest.description	= data.description
+			Application.currentProject.manifest.client		= data.client
+			
 			try Application.currentProject.save()
 			ProjectExplorerHandler.shared.reloadData()
+			
+			navigationItem.setRightBarButton(nil, animated: true)
 		} catch {
 			print(error)
 		}

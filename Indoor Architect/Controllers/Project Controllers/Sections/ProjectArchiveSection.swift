@@ -31,10 +31,6 @@ class ProjectArchiveSection: ProjectSection {
 		cell.detailTextLabel?.text = count == 0 ? Localizable.General.none : "\(count)"
 	}
 	
-	override func titleForHeader() -> String? {
-		return Localizable.Project.archiveSectionTitle
-	}
-	
 	override func didSelectRow(at index: Int) {
 		if cells[index] == addressesCell {
 			let projectAddressesController = ProjectAddressController(style: .insetGrouped)
