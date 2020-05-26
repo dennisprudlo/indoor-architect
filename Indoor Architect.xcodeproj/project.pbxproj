@@ -372,6 +372,9 @@
 			isa = PBXGroup;
 			children = (
 				8182AFCC247D686A00925FF2 /* SwitchTableViewCell.swift */,
+				81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */,
+				81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */,
+				81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -537,9 +540,6 @@
 				8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */,
 				81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */,
 				81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */,
-				81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */,
-				81F67DDA23F16A28006B9187 /* ButtonTableViewCell.swift */,
-				81A58E08240AE249008873E9 /* ButtonSetTableViewCell.swift */,
 			);
 			path = "Table View";
 			sourceTree = "<group>";
