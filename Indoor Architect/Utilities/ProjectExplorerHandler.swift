@@ -274,8 +274,12 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			
 			let safariViewController = SFSafariViewController(url: url)
 			safariViewController.preferredControlTintColor	= Color.primary
+			safariViewController.preferredBarTintColor		= .systemBackground
 			safariViewController.dismissButtonStyle			= .close
 			safariViewController.delegate					= self
+			
+			safariViewController.view.isOpaque = false
+			
 			Application.rootController.show(safariViewController, sender: nil)
 		}
 	}

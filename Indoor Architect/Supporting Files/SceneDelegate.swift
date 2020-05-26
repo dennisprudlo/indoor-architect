@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	
 		let rootController				= RootController()
 		rootController.viewControllers	= [
-			UINavigationController(rootViewController: MasterController()),
+			UINavigationController(rootViewController: MasterController(style: .insetGrouped)),
 			WelcomeController()
 		]
 		

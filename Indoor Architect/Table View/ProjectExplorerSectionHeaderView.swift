@@ -17,21 +17,14 @@ class ProjectExplorerSectionHeaderView: UIView {
 	init(title: String) {
 		super.init(frame: CGRect.zero)
 		
-		backgroundColor = .systemBackground
 		addSubview(titleLabel)
+		titleLabel.autolayout()
+		titleLabel.edgesToSuperview(withInsets: sectionInsets, safeArea: false)
 		
-		titleLabel.translatesAutoresizingMaskIntoConstraints = false
-		titleLabel.text = title
-		titleLabel.font = UIFont.preferredFont(forTextStyle: .title2).bold()
-		titleLabel.numberOfLines = 0
-		titleLabel.adjustsFontForContentSizeCategory = true
-		
-		NSLayoutConstraint.activate([
-			titleLabel.topAnchor.constraint(equalTo:		topAnchor,		constant: sectionInsets.top),
-			titleLabel.trailingAnchor.constraint(equalTo:	trailingAnchor,	constant: -sectionInsets.right),
-			titleLabel.bottomAnchor.constraint(equalTo:		bottomAnchor,	constant: -sectionInsets.bottom),
-			titleLabel.leadingAnchor.constraint(equalTo:	leadingAnchor,	constant: sectionInsets.left)
-		])
+		titleLabel.text									= title
+		titleLabel.font									= UIFont.preferredFont(forTextStyle: .title2).bold()
+		titleLabel.numberOfLines						= 0
+		titleLabel.adjustsFontForContentSizeCategory	= true
 	}
 	
 	required init?(coder: NSCoder) {
