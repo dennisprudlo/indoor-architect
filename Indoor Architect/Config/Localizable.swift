@@ -18,6 +18,8 @@ struct Localizable {
 		static let cancel				= NSLocalizedString("general.cancel", comment: "")
 		static let none					= NSLocalizedString("general.none", comment: "")
 		static let multiple				= NSLocalizedString("general.multiple", comment: "")
+		static let on					= NSLocalizedString("general.on", comment: "")
+		static let off					= NSLocalizedString("general.off", comment: "")
 		static let actionConfirmation	= NSLocalizedString("general.actionConfirmation", comment: "")
 	}
 	
@@ -82,19 +84,31 @@ struct Localizable {
 	}
 	
 	struct Feature {
-		static let comment					= NSLocalizedString("feature.comment", comment: "")
-		static let coordinates				= NSLocalizedString("feature.coordinates", comment: "")
-		static let latitude					= NSLocalizedString("feature.latitude", comment: "")
-		static let longitude				= NSLocalizedString("feature.longitude", comment: "")
-		static let editSaveChanges			= NSLocalizedString("feature.editSaveChanges", comment: "")
-		static let removeAlertDescription	= NSLocalizedString("feature.removeAlertDescription", comment: "")
-		static let selectAddressDetail		= NSLocalizedString("feature.selectAddressDetail", comment: "")
-		static let selectAddressDescription	= NSLocalizedString("feature.selectAddressDescription", comment: "")
-		static let selectUnitDetail			= NSLocalizedString("feature.selectUnitDetail", comment: "")
-		static let selectUnitDescription	= NSLocalizedString("feature.selectUnitDescription", comment: "")
-		static let selectCategory			= NSLocalizedString("feature.selectCategory", comment: "")
-		static let selectRestriction		= NSLocalizedString("feature.selectRestriction", comment: "")
-		static let selectAccessibility		= NSLocalizedString("feature.selectAccessibility", comment: "")
+		static let comment							= NSLocalizedString("feature.comment", comment: "")
+		static let properties						= NSLocalizedString("feature.properties", comment: "")
+		static let coordinates						= NSLocalizedString("feature.coordinates", comment: "")
+		static let latitude							= NSLocalizedString("feature.latitude", comment: "")
+		static let longitude						= NSLocalizedString("feature.longitude", comment: "")
+		static let editSaveChanges					= NSLocalizedString("feature.editSaveChanges", comment: "")
+		static let removeAlertDescription			= NSLocalizedString("feature.removeAlertDescription", comment: "")
+		static let selectAddressDetail				= NSLocalizedString("feature.selectAddressDetail", comment: "")
+		static let selectAddressDescription			= NSLocalizedString("feature.selectAddressDescription", comment: "")
+		static let selectUnitDetail					= NSLocalizedString("feature.selectUnitDetail", comment: "")
+		static let selectUnitDescription			= NSLocalizedString("feature.selectUnitDescription", comment: "")
+		static let selectCategory					= NSLocalizedString("feature.selectCategory", comment: "")
+		static let selectRestriction				= NSLocalizedString("feature.selectRestriction", comment: "")
+		static let selectAccessibility				= NSLocalizedString("feature.selectAccessibility", comment: "")
+		static let selectName						= NSLocalizedString("feature.selectName", comment: "")
+		static let selectAlternativeName			= NSLocalizedString("feature.selectAlternativeName", comment: "")
+		static let selectCuratedDisplayPoint		= NSLocalizedString("feature.selectCuratedDisplayPoint", comment: "")
+		static let useCuratedDisplayPoint			= NSLocalizedString("feature.useCuratedDisplayPoint", comment: "")
+		static let curatedDisplayPointDescription	= NSLocalizedString("feature.curatedDisplayPointDescription", comment: "")
+		static let newLabel							= NSLocalizedString("feature.newLabel", comment: "")
+		static let editLabel						= NSLocalizedString("feature.editLabel", comment: "")
+		static let label							= NSLocalizedString("feature.label", comment: "")
+		static let labelLanguage					= NSLocalizedString("feature.labelLanguage", comment: "")
+		static let labelDescription					= NSLocalizedString("feature.labelDescription", comment: "")
+		static let labelLanguageDescription			= NSLocalizedString("feature.labelLanguageDescription", comment: "")
 	}
 	
 	struct IMDF {

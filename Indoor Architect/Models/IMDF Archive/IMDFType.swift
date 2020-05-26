@@ -7,12 +7,17 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct IMDFType {
 	
 	struct PointGeometry: Codable {
 		let type: String = "Point"
 		let coordinates: [Double]
+		
+		func getCoordinates() -> CLLocationCoordinate2D {
+			return CLLocationCoordinate2D(latitude: coordinates.first!, longitude: coordinates.last!)
+		}
 	}
 	
 	struct PolygonGeometry: Codable {

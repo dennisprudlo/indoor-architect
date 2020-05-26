@@ -43,6 +43,10 @@
 		817C3F70245DDA8200D00034 /* AnchorsEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F6F245DDA8200D00034 /* AnchorsEditController.swift */; };
 		817C3F72245DDACA00D00034 /* PointFeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F71245DDACA00D00034 /* PointFeatureEditController.swift */; };
 		817C3F74245DDAF900D00034 /* FeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F73245DDAF900D00034 /* FeatureEditController.swift */; };
+		8182AFC6247D443800925FF2 /* FeatureLabelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFC5247D443800925FF2 /* FeatureLabelsController.swift */; };
+		8182AFC8247D4C6F00925FF2 /* FeatureLabelsComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFC7247D4C6F00925FF2 /* FeatureLabelsComposeController.swift */; };
+		8182AFCA247D657300925FF2 /* FeatureDisplayPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFC9247D657300925FF2 /* FeatureDisplayPointController.swift */; };
+		8182AFCD247D686A00925FF2 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182AFCC247D686A00925FF2 /* SwitchTableViewCell.swift */; };
 		818D1DCB246861BF0058E4E5 /* IATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCA246861BF0058E4E5 /* IATableViewController.swift */; };
 		818D1DCD24687A2D0058E4E5 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCC24687A2D0058E4E5 /* Unit.swift */; };
 		8193C32D246AF739005D6262 /* PolygonalFeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */; };
@@ -140,6 +144,10 @@
 		817C3F6F245DDA8200D00034 /* AnchorsEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorsEditController.swift; sourceTree = "<group>"; };
 		817C3F71245DDACA00D00034 /* PointFeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointFeatureEditController.swift; sourceTree = "<group>"; };
 		817C3F73245DDAF900D00034 /* FeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureEditController.swift; sourceTree = "<group>"; };
+		8182AFC5247D443800925FF2 /* FeatureLabelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureLabelsController.swift; sourceTree = "<group>"; };
+		8182AFC7247D4C6F00925FF2 /* FeatureLabelsComposeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureLabelsComposeController.swift; sourceTree = "<group>"; };
+		8182AFC9247D657300925FF2 /* FeatureDisplayPointController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDisplayPointController.swift; sourceTree = "<group>"; };
+		8182AFCC247D686A00925FF2 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		818D1DCA246861BF0058E4E5 /* IATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IATableViewController.swift; sourceTree = "<group>"; };
 		818D1DCC24687A2D0058E4E5 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonalFeatureEditController.swift; sourceTree = "<group>"; };
@@ -360,12 +368,23 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		8182AFCB247D684B00925FF2 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8182AFCC247D686A00925FF2 /* SwitchTableViewCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		8193C32E246AFDA7005D6262 /* Extended Settings Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				8193C32F246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift */,
 				8193C336246B0E34005D6262 /* FeatureAccessibilityPickerController.swift */,
 				8193C338246B1E04005D6262 /* FeatureRestrictionPickerController.swift */,
+				8182AFC5247D443800925FF2 /* FeatureLabelsController.swift */,
+				8182AFC7247D4C6F00925FF2 /* FeatureLabelsComposeController.swift */,
+				8182AFC9247D657300925FF2 /* FeatureDisplayPointController.swift */,
 			);
 			path = "Extended Settings Controllers";
 			sourceTree = "<group>";
@@ -416,6 +435,7 @@
 		81AE8E5224194121007C8093 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8182AFCB247D684B00925FF2 /* Table View Cells */,
 				81AE8E5324194127007C8093 /* Map Canvas */,
 			);
 			path = Views;
@@ -692,6 +712,7 @@
 				8193C32D246AF739005D6262 /* PolygonalFeatureEditController.swift in Sources */,
 				8153BB2C241FCA3500FF6335 /* MCDrawingConfirmToolStackItem.swift in Sources */,
 				8153BB28241FBDC300FF6335 /* IMDFType.swift in Sources */,
+				8182AFCA247D657300925FF2 /* FeatureDisplayPointController.swift in Sources */,
 				81B1F7FB23F87A16004AF904 /* ProjectExplorerHandler.swift in Sources */,
 				81F67DD923F164FF006B9187 /* TextInputTableViewCell.swift in Sources */,
 				81F67DB723F09971006B9187 /* Color.swift in Sources */,
@@ -717,6 +738,7 @@
 				81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */,
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				8153BB24241FBC4F00FF6335 /* Venue.swift in Sources */,
+				8182AFC8247D4C6F00925FF2 /* FeatureLabelsComposeController.swift in Sources */,
 				814EBB76241D6A170028225C /* Spacing.swift in Sources */,
 				8193C337246B0E34005D6262 /* FeatureAccessibilityPickerController.swift in Sources */,
 				814F5FD124688FA1004E0215 /* UnitsEditController.swift in Sources */,
@@ -733,10 +755,12 @@
 				812608F02458A19300FF0D08 /* AnchorsListController.swift in Sources */,
 				81D580B6240BEDA60049B17F /* Extension.swift in Sources */,
 				81D580B4240B0BDD0049B17F /* ProjectExtensionEditController.swift in Sources */,
+				8182AFC6247D443800925FF2 /* FeatureLabelsController.swift in Sources */,
 				81D580C3240D13310049B17F /* ComposePopoverController.swift in Sources */,
 				817C3F74245DDAF900D00034 /* FeatureEditController.swift in Sources */,
 				81A58DFD240AB9FE008873E9 /* ProjectSection.swift in Sources */,
 				8141C7DC23FAE980008AC7DD /* Constraints.swift in Sources */,
+				8182AFCD247D686A00925FF2 /* SwitchTableViewCell.swift in Sources */,
 				8141C7DA23FAD075008AC7DD /* Style.swift in Sources */,
 				81E48EF324213A1000837EEF /* MCPolygonRenderer.swift in Sources */,
 				81AE8E4D24191C70007C8093 /* Anchor.swift in Sources */,
