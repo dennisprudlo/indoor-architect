@@ -39,7 +39,7 @@ class FeatureDisplayPointController: IATableViewController, UITextFieldDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		title = customTitle == nil ? "dp" : customTitle
+		title = customTitle == nil ? Localizable.Feature.coordinates : customTitle
 		
 		//
 		// Store the default text input font
@@ -71,11 +71,6 @@ class FeatureDisplayPointController: IATableViewController, UITextFieldDelegate 
 			
 			activationCell.cellSwitch.setOn(displayPoint != nil, animated: true)
 			
-			if let point = displayPoint {
-				latitudeCell.textField.text		= "\(point.getCoordinates().latitude)"
-				longitudeCell.textField.text	= "\(point.getCoordinates().longitude)"
-			}
-			
 			tableViewSections.append((
 				title: nil,
 				description: Localizable.Feature.curatedDisplayPointDescription,
@@ -83,6 +78,11 @@ class FeatureDisplayPointController: IATableViewController, UITextFieldDelegate 
 			))
 			
 			didSwitch(activationCell.cellSwitch)
+		}
+		
+		if let point = displayPoint {
+			latitudeCell.textField.text		= "\(point.getCoordinates().latitude)"
+			longitudeCell.textField.text	= "\(point.getCoordinates().longitude)"
 		}
 		
 		//
@@ -145,11 +145,12 @@ class FeatureDisplayPointController: IATableViewController, UITextFieldDelegate 
 	}
 	
 	@objc func didSwitch(_ control: UISwitch) -> Void {
+		latitudeCell.textField.text		= nil
+		longitudeCell.textField.text	= nil
+		
 		if control.isOn {
 			showCoordinatesInput()
 		} else {
-			latitudeCell.textField.text = nil
-			longitudeCell.textField.text = nil
 			hideCoordinatesInput()
 		}
 	}

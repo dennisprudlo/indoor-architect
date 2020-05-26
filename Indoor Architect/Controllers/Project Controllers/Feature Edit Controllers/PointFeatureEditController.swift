@@ -9,83 +9,45 @@
 import UIKit
 import CoreLocation
 
-class PointFeatureEditController: FeatureEditController, UITextFieldDelegate {
+class PointFeatureEditController: FeatureEditController, UITextFieldDelegate, FeatureDisplayPointControllerDelegate {
 	
-	/// The cell that allows to edit the latitude value
-	let latitudeCell	= TextInputTableViewCell(placeholder: Localizable.Feature.latitude)
+	/// The cell that will navigate to the display point editor
+	let geometryCell = UITableViewCell(style: .default, reuseIdentifier: nil)
 	
-	/// The cell that allows to edit the longitude value
-	let longitudeCell	= TextInputTableViewCell(placeholder: Localizable.Feature.longitude)
+	var coordinates: CLLocationCoordinate2D?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		//
-		// Store the default text input font
-		let defaultFont = latitudeCell.textField.font
-		
-		//
-		// Format the latitude textField
-		latitudeCell.textField.font				= latitudeCell.textField.font?.monospaced()
-		latitudeCell.textField.keyboardType		= .decimalPad
-		latitudeCell.textField.delegate			= self
-		
-		//
-		// Format the longitude textField
-		longitudeCell.textField.font			= longitudeCell.textField.font?.monospaced()
-		longitudeCell.textField.keyboardType	= .decimalPad
-		longitudeCell.textField.delegate		= self
-		
-		//
-		// Use the default font for the placeholder
-		if let font = defaultFont {
-			let attributes = [ NSAttributedString.Key.font: font ]
-			latitudeCell.textField.attributedPlaceholder = NSAttributedString(string: Localizable.Feature.latitude, attributes: attributes)
-			longitudeCell.textField.attributedPlaceholder = NSAttributedString(string: Localizable.Feature.latitude, attributes: attributes)
-		}
+		geometryCell.textLabel?.text	= Localizable.Feature.coordinates
+		geometryCell.accessoryType		= .disclosureIndicator
 		
 		//
 		// Append the latitude and longitude cells
 		tableViewSections.append((
-			title: Localizable.Feature.coordinates,
+			title: nil,
 			description: nil,
-			cells: [latitudeCell, longitudeCell]
+			cells: [geometryCell]
 		))
     }
 	
-	/// Gets the coordinates from the textField Inputs
-	/// - Returns: The coordinates or nil if the values are invalid
-	func getInputCoordinates() -> CLLocationCoordinate2D? {
-		guard let textFieldLatitude	= latitudeCell.textField.text, let textFieldLongitude = longitudeCell.textField.text else {
-			return nil
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard let cell = tableView.cellForRow(at: indexPath) else {
+			return
 		}
 		
-		guard let latitude = CLLocationDegrees(textFieldLatitude), let longitude = CLLocationDegrees(textFieldLongitude) else {
-			return nil
+		if cell == geometryCell {
+			let displayPointController					= FeatureDisplayPointController(style: .insetGrouped)
+			displayPointController.displayPoint			= IMDFType.PointGeometry(coordinates: [coordinates?.longitude ?? 0, coordinates?.latitude ?? 0])
+			displayPointController.delegate				= self
+			navigationController?.pushViewController(displayPointController, animated: true)
 		}
-		
-		return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 	}
 	
-	/// Sets the coordinates for the textFields
-	/// - Parameter coordinates: The coordinates to set
-	func setInputCoordinates(_ coordinates: CLLocationCoordinate2D) -> Void {
-		latitudeCell.textField.text		= "\(coordinates.latitude)"
-		longitudeCell.textField.text	= "\(coordinates.longitude)"
-	}
-	
-	/// Validates the character input in the latitude and longitude cells and determines whether the changes should be applied or not
-	/// - Parameters:
-	///   - textField: The textField being edited
-	///   - range: The range of characters to be replaced
-	///   - string: The content of the textField
-	/// - Returns: Whether to apply the changes
-	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-		if textField == latitudeCell.textField || textField == longitudeCell.textField {
-			let permittedCharacterSet	= CharacterSet(charactersIn:".0123456789")
-			let textFieldCharacterSet	= CharacterSet(charactersIn: string)
-			return permittedCharacterSet.isSuperset(of: textFieldCharacterSet)
+	func geometryController(_ controller: FeatureDisplayPointController, didConfigureGeometryAs pointGeometry: IMDFType.PointGeometry?) {
+		coordinates = nil
+		if let point = pointGeometry {
+			coordinates = point.getCoordinates()
 		}
-		return true
 	}
 }

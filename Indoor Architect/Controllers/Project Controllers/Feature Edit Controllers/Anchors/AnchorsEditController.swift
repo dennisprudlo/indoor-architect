@@ -25,7 +25,7 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 		
 		//
 		// Prepare PointFeatureEditController
-		super.setInputCoordinates(anchor.getCoordinates())
+		super.coordinates = anchor.getCoordinates()
 		
 		title = "Edit Anchor"
 		
@@ -58,7 +58,7 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 
 	func willCloseEditController() -> Void {
 		anchor.set(comment: commentCell.textField.text)
-		if let coordinates = getInputCoordinates() {
+		if let coordinates = super.coordinates {
 			anchor.setCoordinates(coordinates)
 		}
 
@@ -99,6 +99,8 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		super.tableView(tableView, didSelectRowAt: indexPath)
+		
 		if tableView.cellForRow(at: indexPath) == addressCell {
 			let addressPickerController			= ProjectAddressController(style: .insetGrouped)
 			addressPickerController.address		= anchor.address
