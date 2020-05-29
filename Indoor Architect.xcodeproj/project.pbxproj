@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		810D0D0123F3284100DC5D74 /* IMDFProjectManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */; };
-		8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */; };
+		8120AC7F23F9505300696FCA /* ProjectExplorerProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC7E23F9505300696FCA /* ProjectExplorerProjectTableViewCell.swift */; };
 		8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC8023F9982800696FCA /* ScrollViewController.swift */; };
 		81241547242C144200D60ED9 /* App Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81241546242C144200D60ED9 /* App Icon.xcassets */; };
 		8124FD672457167A0099581E /* ISO3166.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8124FD662457167A0099581E /* ISO3166.swift */; };
@@ -109,7 +109,7 @@
 
 /* Begin PBXFileReference section */
 		810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFProjectManifest.swift; sourceTree = "<group>"; };
-		8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEProjectTableViewCell.swift; sourceTree = "<group>"; };
+		8120AC7E23F9505300696FCA /* ProjectExplorerProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerProjectTableViewCell.swift; sourceTree = "<group>"; };
 		8120AC8023F9982800696FCA /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		81241546242C144200D60ED9 /* App Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "App Icon.xcassets"; sourceTree = "<group>"; };
 		8124FD662457167A0099581E /* ISO3166.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO3166.swift; sourceTree = "<group>"; };
@@ -310,7 +310,6 @@
 				8141C7DD23FAEDF8008AC7DD /* Core */,
 				81F67DDC23F19449006B9187 /* Models */,
 				81F67DD023F14105006B9187 /* Utilities */,
-				81F67DCA23F12EDE006B9187 /* Table View */,
 				81F67DB123F06F60006B9187 /* Config */,
 				816DC53C23F0677900E1471D /* Controllers */,
 				816DC53A23F065A800E1471D /* Supporting Files */,
@@ -375,6 +374,7 @@
 		8182AFCB247D684B00925FF2 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				818FEFE22481A08D00BD8D42 /* Project Explorer */,
 				8182AFD1247D97FB00925FF2 /* About Controller */,
 				8182AFCC247D686A00925FF2 /* SwitchTableViewCell.swift */,
 				81F67DD823F164FF006B9187 /* TextInputTableViewCell.swift */,
@@ -399,6 +399,16 @@
 				8182AFD2247D980B00925FF2 /* AboutTableViewCell.swift */,
 			);
 			path = "About Controller";
+			sourceTree = "<group>";
+		};
+		818FEFE22481A08D00BD8D42 /* Project Explorer */ = {
+			isa = PBXGroup;
+			children = (
+				81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */,
+				81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */,
+				8120AC7E23F9505300696FCA /* ProjectExplorerProjectTableViewCell.swift */,
+			);
+			path = "Project Explorer";
 			sourceTree = "<group>";
 		};
 		8193C32E246AFDA7005D6262 /* Extended Settings Controllers */ = {
@@ -555,16 +565,6 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		81F67DCA23F12EDE006B9187 /* Table View */ = {
-			isa = PBXGroup;
-			children = (
-				8120AC7E23F9505300696FCA /* PEProjectTableViewCell.swift */,
-				81B1F7F823F86513004AF904 /* ProjectExplorerPlaceholderCell.swift */,
-				81F67DCD23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift */,
-			);
-			path = "Table View";
-			sourceTree = "<group>";
-		};
 		81F67DD023F14105006B9187 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,7 +719,7 @@
 				8141C7E023FAEE15008AC7DD /* MCMapCanvas.swift in Sources */,
 				81D580AC240AF0350049B17F /* IMDFArchive.swift in Sources */,
 				81F67DAE23F06A4B006B9187 /* MasterController.swift in Sources */,
-				8120AC7F23F9505300696FCA /* PEProjectTableViewCell.swift in Sources */,
+				8120AC7F23F9505300696FCA /* ProjectExplorerProjectTableViewCell.swift in Sources */,
 				81F67DBF23F0A36A006B9187 /* Icon.swift in Sources */,
 				81F67DDE23F19458006B9187 /* IMDFProject.swift in Sources */,
 				8153BB20241FB76700FF6335 /* MCPointAssembler.swift in Sources */,

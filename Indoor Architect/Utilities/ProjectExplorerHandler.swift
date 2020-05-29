@@ -17,7 +17,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 	
 	/// The section type defines a whole section in the project explorer. Each section has a title, a text for when the section has no items, an array with all
 	/// cells currently visible in the section and a function that reloads the section data
-	typealias Section = (title: String, emptyTitle: String, cells: [UITableViewCell], reload: () -> [UITableViewCell])
+	typealias Section = (title: String, emptyTitle: String, cells: [UITableViewCell], exposed: Bool, reload: () -> [UITableViewCell])
 	
 	/// The array that holds all sections of the project explorer
 	var sections: [Section] = []
@@ -44,12 +44,11 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			title:		Localizable.ProjectExplorer.sectionTitleProjects,
 			emptyTitle: Localizable.ProjectExplorer.sectionEmptyProjects,
 			cells:		[],
+			exposed:	true,
 			reload:	{
 				var cells: [UITableViewCell] = []
 				IMDFProject.projects.forEach { (project) in
-					let projectCell = PEProjectTableViewCell(title: project.manifest.title, icon: Icon.apple)
-					projectCell.project = project
-					cells.append(projectCell)
+					cells.append(ProjectExplorerProjectTableViewCell(project: project))
 				}
 				return cells
 			}
@@ -59,6 +58,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			title:		Localizable.ProjectExplorer.sectionTitleGuides,
 			emptyTitle: Localizable.ProjectExplorer.sectionEmptyGuides,
 			cells:		[],
+			exposed:	true,
 			reload:	{
 				return []
 			}
@@ -68,6 +68,7 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			title:		Localizable.ProjectExplorer.sectionTitleResources,
 			emptyTitle: Localizable.ProjectExplorer.sectionEmptyResources,
 			cells:		[],
+			exposed:	true,
 			reload:	{
 				var cells: [UITableViewCell] = []
 				for resource in self.resources {
@@ -164,6 +165,13 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		
+		//
+		// If the section is not exposed all cells are hidden
+		if !sections[section].exposed {
+			return 0
+		}
+		
 		let count = sections[section].cells.count
 		return count == 0 ? 1 : count
 	}
@@ -251,7 +259,31 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 	}
 	
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		return ProjectExplorerSectionHeaderView(title: sections[section].title)
+		return ProjectExplorerSectionHeaderView(title: sections[section].title) { (isContentExposed) in
+			self.sections[section].exposed = isContentExposed
+			
+			//
+			// We retrieve the possible index paths for all cells in that section
+			var indexPaths: [IndexPath] = []
+			for row in 0..<self.sections[section].cells.count {
+				indexPaths.append(IndexPath(row: row, section: section))
+			}
+			
+			//
+			// If the index path array is empty there are no cells in the section
+			// meaning there is the palceholder cell visible (at index path row 0)
+			if indexPaths.count == 0 {
+				indexPaths.append(IndexPath(row: 0, section: section))
+			}
+			
+			tableView.beginUpdates()
+			if isContentExposed {
+				tableView.insertRows(at: indexPaths, with: .fade)
+			} else {
+				tableView.deleteRows(at: indexPaths, with: .fade)
+			}
+			tableView.endUpdates()
+		}
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

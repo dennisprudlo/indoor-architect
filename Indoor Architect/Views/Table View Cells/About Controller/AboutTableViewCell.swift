@@ -49,7 +49,7 @@ class AboutTableViewCell: UITableViewCell {
 		subtitleLabel.textColor			= .label
 		subtitleLabel.textAlignment		= .center
 		subtitleLabel.numberOfLines		= 0
-		subtitleLabel.font				= UIFont.preferredFont(forTextStyle: .body)
+		subtitleLabel.font				= UIFont.preferredFont(forTextStyle: .callout)
 	}
 	
 	required init?(coder: NSCoder) {
