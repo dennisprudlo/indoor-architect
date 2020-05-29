@@ -208,6 +208,18 @@ class MCMapCanvas: MKMapView {
 		if let overlay = IMDFUnitOverlay.from(unit: unit) {
 			addOverlay(overlay)
 		}
+		
+		//
+		// After creating the unit we want to edit it
+		let controller			= UnitsEditController(style: .insetGrouped)
+		controller.unit			= unit
+		controller.canvas		= self
+		
+		let navigationController					= UINavigationController(rootViewController: controller)
+		navigationController.modalPresentationStyle	= .formSheet
+		if let mapCanvasController = delegate as? MapCanvasViewController {
+			mapCanvasController.present(navigationController, animated: true, completion: nil)
+		}
 	}
 	
 	func saveAndClose() -> Void {
