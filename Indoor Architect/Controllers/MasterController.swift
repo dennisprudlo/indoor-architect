@@ -64,11 +64,29 @@ class MasterController: UITableViewController {
 		Application.masterController.deselectSelectedRow()
 	}
 	
-	func deselectSelectedRow() -> Void {
+	func deselectSelectedRow(animated: Bool = true) -> Void {
 		guard let indexPath = tableView.indexPathForSelectedRow else {
 			return
 		}
 		
-		tableView.deselectRow(at: indexPath, animated: true)
+		tableView.deselectRow(at: indexPath, animated: animated)
+	}
+	
+	func selectProjectRow(project: IMDFProject, animated: Bool) ->  Void {
+		let section			= ProjectExplorerHandler.SectionCategory.projects.rawValue
+		let numberOfRows	= tableView.numberOfRows(inSection: section)
+	
+		deselectSelectedRow(animated: animated)
+		
+		var indexPath: IndexPath?
+		for row in 0..<numberOfRows {
+			if let cell = tableView.cellForRow(at: IndexPath(row: row, section: section)) as? ProjectExplorerProjectTableViewCell {
+				if let projectUuid = cell.project?.manifest.uuid, projectUuid.uuidString == project.manifest.uuid.uuidString {
+					indexPath = IndexPath(row: row, section: section)
+				}
+			}
+		}
+		
+		tableView.selectRow(at: indexPath, animated: animated, scrollPosition: .none)
 	}
 }

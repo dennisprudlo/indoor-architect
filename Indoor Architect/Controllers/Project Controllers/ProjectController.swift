@@ -23,6 +23,7 @@ class ProjectController: DetailTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		Application.masterController.selectProjectRow(project: Application.currentProject, animated: true)
 		reloadProjectDetails()
 		
 		tableView.rowHeight = UITableView.automaticDimension
