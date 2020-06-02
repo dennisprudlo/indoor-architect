@@ -23,7 +23,7 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		canvas.edgesToSuperview()
 	}
 	
-	func presentForSelectedProject() -> Void {
+	func presentForSelectedProject(completion: (() -> Void)? = nil) -> Void {
 		if Application.currentProject == nil {
 			return
 		}
@@ -38,10 +38,10 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 			let center	= CLLocationCoordinate2D(latitude: session.centerLatitude, longitude: session.centerLongitude)
 			let span	= MKCoordinateSpan(latitudeDelta: session.spanLatitude, longitudeDelta: session.spanLongitude)
 			let region	= MKCoordinateRegion(center: center, span: span)
-			canvas.setRegion(region, animated: true)
+			canvas.setRegion(region, animated: false)
 		}
 		
-		Application.rootController.present(self, animated: true, completion: nil)
+		Application.rootController.present(self, animated: true, completion: completion)
 	}
 	
 	func mapCanvas(_ canvas: MCMapCanvas, didTapOn location: CLLocationCoordinate2D, with drawingTool: MCMapCanvas.DrawingTool) {

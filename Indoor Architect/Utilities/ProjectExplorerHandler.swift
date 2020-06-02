@@ -200,7 +200,11 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 				// the current project needs to be set for the reference
 				Application.currentProject = project
 				
-				(MapCanvasViewController()).presentForSelectedProject()
+				(MapCanvasViewController()).presentForSelectedProject {
+					let projectController		= ProjectController(style: .insetGrouped)
+					let navigationController	= UINavigationController(rootViewController: projectController)
+					Application.rootController.showDetailViewController(navigationController, sender: nil)
+				}
 				
 				completion(true)
 			})
