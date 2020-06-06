@@ -135,14 +135,4 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 			annotation.anchor.setCoordinates(annotation.coordinate)
 		}
 	}
-	
-	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-		let centerLat	= mapView.region.center.latitude
-		let centerLng	= mapView.region.center.longitude
-		let spanLat		= mapView.region.span.latitudeDelta
-		let spanLng		= mapView.region.span.longitudeDelta
-		let session = IMDFProjectManifest.MappingSession(centerLatitude: centerLat, centerLongitude: centerLng, spanLatitude: spanLat, spanLongitude: spanLng)
-	
-		Application.currentProject.manifest.session = session
-	}
 }

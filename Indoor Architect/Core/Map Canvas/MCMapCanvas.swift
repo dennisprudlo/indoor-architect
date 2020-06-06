@@ -223,6 +223,15 @@ class MCMapCanvas: MKMapView {
 	}
 	
 	func saveAndClose() -> Void {
+		let centerLat	= region.center.latitude
+		let centerLng	= region.center.longitude
+		let spanLat		= region.span.latitudeDelta
+		let spanLng		= region.span.longitudeDelta
+		let session		= IMDFProjectManifest.MappingSession(centerLatitude: centerLat, centerLongitude: centerLng, spanLatitude: spanLat, spanLongitude: spanLng)
+		
+		Application.currentProject.manifest.session = session
+		try? Application.currentProject.save()
+		
 		controller.dismiss(animated: true, completion: nil)
 	}
 	
