@@ -34,6 +34,7 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
     override func viewDidLoad() {
 		super.viewDidLoad()
 		super.prepareForFeature(with: unit.id, information: unit.properties.information, from: self)
+		super.coordinates = unit.getCoordinates()
 		
 		//
 		// Prepare PolygonFeatureEditController
@@ -82,7 +83,8 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 
 	func willCloseEditController() -> Void {
 		unit.set(comment: commentCell.textField.text)
-
+		unit.setCoordinates(super.coordinates)
+		
 		try? Application.currentProject.imdfArchive.save(.unit)
 	}
 	
@@ -145,6 +147,8 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		super.tableView(tableView, didSelectRowAt: indexPath)
+		
 		guard let cell = tableView.cellForRow(at: indexPath) else { return }
 		
 		if cell == categoryCell {

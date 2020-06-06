@@ -68,6 +68,11 @@ class Unit: Feature<Unit.Properties> {
 		return polygon.coordinates
 	}
 	
+	/// Sets the coordinates of the anchor
+	func setCoordinates(_ coordinates: [CLLocationCoordinate2D]) -> Void {
+		self.geometry = [MKPolygon(coordinates: coordinates, count: coordinates.count)]
+	}
+	
 	static func respondToSelection(in canvas: MCMapCanvas, coordinate: CLLocationCoordinate2D) -> Unit? {
 		return canvas.overlays.compactMap({ $0 as? IMDFUnitOverlay }).first(where: { $0.contains(coordinate: coordinate) })?.unit
 	}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		810A79C0248C0EF800962B2D /* FeatureCoordinatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A79BF248C0EF800962B2D /* FeatureCoordinatesController.swift */; };
 		810D0D0123F3284100DC5D74 /* IMDFProjectManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */; };
 		8120AC7F23F9505300696FCA /* ProjectExplorerProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC7E23F9505300696FCA /* ProjectExplorerProjectTableViewCell.swift */; };
 		8120AC8123F9982800696FCA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120AC8023F9982800696FCA /* ScrollViewController.swift */; };
@@ -108,6 +109,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		810A79BF248C0EF800962B2D /* FeatureCoordinatesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCoordinatesController.swift; sourceTree = "<group>"; };
 		810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFProjectManifest.swift; sourceTree = "<group>"; };
 		8120AC7E23F9505300696FCA /* ProjectExplorerProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExplorerProjectTableViewCell.swift; sourceTree = "<group>"; };
 		8120AC8023F9982800696FCA /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				8182AFC5247D443800925FF2 /* FeatureLabelsController.swift */,
 				8182AFC7247D4C6F00925FF2 /* FeatureLabelsComposeController.swift */,
 				8182AFC9247D657300925FF2 /* FeatureDisplayPointController.swift */,
+				810A79BF248C0EF800962B2D /* FeatureCoordinatesController.swift */,
 			);
 			path = "Extended Settings Controllers";
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				818D1DCB246861BF0058E4E5 /* IATableViewController.swift in Sources */,
 				81D580C1240C20400049B17F /* ProjectAddressLocalityController.swift in Sources */,
 				81D580B8240C005E0049B17F /* Feature.swift in Sources */,
+				810A79C0248C0EF800962B2D /* FeatureCoordinatesController.swift in Sources */,
 				81A58E09240AE249008873E9 /* ButtonSetTableViewCell.swift in Sources */,
 				81F67DC123F0A4EC006B9187 /* Localizable.swift in Sources */,
 				816DC52623F0606B00E1471D /* AppDelegate.swift in Sources */,

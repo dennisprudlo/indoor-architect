@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class PolygonalFeatureEditController: FeatureEditController {
+class PolygonalFeatureEditController: FeatureEditController, FeatureCoordinatesControllerDelegate {
 	
 	/// The cell that will navigate to the polygonal geometry coordinates editor
 	let geometryCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+	
+	var coordinates: [CLLocationCoordinate2D] = []
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,7 @@ class PolygonalFeatureEditController: FeatureEditController {
 		
 		//
 		// Format the geometry text field
-		geometryCell.textLabel?.text		= "Geometry"
+		geometryCell.textLabel?.text		= Localizable.Feature.coordinates
 		geometryCell.accessoryType			= .disclosureIndicator
 		setGeometryEdges(count: 0)
 		
@@ -37,6 +40,23 @@ class PolygonalFeatureEditController: FeatureEditController {
 	
 	@objc func changeFeatureType(_ barButtonItem: UIBarButtonItem) -> Void {
 		
+	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard let cell = tableView.cellForRow(at: indexPath) else {
+			return
+		}
+		
+		if cell == geometryCell {
+			let coordinatesController			= FeatureCoordinatesController(style: .insetGrouped)
+			coordinatesController.coordinates	= coordinates
+			coordinatesController.delegate		= self
+			navigationController?.pushViewController(coordinatesController, animated: true)
+		}
+	}
+	
+	func geometryController(_ controller: FeatureCoordinatesController, didConfigureCoordinates coordinates: [CLLocationCoordinate2D]) {
+		self.coordinates = coordinates
 	}
 	
 	func setGeometryEdges(count: Int) -> Void {
