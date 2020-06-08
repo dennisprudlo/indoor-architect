@@ -40,7 +40,7 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 		// Prepare PolygonFeatureEditController
 		setGeometryEdges(count: unit.getCoordinates().count)
 	
-		title = "Edit Unit"
+		title = IMDFType.featureName(.unit)
 		
 		//
 		// Format the category, restriction and accessibility cells

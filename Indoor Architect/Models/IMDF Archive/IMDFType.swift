@@ -11,6 +11,28 @@ import MapKit
 
 struct IMDFType {
 	
+	static func featureName(_ type: ProjectManager.ArchiveFeature) -> String {
+		switch type {
+			case .address:		return "Address"
+			case .amenity:		return "Amenity"
+			case .anchor:		return "Anchor"
+			case .building:		return "Building"
+			case .detail:		return "Detail"
+			case .fixture:		return "Fixture"
+			case .footprint:	return "Footprint"
+			case .geofence:		return "Geofence"
+			case .kiosk:		return "Kiosk"
+			case .level:		return "Level"
+			case .manifest:		return ""
+			case .occupant:		return "Occupant"
+			case .opening:		return "Opening"
+			case .relationship:	return "Relationship"
+			case .section:		return "Section"
+			case .unit:			return "Unit"
+			case .venue:		return "Venue"
+		}
+	}
+	
 	typealias Geometry = [MKShape & MKGeoJSONObject]
 	
 	struct PointGeometry: Codable {

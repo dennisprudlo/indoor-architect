@@ -12,6 +12,12 @@ import CoreLocation
 
 class Venue: Feature<Venue.Properties> {
 	
+	var address: Address? {
+		didSet {
+			self.properties.addressId = address?.id
+		}
+	}
+	
 	/// The venues properties
 	struct Properties: Codable {
 		/// The venues category. Use one of the predefined categories that fits the most

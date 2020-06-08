@@ -37,6 +37,9 @@ class VenueEditController: PolygonalFeatureEditController, FeatureEditController
 	/// The cell which allows to edit the venues website
 	let websiteCell				= TextInputTableViewCell(placeholder: Localizable.Feature.websiteExample)
 	
+	/// The address cell to pick a reference address
+	let addressCell	= UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		super.prepareForFeature(with: venue.id, type: .venue, information: venue.properties.information, from: self)
@@ -46,7 +49,7 @@ class VenueEditController: PolygonalFeatureEditController, FeatureEditController
 		// Prepare PolygonFeatureEditController
 		setGeometryEdges(count: venue.getCoordinates().count)
 		
-		title = "Edit Venue"
+		title = IMDFType.featureName(.venue)
 		
 		//
 		// Format the category, restriction and accessibility cells
@@ -72,6 +75,7 @@ class VenueEditController: PolygonalFeatureEditController, FeatureEditController
 		nameCell.accessoryType					= .disclosureIndicator
 		alternativeNameCell.accessoryType		= .disclosureIndicator
 		curatedDisplayPointCell.accessoryType	= .disclosureIndicator
+		addressCell.accessoryType				= .disclosureIndicator
 		
 		setCategory(venue.properties.category)
 		setRestriction(venue.properties.restriction)
@@ -81,6 +85,7 @@ class VenueEditController: PolygonalFeatureEditController, FeatureEditController
 		hoursCell.textField.text = venue.properties.hours
 		phoneCell.textField.text = venue.properties.phone
 		websiteCell.textField.text = venue.properties.website
+		setAddress(venue.address)
 		
 		//
 		// Append the category, restriction and accessibility cells
@@ -112,6 +117,12 @@ class VenueEditController: PolygonalFeatureEditController, FeatureEditController
 			title:			Localizable.Feature.websiteTitle,
 			description:	Localizable.Feature.websiteDescription,
 			cells:			[websiteCell]
+		))
+		
+		tableViewSections.append((
+			title: IMDFType.featureName(.address),
+			description: Localizable.Feature.selectAddressDescription,
+			cells: [addressCell]
 		))
 	}
 	
@@ -173,6 +184,23 @@ class VenueEditController: PolygonalFeatureEditController, FeatureEditController
 		venue.properties.displayPoint					= displayPoint
 	}
 	
+	/// Sets the address selection cell value
+	/// - Parameter address: The address or nil if none selected
+	private func setAddress(_ address: Address?) -> Void {
+		venue.address = address
+		if let address = address {
+			addressCell.textLabel?.text				= address.properties.address
+			addressCell.detailTextLabel?.text		= address.getInlineLocality()
+			addressCell.textLabel?.textColor		= .label
+			addressCell.detailTextLabel?.textColor	= .label
+		} else {
+			addressCell.textLabel?.text				= Localizable.General.none
+			addressCell.detailTextLabel?.text		= Localizable.Feature.selectAddressDetail
+			addressCell.textLabel?.textColor		= .placeholderText
+			addressCell.detailTextLabel?.textColor	= .placeholderText
+		}
+	}
+	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		super.tableView(tableView, didSelectRowAt: indexPath)
 		
@@ -218,6 +246,13 @@ class VenueEditController: PolygonalFeatureEditController, FeatureEditController
 			displayPointController.delegate				= self
 			navigationController?.pushViewController(displayPointController, animated: true)
 		}
+		
+		if cell == addressCell {
+			let addressPickerController			= ProjectAddressController(style: .insetGrouped)
+			addressPickerController.address		= venue.address
+			addressPickerController.delegate	= self
+			navigationController?.pushViewController(addressPickerController, animated: true)
+		}
 	}
 }
 
@@ -249,5 +284,11 @@ extension VenueEditController: FeatureLabelsControllerDelegate {
 extension VenueEditController: FeatureDisplayPointControllerDelegate {
 	func geometryController(_ controller: FeatureDisplayPointController, didConfigureGeometryAs pointGeometry: IMDFType.PointGeometry?) {
 		setCuratedDisplayPoint(pointGeometry)
+	}
+}
+
+extension VenueEditController: ProjectAddressControllerDelegate {
+	func addressPicker(_ picker: ProjectAddressController, didPickAddress address: Address?) {
+		setAddress(address)
 	}
 }

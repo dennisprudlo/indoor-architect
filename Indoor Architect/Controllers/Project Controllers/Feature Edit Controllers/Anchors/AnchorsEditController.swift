@@ -27,7 +27,7 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 		// Prepare PointFeatureEditController
 		super.coordinates = anchor.getCoordinates()
 		
-		title = "Edit Anchor"
+		title = IMDFType.featureName(.anchor)
 		
 		//
 		// Format the address and unit cells
@@ -42,7 +42,7 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 		//
 		// Add the address cell
 		tableViewSections.append((
-			title: "Address",
+			title: IMDFType.featureName(.address),
 			description: Localizable.Feature.selectAddressDescription,
 			cells: [addressCell]
 		))
@@ -50,7 +50,7 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 		//
 		// Add the unit cell
 		tableViewSections.append((
-			title: "Unit",
+			title: IMDFType.featureName(.unit),
 			description: Localizable.Feature.selectUnitDescription,
 			cells: [unitCell]
 		))

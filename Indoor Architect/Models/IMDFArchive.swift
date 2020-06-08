@@ -67,6 +67,15 @@ class IMDFArchive {
 				anchor.unit = unit
 			}
 		}
+		
+		//
+		// Create venue references
+		venues.forEach { (venue) in
+			// Link address
+			if let addressId = venue.properties.addressId?.uuidString, let address = addresses.first(where: { $0.id.uuidString == addressId }) {
+				venue.address = address
+			}
+		}
 	}
 	
 	/// Decodes the features from the corresponding GeoJSON file in a project with the given UUID
@@ -148,6 +157,14 @@ class IMDFArchive {
 			}
 			if let unitId = anchor.unit?.id, unitId.uuidString == uuid.uuidString {
 				anchor.unit = nil
+			}
+		}
+		units.forEach { (unit) in
+			
+		}
+		venues.forEach { (venue) in
+			if let addressId = venue.address?.id, addressId.uuidString == uuid.uuidString {
+				venue.address = nil
 			}
 		}
 	}
