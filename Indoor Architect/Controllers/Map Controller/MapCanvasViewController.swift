@@ -96,10 +96,12 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 		if drawingTool == .polygon {
 			if canvas.polygonAssembler == nil {
 				canvas.polygonAssembler = MCPolygonAssembler(in: canvas)
-				canvas.showConfirmShapeButton()
 			}
 			
 			canvas.polygonAssembler?.add(location)
+			
+			let allowConfirm = canvas.polygonAssembler?.coordinates.count ?? 0 > 2
+			canvas.showConfirmShapeButton(allowConfirm: allowConfirm)
 		}
 	}
 	

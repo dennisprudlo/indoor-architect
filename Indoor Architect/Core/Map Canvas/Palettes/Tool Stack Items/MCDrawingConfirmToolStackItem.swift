@@ -36,6 +36,11 @@ class MCDrawingConfirmToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	func discardDrawing(for assembler: MCShapeAssembler, in canvas: MCMapCanvas) -> Void {
+		assembler.removeActiveOverlay()
+		canvas.discardActiveShapeAssembler()
+	}
+	
 	func toolStackItem(_ toolStackItem: MCToolStackItem, registeredTapFrom tapGestureRecognizer: UITapGestureRecognizer) {
 		guard let canvas = stack?.canvas else {
 			return
@@ -49,8 +54,13 @@ class MCDrawingConfirmToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 		//
 		// If the action type is the discard button we want to discard the overlay
 		if actionType == .discard {
-			assembler.removeActiveOverlay()
-			canvas.discardActiveShapeAssembler()
+			discardDrawing(for: assembler, in: canvas)
+			return
+		}
+		
+		// Polygons are only allowed to be assembled when they have at least 3 points
+		if assembler is MCPolygonAssembler && assembler.coordinates.count < 3 {
+			discardDrawing(for: assembler, in: canvas)
 			return
 		}
 		
@@ -69,8 +79,8 @@ class MCDrawingConfirmToolStackItem: MCToolStackItem, MCToolStackItemDelegate {
 		
 		//
 		// Clean-up the shape assembler
-		assembler.removeActiveOverlay()
-		canvas.discardActiveShapeAssembler()
+		discardDrawing(for: assembler, in: canvas)
+		return
 	}
 	
 }

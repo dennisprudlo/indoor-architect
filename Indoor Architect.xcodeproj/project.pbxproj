@@ -10,6 +10,7 @@
 		81053579248E755600C602DC /* IMDFVenueOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81053578248E755600C602DC /* IMDFVenueOverlay.swift */; };
 		8105357C248E785E00C602DC /* VenueEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8105357B248E785E00C602DC /* VenueEditController.swift */; };
 		8105357E248E7BB800C602DC /* VenueEditCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8105357D248E7BB800C602DC /* VenueEditCategoryController.swift */; };
+		81053580248E8B8F00C602DC /* MCDrawingConfirmToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8105357F248E8B8F00C602DC /* MCDrawingConfirmToolStack.swift */; };
 		810A79C0248C0EF800962B2D /* FeatureCoordinatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A79BF248C0EF800962B2D /* FeatureCoordinatesController.swift */; };
 		810A79C2248C1A5900962B2D /* FeatureChangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A79C1248C1A5900962B2D /* FeatureChangeController.swift */; };
 		810D0D0123F3284100DC5D74 /* IMDFProjectManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */; };
@@ -116,6 +117,7 @@
 		81053578248E755600C602DC /* IMDFVenueOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFVenueOverlay.swift; sourceTree = "<group>"; };
 		8105357B248E785E00C602DC /* VenueEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueEditController.swift; sourceTree = "<group>"; };
 		8105357D248E7BB800C602DC /* VenueEditCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueEditCategoryController.swift; sourceTree = "<group>"; };
+		8105357F248E8B8F00C602DC /* MCDrawingConfirmToolStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDrawingConfirmToolStack.swift; sourceTree = "<group>"; };
 		810A79BF248C0EF800962B2D /* FeatureCoordinatesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCoordinatesController.swift; sourceTree = "<group>"; };
 		810A79C1248C1A5900962B2D /* FeatureChangeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureChangeController.swift; sourceTree = "<group>"; };
 		810D0D0023F3284100DC5D74 /* IMDFProjectManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDFProjectManifest.swift; sourceTree = "<group>"; };
@@ -549,6 +551,7 @@
 			children = (
 				81E2FA452401486C00CA82AA /* MCSlidingInfoToolStack.swift */,
 				81DBBC4D2401A6D5008AEE60 /* MCCoordinateToolStack.swift */,
+				8105357F248E8B8F00C602DC /* MCDrawingConfirmToolStack.swift */,
 			);
 			path = "Tool Stacks";
 			sourceTree = "<group>";
@@ -786,6 +789,7 @@
 				81D580BC240C0ADD0049B17F /* ProjectAddressController.swift in Sources */,
 				81A58E03240AD1E1008873E9 /* ProjectDeleteSection.swift in Sources */,
 				816DC52823F0606B00E1471D /* SceneDelegate.swift in Sources */,
+				81053580248E8B8F00C602DC /* MCDrawingConfirmToolStack.swift in Sources */,
 				81DBBC4C2401A1FA008AEE60 /* MCDrawingToolStackItem.swift in Sources */,
 				81F67DCE23F13E1B006B9187 /* ProjectExplorerSectionHeaderView.swift in Sources */,
 				8153BB24241FBC4F00FF6335 /* Venue.swift in Sources */,

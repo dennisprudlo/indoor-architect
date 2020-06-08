@@ -20,8 +20,7 @@ class MCMapCanvas: MKMapView {
 	var coordinateToolStack		= MCCoordinateToolStack()
 	var infoToolStack			= MCSlidingInfoToolStack()
 	var drawingToolStack		= MCToolStack(forAxis: .vertical)
-	var drawingConfirmToolStack = MCToolStack(forAxis: .vertical)
-
+	var drawingConfirmToolStack = MCDrawingConfirmToolStack()
 	
 	/// The currently selected drawing tool
 	var selectedDrawingTool: MCMapCanvas.DrawingTool = .pointer
@@ -110,12 +109,6 @@ class MCMapCanvas: MKMapView {
 		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polyline))
 		drawingToolStack.addItem(MCDrawingToolStackItem(for: .polygon))
 		drawingToolStack.addItem(MCDrawingToolStackItem(for: .measure))
-		
-		//
-		// Add the drawing confirm button for the tool stack
-		drawingConfirmToolStack.addItem(MCDrawingConfirmToolStackItem(actionType: .confirm))
-		drawingConfirmToolStack.addItem(MCDrawingConfirmToolStackItem(actionType: .discard))
-		drawingConfirmToolStack.isHidden = true
 		
 		let topEdgePalette			= UIStackView(arrangedSubviews: [closeToolStack, coordinateToolStack])
 		topEdgePalette.axis			= .horizontal
@@ -258,8 +251,10 @@ class MCMapCanvas: MKMapView {
 		hideConfirmShapeButton()
 	}
 	
-	func showConfirmShapeButton() -> Void {
+	func showConfirmShapeButton(allowConfirm: Bool = false) -> Void {
 		drawingConfirmToolStack.isHidden = false
+		
+		drawingConfirmToolStack.confirmItem.isHidden = !allowConfirm
 	}
 	
 	func hideConfirmShapeButton() -> Void {
