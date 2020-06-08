@@ -29,12 +29,17 @@ struct Localizable {
 	struct About {
 		static let title				= NSLocalizedString("about.title", comment: "")
 		static let version				= String.localizedStringWithFormat(NSLocalizedString("about.version", comment: ""), Application.version, String(Application.build))
+		static let about				= NSLocalizedString("about.about", comment: "")
 		static let supportedImdf		= NSLocalizedString("about.supportedImdf", comment: "")
 		static let privacyPolicy		= NSLocalizedString("about.privacyPolicy", comment: "")
 		static let developersSite		= NSLocalizedString("about.developersSite", comment: "")
 		static let reportIssue			= NSLocalizedString("about.reportIssue", comment: "")
 		static let noMailConfigured		= NSLocalizedString("about.noMailConfigured", comment: "")
 		static let noMailConfiguredText	= NSLocalizedString("about.noMailConfiguredText", comment: "")
+		struct Settings {
+			static let title		= NSLocalizedString("about.settings.title", comment: "")
+			static let mapCanvas	= NSLocalizedString("about.settings.mapCanvas", comment: "")
+		}
 	}
 	
 	struct Project {

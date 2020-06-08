@@ -60,7 +60,8 @@ class MasterController: UITableViewController {
 	}
 	
 	@objc func didTapAbout(_ sender: UIBarButtonItem) -> Void {
-		Application.rootController.showDetailViewController(AboutController(style: .insetGrouped), sender: nil)
+		let navigationController = UINavigationController(rootViewController: AboutController(style: .insetGrouped))
+		Application.rootController.showDetailViewController(navigationController, sender: nil)
 		Application.masterController.deselectSelectedRow()
 	}
 	

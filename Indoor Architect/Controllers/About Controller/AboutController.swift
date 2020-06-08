@@ -11,6 +11,8 @@ import MessageUI
 
 class AboutController: IATableViewController, MFMailComposeViewControllerDelegate {
 
+	let mapCanvasCell		= LeadingIconTableViewCell(title: Localizable.About.Settings.mapCanvas, icon: UIImage(systemName: "mappin.and.ellipse"))
+	
 	let privacyPolicyCell	= LeadingIconTableViewCell(title: Localizable.About.privacyPolicy,	icon: UIImage(systemName: "hand.raised.fill"))
 	let developersSiteCell	= LeadingIconTableViewCell(title: Localizable.About.developersSite,	icon: UIImage(systemName: "globe"))
 	let reportIssueCell		= LeadingIconTableViewCell(title: Localizable.About.reportIssue, 	icon: UIImage(systemName: "exclamationmark.bubble.fill"))
@@ -18,6 +20,9 @@ class AboutController: IATableViewController, MFMailComposeViewControllerDelegat
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		mapCanvasCell.accessoryType					= .disclosureIndicator
+		mapCanvasCell.defaultSelectionStyle			= true
+		
 		privacyPolicyCell.accessoryType				= .disclosureIndicator
 		privacyPolicyCell.defaultSelectionStyle		= true
 		
@@ -27,11 +32,14 @@ class AboutController: IATableViewController, MFMailComposeViewControllerDelegat
 		reportIssueCell.accessoryType				= .disclosureIndicator
 		reportIssueCell.defaultSelectionStyle		= true
 		
-		appendSection(cells: [AboutTableViewCell()])
-		.appendSection(cells: [
+		let staticCells = [
 			UITableViewCell.fixed(title: Localizable.About.supportedImdf, detail: Application.imdfVersion)
-		])
-		.appendSection(cells: [privacyPolicyCell, developersSiteCell, reportIssueCell])
+		]
+		
+		appendSection(cells: [AboutTableViewCell()])
+		.appendSection(cells: staticCells, title: Localizable.About.about, description: nil)
+		.appendSection(cells: [mapCanvasCell], title: Localizable.About.Settings.title, description: nil)
+		.appendSection(cells: [privacyPolicyCell, developersSiteCell, reportIssueCell], title: nil, description: nil)
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -39,6 +47,10 @@ class AboutController: IATableViewController, MFMailComposeViewControllerDelegat
 		
 		guard let cell = tableView.cellForRow(at: indexPath) else {
 			return
+		}
+		
+		if cell == mapCanvasCell {
+			navigationController?.pushViewController(AboutSettingsMapController(style: .insetGrouped), animated: true)
 		}
 		
 		if cell == privacyPolicyCell {

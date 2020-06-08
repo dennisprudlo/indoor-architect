@@ -22,12 +22,15 @@
 
 "about.title"					= "Indoor Architect";
 "about.version"					= "Version %@ (Build: %@)";
+"about.about"					= "About";
 "about.supportedImdf"			= "Supported IMDF Version";
 "about.privacyPolicy"			= "Privacy Policy";
 "about.developersSite"			= "Developers Site";
 "about.reportIssue"				= "Report an Issue";
 "about.noMailConfigured"		= "Missing Configuration";
 "about.noMailConfiguredText"	= "Unfortunately there is no mail account configured on this device. You can always send a mail to mail@dennisprudlo.com.";
+"about.settings.title"			= "Settings";
+"about.settings.mapCanvas"		= "Map Canvas";
 
 "projectExplorer.searchBarPlaceholder"		= "Quick Search";
 "projectExplorer.sectionTitleProjects"		= "Projects";
