@@ -126,6 +126,16 @@ struct Localizable {
 		static let labelLanguage					= NSLocalizedString("feature.labelLanguage", comment: "")
 		static let labelDescription					= NSLocalizedString("feature.labelDescription", comment: "")
 		static let labelLanguageDescription			= NSLocalizedString("feature.labelLanguageDescription", comment: "")
+		static let hoursTitle						= NSLocalizedString("feature.hoursTitle", comment: "")
+		static let hoursExample						= NSLocalizedString("feature.hoursExample", comment: "")
+		static let hoursDescription					= NSLocalizedString("feature.hoursDescription", comment: "")
+		static let phoneTitle						= NSLocalizedString("feature.phoneTitle", comment: "")
+		static let phoneExample						= NSLocalizedString("feature.phoneExample", comment: "")
+		static let phoneDescription					= NSLocalizedString("feature.phoneDescription", comment: "")
+		static let websiteTitle						= NSLocalizedString("feature.websiteTitle", comment: "")
+		static let websiteExample					= NSLocalizedString("feature.websiteExample", comment: "")
+		static let websiteDescription				= NSLocalizedString("feature.websiteDescription", comment: "")
+		
 	}
 	
 	struct IMDF {

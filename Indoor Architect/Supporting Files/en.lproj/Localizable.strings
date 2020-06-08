@@ -99,6 +99,15 @@
 "feature.labelLanguage"						= "Language identifier";
 "feature.labelDescription"					= "The label is the text that is being displayed for this specific feature when the map is rendered.";
 "feature.labelLanguageDescription"			= "The language identifier defines the language and region the label is valid for. Should be an RFC 5646 compliant language tag and sub-tag, script, and region subtag registred in the IANA Language Subtag Registry.";
+"feature.hoursTitle"						= "Hours";
+"feature.hoursExample"						= "Tu-Th,We 22:00-23:00 open \"Hot meals\"; PH off";
+"feature.hoursDescription"					= "The venues hours of operation that must be compliant to the OSM Opening Hours specification.";
+"feature.phoneTitle"						= "Phone";
+"feature.phoneExample"						= "+49 176 12345678";
+"feature.phoneDescription"					= "The venues inquiry phone number including the country calling code that must be compliant to the E.164 standard.";
+"feature.websiteTitle"						= "Website";
+"feature.websiteExample"					= "https://hallewoodmall.com";
+"feature.websiteDescription"				= "The venues website with a http or https scheme.";
 
 "project.buttonDelete"				= "Delete Project";
 "project.buttonDeleteDescription"	= "If you delete this project it cannot be restored. The project and its content such as overlay will be deleted from this device permanentely.";

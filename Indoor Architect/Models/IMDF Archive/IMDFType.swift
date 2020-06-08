@@ -52,7 +52,7 @@ struct IMDFType {
 		case restricted
 	}
 	
-	enum VenueCategory: String, Codable {
+	enum VenueCategory: String, Codable, CaseIterable {
 		case airport
 		case airportIntl = "airport.intl"
 		case aquarium
