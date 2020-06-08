@@ -19,7 +19,7 @@ protocol MCOverlayRenderer {
 extension MCOverlayRenderer {
 	
 	func markEndpoint(_ point: CGPoint, for zoomScale: MKZoomScale, in context: CGContext) -> Void {
-		let radius: CGFloat = (0.8 / zoomScale) * 8
+		let radius: CGFloat = (0.8 / zoomScale) * Renderer.currentlyDrawingMarkWidth
 		context.addArc(center: point, radius: radius, startAngle: .pi * 2, endAngle: 0, clockwise: true)
 		context.setStrokeColor(Color.currentDrawingBorderColor.cgColor)
 		context.setLineWidth(0.8 / zoomScale)

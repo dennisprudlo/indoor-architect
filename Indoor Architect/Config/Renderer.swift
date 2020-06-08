@@ -11,6 +11,8 @@ import CoreGraphics
 
 enum Renderer {
 	
-	static let featureLineWidth: CGFloat = 2
+	static let featureLineWidth: CGFloat = 0.5
+	
+	static let currentlyDrawingMarkWidth: CGFloat = 4
 	
 }
