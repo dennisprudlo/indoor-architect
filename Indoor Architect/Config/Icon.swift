@@ -18,6 +18,7 @@ enum Icon {
 	static let map			= UIImage(systemName: "map.fill")!
 	static let link			= UIImage(systemName: "link")!
 	static let help			= UIImage(systemName: "questionmark.circle")!
+	static let feature		= UIImage(systemName: "crop")!
 	
 	static let toolClose		= UIImage(systemName: "xmark")!
 	static let toolConfirmShape	= UIImage(systemName: "checkmark")

@@ -23,8 +23,10 @@ class LeadingIconTableViewCell: UITableViewCell {
 		}
 	}
 	
+	var isEnabled: Bool = true
+	
 	init(title: String, icon: UIImage?) {
-		super.init(style: .default, reuseIdentifier: nil)
+		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = .none
 		
 		addSubview(iconView)
@@ -60,6 +62,13 @@ class LeadingIconTableViewCell: UITableViewCell {
 	
 	func setSelectedState(_ selected: Bool) -> Void {
 		if defaultSelectionStyle {
+			return
+		}
+		
+		if !isEnabled {
+			backgroundColor			= UIColor.secondarySystemGroupedBackground
+			titleLabel.textColor	= .secondaryLabel
+			iconView.tintColor		= .secondaryLabel
 			return
 		}
 		

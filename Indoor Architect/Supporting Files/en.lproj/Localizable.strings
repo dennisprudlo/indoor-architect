@@ -16,6 +16,8 @@
 "general.multiple"				= "Multiple";
 "general.on"					= "On";
 "general.off"					= "Off";
+"general.yes"					= "Yes";
+"general.no"					= "No";
 "general.actionConfirmation"	= "Are you sure?";
 
 "about.title"					= "Indoor Architect";
@@ -73,6 +75,10 @@
 "feature.coordinates"						= "Coordinates";
 "feature.latitude"							= "Latitude";
 "feature.longitude"							= "Longitude";
+"feature.changeFeatureType"					= "Change Feature Type";
+"feature.currentFeatureType"				= "Current feature type";
+"feature.venueAlreadyExists"				= "A venue feature already exists";
+"feature.changeFeatureTypeConfirmation"		= "When you change the feature type all properties and references to other features will be reset. The features geometry will remain.";
 "feature.editSaveChanges"					= "Save Changes";
 "feature.removeAlertDescription"			= "Removing a feature is irrevocable and will remove all references to this feature.";
 "feature.selectAddressDetail"				= "Select an address";

@@ -33,7 +33,7 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 	
     override func viewDidLoad() {
 		super.viewDidLoad()
-		super.prepareForFeature(with: unit.id, information: unit.properties.information, from: self)
+		super.prepareForFeature(with: unit.id, type: .unit, information: unit.properties.information, from: self)
 		super.coordinates = unit.getCoordinates()
 		
 		//

@@ -182,6 +182,10 @@ class MCMapCanvas: MKMapView {
 		//
 		// Render units
 		Application.currentProject.imdfArchive.units.compactMap({ IMDFUnitOverlay.from(unit: $0) }).forEach({ self.addOverlay($0) })
+		
+		//
+		// Render venues
+		Application.currentProject.imdfArchive.venues.compactMap({ IMDFVenueOverlay.from(venue: $0) }).forEach({ self.addOverlay($0) })
 	}
 	
 	/// Adds a new anchor annotation to the project

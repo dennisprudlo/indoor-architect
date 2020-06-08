@@ -61,6 +61,14 @@ class MapCanvasViewController: UIViewController, MKMapViewDelegate, MCMapCanvasD
 				controller.anchor		= anchor
 				featureEditController	= controller
 			}
+			
+			//
+			// Check for a nearby venue to edit
+			if featureEditController == nil, let venue = Venue.respondToSelection(in: canvas, coordinate: location) {
+				let controller			= VenueEditController(style: .insetGrouped)
+				controller.venue		= venue
+				featureEditController	= controller
+			}
 
 			//
 			// Check for nearby units to edit

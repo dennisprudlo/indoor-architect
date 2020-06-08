@@ -7,9 +7,11 @@
 //
 
 import Foundation
-import CoreLocation
+import MapKit
 
 struct IMDFType {
+	
+	typealias Geometry = [MKShape & MKGeoJSONObject]
 	
 	struct PointGeometry: Codable {
 		let type: String = "Point"

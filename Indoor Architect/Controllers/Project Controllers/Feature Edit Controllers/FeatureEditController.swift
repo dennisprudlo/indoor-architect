@@ -21,6 +21,9 @@ class FeatureEditController: IATableViewController {
 	
 	/// A reference to the features id
 	var featureId: UUID!
+	
+	/// A reference to the features id
+	var featureType: ProjectManager.ArchiveFeature!
 
 	/// The cell which displays the feature id
 	let featureIdCell		= UITableViewCell(style: .default, reuseIdentifier: nil)
@@ -80,10 +83,11 @@ class FeatureEditController: IATableViewController {
 	///   - id: The id of the feature to display
 	///   - information: The information meta data set to display
 	///   - featureController: The reference to the specific feature controller for event propagation
-	func prepareForFeature(with id: UUID, information: IMDFType.EntityInformation?, from featureController: FeatureEditControllerDelegate) -> Void {
+	func prepareForFeature(with id: UUID, type: ProjectManager.ArchiveFeature, information: IMDFType.EntityInformation?, from featureController: FeatureEditControllerDelegate) -> Void {
 		self.featureController			= featureController
 		
 		featureId						= id
+		featureType						= type
 		featureIdCell.textLabel?.text	= id.uuidString
 		commentCell.textField.text		= information?.comment
 	}

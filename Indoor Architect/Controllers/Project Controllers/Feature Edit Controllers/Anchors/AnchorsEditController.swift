@@ -21,7 +21,7 @@ class AnchorsEditController: PointFeatureEditController, FeatureEditControllerDe
 		
     override func viewDidLoad() {
         super.viewDidLoad()
-		super.prepareForFeature(with: anchor.id, information: anchor.properties.information, from: self)
+		super.prepareForFeature(with: anchor.id, type: .anchor, information: anchor.properties.information, from: self)
 		
 		//
 		// Prepare PointFeatureEditController

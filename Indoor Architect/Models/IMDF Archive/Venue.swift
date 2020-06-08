@@ -66,4 +66,22 @@ class Venue: Feature<Venue.Properties> {
 		
 		properties.information?.comment = comment
 	}
+	
+	/// Returns the coordinates of the venues polygon
+	/// - Returns: An array of coordinates
+	func getCoordinates() -> [CLLocationCoordinate2D] {
+		guard let polygon = geometry.first as? MKPolygon else {
+			return []
+		}
+		return polygon.coordinates
+	}
+	
+	/// Sets the coordinates of the anchor
+	func setCoordinates(_ coordinates: [CLLocationCoordinate2D]) -> Void {
+		self.geometry = [MKPolygon(coordinates: coordinates, count: coordinates.count)]
+	}
+	
+	static func respondToSelection(in canvas: MCMapCanvas, coordinate: CLLocationCoordinate2D) -> Venue? {
+		return canvas.overlays.compactMap({ $0 as? IMDFVenueOverlay }).first(where: { $0.contains(coordinate: coordinate) })?.venue
+	}
 }

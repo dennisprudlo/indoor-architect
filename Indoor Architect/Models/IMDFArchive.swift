@@ -159,4 +159,45 @@ class IMDFArchive {
 		units.removeAll(where: { $0.id.uuidString == uuid.uuidString })
 		venues.removeAll(where: { $0.id.uuidString == uuid.uuidString })
 	}
+	
+	func getChangeInformation(forFeatureWithUuid uuid: UUID) -> (geometry: IMDFType.Geometry, information: IMDFType.EntityInformation?)? {
+		if let address = addresses.first(where: { $0.id.uuidString == uuid.uuidString }) {
+			return (geometry: address.geometry, information: address.properties.information)
+		}
+		if let anchor = anchors.first(where: { $0.id.uuidString == uuid.uuidString }) {
+			return (geometry: anchor.geometry, information: anchor.properties.information)
+		}
+		if let unit = units.first(where: { $0.id.uuidString == uuid.uuidString }) {
+			return (geometry: unit.geometry, information: unit.properties.information)
+		}
+		if let venue = venues.first(where: { $0.id.uuidString == uuid.uuidString }) {
+			return (geometry: venue.geometry, information: venue.properties.information)
+		}
+		
+		return nil
+	}
+	
+	func createFeature(ofType type: ProjectManager.ArchiveFeature, geometry: IMDFType.Geometry, information: IMDFType.EntityInformation?, uuid: UUID? = nil) -> Void {
+		var uuidToSet = Application.currentProject.getUnusedGlobalUuid()
+		if let passedUuid = uuid {
+			uuidToSet = passedUuid
+		}
+		
+		switch type {
+			case .anchor:
+				let anchor = Anchor(withIdentifier: uuidToSet, properties: Anchor.Properties(), geometry: geometry, type: .anchor)
+				anchor.properties.information = information
+				anchors.append(anchor)
+			case .unit:
+				let unit = Unit(withIdentifier: uuidToSet, properties: Unit.Properties(), geometry: geometry, type: .unit)
+				unit.properties.information = information
+				units.append(unit)
+			case .venue:
+				let venue = Venue(withIdentifier: uuidToSet, properties: Venue.Properties(), geometry: geometry, type: .venue)
+				venue.properties.information = information
+				venues.append(venue)
+			default:
+				break
+		}
+	}
 }

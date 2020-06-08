@@ -21,6 +21,8 @@ struct Localizable {
 		static let multiple				= NSLocalizedString("general.multiple", comment: "")
 		static let on					= NSLocalizedString("general.on", comment: "")
 		static let off					= NSLocalizedString("general.off", comment: "")
+		static let yes					= NSLocalizedString("general.yes", comment: "")
+		static let no					= NSLocalizedString("general.no", comment: "")
 		static let actionConfirmation	= NSLocalizedString("general.actionConfirmation", comment: "")
 	}
 	
@@ -100,6 +102,10 @@ struct Localizable {
 		static let coordinates						= NSLocalizedString("feature.coordinates", comment: "")
 		static let latitude							= NSLocalizedString("feature.latitude", comment: "")
 		static let longitude						= NSLocalizedString("feature.longitude", comment: "")
+		static let changeFeatureType				= NSLocalizedString("feature.changeFeatureType", comment: "")
+		static let currentFeatureType				= NSLocalizedString("feature.currentFeatureType", comment: "")
+		static let venueAlreadyExists				= NSLocalizedString("feature.venueAlreadyExists", comment: "")
+		static let changeFeatureTypeConfirmation	= NSLocalizedString("feature.changeFeatureTypeConfirmation", comment: "")
 		static let editSaveChanges					= NSLocalizedString("feature.editSaveChanges", comment: "")
 		static let removeAlertDescription			= NSLocalizedString("feature.removeAlertDescription", comment: "")
 		static let selectAddressDetail				= NSLocalizedString("feature.selectAddressDetail", comment: "")

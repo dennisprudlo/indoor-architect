@@ -21,7 +21,7 @@ class PolygonalFeatureEditController: FeatureEditController, FeatureCoordinatesC
 
 		//
 		// Adds the change feature bar button item to select a feature type
-		addNavigationBarButton(UIBarButtonItem(title: "Change Feature", style: .plain, target: self, action: #selector(changeFeatureType(_:))), animated: true)
+		addNavigationBarButton(UIBarButtonItem(title: Localizable.Feature.changeFeatureType, style: .plain, target: self, action: #selector(changeFeatureType(_:))), animated: true)
 		
 		//
 		// Format the geometry text field
@@ -39,7 +39,10 @@ class PolygonalFeatureEditController: FeatureEditController, FeatureCoordinatesC
     }
 	
 	@objc func changeFeatureType(_ barButtonItem: UIBarButtonItem) -> Void {
-		
+		dismiss(animated: true) {
+			let controller = FeatureChangeController.forFeature(withUuid: self.featureId, type: self.featureType, canvas: self.canvas)
+			self.canvas?.controller.present(controller, animated: true, completion: nil)
+		}
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
