@@ -123,7 +123,7 @@ class VenueEditController: PolygonalFeatureEditController, FeatureEditController
 		venue.properties.phone = phoneCell.textField.text
 		venue.properties.website = websiteCell.textField.text
 		
-		try? Application.currentProject.imdfArchive.save(.unit)
+		try? Application.currentProject.imdfArchive.save(.venue)
 	}
 	
 	/// Sets the category as a text value and writes it into the venues properties
