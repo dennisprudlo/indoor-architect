@@ -129,7 +129,7 @@ class VenueEditController: PolygonalFeatureEditController, FeatureEditController
 	/// Sets the category as a text value and writes it into the venues properties
 	/// - Parameter category: The category to write
 	func setCategory(_ category: IMDFType.VenueCategory) -> Void {
-		categoryCell.detailTextLabel?.text	= "\(category)"//Localizable.IMDF.unitCategory(category)
+		categoryCell.detailTextLabel?.text	= Localizable.IMDF.venueCategory(category)
 		venue.properties.category			= category
 	}
 	
@@ -222,7 +222,7 @@ class VenueEditController: PolygonalFeatureEditController, FeatureEditController
 }
 
 extension VenueEditController: VenueEditCategoryControllerDelegate {
-	func venueCateogry(_ controller: VenueEditCategoryController, didPick category: IMDFType.VenueCategory) {
+	func venueCategory(_ controller: VenueEditCategoryController, didPick category: IMDFType.VenueCategory) {
 		setCategory(category)
 		controller.navigationController?.popViewController(animated: true)
 	}

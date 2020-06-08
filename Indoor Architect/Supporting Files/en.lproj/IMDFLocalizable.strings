@@ -5,6 +5,29 @@
   Created by Dennis Prudlo on 5/12/20.
   Copyright © 2020 Dennis Prudlo. All rights reserved.
 */
+"imdf.venueCategory.airport"			= "Airport";
+"imdf.venueCategory.airport.intl"		= "Airport (International)";
+"imdf.venueCategory.aquarium"			= "Aquarium";
+"imdf.venueCategory.businesscampus"		= "Business campus";
+"imdf.venueCategory.casino"				= "Casino";
+"imdf.venueCategory.communitycenter"	= "Community center";
+"imdf.venueCategory.conventioncenter"	= "Convention center";
+"imdf.venueCategory.governmentfacility"	= "Government facility";
+"imdf.venueCategory.healthcarefacility"	= "Health care facility";
+"imdf.venueCategory.hotel"				= "Hotel";
+"imdf.venueCategory.museum"				= "Musem";
+"imdf.venueCategory.parkingfacility"	= "Parking facility";
+"imdf.venueCategory.resort"				= "Resort";
+"imdf.venueCategory.retailstore"		= "Retail store";
+"imdf.venueCategory.shoppingcenter"		= "Shopping center";
+"imdf.venueCategory.stadium"			= "Stadium";
+"imdf.venueCategory.stripmall"			= "Strip mall";
+"imdf.venueCategory.theater"			= "Theater";
+"imdf.venueCategory.themepark"			= "Theme park";
+"imdf.venueCategory.trainstation"		= "Train station";
+"imdf.venueCategory.transitstation"		= "Transit station";
+"imdf.venueCategory.university"			= "University";
+
 "imdf.unitCategory.auditorium"				= "Auditorium";
 "imdf.unitCategory.brick"					= "Brick";
 "imdf.unitCategory.classroom"				= "Class room";

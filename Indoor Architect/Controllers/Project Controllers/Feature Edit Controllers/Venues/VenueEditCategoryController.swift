@@ -9,7 +9,7 @@
 import UIKit
 
 protocol VenueEditCategoryControllerDelegate {
-	func venueCateogry(_ controller: VenueEditCategoryController, didPick category: IMDFType.VenueCategory) -> Void
+	func venueCategory(_ controller: VenueEditCategoryController, didPick category: IMDFType.VenueCategory) -> Void
 }
 
 class VenueEditCategoryController: IATableViewController {
@@ -36,7 +36,7 @@ class VenueEditCategoryController: IATableViewController {
 		// Compose the cells for the categories
 		IMDFType.VenueCategory.allCases.forEach { (category) in
 			let categoryCell = UITableViewCell(style: .default, reuseIdentifier: nil)
-			categoryCell.textLabel?.text	= "\(category)"//Localizable.IMDF.unitCategory(category)
+			categoryCell.textLabel?.text	= Localizable.IMDF.venueCategory(category)
 			categoryCell.accessoryType		= category == currentCategory ? .checkmark : .none
 			categoryCell.tintColor			= Color.primary
 			
@@ -54,10 +54,10 @@ class VenueEditCategoryController: IATableViewController {
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		guard let cell = tableView.cellForRow(at: indexPath), let category = categoryCells[cell] else {
-			delegate?.venueCateogry(self, didPick: self.currentCategory	)
+			delegate?.venueCategory(self, didPick: self.currentCategory	)
 			return
 		}
 		
-		delegate?.venueCateogry(self, didPick: category)
+		delegate?.venueCategory(self, didPick: category)
 	}
 }
