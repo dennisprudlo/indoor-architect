@@ -152,7 +152,7 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 		guard let cell = tableView.cellForRow(at: indexPath) else { return }
 		
 		if cell == categoryCell {
-			let unitCategoryController				= FeatureUnitCategoryPickerController(style: .insetGrouped)
+			let unitCategoryController				= UnitEditCategoryController(style: .insetGrouped)
 			unitCategoryController.currentCategory	= unit.properties.category
 			unitCategoryController.delegate			= self
 			navigationController?.pushViewController(unitCategoryController, animated: true)
@@ -201,10 +201,10 @@ class UnitsEditController: PolygonalFeatureEditController, FeatureEditController
 	}
 }
 
-extension UnitsEditController: FeatureUnitCategoryPickerDelegate {
-	func unitCategoryPicker(_ pickerController: FeatureUnitCategoryPickerController, didPick category: IMDFType.UnitCategory) {
+extension UnitsEditController: UnitEditCategoryControllerDelegate {
+	func unitCategory(_ controller: UnitEditCategoryController, didPick category: IMDFType.UnitCategory) {
 		setCategory(category)
-		pickerController.navigationController?.popViewController(animated: true)
+		controller.navigationController?.popViewController(animated: true)
 	}
 }
 

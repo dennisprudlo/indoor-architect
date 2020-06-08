@@ -58,7 +58,7 @@
 		818D1DCB246861BF0058E4E5 /* IATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCA246861BF0058E4E5 /* IATableViewController.swift */; };
 		818D1DCD24687A2D0058E4E5 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D1DCC24687A2D0058E4E5 /* Unit.swift */; };
 		8193C32D246AF739005D6262 /* PolygonalFeatureEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */; };
-		8193C330246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C32F246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift */; };
+		8193C330246AFDF5005D6262 /* UnitEditCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C32F246AFDF5005D6262 /* UnitEditCategoryController.swift */; };
 		8193C333246B0558005D6262 /* IMDFLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8193C335246B0558005D6262 /* IMDFLocalizable.strings */; };
 		8193C337246B0E34005D6262 /* FeatureAccessibilityPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C336246B0E34005D6262 /* FeatureAccessibilityPickerController.swift */; };
 		8193C339246B1E04005D6262 /* FeatureRestrictionPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193C338246B1E04005D6262 /* FeatureRestrictionPickerController.swift */; };
@@ -166,7 +166,7 @@
 		818D1DCA246861BF0058E4E5 /* IATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IATableViewController.swift; sourceTree = "<group>"; };
 		818D1DCC24687A2D0058E4E5 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		8193C32C246AF739005D6262 /* PolygonalFeatureEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonalFeatureEditController.swift; sourceTree = "<group>"; };
-		8193C32F246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureUnitCategoriyPickerController.swift; sourceTree = "<group>"; };
+		8193C32F246AFDF5005D6262 /* UnitEditCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitEditCategoryController.swift; sourceTree = "<group>"; };
 		8193C334246B0558005D6262 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IMDFLocalizable.strings; sourceTree = "<group>"; };
 		8193C336246B0E34005D6262 /* FeatureAccessibilityPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAccessibilityPickerController.swift; sourceTree = "<group>"; };
 		8193C338246B1E04005D6262 /* FeatureRestrictionPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRestrictionPickerController.swift; sourceTree = "<group>"; };
@@ -294,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				814F5FD024688FA1004E0215 /* UnitsEditController.swift */,
+				8193C32F246AFDF5005D6262 /* UnitEditCategoryController.swift */,
 			);
 			path = Units;
 			sourceTree = "<group>";
@@ -435,7 +436,6 @@
 		8193C32E246AFDA7005D6262 /* Extended Settings Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8193C32F246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift */,
 				8193C336246B0E34005D6262 /* FeatureAccessibilityPickerController.swift */,
 				8193C338246B1E04005D6262 /* FeatureRestrictionPickerController.swift */,
 				8182AFC5247D443800925FF2 /* FeatureLabelsController.swift */,
@@ -793,7 +793,7 @@
 				814EBB76241D6A170028225C /* Spacing.swift in Sources */,
 				8193C337246B0E34005D6262 /* FeatureAccessibilityPickerController.swift in Sources */,
 				814F5FD124688FA1004E0215 /* UnitsEditController.swift in Sources */,
-				8193C330246AFDF5005D6262 /* FeatureUnitCategoriyPickerController.swift in Sources */,
+				8193C330246AFDF5005D6262 /* UnitEditCategoryController.swift in Sources */,
 				817C3F72245DDACA00D00034 /* PointFeatureEditController.swift in Sources */,
 				8124FD672457167A0099581E /* ISO3166.swift in Sources */,
 				81D580B2240B04AC0049B17F /* ProjectExtensionController.swift in Sources */,

@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol FeatureUnitCategoryPickerDelegate {
-	func unitCategoryPicker(_ pickerController: FeatureUnitCategoryPickerController, didPick category: IMDFType.UnitCategory) -> Void
+protocol UnitEditCategoryControllerDelegate {
+	func unitCategory(_ controller: UnitEditCategoryController, didPick category: IMDFType.UnitCategory) -> Void
 }
 
-class FeatureUnitCategoryPickerController: IATableViewController {
+class UnitEditCategoryController: IATableViewController {
 
 	/// A mapping dictionary to store the category value for each cell
 	var categoryCells: [UITableViewCell: IMDFType.UnitCategory] = [:]
@@ -21,7 +21,7 @@ class FeatureUnitCategoryPickerController: IATableViewController {
 	var currentCategory: IMDFType.UnitCategory = .unspecified
 	
 	/// The delegate that handles the selection
-	var delegate: FeatureUnitCategoryPickerDelegate?
+	var delegate: UnitEditCategoryControllerDelegate?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +54,10 @@ class FeatureUnitCategoryPickerController: IATableViewController {
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		guard let cell = tableView.cellForRow(at: indexPath), let category = categoryCells[cell] else {
-			delegate?.unitCategoryPicker(self, didPick: .unspecified)
+			delegate?.unitCategory(self, didPick: self.currentCategory)
 			return
 		}
 	
-		delegate?.unitCategoryPicker(self, didPick: category)
+		delegate?.unitCategory(self, didPick: category)
 	}
 }
